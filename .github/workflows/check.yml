@@ -14,6 +14,7 @@ jobs:
       - name: Check syntax
         run: |
           node --check app.js
+          node --check visuals.js
           node --check db/indexeddb.js
           node --check smoke-test.js
       - name: Validate curriculum and routes

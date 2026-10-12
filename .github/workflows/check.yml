@@ -1,0 +1,22 @@
+name: Validate MASAR BMW
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax
+        run: |
+          node --check app.js
+          node --check db/indexeddb.js
+          node --check smoke-test.js
+      - name: Validate curriculum and routes
+        run: node smoke-test.js
+      - name: Compile standalone site
+        run: python compile.py

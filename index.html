@@ -209,6 +209,8 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
  .paper-item span{font-size:10pt}
  .eyebrow,.page-title,.sub{display:none!important}
 }
+
+.hub-fault-ref{margin:30px 0}.hub-fault-ref>h2{font-size:20px}.hub-fault-ref>p{color:#576e7d;font-size:13px}.hub-fault-group{border:1px solid #dae4e8;background:#fff;margin:9px 0;border-radius:12px;padding:12px 18px}.hub-fault-group summary{font-size:13px;font-weight:750;cursor:pointer;color:#293e4b}.hub-fault-group ul{padding-inline-start:23px;margin-top:12px}.hub-fault-group li{font-size:12px;line-height:1.95;padding:4px 0;color:#425b68}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -4205,7 +4207,249 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       }
     ]
   },
-  "licensing_policy": "المراجع الشخصية محفوظة في المتصفح فقط بعد اختيارها من جهاز المستخدم؛ لا تنشر نسخ الكتب أو الصور في المستودع العام ما لم يُثبت السماح بذلك."
+  "licensing_policy": "المراجع الشخصية محفوظة في المتصفح فقط بعد اختيارها من جهاز المستخدم؛ لا تنشر نسخ الكتب أو الصور في المستودع العام ما لم يُثبت السماح بذلك.",
+  "practical_assessment_reference": {
+    "id": "PRA-ASSESSMENT-USER-2026",
+    "source_documents": [
+      "DOC-SHARD",
+      "DOC-NARIMAN",
+      "DOC-JEDDAH",
+      "IMG-EVAL-SDS",
+      "IMG-EVAL-SHARD"
+    ],
+    "status": "unverified_school_model_examples",
+    "official_unified_standard": false,
+    "immediate_failure_examples": [
+      {
+        "id": "FAIL-01",
+        "text": "الدخول إلى شارع أو مسار أو دوار دون التأكد من خلوه وصلاحية المسار",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-02",
+        "text": "فقدان السيطرة على المركبة بما يعرّض الأشخاص للخطر أو عدم إنجاز المناورة المطلوبة بطريقة آمنة",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-03",
+        "text": "عدم التقيد بإشارات المرور أو تعليمات الفاحص، بما في ذلك السير بعكس الاتجاه",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-04",
+        "text": "عدم التوقف للإشارة الحمراء أو علامة قف أو خط التوقف حيث يلزم",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-05",
+        "text": "الاصطدام بجسم ثابت أو متحرك أو ارتكاب تصرف يستدعي تدخّل الفاحص أو تفادي الآخرين للحادث",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-06",
+        "text": "ضعف المعرفة العامة بالقيادة الآمنة (ورد في التجميع النصي، وليس مثبتًا من نموذج الاختبار المصور)",
+        "verified_for_all_schools": false
+      }
+    ],
+    "fault_categories": [
+      {
+        "id": "FAULT-01",
+        "number": 1,
+        "title": "فحص ما قبل القيادة",
+        "mistakes": [
+          "عدم التحقق من إغلاق الأبواب",
+          "عدم ضبط المقعد والمرايا",
+          "نسيان الحزام",
+          "عدم معرفة تشغيل المساحات أو الأنوار أو أضواء الطوارئ",
+          "عدم معرفة تشغيل المركبة أو التنبيه بصورة صحيحة"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-02",
+        "number": 2,
+        "title": "المرايا والملاحظة",
+        "mistakes": [
+          "عدم فحص المرايا حين الحاجة",
+          "الفحص المتأخر",
+          "عدم فحص المرايا عند تغيير المسار",
+          "عدم مراقبة المرايا قبل الإشارة أو الفرملة"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-03",
+        "number": 3,
+        "title": "إشارات الانعطاف",
+        "mistakes": [
+          "ترك الإشارة حين يلزم",
+          "استخدامها مبكرًا جدًا أو متأخرًا",
+          "عدم الإشارة عند تغيير المسار",
+          "الإشارة في اتجاه غير مطلوب"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-04",
+        "number": 4,
+        "title": "الاقتراب من التقاطع",
+        "mistakes": [
+          "فرملة عنيفة دون سبب",
+          "سرعة اقتراب غير مناسبة",
+          "استخدام غير ملائم للقابض في مركبة بناقل يدوي"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-05",
+        "number": 5,
+        "title": "استخدام ناقل الحركة",
+        "mistakes": [
+          "اختيار وضع أو ترس غير مناسب",
+          "انتقالات غير سلسة",
+          "اختيار الحياد أثناء الحركة على نحو غير آمن",
+          "ترك ناقل الحركة في وضع غير مناسب بعد التوقف",
+          "انطفاء محرك المركبة اليدوية"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-06",
+        "number": 6,
+        "title": "الانعطاف يمينًا",
+        "mistakes": [
+          "بدء الانعطاف من مسار خاطئ",
+          "عدم اتباع علامات الطريق",
+          "ملامسة حافة الطريق",
+          "الخروج إلى أكثر من مسار أو انحراف واسع"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-07",
+        "number": 7,
+        "title": "الانعطاف يسارًا",
+        "mistakes": [
+          "بدء الانعطاف من مسار خاطئ",
+          "عدم اتباع علامات الطريق",
+          "ملامسة الرصيف",
+          "الانحراف الواسع أو الضيق",
+          "عدم الاستقرار في المسار المناسب"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-08",
+        "number": 8,
+        "title": "الموضع داخل الطريق",
+        "mistakes": [
+          "الاقتراب الشديد من طرف الطريق",
+          "عدم الالتزام بوسط المسار",
+          "القيادة بين مسارين",
+          "اختيار مسار غير مناسب"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-09",
+        "number": 9,
+        "title": "تغيير المسار",
+        "mistakes": [
+          "عدم استغلال فجوة مناسبة أو محاولة الدخول في فجوة ضيقة",
+          "تباطؤ غير مبرر أثناء الانتقال",
+          "نسيان فحص النقطة العمياء",
+          "الانحراف أثناء مراقبة الجانب",
+          "الانتقال المفاجئ بين المسارات"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-10",
+        "number": 10,
+        "title": "التجاوز",
+        "mistakes": [
+          "التجاوز دون التحقق من الأمان",
+          "تجاوز غير مناسب لحالة الطريق",
+          "عدم العودة للمسار المناسب بأمان"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-11",
+        "number": 11,
+        "title": "التقدم وسرعة القيادة",
+        "mistakes": [
+          "القيادة أبطأ أو أسرع مما تسمح به ظروف الطريق",
+          "التردد أو الاندفاع غير المناسب بعد التوقف",
+          "التعامل غير السلس مع القابض في المركبة اليدوية"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-12",
+        "number": 12,
+        "title": "طريقة التوقف",
+        "mistakes": [
+          "التوقف مرتين دون داعٍ",
+          "الوقوف فوق خط التوقف أو في مكان غير صحيح",
+          "نسيان تأمين السيارة عند التوقف",
+          "تدحرج السيارة عند الانطلاق على منحدر"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-13",
+        "number": 13,
+        "title": "هامش السلامة",
+        "mistakes": [
+          "الفاصل الطولي غير الكافي",
+          "المرور قرب جسم ثابت أو متحرك دون هامش جانبي كافٍ",
+          "الوقوف قريبًا جدًا أو بعيدًا بصورة تعيق الآخرين"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-14",
+        "number": 14,
+        "title": "التقدير واكتشاف المخاطر",
+        "mistakes": [
+          "التأخر في خفض السرعة عند وجود خطر",
+          "عدم إعطاء الأفضلية للمشاة أو المركبات",
+          "التوقف بلا داعٍ",
+          "تأخر إدراك الخطر أو الاستجابة له"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-15",
+        "number": 15,
+        "title": "الدخول إلى الموقف",
+        "mistakes": [
+          "اختيار مسار دخول غير مناسب",
+          "الوقوف على خطوط المواقف",
+          "عدم التمركز داخل الحيز",
+          "تكرار المناورة بصورة تخالف معايير نموذج مدرسة بعينها",
+          "ملامسة الحافة"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-16",
+        "number": 16,
+        "title": "الخروج من الموقف",
+        "mistakes": [
+          "نسيان الإشارة المناسبة",
+          "عدم فحص النقطة العمياء قبل التحرك",
+          "زيادة الحركات عن الحد المذكور في نموذج مدرسة بعينها",
+          "ملامسة الرصيف",
+          "الخروج لمسار غير مناسب أو انحراف واسع"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      }
+    ],
+    "hours_policy": "لا تعتمد قاعدة 6/12/30 ساعة على عدد الأخطاء من دون وثيقة حديثة صادرة من مدرسة التقييم",
+    "note": "الأخطاء مستخلصة ومُعاد صياغتها من أوراق التقييم التي قدمتها المستخدمة. فئة القابض اليدوي لا تنطبق مباشرة على هوندا أكورد الأوتوماتيك."
+  }
 }
 </script>
 <script>/*
@@ -4456,9 +4700,13 @@ function quizPage(course,state){
  var q=bank[quizIndex],a=q?state.reviewAnswers&&state.reviewAnswers[q.id]:null,done=Number.isInteger(a);
  return '<div class="eyebrow">PRACTICE BANK / EXAM TRAINING</div><h1 class="page-title">تجميعات وأسئلة المراجعة</h1><p class="sub">بنك أصلي من '+all.length+' سؤالًا تعليميًا مستوحى من موضوعات المصادر، وليس نسخة من أسئلة الامتحان الرسمي. بعد الإجابة يظهر تفسير السبب، وتُحفظ النتيجة على جهازك.</p><div class="hub-metrics"><div><strong>'+answered+' / '+all.length+'</strong><small>أجبتي عنها</small></div><div><strong>'+correct+'</strong><small>إجابات صحيحة</small></div></div><div class="hub-filters">'+topics.map(function(t){return '<button class="hub-filter '+(quizFilter===t[0]?'on':'')+'" data-action="hub-filter" data-topic="'+t[0]+'" aria-pressed="'+(quizFilter===t[0])+'">'+t[1]+'</button>'}).join('')+'</div>'+(q?'<section class="hub-question card"><div class="hub-q-top"><span>سؤال '+(quizIndex+1)+' / '+bank.length+'</span><span>مصدر الفكرة: '+E(q.source_id)+'</span></div><div class="hub-sign-scene">'+sign(q.visual_key)+'</div><h2>'+E(q.question)+'</h2><div class="hub-options">'+q.options.map(function(o,i){return '<button type="button" class="hub-choice '+(done?(i===q.correct_option_index?'right':i===a?'wrong':''):'')+'" data-action="hub-answer" data-qid="'+E(q.id)+'" data-answer="'+i+'" '+(done?'disabled':'')+' aria-label="الخيار '+(i+1)+'">'+E(o)+'</button>'}).join('')+'</div>'+(done?'<div class="hub-explain" role="status"><strong>'+(a===q.correct_option_index?'إجابتك صحيحة':'راجعي المعلومة')+'</strong><p>'+E(q.explanation)+'</p></div>':'')+'<div class="hub-q-nav"><button type="button" class="btn btn-outline" data-action="hub-prev">السابق</button><button type="button" class="btn btn-primary" data-action="hub-next">التالي ←</button></div><p class="hub-legal">الرسم والأمثلة مبسّطة للمذاكرة، وقد تختلف اللوحات بتفاصيلها. للمراجعة النظامية راجعي دليل الإشارات الصادر عن المرور.</p></section>':'<p>لا توجد أسئلة في هذا القسم.</p>')+'<section class="hub-supplement"><h3>تجميع النزاوي والصور الـ39</h3><p>يمكنك ربط ملف النزاوي الشخصي من قسم المصادر. أضفنا كذلك فهرس روابط الصور الـ39 التي أرسلتِها، دون إعادة نشر الصور في المستودع العام.</p><a class="btn btn-outline" href="#/sources">مكتبة المصادر والصور</a></section>';
 }
+function faultDetails(course){
+ var ref=course.practical_assessment_reference;if(!ref)return '';
+ return '<section class="hub-fault-ref"><h2>نماذج أخطاء التقييم العملي — للمقارنة فقط</h2><p>استخرجنا الملاحظات التي أرسلتيها وأعدنا تنظيمها: '+ref.immediate_failure_examples.length+' أمثلة على أخطاء حرجة، و'+ref.fault_categories.length+' فئة أخرى. القائمة من مصادر متعددة وقد تختلف المدرسة ومعاييرها.</p><details class="hub-fault-group"><summary>أمثلة أخطاء حرجة — لا تعمّمي معيار الرسوب على جميع المدارس</summary><ul>'+ref.immediate_failure_examples.map(function(x){return '<li>'+E(x.text)+'</li>'}).join('')+'</ul></details>'+ref.fault_categories.map(function(cat){return '<details class="hub-fault-group"><summary>'+cat.number+' — '+E(cat.title)+' ('+cat.mistakes.length+' أمثلة)</summary><ul>'+cat.mistakes.map(function(x){return '<li>'+E(x)+'</li>'}).join('')+'</ul></details>'}).join('')+'<p class="hub-legal">عبارة «4 حركات» والاختبارات الخاصة بناقل حركة يدوي لا تنطبق بالضرورة على سيارتك أو مدرسة اختبارك. لا يُحسب عدد أخطاء ولا ساعات تدريب هنا.</p></section>';
+}
 function practicePage(course,state){
  var blocks=course.practical_checklist||[],checked=state.practiceChecks||{};
- return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
+ return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+faultDetails(course)+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
 }
 function docsPage(course,state){
  var files=(course.personal_documents||[]).concat(course.uploaded_image_index||[]),byKind=(course.external_study_sources||[]);

@@ -6,8 +6,8 @@
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 5;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map', 'sign_library'];
+  const DATABASE_VERSION = 6;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map', 'sign_library', 'lesson_activities'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
   const allStores = [...referenceStores, ...userStores, 'personal_files'];
   let dbPromise;
@@ -39,6 +39,7 @@
         create('review_claims', 'id');
         create('lesson_reading_map', 'id');
         create('sign_library', 'id');
+        create('lesson_activities', 'id');
         create('personal_files', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
@@ -109,7 +110,12 @@
       sourceNotes: prefs.sourceNotes || {},
       practiceChecks: prefs.practiceChecks || {},
       reviewAnswers: prefs.reviewAnswers || {},
-      signPractice: prefs.signPractice || {}
+      signPractice: prefs.signPractice || {},
+      activityNotes: prefs.activityNotes || {},
+      activityChecks: prefs.activityChecks || {},
+      reviewHistory: prefs.reviewHistory || {},
+      mockSession: prefs.mockSession || null,
+      mockHistory: prefs.mockHistory || []
     };
   }
 
@@ -128,7 +134,7 @@
     tx.objectStore('preferences').put({key: 'initialized', value: true});
     tx.objectStore('preferences').put({key: 'lastOpened', value: Number(snapshot.lastOpened) || 1});
     tx.objectStore('preferences').put({key: 'readingPositions', value: snapshot.readingPositions || {}});
-    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers','signPractice']) tx.objectStore('preferences').put({key, value: snapshot[key] || {}});
+    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers','signPractice','activityNotes','activityChecks','reviewHistory','mockSession','mockHistory']) tx.objectStore('preferences').put({key, value: snapshot[key] ?? (key==='mockHistory'?[]:key==='mockSession'?null:{})});
     await completed(tx);
   }
 

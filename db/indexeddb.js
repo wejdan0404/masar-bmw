@@ -6,8 +6,8 @@
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 1;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources'];
+  const DATABASE_VERSION = 2;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
   const allStores = [...referenceStores, ...userStores];
   let dbPromise;
@@ -29,6 +29,8 @@
         create('lessons', 'id', [['week_id', false], ['order', true]]);
         create('questions', 'id', [['lesson_id', true]]);
         create('sources', 'id');
+        create('learning_visuals', 'id');
+        create('media_resources', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
         create('notes', 'lesson_id');
@@ -73,7 +75,8 @@
     }
     await completed(tx);
     return { weeks: (course.weeks || []).length, lessons: (course.lessons || []).length,
-      questions: (course.questions || []).length, sources: (course.sources || []).length };
+      questions: (course.questions || []).length, sources: (course.sources || []).length,
+      visuals: (course.learning_visuals || []).length, media: (course.media_resources || []).length };
   }
 
   async function loadUser() {

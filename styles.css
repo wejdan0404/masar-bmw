@@ -210,3 +210,17 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 }
 
 .hub-fault-ref{margin:30px 0}.hub-fault-ref>h2{font-size:20px}.hub-fault-ref>p{color:#576e7d;font-size:13px}.hub-fault-group{border:1px solid #dae4e8;background:#fff;margin:9px 0;border-radius:12px;padding:12px 18px}.hub-fault-group summary{font-size:13px;font-weight:750;cursor:pointer;color:#293e4b}.hub-fault-group ul{padding-inline-start:23px;margin-top:12px}.hub-fault-group li{font-size:12px;line-height:1.95;padding:4px 0;color:#425b68}
+
+
+/* Indexed lesson book references + targeted revision */
+.lesson-sources{padding:23px!important;margin:20px 0!important;background:#fff}
+.lesson-sources h2{font-size:19px;margin:6px 0 7px;color:#202D36}.lesson-sources>p{font-size:12px;line-height:1.9;color:#546b7a}
+.lesson-source-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #e4eaee}
+.lesson-source-row strong{display:block;color:#2b4150;font-size:13px;line-height:1.8}
+.lesson-source-row small{display:block;color:#617888;font-size:12px}
+.lesson-source-row .btn{white-space:nowrap;padding:8px 12px;font-size:11px;min-height:39px}
+.lesson-sources .hub-legal{margin-top:14px}
+.hub-q-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:16px}
+.hub-q-links .btn{font-size:11px}
+.hub-question .hub-source-note{margin:16px 0 7px}
+@media(max-width:700px){.lesson-sources{padding:16px!important}.lesson-source-row{align-items:flex-start;flex-direction:column}.lesson-source-row .btn{width:100%}}

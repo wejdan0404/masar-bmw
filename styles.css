@@ -98,3 +98,5 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 @media(prefers-reduced-motion:reduce){.hero-premium .hero-car{animation:none}.card-premium-interactive,.stat,.btn,.flashcard,.action-tile{transition:none!important;transform:none!important}.card-premium-interactive:before{display:none}}
 
 @media(max-width:610px){.floating-timer{left:auto;right:12px;bottom:max(12px,env(safe-area-inset-bottom))}.toast{left:14px;right:14px;bottom:69px;text-align:center}}
+
+.resume-location{margin:12px 0 4px!important;padding:9px 13px;border-inline-start:3px solid #c27688;border-radius:4px;background:rgba(255,255,255,.1);font-size:.9rem!important;color:#ebd8df!important;max-width:480px}

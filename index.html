@@ -101,6 +101,43 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 @media(max-width:610px){.floating-timer{left:auto;right:12px;bottom:max(12px,env(safe-area-inset-bottom))}.toast{left:14px;right:14px;bottom:69px;text-align:center}}
 
 .resume-location{margin:12px 0 4px!important;padding:9px 13px;border-inline-start:3px solid #c27688;border-radius:4px;background:rgba(255,255,255,.1);font-size:.9rem!important;color:#ebd8df!important;max-width:480px}
+
+
+/* MASAR visual-learning panels: original SVG instructional diagrams. */
+.visual-card{margin:24px 0;padding:24px;border:1px solid #d2dde3;border-radius:22px;background:#f1f5f7;box-shadow:0 10px 40px rgba(32,45,54,.045)}
+.visual-card+.visual-card{margin-top:18px}
+.visual-header{margin-bottom:17px}
+.visual-header h2{margin:7px 0 4px;font-size:clamp(19px,2vw,26px);color:#202D36}
+.visual-header p{margin:0;color:#546b7a;font-size:13px}
+.visual-scene{border:1px solid #243e4c;border-radius:16px;overflow:hidden;background:#202D36;direction:ltr;line-height:1}
+.visual-scene svg{width:100%;height:auto;display:block;max-height:350px}
+.visual-scene text{font-family:'IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif;direction:rtl;unicode-bidi:plaintext}
+.visual-steps{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.visual-step{display:inline-flex;align-items:center;gap:7px;justify-content:center;min-height:42px;border-radius:11px;border:1px solid #c7d5dd;padding:9px 12px;background:white;color:#354b59;font-weight:700;font-size:12px;transition:background .2s ease,border-color .2s ease}
+.visual-step span{display:grid;place-items:center;width:23px;height:23px;border-radius:100%;background:#e4edf2;color:#40596a;font-variant-numeric:tabular-nums}
+.visual-step.is-current,.visual-step[aria-pressed=true]{background:#202D36;color:#fff;border-color:#202D36}
+.visual-step.is-current span{background:#800C1F;color:#fff}
+.visual-step:focus-visible{outline:3px solid #7598B9;outline-offset:3px}
+.visual-caption{margin-top:14px;background:#fff;border-right:3px solid #800C1F;border-radius:10px;padding:15px 18px}
+.visual-caption strong{font-size:14px}
+.visual-caption p{color:#40596a;font-size:13px;margin:3px 0 0;line-height:1.95}
+.visual-disclaimer{font-size:11px!important;color:#5c6f7b;margin:11px 3px 0!important;line-height:1.8}
+@media(max-width:650px){.visual-card{margin:18px -6px;padding:14px;border-radius:17px}.visual-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.visual-step{min-width:0;font-size:11px;padding:8px 5px}.visual-caption{padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){.visual-step{transition:none}}
+
+
+/* Discoverable visual lesson library */
+.visual-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:23px 0 32px}
+.visual-index-tile{overflow:hidden;border:1px solid #dfe7eb;border-radius:19px;background:white;box-shadow:0 9px 28px rgba(32,45,54,.035)}
+.visual-index-media{background:#202D36;direction:ltr;overflow:hidden}
+.visual-index-media svg{display:block;width:100%;height:auto;max-height:230px}
+.visual-index-media text{font-family:'IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif;direction:rtl;unicode-bidi:plaintext}
+.visual-index-text{padding:19px 21px 22px}
+.visual-index-text h2{font-size:19px;line-height:1.55;margin:6px 0;color:#202D36}
+.visual-index-text p{font-size:12px;color:#526a79;margin:0 0 17px;line-height:1.8}
+.visual-resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:26px}
+.visual-resource-list .ref-card{margin:0}
+@media(max-width:800px){.visual-index-grid,.visual-resource-list{grid-template-columns:1fr}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -3031,6 +3068,181 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       "approved_for_embed": false,
       "verification_note": "صفحة خارجية وقد تتطلب تسجيلًا؛ ليست فيديو مضمّنًا"
     }
+  ],
+  "learning_visuals": [
+    {
+      "id": "VIS-MARKINGS",
+      "type": "markings",
+      "title": "اقرئي شكل الخط قبل تغيير المسار",
+      "lesson_ids": [
+        "LES-013",
+        "LES-014",
+        "LES-015",
+        "LES-043"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "خط متقطع",
+          "body": "عبور الخط المتقطع قد يكون مسموحًا، لكن يلزم التحقق من تنظيم الطريق والمرايا والنقطة العمياء قبل أي حركة."
+        },
+        {
+          "label": "خط متصل",
+          "body": "الخط المتصل الذي يمنع تغيير المسار لا يُعبر. هذا رسم تعليمي؛ انتبهي أيضًا للوحات والموقع الفعلي."
+        }
+      ],
+      "source_ids": [
+        "S001",
+        "S003"
+      ]
+    },
+    {
+      "id": "VIS-INTERSECTION",
+      "type": "intersection",
+      "title": "من له الأولوية عند التقاطع؟",
+      "lesson_ids": [
+        "LES-016",
+        "LES-018",
+        "LES-044"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "اقتربي",
+          "body": "اقرئي اللوحات والإشارات أولًا ولا تفترضي قاعدة واحدة لجميع التقاطعات."
+        },
+        {
+          "label": "أعطي الأفضلية",
+          "body": "في مثال الطريق الرئيسي والفرعي غير المنظم بخلاف ذلك، تتركي الأولوية للمركبات على الطريق الرئيسي."
+        },
+        {
+          "label": "اعبري بأمان",
+          "body": "عندما يسمح التنظيم ويخلو مسارك من تعارض خطِر، تابعي الحركة تدريجيًا."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-ROUNDABOUT",
+      "type": "roundabout",
+      "title": "الدخول الآمن إلى الدوار",
+      "lesson_ids": [
+        "LES-019",
+        "LES-020",
+        "LES-044"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "اقتربي",
+          "body": "خففي السرعة وحددي وجهتك مسبقًا وانظري إلى اللوحات وأسهم المسارات."
+        },
+        {
+          "label": "راقبي الداخل",
+          "body": "في الدوار العادي غير المنظم بخلاف ذلك، الأفضلية للمركبات التي تسير داخله."
+        },
+        {
+          "label": "اختاري الفجوة",
+          "body": "ادخلي فقط عند توفر فرصة آمنة دون إرباك الآخرين؛ مسار الخروج يعتمد على تخطيط الدوار."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-LANES",
+      "type": "lanes",
+      "title": "المرايا والإشارة والنقطة العمياء",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023",
+        "LES-024"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "المرايا",
+          "body": "افحصي المرآة الداخلية والجانبية لتقدير المركبات المحيطة."
+        },
+        {
+          "label": "إشارة الانعطاف",
+          "body": "استخدمي الإشارة المناسبة مبكرًا، لكنها لا تمنحك أولوية."
+        },
+        {
+          "label": "النقطة العمياء",
+          "body": "تحققي من المنطقة غير الظاهرة في المرايا قبل تغيير المسار."
+        },
+        {
+          "label": "تغيير المسار",
+          "body": "انتقلي تدريجيًا فقط إذا كانت المناورة مسموحة وآمنة، مع استمرار مراقبة الحركة."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-FOLLOW",
+      "type": "follow",
+      "title": "كيف نفهم مسافة الأمان؟",
+      "lesson_ids": [
+        "LES-026",
+        "LES-027",
+        "LES-045"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "مسافة قصيرة",
+          "body": "الفاصل القصير جدًا لا يترك وقتًا كافيًا للتصرف عند توقف المركبة الأمامية."
+        },
+        {
+          "label": "تقدير زمني",
+          "body": "يمكن استخدام علامة ثابتة لقياس الفاصل بالثواني؛ الثانيتان حد تعليمي أولي في ظروف مناسبة وليستا ضمانًا للسلامة."
+        },
+        {
+          "label": "ظروف صعبة",
+          "body": "زيدي الفاصل وخففي السرعة عند المطر والغبار وضعف التماسك والرؤية."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-PARKING",
+      "type": "parking",
+      "title": "فهم حركة السيارة عند الرجوع للموقف",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-033",
+        "LES-034",
+        "LES-035"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "اختيار الموقف",
+          "body": "تأكدي من سماح الوقوف واتساع الحيز والأمان للمشاة والمركبات الأخرى."
+        },
+        {
+          "label": "التحقق أثناء الرجوع",
+          "body": "راقبي جميع الاتجاهات وليس شاشة الكاميرا فقط، وانتـبهي لتأرجح مقدمة السيارة."
+        },
+        {
+          "label": "إنهاء الوقوف",
+          "body": "تحققي من وجود السيارة داخل الخطوط وتأمينها بشكل صحيح. نقاط اللف الدقيقة تُتعلّم عمليًا بالسيارة."
+        }
+      ],
+      "source_ids": [
+        "S004",
+        "S008"
+      ]
+    }
   ]
 }
 </script>
@@ -3161,6 +3373,58 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     stores: Object.freeze(allStores.slice())});
 })();
 
+/* MASAR BMW | Original illustrative SVG diagrams, not operational driving instructions. */
+(function(){
+'use strict';
+function e(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function car(x,y,color,label,angle){return '<g transform="translate('+x+' '+y+') rotate('+(angle||0)+')"><rect x="-22" y="-13" width="44" height="26" rx="9" fill="'+color+'" stroke="#f5f7f8" stroke-width="2"/><rect x="-8" y="-10" width="15" height="20" rx="4" fill="#c5dce9"/><path d="M14 -9v18" stroke="#f5e7cb" stroke-width="3"/><text x="0" y="29" text-anchor="middle" font-size="11" fill="#f7f8f9">'+e(label)+'</text></g>'}
+function svg(x,label){return '<svg viewBox="0 0 560 300" role="img" aria-label="'+e(label)+'" xmlns="http://www.w3.org/2000/svg" class="scenario-svg"><rect width="560" height="300" rx="18" fill="#202D36"/><defs><marker id="vis-tip" markerWidth="8" markerHeight="8" refX="5" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#f7e6b8" stroke-width="1.6"/></marker></defs>'+x+'</svg>'}
+function text(x,y,t,sz){return '<text x="'+x+'" y="'+y+'" text-anchor="middle" font-size="'+(sz||14)+'" font-weight="600" fill="#eaf0f4">'+e(t)+'</text>'}
+function roadLines(){return '<path d="M26 42H534M26 255H534" stroke="#9eb4c1" stroke-width="3"/>'}
+function roundabout(k){
+ var a='<path d="M0 104H560V196H0ZM226 0H334V300H226Z" fill="#344b59"/><circle cx="280" cy="150" r="104" fill="#485e6b"/><circle cx="280" cy="150" r="67" fill="#202D36" stroke="#a8c1d1" stroke-width="2" stroke-dasharray="7 8"/><circle cx="280" cy="150" r="37" fill="#5a7666"/>'+text(280,155,'جزيرة الدوار',12);
+ a+=k!==2?car(k===0?355:315,75,'#75a8cd','داخل الدوار',55):'';
+ a+=car(k===2?399:452,175,'#a71935','أنتِ',0)+text(455,241,k===2?'بعد توافر فجوة آمنة':'راقبي الداخل وأعطي الأفضلية',12);
+ return svg(a,'مركبة على مدخل الدوار تنتظر المركبات التي تسير داخله في الحالة العادية');
+}
+function lanes(k){
+ var a='<rect x="20" y="40" width="520" height="214" rx="15" fill="#405766"/><path d="M30 109H530M30 181H530" stroke="#e0eaf0" stroke-width="3" stroke-dasharray="23 14"/>'+roadLines();
+ a+=car(405,148,'#739fc2','في المسار')+car(k===3?305:170,219,'#a61932','أنتِ');
+ if(k===2)a+='<path d="M190 205L355 103" stroke="#f7e6b8" stroke-width="3" stroke-dasharray="7 8"/>';
+ if(k===3)a+='<path d="M190 210Q240 190 300 157" stroke="#f7e6b8" stroke-width="3" fill="none" marker-end="url(#vis-tip)"/>';
+ a+=text(280,28,['افحصي المرايا','استخدمي الإشارة','افحصي النقطة العمياء','انتقلي فقط إذا كان آمنًا'][k],14);
+ return svg(a,'سيارتان في مسارين متجاورين وتوضيح فحص السلامة قبل الانتقال');
+}
+function follow(k){
+ var a='<rect x="18" y="85" width="524" height="140" rx="13" fill="#415968"/><path d="M25 160H535" stroke="#d2e5ee" stroke-width="2.5" stroke-dasharray="20 18"/>'+roadLines();
+ var x=[234,158,80][k];
+ a+=car(427,123,'#7baac5','أمامية')+car(x,123,'#ad1a35','أنتِ')+'<path d="M'+(x+30)+' 172H399" stroke="#f7e6b8" stroke-width="2.5" stroke-dasharray="7 9"/>';
+ a+=text((x+399)/2,195,['فاصل قصير','فاصل تعليمي أولي','فاصل أكبر للظروف الصعبة'][k],13);
+ a+=text(280,49,['لا تقتربي أكثر من اللازم','قيسي الزمن بعلامة ثابتة','في المطر والضباب زيدي المسافة'][k],15);
+ return svg(a,'الفرق بين ثلاثة فواصل تعليمية للسيارة الأمامية مع زيادة المسافة في الظروف الصعبة');
+}
+function intersection(k){
+ var a='<rect x="0" y="104" width="560" height="92" fill="#435a68"/><rect x="229" y="0" width="102" height="300" fill="#435a68"/><path d="M0 150H226M334 150H560M280 0V104M280 195V300" stroke="#d2e4ec" stroke-width="2" stroke-dasharray="14 11"/><path d="M230 202H330" stroke="#f6e7c2" stroke-width="4"/>';
+ a+=k===2?'':car(k===0?121:335,122,'#7cb5d3','رئيسي');
+ a+=car(280,k===2?159:252,'#a81a36','أنتِ',90)+text(455,249,['اقتربي وأعطي الأفضلية','انتظري المركبات المارة','تحركي بعد التحقق من الأمان'][k],13);
+ return svg(a,'رسم مفاهيمي لطريق رئيسي وطريق فرعي عند تقاطع غير منظم خلافًا لذلك');
+}
+function parking(k){
+ var a='<rect x="18" y="166" width="524" height="111" rx="11" fill="#3f5765"/><path d="M25 225H535" stroke="#98afbd" stroke-width="2" stroke-dasharray="12 12"/>';
+ for(var i=0;i<4;i++)a+='<rect x="'+(44+i*118)+'" y="26" width="109" height="132" fill="'+(i===1?'#375d6a':'#465f6e')+'" stroke="#b4c7d3" stroke-width="2"/>';
+ a+=car(k===0?332:217,k===0?213:k===1?190:100,'#ac1835','أنتِ',k===0?0:90);
+ if(k===1)a+='<path d="M260 206Q285 159 217 116" fill="none" stroke="#f5e7bd" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#vis-tip)"/>';
+ a+=text(410,250,['اختاري مساحة مناسبة','راجعي الخلف وتأرجح المقدمة','تحققي من حدود الموقف'][k],13);
+ return svg(a,'موقف عمودي مبسط، لا يحدد نقاط المقود أو المناورة العملية');
+}
+function markings(k){
+ var a='<rect x="20" y="39" width="520" height="216" rx="13" fill="#435a69"/>'+roadLines()+'<path d="M25 110H535" stroke="#dbe6ee" stroke-width="4" '+(k===0?'stroke-dasharray="26 17"':'')+'/>';
+ a+=car(178,73,'#aa1937','أنتِ')+car(365,154,'#81a7c2','أخرى')+text(280,227,k===0?'متقطع: لا يكفي وحده للسماح الآمن':'متصل: انتبهي لمنع عبوره',14);
+ return svg(a,'الخط المتصل والخط المتقطع في مسار افتراضي');
+}
+function render(item,step){var list={roundabout:roundabout,lanes:lanes,follow:follow,intersection:intersection,parking:parking,markings:markings};var fn=list[item.type],k=Math.max(0,Math.min((item.steps||[]).length-1,Number(step)||0));return fn?fn(k):''}
+window.MasarVisuals=Object.freeze({render:render});
+})();
 (() => {
 'use strict';
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
@@ -3168,7 +3432,7 @@ const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, so
 const baseKey='masar-driving-v1';
 let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{}};
 try { const saved=JSON.parse(localStorage.getItem(baseKey)||'null'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(e){console.warn('Local data unavailable',e)}
-let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
+let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
 let databaseReady=false, dirtyBeforeReady=false, databaseStatus='جارٍ تجهيز قاعدة البيانات';
 let displayedRoute='', scrollWriteTimer=null, restoringScroll=false;
@@ -3216,7 +3480,7 @@ const weeklyDone=w=>lessons.filter(l=>l.week===w&&isDone(l.order)).length;
 const progress=()=>Math.round(completed().size/48*100);
 const nextLesson=()=>lessons.find(l=>!isDone(l.order))||lessons[47];
 const resumeLesson=()=>Number.isInteger(state.lastOpened)&&state.lastOpened>=1&&state.lastOpened<=48&&(state.visited||[]).includes(state.lastOpened)?getLesson(state.lastOpened):null;
-const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/cards','cards','بطاقات المراجعة'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
+const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
 function sidebar(){const path=route();return `<aside class="sidebar ${mobileOpen?'open':''}" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">مساحتك التعليمية</div><nav class="nav">${navData.map(([href,ic,t])=>`<a href="#${href}" class="${path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':''}">${icon(ic)}<span>${t}</span>${href==='/weeks'?'<span class="tag">16</span>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>مشوارك إلى الثقة</small><br><strong>${progress()}%</strong></div><div style="font-size:30px;color:#9eb5c8">${icon('road')}</div></div><div class="line"><i style="width:${progress()}%"></i></div><small>${completed().size} من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>`}
 function topbar(title){return `<header class="topbar"><div class="top-actions"><button type="button" class="chip menu-btn" data-action="menu" aria-label="فتح القائمة">${icon('menu')}</button><div class="crumb">لوحة التعلم <span style="padding:0 6px;color:#a8b5bd">/</span> <strong>${ESC(title)}</strong></div></div><div class="top-actions"><span class="chip">${icon('clock')} <span>30–45 دقيقة للجلسة</span></span><span class="chip red">${icon('road')} أكورد · سنة الطراز غير محددة</span></div></header>`}
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
@@ -3250,8 +3514,23 @@ function weeksGrid(){const q=filterText.trim();const matched=weeks.filter(w=>{co
 function weekPage(n){const w=weeks[n-1];if(!w)return notFound();return `<div class="crumbs"><a href="#/weeks">الخطة الدراسية</a> / الأسبوع ${n}</div><div class="week-hero"><div><span class="eyebrow" style="color:#bbd0dc">WEEK ${p2(n)}</span><h1>${ESC(w.title)}</h1><p>خطة الأسبوع: السبت والثلاثاء والخميس للدروس، والجمعة للمراجعة. الترتيب مقترح وقابل للتغيير.</p></div><span class="rounded-num" style="background:#405969;color:white;border-color:#547082">${weeklyDone(n)} / 3 مكتمل</span></div><div class="section-head"><div><h2>دروس هذا الأسبوع</h2><p>اضغطي أي درس لبدء القراءة والحل وحفظ التقدم.</p></div></div><div class="card">${lessons.filter(l=>l.week===n).map(l=>`<a href="#/lesson/${l.order}" class="lesson-row ${isDone(l.order)?'done':''}"><span class="lesson-no">${isDone(l.order)?icon('check'):p2(l.order)}</span><span class="lesson-info"><b>${ESC(l.title)}</b><small>الهدف: ${ESC(l.study_content.goal)}</small></span><span class="lesson-arrow">${icon('left')}</span></a>`).join('')}</div><div class="section-head"><div><h2>مراجعة الأسبوع</h2><p>ثلاثة أسئلة قصيرة مخصصة لهذه المجموعة.</p></div></div><section class="callout"><h3>تأكدي إن المعلومات ثبتت</h3><p>راجعي المواقف بدل الحفظ السريع. النتيجة خاصة بالتدريب وليست درجة نجاح رسمية.</p><button type="button" class="btn btn-primary" data-action="start-quiz" data-week="${n}">اختبار الأسبوع ${icon('arrow')}</button></section>${footerNote()}`}
 function sourcesBlock(l){let arr=(l.source_ids_suggested||[]).map(s=>sourceById[s]).filter(Boolean);return arr.map(s=>`<a href="${ESC(s.url)}" class="source-link" target="_blank" rel="noopener noreferrer">↗ ${ESC(s.name)}</a>`).join('')+`<p style="font-size:10px;margin-top:8px">المراجع للاستزادة والتدقيق، وليست إثباتًا لاعتماد كل عبارة في الملخص.</p>`}
 function mediaBlock(l){const items=(COURSE.media_resources||[]).filter(m=>(m.lesson_ids||[]).includes(l.id));return `<section class="aside-card"><h3>مقاطع ومواد مرئية</h3>${items.length?items.map(m=>`<p><a href="${ESC(m.url)}" target="_blank" rel="noopener noreferrer" class="source-link">${icon('play')} ${ESC(m.title)} ↗</a><small class="note-preview">صفحة خارجية من ${ESC(m.provider)}. المقاطع غير مضمّنة هنا ولم يُراجع تشغيل كل مقطع.</small></p>`).join(''):'<p class="note-preview">لا يوجد فيديو مرتبط بهذا الدرس بعد.</p>'}</section>`}
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section><section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section><section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section>${mediaBlock(l)}<section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
+function visualBlock(l){
+ const items=(COURSE.learning_visuals||[]).filter(v=>(v.lesson_ids||[]).includes(l.id));
+ if(!items.length)return '';
+ return '<div id="visual-learning">'+items.map(v=>{
+   const k=Math.min((v.steps||[]).length-1,Math.max(0,Number(visualStages[v.id])||0));
+   const stage=v.steps[k];
+   const diagram=window.MasarVisuals?window.MasarVisuals.render(v,k):'<p>تعذر تحميل الرسم، يمكنك قراءة الشرح النصي.</p>';
+   return '<section class="visual-card" aria-label="شرح بصري تفاعلي"><div class="visual-header"><span class="bento-overline">VISUAL LEARNING / تعلّم بالموقف</span><h2>'+ESC(v.title)+'</h2><p>بدّلي بين المراحل وشوفي ما الذي يتغير في الطريق.</p></div><div class="visual-scene">'+diagram+'</div><div class="visual-steps" role="group" aria-label="مراحل '+ESC(v.title)+'">'+v.steps.map((x,i)=>'<button type="button" class="visual-step '+(k===i?'is-current':'')+'" data-action="visual-step" data-visual="'+ESC(v.id)+'" data-step="'+i+'" aria-pressed="'+(k===i?'true':'false')+'"><span>'+(i+1)+'</span>'+ESC(x.label)+'</button>').join('')+'</div><div class="visual-caption"><strong>المرحلة '+(k+1)+' من '+v.steps.length+': '+ESC(stage.label)+'</strong><p>'+ESC(stage.body)+'</p></div><p class="visual-disclaimer">رسم مفاهيمي مبسّط وغير متناسب مع أبعاد الطريق الفعلية. ليس محاكاة للقيادة أو تعليمات لتنفيذ المناورة في سيارة حقيقية.</p></section>';
+ }).join('')+'</div>';
+}
+
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section><section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${visualBlock(l)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section>${mediaBlock(l)}<section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
 function flashcardsPage(){const cards=[['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.'],['أعطِ الأفضلية','خففي السرعة وأفسحي المجال لمن له الأفضلية، وتوقفي عند الحاجة.'],['النقطة العمياء','منطقة قد لا تظهر بالكامل في المرايا، وتحتاج تحققًا مباشرًا آمنًا.'],['مسافة التوقف','مسافة رد الفعل + مسافة الفرملة.'],['الدوار','في الدوار المعتاد، الأولوية للمركبات التي تسير داخله.'],['النور العالي','يستخدم عندما تسمح الظروف دون إبهار المركبات الأخرى.'],['الخط المتقطع','قد يسمح بعبوره إذا كانت المناورة مسموحة وآمنة.'],['الركن P','وضع ناقل الحركة للركن، وليس مرادفًا لفرامل التوقف.'],['Brake Hold','مساعدة على تثبيت الفرامل وقت التوقف المؤقت، لا بدلًا عن تأمين ركن السيارة.'],['القيادة الوقائية','ألاحظ ← أتوقع ← أقرر ← أتصرف.'],['إشارة خضراء','تسمح بالحركة ضمن التنظيم دون إغلاق تقاطع مزدحم.'],['الرخصة','حجز أبشر ليس إصدارًا تلقائيًا للرخصة؛ هناك متطلبات وفحوص واختبارات.']];return `<div class="eyebrow">ACTIVE RECALL</div><h1 class="page-title">بطاقات تثبيت المعلومات</h1><p class="sub">حاولي تسترجعين المعنى من ذاكرتك أولًا، ثم اضغطي البطاقة لتظهر الإجابة. 12 بطاقة مفاهيمية سريعة.</p><div class="flashcards">${cards.map(([a,b],i)=>`<button type="button" class="flashcard ${flashFlips.has(i)?'flipped':''}" data-action="flip" data-id="${i}" aria-label="قلب بطاقة ${ESC(a)}"><span class="fc-title">${ESC(flashFlips.has(i)?b:a)}</span><span class="fc-hint">${flashFlips.has(i)?'اضغطي للعودة للسؤال':'اضغطي لإظهار الإجابة'} ${icon('reset')}</span></button>`).join('')}</div>${footerNote()}`}
+function visualLibraryPage(){
+ const scenarios=COURSE.learning_visuals||[],resources=COURSE.media_resources||[];
+ return '<div class="eyebrow">VISUAL LEARNING LIBRARY</div><h1 class="page-title">المكتبة المرئية</h1><p class="sub">رسومات أصلية تتبدل مراحلها داخل الدروس، مع روابط مصادر الفيديو الخارجية التي تمكنّا من تحديدها. الرسومات للفهم النظري وليست تدريب قيادة عمليًا.</p><div class="catalog-progress-caption"><span>رسومات تفاعلية</span><strong>'+scenarios.length+' مواضيع · '+new Set(scenarios.flatMap(v=>v.lesson_ids)).size+' دروس مرتبطة</strong></div><div class="visual-index-grid">'+scenarios.map(v=>{const first=lessons.find(l=>l.id===v.lesson_ids[0]);return '<article class="visual-index-tile"><div class="visual-index-media">'+(window.MasarVisuals?window.MasarVisuals.render(v,0):'')+'</div><div class="visual-index-text"><span class="bento-overline">موقف تفاعلي · '+v.steps.length+' مراحل</span><h2>'+ESC(v.title)+'</h2><p>'+ESC(v.steps[0].body)+'</p><a class="inline-link" href="#/lesson/'+first.order+'">افتحي التدريب في الدرس '+p2(first.order)+' '+icon('arrow')+'</a></div></article>'}).join('')+'</div><div class="section-head"><div><h2>مكتبات الفيديو الخارجية</h2><p>روابط صفحات تضم فيديوهات تعليمية، وليست ملفات فيديو مضمّنة أو مُراجَعة مشهدًا بمشهد.</p></div></div><div class="visual-resource-list">'+resources.map(m=>'<div class="ref-card"><h3>'+ESC(m.title)+'</h3><p>'+ESC(m.provider)+' · رابط مصدر خارجي</p><a href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">زيارة مصدر الفيديوهات '+icon('arrow')+'</a></div>').join('')+'</div>'+footerNote();
+}
 function sourcesPage(){return `<div class="eyebrow">REFERENCE LIBRARY</div><h1 class="page-title">المراجع والمصادر</h1><p class="sub">مراجع رسمية سعودية ومصادر تعليمية مساعدة. الروابط للإثراء والرجوع إلى النصوص الأصلية؛ اختلاف سنة الموديل أو تحديث الأنظمة قد يغير بعض التفاصيل.</p><div class="sources-disclaimer">${COURSE.sources.map(s=>`<section class="ref-card"><div class="flexline"><h3>${ESC(s.name)}</h3><span class="chip tiny">${ESC(s.category||'مرجع')}</span></div><p>${ESC(s.scope||s.notes||'مصدر للقراءة والتحقق')}</p><a href="${ESC(s.url)}" target="_blank" rel="noopener noreferrer">افتحي المصدر الرسمي / التعليمي ↗</a></section>`).join('')}</div>${footerNote()}`}
 function notesPage(){const entries=Object.keys(state.notes).map(Number).filter(n=>state.notes[n]?.trim()).sort((a,b)=>a-b);const marks=state.bookmarks.filter(n=>n>=1&&n<=48);return `<div class="eyebrow">MY NOTEBOOK</div><h1 class="page-title">دفتر مذاكرتي</h1><p class="sub">كلامك وملاحظاتك على الدروس، والموضوعات التي حفظتيها للمراجعة لاحقًا.</p><div class="section-head"><h2>دروس محفوظة (${marks.length})</h2></div><div class="card">${marks.length?marks.map(n=>`<a class="lesson-row" href="#/lesson/${n}"><span class="lesson-no">${p2(n)}</span><span class="lesson-info"><b>${ESC(getLesson(n).title)}</b><small>الأسبوع ${weekForLesson(n)}</small></span>${icon('star')}</a>`).join(''):'<div class="empty">ما حفظتِ أي درس للمراجعة. اضغطي «حفظ للمراجعة» من داخل أي درس.</div>'}</div><div class="section-head"><h2>ملاحظاتي (${entries.length})</h2></div>${entries.length?entries.map(n=>`<div class="ref-card"><div class="flexline"><h3>${ESC(getLesson(n).title)}</h3><a class="inline-link" href="#/lesson/${n}">فتح الدرس ←</a></div><p style="white-space:pre-wrap">${ESC(state.notes[n])}</p></div>`).join(''):'<div class="empty">دفترك لسه فاضي. اكتبي أول ملاحظة من داخل الدروس.</div>'}${footerNote()}`}
 function quizPage(){const options=weeks.map(w=>`<option value="${w.number}">${w.number} — ${ESC(w.title)}</option>`).join(''); const wrong=Object.entries(state.answers).filter(([id,v])=>{const q=questions.find(q=>q.id===id);return q&&q.correct_option_index!==v}).length;return `<div class="eyebrow">KNOWLEDGE CHECK</div><h1 class="page-title">مركز الاختبارات</h1><p class="sub">اختاري أسبوعًا لتختبري ثلاثة مفاهيم، أو خوضي اختبارًا شاملًا من 12 سؤالًا متنوعة من المنهج. جميع الدرجات للتدريب الشخصي فقط.</p><div class="quiz-controls"><button class="btn btn-primary" type="button" data-action="start-quiz" data-week="all">اختبار شامل · 12 سؤالًا ${icon('arrow')}</button><button class="btn btn-muted" type="button" data-action="start-quiz" data-week="wrong" ${wrong===0?'disabled':''}>راجعي الأخطاء (${wrong})</button><select class="select" id="choose-week" aria-label="اختيار أسبوع للاختبار"><option value="">اختبار أسبوع معين...</option>${options}</select></div><div id="quiz-stage">${renderQuizStage()}</div><div class="section-head"><div><h2>مراجعة الأسئلة على مستوى الدروس</h2><p>كل درس يحتوي سؤالًا خاصًا به وتفسيرًا بعد الإجابة.</p></div><a href="#/weeks">خطة الدروس ←</a></div>${footerNote()}`}
@@ -3260,7 +3539,7 @@ if(session.index>=session.ids.length){const score=session.ids.filter(id=>session
 const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا قصيرًا، بصياغات تعليمية أولية تحتاج تدقيقًا قبل النشر العام.</div><div class="point"><i>2</i>48 سؤالًا تدريبيًا مع تفسير، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>البيانات منظمة داخل IndexedDB (دروس، أسئلة، ملاحظات، تقدم، اختبارات). لا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
-function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
+function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
 function timerHTML(){return `<div class="floating-timer" aria-label="مؤقت مذاكرة"><span style="font-size:11px;color:var(--steel);font-weight:850">${icon('clock')}</span><b id="timer-text">${p2(Math.floor(timer.seconds/60))}:${p2(timer.seconds%60)}</b><button type="button" data-action="timer-toggle" aria-label="${timer.active?'إيقاف المؤقت':'بدء المؤقت'}">${icon(timer.active?'pause':'play')}</button><button type="button" data-action="timer-reset" aria-label="إعادة ضبط المؤقت">${icon('reset')}</button></div>`}
 function render(keepScroll=false){const [title,content]=resolvePage();APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${content}</div></main>${timerHTML()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
@@ -3274,6 +3553,7 @@ if(!pool.length){toast('ما عندك أسئلة في هذه المجموعة ا
 function recordTest(){if(!session||session.saved)return;const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;state.history.push({label:session.label,score,total:session.ids.length,date:new Date().toLocaleDateString('ar-SA')});state.history=state.history.slice(-30);session.saved=true;save()}
 function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;const action=el.dataset.action,n=Number(el.dataset.id);
  if(action==='persist-storage'){if(!navigator.storage?.persist){toast('المتصفح لا يدعم طلب تثبيت التخزين؛ احفظي نسخة احتياطية');return}navigator.storage.persist().then(granted=>toast(granted?'المتصفح وافق على التخزين المستمر في هذا الجهاز':'المتصفح لم يمنح ضمانًا ضد الحذف التلقائي')).catch(()=>toast('لم نتمكن من طلب التخزين المستمر'));return}
+ if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
  if(action==='filter-weeks'){catalogFilter=el.dataset.filter||'all';render(true);return}
  if(action==='menu'){mobileOpen=!mobileOpen;render(true);return}
  if(action==='scroll'){document.getElementById(el.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});return}

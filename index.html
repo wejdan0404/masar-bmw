@@ -287,12 +287,84 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 @media(max-width:720px){.ts-header{padding:22px;align-items:flex-start;flex-direction:column}.ts-header-counter{display:flex;align-items:center;gap:9px;width:100%;justify-content:space-between}.ts-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ts-card{padding:14px 7px;min-height:213px}.ts-art{min-height:122px}.ts-sign-svg{width:113px}.ts-detail-grid{grid-template-columns:1fr}.ts-detail{padding:16px}.ts-icon-panel{min-height:210px}.ts-detail h2{font-size:23px}.ts-exam{padding:15px}.ts-exam-top{flex-wrap:wrap}}
 @media(max-width:380px){.ts-grid{grid-template-columns:1fr 1fr}.ts-card strong{font-size:12px}.ts-toolbar button{font-size:11px;padding:7px 9px}.ts-sign-svg{width:104px}}
 @media(prefers-reduced-motion:reduce){.ts-card,.ts-toolbar button{transition:none}.ts-card:hover{transform:none}}
+
+
+/* Masar Study Coach: lesson prompts, long-term recall and non-official timed simulations */
+.coach-overline{color:#800C1F;font-size:11px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.coach-activity{margin:24px 0;padding:23px;border-radius:19px;border:1px solid #d3e0e7;background:linear-gradient(145deg,#fff,#f0f5f8)}
+.coach-activity-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:7px 0}
+.coach-activity h2{margin:0;font-size:21px;color:#202D36}
+.coach-state{color:#6c5160;background:#f4e8ec;border:1px solid #e9d3db;border-radius:40px;padding:6px 12px;font-size:11px;font-weight:750}
+.coach-state.done{color:#2d755f;background:#e5f6ee;border-color:#b5dec9}
+.coach-activity-intro{font-size:12px;color:#59717f;line-height:1.9;margin:6px 0 14px}
+.coach-prompts{display:grid;gap:10px}
+.coach-prompts>div{background:#fff;padding:14px 17px;border:1px solid #e1e9ed;border-radius:12px}
+.coach-prompts span{font-size:11px;font-weight:900;color:#800C1F}
+.coach-prompts p{margin:5px 0 0;font-size:13px;line-height:1.9;color:#324c5b}
+.coach-notes{display:block;font-size:13px;font-weight:750;color:#304855;margin-top:17px}
+.coach-notes textarea{width:100%;resize:vertical;min-height:103px;border:1px solid #cbdbe3;border-radius:12px;background:white;padding:13px 15px;line-height:1.9;margin-top:8px;color:#243943}
+.coach-notes textarea:focus-visible{outline:3px solid #7598B9;outline-offset:2px}
+.coach-check{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:12px;color:#324c5b;margin:15px 0 0;line-height:1.8}
+.coach-check input{flex-shrink:0;width:19px;height:19px;accent-color:#800C1F;margin-top:2px}
+.coach-disclaimer{font-size:11px!important;color:#6b818e!important;line-height:1.8!important;margin-top:13px!important}
+.coach-page{margin-inline:auto;max-width:1070px}
+.coach-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:24px 0}
+.coach-summary article{border-radius:17px;border:1px solid #dae5ea;padding:22px 20px;background:#fff;display:flex;flex-direction:column;gap:4px}
+.coach-summary strong{font-size:30px;color:#202D36;font-variant-numeric:tabular-nums}
+.coach-summary span{color:#607989;font-size:12px}
+.coach-section-top{display:flex;gap:15px;align-items:center;justify-content:space-between;margin:28px 0 14px}
+.coach-section-top h2,.coach-section-heading{font-size:20px;color:#202D36;margin:0}
+.coach-section-top>span{font-size:11px;color:#607887}
+.coach-review-list{display:grid;gap:9px}
+.coach-review-item{display:flex;gap:13px;align-items:center;background:#fff;border:1px solid #dfe8ec;border-radius:13px;padding:13px 16px;text-decoration:none}
+.coach-review-item:hover{border-color:#95b4c7}
+.coach-review-symbol{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:#f5e9ec;color:#800C1F;font-weight:900;display:grid;place-items:center}
+.coach-review-item>span:nth-child(2){flex:1;min-width:0}
+.coach-review-item strong{font-size:13px;font-weight:750;line-height:1.7;display:block;color:#273f4f}
+.coach-review-item small{font-size:11px;color:#647e8d;display:block}
+.coach-review-arrow{font-size:19px;color:#800C1F}
+.coach-guidance,.coach-mock-intro{margin:23px 0;background:#202D36;color:#fff;padding:24px;border-radius:17px}
+.coach-guidance>strong{font-size:17px}
+.coach-guidance p,.coach-mock-intro p{font-size:12px;color:#d4e4ec;line-height:1.9}
+.coach-guidance .btn,.coach-mock-intro .btn{display:inline-flex;margin-top:12px;font-size:12px}
+.coach-empty{padding:25px;border:1px dashed #c6d7e2;border-radius:12px;background:white;color:#627687;font-size:13px;line-height:1.9}
+.coach-mock-intro h2{color:#fff;font-size:21px}
+.coach-mock-top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin:21px 0}
+.coach-mock-top strong,.coach-mock-top small{display:block}.coach-mock-top strong{font-size:15px}.coach-mock-top small{color:#627887;font-size:12px}
+.coach-clock{font-size:26px;font-weight:850;font-variant-numeric:tabular-nums;letter-spacing:.04em;border:1px solid #d6e4eb;background:#fff;color:#800C1F;padding:8px 18px;border-radius:13px}
+.coach-mock-progress{height:8px;border-radius:20px;background:#e2eaf0;overflow:hidden;margin-bottom:15px}
+.coach-mock-progress span{display:block;height:100%;background:#800C1F;transition:width .2s}
+.coach-mock-question{border:1px solid #dbe7ed;border-radius:18px;background:#fff;padding:23px}
+.coach-mock-question h2{font-size:21px;line-height:1.7;color:#202D36;margin:3px 0 20px}
+.coach-mock-options{display:grid;gap:10px}
+.coach-mock-options button{width:100%;text-align:right;padding:14px 16px;border-radius:12px;border:1px solid #d5e2e9;color:#334d5d;font-size:14px;background:#fff;line-height:1.8}
+.coach-mock-options button:hover{background:#f5f8fa;border-color:#799db7}
+.coach-mock-options button.active{background:#edf3f6;border:2px solid #800C1F;font-weight:750}
+.coach-mock-nav{display:flex;gap:10px;justify-content:space-between;margin:18px 0}
+.coach-mock-tiles{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}
+.coach-mock-tiles button{min-width:36px;min-height:35px;border:1px solid #d6e4eb;border-radius:9px;background:#f7fafb;color:#476176;font-weight:750;font-size:12px}
+.coach-mock-tiles button.done{background:#e1f0eb;color:#287453;border-color:#b9daca}
+.coach-mock-tiles button.selected{outline:2px solid #800C1F;outline-offset:1px}
+.coach-mock-question>.btn{margin-top:17px}
+.coach-mock-result{padding:27px;border-radius:19px;background:linear-gradient(120deg,#202D36,#4b6981);color:#fff;text-align:center;margin:20px 0 27px}
+.coach-mock-result>strong{font-size:65px;font-variant-numeric:tabular-nums;line-height:1.3}.coach-mock-result>strong small{font-size:22px;color:#d0e2eb}
+.coach-mock-result h2{color:#fff;font-size:22px}.coach-mock-result p{font-size:12px;line-height:1.9;color:#dbe8f0}
+.coach-mock-result .btn{margin-top:13px}
+.coach-mock-mistake{background:#fff;border:1px solid #dce7eb;border-radius:12px;padding:16px 19px}
+.coach-mock-mistake strong{display:block;color:#202D36;font-size:13px;line-height:1.8}
+.coach-mock-mistake p{color:#24735c;font-size:13px}.coach-mock-mistake small{display:block;color:#647b8b;line-height:1.8}
+.coach-mock-mistake a{color:#800C1F;font-size:12px;font-weight:750;display:inline-block;margin-top:10px}
+.coach-mock-history{margin-top:24px}.coach-mock-history h2{font-size:18px;margin-bottom:13px}
+.coach-mock-history>div{display:flex;justify-content:space-between;background:#fff;border-bottom:1px solid #e2e9ee;padding:13px 16px;font-size:12px}
+.coach-page button:focus-visible,.coach-review-item:focus-visible{outline:3px solid #7598B9;outline-offset:2px}
+@media(max-width:760px){.coach-summary{grid-template-columns:1fr 1fr}.coach-summary article:last-child{grid-column:1/-1}.coach-summary article{padding:16px}.coach-summary strong{font-size:24px}.coach-section-top{flex-direction:column;align-items:flex-start;gap:5px}.coach-mock-question{padding:15px}.coach-mock-question h2{font-size:18px}.coach-activity{padding:16px}}
+@media(prefers-reduced-motion:reduce){.coach-mock-progress span{transition:none}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="course-data">{
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -4501,7 +4573,8 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     ],
     "notes": "كل المراجع محصورة كفهرس لا نسخ ملفات. نصوص الاختبار الجديد أصلية تعليمية وليست أسئلة اختبار مسربة أو رسمية.",
     "lesson_index_coverage": 48,
-    "reference_link_type": "PDF page references in personal files; NOT 48 line-by-line certified lessons"
+    "reference_link_type": "PDF page references in personal files; NOT 48 line-by-line certified lessons",
+    "activities": "48 unique guided exercises original, self-reflection only; not driving skills certification"
   },
   "community_pages": {
     "id": "EXT-SAUDIO-NAZAWI",
@@ -6617,7 +6690,633 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     "status": "مسودة تعليمية — ليست قاعدة شاملة أو معرضًا حكوميًا معتمدًا",
     "category_source": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
     "coverage_notes": "24 بطاقة أولية، ولا تشمل جميع الإرشادية ومناطق العمل والمؤقتة. مطابقة الرموز الرسومية للرسومات الرسمية لم تكتمل."
-  }
+  },
+  "lesson_activities": [
+    {
+      "id": "ACT-001",
+      "lesson_id": "LES-001",
+      "title": "أدوات السيارة",
+      "observation": "على سيارة مطفأة، عدّدي أدوات التحكم في الحركة وأدوات الراحة دون لمس دواسات أو تشغيل المحرك.",
+      "reasoning": "ليش لازم نعرف سنة وفئة الأكورد قبل حفظ أماكن بعض الأزرار؟",
+      "verification": "ارجعي لدليل السيارة الحقيقي وحددي مكان الفرامل وناقل الحركة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-SHARD"
+    },
+    {
+      "id": "ACT-002",
+      "lesson_id": "LES-002",
+      "title": "التهيئة والسلامة",
+      "observation": "رتّبي فحص المقعد والمرايا والحزام والأبواب قبل التحرك.",
+      "reasoning": "لو كنتِ بعيدة عن دواسة الفرامل، وش التعديل الأول؟",
+      "verification": "اشرحي لنفسك كيف يؤثر الجلوس على الرؤية والتحكم.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-003",
+      "lesson_id": "LES-003",
+      "title": "لوحة القيادة",
+      "observation": "قارني بين رمز يضيء عند بدء التشغيل ثم يختفي، ورمز تحذير يبقى أثناء القيادة.",
+      "reasoning": "وش أول تصرف عند بقاء رمز الفرامل أو الزيت مضيئًا؟",
+      "verification": "لا تعتمدي صورة رمز من موديل مختلف؛ راجعي دليل سيارتك.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-004",
+      "lesson_id": "LES-004",
+      "title": "أجزاء الطريق",
+      "observation": "حددي في رسم طريق: الممشى، الكتف، المسار، وحافة الطريق.",
+      "reasoning": "هل يصبح الكتف مسار تجاوز بسبب الازدحام؟ ولماذا؟",
+      "verification": "اذكري الفرق بين وجود مساحة واسعة وبين السماح النظامي باستخدامها.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-005",
+      "lesson_id": "LES-005",
+      "title": "المسارات",
+      "observation": "في طريق بثلاث حارات بالاتجاه نفسه، ميّزي عدد المسارات وعدد الاتجاهات.",
+      "reasoning": "وش تفحصين قبل انتقالك من حارة إلى مجاورتها؟",
+      "verification": "اعملي رسم سهم الأرضية الذي يجيز حركة معينة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-006",
+      "lesson_id": "LES-006",
+      "title": "مستخدمو الطريق",
+      "observation": "سيارة متوقفة قرب معبر، وطفل غير ظاهر بالكامل خلفها: ما الخطر المخفي؟",
+      "reasoning": "كيف تغيّرين انتباهك وسرعتك بصورة آمنة قبل المعبر؟",
+      "verification": "اذكري مشاة ودراجات ومركبات كبيرة وكيف تختلف المخاطر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-007",
+      "lesson_id": "LES-007",
+      "title": "إشارات التحذير",
+      "observation": "اختاري ثلاث لوحات تحذير واكتبي ماذا تتوقعين بعدها على الطريق.",
+      "reasoning": "كيف يختلف التحذير عن الأمر بالتوقف؟",
+      "verification": "افتحي مكتبة الإشارات وميزي نوع اللوحة قبل اسمها.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-008",
+      "lesson_id": "LES-008",
+      "title": "الإشارات التنظيمية",
+      "observation": "قارني قف مع ممنوع الدخول مع حد السرعة.",
+      "reasoning": "لماذا لا يجوز تجاوز قف حتى لو تقاطع الطريق فارغ؟",
+      "verification": "حددي التصرف المطلوب عند كل لوحة بدل حفظ اسمها فقط.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-009",
+      "lesson_id": "LES-009",
+      "title": "الإشارات الإرشادية والمؤقتة",
+      "observation": "هناك أعمال طريق ولوحة تحويلة مؤقتة على مسارك المعتاد: ما الذي يتغيّر؟",
+      "reasoning": "كيف تستجيبين دون قطع مسارات فجأة؟",
+      "verification": "اكتبي مثالًا للفرق بين إرشاد الوجهة وتنظيم حركة المرور.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-010",
+      "lesson_id": "LES-010",
+      "title": "الإشارات الضوئية",
+      "observation": "إشارتك خضراء لكن المخرج المقابل مزدحم: هل تعبرين؟",
+      "reasoning": "ما الخطر لو توقفتي في منتصف التقاطع؟",
+      "verification": "اربطِي الضوء بإتاحة مسار خروج آمن.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-011",
+      "lesson_id": "LES-011",
+      "title": "التقاطعات والأولوية",
+      "observation": "طريق فرعي يصل لطريق رئيسي مشغول: من ترقبين قبل الدخول؟",
+      "reasoning": "كيف يغيّر وجود رجل مرور أو إشارة ضوئية قرارك؟",
+      "verification": "لا تطبقي قاعدة القادم من اليمين على كل تقاطع.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-012",
+      "lesson_id": "LES-012",
+      "title": "معابر المشاة ومراجعة الشهر",
+      "observation": "أنتِ تنعطفين ومشاة يعبرون عند اتجاه الدخول: حددي نقطة الخطر.",
+      "reasoning": "كيف تتصرفين إذا كان المعبر مشغولًا؟",
+      "verification": "راجعي معنى الأولوية وسلوك الطريق دون افتراض سرعة ثابتة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-013",
+      "lesson_id": "LES-013",
+      "title": "أجزاء الطريق والمسارات",
+      "observation": "ارسمي شارعًا بمسارين ورصيف وكتف طريق.",
+      "reasoning": "أين يمنع تعاملك مع الطريق كمساحة تجاوز؟",
+      "verification": "قارني هذا الدرس بالدرس الرابع واكتبي ما اختلف.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-014",
+      "lesson_id": "LES-014",
+      "title": "الخطوط المتصلة والمتقطعة",
+      "observation": "خط متقطع يفصل مسارين ومركبة قريبة في المجاور: هل تكفي إباحة عبور الخط؟",
+      "reasoning": "اذكري ما الذي تفحصينه قبل الانتقال.",
+      "verification": "قارني المتصل والمتقطع والمزدوج وفق موقعه وتنظيم الطريق.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-015",
+      "lesson_id": "LES-015",
+      "title": "اختيار المسار",
+      "observation": "مسارك للأمام فقط وتريدين اليمين بعد أمتار: ما الخيار الآمن؟",
+      "reasoning": "ما خطأ التحويل المتأخر من مسار غير مخصص؟",
+      "verification": "اعملي خطة بديلة لو فاتك المخرج.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-016",
+      "lesson_id": "LES-016",
+      "title": "قف وأعط الأفضلية",
+      "observation": "عرّفي الفرق بين قف وأعط الأفضلية في موقفين.",
+      "reasoning": "هل تتطلب علامة أعط الأفضلية الوقوف الكامل دائمًا؟",
+      "verification": "عللي الإجابة بإشارات الطريق وحركة الآخرين.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-017",
+      "lesson_id": "LES-017",
+      "title": "الإشارات الضوئية",
+      "observation": "عندك سهم منع الانعطاف يمينًا مع الضوء الأحمر: ما الذي يحكم قرارك؟",
+      "reasoning": "كيف تتصرفين عند الضوء الأخضر مع تقاطع مسدود؟",
+      "verification": "لا تحوّلي استثناء الانعطاف عند الأحمر إلى إذن عام.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": true,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-018",
+      "lesson_id": "LES-018",
+      "title": "أولوية التقاطعات",
+      "observation": "تقاطع طرق متساوية غير منظم، ومركبتان تصلان تقريبًا معًا: وش تحتاجين تعرفين؟",
+      "reasoning": "متى تنفع قاعدة القادم من اليمين، ومتى لا تكفي؟",
+      "verification": "دوّني أي غموض بدل التخمين.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-019",
+      "lesson_id": "LES-019",
+      "title": "أولوية الدخول إلى الدوار",
+      "observation": "سيارة تتحرك داخل الدوار باتجاه مدخلك: حددي لحظة انتظارك.",
+      "reasoning": "متى يمكن دخول الدوار دون توقف كامل؟",
+      "verification": "اقرئي تنظيم الأولوية الفعلي قبل تطبيق القاعدة العامة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-020",
+      "lesson_id": "LES-020",
+      "title": "اختيار مسار الدوار والمخرج الصحيح",
+      "observation": "أنتِ داخل دوار لكن المسار الحالي لا يخدم مخرجك: ماذا تتجنبين؟",
+      "reasoning": "ما البديل عن قطع عدة مسارات فجأة؟",
+      "verification": "راقبي المشاة عند المخرج.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-021",
+      "lesson_id": "LES-021",
+      "title": "أولوية المشاة",
+      "observation": "سيارة تخرج من دوار ومعبر مشاة قريب: ما الذي يجب مراقبته؟",
+      "reasoning": "كيف تُعطي المشاة حقهم دون توقف خطِر مفاجئ؟",
+      "verification": "ارسمي نقطة توقف آمنة قبل المعبر حسب التخطيط.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-022",
+      "lesson_id": "LES-022",
+      "title": "تغيير المسار والنقطة العمياء",
+      "observation": "تريدين تغيير المسار وهناك سيارة بمحاذاتك: ماذا تظهر المرايا وما الذي لا تظهره؟",
+      "reasoning": "هل الغماز يمنحك الأولوية؟",
+      "verification": "اكتبي تسلسل فحص المرايا والنقطة العمياء والفجوة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-023",
+      "lesson_id": "LES-023",
+      "title": "التجاوز من اليسار أو اليمين",
+      "observation": "منحنى يحجب الرؤية أمام سيارة بطيئة: هل تبادرين بالتجاوز؟",
+      "reasoning": "كيف تختلف الرغبة في التجاوز عن السماح والأمان؟",
+      "verification": "اختاري بديلًا آمنًا إن تعذّر التجاوز.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-024",
+      "lesson_id": "LES-024",
+      "title": "متى يكون التجاوز محظورًا؟",
+      "observation": "أمامك معبر مشاة وخط منع تجاوز: حددي سبب عدم تنفيذ المناورة.",
+      "reasoning": "وش تتوقعين لو سيارتك الخلفية بدأت التجاوز أيضًا؟",
+      "verification": "راجعي اللوحات والخطوط ومواقع منع التجاوز.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-025",
+      "lesson_id": "LES-025",
+      "title": "السرعة المناسبة",
+      "observation": "لوحة 80 مع ضباب كثيف: هل يلزم السير بسرعة 80؟",
+      "reasoning": "كيف تختارين سرعة تناسب الرؤية؟",
+      "verification": "اكتبي الفرق بين الحد الأقصى والسرعة الآمنة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-026",
+      "lesson_id": "LES-026",
+      "title": "مسافة التوقف",
+      "observation": "فرّقي بين مسافة رد الفعل ومسافة الفرملة والتوقف الكلي.",
+      "reasoning": "ليش قد تتضاعف مسافة الكبح مع زيادة السرعة؟",
+      "verification": "لا تعتمدي رقمًا محسوبًا كناتج دقيق لسيارة حقيقية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-027",
+      "lesson_id": "LES-027",
+      "title": "مسافة الأمان وقاعدة الثانيتين",
+      "observation": "السيارة الأمامية تعبر علامة ثابتة ثم تمرين بعدها: كيف تقيسين الفاصل الزمني؟",
+      "reasoning": "ما الذي تغيّرينه عند بداية المطر؟",
+      "verification": "اشرحِي الفرق بين مسافة التتابع ومسافة التوقف.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-028",
+      "lesson_id": "LES-028",
+      "title": "القيادة الوقائية واكتشاف الأخطار",
+      "observation": "كرة تظهر من خلف سيارة متوقفة قرب حديقة: ما الخطر المحتمل؟",
+      "reasoning": "كيف تتحولين من ملاحظة الخطر إلى خطة تصرف آمنة؟",
+      "verification": "دوّني علامتين تشيران إلى خطر غير ظاهر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-029",
+      "lesson_id": "LES-029",
+      "title": "عادات القيادة الخطرة",
+      "observation": "سائق خلفك ملتصق جدًا: كيف تتجنبين رد فعل عدائي؟",
+      "reasoning": "ما أثر النعاس والهاتف على إدراك الخطر؟",
+      "verification": "اقترحي تصرفًا وقائيًا لا يعرّض الآخرين للخطر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-030",
+      "lesson_id": "LES-030",
+      "title": "اختبارات اكتشاف الأخطار بالفيديو",
+      "observation": "شاهدي مشهدًا تعليميًا وتوقفي قبل ظهور الخطر: وش تتوقعين؟",
+      "reasoning": "ليش نجاح اختبار إدراك خطر لا يساوي إتقان القيادة؟",
+      "verification": "دوّني ثلاثة مؤشرات تنبأتِ منها بالخطر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-031",
+      "lesson_id": "LES-031",
+      "title": "أنواع المواقف",
+      "observation": "قارني موقفًا عموديًا ومائلًا وموازيًا مع خطوط التحديد.",
+      "reasoning": "أي موقف تختارين للتدرب الأول ولماذا؟",
+      "verification": "انتبهي لأن السماح بالوقوف يسبق تعلم المناورة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-032",
+      "lesson_id": "LES-032",
+      "title": "الرجوع للخلف",
+      "observation": "الكاميرا الخلفية تظهر أرضًا خالية: ما المناطق التي لا تضمن تغطيتها؟",
+      "reasoning": "متى يجب إيقاف الرجوع فورًا؟",
+      "verification": "اشرحي دور المرايا والنظر المباشر جنبًا إلى جنب.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-033",
+      "lesson_id": "LES-033",
+      "title": "الخروج من الموقف بالرجوع للخلف",
+      "observation": "عند الرجوع للخلف، مقدمة السيارة تقترب من سيارة مجاورة: ما المشكلة؟",
+      "reasoning": "كيف تتصرفين قبل أن تتقلص المسافة أكثر؟",
+      "verification": "افصلي بين اتجاه المؤخرة وتأرجح المقدمة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-034",
+      "lesson_id": "LES-034",
+      "title": "الركن الموازي",
+      "observation": "فيديو أجنبي للركن الموازي على يسار الشارع: ما الذي لا تنقلينه حرفيًا؟",
+      "reasoning": "كيف تختلف المرجعيات باختلاف اتجاه السير وأبعاد السيارة؟",
+      "verification": "اكتبي الخطوات المفاهيمية فقط لا عدد لفات المقود.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-035",
+      "lesson_id": "LES-035",
+      "title": "مناورات X وT وY",
+      "observation": "صديقتك تقول إن كل مدارس المملكة تختبر X وT وY بالطريقة نفسها: كيف تتحققين؟",
+      "reasoning": "ما المشترك الآمن بين هذه المناورات؟",
+      "verification": "حددي تعليمات المدرسة ومركبة التدريب كمرجع للتطبيق.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-JEDDAH"
+    },
+    {
+      "id": "ACT-036",
+      "lesson_id": "LES-036",
+      "title": "المرتفعات وفرامل التوقف",
+      "observation": "سيارة أوتوماتيكية ستتركينها على منحدر: ما الذي يعنيه وضع P وما دور فرامل التوقف؟",
+      "reasoning": "هل Brake Hold يحل محل تأمين السيارة عند تركها؟",
+      "verification": "راجعي دليل سيارتك قبل تطبيق خطوات الركن.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-JEDDAH"
+    },
+    {
+      "id": "ACT-037",
+      "lesson_id": "LES-037",
+      "title": "المطر والتماسك ومسافة الأمان",
+      "observation": "أمامك ماء متجمع لا تعرفين عمقه: لماذا لا تفترضين إمكانية العبور؟",
+      "reasoning": "كيف تضبطين السرعة ومسافة الأمان قبل الخطر؟",
+      "verification": "فرّقي بين فقد التماسك العادي والانزلاق المائي.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-038",
+      "lesson_id": "LES-038",
+      "title": "الغبار والضباب",
+      "observation": "ضباب كثيف والنور العالي ينعكس في وجهك: ماذا تلاحظين؟",
+      "reasoning": "متى يصبح تأجيل الرحلة أفضل من الاستمرار؟",
+      "verification": "اكتبي لماذا الفلشر ليس بديلًا عن الأنوار الصحيحة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-039",
+      "lesson_id": "LES-039",
+      "title": "القيادة الليلية وأنواع الأنوار",
+      "observation": "قابَلَتك مركبة ليلًا بطريق غير مضاء: ماذا تفعلين بالنور العالي؟",
+      "reasoning": "ما الفرق بين أنوار الموضع وأنوار السير؟",
+      "verification": "ارجعي لدليل سيارتك لمعرفة مفاتيح الإضاءة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-040",
+      "lesson_id": "LES-040",
+      "title": "تعطل السيارة على الطريق",
+      "observation": "تعطلت سيارة قرب طريق سريع والخروج غير آمن: حددي أول خطر.",
+      "reasoning": "هل يجب النزول لوضع مثلث تحذيري مهما كانت الظروف؟",
+      "verification": "رتبي خيارات السلامة وطلب المساعدة حسب الموقف.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-041",
+      "lesson_id": "LES-041",
+      "title": "لمبات التحذير في هوندا",
+      "observation": "ظهر تحذير ضغط الزيت أثناء القيادة: لماذا لا يكفي تجاهله؟",
+      "reasoning": "ما الخطأ في فتح غطاء مبرد ساخن عند ارتفاع الحرارة؟",
+      "verification": "راجعي رموز الزيت والحرارة والفرامل في دليل السيارة الفعلي.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-042",
+      "lesson_id": "LES-042",
+      "title": "الحوادث وأرقام الطوارئ",
+      "observation": "حادث فيه مصاب: وش المعلومات الأساسية التي تحتاجين تقديمها للجهة المختصة؟",
+      "reasoning": "لماذا تختلف إجراءات الحادث المصحوب بإصابات عن حادث أضرار مادية؟",
+      "verification": "تأكدي من الأرقام والجهات الرسمية حسب منطقتك الحالية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": true,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-043",
+      "lesson_id": "LES-043",
+      "title": "مراجعة الإشارات والخطوط",
+      "observation": "صنّفي أربع علامات بين تحذيرية وتنظيمية وخط أرضي.",
+      "reasoning": "ما الفرق بين السماح بعبور خط متقطع وبين سلامة الحركة؟",
+      "verification": "راجعي لوحة قف وسهم المسار بدقة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-044",
+      "lesson_id": "LES-044",
+      "title": "الأولوية والتقاطعات والدوارات",
+      "observation": "عند مخرج دوار مشاة يعبرون: من يجب الانتباه له؟",
+      "reasoning": "كيف تعالجين أولوية الدوار وأولوية المشاة ضمن موقف واحد؟",
+      "verification": "قارني هذا الموقف بدخول تقاطع من طريق فرعي.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-045",
+      "lesson_id": "LES-045",
+      "title": "السرعة والمخاطر والطوارئ",
+      "observation": "سرعة 60 ومسافة قصيرة مع انشغال بالهاتف: كم خطر موجود؟",
+      "reasoning": "كيف تختلف مسافة الاستجابة عند التشتت؟",
+      "verification": "دوّني أول ثلاثة تعديلات تجعل الموقف أكثر أمانًا.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-046",
+      "lesson_id": "LES-046",
+      "title": "إجراءات إصدار الرخصة",
+      "observation": "لديك موعد تدريب على أبشر: وش المستندات والمتطلبات التي يجب التأكد منها؟",
+      "reasoning": "ليش ما يصح الاعتماد على رسم أو رسوم تدريب قديمة؟",
+      "verification": "افتحي خدمة أبشر ومدرستك للتأكد من المتطلبات الحالية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": true,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-047",
+      "lesson_id": "LES-047",
+      "title": "برامج التدريب والاختبارات",
+      "observation": "متدربة تبدأ من الصفر وأخرى لديها خبرة: هل يُفترض أنهما تتلقيان البرنامج نفسه؟",
+      "reasoning": "من أين تحصلين على عدد الساعات والرسوم الصحيح؟",
+      "verification": "لا تعتمدي أرقام التجميعات غير المثبتة كسياسة رسمية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-SHARD"
+    },
+    {
+      "id": "ACT-048",
+      "lesson_id": "LES-048",
+      "title": "الاستعداد للاختبار النهائي وما بعد الرخصة",
+      "observation": "أنهيتِ كل الأسئلة بنجاح: هل يعني هذا جاهزيتك للقيادة العملية؟",
+      "reasoning": "أي ثلاثة موضوعات تحتاجين مراجعتها حتى لو أجبتِ عن أسئلتها؟",
+      "verification": "جهزي أسئلة للمدربة وخطة مراجعة لأخطائك.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    }
+  ]
 }
 </script>
 <script>/*
@@ -6628,8 +7327,8 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 5;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map', 'sign_library'];
+  const DATABASE_VERSION = 6;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map', 'sign_library', 'lesson_activities'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
   const allStores = [...referenceStores, ...userStores, 'personal_files'];
   let dbPromise;
@@ -6661,6 +7360,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
         create('review_claims', 'id');
         create('lesson_reading_map', 'id');
         create('sign_library', 'id');
+        create('lesson_activities', 'id');
         create('personal_files', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
@@ -6731,7 +7431,12 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       sourceNotes: prefs.sourceNotes || {},
       practiceChecks: prefs.practiceChecks || {},
       reviewAnswers: prefs.reviewAnswers || {},
-      signPractice: prefs.signPractice || {}
+      signPractice: prefs.signPractice || {},
+      activityNotes: prefs.activityNotes || {},
+      activityChecks: prefs.activityChecks || {},
+      reviewHistory: prefs.reviewHistory || {},
+      mockSession: prefs.mockSession || null,
+      mockHistory: prefs.mockHistory || []
     };
   }
 
@@ -6750,7 +7455,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     tx.objectStore('preferences').put({key: 'initialized', value: true});
     tx.objectStore('preferences').put({key: 'lastOpened', value: Number(snapshot.lastOpened) || 1});
     tx.objectStore('preferences').put({key: 'readingPositions', value: snapshot.readingPositions || {}});
-    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers','signPractice']) tx.objectStore('preferences').put({key, value: snapshot[key] || {}});
+    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers','signPractice','activityNotes','activityChecks','reviewHistory','mockSession','mockHistory']) tx.objectStore('preferences').put({key, value: snapshot[key] ?? (key==='mockHistory'?[]:key==='mockSession'?null:{})});
     await completed(tx);
   }
 
@@ -6916,7 +7621,7 @@ function click(action,el,ctx){
  if(action==='hub-filter'){quizFilter=el.dataset.topic||'all';quizIndex=0;pinnedQuestionId=null;ctx.render(true);return true}
  if(action==='hub-prev'){quizIndex=Math.max(0,quizIndex-1);pinnedQuestionId=null;ctx.render(true);return true}
  if(action==='hub-next'){var remaining=filteredQuestions(c,st),stillThere=remaining.some(function(q){return q.id===pinnedQuestionId});quizIndex=Math.max(0,Math.min(remaining.length-1,quizIndex+(pinnedQuestionId&&!stillThere?0:1)));pinnedQuestionId=null;ctx.render(true);return true}
- if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;pinnedQuestionId=q.id;ctx.save();ctx.render(true)}return true}
+ if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;pinnedQuestionId=q.id;window.MasarCoach?.record(st,'bank',q.id,a===q.correct_option_index);ctx.save();ctx.render(true)}return true}
  if(action==='hub-retry'){st.reviewAnswers=st.reviewAnswers||{};delete st.reviewAnswers[el.dataset.qid];pinnedQuestionId=null;var idx=filteredQuestions(c,st).findIndex(function(q){return q.id===el.dataset.qid});if(idx>=0)quizIndex=idx;ctx.save();ctx.render(true);return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
  if(action==='hub-open-page'){
@@ -7036,18 +7741,109 @@ function click(action,el,ctx){
  if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice;if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
   s.signPractice=s.signPractice||{};const prior=stat(s,q.id);
   s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,lastReviewed:new Date().toISOString()};
-  answered=choice;answeredSignId=q.id;ctx.save();ctx.render(true);return true}
+  answered=choice;answeredSignId=q.id;window.MasarCoach?.record(s,'sign',q.id,choice===q.id);ctx.save();ctx.render(true);return true}
  if(action==='sign-next'){quizIndex++;answered=null;answeredSignId=null;ctx.render(true);return true}
  return false;
 }
 window.MasarSigns=Object.freeze({page,draw,click});
+})();
+/* MASAR Study Coach — learning activities, spaced reflection and non-official mock exam.
+   Source-of-truth: course.json. This is study support, not accredited driving evaluation. */
+(function(){
+'use strict';
+const E=x=>String(x==null?'':x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const DAY=24*60*60*1000;
+const toId=l=>String(l.id||'').replace('LES-','ACT-');
+const nOf=id=>Number(String(id).split('-').pop());
+const allQuestions=c=>(c.review_questions||[]).concat(c.questions||[]);
+let mockPosition=0;
+function record(state,kind,id,correct,now=Date.now()){
+ const key=kind+':'+id;state.reviewHistory=state.reviewHistory||{};
+ const old=state.reviewHistory[key]||{correctStreak:0,attempts:0,wrong:0};
+ const streak=correct?Math.min(10,(old.correctStreak||0)+1):0;
+ const days=correct?[0,1,3,7,14,30,60][Math.min(streak,6)]:0;
+ state.reviewHistory[key]={kind,id,attempts:(old.attempts||0)+1,wrong:(old.wrong||0)+(correct?0:1),correctStreak:streak,lastCorrect:!!correct,lastReviewedAt:new Date(now).toISOString(),nextDueAt:new Date(now+days*DAY).toISOString()};
+}
+function activityBlock(course,lesson,state){
+ const a=(course.lesson_activities||[]).find(x=>x.lesson_id===lesson.id);
+ if(!a)return '';
+ const done=!!state.activityChecks?.[a.id],note=state.activityNotes?.[a.id]||'';
+ return '<section class="coach-activity" id="coach-activity"><div class="coach-overline">PRACTICE / تطبيق معرفتك</div><div class="coach-activity-head"><h2>تدريب الدرس: '+E(a.title)+'</h2><span class="coach-state '+(done?'done':'')+'">'+(done?'راجعتِ التمرين':'قيد المذاكرة')+'</span></div><p class="coach-activity-intro">الهدف فهم القرار، مو حفظ جواب جاهز. اكتبي ما لاحظتِه بصياغتك.</p><div class="coach-prompts"><div><span>01 · لاحظي</span><p>'+E(a.observation)+'</p></div><div><span>02 · فكّري</span><p>'+E(a.reasoning)+'</p></div><div><span>03 · تحققي</span><p>'+E(a.verification)+'</p></div></div><label class="coach-notes">إجابتي وملاحظاتي<textarea data-activity-note="'+E(a.id)+'" placeholder="وش لاحظت؟ وش القرار الأنسب؟ وش أحتاج أتأكد منه قبل التطبيق؟" rows="4">'+E(note)+'</textarea></label><label class="coach-check"><input type="checkbox" data-activity-check="'+E(a.id)+'" '+(done?'checked':'')+'/><span>راجعت الأسئلة وكتبت ما فهمته (ليست شهادة إتقان قيادة عملية)</span></label><p class="coach-disclaimer">هذا نشاط تفكير ذاتي غير مصحّح آليًا؛ المواقف العملية تحتاج إشرافًا ومصدرًا معتمدًا.</p></section>';
+}
+function reviewPage(course,state){
+ const all=state.reviewHistory||{},now=Date.now(),items=Object.values(all);
+ const due=items.filter(x=>new Date(x.nextDueAt).getTime()<=now || !x.lastCorrect).sort((a,b)=>(Number(a.lastCorrect)-Number(b.lastCorrect))||new Date(a.nextDueAt)-new Date(b.nextDueAt));
+ const weak=items.filter(x=>!x.lastCorrect || x.correctStreak===0).length;
+ const completed=(course.lesson_activities||[]).filter(x=>state.activityChecks?.[x.id]).length;
+ const overdue=due.slice(0,24).map(x=>{
+ let t='',link='';
+ if(x.kind==='sign'){const sg=(course.sign_library||[]).find(y=>y.id===x.id);t=sg?'لوحة: '+sg.title:'إشارة '+x.id;link='#/traffic-signs'}
+ else if(x.kind==='bank'){const q=(course.review_questions||[]).find(y=>y.id===x.id);t=q?'سؤال: '+q.question:'سؤال '+x.id;link='#/practice-quiz'}
+ else {const q=(course.questions||[]).find(y=>y.id===x.id);const l=(course.lessons||[]).find(y=>y.id===q?.lesson_id);t=l?'درس: '+l.title:'سؤال الدرس '+x.id;link='#/lesson/'+(l?.order||1)}
+ return '<a class="coach-review-item" href="'+link+'"><span class="coach-review-symbol">'+(x.lastCorrect?'↺':'!')+'</span><span><strong>'+E(t)+'</strong><small>'+(x.lastCorrect?'حان وقت المراجعة':'إجابة خاطئة تحتاج فهمًا')+' · '+x.attempts+' محاولة</small></span><span class="coach-review-arrow">←</span></a>';
+ }).join('');
+ const notDone=(course.lesson_activities||[]).filter(x=>!state.activityChecks?.[x.id]).slice(0,5);
+ return '<section class="coach-page"><div class="eyebrow">PERSONAL REVIEW / SMART REPETITION</div><h1 class="page-title">خطتي لمراجعة أخطائي</h1><p class="sub">يعتمد ترتيب المراجعة على نتائج الأسئلة التي حلّيتيها داخل الموقع؛ المواعيد مقترحة للتثبيت وليست معيارًا رسميًا للجاهزية.</p><div class="coach-summary"><article><strong>'+due.length+'</strong><span>بطاقة حان وقتها</span></article><article><strong>'+weak+'</strong><span>مفاهيم أخطأتِ فيها</span></article><article><strong>'+completed+' / '+(course.lesson_activities||[]).length+'</strong><span>تدريبات تفكير تمت مراجعتها</span></article></div><div class="coach-section-top"><h2>راجعي الآن</h2><span>تظهر النتائج بعد بدء حل الأسئلة</span></div><div class="coach-review-list">'+(overdue||'<div class="coach-empty">ما عندك مراجعات مستحقة حاليًا. خذي اختبارًا أو افتحي مكتبة اللوحات لتنشئين أول دورة مراجعة.</div>')+'</div><div class="coach-section-top"><h2>أنشطة دروس ما راجعتيها</h2><span>ابدئي بأول نشاط غير مكتمل</span></div><div class="coach-review-list">'+notDone.map(a=>'<a class="coach-review-item" href="#/lesson/'+nOf(a.lesson_id)+'"><span class="coach-review-symbol">✓</span><span><strong>'+E(a.title)+'</strong><small>تدريب التفكير والملاحظات</small></span><span class="coach-review-arrow">←</span></a>').join('')+'</div><div class="coach-guidance"><strong>كيف تعمل المراجعة؟</strong><p>بعد الإجابة الصحيحة نذكّرك بالتدريج بعد يوم، ثم 3 أيام، ثم أسبوع، ثم فترة أطول. وبعد الخطأ يعود الموضوع إلى «راجع الآن». يمكن تصدير هذه البيانات من الإعدادات.</p><a href="#/mock-exam" class="btn btn-primary">ابدئي محاكاة اختبار غير رسمي ←</a></div></section>';
+}
+function makeMock(course){
+ const review=(course.review_questions||[]).slice(),lesson=(course.questions||[]).slice();
+ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+ const ids=shuffle([...shuffle(review).slice(0,10),...shuffle(lesson).slice(0,10)]).map(x=>x.id);
+ return {id:'MOCK-'+Date.now(),questionIds:ids,answers:{},startedAt:Date.now(),timeLimitMs:25*60*1000,finishedAt:null,score:null,status:'active'};
+}
+function elapsed(m,now=Date.now()){return Math.max(0,Math.ceil((m.startedAt+m.timeLimitMs-now)/1000))}
+function finishMock(state,course,now=Date.now()){
+ const m=state.mockSession;if(!m||m.status!=='active')return false;
+ const qs=new Map(allQuestions(course).map(q=>[q.id,q]));
+ const score=m.questionIds.reduce((sum,id)=>sum+(Number.isInteger(m.answers[id])&&m.answers[id]===qs.get(id)?.correct_option_index?1:0),0);
+ m.finishedAt=now;m.score=score;m.status='finished';
+ for(const id of m.questionIds){const q=qs.get(id);if(q&&Number.isInteger(m.answers[id]))record(state,course.review_questions.some(x=>x.id===id)?'bank':'lesson',id,m.answers[id]===q.correct_option_index,now)}
+ state.mockHistory=state.mockHistory||[];state.mockHistory.push({id:m.id,score,total:m.questionIds.length,finishedAt:new Date(now).toISOString(),durationSec:Math.round((now-m.startedAt)/1000)});
+ state.mockHistory=state.mockHistory.slice(-20);
+ return true;
+}
+function pageMock(course,state){
+ let m=state.mockSession;
+ const past=state.mockHistory||[];
+ let head='<div class="eyebrow">NON-OFFICIAL SIMULATION / تدريب</div><h1 class="page-title">محاكاة اختبار نظري</h1><p class="sub">20 سؤالًا تدريبيًا في 25 دقيقة (إعداد داخل «مسار» وليس مدة أو عددًا رسميًا للاختبار السعودي). الخيارات من بنكنا التعليمي، ولم نؤكد تطابقها مع أسئلة المدارس.</p>';
+ if(!m){return '<section class="coach-page">'+head+'<div class="coach-mock-intro"><h2>قبل ما تبدئين</h2><p>الاختبار يجمع 10 أسئلة من الدروس و10 أسئلة مراجعة. لا يعرض التصحيح إلا في النهاية، ثم يربط كل خطأ بالدرس المناسب.</p><button type="button" class="btn btn-primary" data-action="coach-mock-start">ابدئي المحاكاة · 20 سؤالًا</button></div>'+history(past)+'</section>'}
+ if(m.status==='finished'){
+  const all=new Map(allQuestions(course).map(q=>[q.id,q]));const wrong=m.questionIds.filter(id=>!Number.isInteger(m.answers[id])||m.answers[id]!==all.get(id)?.correct_option_index);
+  return '<section class="coach-page">'+head+'<div class="coach-mock-result"><strong>'+m.score+' <small>/ '+m.questionIds.length+'</small></strong><h2>نتيجة تدريبية شخصية</h2><p>لا تساوي نجاحًا أو رسوبًا رسميًا. هذه الملاحظات تساعدك على فهم الإجابات.</p><button type="button" class="btn btn-primary" data-action="coach-mock-new">محاكاة جديدة</button></div><h2 class="coach-section-heading">الأسئلة التي تحتاج مراجعة ('+wrong.length+')</h2><div class="coach-review-list">'+(wrong.length?wrong.map(id=>{const q=all.get(id);if(!q)return '';return '<article class="coach-mock-mistake"><strong>'+E(q.question)+'</strong><p>الإجابة: '+E(q.options[q.correct_option_index])+'</p><small>'+E(q.rationale||q.explanation||'راجعي درس المفهوم.')+'</small><a href="#/lesson/'+nOf(q.lesson_id)+'">الدرس المرتبط ←</a></article>'}).join(''):'<div class="coach-empty">جميع إجاباتك صحيحة في هذا النموذج. جربي نموذجًا آخر لأن تذكر هذه الأسئلة لا يضمن تغطية الاختبار الحقيقي.</div>')+'</div>'+history(past)+'</section>';
+ }
+ const qs=new Map(allQuestions(course).map(q=>[q.id,q])),idx=Math.max(0,Math.min(m.questionIds.length-1,mockPosition));const q=qs.get(m.questionIds[idx]);if(!q)return '<p>تعذر العثور على سؤال من هذه الجلسة. يُرجى بدء نموذج جديد.</p>';
+ const remain=elapsed(m),chosen=m.answers[q.id],answered=Object.keys(m.answers).length;
+ return '<section class="coach-page">'+head+'<div class="coach-mock-top"><div><strong>سؤال '+(idx+1)+' من '+m.questionIds.length+'</strong><small>'+answered+' سؤال تمت الإجابة عنه</small></div><div class="coach-clock" id="coach-mock-clock" role="timer" aria-live="off">'+formatTime(remain)+'</div></div><div class="coach-mock-progress"><span style="width:'+(answered/m.questionIds.length*100)+'%"></span></div><article class="coach-mock-question"><h2>'+E(q.question)+'</h2><div class="coach-mock-options">'+q.options.map((answer,j)=>'<button type="button" data-action="coach-mock-answer" data-option="'+j+'" class="'+(chosen===j?'active':'')+'" aria-pressed="'+(chosen===j)+'">'+String.fromCharCode(65+j)+' · '+E(answer)+'</button>').join('')+'</div><div class="coach-mock-nav"><button data-action="coach-mock-prev" type="button" class="btn btn-outline" '+(idx===0?'disabled':'')+'>السابق</button><button data-action="coach-mock-next" type="button" class="btn btn-outline" '+(idx===m.questionIds.length-1?'disabled':'')+'>التالي ←</button></div><div class="coach-mock-tiles" aria-label="الانتقال بين الأسئلة">'+m.questionIds.map((id,i)=>'<button type="button" aria-label="السؤال '+(i+1)+'" class="'+(i===idx?'selected ':'')+(Number.isInteger(m.answers[id])?'done':'')+'" data-action="coach-mock-jump" data-index="'+i+'">'+(i+1)+'</button>').join('')+'</div><p class="coach-disclaimer">ينتهي المؤقت بعد 25 دقيقة حسب ساعة جهازك؛ يمكن إنهاء النموذج قبلها. لن يظهر التصحيح قبل التسليم.</p><button type="button" class="btn btn-primary" data-action="coach-mock-finish">إنهاء وتصحيح المحاكاة ('+answered+'/'+m.questionIds.length+')</button></article></section>';
+}
+function history(past){return past.length?'<section class="coach-mock-history"><h2>محاولاتي السابقة</h2>'+past.slice(-5).reverse().map(x=>'<div><strong>'+x.score+' / '+x.total+'</strong><span>'+E(new Date(x.finishedAt).toLocaleDateString('ar-SA'))+'</span></div>').join('')+'</section>':''}
+function formatTime(seconds){let s=Math.max(0,Number(seconds)||0);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function tick(course,state,save,render){
+ const m=state.mockSession;if(!m||m.status!=='active')return;
+ const seconds=elapsed(m);const el=document.getElementById('coach-mock-clock');if(el)el.textContent=formatTime(seconds);
+ if(seconds===0){finishMock(state,course);save();if(location.hash==='#/mock-exam')render(true)}
+}
+function click(action,el,ctx){
+ const s=ctx.state,c=ctx.course,m=s.mockSession;
+ if(action==='coach-mock-start'||action==='coach-mock-new'){s.mockSession=makeMock(c);mockPosition=0;ctx.save();ctx.render(false);return true}
+ if(!m||m.status!=='active')return false;
+ if(action==='coach-mock-answer'){
+  const qid=m.questionIds[mockPosition],q=allQuestions(c).find(q=>q.id===qid),option=Number(el.dataset.option);
+  if(q&&Number.isInteger(option)&&option>=0&&option<q.options.length){m.answers[qid]=option;ctx.save();ctx.render(true)}return true
+ }
+ if(action==='coach-mock-next'){mockPosition=Math.min(m.questionIds.length-1,mockPosition+1);ctx.render(true);return true}
+ if(action==='coach-mock-prev'){mockPosition=Math.max(0,mockPosition-1);ctx.render(true);return true}
+ if(action==='coach-mock-jump'){mockPosition=Math.max(0,Math.min(m.questionIds.length-1,Number(el.dataset.index)||0));ctx.render(true);return true}
+ if(action==='coach-mock-finish'){if(confirm('إنهاء النموذج وإظهار النتيجة؟')){finishMock(s,c);ctx.save();ctx.render(false)}return true}
+ return false;
+}
+window.MasarCoach=Object.freeze({activityBlock,reviewPage,pageMock,record,tick,click,finishMock});
 })();
 (() => {
 'use strict';
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
 const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, sourceById=Object.fromEntries(COURSE.sources.map(s=>[s.id,s]));
 const baseKey='masar-driving-v1';
-let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{}};
+let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};
 try { const saved=JSON.parse(localStorage.getItem(baseKey)||'null'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(e){console.warn('Local data unavailable',e)}
 let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
@@ -7097,7 +7893,7 @@ const weeklyDone=w=>lessons.filter(l=>l.week===w&&isDone(l.order)).length;
 const progress=()=>Math.round(completed().size/48*100);
 const nextLesson=()=>lessons.find(l=>!isDone(l.order))||lessons[47];
 const resumeLesson=()=>Number.isInteger(state.lastOpened)&&state.lastOpened>=1&&state.lastOpened<=48&&(state.visited||[]).includes(state.lastOpened)?getLesson(state.lastOpened):null;
-const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/practice-quiz','quiz','أسئلة التجميعات'],['/traffic-signs','layers','إشارات المرور'],['/practice-checklist','cards','مهارات التقييم'],['/paper-practice','quiz','اختبار ورقي'],['/study-guide','book','كيف أذاكر؟'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
+const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/practice-quiz','quiz','أسئلة التجميعات'],['/traffic-signs','layers','إشارات المرور'],['/review','book','مراجعة ذكية'],['/mock-exam','quiz','اختبار محاكاة'],['/practice-checklist','cards','مهارات التقييم'],['/paper-practice','quiz','اختبار ورقي'],['/study-guide','book','كيف أذاكر؟'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
 function sidebar(){const path=route();return `<aside class="sidebar ${mobileOpen?'open':''}" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">مساحتك التعليمية</div><nav class="nav">${navData.map(([href,ic,t])=>`<a href="#${href}" class="${path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':''}">${icon(ic)}<span>${t}</span>${href==='/weeks'?'<span class="tag">16</span>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>مشوارك إلى الثقة</small><br><strong>${progress()}%</strong></div><div style="font-size:30px;color:#9eb5c8">${icon('road')}</div></div><div class="line"><i style="width:${progress()}%"></i></div><small>${completed().size} من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>`}
 function topbar(title){return `<header class="topbar"><div class="top-actions"><button type="button" class="chip menu-btn" data-action="menu" aria-label="فتح القائمة">${icon('menu')}</button><div class="crumb">لوحة التعلم <span style="padding:0 6px;color:#a8b5bd">/</span> <strong>${ESC(title)}</strong></div></div><div class="top-actions"><span class="chip">${icon('clock')} <span>30–45 دقيقة للجلسة</span></span><span class="chip red">${icon('road')} أكورد · سنة الطراز غير محددة</span></div></header>`}
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
@@ -7149,7 +7945,7 @@ function visualBlock(l){
  }).join('')+'</div>';
 }
 
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section>${mediaBlock(l)}<section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section>${mediaBlock(l)}<section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
 function flashcardsPage(){const cards=[['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.'],['أعطِ الأفضلية','خففي السرعة وأفسحي المجال لمن له الأفضلية، وتوقفي عند الحاجة.'],['النقطة العمياء','منطقة قد لا تظهر بالكامل في المرايا، وتحتاج تحققًا مباشرًا آمنًا.'],['مسافة التوقف','مسافة رد الفعل + مسافة الفرملة.'],['الدوار','في الدوار المعتاد، الأولوية للمركبات التي تسير داخله.'],['النور العالي','يستخدم عندما تسمح الظروف دون إبهار المركبات الأخرى.'],['الخط المتقطع','قد يسمح بعبوره إذا كانت المناورة مسموحة وآمنة.'],['الركن P','وضع ناقل الحركة للركن، وليس مرادفًا لفرامل التوقف.'],['Brake Hold','مساعدة على تثبيت الفرامل وقت التوقف المؤقت، لا بدلًا عن تأمين ركن السيارة.'],['القيادة الوقائية','ألاحظ ← أتوقع ← أقرر ← أتصرف.'],['إشارة خضراء','تسمح بالحركة ضمن التنظيم دون إغلاق تقاطع مزدحم.'],['الرخصة','حجز أبشر ليس إصدارًا تلقائيًا للرخصة؛ هناك متطلبات وفحوص واختبارات.']];return `<div class="eyebrow">ACTIVE RECALL</div><h1 class="page-title">بطاقات تثبيت المعلومات</h1><p class="sub">حاولي تسترجعين المعنى من ذاكرتك أولًا، ثم اضغطي البطاقة لتظهر الإجابة. 12 بطاقة مفاهيمية سريعة.</p><div class="flashcards">${cards.map(([a,b],i)=>`<button type="button" class="flashcard ${flashFlips.has(i)?'flipped':''}" data-action="flip" data-id="${i}" aria-label="قلب بطاقة ${ESC(a)}"><span class="fc-title">${ESC(flashFlips.has(i)?b:a)}</span><span class="fc-hint">${flashFlips.has(i)?'اضغطي للعودة للسؤال':'اضغطي لإظهار الإجابة'} ${icon('reset')}</span></button>`).join('')}</div>${footerNote()}`}
 function visualLibraryPage(){
  const scenarios=COURSE.learning_visuals||[],resources=COURSE.media_resources||[];
@@ -7172,7 +7968,7 @@ if(session.index>=session.ids.length){const score=session.ids.filter(id=>session
 const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا قصيرًا، بصياغات تعليمية أولية تحتاج تدقيقًا قبل النشر العام.</div><div class="point"><i>2</i>48 سؤالًا تدريبيًا مع تفسير، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>البيانات منظمة داخل IndexedDB (دروس، أسئلة، ملاحظات، تقدم، اختبارات). لا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
-function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
+function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/review')return ['مراجعتي',window.MasarCoach.reviewPage(COURSE,state)];if(r==='/mock-exam')return ['محاكاة الاختبار',window.MasarCoach.pageMock(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
 function timerHTML(){return `<div class="floating-timer" aria-label="مؤقت مذاكرة"><span style="font-size:11px;color:var(--steel);font-weight:850">${icon('clock')}</span><b id="timer-text">${p2(Math.floor(timer.seconds/60))}:${p2(timer.seconds%60)}</b><button type="button" data-action="timer-toggle" aria-label="${timer.active?'إيقاف المؤقت':'بدء المؤقت'}">${icon(timer.active?'pause':'play')}</button><button type="button" data-action="timer-reset" aria-label="إعادة ضبط المؤقت">${icon('reset')}</button></div>`}
 function render(keepScroll=false){const [title,content]=resolvePage();APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${content}</div></main>${timerHTML()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
@@ -7186,6 +7982,7 @@ if(!pool.length){toast('ما عندك أسئلة في هذه المجموعة ا
 function recordTest(){if(!session||session.saved)return;const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;state.history.push({label:session.label,score,total:session.ids.length,date:new Date().toLocaleDateString('ar-SA')});state.history=state.history.slice(-30);session.saved=true;save()}
 function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;const action=el.dataset.action,n=Number(el.dataset.id);
  if(action==='paper-print'){window.print();return}
+ if(action.startsWith('coach-')&&window.MasarCoach.click(action,el,{course:COURSE,state,save,render,toast}))return;
  if(action.startsWith('sign-')&&window.MasarSigns.click(action,el,{course:COURSE,state,save,render,toast}))return;
  if(action.startsWith('hub-')&&window.MasarHub.click(action,el,{course:COURSE,state,save,render,toast,db:window.MasarDB}))return;
  if(action==='persist-storage'){if(!navigator.storage?.persist){toast('المتصفح لا يدعم طلب تثبيت التخزين؛ احفظي نسخة احتياطية');return}navigator.storage.persist().then(granted=>toast(granted?'المتصفح وافق على التخزين المستمر في هذا الجهاز':'المتصفح لم يمنح ضمانًا ضد الحذف التلقائي')).catch(()=>toast('لم نتمكن من طلب التخزين المستمر'));return}
@@ -7196,7 +7993,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='scroll'){document.getElementById(el.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});return}
  if(action==='mark'){const s=new Set(state.done);s.has(n)?s.delete(n):s.add(n);state.done=[...s].sort((a,b)=>a-b);save();render(true);toast(isDone(n)?'تم حفظ إنجاز الدرس':'أزلنا علامة الإكمال');return}
  if(action==='bookmark'){const s=new Set(state.bookmarks);s.has(n)?s.delete(n):s.add(n);state.bookmarks=[...s];save();render(true);return}
- if(action==='lesson-answer'){const q=getQuestion(n),choice=Number(el.dataset.choice);if(state.answers[q.id]===undefined){state.answers[q.id]=choice;save();render(true);const a=document.getElementById('practice');a?.scrollIntoView({behavior:'instant',block:'center'})}return}
+ if(action==='lesson-answer'){const q=getQuestion(n),choice=Number(el.dataset.choice);if(state.answers[q.id]===undefined){state.answers[q.id]=choice;window.MasarCoach.record(state,'lesson',q.id,choice===q.correct_option_index);save();render(true);const a=document.getElementById('practice');a?.scrollIntoView({behavior:'instant',block:'center'})}return}
  if(action==='flip'){flashFlips.has(n)?flashFlips.delete(n):flashFlips.add(n);render(true);return}
  if(action==='start-quiz'){startTest(el.dataset.week);return}
  if(action==='test-answer'){if(session){const q=questions.find(x=>x.id===session.ids[session.index]);if(session.answers[q.id]===undefined){session.answers[q.id]=Number(el.dataset.choice);state.answers[q.id]=Number(el.dataset.choice);save();render(true)}}return}
@@ -7207,12 +8004,12 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='timer-reset'){timer.active=false;timer.seconds=1800;render(true);return}
  if(action==='export'){const data=JSON.stringify({format:'masar-progress-v1',exportedAt:new Date().toISOString(),state},null,2);const blob=new Blob([data],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='masar-my-progress.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('تم تجهيز نسخة بياناتك الاحتياطية');return}
  if(action==='import'){document.getElementById('import-file')?.click();return}
- if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
+ if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
 }
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
-document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save()}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}});
-document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if(e.target.id==='hub-file'&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
+document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save()}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}if(e.target.dataset.activityNote){state.activityNotes=state.activityNotes||{};state.activityNotes[e.target.dataset.activityNote]=e.target.value;save()}});
+document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if(e.target.id==='hub-file'&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.dataset.activityCheck){state.activityChecks=state.activityChecks||{};state.activityChecks[e.target.dataset.activityCheck]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
 function lessonNumberFromRoute(path){const m=/^\/lesson\/(\d+)$/.exec(path||'');const n=Number(m?.[1]);return n>=1&&n<=48?n:null}
 function captureReadingPosition(path=displayedRoute){const n=lessonNumberFromRoute(path);if(!n||restoringScroll)return;const y=Math.max(0,Math.round(window.scrollY||document.documentElement?.scrollTop||0));state.readingPositions=state.readingPositions||{};if(state.readingPositions[n]!==y){state.readingPositions[n]=y;save()}}
 function restoreReadingPosition(){const n=lessonNumberFromRoute(route());if(!n)return;const y=Number(state.readingPositions?.[n])||0;if(y<=0)return;restoringScroll=true;requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>{restoringScroll=false})})}
@@ -7220,7 +8017,7 @@ window.addEventListener('scroll',()=>{if(!lessonNumberFromRoute(displayedRoute)|
 window.addEventListener('hashchange',()=>{clearTimeout(scrollWriteTimer);captureReadingPosition(displayedRoute);mobileOpen=false;render();restoreReadingPosition();if(location.hash==='#main'){document.getElementById('main')?.focus()}});
 window.addEventListener('pagehide',()=>{clearTimeout(scrollWriteTimer);captureReadingPosition()});
 window.addEventListener('storage',e=>{if(e.key===baseKey){try{state={...state,...JSON.parse(e.newValue||'{}')};render(true)}catch(_){}}});
-tickInterval=setInterval(()=>{if(timer.active){if(timer.seconds>0)timer.seconds--;updateTimer();if(timer.seconds===0){timer.active=false;toast('خلصت جلسة الـ30 دقيقة، خذي استراحة قصيرة ✨');render(true)}}},1000);
+tickInterval=setInterval(()=>{window.MasarCoach?.tick(COURSE,state,save,render);if(timer.active){if(timer.seconds>0)timer.seconds--;updateTimer();if(timer.seconds===0){timer.active=false;toast('خلصت جلسة الـ30 دقيقة، خذي استراحة قصيرة ✨');render(true)}}},1000);
 render();restoreReadingPosition();
 if(window.MasarDB){
   window.MasarDB.seedReference(COURSE).then(() => window.MasarDB.loadUser()).then(saved => {

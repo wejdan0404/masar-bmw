@@ -70,7 +70,7 @@ function click(action,el,ctx){
  if(action==='hub-filter'){quizFilter=el.dataset.topic||'all';quizIndex=0;pinnedQuestionId=null;ctx.render(true);return true}
  if(action==='hub-prev'){quizIndex=Math.max(0,quizIndex-1);pinnedQuestionId=null;ctx.render(true);return true}
  if(action==='hub-next'){var remaining=filteredQuestions(c,st),stillThere=remaining.some(function(q){return q.id===pinnedQuestionId});quizIndex=Math.max(0,Math.min(remaining.length-1,quizIndex+(pinnedQuestionId&&!stillThere?0:1)));pinnedQuestionId=null;ctx.render(true);return true}
- if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;pinnedQuestionId=q.id;ctx.save();ctx.render(true)}return true}
+ if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;pinnedQuestionId=q.id;window.MasarCoach?.record(st,'bank',q.id,a===q.correct_option_index);ctx.save();ctx.render(true)}return true}
  if(action==='hub-retry'){st.reviewAnswers=st.reviewAnswers||{};delete st.reviewAnswers[el.dataset.qid];pinnedQuestionId=null;var idx=filteredQuestions(c,st).findIndex(function(q){return q.id===el.dataset.qid});if(idx>=0)quizIndex=idx;ctx.save();ctx.render(true);return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
  if(action==='hub-open-page'){

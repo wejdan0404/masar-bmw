@@ -1,6 +1,8 @@
 // Real Chromium E2E for the GitHub Pages static app. Distinct from DOM-only smoke tests.
 const { chromium }=require('playwright');
 const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
 (async()=>{
  const base=process.env.MASAR_E2E_URL||'http://127.0.0.1:8765/';
  const browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
@@ -26,7 +28,10 @@ const assert=require('node:assert/strict');
   console.log('PASS Chromium: lesson reflection and check state survive reload');
   await page.goto(base+'#/traffic-signs',{waitUntil:'domcontentloaded'});
   await page.locator('.ts-grid .ts-card').first().waitFor();
-  assert.equal(await page.locator('.ts-grid .ts-card').count(),36);
+  assert.equal(await page.locator('.ts-grid .ts-card').count(),course.sign_library.length);
+  await page.locator('[data-action="sign-filter"][data-filter="علامات أرضية"]').click();
+  assert.equal(await page.locator('.ts-grid .ts-card').count(),course.sign_library.filter(x=>x.category==='علامات أرضية').length);
+  await page.locator('[data-action="sign-filter"][data-filter="all"]').click();
   await page.locator('[data-action="sign-mode"][data-mode="quiz"]').click();
   await page.locator('[data-action="sign-answer"]').first().click();
   await page.locator('.ts-explanation').waitFor();

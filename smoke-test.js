@@ -140,12 +140,12 @@ const masteryCourse={
  questions:[{id:'QUIZ-900',lesson_id:'LES-900'}],
  lesson_activities:[{id:'ACT-900',lesson_id:'LES-900'}]
 };
-const masterySnapshot=context.MasarCoach.masterySnapshot;
+const masterySnapshot=context.window.MasarCoach.masterySnapshot;
 if(typeof masterySnapshot!=='function')throw Error('Mastery snapshot is unavailable');
 const masteryState={activityChecks:{'ACT-900':true},reviewHistory:{}};
 const level=()=>masterySnapshot(masteryCourse,masteryState)[0].level;
 if(level()!=='تمرين ذاتي فقط')throw Error('An unchecked quiz cannot count as learned');
-for(let i=0;i<3;i++)context.MasarCoach.record(masteryState,'lesson','QUIZ-900',true,Date.now()+i*1000);
+for(let i=0;i<3;i++)context.window.MasarCoach.record(masteryState,'lesson','QUIZ-900',true,Date.now()+i*1000);
 if(level()!=='إجابات متكررة')throw Error('Correct repeats label must not claim validated mastery');
 context.MasarCoach.record(masteryState,'lesson','QUIZ-900',false);
 if(level()!=='يحتاج مراجعة')throw Error('A wrong answer must reset the repeated answer indicator');

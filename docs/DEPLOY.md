@@ -15,3 +15,11 @@
 **الحفظ:** IndexedDB محلي في المتصفح. لا تحتاجين دفع اشتراك أو تفعيل خدمة بيانات خارجية. وجود هذا الموقع في GitHub لا يعني أن درجاتك أو ملاحظاتك أصبحت بيانات عامة.
 
 المرجع الرسمي: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+## حالة GitHub Pages بعد التفعيل
+
+أصبح الموقع منشورًا على:
+
+https://wejdan0404.github.io/masar-bmw/
+
+ويمكن رؤية نجاح النشر من تبويب **Actions** في مستودع `wejdan0404/masar-bmw`. ملفات `index.html`, `sw.js`, `manifest.webmanifest`, `icon.svg` تكون كلها في مجلد الجذر. تحقق من ظهور أحدث نسخة بتحديث الصفحة وفتح علامة تبويب عادية؛ قد تظهر نسخة مؤقتة قديمة من كاش المتصفح قبل إعادة تحميل Service Worker.

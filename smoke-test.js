@@ -61,4 +61,11 @@ context.location.hash='#/sources';windowHandlers.hashchange();if(!element('app')
 documentHandlers.input({target:{dataset:{videoNote:'VIDEO-QUDS-X'},value:'الدقيقة 01:20: تعليم خاص'}});if(!saved['masar-driving-v1'].includes('الدقيقة 01:20'))throw Error('Video notes were not persisted');console.log('PASS per-video note persistence');
 
 context.location.hash='#/study-guide';windowHandlers.hashchange();if(!element('app').innerHTML.includes('كيف أذاكر وأفهم السواقة'))throw Error('Study guide missing');
-context.location.hash='#/paper-practice';windowHandlers.hashchange();if(!element('app').innerHTML.includes('اختبار ورقي تجريبي')||!element('app').innerHTML.includes('طباعة نموذج الأسئلة'))throw Error('Printable practice missing');console.log('PASS study guide and 20-question paper assessment');
+context.location.hash='#/paper-practice';windowHandlers.hashchange();if(!element('app').innerHTML.includes('اختبار ورقي تجريبي')||!element('app').innerHTML.includes('طباعة نموذج الأسئلة'))throw Error('Printable practice missing');if(!element('app').innerHTML.includes('36 سؤالًا'))throw Error('Printed paper count stale');console.log('PASS study guide and 36-question paper assessment');
+
+context.location.hash='#/lesson/19';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('مراجع الدرس')||!element('app').innerHTML.includes('data-action="hub-open-page"'))throw Error('Indexed PDF lesson reading missing');
+console.log('PASS per-lesson private PDF reading references');
+context.location.hash='#/practice-quiz';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('أخطائي')||!element('app').innerHTML.includes('غير المحلول')||!element('app').innerHTML.includes('راجعي الدرس المرتبط'))throw Error('Mistakes filters and lesson links absent');
+console.log('PASS targeted mistakes review, per-question notes, chapter back-links');

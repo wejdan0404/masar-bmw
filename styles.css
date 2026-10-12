@@ -137,3 +137,19 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .visual-resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:26px}
 .visual-resource-list .ref-card{margin:0}
 @media(max-width:800px){.visual-index-grid,.visual-resource-list{grid-template-columns:1fr}}
+
+
+/* Direct educational videos: load embed only after learner requests playback. */
+.media-aside{overflow:hidden}
+.study-video{padding:13px 0 15px;border-bottom:1px solid #dfe6ea;margin-bottom:10px}
+.study-video:last-child{border-bottom:0;margin-bottom:0}
+.video-title{display:grid;gap:4px;margin-bottom:10px}
+.video-title strong{color:#202D36;font-size:13px;line-height:1.65}
+.video-player{aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;border-radius:12px;background:radial-gradient(circle at 60% 30%,#556e7d,#202D36);color:white}
+.video-player iframe{width:100%;height:100%;border:0;display:block}
+.video-load{border:none;width:100%;height:100%;background:transparent;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:750}
+.video-play-symbol{width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#800C1F;color:white;font-size:19px;box-shadow:0 5px 22px rgba(0,0,0,.25);transition:transform .2s ease}
+.video-load:hover .video-play-symbol{transform:scale(1.08)}
+.video-load:focus-visible{outline:3px solid #7598B9;outline-offset:-4px}
+.video-footnote{font-size:11px!important;line-height:1.7;color:#617582;margin:8px 0!important}
+@media(prefers-reduced-motion:reduce){.video-play-symbol{transition:none}}

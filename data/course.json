@@ -6516,6 +6516,78 @@
       "pictogram_status": "educational_illustration_not_official",
       "review_status": "requires_official_pictogram_comparison",
       "is_official_exam_question": false
+    },
+    {
+      "id": "SG-33",
+      "category": "علامات أرضية",
+      "title": "خط مسار متصل",
+      "icon": "mark-solid",
+      "meaning": "خط مرسوم بشكل متواصل يفصل أجزاء من الطريق أو يحدد حافتها؛ يختلف حكم عبوره حسب موضعه ووظيفته.",
+      "action": "لا تعبري الخط الذي يمنع الانتقال بين المسارات؛ راقبي التخطيط والإشارات المصاحبة.",
+      "memory_tip": "ليست كل الخطوط المتصلة ذات وظيفة واحدة؛ اللون والموقع مهمان.",
+      "lesson_ids": [
+        "LES-014",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-34",
+      "category": "علامات أرضية",
+      "title": "خط فصل متقطع",
+      "icon": "mark-dashed",
+      "meaning": "يُستخدم في تحديد بعض حدود المسارات ويختلف عن الخط المتصل.",
+      "action": "لا تغيّري المسار إلا حيث يسمح التنظيم وبعد فحص المرايا والنقطة العمياء وإعطاء الإشارة.",
+      "memory_tip": "الخط المتقطع لا يمنح أولوية أو ضمانًا بأن الانتقال آمن.",
+      "lesson_ids": [
+        "LES-014",
+        "LES-022"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-35",
+      "category": "علامات أرضية",
+      "title": "خط التوقف",
+      "icon": "mark-stop",
+      "meaning": "علامة عرضية توضح موضع الوقوف عند وجود تنظيم يتطلب ذلك.",
+      "action": "توقفي قبل خط الوقوف حين تتطلب الإشارة أو اللوحة التوقف، ولا تحجبي معبر المشاة.",
+      "memory_tip": "وجود الخط وحده لا يعني التوقف في كل الأوقات؛ انتبهي إلى إشارة التحكم.",
+      "lesson_ids": [
+        "LES-016",
+        "LES-017"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-36",
+      "category": "علامات أرضية",
+      "title": "معبر مشاة مخطط",
+      "icon": "mark-crosswalk",
+      "meaning": "علامات أرضية تبين موضع عبور المشاة.",
+      "action": "خففي السرعة وراقبي المشاة واتّبعي إشارات تنظيم عبورهم وأولوية مرورهم.",
+      "memory_tip": "الخطوط ليست مساحة وقوف للمركبة.",
+      "lesson_ids": [
+        "LES-012",
+        "LES-021"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
     }
   ],
   "sign_learning": {

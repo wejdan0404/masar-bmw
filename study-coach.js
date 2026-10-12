@@ -103,5 +103,5 @@ function click(action,el,ctx){
  if(action==='coach-mock-finish'){if(confirm('إنهاء النموذج وإظهار النتيجة؟')){finishMock(s,c);ctx.save();ctx.render(false)}return true}
  return false;
 }
-window.MasarCoach=Object.freeze({activityBlock,reviewPage,pageMock,record,tick,click,finishMock});
+window.MasarCoach=Object.freeze({activityBlock,reviewPage,pageMock,record,tick,click,finishMock,masterySnapshot});
 })();

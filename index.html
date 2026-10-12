@@ -502,6 +502,24 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .video-resource-gap strong{font-size:13px;color:#25475c}
 .video-resource-gap p{font-size:11.5px;color:#607483;line-height:1.95}
 .video-resource-gap .btn{margin-top:7px;white-space:normal}
+
+/* Cross-page learning consistency: signs, review, diagrams, tests */
+.ts-card,.visual-index-tile,.coach-review-item,.coach-summary article,.hub-guide-step,.test-card,.qbox,.ref-card{
+ transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.ts-card:hover,.visual-index-tile:hover,.coach-review-item:hover,.hub-guide-step:hover{
+ border-color:#abc3d0;box-shadow:0 13px 29px rgba(32,52,67,.09)
+}
+.ts-card:active,.coach-review-item:active{transform:scale(.992)}
+.coach-summary article,.visual-index-tile,.test-card,.ref-card{border-radius:17px}
+.ts-grid,.visual-index-grid,.flashcards{gap:14px}
+.ts-card:focus-visible,.coach-review-item:focus-visible,.study-today-item:focus-visible,.lesson-journey-step:focus-visible{outline:3px solid #8bb1c7;outline-offset:3px}
+.test-card,.qbox,.lesson-body{box-shadow:0 6px 20px rgba(30,50,65,.035)}
+.option:not(:disabled):hover{transform:translateX(-2px)}
+.lesson-aside .aside-card{box-shadow:0 6px 18px rgba(30,50,65,.035)}
+@media(prefers-reduced-motion:reduce){
+ .ts-card,.visual-index-tile,.coach-review-item,.coach-summary article,.hub-guide-step,.test-card,.qbox,.ref-card,.option{transition:none!important;transform:none!important}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>

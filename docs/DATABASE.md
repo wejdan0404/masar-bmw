@@ -19,6 +19,7 @@
 | practical_checklist | id | 5 مجموعات مهارات للمراجعة الذاتية |
 | review_claims | id | ادعاءات تحتاج تحققًا وغير صالحة للاختبارات |
 | personal_files | id | ملفات PDF والصور التي تضيفها المستخدمِة داخل المتصفح، لا تُرفع للخادم |
+| lesson_reading_map | id | 48 خريطة مصادر وصفحات تربط الدرس بمرجع القراءة |
 | progress | lesson_id | اكتمال كل درس |
 | answers | question_id | إجابات التحقق |
 | notes | lesson_id | ملاحظات المتدربة |
@@ -29,7 +30,7 @@
 
 العلاقات المنطقية: `weeks.id → lessons.week_id` و`lessons.id → questions.lesson_id`.
 
-**ترقية قاعدة البيانات:** الإصدار 3 يحافظ على مخازن المستخدم القديمة، ويضيف جداول الفهرسة الجديدة (`personal_documents` و`uploaded_image_index` و`external_study_sources` و`review_questions` و`practical_checklist` و`review_claims`) و`personal_files` للنسخ الخاصة من الملفات؛ يُحدّث المحتوى المرجعي عند التشغيل. وهي **ليست** مزامنة عبر السحابة.
+**ترقية قاعدة البيانات:** الإصدار 4 يحافظ على مخازن المستخدم القديمة، ويضيف جداول الفهرسة الجديدة (`personal_documents` و`uploaded_image_index` و`external_study_sources` و`review_questions` و`practical_checklist` و`review_claims`) و`lesson_reading_map` لفهرسة مراجع الدروس و`personal_files` للنسخ الخاصة من الملفات؛ يُحدّث المحتوى المرجعي عند التشغيل. وهي **ليست** مزامنة عبر السحابة.
 
 **المصدر التحريري:** `data/course.json`. عند فتح التطبيق يُحمّل المحتوى الموجود في `index.html`، ويُزرع في IndexedDB للاستخدام المحلي. لتعديل المحتوى غيّري JSON ثم شغّلي `python compile.py` وارفعي `index.html` الجديد.
 
@@ -55,4 +56,4 @@
 - الفيديوهات: `videoNotes`، والمراجع: `sourceNotes`، وأسئلة المراجعة: `reviewAnswers`، ومربعات التدريب: `practiceChecks` تحفظ في تفضيلات IndexedDB وفي نسخة `localStorage`.
 - نسخة JSON الاحتياطية تتضمن **التقدم والملاحظات فقط**. لا تتضمن ملفات PDF والصور المستوردة لأنها كبيرة الحجم ومحفوظة في مخزن `personal_files` المستقل.
 - عند تفعيل الموقع في نطاق آخر أو مسح بيانات المتصفح، ينبغي استعادة نسخة التقدم وإضافة الملفات الخاصة مرة أخرى.
-- المخطط السحابي `postgres-schema.sql` لا يساوي بعد الإصدار المحلي v3 ولا يمثل مزامنة أو نشر ملفات.
+- المخطط السحابي `postgres-schema.sql` لا يساوي بعد الإصدار المحلي v4 ولا يمثل مزامنة أو نشر ملفات.

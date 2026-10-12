@@ -13,7 +13,7 @@ const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
  location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
  setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
 vm.createContext(context);vm.runInContext(text,context,{timeout:3000});
-for(const [hash,label] of [['#/home','كل طريق طويل'],['#/weeks','خطة الـ16 أسبوعًا'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/settings','إعدادات المذاكرة']]){
+for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
  console.log('PASS',hash);
@@ -23,3 +23,12 @@ const click=(dataset)=>documentHandlers.click({target:{closest(selector){return 
 click({action:'mark',id:'1'});if(!saved['masar-driving-v1'].includes('"done":[1]'))throw Error('Save progress failed');
 click({action:'lesson-answer',id:'1',choice:'1'});if(!saved['masar-driving-v1'].includes('"QUIZ-001":1'))throw Error('Save answer failed');
 console.log('PASS progress and answer persistence');
+context.location.hash='#/weeks';windowHandlers.hashchange();
+const clickFilter=value=>click({action:'filter-weeks',filter:value});
+clickFilter('current');
+if(!element('app').innerHTML.includes('data-week="1"')||element('app').innerHTML.includes('data-week="2"'))throw Error('In-progress week filter failed');
+clickFilter('completed');
+if(!element('app').innerHTML.includes('ما فيه أسابيع هنا حاليًا'))throw Error('Completed filter empty state failed');
+clickFilter('all');
+if(!element('app').innerHTML.includes('data-week="16"'))throw Error('All weeks filter failed');
+console.log('PASS interactive catalog filters');

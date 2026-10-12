@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -5856,5 +5856,473 @@
       "review_status": "topic_index_mapped_pending_line_verification",
       "safety_note": ""
     }
-  ]
+  ],
+  "sign_library": [
+    {
+      "id": "SG-01",
+      "category": "تنظيمية",
+      "title": "قف",
+      "icon": "stop",
+      "meaning": "توقف كامل قبل مواصلة السير عندما يسمح التنظيم وتكون الحركة آمنة.",
+      "action": "توقفي عند الخط المناسب، ثم انظري للطريق والمشاة.",
+      "memory_tip": "اللوحة الثمانية تختلف عن مثلث التحذير من قف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-016",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-02",
+      "category": "تنظيمية",
+      "title": "أعط الأفضلية",
+      "icon": "yield",
+      "meaning": "افسحي الطريق لمَن له الأفضلية، وتوقفي عند الحاجة.",
+      "action": "خففي السرعة وراقبي المركبات قبل الدخول.",
+      "memory_tip": "لا يكفي مجرد عدم وجود علامة قف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-016",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-03",
+      "category": "تنظيمية",
+      "title": "ممنوع الدخول",
+      "icon": "no-entry",
+      "meaning": "يحظر الدخول من الجهة المواجهة للإشارة.",
+      "action": "استمري إلى مدخل أو طريق بديل مسموح.",
+      "memory_tip": "ممنوع الدخول لا يعني انتهاء منع التجاوز.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-04",
+      "category": "تنظيمية",
+      "title": "السرعة القصوى 60",
+      "icon": "speed60",
+      "meaning": "الرقم هنا مثال لحد السرعة القصوى بالكيلومتر/ساعة.",
+      "action": "لا تتجاوزي الحد حيث يسري وقد تكون السرعة الآمنة أقل.",
+      "memory_tip": "الحد الأقصى ليس سرعة مستهدفة دائمًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-025",
+        "LES-045"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-05",
+      "category": "تنظيمية",
+      "title": "ممنوع الدوران للخلف",
+      "icon": "no-uturn",
+      "meaning": "يحظر الدوران للخلف في نطاق اللوحة.",
+      "action": "واصلي إلى موضع مسموح بالدوران.",
+      "memory_tip": "منع الدوران للخلف لا يعني منع الانعطاف يسارًا بالضرورة.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-024"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-06",
+      "category": "تنظيمية",
+      "title": "ممنوع الانعطاف يسارًا",
+      "icon": "no-left",
+      "meaning": "لا يجوز الانعطاف يسارًا عند الموضع المعني.",
+      "action": "اتبعي الطريق المسموح به.",
+      "memory_tip": "ليس هو نفسه منع الدوران للخلف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-07",
+      "category": "تنظيمية",
+      "title": "ممنوع الانعطاف يمينًا",
+      "icon": "no-right",
+      "meaning": "لا يجوز الانعطاف يمينًا عند الموضع المعني.",
+      "action": "واصلي حسب تنظيم التقاطع والمسار.",
+      "memory_tip": "الانعطاف الأيمن ليس مسموحًا دائمًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-08",
+      "category": "تنظيمية",
+      "title": "ممنوع التجاوز",
+      "icon": "no-overtake",
+      "meaning": "يُحظر تجاوز المركبات وفق نطاق سريان اللوحة.",
+      "action": "حافظي على مسافة الأمان دون تجاوز.",
+      "memory_tip": "الغماز لا يلغي حظر التجاوز.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-023",
+        "LES-024"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-09",
+      "category": "تنظيمية",
+      "title": "ممنوع الوقوف",
+      "icon": "no-parking",
+      "meaning": "يحظر ركن المركبة في نطاق اللوحة وفق الشروط السارية.",
+      "action": "ابحثي عن موقف مسموح.",
+      "memory_tip": "اقرئي اللوحات المكملة للاستثناءات والأوقات.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-031",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-10",
+      "category": "تنظيمية",
+      "title": "ممنوع الوقوف والانتظار",
+      "icon": "no-stopping",
+      "meaning": "يحظر التوقف الاختياري والانتظار حيث يسري المنع.",
+      "action": "لا تتوقفي لانتظار أحد في الموضع المحظور.",
+      "memory_tip": "تختلف عن منع الوقوف ذي الشطب الواحد.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-031",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-11",
+      "category": "تنظيمية",
+      "title": "اتجاه إلزامي إلى اليمين",
+      "icon": "mandatory-right",
+      "meaning": "يلزم اتباع الاتجاه الأيمن المحدد باللوحة.",
+      "action": "هيئي مسارك مسبقًا ثم التزمي بالاتجاه.",
+      "memory_tip": "لوحة الإلزام ليست اقتراحًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-12",
+      "category": "تنظيمية",
+      "title": "اتجاه إلزامي إلى الأمام",
+      "icon": "mandatory-straight",
+      "meaning": "يلزم الاستمرار إلى الأمام حسب تنظيم اللوحة.",
+      "action": "لا تنعطفي إلى اتجاه مخالف للإلزام.",
+      "memory_tip": "قد توجد لوحات وأسهم أرضية مكملة.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-13",
+      "category": "تحذيرية",
+      "title": "إشارة ضوئية أمامك",
+      "icon": "warn-signal",
+      "meaning": "تحذّر من إشارات ضوئية قريبة.",
+      "action": "تهيّئي لرؤية الضوء الفعلي واتخاذ القرار عنده.",
+      "memory_tip": "المثلث ليس ضوءًا أحمر يوجب الوقوف فور رؤيته.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-017"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-14",
+      "category": "تحذيرية",
+      "title": "دوار أمامك",
+      "icon": "warn-roundabout",
+      "meaning": "تنبيه إلى اقتراب دوار.",
+      "action": "خففي السرعة واقرئي تنظيم الأولوية والمسارات.",
+      "memory_tip": "ليست تصريحًا بالدخول دون النظر.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-019",
+        "LES-020"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-15",
+      "category": "تحذيرية",
+      "title": "تقاطع طرق أمامك",
+      "icon": "warn-cross",
+      "meaning": "تنبيه إلى تقاطع يحتمل دخول مركبات من اتجاهات متعددة.",
+      "action": "راقبي الإشارات والأولوية قبل الوصول.",
+      "memory_tip": "رسم التقاطع لا يحدد وحده الأفضلية.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-16",
+      "category": "تحذيرية",
+      "title": "طريق فرعي من اليمين",
+      "icon": "warn-side-right",
+      "meaning": "تنبيه إلى اتصال طريق من جهة اليمين.",
+      "action": "انتبهي إلى مركبات قد تدخل من هذا الاتجاه.",
+      "memory_tip": "اتصال طريق لا يحدد وحده الأولوية.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-17",
+      "category": "تحذيرية",
+      "title": "طريق فرعي من اليسار",
+      "icon": "warn-side-left",
+      "meaning": "تنبيه إلى اتصال طريق من جهة اليسار.",
+      "action": "انتبهي إلى الحركة القادمة من هذا الاتجاه.",
+      "memory_tip": "لا تخلطي جهة اتصال الطريق باتجاه انعطافك.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-18",
+      "category": "تحذيرية",
+      "title": "عبور مشاة",
+      "icon": "warn-pedestrians",
+      "meaning": "تنبيه إلى احتمال عبور مشاة أمامك.",
+      "action": "خففي السرعة وتوقفي عند الحاجة مع الالتزام بأولوية المعبر.",
+      "memory_tip": "التحذير لا يلغي مراقبة الجانبين.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-012",
+        "LES-021"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-19",
+      "category": "تحذيرية",
+      "title": "عبور أطفال",
+      "icon": "warn-children",
+      "meaning": "قد يظهر أطفال يعبرون الطريق، خاصة قرب المدارس.",
+      "action": "خففي السرعة وتوقعي حركة مفاجئة.",
+      "memory_tip": "توقع الخطر مهم حتى لو بدا المكان خاليًا.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-012",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-20",
+      "category": "تحذيرية",
+      "title": "عبور حيوانات",
+      "icon": "warn-animals",
+      "meaning": "احتمال دخول حيوانات إلى الطريق.",
+      "action": "راقبي جانبي الطريق وخففي السرعة عند الحاجة.",
+      "memory_tip": "انتبهي لوجود أكثر من حيوان محتمل.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-028",
+        "LES-037"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-21",
+      "category": "تحذيرية",
+      "title": "مطب أو مطبات",
+      "icon": "warn-bump",
+      "meaning": "تنبيه إلى ارتفاع أو تغير مفاجئ بسطح الطريق.",
+      "action": "خففي تدريجيًا قبل موضع المطب.",
+      "memory_tip": "الفرملة العنيفة المتأخرة قد تخلق خطرًا.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-025",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-22",
+      "category": "تحذيرية",
+      "title": "طريق زلق",
+      "icon": "warn-slippery",
+      "meaning": "تحذير من نقص تماسك الإطارات بالسطح.",
+      "action": "خففي وزيدي مسافة الأمان وتجنبي التوجيه الحاد.",
+      "memory_tip": "ليست لمبة عطل السيارة.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-037",
+        "LES-038"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-23",
+      "category": "تحذيرية",
+      "title": "طريق يضيق من الجانبين",
+      "icon": "warn-narrow",
+      "meaning": "قد يقل عرض الطريق أمامك.",
+      "action": "راقبي المسار والسرعة والمرور المقابل.",
+      "memory_tip": "لا تستخدمي كتف الطريق كمسار بديل.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-013",
+        "LES-015"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-24",
+      "category": "تحذيرية",
+      "title": "طيران منخفض",
+      "icon": "warn-airplane",
+      "meaning": "تحذير من مرور طائرات منخفضة قرب الطريق.",
+      "action": "حافظي على التركيز والانتباه لحركة الطريق.",
+      "memory_tip": "اللوحة لا تعني إغلاق الطريق.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-028",
+        "LES-039"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    }
+  ],
+  "sign_learning": {
+    "title": "مكتبة الإشارات",
+    "categories": [
+      "تحذيرية",
+      "تنظيمية"
+    ],
+    "status": "مسودة تعليمية — ليست قاعدة شاملة أو معرضًا حكوميًا معتمدًا",
+    "category_source": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+    "coverage_notes": "24 بطاقة أولية، ولا تشمل جميع الإرشادية ومناطق العمل والمؤقتة. مطابقة الرموز الرسومية للرسومات الرسمية لم تكتمل."
+  }
 }

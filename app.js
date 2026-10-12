@@ -113,7 +113,9 @@ function mediaBlock(l){
  const collections=items.filter(m=>m.kind!=='youtube_video');
  const clips=video.map(m=>'<article class="study-video"><div class="video-title"><span class="bento-overline">فيديو من مصدر تعليمي خارجي</span><strong>'+ESC(m.title)+'</strong></div><div class="video-player"><button type="button" class="video-load" data-action="video-load" data-video="'+ESC(m.youtube_id)+'" data-title="'+ESC(m.title)+'" aria-label="تشغيل '+ESC(m.title)+'"><span class="video-play-symbol">▶</span><span>شغّلي المقطع</span></button></div><p class="video-footnote">يُحمّل مشغّل YouTube فقط عند الضغط. بعض المقاطع قد تمنع التشغيل المضمّن.</p><a class="source-link" href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">مشاهدة المقطع من قناة المدرسة ↗</a>'+window.MasarHub.videoNotes(m,state)+'</article>').join('');
  const library=collections.map(m=>'<p><a href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer" class="source-link">'+icon('play')+' '+ESC(m.title)+' ↗</a><small class="note-preview">مكتبة فيديوهات خارجية من '+ESC(m.provider)+'، وليست فيديو مضمّنًا.</small></p>').join('');
- return '<section class="aside-card media-aside"><h3>المقاطع التعليمية</h3>'+(items.length?clips+library:'<p class="note-preview">لم نعثر بعد على فيديو مُحدّد لهذا الدرس. يبقى الشرح النصي والرسومات المتاحة للمذاكرة.</p>')+'</section>';
+ const searchUrl='https://www.youtube.com/results?search_query='+encodeURIComponent('تعليم القيادة السعودية شرح '+l.title);
+ const fallback='<div class="video-resource-gap"><strong>ما أضفنا فيديو موثّقًا لهذا الدرس بعد</strong><p>ذاكري الشرح والرسومات أولًا. يمكنك تصفح نتائج بحث يوتيوب المتعلقة بالموضوع، لكن هذه النتائج ليست مختارة أو مدققة من مِسار.</p><a class="btn btn-outline" href="'+ESC(searchUrl)+'" target="_blank" rel="noopener noreferrer">استكشفي مقاطع عن الموضوع ↗</a></div>';
+ return '<section class="aside-card media-aside"><h3>شوفي الشرح المرئي</h3>'+(clips||fallback)+library+'</section>';
 }
 function visualBlock(l){
  const items=(COURSE.learning_visuals||[]).filter(v=>(v.lesson_ids||[]).includes(l.id));

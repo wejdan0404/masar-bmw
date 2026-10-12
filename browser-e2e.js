@@ -10,7 +10,9 @@ const assert=require('node:assert/strict');
  page.on('dialog',async d=>d.accept());
  try{
   await page.goto(base,{waitUntil:'domcontentloaded'});
-  await page.getByText('خلف المقود، يبدأ الفهم أولًا.').waitFor();
+  await page.waitForTimeout(800);
+  console.log('E2E debug initial page',JSON.stringify({url:page.url(),title:await page.title(),body:(await page.locator('body').innerText()).slice(0,450),errors}));
+  await page.getByText('خلف المقود، يبدأ الفهم أولًا.').waitFor({timeout:10000});
   assert.match(await page.title(),/مِسار/);
   await page.goto(base+'#/lesson/1',{waitUntil:'domcontentloaded'});
   await page.locator('textarea[data-activity-note="ACT-001"]').waitFor();

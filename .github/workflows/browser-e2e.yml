@@ -1,0 +1,39 @@
+name: MASAR Browser E2E
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'study-coach.js'
+      - 'study-hub.js'
+      - 'traffic-signs.js'
+      - 'db/**'
+      - 'data/**'
+      - 'sw.js'
+      - 'index-template.html'
+      - 'styles.css'
+      - 'browser-e2e.js'
+      - '.github/workflows/browser-e2e.yml'
+  workflow_dispatch:
+
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright library
+        run: npm install --no-save --no-package-lock playwright
+      - name: Check browser availability
+        run: |
+          command -v google-chrome || command -v google-chrome-stable
+      - name: Run site against real Chromium
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/masar-http.log 2>&1 &
+          sleep 2
+          node browser-e2e.js

@@ -1,0 +1,25 @@
+const fs=require('fs'), vm=require('vm');
+const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
+if(course.weeks.length!==16||course.lessons.length!==48||course.questions.length!==48) throw Error('Curriculum count mismatch');
+const lessons=new Set(course.lessons.map(l=>l.id)), weeks=new Set(course.weeks.map(w=>w.id));
+for(const l of course.lessons) if(!weeks.has(l.week_id)) throw Error('Orphan lesson: '+l.id);
+for(const q of course.questions) if(!lessons.has(q.lesson_id)||!Array.isArray(q.options)||q.correct_option_index<0||q.correct_option_index>=q.options.length) throw Error('Invalid question: '+q.id);
+const text=fs.readFileSync(__dirname+'/app.js','utf8');
+const elements={};let documentHandlers={},windowHandlers={},saved={};
+function element(id){return elements[id]|| (elements[id]={id,innerHTML:'',textContent:id==='course-data'?JSON.stringify(course):'',classList:{add(){},remove(){}},scrollIntoView(){},focus(){}})}
+const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
+ document:{getElementById:element,addEventListener(t,fn){documentHandlers[t]=fn},createElement(){return element('tmp')},body:{append(){}}},
+ window:{scrollTo(){},addEventListener(t,fn){windowHandlers[t]=fn}},
+ location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
+ setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
+vm.createContext(context);vm.runInContext(text,context,{timeout:3000});
+for(const [hash,label] of [['#/home','كل طريق طويل'],['#/weeks','خطة الـ16 أسبوعًا'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/settings','إعدادات المذاكرة']]){
+ context.location.hash=hash;windowHandlers.hashchange();
+ if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
+ console.log('PASS',hash);
+}
+context.location.hash='#/lesson/1';windowHandlers.hashchange();
+const click=(dataset)=>documentHandlers.click({target:{closest(selector){return selector==='[data-action]'?{dataset}:null}}});
+click({action:'mark',id:'1'});if(!saved['masar-driving-v1'].includes('"done":[1]'))throw Error('Save progress failed');
+click({action:'lesson-answer',id:'1',choice:'1'});if(!saved['masar-driving-v1'].includes('"QUIZ-001":1'))throw Error('Save answer failed');
+console.log('PASS progress and answer persistence');

@@ -43,3 +43,5 @@ if(!element('app').innerHTML.includes('حركة السيارة عند الرجو
 console.log('PASS visual learning diagrams and stage navigation');
 
 context.location.hash='#/visuals';windowHandlers.hashchange();if(!element('app').innerHTML.includes('مكتبات الفيديو الخارجية')||!element('app').innerHTML.includes('موقف تفاعلي'))throw Error('Visual library missing');console.log('PASS visual learning library');
+
+context.location.hash='#/lesson/35';windowHandlers.hashchange();if(!element('app').innerHTML.includes('J36565XrCk4')||!element('app').innerHTML.includes('Peyh1mXONAU')||!element('app').innerHTML.includes('video-load'))throw Error('Verified video resources missing');console.log('PASS direct-source video lesson links');

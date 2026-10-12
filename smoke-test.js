@@ -132,3 +132,21 @@ let finalState=JSON.parse(saved['masar-driving-v1']);
 if(finalState.mockSession.status!=='finished'||finalState.mockHistory.length!==1||typeof finalState.mockSession.score!=='number')throw Error('Mock exam result not persisted');
 if(!element('app').innerHTML.includes('نتيجة تدريبية شخصية'))throw Error('Exam feedback not rendered');
 console.log('PASS all 48 original lesson activities, saved reflections, spaced-review dashboard, and resumable timed mock exam');
+
+
+// Regression: repeated answers are not presented as validated driving mastery.
+const masteryCourse={
+ lessons:[{id:'LES-900'}],
+ questions:[{id:'QUIZ-900',lesson_id:'LES-900'}],
+ lesson_activities:[{id:'ACT-900',lesson_id:'LES-900'}]
+};
+const masterySnapshot=context.MasarCoach.masterySnapshot;
+if(typeof masterySnapshot!=='function')throw Error('Mastery snapshot is unavailable');
+const masteryState={activityChecks:{'ACT-900':true},reviewHistory:{}};
+const level=()=>masterySnapshot(masteryCourse,masteryState)[0].level;
+if(level()!=='تمرين ذاتي فقط')throw Error('An unchecked quiz cannot count as learned');
+for(let i=0;i<3;i++)context.MasarCoach.record(masteryState,'lesson','QUIZ-900',true,Date.now()+i*1000);
+if(level()!=='إجابات متكررة')throw Error('Correct repeats label must not claim validated mastery');
+context.MasarCoach.record(masteryState,'lesson','QUIZ-900',false);
+if(level()!=='يحتاج مراجعة')throw Error('A wrong answer must reset the repeated answer indicator');
+console.log('PASS study indicator distinguishes self-study, repeated answers and regression after an error');

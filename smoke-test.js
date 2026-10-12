@@ -56,7 +56,7 @@ if(!loadedFrame||loadedFrame.src!=='https://www.youtube-nocookie.com/embed/J3656
 console.log('PASS click-to-load privacy-enhanced video player');
 
 context.location.hash='#/practice-quiz';windowHandlers.hashchange();if(!element('app').innerHTML.includes('تجميعات وأسئلة المراجعة')||!element('app').innerHTML.includes('SIG-01'))throw Error('Training bank missing');console.log('PASS original quiz bank');
-context.location.hash='#/practice-checklist';windowHandlers.hashchange();if(!element('app').innerHTML.includes('قائمة المهارات العملية')||!element('app').innerHTML.includes('PRA-1:0'))throw Error('Practical checklist missing');console.log('PASS practical checklist');
+context.location.hash='#/practice-checklist';windowHandlers.hashchange();if(!element('app').innerHTML.includes('قائمة المهارات العملية')||!element('app').innerHTML.includes('PRA-1:0'))throw Error('Practical checklist missing');if(!element('app').innerHTML.includes('نماذج أخطاء التقييم العملي')||!element('app').innerHTML.includes('FAULT-16') && !element('app').innerHTML.includes('الخروج من الموقف'))throw Error('Practical fault groups missing');console.log('PASS practical checklist');
 context.location.hash='#/sources';windowHandlers.hashchange();if(!element('app').innerHTML.includes('المصادر وملفاتي الخاصة')||!element('app').innerHTML.includes('DOC-NAZAWI')||!element('app').innerHTML.includes('صفحة 39'))throw Error('Private source index missing');console.log('PASS private PDF and 39 external-page index');
 documentHandlers.input({target:{dataset:{videoNote:'VIDEO-QUDS-X'},value:'الدقيقة 01:20: تعليم خاص'}});if(!saved['masar-driving-v1'].includes('الدقيقة 01:20'))throw Error('Video notes were not persisted');console.log('PASS per-video note persistence');
 

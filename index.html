@@ -154,12 +154,45 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .video-load:focus-visible{outline:3px solid #7598B9;outline-offset:-4px}
 .video-footnote{font-size:11px!important;line-height:1.7;color:#617582;margin:8px 0!important}
 @media(prefers-reduced-motion:reduce){.video-play-symbol{transition:none}}
+
+
+/* Source library, evidence-aware quizzes and practical skill checklists */
+.hub-metrics{display:flex;gap:12px;margin:18px 0}.hub-metrics>div{border-radius:14px;border:1px solid #dce5eb;background:#fff;padding:14px 24px;display:flex;flex-direction:column;min-width:135px}.hub-metrics strong{font-size:24px;color:#202D36}.hub-metrics small{color:#617487}
+.hub-source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-bottom:30px}
+.hub-source{padding:20px!important;margin:0!important;min-width:0}.hub-source h3{margin:4px 0;font-size:16px}.hub-source>p{font-size:12px;line-height:1.8;color:#526777}
+.hub-filename{display:inline-block;background:#f0f4f6;border-radius:6px;padding:4px 7px;max-width:100%;overflow-wrap:anywhere;direction:auto}
+.hub-source-buttons{display:flex;flex-wrap:wrap;gap:9px;margin:13px 0}.hub-source-buttons .btn{min-height:38px;font-size:11px;padding:8px 12px}
+.hub-source-note{display:block;border-top:1px solid #edf0f2;padding-top:14px;font-size:12px;font-weight:700;color:#405563;margin-top:12px}
+.hub-source-note textarea{display:block;width:100%;resize:vertical;min-height:95px;max-height:330px;border:1px solid #d5dfe5;background:#fbfcfd;border-radius:10px;padding:11px;line-height:1.9;font-size:12px;margin-top:7px;color:#253d4b}
+.hub-source-note small{font-weight:400;display:block;color:#627788;margin-top:5px}
+.hub-online-list{display:grid;gap:10px;margin:15px 0 24px}.hub-online-source{display:flex;align-items:center;gap:14px;justify-content:space-between;background:#fff;padding:14px 17px;border:1px solid #dee7ec;border-radius:12px}
+.hub-online-source strong,.hub-online-source small{display:block}.hub-online-source small{font-size:11px;color:#657b8b}.hub-online-source a{font-size:12px;color:#800C1F;white-space:nowrap}
+.hub-page-list{background:white;border:1px solid #dee7ec;padding:20px;border-radius:14px;margin-bottom:25px}.hub-page-list summary{font-weight:750;cursor:pointer}
+.hub-page-list>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.hub-page-list a{display:inline-block;background:#edf2f5;border-radius:7px;font-size:11px;padding:6px 11px}
+.hub-warning{border-right:4px solid #800C1F;background:#f7eef0;padding:14px 16px;border-radius:9px;margin:15px 0;color:#51303a}.hub-warning p{margin:4px 0 0;font-size:12px;line-height:1.95}
+.hub-section-title{font-size:21px;margin:30px 0 13px}.hub-filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 24px}
+.hub-filter{padding:8px 13px;border-radius:30px;border:1px solid #d7e0e6;background:white;font-size:12px;font-weight:700;color:#465e6d}.hub-filter.on{background:#202D36;color:white}
+.hub-question{padding:24px!important;margin:0 0 22px!important;max-width:860px}
+.hub-q-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#5b7282;font-size:11px}
+.hub-sign-scene{display:grid;place-items:center;min-height:176px;padding:22px;background:#f2f6f8;margin:16px 0;border-radius:14px}.masar-sign{width:138px;height:auto}
+.hub-question h2{font-size:19px;color:#202D36;margin:14px 0}.hub-options{display:grid;gap:9px}
+.hub-choice{width:100%;border:1px solid #cedce4;border-radius:11px;background:#fff;color:#1f333e;text-align:right;font-size:14px;padding:13px 17px;line-height:1.7}
+.hub-choice:not(:disabled):hover{border-color:#7598B9;background:#f4f8fa}.hub-choice.right{border-color:#398b71;background:#e9f7f2}.hub-choice.wrong{border-color:#b74357;background:#ffeff2}
+.hub-explain{background:#e9f4f1;border-right:4px solid #387963;border-radius:9px;padding:14px 16px;margin-top:14px}.hub-explain p{margin:5px 0;color:#2e584c}
+.hub-q-nav{display:flex;justify-content:space-between;gap:12px;margin:20px 0 8px}
+.hub-legal{font-size:11px;color:#687d8b;line-height:1.9;margin-top:18px}
+.hub-supplement{padding:20px;background:#eaf0f4;border-radius:15px;margin:20px 0}.hub-supplement h3{font-size:17px}.hub-supplement p{font-size:12px}
+.hub-rubric{padding:20px!important;margin:14px 0!important}.hub-rubric h2{font-size:17px}.hub-checklist{display:grid;gap:10px;margin-top:14px}
+.hub-check{display:flex;gap:12px;align-items:center;background:#f6f8f9;border:1px solid #e0e7ec;border-radius:10px;padding:12px;font-size:13px;cursor:pointer}.hub-check input{accent-color:#800C1F;width:18px;height:18px;flex-shrink:0}.hub-check:has(input:checked){background:#e8f5f1;border-color:#b6d8c9}
+.video-learning-notes{margin-top:16px}
+@media(max-width:810px){.hub-source-grid{grid-template-columns:1fr}.hub-online-source{align-items:flex-start;flex-direction:column}.hub-metrics{gap:7px}.hub-metrics>div{flex:1;min-width:0;padding:12px}.hub-question{padding:16px!important}}
+@media(prefers-reduced-motion:reduce){.hub-choice,.hub-filter{transition:none}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="course-data">{
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -3289,7 +3322,868 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
         "S008"
       ]
     }
-  ]
+  ],
+  "personal_documents": [
+    {
+      "id": "DOC-TRAINEE",
+      "title": "كتاب المتدربة — التدريب النظري",
+      "pages": 240,
+      "filename": "كتاب متدربة  للنظري.pdf",
+      "category": "school_manual",
+      "edition_date": "2022-04",
+      "publisher": "المرور / دليل متدرب منشور في الملف",
+      "scope": "اللوحات ص52–61؛ التقاطعات ص129–162؛ المسافة ص186؛ التجاوز ص194–223؛ المصابيح ص223–237",
+      "verification": "reference_only",
+      "license_status": "protected_or_unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-019",
+        "LES-027"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-DARB",
+      "title": "درب السلامة — كتاب التدريب النظري والعملي",
+      "pages": 166,
+      "filename": "درب السلامة- كتاب عربي.pdf",
+      "category": "licensed_textbook",
+      "edition_date": "2020-01",
+      "publisher": "درب السلامة / Heinrich Vogel / Springer",
+      "scope": "الإشارات ابتداءً من ص25؛ الأولوية ص51؛ العلامات الأرضية ص69؛ المناورات ص91؛ المخاطر ص125",
+      "verification": "reference_only",
+      "license_status": "explicitly_copyrighted",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-NAZAWI",
+      "title": "النزاوي — عيّنات أسئلة للتدرب",
+      "pages": 81,
+      "filename": "__النزاوي_لتعليم_القيادة_اسئلة__.pdf",
+      "category": "unofficial_question_collection",
+      "edition_date": null,
+      "publisher": "تجميع متداول — المصدر الرسمي للأسئلة غير مؤكد",
+      "scope": "أسئلة وأشكال اختبار تدريبية، لا تعتبر نسخة مضمونة من الاختبار الحالي",
+      "verification": "practice_unverified",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-Q49",
+      "title": "تجميع أسئلة القيادة — 49 صفحة",
+      "pages": 49,
+      "filename": "16907764.pdf",
+      "category": "unofficial_question_collection",
+      "edition_date": null,
+      "publisher": "تجميع غير موثق",
+      "scope": "تعاريف الوقوف والأولوية والإشارات؛ له نسخة ثانية مطابقة",
+      "verification": "practice_unverified",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "duplicate_filenames": [
+        "16907764(1).pdf"
+      ]
+    },
+    {
+      "id": "DOC-SHARD",
+      "title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+      "pages": 39,
+      "filename": "Scan 13 Sep 2018 at 10-03 AM.pdf",
+      "category": "school_practical_manual",
+      "edition_date": "2018",
+      "publisher": "مدرسة شرق لتعليم قيادة المركبات",
+      "scope": "فحص ما قبل القيادة، POM / MSPSL، التجاوز، U Turn، المواقف",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-JEDDAH",
+      "title": "منهج التدريب الميداني — جدة المتطورة",
+      "pages": 4,
+      "filename": "__المنهج-العملي-1_.pdf",
+      "category": "school_practical_manual",
+      "edition_date": null,
+      "publisher": "مدرسة جدة المتطورة — منشور تدريبي مصور",
+      "scope": "مهارات U وT وX والكراج والتقاطعات والمرتفعات",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-031",
+        "LES-035"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-NARIMAN",
+      "title": "ملخص تقييم مهارة القيادة — ناريمان",
+      "pages": 22,
+      "filename": "ملخص تقييم المرور.pdf",
+      "category": "individual_practical_notes",
+      "edition_date": null,
+      "publisher": "تجميع ناريمان سعود شعبان",
+      "scope": "فحص، MSSSM، MSPSL، POM، الوقوف، الدوارات، اللوحات",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    }
+  ],
+  "uploaded_image_index": [
+    {
+      "id": "IMG-WARNING",
+      "title": "جدول 24 إشارة تحذيرية",
+      "filename": "image(1).png",
+      "category": "traffic_signs",
+      "status": "user_supplied_reference",
+      "note": "أسماء بعض العلامات تحتاج مراجعة دليل المرور، مثل مثلث قف الذي يعني التحذير من الوقوف أمامك.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-JUNCTION",
+      "title": "تقاطع رئيسي/فرعي بأربعة أشكال",
+      "filename": "image(2).png",
+      "category": "intersections",
+      "status": "user_supplied_reference",
+      "note": "مرجع بصري، لا نعتمد تحديد الأولوية دون النظر إلى التنظيم الفعلي.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-REGULATORY",
+      "title": "جدول إشارات تنظيمية",
+      "filename": "image(3).png",
+      "aliases": [
+        "image(4).png"
+      ],
+      "category": "traffic_signs",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-DASHBOARD",
+      "title": "أيقونات تحذير لوحة القيادة",
+      "filename": "image(5).png",
+      "category": "dashboard_symbols",
+      "status": "user_supplied_reference",
+      "note": "بعض الرموز تختلف حسب موديل هوندا أكورد والفئة.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-EVAL-SHARD",
+      "title": "نموذج تقييم المهارات العملية — شرق",
+      "filename": "image(6).png",
+      "aliases": [
+        "image(7).png"
+      ],
+      "category": "assessment_sheet",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-EVAL-SDS",
+      "title": "نموذج فحص الطريق — المدرسة السعودية",
+      "filename": "image(8).png",
+      "category": "assessment_sheet",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    }
+  ],
+  "external_study_sources": [
+    {
+      "id": "EXT-MOI-SIGNS",
+      "title": "دليل الإشارات المرورية — الإدارة العامة للمرور",
+      "url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "type": "government_portal",
+      "trust": "primary",
+      "note": "مرجع الوزارة للإشارات؛ صفحة التصنيفات في قسم المرور."
+    },
+    {
+      "id": "EXT-ABS",
+      "title": "أبشر — إصدار رخصة قيادة",
+      "url": "https://www.absher.sa/",
+      "type": "government_portal",
+      "trust": "primary",
+      "note": "يُرجع إليه في إجراءات الحجز الحالية."
+    },
+    {
+      "id": "EXT-SAUDIO",
+      "title": "نماذج الاختبار والتجميعات — سعودي رخصة",
+      "url": "https://saudirokhsa.com/",
+      "type": "third_party_quiz",
+      "trust": "unverified",
+      "note": "ليس جهة رسمية؛ لا ضمان لتطابق الأسئلة أو النجاح."
+    },
+    {
+      "id": "EXT-SAUDIO-NAZAWI",
+      "title": "ملف النزاوي على سعودي رخصة",
+      "url": "https://saudirokhsa.com/pdf/",
+      "type": "third_party_collection",
+      "trust": "unverified",
+      "note": "صفحة دعائية تعرض صورًا ووصفًا للتجميع؛ لا تعتبر تصريحًا رسميًا بصحة الأسئلة."
+    }
+  ],
+  "practical_checklist": [
+    {
+      "id": "PRA-1",
+      "title": "فحص وتجهيز المركبة",
+      "lesson_ids": [
+        "LES-001",
+        "LES-002"
+      ],
+      "items": [
+        "تفقد حالة المركبة قبل القيادة",
+        "ضبط المقعد ومسند الرأس والمرايا",
+        "ربط حزام الأمان والتأكد من إغلاق الأبواب",
+        "معرفة أنوار التحذير ووظائف الأزرار الأساسية"
+      ]
+    },
+    {
+      "id": "PRA-2",
+      "title": "الملاحظة وتغيير المسار",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023"
+      ],
+      "items": [
+        "فحص المرايا",
+        "الإشارة في الوقت المناسب",
+        "فحص النقطة العمياء",
+        "انتقاء فجوة آمنة",
+        "الانتقال التدريجي دون قطع خط ممنوع"
+      ]
+    },
+    {
+      "id": "PRA-3",
+      "title": "التقاطعات والدوارات",
+      "lesson_ids": [
+        "LES-016",
+        "LES-019"
+      ],
+      "items": [
+        "فهم الأولوية بحسب الإشارة والتنظيم",
+        "الوقوف قبل خط الوقوف إذا وجب",
+        "الانتباه للمشاة",
+        "التقدم فقط عند خلو المسار بشكل آمن"
+      ]
+    },
+    {
+      "id": "PRA-4",
+      "title": "الركن والخروج من الموقف",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-035"
+      ],
+      "items": [
+        "اختيار مكان يسمح بالوقوف",
+        "مراقبة المحيط أثناء الرجوع للخلف",
+        "ملاحظة تأرجح مقدمة السيارة",
+        "التأكد من الاصطفاف داخل الخطوط",
+        "إشارة الخروج والتحقق من البقعة العمياء"
+      ]
+    },
+    {
+      "id": "PRA-5",
+      "title": "سلوكيات حرجة يجب فهمها",
+      "lesson_ids": [
+        "LES-010",
+        "LES-040"
+      ],
+      "items": [
+        "عدم دخول طريق أو مسار أو دوار قبل التأكد من خلوه",
+        "عدم تجاوز إشارة حمراء أو قف دون توقف",
+        "عدم القيام بمناورة تؤدي للتصادم أو تستدعي تدخلًا طارئًا",
+        "الالتزام بإشارات وطلبات فاحص القيادة حسب النظام"
+      ]
+    }
+  ],
+  "review_claims": [
+    {
+      "id": "CLAIM-HOURS",
+      "text": "أقل من 8 أخطاء = 6 ساعات، أكثر من 8 = 12 ساعة، الرسوب الفوري أو أكثر من 12 = 30 ساعة",
+      "status": "unverified_school_specific_claim",
+      "note": "وُرد في تجميع المستخدم، ولا يُنشر كقاعدة رسمية وطنية أو معيار موحد لتقييم الساعات. راجعي مدرستك.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-EXAM-GUARANTEE",
+      "text": "أسئلة النزاوي مطابقة 100٪ وتضمن النجاح",
+      "status": "unsubstantiated_marketing_claim",
+      "note": "ادعاء تسويقي من موقع طرف ثالث وليس ضمانًا رسميًا.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-PARKING-MOVES",
+      "text": "لا يزيد الركن على أربع حركات",
+      "status": "unverified_school_specific_claim",
+      "note": "قد يكون معيار نموذج تقييم محدد، لا يُعمّم على جميع مدارس القيادة.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-CAR-SPECIFIC",
+      "text": "مواضع أزرار السيارة أو عدد لفات المقود ثابت في كل سيارة",
+      "status": "unsafe_generalization",
+      "note": "قد تختلف بتجهيز السيارة ونوعها وسنة موديلها؛ لا تنقلي خطوات التدريب إلى سيارة فعلية دون إشراف.",
+      "allowed_in_quiz": false
+    }
+  ],
+  "review_questions": [
+    {
+      "id": "SIG-01",
+      "topic": "signals",
+      "question": "ماذا يعني الشكل المثلث ذو الإطار الأحمر في الغالب؟",
+      "options": [
+        "تحذير من خطر أمامك",
+        "طريق سريع حصري",
+        "انتهاء جميع الممنوعات"
+      ],
+      "correct_option_index": 0,
+      "explanation": "إشارة التحذير تنبه إلى وضع يستلزم الانتباه وتكييف السرعة، ولا تعطي أولوية بذاتها.",
+      "visual_key": "warning",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-02",
+      "topic": "signals",
+      "question": "لوحة قف الثُمانية الحمراء تعني:",
+      "options": [
+        "التباطؤ دون توقف",
+        "الوقوف التام والتحقق من سلامة العبور",
+        "الأولوية لك دائمًا"
+      ],
+      "correct_option_index": 1,
+      "explanation": "قف تعني الوقوف الكامل عند الموضع المناسب ثم التأكد من الطريق قبل التقدم.",
+      "visual_key": "stop",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-03",
+      "topic": "signals",
+      "question": "ما معنى المثلث المقلوب بإطار أحمر؟",
+      "options": [
+        "أعطِ الأفضلية",
+        "شارع مغلق",
+        "موقف سيارات"
+      ],
+      "correct_option_index": 0,
+      "explanation": "إشارة إعطاء الأفضلية تستلزم إفساح الطريق وفق حركة المرور وقد تستلزم الوقوف.",
+      "visual_key": "yield",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-04",
+      "topic": "signals",
+      "question": "ماذا تعني دائرة حمراء داخلها شريط أبيض أفقي؟",
+      "options": [
+        "ممنوع الدخول",
+        "قف أمامك بعد 100 متر",
+        "اتجاه إلزامي"
+      ],
+      "correct_option_index": 0,
+      "explanation": "ممنوع الدخول تعني عدم دخول المركبات من الجهة المواجهة للإشارة.",
+      "visual_key": "no-entry",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-05",
+      "topic": "signals",
+      "question": "ماذا تتوقعين عند لوحة تحذيرية بداخلها رسم إشارة ضوئية؟",
+      "options": [
+        "اقتراب إشارة مرور ضوئية",
+        "وجود مواقف فقط",
+        "جميع الإشارات متعطلة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "هي تنبيه مسبق لاحتمال وجود إشارات ضوئية أمامك؛ اتبعي الإشارة الفعلية عند الوصول.",
+      "visual_key": "traffic-light",
+      "source_id": "IMG-WARNING",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-06",
+      "topic": "signals",
+      "question": "ما التصرف المناسب قبل الدوار؟",
+      "options": [
+        "الدخول مباشرة دون النظر",
+        "قراءة اللوحات ومراقبة المركبات داخل الدوار",
+        "تجاوز الجميع من اليمين"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تُحدد الأولوية حسب تنظيم الدوار؛ وفي الدوار الاعتيادي تكون أفضلية المرور غالبًا للمركبات الموجودة داخله.",
+      "visual_key": "roundabout",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-07",
+      "topic": "signals",
+      "question": "علامة تحذيرية بشكل تقاطع أسود داخل مثلث أحمر تخبرك:",
+      "options": [
+        "بوجود تقاطع أمامك",
+        "بأن جميع الطرق ممنوعة",
+        "بوجوب الرجوع للخلف"
+      ],
+      "correct_option_index": 0,
+      "explanation": "لوحة التقاطع تحذر من التقاطع ولا تحدد وحدها الأفضلية؛ التزمي بما تنظمه اللوحات والإشارات.",
+      "visual_key": "intersection",
+      "source_id": "IMG-WARNING",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-08",
+      "topic": "signals",
+      "question": "علامة حد السرعة الأقصى 60 تعني:",
+      "options": [
+        "يجب القيادة 60 دائمًا",
+        "لا يجوز تجاوز 60 عند سريان العلامة وظروف مناسبة",
+        "السرعة الدنيا 60"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الحد الأقصى ليس سرعة مطلوبة في كل الأحوال؛ قد تستوجب الظروف القيادة أبطأ.",
+      "visual_key": "speed60",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-09",
+      "topic": "signals",
+      "question": "ماذا يعني رمز U داخل دائرة حمراء وعليه خط منع؟",
+      "options": [
+        "ممنوع الدوران للخلف",
+        "الدوران للخلف واجب",
+        "دوار أمامك"
+      ],
+      "correct_option_index": 0,
+      "explanation": "حظر الدوران للخلف يعني عدم تنفيذ هذه المناورة في الموقع المحدد.",
+      "visual_key": "no-uturn",
+      "source_id": "IMG-REGULATORY",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-10",
+      "topic": "signals",
+      "question": "عند وجود إشارة منع الوقوف، هل يمكنك ترك سيارتك والذهاب؟",
+      "options": [
+        "نعم دائمًا",
+        "لا، يجب الالتزام بقيود الإشارة السارية",
+        "فقط مع تشغيل الأنوار"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الإشارة التنظيمية تمنع الوقوف حسب مدلولها ونطاق سريانها.",
+      "visual_key": "no-parking",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-11",
+      "topic": "road",
+      "question": "ماذا يحدث إذا اقتربتِ جدًا من المركبة الأمامية؟",
+      "options": [
+        "يزداد وقت رد الفعل",
+        "تقل فرصة الاستجابة والتوقف بأمان",
+        "تتحسن الرؤية"
+      ],
+      "correct_option_index": 1,
+      "explanation": "المسافة غير الكافية تقلل الهامش الزمني وتزيد خطر الاصطدام عند توقف مفاجئ.",
+      "visual_key": "distance",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-12",
+      "topic": "road",
+      "question": "متى تزيدين مسافة الأمان؟",
+      "options": [
+        "عند المطر وضعف الرؤية",
+        "عندما يكون الطريق خاليًا من المخاطر فقط",
+        "لا حاجة لتغييرها"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الظروف الصعبة تقلل التماسك والرؤية، فتتطلب مسافة أكبر وسرعة مناسبة.",
+      "visual_key": "distance",
+      "source_id": "DOC-DARB",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-13",
+      "topic": "road",
+      "question": "ما المقصود بمسافة التوقف؟",
+      "options": [
+        "فقط المسافة بعد الضغط على الفرامل",
+        "المسافة من رؤية الخطر حتى التوقف الكامل",
+        "المسافة بين مخرجين"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تشمل مسافة الاستجابة قبل الفرملة ومسافة الكبح حتى التوقف النهائي.",
+      "visual_key": "distance",
+      "source_id": "DOC-NAZAWI",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-14",
+      "topic": "practical",
+      "question": "أول خطوة قبل تغيير المسار هي:",
+      "options": [
+        "النظر للمرايا وتقدير حركة الطريق",
+        "الانتقال فورًا ثم إعطاء إشارة",
+        "التحديق بشاشة السيارة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "يبدأ القرار بالملاحظة، ثم الإشارة وفحص النقطة العمياء والتأكد من السماح والأمان.",
+      "visual_key": "lane",
+      "source_id": "DOC-NARIMAN",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-15",
+      "topic": "practical",
+      "question": "هل الإشارة الجانبية تمنحك أولوية تلقائيًا؟",
+      "options": [
+        "نعم",
+        "لا، يجب التأكد من سماح الآخرين والفراغ الآمن",
+        "فقط ليلًا"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الغماز يعلم الآخرين بنيتك ولا يعفيك من المسؤولية عن سلامة الانتقال.",
+      "visual_key": "lane",
+      "source_id": "DOC-SHARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-16",
+      "topic": "practical",
+      "question": "قبل الرجوع من موقف، ما التصرف الصحيح؟",
+      "options": [
+        "الاعتماد على الكاميرا فقط",
+        "مراقبة المرايا والمحيط والنقطة العمياء",
+        "التحرك بسرعة"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الكاميرا أداة مساعدة ولا تغطي جميع الزوايا؛ راقبي المنطقة المحيطة والتزمي بتنظيم الطريق.",
+      "visual_key": "parking",
+      "source_id": "DOC-JEDDAH",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-17",
+      "topic": "safety",
+      "question": "ماذا تشير لمبة حزام الأمان عند بقائها مضيئة؟",
+      "options": [
+        "التحقق من ربط الحزام",
+        "ارتفاع درجة حرارة المحرك",
+        "إغلاق الأنوار"
+      ],
+      "correct_option_index": 0,
+      "explanation": "قد تكون إشارة إلى أن حزام أحد المقاعد غير مثبت. راجعي دليل سيارتك للمعنى الدقيق.",
+      "visual_key": "seatbelt",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-18",
+      "topic": "safety",
+      "question": "إذا ظهرت لمبة ضغط الإطارات، ماذا تفعلين؟",
+      "options": [
+        "تجاهلينها دائمًا",
+        "تتفقدين الإطارات والضغط وفق دليل السيارة في مكان آمن",
+        "تزيدين السرعة"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تعني عادةً خللًا في ضغط أحد الإطارات أو نظام المراقبة؛ تحققي بأمان وفق تعليمات الشركة.",
+      "visual_key": "tpms",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-19",
+      "topic": "safety",
+      "question": "إن بقي مؤشر عطل المحرك مضيئًا، ما الموقف الأنسب؟",
+      "options": [
+        "فحص السبب حسب الدليل وخدمات الصيانة",
+        "إزالة المصباح",
+        "إكمال القيادة دائمًا بلا تقييم"
+      ],
+      "correct_option_index": 0,
+      "explanation": "تنبيه المحرك قد يدل على أسباب متعددة، وتحديد التصرف يعتمد على لون المؤشر وسلوكه وأعراض السيارة.",
+      "visual_key": "check-engine",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-20",
+      "topic": "test",
+      "question": "إذا وصلتك أسئلة تجميع مكتوب عليها «مضمونة 100٪»...",
+      "options": [
+        "أعدّها مصدرًا رسميًا",
+        "أستخدمها للمراجعة فقط وأقارنها بالمراجع السارية",
+        "أحفظ الأرقام القديمة دون تحقق"
+      ],
+      "correct_option_index": 1,
+      "explanation": "التجميع غير الرسمي قد يساعد على التمرن لكنه لا يُثبت الأسئلة التي ستظهر في الامتحان.",
+      "visual_key": "book",
+      "source_id": "DOC-NAZAWI",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    }
+  ],
+  "data_quality": {
+    "pdf_received": 8,
+    "pdf_unique": 7,
+    "pdf_duplicates": [
+      [
+        "16907764.pdf",
+        "16907764(1).pdf"
+      ]
+    ],
+    "image_received": 8,
+    "image_unique": 6,
+    "image_duplicates": [
+      [
+        "image(3).png",
+        "image(4).png"
+      ],
+      [
+        "image(6).png",
+        "image(7).png"
+      ]
+    ],
+    "notes": "كل المراجع محصورة كفهرس لا نسخ ملفات. نصوص الاختبار الجديد أصلية تعليمية وليست أسئلة اختبار مسربة أو رسمية."
+  },
+  "community_pages": {
+    "id": "EXT-SAUDIO-NAZAWI",
+    "source_id": "EXT-SAUDIO-NAZAWI",
+    "title": "39 صورة لصفحات ملف النزاوي (موقع طرف ثالث)",
+    "page_count": 39,
+    "license": "third_party_unknown_no_republish",
+    "verification": "links_supplied_by_user_not_page_by_page_validated",
+    "image_links": [
+      {
+        "page": 1,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/1-min.png"
+      },
+      {
+        "page": 2,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/2-min.png"
+      },
+      {
+        "page": 3,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/3-min.png"
+      },
+      {
+        "page": 4,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/4-min.png"
+      },
+      {
+        "page": 5,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/5-min.png"
+      },
+      {
+        "page": 6,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/6-min.png"
+      },
+      {
+        "page": 7,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/7-min.png"
+      },
+      {
+        "page": 8,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/8-min.png"
+      },
+      {
+        "page": 9,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/9-min.png"
+      },
+      {
+        "page": 10,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/10-min.png"
+      },
+      {
+        "page": 11,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/11-min.png"
+      },
+      {
+        "page": 12,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/12-min.png"
+      },
+      {
+        "page": 13,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/13-min.png"
+      },
+      {
+        "page": 14,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/14-min.png"
+      },
+      {
+        "page": 15,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/15-min.png"
+      },
+      {
+        "page": 16,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/16-min.png"
+      },
+      {
+        "page": 17,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/17-min.png"
+      },
+      {
+        "page": 18,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/18-min.png"
+      },
+      {
+        "page": 19,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/19-min.png"
+      },
+      {
+        "page": 20,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/20-min.png"
+      },
+      {
+        "page": 21,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/21-min.png"
+      },
+      {
+        "page": 22,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/22-min.png"
+      },
+      {
+        "page": 23,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/23-min.png"
+      },
+      {
+        "page": 24,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/24-min.png"
+      },
+      {
+        "page": 25,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/25-min.png"
+      },
+      {
+        "page": 26,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/26-min.png"
+      },
+      {
+        "page": 27,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/27-min.png"
+      },
+      {
+        "page": 28,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/28-min.png"
+      },
+      {
+        "page": 29,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/29-min.png"
+      },
+      {
+        "page": 30,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/30-min.png"
+      },
+      {
+        "page": 31,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/31-min.png"
+      },
+      {
+        "page": 32,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/32-min.png"
+      },
+      {
+        "page": 33,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/33-min.png"
+      },
+      {
+        "page": 34,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/34-min.png"
+      },
+      {
+        "page": 35,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/35-min.png"
+      },
+      {
+        "page": 36,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/36-min.png"
+      },
+      {
+        "page": 37,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/37-min.png"
+      },
+      {
+        "page": 38,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/38-min.png"
+      },
+      {
+        "page": 39,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/39-min.png"
+      }
+    ]
+  },
+  "licensing_policy": "المراجع الشخصية محفوظة في المتصفح فقط بعد اختيارها من جهاز المستخدم؛ لا تنشر نسخ الكتب أو الصور في المستودع العام ما لم يُثبت السماح بذلك."
 }
 </script>
 <script>/*
@@ -3300,10 +4194,10 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 2;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources'];
+  const DATABASE_VERSION = 3;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
-  const allStores = [...referenceStores, ...userStores];
+  const allStores = [...referenceStores, ...userStores, 'personal_files'];
   let dbPromise;
   let writeQueue = Promise.resolve();
 
@@ -3325,6 +4219,13 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
         create('sources', 'id');
         create('learning_visuals', 'id');
         create('media_resources', 'id');
+        create('personal_documents', 'id');
+        create('uploaded_image_index', 'id');
+        create('external_study_sources', 'id');
+        create('review_questions', 'id');
+        create('practical_checklist', 'id');
+        create('review_claims', 'id');
+        create('personal_files', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
         create('notes', 'lesson_id');
@@ -3389,7 +4290,11 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       history: attempts.sort((a,b) => a.id-b.id).map(({id, ...attempt}) => attempt),
       visited: visits.map(x => x.lesson_id),
       lastOpened: prefs.lastOpened || 1,
-      readingPositions: prefs.readingPositions || {}
+      readingPositions: prefs.readingPositions || {},
+      videoNotes: prefs.videoNotes || {},
+      sourceNotes: prefs.sourceNotes || {},
+      practiceChecks: prefs.practiceChecks || {},
+      reviewAnswers: prefs.reviewAnswers || {}
     };
   }
 
@@ -3408,6 +4313,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     tx.objectStore('preferences').put({key: 'initialized', value: true});
     tx.objectStore('preferences').put({key: 'lastOpened', value: Number(snapshot.lastOpened) || 1});
     tx.objectStore('preferences').put({key: 'readingPositions', value: snapshot.readingPositions || {}});
+    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers']) tx.objectStore('preferences').put({key, value: snapshot[key] || {}});
     await completed(tx);
   }
 
@@ -3418,7 +4324,34 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     return writeQueue;
   }
 
-  window.MasarDB = Object.freeze({name: DATABASE_NAME, connect, seedReference, loadUser, saveUser,
+  async function savePersonalFile(id, file) {
+    if (!id || !file || !/^(application\/pdf|image\/(png|jpeg|webp))$/.test(file.type)) throw new Error('Unsupported file type');
+    const db = await connect();
+    const tx = db.transaction(['personal_files'], 'readwrite');
+    tx.objectStore('personal_files').put({id, filename:file.name, mime:file.type, size:file.size, updatedAt:new Date().toISOString(), blob:file});
+    await completed(tx);
+  }
+  async function getPersonalFile(id) {
+    const db = await connect();
+    return new Promise((resolve,reject) => {
+      const req = db.transaction('personal_files','readonly').objectStore('personal_files').get(id);
+      req.onsuccess=()=>resolve(req.result || null);req.onerror=()=>reject(req.error);
+    });
+  }
+  async function listPersonalFiles() {
+    const db = await connect();
+    const tx = db.transaction('personal_files','readonly');
+    const result = await getAll(tx.objectStore('personal_files'));
+    await completed(tx);
+    return result.map(({blob,...meta})=>meta);
+  }
+  async function deletePersonalFile(id) {
+    const db = await connect();
+    const tx = db.transaction(['personal_files'], 'readwrite');
+    tx.objectStore('personal_files').delete(id);
+    await completed(tx);
+  }
+  window.MasarDB = Object.freeze({name: DATABASE_NAME, connect, seedReference, loadUser, saveUser, savePersonalFile, getPersonalFile, listPersonalFiles, deletePersonalFile,
     stores: Object.freeze(allStores.slice())});
 })();
 
@@ -3474,12 +4407,79 @@ function markings(k){
 function render(item,step){var list={roundabout:roundabout,lanes:lanes,follow:follow,intersection:intersection,parking:parking,markings:markings};var fn=list[item.type],k=Math.max(0,Math.min((item.steps||[]).length-1,Number(step)||0));return fn?fn(k):''}
 window.MasarVisuals=Object.freeze({render:render});
 })();
+/* MASAR original learning toolkit: personal documents, quizzes, practical checklists. */
+(function(){
+'use strict';
+var cachedFiles={}, quizFilter='all',quizIndex=0;
+function E(x){return String(x===undefined||x===null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function sign(k){
+ var red='#cf1522',blue='#1b578b',black='#19232d',shape='',label='';
+ if(k==='stop'){shape='<polygon points="75,5 113,20 130,57 113,94 75,110 36,94 20,57 36,20" fill="'+red+'" stroke="white" stroke-width="4"/><text x="75" y="66" text-anchor="middle" fill="white" font-weight="900" font-size="22">قف</text>';label='إشارة الوقوف التام'}
+ else if(k==='yield'){shape='<polygon points="75,116 8,8 142,8" fill="white" stroke="'+red+'" stroke-width="13" stroke-linejoin="round"/>';label='إفساح الطريق'}
+ else if(k==='no-entry'){shape='<circle cx="75" cy="64" r="53" fill="'+red+'"/><rect x="38" y="57" width="74" height="15" rx="3" fill="white"/>';label='ممنوع الدخول'}
+ else if(k==='speed60'){shape='<circle cx="75" cy="64" r="53" fill="white" stroke="'+red+'" stroke-width="11"/><text x="75" y="79" font-size="45" text-anchor="middle" fill="'+black+'">60</text>';label='السرعة القصوى'}
+ else if(k==='no-parking'){shape='<circle cx="75" cy="64" r="54" fill="'+blue+'" stroke="'+red+'" stroke-width="10"/><path d="M35 25L116 106" stroke="'+red+'" stroke-width="12"/>';label='منع الوقوف'}
+ else if(k==='no-uturn'){shape='<circle cx="75" cy="64" r="54" fill="white" stroke="'+red+'" stroke-width="10"/><path d="M102 92V47Q102 22 76 22T48 47V78M48 78L36 64M48 78L62 64" fill="none" stroke="'+black+'" stroke-width="10" stroke-linejoin="round"/><path d="M33 24L116 106" stroke="'+red+'" stroke-width="10"/>';label='منع الدوران للخلف'}
+ else if(k==='traffic-light'){shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><rect x="65" y="44" width="20" height="62" rx="6" fill="'+black+'"/><circle cx="75" cy="55" r="7" fill="#ed333a"/><circle cx="75" cy="74" r="7" fill="#f4c02d"/><circle cx="75" cy="93" r="7" fill="#28a35e"/>';label='إشارة ضوئية أمامك'}
+ else if(k==='roundabout'){shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><circle cx="75" cy="73" r="25" fill="none" stroke="'+black+'" stroke-width="6" stroke-dasharray="31 12"/><path d="M56 52L50 67L68 66M86 96L101 93L90 79" fill="none" stroke="'+black+'" stroke-width="5"/>';label='الدوار'}
+ else {shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><text x="75" y="94" text-anchor="middle" font-size="64" font-weight="900" fill="'+black+'">!</text>';label='رسم تدريبي للانتباه'}
+ return '<svg class="masar-sign" viewBox="0 0 150 128" role="img" aria-label="'+E(label)+'" xmlns="http://www.w3.org/2000/svg">'+shape+'</svg>';
+}
+function quizPage(course,state){
+ var all=course.review_questions||[],topics=[['all','كل المواضيع'],['signals','اللوحات'],['road','قواعد الطريق'],['practical','المهارات'],['safety','السيارة والسلامة'],['test','الاختبار']];
+ var bank=all.filter(function(q){return quizFilter==='all'||q.topic===quizFilter});
+ if(quizIndex>=bank.length)quizIndex=0;
+ var answered=all.filter(function(q){return Number.isInteger(state.reviewAnswers&&state.reviewAnswers[q.id])}).length;
+ var correct=all.filter(function(q){return Number(state.reviewAnswers&&state.reviewAnswers[q.id])===q.correct_option_index && Number.isInteger(state.reviewAnswers&&state.reviewAnswers[q.id])}).length;
+ var q=bank[quizIndex],a=q?state.reviewAnswers&&state.reviewAnswers[q.id]:null,done=Number.isInteger(a);
+ return '<div class="eyebrow">PRACTICE BANK / EXAM TRAINING</div><h1 class="page-title">تجميعات وأسئلة المراجعة</h1><p class="sub">بنك أصلي من '+all.length+' سؤالًا تعليميًا مستوحى من موضوعات المصادر، وليس نسخة من أسئلة الامتحان الرسمي. بعد الإجابة يظهر تفسير السبب، وتُحفظ النتيجة على جهازك.</p><div class="hub-metrics"><div><strong>'+answered+' / '+all.length+'</strong><small>أجبتي عنها</small></div><div><strong>'+correct+'</strong><small>إجابات صحيحة</small></div></div><div class="hub-filters">'+topics.map(function(t){return '<button class="hub-filter '+(quizFilter===t[0]?'on':'')+'" data-action="hub-filter" data-topic="'+t[0]+'" aria-pressed="'+(quizFilter===t[0])+'">'+t[1]+'</button>'}).join('')+'</div>'+(q?'<section class="hub-question card"><div class="hub-q-top"><span>سؤال '+(quizIndex+1)+' / '+bank.length+'</span><span>مصدر الفكرة: '+E(q.source_id)+'</span></div><div class="hub-sign-scene">'+sign(q.visual_key)+'</div><h2>'+E(q.question)+'</h2><div class="hub-options">'+q.options.map(function(o,i){return '<button type="button" class="hub-choice '+(done?(i===q.correct_option_index?'right':i===a?'wrong':''):'')+'" data-action="hub-answer" data-qid="'+E(q.id)+'" data-answer="'+i+'" '+(done?'disabled':'')+' aria-label="الخيار '+(i+1)+'">'+E(o)+'</button>'}).join('')+'</div>'+(done?'<div class="hub-explain" role="status"><strong>'+(a===q.correct_option_index?'إجابتك صحيحة':'راجعي المعلومة')+'</strong><p>'+E(q.explanation)+'</p></div>':'')+'<div class="hub-q-nav"><button type="button" class="btn btn-outline" data-action="hub-prev">السابق</button><button type="button" class="btn btn-primary" data-action="hub-next">التالي ←</button></div><p class="hub-legal">الرسم والأمثلة مبسّطة للمذاكرة، وقد تختلف اللوحات بتفاصيلها. للمراجعة النظامية راجعي دليل الإشارات الصادر عن المرور.</p></section>':'<p>لا توجد أسئلة في هذا القسم.</p>')+'<section class="hub-supplement"><h3>تجميع النزاوي والصور الـ39</h3><p>يمكنك ربط ملف النزاوي الشخصي من قسم المصادر. أضفنا كذلك فهرس روابط الصور الـ39 التي أرسلتِها، دون إعادة نشر الصور في المستودع العام.</p><a class="btn btn-outline" href="#/sources">مكتبة المصادر والصور</a></section>';
+}
+function practicePage(course,state){
+ var blocks=course.practical_checklist||[],checked=state.practiceChecks||{};
+ return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
+}
+function docsPage(course,state){
+ var files=(course.personal_documents||[]).concat(course.uploaded_image_index||[]),byKind=(course.external_study_sources||[]);
+ var cards=files.map(function(item){var file=cachedFiles[item.id];return '<article class="hub-source card"><div class="flexline"><div><span class="bento-overline">'+(item.pages?E(item.pages)+' صفحة · ':'صورة مرجعية · ')+'ملف شخصي</span><h3>'+E(item.title)+'</h3></div><span class="chip '+(file?'blue':'')+'">'+(file?'في مكتبتك':'غير مرفوع بعد')+'</span></div><p>'+E(item.scope||item.note||'صورة للتعلم والمقارنة')+'</p><p class="hub-filename">'+E(item.filename)+'</p><div class="hub-source-buttons"><button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(item.id)+'">اختيار الملف من الكمبيوتر</button>'+(file?'<button type="button" class="btn btn-primary" data-action="hub-open" data-source="'+E(item.id)+'">فتح الملف</button><button type="button" class="btn btn-outline" data-action="hub-delete" data-source="'+E(item.id)+'">إزالة</button>':'')+'</div><label class="hub-source-note">ملاحظاتي على المرجع<textarea data-source-note="'+E(item.id)+'" placeholder="رقم الصفحة، وش فهمت، وش أحتاج أراجع؟">'+E((state.sourceNotes||{})[item.id]||'')+'</textarea></label></article>'}).join('');
+ var urls=byKind.map(function(x){return '<div class="hub-online-source"><div><strong>'+E(x.title)+'</strong><small>'+E(x.note)+'</small></div><a href="'+E(x.url)+'" target="_blank" rel="noopener noreferrer">زيارة المصدر ↗</a></div>'}).join('');
+ var links=course.community_pages&&course.community_pages.image_links||[];
+ return '<div class="eyebrow">YOUR PERSONAL SOURCE LIBRARY</div><h1 class="page-title">المصادر وملفاتي الخاصة</h1><p class="sub">رتبنا الكتب والصور التي أرسلتيها وفصلنا المكرر. لإبقائها خاصة ولا نخالف حقوق النشر: اختاري ملفاتك من الكمبيوتر مرة واحدة، ويحفظها متصفحك محليًا في IndexedDB، لا في GitHub ولا على خادم عام.</p><div class="hub-warning"><strong>مهم للحفظ</strong><p>الملفات الكبيرة تعتمد على مساحة المتصفح وقد تُحذف عند تنظيف بيانات الموقع. نسخة التقدم JSON لا تحتوي ملفات PDF أو الصور المرفوعة. احتفظي بنسخ الملفات الأصلية على الكمبيوتر.</p></div><input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/><div class="hub-metrics"><div><strong>'+files.length+'</strong><small>مرجعًا مختلفًا</small></div><div><strong>'+Object.keys(cachedFiles).length+'</strong><small>ملفًا أضفتِه محليًا</small></div></div><div class="hub-source-grid">'+cards+'</div><h2 class="hub-section-title">روابط المصادر على الإنترنت</h2><div class="hub-online-list">'+urls+'</div><details class="hub-page-list"><summary>صور تجميع النزاوي: '+links.length+' رابط صفحة خارجية</summary><p>هذه روابط مقدمة من موقع طرف ثالث؛ لم نتحقق من صحة جميع الصفحات أو الحق في إعادة توزيعها.</p><div>'+links.map(function(it){return '<a href="'+E(it.url)+'" target="_blank" rel="noopener noreferrer">صفحة '+it.page+'</a>'}).join('')+'</div></details>';
+}
+function videoNotes(video,state){
+ return '<label class="hub-source-note video-learning-notes">ملاحظاتي على هذا الفيديو<textarea data-video-note="'+E(video.id)+'" placeholder="الدقيقة 00:00 — لاحظتِ إيش؟&#10;قاعدة جديدة: ...&#10;سؤالي للمدربة: ...">'+E((state.videoNotes||{})[video.id]||'')+'</textarea><small>احفظي اسم الخطوة ووقتها والسؤال الذي تريدين مراجعته؛ تُحفظ الملاحظة محليًا.</small></label>';
+}
+function notesPage(state,course){
+ var videos=Object.entries(state.videoNotes||{}).filter(function(x){return x[1]&&x[1].trim()}).map(function(x){var v=(course.media_resources||[]).find(function(m){return m.id===x[0]});return '<article class="ref-card"><h3>فيديو: '+E(v?v.title:x[0])+'</h3><p style="white-space:pre-wrap">'+E(x[1])+'</p></article>'}).join('');
+ var sources=Object.entries(state.sourceNotes||{}).filter(function(x){return x[1]&&x[1].trim()}).map(function(x){var d=[].concat(course.personal_documents||[],course.uploaded_image_index||[]).find(function(m){return m.id===x[0]});return '<article class="ref-card"><h3>مصدر: '+E(d?d.title:x[0])+'</h3><p style="white-space:pre-wrap">'+E(x[1])+'</p></article>'}).join('');
+ return '<div class="section-head"><h2>ملاحظاتي على الفيديوهات والملفات</h2></div>'+(videos+sources||'<div class="empty">عند كتابة ملاحظة في صفحة فيديو أو مرجع، تظهر هنا تلقائيًا.</div>');
+}
+async function refreshFiles(db,rerender){try{var list=await db.listPersonalFiles();cachedFiles=Object.fromEntries(list.map(function(it){return [it.id,it]}));if(rerender)rerender()}catch(e){console.warn('Personal library unavailable',e)}}
+function click(action,el,ctx){
+ var c=ctx.course,st=ctx.state;
+ if(action==='hub-filter'){quizFilter=el.dataset.topic||'all';quizIndex=0;ctx.render(true);return true}
+ if(action==='hub-prev'){quizIndex=Math.max(0,quizIndex-1);ctx.render(true);return true}
+ if(action==='hub-next'){var count=(c.review_questions||[]).filter(function(q){return quizFilter==='all'||q.topic===quizFilter}).length;quizIndex=Math.min(count-1,quizIndex+1);ctx.render(true);return true}
+ if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;ctx.save();ctx.render(true)}return true}
+ if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
+ if(action==='hub-open'){var popup=window.open('about:blank','_blank');ctx.db.getPersonalFile(el.dataset.source).then(function(f){if(!f||!popup)throw Error('Missing file or popup blocked');var url=URL.createObjectURL(f.blob);popup.location.href=url;setTimeout(function(){URL.revokeObjectURL(url)},180000)}).catch(function(){if(popup)popup.close();ctx.toast('لم نتمكن من فتح الملف؛ جربي السماح بالنوافذ المنبثقة')});return true}
+ if(action==='hub-delete'){if(confirm('حذف نسختك المحلية من هذا المرجع؟ الملف الأصلي على الكمبيوتر لن يتأثر.'))ctx.db.deletePersonalFile(el.dataset.source).then(function(){delete cachedFiles[el.dataset.source];ctx.render(true);ctx.toast('أزلنا الملف من المتصفح فقط')}).catch(function(){ctx.toast('تعذّر حذف الملف')});return true}
+ return false;
+}
+async function upload(input,ctx){
+ var file=input.files&&input.files[0],id=input.dataset.source;
+ if(!file||!id)return;
+ if(file.size>80*1024*1024){ctx.toast('هذا الملف كبير جدًا لهذا المتصفح، احتفظي بنسختك على الكمبيوتر');return}
+ try{await ctx.db.savePersonalFile(id,file);await refreshFiles(ctx.db);ctx.render(true);ctx.toast('حُفظ الملف الخاص في متصفحك؛ لم يُرفع إلى GitHub')}
+ catch(e){console.warn(e);ctx.toast('لم يُحفظ الملف؛ قد لا تكون المساحة كافية. أبقي النسخة الأصلية على الكمبيوتر.')}
+}
+window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,videoNotes,notesPage,refreshFiles,click,upload,sign});
+})();
 (() => {
 'use strict';
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
 const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, sourceById=Object.fromEntries(COURSE.sources.map(s=>[s.id,s]));
 const baseKey='masar-driving-v1';
-let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{}};
+let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{}};
 try { const saved=JSON.parse(localStorage.getItem(baseKey)||'null'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(e){console.warn('Local data unavailable',e)}
 let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
@@ -3529,7 +4529,7 @@ const weeklyDone=w=>lessons.filter(l=>l.week===w&&isDone(l.order)).length;
 const progress=()=>Math.round(completed().size/48*100);
 const nextLesson=()=>lessons.find(l=>!isDone(l.order))||lessons[47];
 const resumeLesson=()=>Number.isInteger(state.lastOpened)&&state.lastOpened>=1&&state.lastOpened<=48&&(state.visited||[]).includes(state.lastOpened)?getLesson(state.lastOpened):null;
-const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
+const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/practice-quiz','quiz','أسئلة التجميعات'],['/practice-checklist','cards','مهارات التقييم'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
 function sidebar(){const path=route();return `<aside class="sidebar ${mobileOpen?'open':''}" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">مساحتك التعليمية</div><nav class="nav">${navData.map(([href,ic,t])=>`<a href="#${href}" class="${path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':''}">${icon(ic)}<span>${t}</span>${href==='/weeks'?'<span class="tag">16</span>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>مشوارك إلى الثقة</small><br><strong>${progress()}%</strong></div><div style="font-size:30px;color:#9eb5c8">${icon('road')}</div></div><div class="line"><i style="width:${progress()}%"></i></div><small>${completed().size} من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>`}
 function topbar(title){return `<header class="topbar"><div class="top-actions"><button type="button" class="chip menu-btn" data-action="menu" aria-label="فتح القائمة">${icon('menu')}</button><div class="crumb">لوحة التعلم <span style="padding:0 6px;color:#a8b5bd">/</span> <strong>${ESC(title)}</strong></div></div><div class="top-actions"><span class="chip">${icon('clock')} <span>30–45 دقيقة للجلسة</span></span><span class="chip red">${icon('road')} أكورد · سنة الطراز غير محددة</span></div></header>`}
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
@@ -3566,7 +4566,7 @@ function mediaBlock(l){
  const items=(COURSE.media_resources||[]).filter(m=>(m.lesson_ids||[]).includes(l.id));
  const video=items.filter(m=>m.kind==='youtube_video'&&/^[\w-]{11}$/.test(m.youtube_id||''));
  const collections=items.filter(m=>m.kind!=='youtube_video');
- const clips=video.map(m=>'<article class="study-video"><div class="video-title"><span class="bento-overline">فيديو من مصدر تعليمي خارجي</span><strong>'+ESC(m.title)+'</strong></div><div class="video-player"><button type="button" class="video-load" data-action="video-load" data-video="'+ESC(m.youtube_id)+'" data-title="'+ESC(m.title)+'" aria-label="تشغيل '+ESC(m.title)+'"><span class="video-play-symbol">▶</span><span>شغّلي المقطع</span></button></div><p class="video-footnote">يُحمّل مشغّل YouTube فقط عند الضغط. بعض المقاطع قد تمنع التشغيل المضمّن.</p><a class="source-link" href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">مشاهدة المقطع من قناة المدرسة ↗</a></article>').join('');
+ const clips=video.map(m=>'<article class="study-video"><div class="video-title"><span class="bento-overline">فيديو من مصدر تعليمي خارجي</span><strong>'+ESC(m.title)+'</strong></div><div class="video-player"><button type="button" class="video-load" data-action="video-load" data-video="'+ESC(m.youtube_id)+'" data-title="'+ESC(m.title)+'" aria-label="تشغيل '+ESC(m.title)+'"><span class="video-play-symbol">▶</span><span>شغّلي المقطع</span></button></div><p class="video-footnote">يُحمّل مشغّل YouTube فقط عند الضغط. بعض المقاطع قد تمنع التشغيل المضمّن.</p><a class="source-link" href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">مشاهدة المقطع من قناة المدرسة ↗</a>'+window.MasarHub.videoNotes(m,state)+'</article>').join('');
  const library=collections.map(m=>'<p><a href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer" class="source-link">'+icon('play')+' '+ESC(m.title)+' ↗</a><small class="note-preview">مكتبة فيديوهات خارجية من '+ESC(m.provider)+'، وليست فيديو مضمّنًا.</small></p>').join('');
  return '<section class="aside-card media-aside"><h3>المقاطع التعليمية</h3>'+(items.length?clips+library:'<p class="note-preview">لم نعثر بعد على فيديو مُحدّد لهذا الدرس. يبقى الشرح النصي والرسومات المتاحة للمذاكرة.</p>')+'</section>';
 }
@@ -3587,15 +4587,15 @@ function visualLibraryPage(){
  const scenarios=COURSE.learning_visuals||[],resources=COURSE.media_resources||[];
  return '<div class="eyebrow">VISUAL LEARNING LIBRARY</div><h1 class="page-title">المكتبة المرئية</h1><p class="sub">رسومات أصلية تتبدل مراحلها داخل الدروس، مع روابط مصادر الفيديو الخارجية التي تمكنّا من تحديدها. الرسومات للفهم النظري وليست تدريب قيادة عمليًا.</p><div class="catalog-progress-caption"><span>رسومات تفاعلية</span><strong>'+scenarios.length+' مواضيع · '+new Set(scenarios.flatMap(v=>v.lesson_ids)).size+' دروس مرتبطة</strong></div><div class="visual-index-grid">'+scenarios.map(v=>{const first=lessons.find(l=>l.id===v.lesson_ids[0]);return '<article class="visual-index-tile"><div class="visual-index-media">'+(window.MasarVisuals?window.MasarVisuals.render(v,0):'')+'</div><div class="visual-index-text"><span class="bento-overline">موقف تفاعلي · '+v.steps.length+' مراحل</span><h2>'+ESC(v.title)+'</h2><p>'+ESC(v.steps[0].body)+'</p><a class="inline-link" href="#/lesson/'+first.order+'">افتحي التدريب في الدرس '+p2(first.order)+' '+icon('arrow')+'</a></div></article>'}).join('')+'</div><div class="section-head"><div><h2>مكتبات الفيديو الخارجية</h2><p>روابط صفحات تضم فيديوهات تعليمية، وليست ملفات فيديو مضمّنة أو مُراجَعة مشهدًا بمشهد.</p></div></div><div class="visual-resource-list">'+resources.map(m=>'<div class="ref-card"><h3>'+ESC(m.title)+'</h3><p>'+ESC(m.provider)+' · رابط مصدر خارجي</p><a href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">زيارة مصدر الفيديوهات '+icon('arrow')+'</a></div>').join('')+'</div>'+footerNote();
 }
-function sourcesPage(){return `<div class="eyebrow">REFERENCE LIBRARY</div><h1 class="page-title">المراجع والمصادر</h1><p class="sub">مراجع رسمية سعودية ومصادر تعليمية مساعدة. الروابط للإثراء والرجوع إلى النصوص الأصلية؛ اختلاف سنة الموديل أو تحديث الأنظمة قد يغير بعض التفاصيل.</p><div class="sources-disclaimer">${COURSE.sources.map(s=>`<section class="ref-card"><div class="flexline"><h3>${ESC(s.name)}</h3><span class="chip tiny">${ESC(s.category||'مرجع')}</span></div><p>${ESC(s.scope||s.notes||'مصدر للقراءة والتحقق')}</p><a href="${ESC(s.url)}" target="_blank" rel="noopener noreferrer">افتحي المصدر الرسمي / التعليمي ↗</a></section>`).join('')}</div>${footerNote()}`}
-function notesPage(){const entries=Object.keys(state.notes).map(Number).filter(n=>state.notes[n]?.trim()).sort((a,b)=>a-b);const marks=state.bookmarks.filter(n=>n>=1&&n<=48);return `<div class="eyebrow">MY NOTEBOOK</div><h1 class="page-title">دفتر مذاكرتي</h1><p class="sub">كلامك وملاحظاتك على الدروس، والموضوعات التي حفظتيها للمراجعة لاحقًا.</p><div class="section-head"><h2>دروس محفوظة (${marks.length})</h2></div><div class="card">${marks.length?marks.map(n=>`<a class="lesson-row" href="#/lesson/${n}"><span class="lesson-no">${p2(n)}</span><span class="lesson-info"><b>${ESC(getLesson(n).title)}</b><small>الأسبوع ${weekForLesson(n)}</small></span>${icon('star')}</a>`).join(''):'<div class="empty">ما حفظتِ أي درس للمراجعة. اضغطي «حفظ للمراجعة» من داخل أي درس.</div>'}</div><div class="section-head"><h2>ملاحظاتي (${entries.length})</h2></div>${entries.length?entries.map(n=>`<div class="ref-card"><div class="flexline"><h3>${ESC(getLesson(n).title)}</h3><a class="inline-link" href="#/lesson/${n}">فتح الدرس ←</a></div><p style="white-space:pre-wrap">${ESC(state.notes[n])}</p></div>`).join(''):'<div class="empty">دفترك لسه فاضي. اكتبي أول ملاحظة من داخل الدروس.</div>'}${footerNote()}`}
+function sourcesPage(){return window.MasarHub.docsPage(COURSE,state)+`<div class="eyebrow" style="margin-top:32px">REFERENCE LIBRARY / OFFICIAL</div><h1 class="page-title">المراجع والمصادر</h1><p class="sub">مراجع رسمية سعودية ومصادر تعليمية مساعدة. الروابط للإثراء والرجوع إلى النصوص الأصلية؛ اختلاف سنة الموديل أو تحديث الأنظمة قد يغير بعض التفاصيل.</p><div class="sources-disclaimer">${COURSE.sources.map(s=>`<section class="ref-card"><div class="flexline"><h3>${ESC(s.name)}</h3><span class="chip tiny">${ESC(s.category||'مرجع')}</span></div><p>${ESC(s.scope||s.notes||'مصدر للقراءة والتحقق')}</p><a href="${ESC(s.url)}" target="_blank" rel="noopener noreferrer">افتحي المصدر الرسمي / التعليمي ↗</a></section>`).join('')}</div>${footerNote()}`}
+function notesPage(){const entries=Object.keys(state.notes).map(Number).filter(n=>state.notes[n]?.trim()).sort((a,b)=>a-b);const marks=state.bookmarks.filter(n=>n>=1&&n<=48);return `<div class="eyebrow">MY NOTEBOOK</div><h1 class="page-title">دفتر مذاكرتي</h1><p class="sub">كلامك وملاحظاتك على الدروس، والموضوعات التي حفظتيها للمراجعة لاحقًا.</p><div class="section-head"><h2>دروس محفوظة (${marks.length})</h2></div><div class="card">${marks.length?marks.map(n=>`<a class="lesson-row" href="#/lesson/${n}"><span class="lesson-no">${p2(n)}</span><span class="lesson-info"><b>${ESC(getLesson(n).title)}</b><small>الأسبوع ${weekForLesson(n)}</small></span>${icon('star')}</a>`).join(''):'<div class="empty">ما حفظتِ أي درس للمراجعة. اضغطي «حفظ للمراجعة» من داخل أي درس.</div>'}</div><div class="section-head"><h2>ملاحظاتي (${entries.length})</h2></div>${entries.length?entries.map(n=>`<div class="ref-card"><div class="flexline"><h3>${ESC(getLesson(n).title)}</h3><a class="inline-link" href="#/lesson/${n}">فتح الدرس ←</a></div><p style="white-space:pre-wrap">${ESC(state.notes[n])}</p></div>`).join(''):'<div class="empty">دفترك لسه فاضي. اكتبي أول ملاحظة من داخل الدروس.</div>'}${window.MasarHub.notesPage(state,COURSE)}${footerNote()}`}
 function quizPage(){const options=weeks.map(w=>`<option value="${w.number}">${w.number} — ${ESC(w.title)}</option>`).join(''); const wrong=Object.entries(state.answers).filter(([id,v])=>{const q=questions.find(q=>q.id===id);return q&&q.correct_option_index!==v}).length;return `<div class="eyebrow">KNOWLEDGE CHECK</div><h1 class="page-title">مركز الاختبارات</h1><p class="sub">اختاري أسبوعًا لتختبري ثلاثة مفاهيم، أو خوضي اختبارًا شاملًا من 12 سؤالًا متنوعة من المنهج. جميع الدرجات للتدريب الشخصي فقط.</p><div class="quiz-controls"><button class="btn btn-primary" type="button" data-action="start-quiz" data-week="all">اختبار شامل · 12 سؤالًا ${icon('arrow')}</button><button class="btn btn-muted" type="button" data-action="start-quiz" data-week="wrong" ${wrong===0?'disabled':''}>راجعي الأخطاء (${wrong})</button><select class="select" id="choose-week" aria-label="اختيار أسبوع للاختبار"><option value="">اختبار أسبوع معين...</option>${options}</select></div><div id="quiz-stage">${renderQuizStage()}</div><div class="section-head"><div><h2>مراجعة الأسئلة على مستوى الدروس</h2><p>كل درس يحتوي سؤالًا خاصًا به وتفسيرًا بعد الإجابة.</p></div><a href="#/weeks">خطة الدروس ←</a></div>${footerNote()}`}
 function renderQuizStage(){if(!session){let hist=state.history.slice(-4).reverse();return `<div class="card"><div class="flexline"><h3>ابدئي اختبارك التالي</h3><span class="chip blue">${icon('quiz')} تمهيد</span></div><p class="sub" style="margin-top:10px">إذا ظهرت لك إجابة خطأ، سترين السبب فورًا. والاختبار الأسبوعي من ثلاث أسئلة، بينما الاختبار الشامل يختار 12 سؤالًا من الأسابيع المختلفة.</p>${hist.length?`<div class="section-head"><h2>المحاولات الأخيرة</h2></div>${hist.map(h=>`<div class="lesson-row"><span class="lesson-no">${h.score}/${h.total}</span><span class="lesson-info"><b>${ESC(h.label)}</b><small>${ESC(h.date)}</small></span></div>`).join('')}`:''}</div>`}
 if(session.index>=session.ids.length){const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;const total=session.ids.length;return `<div class="test-results"><div class="eyebrow">RESULTS / النتيجة</div><div class="score">${score}<span style="font-size:30px;color:var(--fog)"> / ${total}</span></div><h2>${score===total?'أبدعتي! كل الإجابات صحيحة.':score>=total*.7?'شغل ممتاز، وراجعي بعض النقاط.':'المهم تعرفين سبب الخطأ وتراجعينه.'}</h2><p>هذه درجة تدريبية داخل الموقع، وليست درجة نجاح رسمية للرخصة.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px"><button class="btn btn-primary" type="button" data-action="quiz-restart">إعادة الاختبار</button><button class="btn btn-outline" type="button" data-action="quiz-end">العودة للمركز</button></div></div>`}
 const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا قصيرًا، بصياغات تعليمية أولية تحتاج تدقيقًا قبل النشر العام.</div><div class="point"><i>2</i>48 سؤالًا تدريبيًا مع تفسير، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>البيانات منظمة داخل IndexedDB (دروس، أسئلة، ملاحظات، تقدم، اختبارات). لا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
-function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
+function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
 function timerHTML(){return `<div class="floating-timer" aria-label="مؤقت مذاكرة"><span style="font-size:11px;color:var(--steel);font-weight:850">${icon('clock')}</span><b id="timer-text">${p2(Math.floor(timer.seconds/60))}:${p2(timer.seconds%60)}</b><button type="button" data-action="timer-toggle" aria-label="${timer.active?'إيقاف المؤقت':'بدء المؤقت'}">${icon(timer.active?'pause':'play')}</button><button type="button" data-action="timer-reset" aria-label="إعادة ضبط المؤقت">${icon('reset')}</button></div>`}
 function render(keepScroll=false){const [title,content]=resolvePage();APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${content}</div></main>${timerHTML()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
@@ -3608,6 +4608,7 @@ else{const n=Number(week);pool=questions.filter(q=>q.week===n).map(q=>q.id);labe
 if(!pool.length){toast('ما عندك أسئلة في هذه المجموعة الآن');return}session={ids:pool,label,index:0,answers:{},saved:false};if(route()!='/quiz'){location.hash='#/quiz'}else render(true)}
 function recordTest(){if(!session||session.saved)return;const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;state.history.push({label:session.label,score,total:session.ids.length,date:new Date().toLocaleDateString('ar-SA')});state.history=state.history.slice(-30);session.saved=true;save()}
 function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;const action=el.dataset.action,n=Number(el.dataset.id);
+ if(action.startsWith('hub-')&&window.MasarHub.click(action,el,{course:COURSE,state,save,render,toast,db:window.MasarDB}))return;
  if(action==='persist-storage'){if(!navigator.storage?.persist){toast('المتصفح لا يدعم طلب تثبيت التخزين؛ احفظي نسخة احتياطية');return}navigator.storage.persist().then(granted=>toast(granted?'المتصفح وافق على التخزين المستمر في هذا الجهاز':'المتصفح لم يمنح ضمانًا ضد الحذف التلقائي')).catch(()=>toast('لم نتمكن من طلب التخزين المستمر'));return}
  if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
  if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
@@ -3627,12 +4628,12 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='timer-reset'){timer.active=false;timer.seconds=1800;render(true);return}
  if(action==='export'){const data=JSON.stringify({format:'masar-progress-v1',exportedAt:new Date().toISOString(),state},null,2);const blob=new Blob([data],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='masar-my-progress.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('تم تجهيز نسخة بياناتك الاحتياطية');return}
  if(action==='import'){document.getElementById('import-file')?.click();return}
- if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
+ if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
 }
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
-document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}});
-document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
+document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save()}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}});
+document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if(e.target.id==='hub-file'&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
 function lessonNumberFromRoute(path){const m=/^\/lesson\/(\d+)$/.exec(path||'');const n=Number(m?.[1]);return n>=1&&n<=48?n:null}
 function captureReadingPosition(path=displayedRoute){const n=lessonNumberFromRoute(path);if(!n||restoringScroll)return;const y=Math.max(0,Math.round(window.scrollY||document.documentElement?.scrollTop||0));state.readingPositions=state.readingPositions||{};if(state.readingPositions[n]!==y){state.readingPositions[n]=y;save()}}
 function restoreReadingPosition(){const n=lessonNumberFromRoute(route());if(!n)return;const y=Number(state.readingPositions?.[n])||0;if(y<=0)return;restoringScroll=true;requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>{restoringScroll=false})})}
@@ -3645,6 +4646,7 @@ render();restoreReadingPosition();
 if(window.MasarDB){
   window.MasarDB.seedReference(COURSE).then(() => window.MasarDB.loadUser()).then(saved => {
     databaseReady=true; databaseStatus='قاعدة IndexedDB جاهزة · حفظ محلي على هذا الجهاز';
+    window.MasarHub?.refreshFiles(window.MasarDB,()=>{if(route()==='/sources')render(true)});
     // Preserve edits made in the current page or existing localStorage progress.
     if(!savedMirrorPresent && !dirtyBeforeReady && saved){
       state={...state,...saved};

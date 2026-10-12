@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -3352,6 +3352,14 @@
       "type": "third_party_collection",
       "trust": "unverified",
       "note": "صفحة دعائية تعرض صورًا ووصفًا للتجميع؛ لا تعتبر تصريحًا رسميًا بصحة الأسئلة."
+    },
+    {
+      "id": "EXT-MOI-SIGNS-PDF",
+      "title": "دليل إشارات المرور — ملف وزارة الداخلية",
+      "url": "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES",
+      "type": "government_pdf",
+      "trust": "primary",
+      "note": "رابط ملف دليل الإشارات المنشور على موقع وزارة الداخلية؛ راجعي النسخة الفعلية عند اختلاف الرسوم أو التسميات."
     }
   ],
   "practical_checklist": [
@@ -3822,7 +3830,9 @@
         "image(7).png"
       ]
     ],
-    "notes": "كل المراجع محصورة كفهرس لا نسخ ملفات. نصوص الاختبار الجديد أصلية تعليمية وليست أسئلة اختبار مسربة أو رسمية."
+    "notes": "كل المراجع محصورة كفهرس لا نسخ ملفات. نصوص الاختبار الجديد أصلية تعليمية وليست أسئلة اختبار مسربة أو رسمية.",
+    "lesson_index_coverage": 48,
+    "reference_link_type": "PDF page references in personal files; NOT 48 line-by-line certified lessons"
   },
   "community_pages": {
     "id": "EXT-SAUDIO-NAZAWI",
@@ -4232,5 +4242,1243 @@
     ],
     "hours_policy": "لا تعتمد قاعدة 6/12/30 ساعة على عدد الأخطاء من دون وثيقة حديثة صادرة من مدرسة التقييم",
     "note": "الأخطاء مستخلصة ومُعاد صياغتها من أوراق التقييم التي قدمتها المستخدمة. فئة القابض اليدوي لا تنطبق مباشرة على هوندا أكورد الأوتوماتيك."
-  }
+  },
+  "lesson_reading_map": [
+    {
+      "id": "READ-001",
+      "lesson_id": "LES-001",
+      "lesson_title": "أدوات السيارة",
+      "resources": [
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 3,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 236,
+          "pdf_page_end": 238,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-002",
+      "lesson_id": "LES-002",
+      "lesson_title": "التهيئة والسلامة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 89,
+          "printed_page_end": 96,
+          "pdf_page_start": 90,
+          "pdf_page_end": 97,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 3,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-003",
+      "lesson_id": "LES-003",
+      "lesson_title": "لوحة القيادة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 236,
+          "pdf_page_end": 238,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-004",
+      "lesson_id": "LES-004",
+      "lesson_title": "أجزاء الطريق",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 45,
+          "printed_page_end": 51,
+          "pdf_page_start": 46,
+          "pdf_page_end": 52,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-005",
+      "lesson_id": "LES-005",
+      "lesson_title": "المسارات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 102,
+          "printed_page_end": 114,
+          "pdf_page_start": 103,
+          "pdf_page_end": 115,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-006",
+      "lesson_id": "LES-006",
+      "lesson_title": "مستخدمو الطريق",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 76,
+          "printed_page_end": 89,
+          "pdf_page_start": 77,
+          "pdf_page_end": 90,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-007",
+      "lesson_id": "LES-007",
+      "lesson_title": "إشارات التحذير",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 55,
+          "printed_page_end": 55,
+          "pdf_page_start": 56,
+          "pdf_page_end": 56,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 61,
+          "printed_page_end": 64,
+          "pdf_page_start": 62,
+          "pdf_page_end": 65,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-008",
+      "lesson_id": "LES-008",
+      "lesson_title": "الإشارات التنظيمية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 56,
+          "printed_page_end": 57,
+          "pdf_page_start": 57,
+          "pdf_page_end": 58,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 65,
+          "printed_page_end": 69,
+          "pdf_page_start": 66,
+          "pdf_page_end": 70,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-009",
+      "lesson_id": "LES-009",
+      "lesson_title": "الإشارات الإرشادية والمؤقتة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 58,
+          "printed_page_end": 60,
+          "pdf_page_start": 59,
+          "pdf_page_end": 61,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 70,
+          "printed_page_end": 73,
+          "pdf_page_start": 71,
+          "pdf_page_end": 74,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-010",
+      "lesson_id": "LES-010",
+      "lesson_title": "الإشارات الضوئية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 134,
+          "pdf_page_start": 130,
+          "pdf_page_end": 135,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-011",
+      "lesson_id": "LES-011",
+      "lesson_title": "التقاطعات والأولوية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 161,
+          "pdf_page_start": 130,
+          "pdf_page_end": 162,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-012",
+      "lesson_id": "LES-012",
+      "lesson_title": "معابر المشاة ومراجعة الشهر",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 162,
+          "printed_page_end": 164,
+          "pdf_page_start": 163,
+          "pdf_page_end": 165,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-013",
+      "lesson_id": "LES-013",
+      "lesson_title": "أجزاء الطريق والمسارات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 45,
+          "printed_page_end": 51,
+          "pdf_page_start": 46,
+          "pdf_page_end": 52,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 102,
+          "printed_page_end": 108,
+          "pdf_page_start": 103,
+          "pdf_page_end": 109,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-014",
+      "lesson_id": "LES-014",
+      "lesson_title": "الخطوط المتصلة والمتقطعة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 51,
+          "printed_page_end": 53,
+          "pdf_page_start": 52,
+          "pdf_page_end": 54,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 102,
+          "printed_page_end": 109,
+          "pdf_page_start": 103,
+          "pdf_page_end": 110,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-015",
+      "lesson_id": "LES-015",
+      "lesson_title": "اختيار المسار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 109,
+          "printed_page_end": 123,
+          "pdf_page_start": 110,
+          "pdf_page_end": 124,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-016",
+      "lesson_id": "LES-016",
+      "lesson_title": "قف وأعط الأفضلية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 135,
+          "printed_page_end": 137,
+          "pdf_page_start": 136,
+          "pdf_page_end": 138,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-017",
+      "lesson_id": "LES-017",
+      "lesson_title": "الإشارات الضوئية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 134,
+          "pdf_page_start": 130,
+          "pdf_page_end": 135,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-018",
+      "lesson_id": "LES-018",
+      "lesson_title": "أولوية التقاطعات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 137,
+          "printed_page_end": 161,
+          "pdf_page_start": 138,
+          "pdf_page_end": 162,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-019",
+      "lesson_id": "LES-019",
+      "lesson_title": "أولوية الدخول إلى الدوار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 154,
+          "printed_page_end": 155,
+          "pdf_page_start": 155,
+          "pdf_page_end": 156,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-020",
+      "lesson_id": "LES-020",
+      "lesson_title": "اختيار مسار الدوار والمخرج الصحيح",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 154,
+          "printed_page_end": 155,
+          "pdf_page_start": 155,
+          "pdf_page_end": 156,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-JEDDAH",
+          "source_title": "منهج التدريب الميداني — جدة المتطورة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-021",
+      "lesson_id": "LES-021",
+      "lesson_title": "أولوية المشاة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 162,
+          "printed_page_end": 164,
+          "pdf_page_start": 163,
+          "pdf_page_end": 165,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-022",
+      "lesson_id": "LES-022",
+      "lesson_title": "تغيير المسار والنقطة العمياء",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 109,
+          "printed_page_end": 123,
+          "pdf_page_start": 110,
+          "pdf_page_end": 124,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 3,
+          "pdf_page_end": 4,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-023",
+      "lesson_id": "LES-023",
+      "lesson_title": "التجاوز من اليسار أو اليمين",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 202,
+          "printed_page_end": 213,
+          "pdf_page_start": 203,
+          "pdf_page_end": 214,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-024",
+      "lesson_id": "LES-024",
+      "lesson_title": "متى يكون التجاوز محظورًا؟",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 204,
+          "printed_page_end": 210,
+          "pdf_page_start": 205,
+          "pdf_page_end": 211,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-025",
+      "lesson_id": "LES-025",
+      "lesson_title": "السرعة المناسبة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 168,
+          "printed_page_end": 185,
+          "pdf_page_start": 169,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-026",
+      "lesson_id": "LES-026",
+      "lesson_title": "مسافة التوقف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 189,
+          "pdf_page_start": 176,
+          "pdf_page_end": 190,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NAZAWI",
+          "source_title": "النزاوي — عيّنات أسئلة للتدرب",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 1,
+          "pdf_page_end": 6,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-027",
+      "lesson_id": "LES-027",
+      "lesson_title": "مسافة الأمان وقاعدة الثانيتين",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 186,
+          "printed_page_end": 191,
+          "pdf_page_start": 187,
+          "pdf_page_end": 192,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-028",
+      "lesson_id": "LES-028",
+      "lesson_title": "القيادة الوقائية واكتشاف الأخطار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-029",
+      "lesson_id": "LES-029",
+      "lesson_title": "عادات القيادة الخطرة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 76,
+          "printed_page_end": 89,
+          "pdf_page_start": 77,
+          "pdf_page_end": 90,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-030",
+      "lesson_id": "LES-030",
+      "lesson_title": "اختبارات اكتشاف الأخطار بالفيديو",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-031",
+      "lesson_id": "LES-031",
+      "lesson_title": "أنواع المواقف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 25,
+          "pdf_page_end": 37,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-032",
+      "lesson_id": "LES-032",
+      "lesson_title": "الرجوع للخلف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 123,
+          "printed_page_end": 125,
+          "pdf_page_start": 124,
+          "pdf_page_end": 126,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 28,
+          "pdf_page_end": 30,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-033",
+      "lesson_id": "LES-033",
+      "lesson_title": "الخروج من الموقف بالرجوع للخلف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 28,
+          "pdf_page_end": 30,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-034",
+      "lesson_id": "LES-034",
+      "lesson_title": "الركن الموازي",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 5,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-035",
+      "lesson_id": "LES-035",
+      "lesson_title": "مناورات X وT وY",
+      "resources": [
+        {
+          "source_id": "DOC-JEDDAH",
+          "source_title": "منهج التدريب الميداني — جدة المتطورة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 1,
+          "pdf_page_end": 3,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 28,
+          "pdf_page_end": 30,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-036",
+      "lesson_id": "LES-036",
+      "lesson_title": "المرتفعات وفرامل التوقف",
+      "resources": [
+        {
+          "source_id": "DOC-JEDDAH",
+          "source_title": "منهج التدريب الميداني — جدة المتطورة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 3,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 5,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-037",
+      "lesson_id": "LES-037",
+      "lesson_title": "المطر والتماسك ومسافة الأمان",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-038",
+      "lesson_id": "LES-038",
+      "lesson_title": "الغبار والضباب",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-039",
+      "lesson_id": "LES-039",
+      "lesson_title": "القيادة الليلية وأنواع الأنوار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 223,
+          "printed_page_end": 234,
+          "pdf_page_start": 224,
+          "pdf_page_end": 235,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-040",
+      "lesson_id": "LES-040",
+      "lesson_title": "تعطل السيارة على الطريق",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-041",
+      "lesson_id": "LES-041",
+      "lesson_title": "لمبات التحذير في هوندا",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 236,
+          "pdf_page_end": 238,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-042",
+      "lesson_id": "LES-042",
+      "lesson_title": "الحوادث وأرقام الطوارئ",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 24,
+          "printed_page_end": 31,
+          "pdf_page_start": 25,
+          "pdf_page_end": 32,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-043",
+      "lesson_id": "LES-043",
+      "lesson_title": "مراجعة الإشارات والخطوط",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 51,
+          "printed_page_end": 73,
+          "pdf_page_start": 52,
+          "pdf_page_end": 74,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-044",
+      "lesson_id": "LES-044",
+      "lesson_title": "الأولوية والتقاطعات والدوارات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 164,
+          "pdf_page_start": 130,
+          "pdf_page_end": 165,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-045",
+      "lesson_id": "LES-045",
+      "lesson_title": "السرعة والمخاطر والطوارئ",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 168,
+          "printed_page_end": 191,
+          "pdf_page_start": 169,
+          "pdf_page_end": 192,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-046",
+      "lesson_id": "LES-046",
+      "lesson_title": "إجراءات إصدار الرخصة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 12,
+          "printed_page_end": 15,
+          "pdf_page_start": 13,
+          "pdf_page_end": 16,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-047",
+      "lesson_id": "LES-047",
+      "lesson_title": "برامج التدريب والاختبارات",
+      "resources": [
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-048",
+      "lesson_id": "LES-048",
+      "lesson_title": "الاستعداد للاختبار النهائي وما بعد الرخصة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 76,
+          "printed_page_end": 97,
+          "pdf_page_start": 77,
+          "pdf_page_end": 98,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NAZAWI",
+          "source_title": "النزاوي — عيّنات أسئلة للتدرب",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 70,
+          "pdf_page_end": 81,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    }
+  ]
 }

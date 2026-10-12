@@ -523,7 +523,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 /* ثمانية — use ONLY locally installed fonts; no third-party font binaries are
    uploaded, hosted, embedded, or redistributed. See font.thmanyah.com/licenses. */
 @font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans'),local('thmanyahsans-Regular');font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Medium'),local('thmanyahsans-Medium');font-style:normal;font-weight:500 600;font-display:swap}
+@font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Med'),local('thmanyah sans Medium'),local('thmanyahsans-Medium');font-style:normal;font-weight:500 600;font-display:swap}
 @font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Bold'),local('thmanyahsans-Bold');font-style:normal;font-weight:700 800;font-display:swap}
 @font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Black'),local('thmanyahsans-Black');font-style:normal;font-weight:900;font-display:swap}
 body,button,input,textarea,select{font-family:'Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif}
@@ -565,3 +565,24 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah Sans',
 /* Keep content aligned while the desktop sidebar is still visible at 901–1050px. */
 @media(min-width:901px) and (max-width:1050px){.app-main{margin-right:285px}}
 @media(max-width:900px){.app-main{margin-right:0}.sidebar{right:-295px}.sidebar.open{right:0}}
+
+/* MASAR 2026-10-13: category-first, accessible navigation and reading comfort */
+.sidebar-section-nav{gap:10px}
+.sidebar-nav-group{padding:5px 6px 11px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(255,255,255,.025)}
+.sidebar-nav-group[open]{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.16)}
+.sidebar-group-title{list-style:none;cursor:pointer;display:flex;align-items:center;padding:9px 10px;margin:0;font-size:13px;font-weight:800;color:#f2f6f8;border-radius:10px;min-height:43px}
+.sidebar-group-title::-webkit-details-marker{display:none}
+.sidebar-group-title svg{height:17px;width:17px;color:#c8dde9}
+.sidebar-group-title:hover{background:rgba(255,255,255,.08)}
+.sidebar-group-title:focus-visible{outline:3px solid #a9c3d5;outline-offset:2px}
+.nav-section-chevron{margin-right:auto;font-size:19px;line-height:1;color:#a4bacc;transform:rotate(90deg);transition:transform .2s ease}
+.sidebar-nav-group[open] .nav-section-chevron{transform:rotate(0)}
+.sidebar-nav-group:not([open])>.sidebar-group-links{display:none}
+.sidebar-group-links{padding:4px 4px 1px}
+.sidebar-group-links a{min-height:44px;font-size:13px;line-height:1.55}
+.sidebar-group-links a.active{background:#425b6b;color:#fff}
+body{font-size:15px}
+.sub,.lesson-body p,.point,.lesson-hero p,.scenario p{font-size:14px}
+.source-link,.ref-card p,.note-preview{font-size:12px}
+@media(max-width:900px){.sidebar-section-nav{gap:8px}.sidebar-group-title{min-height:46px}}
+@media(prefers-reduced-motion:reduce){.nav-section-chevron{transition:none}}

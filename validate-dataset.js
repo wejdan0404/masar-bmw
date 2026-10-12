@@ -61,7 +61,7 @@ for(const key of ['weeks','lessons','questions','review_questions','sign_library
 console.log('PASS compiled website curriculum matches source data');
 
 
-for(const script of ['app.js','study-coach.js','traffic-signs.js','visuals.js','study-hub.js','db/indexeddb.js']){
+for(const script of ['app.js','study-coach.js','traffic-signs.js','visuals.js','study-hub.js','db/indexeddb.js','lesson-guides-core.js','lesson-guides-01.js','lesson-guides-02.js','lesson-guides-03.js','lesson-guides-04.js']){
  const source=fs.readFileSync(__dirname+'/'+script,'utf8');
  assert(html.includes(source),'Compiled index.html contains stale '+script+'; run python compile.py before publishing');
 }
@@ -77,3 +77,17 @@ for(const source of d.personal_documents){
 assert(html.includes('sidebar-nav-group'),'Compiled website is missing grouped educational navigation');
 assert(html.includes('Masar Thmanyah Sans'),'Locally installed Thmanyah typography fallback missing');
 console.log('PASS seven private references are lesson-indexed; grouped navigation and local font CSS are compiled');
+
+/* Educational depth and content presence checks: no empty lesson shells. */
+const vm=require('vm');
+const guidePaths=['lesson-guides-core.js','lesson-guides-01.js','lesson-guides-02.js','lesson-guides-03.js','lesson-guides-04.js'];
+const guideContext={window:{}};
+vm.runInNewContext(guidePaths.map(p=>fs.readFileSync(__dirname+'/'+p,'utf8')).join('\n'),guideContext);
+assert.equal(guideContext.window.MasarGuides.getCount(),48,'All 48 lessons need expanded educational text');
+for(const l of d.lessons){
+ const rich=guideContext.window.MasarGuides.render(l);
+ assert(rich.includes('خطوات ومفاهيم مهمة')&&rich.includes('فكّري قبل كشف الإجابة'),'Missing pedagogy '+l.id);
+ assert(rich.length>700,'Expanded content too thin '+l.id);
+}
+assert(html.includes('window.MasarGuides.render(l)'),'Published lesson page does not render the expansions');
+console.log('PASS 48 distinct in-depth lesson guides rendered and synced');

@@ -186,3 +186,25 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .video-learning-notes{margin-top:16px}
 @media(max-width:810px){.hub-source-grid{grid-template-columns:1fr}.hub-online-source{align-items:flex-start;flex-direction:column}.hub-metrics{gap:7px}.hub-metrics>div{flex:1;min-width:0;padding:12px}.hub-question{padding:16px!important}}
 @media(prefers-reduced-motion:reduce){.hub-choice,.hub-filter{transition:none}}
+
+
+.hub-guide-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}.hub-guide-step{margin:0!important;padding:22px!important}.hub-guide-step>span{font-weight:800;font-size:11px;color:#800C1F;letter-spacing:.04em}
+.hub-guide-step h2{font-size:18px;line-height:1.55;margin:7px 0 12px}.hub-guide-step p{font-size:13px;color:#40596a;line-height:1.95}.hub-guide-step .btn{display:inline-flex;margin-top:12px;font-size:12px}
+.hub-note-example{padding:13px 16px;background:#f4f0f2;border-radius:12px;border-right:3px solid #800C1F;font-size:12px}
+.hub-week-plan{padding:25px;background:#202D36;color:white;border-radius:20px;margin:20px 0}.hub-week-plan h2{margin:0 0 12px;color:#fff}
+.hub-week-plan>p{margin-top:17px;color:#c9d7df;font-size:12px}.hub-time-row{padding:8px 0;display:flex;align-items:center;gap:13px;border-bottom:1px solid #425765}
+.hub-time-row span{display:grid;place-items:center;background:#800C1F;color:white;min-width:57px;min-height:33px;border-radius:8px;font-weight:750}
+.paper-sheet{background:white;padding:27px;border:1px solid #d9e2e8;border-radius:15px;max-width:850px;margin:25px 0}.paper-sheet header{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;border-bottom:2px solid #202D36;padding-bottom:14px}.paper-sheet header p{font-size:12px;color:#6b7a85}
+.paper-item{padding:16px 0;border-bottom:1px solid #dfe4e8;break-inside:avoid}.paper-item>strong{display:block;font-size:14px;color:#202D36;margin-bottom:9px}.paper-item>div{display:grid;gap:5px;padding:0 12px}.paper-item span{font-size:13px}
+.paper-key li{padding:5px 0;line-height:1.9}
+@media(max-width:700px){.hub-guide-steps{grid-template-columns:1fr}.hub-guide-step{padding:17px!important}.paper-sheet{padding:15px}}
+@media print{
+ @page{size:A4;margin:15mm}
+ body{background:#fff!important;color:black!important;font-family:Tahoma,Arial,sans-serif!important;font-size:11pt}
+ .sidebar,.topbar,.floating-timer,.toast,.mobile-backdrop,.paper-print-btn,.paper-key,.warning{display:none!important}
+ .app,.app-main,.page{display:block!important;min-height:0!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:white!important;box-shadow:none!important}
+ .paper-sheet{display:block!important;margin:0!important;padding:0!important;border:none!important;border-radius:0!important}
+ .paper-item{break-inside:avoid;border-color:#bbb}
+ .paper-item span{font-size:10pt}
+ .eyebrow,.page-title,.sub{display:none!important}
+}

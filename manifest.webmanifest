@@ -1,0 +1,22 @@
+{
+  "id": "./",
+  "name": "مِسار | تعلّم القيادة النظرية",
+  "short_name": "مِسار",
+  "description": "منصة عربية شخصية لتنظيم مذاكرة القيادة النظرية في السعودية وحفظ التقدم على الجهاز.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#202D36",
+  "theme_color": "#202D36",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

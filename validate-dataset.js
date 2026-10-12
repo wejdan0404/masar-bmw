@@ -59,3 +59,10 @@ for(const key of ['weeks','lessons','questions','review_questions','sign_library
  assert.deepStrictEqual(published[key],d[key],'Compiled index.html has stale '+key+'; run python compile.py before publishing');
 }
 console.log('PASS compiled website curriculum matches source data');
+
+
+for(const script of ['app.js','study-coach.js','traffic-signs.js','visuals.js','study-hub.js','db/indexeddb.js']){
+ const source=fs.readFileSync(__dirname+'/'+script,'utf8');
+ assert(html.includes(source),'Compiled index.html contains stale '+script+'; run python compile.py before publishing');
+}
+console.log('PASS compiled application scripts match source files');

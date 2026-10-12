@@ -519,3 +519,32 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 @media(prefers-reduced-motion:reduce){
  .ts-card,.visual-index-tile,.coach-review-item,.coach-summary article,.hub-guide-step,.test-card,.qbox,.ref-card,.option{transition:none!important;transform:none!important}
 }
+
+/* ثمانية — use ONLY locally installed fonts; no third-party font binaries are
+   uploaded, hosted, embedded, or redistributed. See font.thmanyah.com/licenses. */
+@font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans'),local('thmanyahsans-Regular');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Medium'),local('thmanyahsans-Medium');font-style:normal;font-weight:500 600;font-display:swap}
+@font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Bold'),local('thmanyahsans-Bold');font-style:normal;font-weight:700 800;font-display:swap}
+@font-face{font-family:'Masar Thmanyah Sans';src:local('thmanyah sans Black'),local('thmanyahsans-Black');font-style:normal;font-weight:900;font-display:swap}
+body,button,input,textarea,select{font-family:'Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif}
+h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif}
+.sidebar{width:285px;padding:23px 14px 20px}
+.app-main{margin-right:285px}
+.sidebar .logo{margin-bottom:18px;padding:0 9px}
+.sidebar .side-label{margin:0 12px 13px;font-size:10px;letter-spacing:0;color:#9dabb8}
+.sidebar-section-nav{display:flex;flex-direction:column;gap:14px}
+.sidebar-nav-group{min-width:0;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:11px}
+.sidebar-nav-group:last-child{border-bottom:0;padding-bottom:0}
+.sidebar-group-title{font-size:11px;letter-spacing:0;display:flex;align-items:center;gap:8px;color:#b5c4d0;font-weight:800;margin:0 9px 7px;line-height:1.5}
+.sidebar-group-title svg{height:14px;width:14px;color:#d4aebb}
+.sidebar-group-links{display:flex;flex-direction:column;gap:2px}
+.sidebar-group-links a{font-size:12px;min-height:39px;padding:7px 12px}
+.sidebar-group-links a svg{height:16px;width:16px}
+.sidebar-group-links a.active{background:#445463;border-radius:10px}
+.sidebar-group-links a.active:before{top:7px;bottom:7px}
+.sidebar .sidebar-bottom{padding-top:22px}
+.sidebar .mini-progress{padding:14px}
+@media(max-width:1050px){.sidebar{width:285px}.app-main{margin-right:0}}
+@media(min-width:1051px) and (max-width:1230px){.sidebar{width:258px}.app-main{margin-right:258px}}
+@media(max-width:1050px){.sidebar{padding:19px 13px}.sidebar .logo{margin-bottom:17px}}
+@media(prefers-reduced-motion:reduce){.sidebar-section-nav a{transition:none}}

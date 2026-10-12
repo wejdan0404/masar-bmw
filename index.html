@@ -364,7 +364,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="course-data">{
-  "schema_version": "1.5.0",
+  "schema_version": "1.5.1",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -3318,6 +3318,40 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       "direct_video_url": false,
       "approved_for_embed": false,
       "verification_note": "صفحة خارجية وقد تتطلب تسجيلًا؛ ليست فيديو مضمّنًا"
+    },
+    {
+      "id": "VIDEO-QUDS-Y",
+      "title": "مهارة Y — انعطاف ثلاثي النقاط",
+      "provider": "QUDS — مدرسة جامعة القصيم لتعليم القيادة",
+      "url": "https://www.youtube.com/watch?v=SIay14R3GKY",
+      "kind": "youtube_video",
+      "youtube_id": "SIay14R3GKY",
+      "lesson_ids": [
+        "LES-034",
+        "LES-035"
+      ],
+      "published": "2020-09-12",
+      "verification_note": "فيديو مباشر على قناة المدرسة، موثق بعنوانه وناشره؛ لم يُفحص سماح تضمينه عند كل جهاز."
+    },
+    {
+      "id": "MEDIA-QUDS-OFFICIAL-9",
+      "title": "مكتبة 9 فيديوهات رسمية (X و90 وT والكراج وY ومخاطر القيادة)",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة — موقع المدرسة",
+      "url": "https://quds.qu.edu.sa/course/videos/",
+      "kind": "external_video_collection",
+      "lesson_ids": [
+        "LES-028",
+        "LES-030",
+        "LES-031",
+        "LES-032",
+        "LES-033",
+        "LES-034",
+        "LES-035",
+        "LES-036"
+      ],
+      "direct_video_url": false,
+      "approved_for_embed": false,
+      "verification_note": "مكتبة فيديوهات رسمية من موقع المدرسة، تحوي 9 فيديوهات؛ هذه الصفحة ليست رابط YouTube مباشر، وتعليماتها تخص ميدان المدرسة."
     }
   ],
   "learning_visuals": [
@@ -3725,6 +3759,30 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       "type": "government_pdf",
       "trust": "primary",
       "note": "رابط ملف دليل الإشارات المنشور على موقع وزارة الداخلية؛ راجعي النسخة الفعلية عند اختلاف الرسوم أو التسميات."
+    },
+    {
+      "id": "EXT-QUDS-VIDEOS",
+      "title": "جامعة القصيم — فيديوهات تعليمية رسمية من المدرسة",
+      "url": "https://quds.qu.edu.sa/course/videos/",
+      "type": "school_video_library",
+      "trust": "school_primary",
+      "note": "تحتوي تسعة فيديوهات؛ أمثلة لمناورات المدرسة ولا تفترض مطابقتها لإجراءات جميع مدارس المملكة."
+    },
+    {
+      "id": "EXT-QUDS-PRICES",
+      "title": "مدرسة جامعة القصيم — برامج ورسوم التدريب",
+      "url": "https://sites.qu.edu.sa/quds/quds-prices/",
+      "type": "school_training_policy",
+      "trust": "school_primary",
+      "note": "صفحة المدرسة تعرض برامج 6 و15 و30 ساعة، وهي معلومات تخص المدرسة وقد تتغير."
+    },
+    {
+      "id": "EXT-QUDS-ASSESSMENT",
+      "title": "مدرسة جامعة القصيم — أخطاء اختبار المواقف",
+      "url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "type": "school_practical_assessment",
+      "trust": "school_primary",
+      "note": "تتضمن أمثلة وحدودًا زمنية خاصة باختبار المواقف في المدرسة؛ ليست معايير وطنية شاملة."
     }
   ],
   "practical_checklist": [
@@ -7316,6 +7374,26 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       "review_required": false,
       "source_id": "DOC-TRAINEE"
     }
+  ],
+  "school_specific_evidence": [
+    {
+      "id": "SCHOOL-QUDS-HOURS",
+      "publisher": "مدرسة جامعة القصيم لتعليم القيادة",
+      "claim": "تعرض صفحة الأسعار ثلاث فئات تدريبية: 6 و15 و30 ساعة.",
+      "applies_to": "مدرسة جامعة القصيم وفق الصفحة المنشورة",
+      "not_universal": true,
+      "source_url": "https://sites.qu.edu.sa/quds/quds-prices/",
+      "verified_at": "2026-10-12"
+    },
+    {
+      "id": "SCHOOL-QUDS-PRACTICAL",
+      "publisher": "مدرسة جامعة القصيم لتعليم القيادة",
+      "claim": "تتضمن صفحة مقالات المدرسة معايير رسوب فوري مرتبطة بمناورات المواقف ومددها؛ تختلف عن نصوص التجميعات غير الموثقة.",
+      "applies_to": "اختبارات المدرسة المنشورة على موقعها",
+      "not_universal": true,
+      "source_url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "verified_at": "2026-10-12"
+    }
   ]
 }
 </script>
@@ -7372,11 +7450,11 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       };
       request.onsuccess = () => {
         const db = request.result;
-        db.onversionchange = () => db.close();
+        db.onversionchange = () => { db.close(); dbPromise = undefined; };
         resolve(db);
       };
       request.onerror = () => { dbPromise = undefined; reject(request.error); };
-      request.onblocked = () => console.warn('MASAR: IndexedDB upgrade blocked by another tab');
+      request.onblocked = () => { dbPromise = undefined; reject(new Error('إغلاق تبويبات مِسار الأخرى مطلوب قبل ترقية قاعدة البيانات')); };
     });
     return dbPromise;
   }
@@ -7467,10 +7545,15 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
   }
 
   async function savePersonalFile(id, file) {
-    if (!id || !file || !/^(application\/pdf|image\/(png|jpeg|webp))$/.test(file.type)) throw new Error('Unsupported file type');
+    if (!id || typeof id !== 'string' || !file) throw new Error('Invalid file');
+    const extension = String(file.name || '').split('.').pop().toLowerCase();
+    const mimeByExtension = {pdf:'application/pdf',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',webp:'image/webp'};
+    const mime = mimeByExtension[extension];
+    // Windows or file browsers may omit MIME even for a valid PDF. Require a safe extension.
+    if (!mime || (file.type && file.type !== mime) || file.size > 80*1024*1024) throw new Error('Unsupported or oversized file');
     const db = await connect();
     const tx = db.transaction(['personal_files'], 'readwrite');
-    tx.objectStore('personal_files').put({id, filename:file.name, mime:file.type, size:file.size, updatedAt:new Date().toISOString(), blob:file});
+    tx.objectStore('personal_files').put({id, filename:file.name, mime, size:file.size, updatedAt:new Date().toISOString(), blob:file});
     await completed(tx);
   }
   async function getPersonalFile(id) {
@@ -7966,7 +8049,7 @@ function quizPage(){const options=weeks.map(w=>`<option value="${w.number}">${w.
 function renderQuizStage(){if(!session){let hist=state.history.slice(-4).reverse();return `<div class="card"><div class="flexline"><h3>ابدئي اختبارك التالي</h3><span class="chip blue">${icon('quiz')} تمهيد</span></div><p class="sub" style="margin-top:10px">إذا ظهرت لك إجابة خطأ، سترين السبب فورًا. والاختبار الأسبوعي من ثلاث أسئلة، بينما الاختبار الشامل يختار 12 سؤالًا من الأسابيع المختلفة.</p>${hist.length?`<div class="section-head"><h2>المحاولات الأخيرة</h2></div>${hist.map(h=>`<div class="lesson-row"><span class="lesson-no">${h.score}/${h.total}</span><span class="lesson-info"><b>${ESC(h.label)}</b><small>${ESC(h.date)}</small></span></div>`).join('')}`:''}</div>`}
 if(session.index>=session.ids.length){const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;const total=session.ids.length;return `<div class="test-results"><div class="eyebrow">RESULTS / النتيجة</div><div class="score">${score}<span style="font-size:30px;color:var(--fog)"> / ${total}</span></div><h2>${score===total?'أبدعتي! كل الإجابات صحيحة.':score>=total*.7?'شغل ممتاز، وراجعي بعض النقاط.':'المهم تعرفين سبب الخطأ وتراجعينه.'}</h2><p>هذه درجة تدريبية داخل الموقع، وليست درجة نجاح رسمية للرخصة.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px"><button class="btn btn-primary" type="button" data-action="quiz-restart">إعادة الاختبار</button><button class="btn btn-outline" type="button" data-action="quiz-end">العودة للمركز</button></div></div>`}
 const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
-function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا قصيرًا، بصياغات تعليمية أولية تحتاج تدقيقًا قبل النشر العام.</div><div class="point"><i>2</i>48 سؤالًا تدريبيًا مع تفسير، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>البيانات منظمة داخل IndexedDB (دروس، أسئلة، ملاحظات، تقدم، اختبارات). لا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
+function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>تثبيت مِسار على جهازك والعمل دون إنترنت</h3><p>افتحي الموقع المنشور على Chrome أو Edge، ثم اختاري «تثبيت التطبيق» من قائمة المتصفح إذا ظهرت لك. بعد الزيارة الأولى والتحميل الناجح يمكن فتح الدروس الأساسية دون اتصال. الفيديوهات وملفات PDF الخارجية تحتاج إنترنت، أما الملفات التي أضفتِها للمتصفح فتظل محلية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="storage-health">فحص حالة الحفظ والمساحة</button></div><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا مع 48 تدريب تفكير مستقلًا؛ النصوص ما زالت تحتاج مراجعة المصدر المعتمد.</div><div class="point"><i>2</i>48 سؤال درس، و36 سؤال مراجعة إضافيًا، ومحاكاة اختبار تدريبي غير رسمي، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>المذاكرة والملاحظات ومحاولات المراجعة تُحفظ في IndexedDB على هذا المتصفح؛ PDF والملفات الخاصة لا تدخل ضمن النسخة الاحتياطية JSON ولا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
 function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/review')return ['مراجعتي',window.MasarCoach.reviewPage(COURSE,state)];if(r==='/mock-exam')return ['محاكاة الاختبار',window.MasarCoach.pageMock(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
 function timerHTML(){return `<div class="floating-timer" aria-label="مؤقت مذاكرة"><span style="font-size:11px;color:var(--steel);font-weight:850">${icon('clock')}</span><b id="timer-text">${p2(Math.floor(timer.seconds/60))}:${p2(timer.seconds%60)}</b><button type="button" data-action="timer-toggle" aria-label="${timer.active?'إيقاف المؤقت':'بدء المؤقت'}">${icon(timer.active?'pause':'play')}</button><button type="button" data-action="timer-reset" aria-label="إعادة ضبط المؤقت">${icon('reset')}</button></div>`}
@@ -7985,6 +8068,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action.startsWith('coach-')&&window.MasarCoach.click(action,el,{course:COURSE,state,save,render,toast}))return;
  if(action.startsWith('sign-')&&window.MasarSigns.click(action,el,{course:COURSE,state,save,render,toast}))return;
  if(action.startsWith('hub-')&&window.MasarHub.click(action,el,{course:COURSE,state,save,render,toast,db:window.MasarDB}))return;
+ if(action==='storage-health'){Promise.all([window.MasarDB?.connect().then(()=>true).catch(()=>false)||Promise.resolve(false),navigator.storage?.estimate?.()||Promise.resolve(null)]).then(([db,est])=>{const textMsg=(db?'IndexedDB متصلة':'IndexedDB غير متاحة')+(est?' · الاستخدام التقريبي '+Math.round(est.usage/1024/1024*10)/10+' م.ب من '+Math.round(est.quota/1024/1024)+' م.ب':'')+' · لا توجد مزامنة سحابية';const info=document.getElementById('db-status');if(info)info.textContent=textMsg;toast('تم فحص حالة التخزين')}).catch(()=>toast('تعذّر فحص حالة التخزين'));return}
  if(action==='persist-storage'){if(!navigator.storage?.persist){toast('المتصفح لا يدعم طلب تثبيت التخزين؛ احفظي نسخة احتياطية');return}navigator.storage.persist().then(granted=>toast(granted?'المتصفح وافق على التخزين المستمر في هذا الجهاز':'المتصفح لم يمنح ضمانًا ضد الحذف التلقائي')).catch(()=>toast('لم نتمكن من طلب التخزين المستمر'));return}
  if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
  if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
@@ -8009,7 +8093,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
 document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save()}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}if(e.target.dataset.activityNote){state.activityNotes=state.activityNotes||{};state.activityNotes[e.target.dataset.activityNote]=e.target.value;save()}});
-document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if(e.target.id==='hub-file'&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.dataset.activityCheck){state.activityChecks=state.activityChecks||{};state.activityChecks[e.target.dataset.activityCheck]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
+document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if(e.target.id==='hub-file'&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.dataset.activityCheck){state.activityChecks=state.activityChecks||{};state.activityChecks[e.target.dataset.activityCheck]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(e.target.files[0].size>5*1024*1024||obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done)||!obj.state.done.every(n=>Number.isInteger(n)&&n>=1&&n<=48)||!obj.state.answers||typeof obj.state.answers!=='object'||Array.isArray(obj.state.answers))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
 function lessonNumberFromRoute(path){const m=/^\/lesson\/(\d+)$/.exec(path||'');const n=Number(m?.[1]);return n>=1&&n<=48?n:null}
 function captureReadingPosition(path=displayedRoute){const n=lessonNumberFromRoute(path);if(!n||restoringScroll)return;const y=Math.max(0,Math.round(window.scrollY||document.documentElement?.scrollTop||0));state.readingPositions=state.readingPositions||{};if(state.readingPositions[n]!==y){state.readingPositions[n]=y;save()}}
 function restoreReadingPosition(){const n=lessonNumberFromRoute(route());if(!n)return;const y=Number(state.readingPositions?.[n])||0;if(y<=0)return;restoringScroll=true;requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>{restoringScroll=false})})}
@@ -8036,5 +8120,5 @@ if(window.MasarDB){
 }
 })();
 </script>
-<script>if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('Offline mode unavailable',err)));}</script>
+<script>if('serviceWorker' in navigator && (location.protocol==='https:' || ['localhost','127.0.0.1'].includes(location.hostname))){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('Offline mode unavailable',err)));}</script>
 </body></html>

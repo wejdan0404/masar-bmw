@@ -12,7 +12,7 @@ const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
  window:{scrollTo(){},addEventListener(t,fn){windowHandlers[t]=fn}},
  location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
  setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
-vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
+vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/study-hub.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
 for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/visuals','المكتبة المرئية'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
@@ -54,3 +54,8 @@ documentHandlers.click({target:{closest(selector){return selector==='[data-actio
 context.document.createElement=oldCreate;
 if(!loadedFrame||loadedFrame.src!=='https://www.youtube-nocookie.com/embed/J36565XrCk4'||loadedFrame.loading!=='lazy')throw Error('Click-to-load video does not work');
 console.log('PASS click-to-load privacy-enhanced video player');
+
+context.location.hash='#/practice-quiz';windowHandlers.hashchange();if(!element('app').innerHTML.includes('تجميعات وأسئلة المراجعة')||!element('app').innerHTML.includes('SIG-01'))throw Error('Training bank missing');console.log('PASS original quiz bank');
+context.location.hash='#/practice-checklist';windowHandlers.hashchange();if(!element('app').innerHTML.includes('قائمة المهارات العملية')||!element('app').innerHTML.includes('PRA-1:0'))throw Error('Practical checklist missing');console.log('PASS practical checklist');
+context.location.hash='#/sources';windowHandlers.hashchange();if(!element('app').innerHTML.includes('المصادر وملفاتي الخاصة')||!element('app').innerHTML.includes('DOC-NAZAWI')||!element('app').innerHTML.includes('صفحة 39'))throw Error('Private source index missing');console.log('PASS private PDF and 39 external-page index');
+documentHandlers.input({target:{dataset:{videoNote:'VIDEO-QUDS-X'},value:'الدقيقة 01:20: تعليم خاص'}});if(!saved['masar-driving-v1'].includes('الدقيقة 01:20'))throw Error('Video notes were not persisted');console.log('PASS per-video note persistence');

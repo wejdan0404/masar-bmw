@@ -3483,7 +3483,9 @@
       "source_id": "DOC-TRAINEE",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-007",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-02",
@@ -3500,7 +3502,9 @@
       "source_id": "EXT-MOI-SIGNS",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-016",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-03",
@@ -3517,7 +3521,9 @@
       "source_id": "EXT-MOI-SIGNS",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-016",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-04",
@@ -3534,7 +3540,9 @@
       "source_id": "EXT-MOI-SIGNS",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-05",
@@ -3551,7 +3559,9 @@
       "source_id": "IMG-WARNING",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-007",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-06",
@@ -3568,7 +3578,9 @@
       "source_id": "DOC-TRAINEE",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-019",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-07",
@@ -3585,7 +3597,9 @@
       "source_id": "IMG-WARNING",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-011",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-08",
@@ -3602,7 +3616,9 @@
       "source_id": "EXT-MOI-SIGNS",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-025",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-09",
@@ -3619,7 +3635,9 @@
       "source_id": "IMG-REGULATORY",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-10",
@@ -3636,7 +3654,9 @@
       "source_id": "EXT-MOI-SIGNS",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-11",
@@ -3653,7 +3673,9 @@
       "source_id": "DOC-TRAINEE",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-027",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-12",
@@ -3670,7 +3692,9 @@
       "source_id": "DOC-DARB",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-037",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-13",
@@ -3687,7 +3711,9 @@
       "source_id": "DOC-NAZAWI",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-026",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-14",
@@ -3704,7 +3730,9 @@
       "source_id": "DOC-NARIMAN",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-022",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-15",
@@ -3721,7 +3749,9 @@
       "source_id": "DOC-SHARD",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-022",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-16",
@@ -3738,7 +3768,9 @@
       "source_id": "DOC-JEDDAH",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-033",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-17",
@@ -3755,7 +3787,9 @@
       "source_id": "IMG-DASHBOARD",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-003",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-18",
@@ -3772,7 +3806,9 @@
       "source_id": "IMG-DASHBOARD",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-041",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-19",
@@ -3789,7 +3825,9 @@
       "source_id": "IMG-DASHBOARD",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-041",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-20",
@@ -3806,7 +3844,9 @@
       "source_id": "DOC-NAZAWI",
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-048",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-21",
@@ -3825,7 +3865,9 @@
       "source_pdf_page": 56,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-007",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-22",
@@ -3844,7 +3886,9 @@
       "source_pdf_page": 57,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-23",
@@ -3863,7 +3907,9 @@
       "source_pdf_page": 61,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-009",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-24",
@@ -3882,7 +3928,9 @@
       "source_pdf_page": 52,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-014",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-25",
@@ -3901,7 +3949,9 @@
       "source_pdf_page": 130,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-017",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-26",
@@ -3920,7 +3970,9 @@
       "source_pdf_page": 136,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-016",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-27",
@@ -3939,7 +3991,9 @@
       "source_pdf_page": 163,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-021",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-28",
@@ -3958,7 +4012,9 @@
       "source_pdf_page": 115,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-015",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-29",
@@ -3977,7 +4033,9 @@
       "source_pdf_page": 110,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-022",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-30",
@@ -3996,7 +4054,9 @@
       "source_pdf_page": 205,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-024",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-31",
@@ -4015,7 +4075,9 @@
       "source_pdf_page": 176,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-026",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-32",
@@ -4034,7 +4096,9 @@
       "source_pdf_page": 176,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-026",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-33",
@@ -4053,7 +4117,9 @@
       "source_pdf_page": 90,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-002",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-34",
@@ -4072,7 +4138,9 @@
       "source_pdf_page": 176,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-038",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-35",
@@ -4091,7 +4159,9 @@
       "source_pdf_page": 126,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-032",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     },
     {
       "id": "SIG-36",
@@ -4110,7 +4180,9 @@
       "source_pdf_page": null,
       "status": "editorial_practice_original",
       "last_reviewed": "2026-10-12",
-      "is_official_exam_question": false
+      "is_official_exam_question": false,
+      "lesson_id": "LES-048",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
     }
   ],
   "data_quality": {

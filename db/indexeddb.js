@@ -91,7 +91,8 @@
       bookmarks: bookmarks.map(x => x.lesson_id),
       history: attempts.sort((a,b) => a.id-b.id).map(({id, ...attempt}) => attempt),
       visited: visits.map(x => x.lesson_id),
-      lastOpened: prefs.lastOpened || 1
+      lastOpened: prefs.lastOpened || 1,
+      readingPositions: prefs.readingPositions || {}
     };
   }
 
@@ -109,6 +110,7 @@
     for (const lesson_id of snapshot.visited || []) tx.objectStore('visits').put({lesson_id: Number(lesson_id)});
     tx.objectStore('preferences').put({key: 'initialized', value: true});
     tx.objectStore('preferences').put({key: 'lastOpened', value: Number(snapshot.lastOpened) || 1});
+    tx.objectStore('preferences').put({key: 'readingPositions', value: snapshot.readingPositions || {}});
     await completed(tx);
   }
 

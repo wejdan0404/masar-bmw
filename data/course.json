@@ -3220,11 +3220,20 @@
       "available_on_public_site": false,
       "lesson_ids": [
         "LES-007",
+        "LES-008",
+        "LES-009",
         "LES-010",
+        "LES-011",
+        "LES-014",
         "LES-019",
-        "LES-027"
+        "LES-026",
+        "LES-027",
+        "LES-039"
       ],
-      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     },
     {
       "id": "DOC-DARB",
@@ -3239,8 +3248,24 @@
       "license_status": "explicitly_copyrighted",
       "storage": "personal_upload_only",
       "available_on_public_site": false,
-      "lesson_ids": [],
-      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+      "lesson_ids": [
+        "LES-007",
+        "LES-008",
+        "LES-009",
+        "LES-011",
+        "LES-019",
+        "LES-022",
+        "LES-025",
+        "LES-027",
+        "LES-028",
+        "LES-031",
+        "LES-034",
+        "LES-040"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     },
     {
       "id": "DOC-NAZAWI",
@@ -3255,8 +3280,20 @@
       "license_status": "unknown",
       "storage": "personal_upload_only",
       "available_on_public_site": false,
-      "lesson_ids": [],
-      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-011",
+        "LES-014",
+        "LES-016",
+        "LES-021",
+        "LES-025",
+        "LES-026"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     },
     {
       "id": "DOC-Q49",
@@ -3271,11 +3308,23 @@
       "license_status": "unknown",
       "storage": "personal_upload_only",
       "available_on_public_site": false,
-      "lesson_ids": [],
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-011",
+        "LES-016",
+        "LES-021",
+        "LES-025",
+        "LES-026",
+        "LES-027"
+      ],
       "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
       "duplicate_filenames": [
         "16907764(1).pdf"
-      ]
+      ],
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     },
     {
       "id": "DOC-SHARD",
@@ -3290,8 +3339,20 @@
       "license_status": "unknown",
       "storage": "personal_upload_only",
       "available_on_public_site": false,
-      "lesson_ids": [],
-      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+      "lesson_ids": [
+        "LES-001",
+        "LES-002",
+        "LES-022",
+        "LES-023",
+        "LES-027",
+        "LES-031",
+        "LES-034",
+        "LES-035"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     },
     {
       "id": "DOC-JEDDAH",
@@ -3307,10 +3368,18 @@
       "storage": "personal_upload_only",
       "available_on_public_site": false,
       "lesson_ids": [
+        "LES-002",
+        "LES-018",
+        "LES-019",
         "LES-031",
-        "LES-035"
+        "LES-032",
+        "LES-035",
+        "LES-036"
       ],
-      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     },
     {
       "id": "DOC-NARIMAN",
@@ -3325,8 +3394,20 @@
       "license_status": "unknown",
       "storage": "personal_upload_only",
       "available_on_public_site": false,
-      "lesson_ids": [],
-      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+      "lesson_ids": [
+        "LES-002",
+        "LES-022",
+        "LES-023",
+        "LES-027",
+        "LES-031",
+        "LES-034",
+        "LES-035",
+        "LES-047"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
     }
   ],
   "uploaded_image_index": [
@@ -7285,5 +7366,15 @@
       "source_url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
       "verified_at": "2026-10-12"
     }
-  ]
+  ],
+  "source_library_audit": {
+    "checked_on": "2026-10-13",
+    "personal_pdf_records": 7,
+    "reference_images": 6,
+    "external_study_sources": 8,
+    "official_and_context_sources": 9,
+    "lesson_reading_index_count": 48,
+    "linking_policy": "topic index does not establish accuracy or current legal validity",
+    "distribution_policy": "Do not publish user-provided PDFs, copyrighted signs/photographs, or proprietary font files to public GitHub without a license."
+  }
 }

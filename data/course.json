@@ -4978,6 +4978,30 @@
           "role": "foundational_topic_section",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 24,
+          "pdf_page_end": 28,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "الإشارات التحذيرية والتنظيمية: بداية فصل الإشارات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 8,
+          "pdf_page_end": 12,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "تجميع أسئلة الإشارات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "topic_index_mapped_pending_line_verification",
@@ -5086,6 +5110,18 @@
           "role": "foundational_topic_section",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 50,
+          "pdf_page_end": 56,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "قواعد الأفضلية والتقاطعات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "topic_index_mapped_pending_line_verification",
@@ -5173,6 +5209,30 @@
           "role": "foundational_topic_section",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 69,
+          "pdf_page_end": 72,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "العلامات الأرضية وخطوط الطريق؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 7,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "أسئلة الخط المتصل والمزدوج؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "topic_index_mapped_pending_line_verification",
@@ -5215,6 +5275,18 @@
           "role": "foundational_topic_section",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 6,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "أسئلة الأولوية والخطوط؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "topic_index_mapped_pending_line_verification",
@@ -5365,6 +5437,18 @@
           "role": "supplementary_training_reference",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 90,
+          "pdf_page_end": 95,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "الدخول إلى حركة المرور والمناورات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "topic_index_mapped_pending_line_verification",
@@ -5461,6 +5545,18 @@
           "role": "supplementary_training_reference",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 3,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "تعريفات مسافة التوقف والفرملة من تجميع غير رسمي؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "needs_fresh_primary_or_vehicle_confirmation",
@@ -5515,6 +5611,18 @@
           "role": "foundational_topic_section",
           "verification": "topic_and_page_index_checked_not_full_line_by_line",
           "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 125,
+          "pdf_page_end": 132,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "source_pages_and_topic_checked_not_answers_or_current_law",
+          "note": "إدراك المخاطر والانتباه؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
         }
       ],
       "review_status": "topic_index_mapped_pending_line_verification",

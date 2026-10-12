@@ -49,3 +49,13 @@ for(const claim of d.review_claims)assert(claim.allowed_in_quiz===false,'Unverif
 for(const [idx,x] of d.community_pages.image_links.entries())assert(x.page===idx+1&&/saudirokhsa\.com/.test(x.url));
 const videos=d.media_resources.filter(x=>x.kind==='youtube_video');assert(videos.length===3);assert(d.media_resources.filter(x=>x.kind!=='youtube_video').length===3);assert(d.school_specific_evidence.length===2);for(const source of d.school_specific_evidence){assert(source.not_universal===true);assert(source.source_url.startsWith('https://sites.qu.edu.sa/'));}assert(videos.some(x=>x.youtube_id==='SIay14R3GKY'));
 console.log('PASS MASAR content validation: '+d.lessons.length+' lessons, '+d.review_questions.length+' original review questions, '+d.personal_documents.length+' personal PDFs, '+d.uploaded_image_index.length+' image references; no unverified evaluation thresholds used.');
+
+
+const html=fs.readFileSync(__dirname+'/index.html','utf8');
+const embedded=html.match(/<script\s+type="application\/json"\s+id="course-data">([\s\S]*?)<\/script>/);
+assert(embedded,'Compiled website is missing embedded course data');
+const published=JSON.parse(embedded[1]);
+for(const key of ['weeks','lessons','questions','review_questions','sign_library','lesson_activities','media_resources']){
+ assert.deepStrictEqual(published[key],d[key],'Compiled index.html has stale '+key+'; run python compile.py before publishing');
+}
+console.log('PASS compiled website curriculum matches source data');

@@ -45,3 +45,12 @@ console.log('PASS visual learning diagrams and stage navigation');
 context.location.hash='#/visuals';windowHandlers.hashchange();if(!element('app').innerHTML.includes('مكتبات الفيديو الخارجية')||!element('app').innerHTML.includes('موقف تفاعلي'))throw Error('Visual library missing');console.log('PASS visual learning library');
 
 context.location.hash='#/lesson/35';windowHandlers.hashchange();if(!element('app').innerHTML.includes('J36565XrCk4')||!element('app').innerHTML.includes('Peyh1mXONAU')||!element('app').innerHTML.includes('video-load'))throw Error('Verified video resources missing');console.log('PASS direct-source video lesson links');
+let loadedFrame=null;
+const player={replaceChildren(el){loadedFrame=el}};
+const playButton={dataset:{action:'video-load',video:'J36565XrCk4',title:'مهارة X'},closest(selector){return selector==='.video-player'?player:null}};
+const oldCreate=context.document.createElement;
+context.document.createElement=()=>({setAttribute(){},loading:null,src:'',title:'',referrerPolicy:''});
+documentHandlers.click({target:{closest(selector){return selector==='[data-action]'?playButton:null}}});
+context.document.createElement=oldCreate;
+if(!loadedFrame||loadedFrame.src!=='https://www.youtube-nocookie.com/embed/J36565XrCk4'||loadedFrame.loading!=='lazy')throw Error('Click-to-load video does not work');
+console.log('PASS click-to-load privacy-enhanced video player');

@@ -5,7 +5,7 @@
 'use strict';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const red='#cf1726',blue='#2362a0',ink='#14222c';
-let mode='study',filter='all',selected=null,quizIndex=0,answered=null;
+let mode='study',filter='all',selected=null,quizIndex=0,answered=null,answeredSignId=null;
 const P=(d,attrs='')=>'<path d="'+d+'" '+attrs+'/>';
 function pictogram(k){
  const stroke='stroke="'+ink+'" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
@@ -74,7 +74,7 @@ function page(course,state){
   }else body='<div class="ts-grid">'+items.map(a=>'<button type="button" class="ts-card" data-action="sign-open" data-id="'+a.id+'"><span class="ts-art">'+draw(a)+'</span><span class="ts-category">'+esc(a.category)+' · '+(stat(state,a.id).attempts?'تمت مراجعتها':'جديدة')+'</span><strong>'+esc(a.title)+'</strong><span class="ts-card-arrow">المعنى والتصرف ←</span></button>').join('')+'</div>';
  }else {
   if(quizIndex>=items.length)quizIndex=0;
-  const q=items[quizIndex];if(!q)body='<div class="ts-empty">ما عندك لوحات بهذه الحالة حاليًا. اختاري «الكل» وكمّلي المراجعة.</div>';
+  const q=answered!==null&&answeredSignId?signs.find(x=>x.id===answeredSignId):items[quizIndex];if(!q)body='<div class="ts-empty">ما عندك لوحات بهذه الحالة حاليًا. اختاري «الكل» وكمّلي المراجعة.</div>';
   else{const opts=choices(q,signs),wasAnswered=answered!==null;
    body='<section class="ts-exam"><div class="ts-exam-top"><span>لوحة '+(quizIndex+1)+' / '+items.length+'</span><span>الإجابة لا تُظهر الاسم قبل اختيارك</span></div><div class="ts-exam-art">'+draw(q,true)+'</div><h2>وش معنى هذه اللوحة؟</h2><div class="ts-choices">'+opts.map(x=>'<button type="button" data-action="sign-answer" data-choice="'+x.id+'" class="ts-choice '+(wasAnswered?(x.id===q.id?'is-correct':x.id===answered?'is-wrong':''):'')+'" '+(wasAnswered?'disabled':'')+'>'+esc(x.title)+'</button>').join('')+'</div>'+(wasAnswered?'<div role="status" class="ts-explanation"><strong>'+(answered===q.id?'صح!':'الإجابة المناسبة: '+esc(q.title))+'</strong><p>'+esc(q.meaning)+'</p><p><b>التصرف:</b> '+esc(q.action)+'</p><a href="#/lesson/'+Number(q.lesson_ids[0].slice(-3))+'">ارجعي للدرس المرتبط ←</a></div>':'')+'<div class="ts-controls"><button data-action="sign-next" class="ts-next" type="button">'+(quizIndex===items.length-1?'إعادة الجولة':'اللوحة التالية ←')+'</button></div></section>';
   }
@@ -83,15 +83,15 @@ function page(course,state){
 }
 function click(action,el,ctx){
  const c=ctx.course,s=ctx.state;
- if(action==='sign-mode'){mode=el.dataset.mode==='quiz'?'quiz':'study';selected=null;answered=null;quizIndex=0;ctx.render(true);return true}
- if(action==='sign-filter'){filter=el.dataset.filter||'all';selected=null;answered=null;quizIndex=0;ctx.render(true);return true}
+ if(action==='sign-mode'){mode=el.dataset.mode==='quiz'?'quiz':'study';selected=null;answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
+ if(action==='sign-filter'){filter=el.dataset.filter||'all';selected=null;answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
  if(action==='sign-open'){if(c.sign_library.some(x=>x.id===el.dataset.id)){selected=el.dataset.id;ctx.render(true)}return true}
  if(action==='sign-back'){selected=null;ctx.render(true);return true}
  if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice;if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
   s.signPractice=s.signPractice||{};const prior=stat(s,q.id);
   s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,lastReviewed:new Date().toISOString()};
-  answered=choice;ctx.save();ctx.render(true);return true}
- if(action==='sign-next'){quizIndex++;answered=null;ctx.render(true);return true}
+  answered=choice;answeredSignId=q.id;ctx.save();ctx.render(true);return true}
+ if(action==='sign-next'){quizIndex++;answered=null;answeredSignId=null;ctx.render(true);return true}
  return false;
 }
 window.MasarSigns=Object.freeze({page,draw,click});

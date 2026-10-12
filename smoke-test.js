@@ -170,3 +170,19 @@ click({action:'study-read',lesson:'LES-002'});
 if(JSON.parse(saved['masar-driving-v1']).studyRead?.['LES-002'])throw Error('Reading completion toggle cannot be reversed');
 if(!element('app').innerHTML.includes('ملخص الدرس في دقيقة')||!element('app').innerHTML.includes('lesson-videos'))throw Error('Lesson recap or media section is missing');
 console.log('PASS Learning Studio, guided lesson steps, star tracker and local persistence');
+
+
+// Menu information architecture and privately indexed study sources.
+context.location.hash='#/home';windowHandlers.hashchange();
+const navHtml=element('app').innerHTML;
+if((navHtml.match(/class="sidebar-nav-group"/g)||[]).length!==5)throw Error('Sidebar must display five learning navigation groups');
+for(const label of ['ابدئي هنا','منهجي ودروسي','أتدرّب وأختبر','أراجع وأثبّت','مكتبتي وإعداداتي']){
+ if(!navHtml.includes(label))throw Error('Missing grouped navigation label '+label);
+}
+context.location.hash='#/sources';windowHandlers.hashchange();
+const libraryHtml=element('app').innerHTML;
+if(!libraryHtml.includes('٧ كتب ومراجع PDF')||!libraryHtml.includes('source-topic-index'))throw Error('Seven source references and reading-map topics not accessible');
+for(const name of ['درب السلامة','النزاوي','كتاب المتدربة','جدة المتطورة','تقييم مهارة القيادة']){
+ if(!libraryHtml.includes(name))throw Error('Personal reference absent from source library: '+name);
+}
+console.log('PASS grouped sidebar and complete seven-book local source index');

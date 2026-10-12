@@ -147,6 +147,6 @@ const level=()=>masterySnapshot(masteryCourse,masteryState)[0].level;
 if(level()!=='تمرين ذاتي فقط')throw Error('An unchecked quiz cannot count as learned');
 for(let i=0;i<3;i++)context.window.MasarCoach.record(masteryState,'lesson','QUIZ-900',true,Date.now()+i*1000);
 if(level()!=='إجابات متكررة')throw Error('Correct repeats label must not claim validated mastery');
-context.MasarCoach.record(masteryState,'lesson','QUIZ-900',false);
+context.window.MasarCoach.record(masteryState,'lesson','QUIZ-900',false);
 if(level()!=='يحتاج مراجعة')throw Error('A wrong answer must reset the repeated answer indicator');
 console.log('PASS study indicator distinguishes self-study, repeated answers and regression after an error');

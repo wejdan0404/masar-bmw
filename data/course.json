@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5.0",
+  "schema_version": "1.5.1",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -2953,6 +2953,40 @@
       "direct_video_url": false,
       "approved_for_embed": false,
       "verification_note": "صفحة خارجية وقد تتطلب تسجيلًا؛ ليست فيديو مضمّنًا"
+    },
+    {
+      "id": "VIDEO-QUDS-Y",
+      "title": "مهارة Y — انعطاف ثلاثي النقاط",
+      "provider": "QUDS — مدرسة جامعة القصيم لتعليم القيادة",
+      "url": "https://www.youtube.com/watch?v=SIay14R3GKY",
+      "kind": "youtube_video",
+      "youtube_id": "SIay14R3GKY",
+      "lesson_ids": [
+        "LES-034",
+        "LES-035"
+      ],
+      "published": "2020-09-12",
+      "verification_note": "فيديو مباشر على قناة المدرسة، موثق بعنوانه وناشره؛ لم يُفحص سماح تضمينه عند كل جهاز."
+    },
+    {
+      "id": "MEDIA-QUDS-OFFICIAL-9",
+      "title": "مكتبة 9 فيديوهات رسمية (X و90 وT والكراج وY ومخاطر القيادة)",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة — موقع المدرسة",
+      "url": "https://quds.qu.edu.sa/course/videos/",
+      "kind": "external_video_collection",
+      "lesson_ids": [
+        "LES-028",
+        "LES-030",
+        "LES-031",
+        "LES-032",
+        "LES-033",
+        "LES-034",
+        "LES-035",
+        "LES-036"
+      ],
+      "direct_video_url": false,
+      "approved_for_embed": false,
+      "verification_note": "مكتبة فيديوهات رسمية من موقع المدرسة، تحوي 9 فيديوهات؛ هذه الصفحة ليست رابط YouTube مباشر، وتعليماتها تخص ميدان المدرسة."
     }
   ],
   "learning_visuals": [
@@ -3360,6 +3394,30 @@
       "type": "government_pdf",
       "trust": "primary",
       "note": "رابط ملف دليل الإشارات المنشور على موقع وزارة الداخلية؛ راجعي النسخة الفعلية عند اختلاف الرسوم أو التسميات."
+    },
+    {
+      "id": "EXT-QUDS-VIDEOS",
+      "title": "جامعة القصيم — فيديوهات تعليمية رسمية من المدرسة",
+      "url": "https://quds.qu.edu.sa/course/videos/",
+      "type": "school_video_library",
+      "trust": "school_primary",
+      "note": "تحتوي تسعة فيديوهات؛ أمثلة لمناورات المدرسة ولا تفترض مطابقتها لإجراءات جميع مدارس المملكة."
+    },
+    {
+      "id": "EXT-QUDS-PRICES",
+      "title": "مدرسة جامعة القصيم — برامج ورسوم التدريب",
+      "url": "https://sites.qu.edu.sa/quds/quds-prices/",
+      "type": "school_training_policy",
+      "trust": "school_primary",
+      "note": "صفحة المدرسة تعرض برامج 6 و15 و30 ساعة، وهي معلومات تخص المدرسة وقد تتغير."
+    },
+    {
+      "id": "EXT-QUDS-ASSESSMENT",
+      "title": "مدرسة جامعة القصيم — أخطاء اختبار المواقف",
+      "url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "type": "school_practical_assessment",
+      "trust": "school_primary",
+      "note": "تتضمن أمثلة وحدودًا زمنية خاصة باختبار المواقف في المدرسة؛ ليست معايير وطنية شاملة."
     }
   ],
   "practical_checklist": [
@@ -6950,6 +7008,26 @@
       "completion_mode": "self_reflection",
       "review_required": false,
       "source_id": "DOC-TRAINEE"
+    }
+  ],
+  "school_specific_evidence": [
+    {
+      "id": "SCHOOL-QUDS-HOURS",
+      "publisher": "مدرسة جامعة القصيم لتعليم القيادة",
+      "claim": "تعرض صفحة الأسعار ثلاث فئات تدريبية: 6 و15 و30 ساعة.",
+      "applies_to": "مدرسة جامعة القصيم وفق الصفحة المنشورة",
+      "not_universal": true,
+      "source_url": "https://sites.qu.edu.sa/quds/quds-prices/",
+      "verified_at": "2026-10-12"
+    },
+    {
+      "id": "SCHOOL-QUDS-PRACTICAL",
+      "publisher": "مدرسة جامعة القصيم لتعليم القيادة",
+      "claim": "تتضمن صفحة مقالات المدرسة معايير رسوب فوري مرتبطة بمناورات المواقف ومددها؛ تختلف عن نصوص التجميعات غير الموثقة.",
+      "applies_to": "اختبارات المدرسة المنشورة على موقعها",
+      "not_universal": true,
+      "source_url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "verified_at": "2026-10-12"
     }
   ]
 }

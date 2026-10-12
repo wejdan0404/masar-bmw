@@ -86,3 +86,20 @@ if(!element('app').innerHTML.includes('وش معنى هذه اللوحة؟'))thr
 click({action:'sign-answer',choice:'SG-01'});
 if(!element('app').innerHTML.includes('صح!'))throw Error('Correcting prior mistake failed');
 console.log('PASS traffic signs gallery, filtered quizzes, locally saved answers and retry');
+
+context.location.hash='#/practice-quiz';windowHandlers.hashchange();
+click({action:'hub-filter',topic:'new'});
+if(!element('app').innerHTML.includes('SIG-01'))throw Error('First unanswered question missing');
+click({action:'hub-answer',qid:'SIG-01',answer:'0'});
+if(!element('app').innerHTML.includes('إجابتك صحيحة')||!element('app').innerHTML.includes('SIG-01'))throw Error('Unanswered filter hides explanation immediately');
+click({action:'hub-next'});
+if(!element('app').innerHTML.includes('SIG-02'))throw Error('Unanswered filter did not advance to next unattempted question');
+click({action:'hub-answer',qid:'SIG-02',answer:'0'});
+if(!element('app').innerHTML.includes('راجعي المعلومة'))throw Error('Wrong-answer feedback missing');
+click({action:'hub-filter',topic:'wrong'});
+if(!element('app').innerHTML.includes('SIG-02'))throw Error('Mistakes-only filter cannot revisit saved wrong answer');
+click({action:'hub-answer',qid:'SIG-02',answer:'1'});
+if(!element('app').innerHTML.includes('إجابتك صحيحة')||!element('app').innerHTML.includes('SIG-02'))throw Error('Correcting a mistake must show explanation before removal');
+click({action:'hub-next'});
+if(!element('app').innerHTML.includes('لا توجد أسئلة هنا حاليًا'))throw Error('Corrected mistake should leave wrong-answer list');
+console.log('PASS practice quiz keeps answer feedback visible across dynamic filters');

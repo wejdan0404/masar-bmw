@@ -48,6 +48,7 @@ function finishMock(state,course,now=Date.now()){
  const qs=new Map(allQuestions(course).map(q=>[q.id,q]));
  const score=m.questionIds.reduce((sum,id)=>sum+(Number.isInteger(m.answers[id])&&m.answers[id]===qs.get(id)?.correct_option_index?1:0),0);
  m.finishedAt=now;m.score=score;m.status='finished';
+ for(const id of m.questionIds){const q=qs.get(id);if(q&&Number.isInteger(m.answers[id]))record(state,course.review_questions.some(x=>x.id===id)?'bank':'lesson',id,m.answers[id]===q.correct_option_index,now)}
  state.mockHistory=state.mockHistory||[];state.mockHistory.push({id:m.id,score,total:m.questionIds.length,finishedAt:new Date(now).toISOString(),durationSec:Math.round((now-m.startedAt)/1000)});
  state.mockHistory=state.mockHistory.slice(-20);
  return true;

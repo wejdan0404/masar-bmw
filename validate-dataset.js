@@ -1,0 +1,28 @@
+/* MASAR data integrity checks — do not treat draft as legally verified. */
+const fs=require('fs'),assert=require('assert');
+const d=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
+function unique(items,what){const ids=items.map(x=>x.id);assert.equal(new Set(ids).size,ids.length,'Duplicate '+what+' IDs')}
+for(const name of ['weeks','lessons','questions','sources','personal_documents','uploaded_image_index','external_study_sources','review_questions','practical_checklist','review_claims','media_resources','learning_visuals']) unique(d[name]||[],name);
+assert.equal(d.weeks.length,16);
+assert.equal(d.lessons.length,48);
+assert.equal(d.questions.length,48);
+assert.equal(d.personal_documents.length,7);
+assert.equal(d.uploaded_image_index.length,6);
+assert.equal(d.review_questions.length,20);
+assert.equal(d.community_pages.image_links.length,39);
+const lessonIds=new Set(d.lessons.map(x=>x.id)),weekIds=new Set(d.weeks.map(x=>x.id)),allSourceIds=new Set([...(d.personal_documents||[]),...(d.uploaded_image_index||[]),...(d.external_study_sources||[])].map(x=>x.id));
+for(const l of d.lessons)assert(weekIds.has(l.week_id),'Orphan lesson: '+l.id);
+for(const q of d.review_questions){
+ assert(Array.isArray(q.options)&&q.options.length>=3);
+ assert(Number.isInteger(q.correct_option_index)&&q.correct_option_index>=0&&q.correct_option_index<q.options.length);
+ assert(q.explanation.length>=25,'No explanation '+q.id);
+ assert(q.status==='editorial_practice_original'&&q.is_official_exam_question===false);
+ assert(allSourceIds.has(q.source_id),'Missing reference '+q.source_id);
+}
+for(const block of d.practical_checklist)for(const id of block.lesson_ids)assert(lessonIds.has(id),'Unknown linked practical lesson');
+for(const file of d.personal_documents)assert(file.storage==='personal_upload_only'&&file.available_on_public_site===false,'Unauthorized public file');
+for(const file of d.uploaded_image_index)assert(file.storage==='personal_upload_only'&&file.available_on_public_site===false,'Unauthorized public image');
+for(const claim of d.review_claims)assert(claim.allowed_in_quiz===false,'Unverified rule in quiz');
+for(const [idx,x] of d.community_pages.image_links.entries())assert(x.page===idx+1&&/saudirokhsa\.com/.test(x.url));
+const videos=d.media_resources.filter(x=>x.kind==='youtube_video');assert(videos.length===2);
+console.log('PASS MASAR content validation: '+d.lessons.length+' lessons, '+d.review_questions.length+' original review questions, '+d.personal_documents.length+' personal PDFs, '+d.uploaded_image_index.length+' image references; no unverified evaluation thresholds used.');

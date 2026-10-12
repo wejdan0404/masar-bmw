@@ -586,3 +586,15 @@ body{font-size:15px}
 .source-link,.ref-card p,.note-preview{font-size:12px}
 @media(max-width:900px){.sidebar-section-nav{gap:8px}.sidebar-group-title{min-height:46px}}
 @media(prefers-reduced-motion:reduce){.nav-section-chevron{transition:none}}
+
+/* Library cards now link to exact indexed pages; not certification of the complete PDF. */
+.hub-library-subtitle{grid-column:1/-1;font-size:18px;line-height:1.55;margin:17px 0 3px;color:var(--navy)}
+.hub-library-subtitle:first-child{margin-top:0}
+.source-topic-index>.source-topic-list{display:grid;gap:7px;margin:11px 0}
+.source-topic-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:8px;background:white;border:1px solid #e4eaf0;padding:7px 9px;border-radius:9px}
+.source-topic-index .source-topic-row a{padding:0;background:transparent;font-size:12px;font-weight:700}
+.source-topic-row span{font-size:11px;color:#586f80}
+.source-topic-row button{border:1px solid #d0dfe8;border-radius:7px;background:#eaf2f7;color:#36566e;padding:5px 8px;font-size:11px;cursor:pointer}
+.source-topic-row button:hover{background:#dcecf5}
+.source-topic-row button:focus-visible{outline:3px solid #8caec6}
+@media(max-width:610px){.source-topic-row{grid-template-columns:minmax(0,1fr) auto}.source-topic-row span{grid-column:1;grid-row:2}.source-topic-row button{grid-column:2;grid-row:1/3}}

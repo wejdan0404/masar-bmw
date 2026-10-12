@@ -12,7 +12,7 @@ const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
  window:{scrollTo(){},addEventListener(t,fn){windowHandlers[t]=fn}},
  location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
  setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
-vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/study-hub.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/traffic-signs.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
+vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/study-hub.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/traffic-signs.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/study-coach.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
 for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/visuals','المكتبة المرئية'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
@@ -103,3 +103,32 @@ if(!element('app').innerHTML.includes('إجابتك صحيحة')||!element('app'
 click({action:'hub-next'});
 if(!element('app').innerHTML.includes('لا توجد أسئلة هنا حاليًا'))throw Error('Corrected mistake should leave wrong-answer list');
 console.log('PASS practice quiz keeps answer feedback visible across dynamic filters');
+
+context.location.hash='#/lesson/1';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('data-activity-note="ACT-001"')||!element('app').innerHTML.includes('على سيارة مطفأة'))throw Error('Dedicated lesson activity is missing');
+documentHandlers.input({target:{id:'',dataset:{activityNote:'ACT-001'},value:'لاحظت الفرامل والحزام قبل القيادة'}});
+if(!saved['masar-driving-v1'].includes('لاحظت الفرامل والحزام'))throw Error('Exercise notes not saved');
+documentHandlers.change({target:{id:'',dataset:{activityCheck:'ACT-001'},checked:true}});
+if(!saved['masar-driving-v1'].includes('"ACT-001":true'))throw Error('Exercise completion not saved');
+context.location.hash='#/review';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('خطتي لمراجعة أخطائي')||!element('app').innerHTML.includes('1 / 48'))throw Error('Spaced-review dashboard not loading activity completion');
+if(!element('app').innerHTML.includes('راجعي الآن'))throw Error('Review list did not render');
+context.location.hash='#/mock-exam';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('محاكاة اختبار نظري'))throw Error('Mock exam page missing');
+click({action:'coach-mock-start'});
+let mm=JSON.parse(saved['masar-driving-v1']).mockSession;
+if(!mm||mm.questionIds.length!==20||mm.timeLimitMs!==1500000||mm.status!=='active')throw Error('Mock exam session not saved');
+if(element('app').innerHTML.includes('الإجابة المناسبة:'))throw Error('Exam leaked solution before submission');
+click({action:'coach-mock-answer',option:'1'});
+mm=JSON.parse(saved['masar-driving-v1']).mockSession;
+if(Object.keys(mm.answers).length!==1)throw Error('Mock answer was not saved');
+click({action:'coach-mock-next'});
+if(!element('app').innerHTML.includes('سؤال 2 من 20'))throw Error('Mock exam next navigation broken');
+context.location.hash='#/home';windowHandlers.hashchange();
+context.location.hash='#/mock-exam';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('سؤال 2 من 20'))throw Error('Mock exam not resumable on route change');
+click({action:'coach-mock-finish'});
+let finalState=JSON.parse(saved['masar-driving-v1']);
+if(finalState.mockSession.status!=='finished'||finalState.mockHistory.length!==1||typeof finalState.mockSession.score!=='number')throw Error('Mock exam result not persisted');
+if(!element('app').innerHTML.includes('نتيجة تدريبية شخصية'))throw Error('Exam feedback not rendered');
+console.log('PASS all 48 original lesson activities, saved reflections, spaced-review dashboard, and resumable timed mock exam');

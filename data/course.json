@@ -6372,6 +6372,78 @@
       "pictogram_status": "educational_illustration_not_official",
       "review_status": "requires_official_pictogram_comparison",
       "is_official_exam_question": false
+    },
+    {
+      "id": "SG-25",
+      "category": "إرشادية",
+      "title": "مستشفى",
+      "icon": "guide-hospital",
+      "meaning": "تدل على وجود مستشفى في الاتجاه أو الموقع المشار إليه.",
+      "action": "اتبعي اتجاه اللوحة إذا كنتِ تقصدين المستشفى، ولا تنعطفي فجأة.",
+      "memory_tip": "لوحة إرشاد لمرفق خدمة، وليست تصريحًا بالوقوف.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-26",
+      "category": "إرشادية",
+      "title": "محطة وقود",
+      "icon": "guide-fuel",
+      "meaning": "ترشد إلى موقع محطة وقود.",
+      "action": "تحققي من الاتجاه وخططي للخروج أو تغيير المسار مبكرًا وبشكل آمن.",
+      "memory_tip": "وجود المحطة لا يغيّر أولوية السير.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-025"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-27",
+      "category": "إرشادية",
+      "title": "مطار",
+      "icon": "guide-airport",
+      "meaning": "ترشد إلى اتجاه المطار أو موقعه.",
+      "action": "اتبعي اتجاه اللوحة مع الالتزام بمسارك والإشارات الأخرى.",
+      "memory_tip": "لا تخلطيها مع لوحة التحذير من الطيران المنخفض.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-28",
+      "category": "إرشادية",
+      "title": "موقف سيارات",
+      "icon": "guide-parking",
+      "meaning": "ترشد إلى مكان مخصص لوقوف السيارات.",
+      "action": "اتبعي إرشادات الدخول وتحققي من شروط الوقوف الظاهرة في الموقع.",
+      "memory_tip": "لا تعني جواز الوقوف في أي مكان قريب.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-031"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
     }
   ],
   "sign_learning": {

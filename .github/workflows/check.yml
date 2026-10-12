@@ -15,9 +15,13 @@ jobs:
         run: |
           node --check app.js
           node --check visuals.js
+          node --check study-hub.js
+          node --check validate-dataset.js
           node --check db/indexeddb.js
           node --check smoke-test.js
       - name: Validate curriculum and routes
-        run: node smoke-test.js
+        run: |
+          node validate-dataset.js
+          node smoke-test.js
       - name: Compile standalone site
         run: python compile.py

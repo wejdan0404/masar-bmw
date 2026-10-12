@@ -51,11 +51,11 @@
       };
       request.onsuccess = () => {
         const db = request.result;
-        db.onversionchange = () => db.close();
+        db.onversionchange = () => { db.close(); dbPromise = undefined; };
         resolve(db);
       };
       request.onerror = () => { dbPromise = undefined; reject(request.error); };
-      request.onblocked = () => console.warn('MASAR: IndexedDB upgrade blocked by another tab');
+      request.onblocked = () => { dbPromise = undefined; reject(new Error('إغلاق تبويبات مِسار الأخرى مطلوب قبل ترقية قاعدة البيانات')); };
     });
     return dbPromise;
   }
@@ -146,10 +146,15 @@
   }
 
   async function savePersonalFile(id, file) {
-    if (!id || !file || !/^(application\/pdf|image\/(png|jpeg|webp))$/.test(file.type)) throw new Error('Unsupported file type');
+    if (!id || typeof id !== 'string' || !file) throw new Error('Invalid file');
+    const extension = String(file.name || '').split('.').pop().toLowerCase();
+    const mimeByExtension = {pdf:'application/pdf',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',webp:'image/webp'};
+    const mime = mimeByExtension[extension];
+    // Windows or file browsers may omit MIME even for a valid PDF. Require a safe extension.
+    if (!mime || (file.type && file.type !== mime) || file.size > 80*1024*1024) throw new Error('Unsupported or oversized file');
     const db = await connect();
     const tx = db.transaction(['personal_files'], 'readwrite');
-    tx.objectStore('personal_files').put({id, filename:file.name, mime:file.type, size:file.size, updatedAt:new Date().toISOString(), blob:file});
+    tx.objectStore('personal_files').put({id, filename:file.name, mime, size:file.size, updatedAt:new Date().toISOString(), blob:file});
     await completed(tx);
   }
   async function getPersonalFile(id) {

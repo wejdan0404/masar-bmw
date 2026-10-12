@@ -6,8 +6,8 @@
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 3;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims'];
+  const DATABASE_VERSION = 4;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
   const allStores = [...referenceStores, ...userStores, 'personal_files'];
   let dbPromise;
@@ -37,6 +37,7 @@
         create('review_questions', 'id');
         create('practical_checklist', 'id');
         create('review_claims', 'id');
+        create('lesson_reading_map', 'id');
         create('personal_files', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');

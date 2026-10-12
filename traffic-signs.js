@@ -23,6 +23,10 @@ function pictogram(k){
  case 'no-stopping':return P('M33 26L117 111M117 26L33 111','stroke="'+red+'" stroke-width="9" fill="none"');
  case 'mandatory-right':return P('M35 75H110M89 53L111 75L89 97','stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"');
  case 'mandatory-straight':return P('M75 110V28M51 51L75 26L99 51','stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"');
+ case 'mark-solid':return '<rect x="69" y="25" width="12" height="103" rx="4" fill="white"/>';
+ case 'mark-dashed':return [27,60,93].map(y=>'<rect x="69" y="'+y+'" width="12" height="22" rx="2" fill="white"/>').join('');
+ case 'mark-stop':return '<rect x="20" y="82" width="110" height="13" fill="white"/>';
+ case 'mark-crosswalk':return [30,52,74,96].map(x=>'<rect x="'+x+'" y="32" width="14" height="88" fill="white"/>').join('');
  case 'temp-workers':return '<circle cx="75" cy="56" r="10" fill="'+ink+'"/>'+P('M75 67L75 99M75 78L48 90M75 78L101 88M75 99L57 119M75 99L95 119',stroke);
  case 'temp-narrow':return P('M46 50L67 113M104 50L83 113',stroke);
  case 'temp-detour':return P('M37 97H78V59H109M92 43L110 59L92 75',stroke);
@@ -52,6 +56,7 @@ function draw(sign,quiz=false){
  else if(k==='yield')frame='<path d="M75 138L8 12H142Z" fill="#fefefe" stroke="'+red+'" stroke-width="13" stroke-linejoin="round"/>';
  else if(k.startsWith('warn-'))frame='<path d="M75 6L145 135H5Z" fill="white" stroke="'+red+'" stroke-width="11" stroke-linejoin="round"/>';
  else if(k==='mandatory-right'||k==='mandatory-straight')frame='<circle cx="75" cy="75" r="65" fill="'+blue+'" stroke="#fff" stroke-width="3"/>';
+ else if(k.startsWith('mark-'))frame='<rect x="5" y="5" width="140" height="140" rx="14" fill="#3c4850" stroke="#fff" stroke-width="3"/>';
  else if(k.startsWith('temp-'))frame='<path d="M75 6L145 135H5Z" fill="#f9d44c" stroke="'+red+'" stroke-width="11" stroke-linejoin="round"/>';
  else if(k.startsWith('guide-'))frame='<rect x="8" y="8" width="134" height="134" rx="13" fill="'+blue+'" stroke="#fff" stroke-width="3"/>';
  else if(k==='no-entry')frame='<circle cx="75" cy="75" r="65" fill="'+red+'" stroke="#fff" stroke-width="3"/>';

@@ -12,7 +12,7 @@ const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
  window:{scrollTo(){},addEventListener(t,fn){windowHandlers[t]=fn}},
  location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
  setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
-vm.createContext(context);vm.runInContext(text,context,{timeout:3000});
+vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
 for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
@@ -32,3 +32,12 @@ if(!element('app').innerHTML.includes('ما فيه أسابيع هنا حالي�
 clickFilter('all');
 if(!element('app').innerHTML.includes('data-week="16"'))throw Error('All weeks filter failed');
 console.log('PASS interactive catalog filters');
+context.location.hash='#/lesson/19';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('VISUAL LEARNING')||!element('app').innerHTML.includes('مركبة على مدخل الدوار'))throw Error('Roundabout lesson diagram missing');
+click({action:'visual-step',visual:'VIS-ROUNDABOUT',step:'2'});
+if(!element('app').innerHTML.includes('المرحلة 3 من 3'))throw Error('Diagram stage interaction failed');
+context.location.hash='#/lesson/14';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('خط متقطع'))throw Error('Road-marking diagram missing');
+context.location.hash='#/lesson/31';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('حركة السيارة عند الرجوع'))throw Error('Parking diagram missing');
+console.log('PASS visual learning diagrams and stage navigation');

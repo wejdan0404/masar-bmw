@@ -2,13 +2,14 @@
 const fs=require('fs'),assert=require('assert');
 const d=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
 function unique(items,what){const ids=items.map(x=>x.id);assert.equal(new Set(ids).size,ids.length,'Duplicate '+what+' IDs')}
-for(const name of ['weeks','lessons','questions','sources','personal_documents','uploaded_image_index','external_study_sources','review_questions','practical_checklist','review_claims','media_resources','learning_visuals']) unique(d[name]||[],name);
+for(const name of ['weeks','lessons','questions','sources','personal_documents','uploaded_image_index','external_study_sources','review_questions','practical_checklist','review_claims','media_resources','learning_visuals','lesson_reading_map']) unique(d[name]||[],name);
 assert.equal(d.weeks.length,16);
 assert.equal(d.lessons.length,48);
 assert.equal(d.questions.length,48);
 assert.equal(d.personal_documents.length,7);
 assert.equal(d.uploaded_image_index.length,6);
-assert.equal(d.review_questions.length,20);
+assert.equal(d.review_questions.length,36);
+assert.equal(d.lesson_reading_map.length,48);
 assert.equal(d.practical_assessment_reference.fault_categories.length,16);
 assert.equal(d.practical_assessment_reference.immediate_failure_examples.length,6);
 assert(d.practical_assessment_reference.official_unified_standard===false);
@@ -23,6 +24,19 @@ for(const q of d.review_questions){
  assert(allSourceIds.has(q.source_id),'Missing reference '+q.source_id);
 }
 for(const block of d.practical_checklist)for(const id of block.lesson_ids)assert(lessonIds.has(id),'Unknown linked practical lesson');
+const docPages=new Map(d.personal_documents.map(x=>[x.id,x.pages]));
+const seenReading=new Set();
+for(const row of d.lesson_reading_map){
+ assert(lessonIds.has(row.lesson_id),'Unknown lesson reading: '+row.lesson_id);
+ assert(!seenReading.has(row.lesson_id),'Duplicate reading map for '+row.lesson_id);
+ seenReading.add(row.lesson_id);
+ assert(row.resources.length>=1,'No reference: '+row.lesson_id);
+ for(const ref of row.resources){
+  assert(docPages.has(ref.source_id),'Unknown PDF: '+ref.source_id);
+  assert(ref.pdf_page_start>=1 && ref.pdf_page_end<=docPages.get(ref.source_id) && ref.pdf_page_start<=ref.pdf_page_end,'PDF page out of range');
+  assert(ref.verification==='topic_and_page_index_checked_not_full_line_by_line','Unverified book asserted as fully audited');
+ }
+}
 for(const file of d.personal_documents)assert(file.storage==='personal_upload_only'&&file.available_on_public_site===false,'Unauthorized public file');
 for(const file of d.uploaded_image_index)assert(file.storage==='personal_upload_only'&&file.available_on_public_site===false,'Unauthorized public image');
 for(const claim of d.review_claims)assert(claim.allowed_in_quiz===false,'Unverified rule in quiz');

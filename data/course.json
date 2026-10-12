@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -3129,5 +3129,699 @@
         "S008"
       ]
     }
-  ]
+  ],
+  "personal_documents": [
+    {
+      "id": "DOC-TRAINEE",
+      "title": "كتاب المتدربة — التدريب النظري",
+      "pages": 240,
+      "filename": "كتاب متدربة  للنظري.pdf",
+      "category": "school_manual",
+      "edition_date": "2022-04",
+      "publisher": "المرور / دليل متدرب منشور في الملف",
+      "scope": "اللوحات ص52–61؛ التقاطعات ص129–162؛ المسافة ص186؛ التجاوز ص194–223؛ المصابيح ص223–237",
+      "verification": "reference_only",
+      "license_status": "protected_or_unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-019",
+        "LES-027"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-DARB",
+      "title": "درب السلامة — كتاب التدريب النظري والعملي",
+      "pages": 166,
+      "filename": "درب السلامة- كتاب عربي.pdf",
+      "category": "licensed_textbook",
+      "edition_date": "2020-01",
+      "publisher": "درب السلامة / Heinrich Vogel / Springer",
+      "scope": "الإشارات ابتداءً من ص25؛ الأولوية ص51؛ العلامات الأرضية ص69؛ المناورات ص91؛ المخاطر ص125",
+      "verification": "reference_only",
+      "license_status": "explicitly_copyrighted",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-NAZAWI",
+      "title": "النزاوي — عيّنات أسئلة للتدرب",
+      "pages": 81,
+      "filename": "__النزاوي_لتعليم_القيادة_اسئلة__.pdf",
+      "category": "unofficial_question_collection",
+      "edition_date": null,
+      "publisher": "تجميع متداول — المصدر الرسمي للأسئلة غير مؤكد",
+      "scope": "أسئلة وأشكال اختبار تدريبية، لا تعتبر نسخة مضمونة من الاختبار الحالي",
+      "verification": "practice_unverified",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-Q49",
+      "title": "تجميع أسئلة القيادة — 49 صفحة",
+      "pages": 49,
+      "filename": "16907764.pdf",
+      "category": "unofficial_question_collection",
+      "edition_date": null,
+      "publisher": "تجميع غير موثق",
+      "scope": "تعاريف الوقوف والأولوية والإشارات؛ له نسخة ثانية مطابقة",
+      "verification": "practice_unverified",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "duplicate_filenames": [
+        "16907764(1).pdf"
+      ]
+    },
+    {
+      "id": "DOC-SHARD",
+      "title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+      "pages": 39,
+      "filename": "Scan 13 Sep 2018 at 10-03 AM.pdf",
+      "category": "school_practical_manual",
+      "edition_date": "2018",
+      "publisher": "مدرسة شرق لتعليم قيادة المركبات",
+      "scope": "فحص ما قبل القيادة، POM / MSPSL، التجاوز، U Turn، المواقف",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-JEDDAH",
+      "title": "منهج التدريب الميداني — جدة المتطورة",
+      "pages": 4,
+      "filename": "__المنهج-العملي-1_.pdf",
+      "category": "school_practical_manual",
+      "edition_date": null,
+      "publisher": "مدرسة جدة المتطورة — منشور تدريبي مصور",
+      "scope": "مهارات U وT وX والكراج والتقاطعات والمرتفعات",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-031",
+        "LES-035"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    },
+    {
+      "id": "DOC-NARIMAN",
+      "title": "ملخص تقييم مهارة القيادة — ناريمان",
+      "pages": 22,
+      "filename": "ملخص تقييم المرور.pdf",
+      "category": "individual_practical_notes",
+      "edition_date": null,
+      "publisher": "تجميع ناريمان سعود شعبان",
+      "scope": "فحص، MSSSM، MSPSL، POM، الوقوف، الدوارات، اللوحات",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub."
+    }
+  ],
+  "uploaded_image_index": [
+    {
+      "id": "IMG-WARNING",
+      "title": "جدول 24 إشارة تحذيرية",
+      "filename": "image(1).png",
+      "category": "traffic_signs",
+      "status": "user_supplied_reference",
+      "note": "أسماء بعض العلامات تحتاج مراجعة دليل المرور، مثل مثلث قف الذي يعني التحذير من الوقوف أمامك.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-JUNCTION",
+      "title": "تقاطع رئيسي/فرعي بأربعة أشكال",
+      "filename": "image(2).png",
+      "category": "intersections",
+      "status": "user_supplied_reference",
+      "note": "مرجع بصري، لا نعتمد تحديد الأولوية دون النظر إلى التنظيم الفعلي.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-REGULATORY",
+      "title": "جدول إشارات تنظيمية",
+      "filename": "image(3).png",
+      "aliases": [
+        "image(4).png"
+      ],
+      "category": "traffic_signs",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-DASHBOARD",
+      "title": "أيقونات تحذير لوحة القيادة",
+      "filename": "image(5).png",
+      "category": "dashboard_symbols",
+      "status": "user_supplied_reference",
+      "note": "بعض الرموز تختلف حسب موديل هوندا أكورد والفئة.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-EVAL-SHARD",
+      "title": "نموذج تقييم المهارات العملية — شرق",
+      "filename": "image(6).png",
+      "aliases": [
+        "image(7).png"
+      ],
+      "category": "assessment_sheet",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-EVAL-SDS",
+      "title": "نموذج فحص الطريق — المدرسة السعودية",
+      "filename": "image(8).png",
+      "category": "assessment_sheet",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    }
+  ],
+  "external_study_sources": [
+    {
+      "id": "EXT-MOI-SIGNS",
+      "title": "دليل الإشارات المرورية — الإدارة العامة للمرور",
+      "url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "type": "government_portal",
+      "trust": "primary",
+      "note": "مرجع الوزارة للإشارات؛ صفحة التصنيفات في قسم المرور."
+    },
+    {
+      "id": "EXT-ABS",
+      "title": "أبشر — إصدار رخصة قيادة",
+      "url": "https://www.absher.sa/",
+      "type": "government_portal",
+      "trust": "primary",
+      "note": "يُرجع إليه في إجراءات الحجز الحالية."
+    },
+    {
+      "id": "EXT-SAUDIO",
+      "title": "نماذج الاختبار والتجميعات — سعودي رخصة",
+      "url": "https://saudirokhsa.com/",
+      "type": "third_party_quiz",
+      "trust": "unverified",
+      "note": "ليس جهة رسمية؛ لا ضمان لتطابق الأسئلة أو النجاح."
+    },
+    {
+      "id": "EXT-SAUDIO-NAZAWI",
+      "title": "ملف النزاوي على سعودي رخصة",
+      "url": "https://saudirokhsa.com/pdf/",
+      "type": "third_party_collection",
+      "trust": "unverified",
+      "note": "صفحة دعائية تعرض صورًا ووصفًا للتجميع؛ لا تعتبر تصريحًا رسميًا بصحة الأسئلة."
+    }
+  ],
+  "practical_checklist": [
+    {
+      "id": "PRA-1",
+      "title": "فحص وتجهيز المركبة",
+      "lesson_ids": [
+        "LES-001",
+        "LES-002"
+      ],
+      "items": [
+        "تفقد حالة المركبة قبل القيادة",
+        "ضبط المقعد ومسند الرأس والمرايا",
+        "ربط حزام الأمان والتأكد من إغلاق الأبواب",
+        "معرفة أنوار التحذير ووظائف الأزرار الأساسية"
+      ]
+    },
+    {
+      "id": "PRA-2",
+      "title": "الملاحظة وتغيير المسار",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023"
+      ],
+      "items": [
+        "فحص المرايا",
+        "الإشارة في الوقت المناسب",
+        "فحص النقطة العمياء",
+        "انتقاء فجوة آمنة",
+        "الانتقال التدريجي دون قطع خط ممنوع"
+      ]
+    },
+    {
+      "id": "PRA-3",
+      "title": "التقاطعات والدوارات",
+      "lesson_ids": [
+        "LES-016",
+        "LES-019"
+      ],
+      "items": [
+        "فهم الأولوية بحسب الإشارة والتنظيم",
+        "الوقوف قبل خط الوقوف إذا وجب",
+        "الانتباه للمشاة",
+        "التقدم فقط عند خلو المسار بشكل آمن"
+      ]
+    },
+    {
+      "id": "PRA-4",
+      "title": "الركن والخروج من الموقف",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-035"
+      ],
+      "items": [
+        "اختيار مكان يسمح بالوقوف",
+        "مراقبة المحيط أثناء الرجوع للخلف",
+        "ملاحظة تأرجح مقدمة السيارة",
+        "التأكد من الاصطفاف داخل الخطوط",
+        "إشارة الخروج والتحقق من البقعة العمياء"
+      ]
+    },
+    {
+      "id": "PRA-5",
+      "title": "سلوكيات حرجة يجب فهمها",
+      "lesson_ids": [
+        "LES-010",
+        "LES-040"
+      ],
+      "items": [
+        "عدم دخول طريق أو مسار أو دوار قبل التأكد من خلوه",
+        "عدم تجاوز إشارة حمراء أو قف دون توقف",
+        "عدم القيام بمناورة تؤدي للتصادم أو تستدعي تدخلًا طارئًا",
+        "الالتزام بإشارات وطلبات فاحص القيادة حسب النظام"
+      ]
+    }
+  ],
+  "review_claims": [
+    {
+      "id": "CLAIM-HOURS",
+      "text": "أقل من 8 أخطاء = 6 ساعات، أكثر من 8 = 12 ساعة، الرسوب الفوري أو أكثر من 12 = 30 ساعة",
+      "status": "unverified_school_specific_claim",
+      "note": "وُرد في تجميع المستخدم، ولا يُنشر كقاعدة رسمية وطنية أو معيار موحد لتقييم الساعات. راجعي مدرستك.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-EXAM-GUARANTEE",
+      "text": "أسئلة النزاوي مطابقة 100٪ وتضمن النجاح",
+      "status": "unsubstantiated_marketing_claim",
+      "note": "ادعاء تسويقي من موقع طرف ثالث وليس ضمانًا رسميًا.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-PARKING-MOVES",
+      "text": "لا يزيد الركن على أربع حركات",
+      "status": "unverified_school_specific_claim",
+      "note": "قد يكون معيار نموذج تقييم محدد، لا يُعمّم على جميع مدارس القيادة.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-CAR-SPECIFIC",
+      "text": "مواضع أزرار السيارة أو عدد لفات المقود ثابت في كل سيارة",
+      "status": "unsafe_generalization",
+      "note": "قد تختلف بتجهيز السيارة ونوعها وسنة موديلها؛ لا تنقلي خطوات التدريب إلى سيارة فعلية دون إشراف.",
+      "allowed_in_quiz": false
+    }
+  ],
+  "review_questions": [
+    {
+      "id": "SIG-01",
+      "topic": "signals",
+      "question": "ماذا يعني الشكل المثلث ذو الإطار الأحمر في الغالب؟",
+      "options": [
+        "تحذير من خطر أمامك",
+        "طريق سريع حصري",
+        "انتهاء جميع الممنوعات"
+      ],
+      "correct_option_index": 0,
+      "explanation": "إشارة التحذير تنبه إلى وضع يستلزم الانتباه وتكييف السرعة، ولا تعطي أولوية بذاتها.",
+      "visual_key": "warning",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-02",
+      "topic": "signals",
+      "question": "لوحة قف الثُمانية الحمراء تعني:",
+      "options": [
+        "التباطؤ دون توقف",
+        "الوقوف التام والتحقق من سلامة العبور",
+        "الأولوية لك دائمًا"
+      ],
+      "correct_option_index": 1,
+      "explanation": "قف تعني الوقوف الكامل عند الموضع المناسب ثم التأكد من الطريق قبل التقدم.",
+      "visual_key": "stop",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-03",
+      "topic": "signals",
+      "question": "ما معنى المثلث المقلوب بإطار أحمر؟",
+      "options": [
+        "أعطِ الأفضلية",
+        "شارع مغلق",
+        "موقف سيارات"
+      ],
+      "correct_option_index": 0,
+      "explanation": "إشارة إعطاء الأفضلية تستلزم إفساح الطريق وفق حركة المرور وقد تستلزم الوقوف.",
+      "visual_key": "yield",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-04",
+      "topic": "signals",
+      "question": "ماذا تعني دائرة حمراء داخلها شريط أبيض أفقي؟",
+      "options": [
+        "ممنوع الدخول",
+        "قف أمامك بعد 100 متر",
+        "اتجاه إلزامي"
+      ],
+      "correct_option_index": 0,
+      "explanation": "ممنوع الدخول تعني عدم دخول المركبات من الجهة المواجهة للإشارة.",
+      "visual_key": "no-entry",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-05",
+      "topic": "signals",
+      "question": "ماذا تتوقعين عند لوحة تحذيرية بداخلها رسم إشارة ضوئية؟",
+      "options": [
+        "اقتراب إشارة مرور ضوئية",
+        "وجود مواقف فقط",
+        "جميع الإشارات متعطلة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "هي تنبيه مسبق لاحتمال وجود إشارات ضوئية أمامك؛ اتبعي الإشارة الفعلية عند الوصول.",
+      "visual_key": "traffic-light",
+      "source_id": "IMG-WARNING",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-06",
+      "topic": "signals",
+      "question": "ما التصرف المناسب قبل الدوار؟",
+      "options": [
+        "الدخول مباشرة دون النظر",
+        "قراءة اللوحات ومراقبة المركبات داخل الدوار",
+        "تجاوز الجميع من اليمين"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تُحدد الأولوية حسب تنظيم الدوار؛ وفي الدوار الاعتيادي تكون أفضلية المرور غالبًا للمركبات الموجودة داخله.",
+      "visual_key": "roundabout",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-07",
+      "topic": "signals",
+      "question": "علامة تحذيرية بشكل تقاطع أسود داخل مثلث أحمر تخبرك:",
+      "options": [
+        "بوجود تقاطع أمامك",
+        "بأن جميع الطرق ممنوعة",
+        "بوجوب الرجوع للخلف"
+      ],
+      "correct_option_index": 0,
+      "explanation": "لوحة التقاطع تحذر من التقاطع ولا تحدد وحدها الأفضلية؛ التزمي بما تنظمه اللوحات والإشارات.",
+      "visual_key": "intersection",
+      "source_id": "IMG-WARNING",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-08",
+      "topic": "signals",
+      "question": "علامة حد السرعة الأقصى 60 تعني:",
+      "options": [
+        "يجب القيادة 60 دائمًا",
+        "لا يجوز تجاوز 60 عند سريان العلامة وظروف مناسبة",
+        "السرعة الدنيا 60"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الحد الأقصى ليس سرعة مطلوبة في كل الأحوال؛ قد تستوجب الظروف القيادة أبطأ.",
+      "visual_key": "speed60",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-09",
+      "topic": "signals",
+      "question": "ماذا يعني رمز U داخل دائرة حمراء وعليه خط منع؟",
+      "options": [
+        "ممنوع الدوران للخلف",
+        "الدوران للخلف واجب",
+        "دوار أمامك"
+      ],
+      "correct_option_index": 0,
+      "explanation": "حظر الدوران للخلف يعني عدم تنفيذ هذه المناورة في الموقع المحدد.",
+      "visual_key": "no-uturn",
+      "source_id": "IMG-REGULATORY",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-10",
+      "topic": "signals",
+      "question": "عند وجود إشارة منع الوقوف، هل يمكنك ترك سيارتك والذهاب؟",
+      "options": [
+        "نعم دائمًا",
+        "لا، يجب الالتزام بقيود الإشارة السارية",
+        "فقط مع تشغيل الأنوار"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الإشارة التنظيمية تمنع الوقوف حسب مدلولها ونطاق سريانها.",
+      "visual_key": "no-parking",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-11",
+      "topic": "road",
+      "question": "ماذا يحدث إذا اقتربتِ جدًا من المركبة الأمامية؟",
+      "options": [
+        "يزداد وقت رد الفعل",
+        "تقل فرصة الاستجابة والتوقف بأمان",
+        "تتحسن الرؤية"
+      ],
+      "correct_option_index": 1,
+      "explanation": "المسافة غير الكافية تقلل الهامش الزمني وتزيد خطر الاصطدام عند توقف مفاجئ.",
+      "visual_key": "distance",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-12",
+      "topic": "road",
+      "question": "متى تزيدين مسافة الأمان؟",
+      "options": [
+        "عند المطر وضعف الرؤية",
+        "عندما يكون الطريق خاليًا من المخاطر فقط",
+        "لا حاجة لتغييرها"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الظروف الصعبة تقلل التماسك والرؤية، فتتطلب مسافة أكبر وسرعة مناسبة.",
+      "visual_key": "distance",
+      "source_id": "DOC-DARB",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-13",
+      "topic": "road",
+      "question": "ما المقصود بمسافة التوقف؟",
+      "options": [
+        "فقط المسافة بعد الضغط على الفرامل",
+        "المسافة من رؤية الخطر حتى التوقف الكامل",
+        "المسافة بين مخرجين"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تشمل مسافة الاستجابة قبل الفرملة ومسافة الكبح حتى التوقف النهائي.",
+      "visual_key": "distance",
+      "source_id": "DOC-NAZAWI",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-14",
+      "topic": "practical",
+      "question": "أول خطوة قبل تغيير المسار هي:",
+      "options": [
+        "النظر للمرايا وتقدير حركة الطريق",
+        "الانتقال فورًا ثم إعطاء إشارة",
+        "التحديق بشاشة السيارة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "يبدأ القرار بالملاحظة، ثم الإشارة وفحص النقطة العمياء والتأكد من السماح والأمان.",
+      "visual_key": "lane",
+      "source_id": "DOC-NARIMAN",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-15",
+      "topic": "practical",
+      "question": "هل الإشارة الجانبية تمنحك أولوية تلقائيًا؟",
+      "options": [
+        "نعم",
+        "لا، يجب التأكد من سماح الآخرين والفراغ الآمن",
+        "فقط ليلًا"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الغماز يعلم الآخرين بنيتك ولا يعفيك من المسؤولية عن سلامة الانتقال.",
+      "visual_key": "lane",
+      "source_id": "DOC-SHARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-16",
+      "topic": "practical",
+      "question": "قبل الرجوع من موقف، ما التصرف الصحيح؟",
+      "options": [
+        "الاعتماد على الكاميرا فقط",
+        "مراقبة المرايا والمحيط والنقطة العمياء",
+        "التحرك بسرعة"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الكاميرا أداة مساعدة ولا تغطي جميع الزوايا؛ راقبي المنطقة المحيطة والتزمي بتنظيم الطريق.",
+      "visual_key": "parking",
+      "source_id": "DOC-JEDDAH",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-17",
+      "topic": "safety",
+      "question": "ماذا تشير لمبة حزام الأمان عند بقائها مضيئة؟",
+      "options": [
+        "التحقق من ربط الحزام",
+        "ارتفاع درجة حرارة المحرك",
+        "إغلاق الأنوار"
+      ],
+      "correct_option_index": 0,
+      "explanation": "قد تكون إشارة إلى أن حزام أحد المقاعد غير مثبت. راجعي دليل سيارتك للمعنى الدقيق.",
+      "visual_key": "seatbelt",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-18",
+      "topic": "safety",
+      "question": "إذا ظهرت لمبة ضغط الإطارات، ماذا تفعلين؟",
+      "options": [
+        "تجاهلينها دائمًا",
+        "تتفقدين الإطارات والضغط وفق دليل السيارة في مكان آمن",
+        "تزيدين السرعة"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تعني عادةً خللًا في ضغط أحد الإطارات أو نظام المراقبة؛ تحققي بأمان وفق تعليمات الشركة.",
+      "visual_key": "tpms",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-19",
+      "topic": "safety",
+      "question": "إن بقي مؤشر عطل المحرك مضيئًا، ما الموقف الأنسب؟",
+      "options": [
+        "فحص السبب حسب الدليل وخدمات الصيانة",
+        "إزالة المصباح",
+        "إكمال القيادة دائمًا بلا تقييم"
+      ],
+      "correct_option_index": 0,
+      "explanation": "تنبيه المحرك قد يدل على أسباب متعددة، وتحديد التصرف يعتمد على لون المؤشر وسلوكه وأعراض السيارة.",
+      "visual_key": "check-engine",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SIG-20",
+      "topic": "test",
+      "question": "إذا وصلتك أسئلة تجميع مكتوب عليها «مضمونة 100٪»...",
+      "options": [
+        "أعدّها مصدرًا رسميًا",
+        "أستخدمها للمراجعة فقط وأقارنها بالمراجع السارية",
+        "أحفظ الأرقام القديمة دون تحقق"
+      ],
+      "correct_option_index": 1,
+      "explanation": "التجميع غير الرسمي قد يساعد على التمرن لكنه لا يُثبت الأسئلة التي ستظهر في الامتحان.",
+      "visual_key": "book",
+      "source_id": "DOC-NAZAWI",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false
+    }
+  ],
+  "data_quality": {
+    "pdf_received": 8,
+    "pdf_unique": 7,
+    "pdf_duplicates": [
+      [
+        "16907764.pdf",
+        "16907764(1).pdf"
+      ]
+    ],
+    "image_received": 8,
+    "image_unique": 6,
+    "image_duplicates": [
+      [
+        "image(3).png",
+        "image(4).png"
+      ],
+      [
+        "image(6).png",
+        "image(7).png"
+      ]
+    ],
+    "notes": "كل المراجع محصورة كفهرس لا نسخ ملفات. نصوص الاختبار الجديد أصلية تعليمية وليست أسئلة اختبار مسربة أو رسمية."
+  }
 }

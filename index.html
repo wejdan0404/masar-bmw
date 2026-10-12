@@ -397,6 +397,111 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .lesson-quick-recap{margin:15px 0;padding:23px;background:#edf3f6;border:1px solid #d7e3eb;border-radius:17px}
 .lesson-quick-recap h2{font-size:18px;margin:0 0 8px}
 .lesson-quick-recap p{font-size:13px;line-height:1.9}
+
+/* MASAR Learning Studio 2026 — design language informed by BentoGrids and 60fps.design.
+   No external JavaScript dependency: study content, offline use, focus and privacy come first. */
+:root{--studio-ink:#203746;--studio-burgundy:#800c1f;--studio-indigo:#57758a;--studio-cream:#fffaf0;--studio-honey:#dca642;--studio-surface:#fff;--studio-line:#dae4e9}
+.page{max-width:1560px}
+.page-title{letter-spacing:-1.1px}
+.card,.week-card,.aside-card,.stat{border-color:#e0e7e9}
+.card{box-shadow:0 8px 34px rgba(25,45,60,.042)}
+.btn{transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .2s}
+.btn-primary{box-shadow:0 7px 19px rgba(128,12,31,.18)}
+.btn-primary:hover{box-shadow:0 11px 23px rgba(128,12,31,.25)}
+.study-command-grid{display:grid;grid-template-columns:minmax(0,1.58fr) minmax(290px,.95fr);gap:16px;align-items:stretch;margin:0 0 22px}
+.study-command-grid>.card{margin:0;height:100%}
+.study-route{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(138deg,#ffffff 7%,#f0f5f8 100%);padding:26px;border-radius:23px}
+.study-route:before{content:'';position:absolute;width:230px;height:230px;left:-100px;top:-120px;border:1px solid rgba(92,120,150,.13);border-radius:50%;pointer-events:none}
+.study-route-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;position:relative}
+.study-route-header h2{margin:5px 0 6px;font-size:clamp(18px,1.85vw,25px);letter-spacing:-.4px;line-height:1.5}
+.study-route-header p{font-size:12px;color:#627481;margin:0}
+.study-route-progress{width:108px;min-height:92px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid #d7e1e8;background:rgba(255,255,255,.8);border-radius:18px}
+.study-route-progress strong{font-size:28px;line-height:1.2;color:var(--crimson);font-variant-numeric:tabular-nums}
+.study-route-progress strong small{font-size:14px;color:#8a98a4}
+.study-route-progress span{font-size:9px;line-height:1.6;color:#5e7482}
+.study-today-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:17px 0 18px;position:relative}
+.study-today-item{display:flex;gap:10px;align-items:center;min-width:0;text-decoration:none;background:#fff;padding:13px 12px;border-radius:15px;border:1px solid #e2e8eb;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.study-today-item:hover{transform:translateY(-3px);border-color:#a9bfcb}
+.study-today-number{width:34px;height:34px;border-radius:10px;background:#e7edf2;color:#5d7990;display:grid;place-items:center;font-weight:900;font-size:12px;flex:none}
+.study-today-item.is-complete .study-today-number{background:#e1f1e8;color:#226347}
+.study-today-item>span:nth-child(2){min-width:0;flex:1}
+.study-today-item strong{display:block;font-size:12px;color:var(--navy)}
+.study-today-item small{display:block;font-size:10px;color:#6a7b86;line-height:1.65}
+.study-today-arrow{font-size:13px;color:#9db0bc}
+.study-route-actions{display:flex;gap:9px;flex-wrap:wrap}
+.study-stars{border-radius:23px;background:linear-gradient(165deg,#fffdf7 0%,#fff8e9 100%);border-color:#f0e6ce;display:flex;flex-direction:column;padding:24px}
+.study-stars .card-top{margin-bottom:7px}
+.study-stars .card-top h3{font-size:19px}
+.study-stars p{font-size:11.5px;color:#887455;line-height:1.85;min-height:56px}
+.study-stars .study-star-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin:auto 0 16px}
+.study-stars .study-star-day{border:1px solid #ebdfc6;min-height:78px;border-radius:12px;background:rgba(255,255,255,.76);transition:background .2s,transform .25s}
+.study-stars .study-star-day.earned{background:#fff0c4;border-color:#e8cd7c;animation:star-appear .4s cubic-bezier(.2,.7,.25,1)}
+.study-stars .study-star-day span{font-size:25px}
+.study-stars>.btn{align-self:stretch;background:white;border-color:#e5d6b0;color:#725422}
+.study-stars>.btn:hover{background:#fff1ce}
+.lesson-journey{position:relative;padding:24px 25px 20px;background:linear-gradient(125deg,#f7fbfd,#eef3f7);border:1px solid #d7e2e9;border-radius:20px;margin-bottom:14px;box-shadow:0 8px 26px rgba(36,59,79,.05)}
+.lesson-journey-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.lesson-journey-head h2{margin:5px 0;font-size:20px;letter-spacing:-.4px}
+.lesson-journey-head p{margin:0;color:#617787;font-size:12px;max-width:540px}
+.lesson-journey-score{background:#fff;border:1px solid #d8e2e9;border-radius:15px;padding:8px 17px;min-width:90px;text-align:center;flex:none}
+.lesson-journey-score strong{display:block;color:var(--crimson);font-size:22px;font-variant-numeric:tabular-nums}
+.lesson-journey-score small{font-size:10px;color:#617786}
+.lesson-journey-track{height:8px;overflow:hidden;border-radius:99px;background:#d9e4eb;margin:17px 0}
+.lesson-journey-track>span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#6991a2,#3c7865);transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.lesson-journey-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.lesson-journey-step{border:1px solid #dce6eb;border-radius:14px;background:rgba(255,255,255,.86);padding:11px;display:flex;align-items:center;gap:9px;text-align:right;min-width:0;transition:transform .2s,border-color .2s}
+.lesson-journey-step:hover:not(.unavailable){transform:translateY(-2px);border-color:#afc4ce}
+.lesson-journey-step.done{background:#eaf5f0;border-color:#c6e5d5}
+.lesson-journey-step.unavailable{opacity:.58}
+.lesson-journey-stepnum{flex:none;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#e7eff4;color:#55778d;font-size:11px;font-weight:900}
+.lesson-journey-step.done .lesson-journey-stepnum{background:#c9e7d6;color:#245d47}
+.lesson-journey-step strong{display:block;font-size:12px}
+.lesson-journey-step small{display:block;font-size:10px;line-height:1.55;color:#6d818e}
+.lesson-journey-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:15px}
+.lesson-journey-actions>.btn{padding:10px 15px;font-size:11px}
+.lesson-video-gap{font-size:11px;color:#746b60}
+.lesson-quick-recap{background:linear-gradient(125deg,#eef5f7,#f8fafb);border-right:4px solid #62899e;padding:23px 25px}
+.lesson-quick-recap h2{color:#253f52}
+.lesson-body,.qbox{scroll-margin-top:105px}
+#lesson-videos,#notes,#practice,#reading,#visual-learning{scroll-margin-top:110px}
+.study-video{background:#fff;border:1px solid #e3eaef;border-radius:13px;padding:15px}
+.video-load{min-height:160px}
+.flashcard{transform-style:preserve-3d;transition:transform .32s cubic-bezier(.2,.9,.2,1),box-shadow .26s,background .25s}
+.flashcard:active{transform:scale(.98)}
+.card-premium-interactive:hover,.week-card:hover{box-shadow:0 14px 32px rgba(29,50,66,.1)}
+@keyframes star-appear{0%{transform:scale(.91)}70%{transform:scale(1.05)}100%{transform:scale(1)}}
+@media(max-width:1140px){.study-command-grid{grid-template-columns:1fr}.study-stars .study-star-days{margin:14px 0}.study-stars p{min-height:0}}
+@media(max-width:800px){.lesson-journey-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-journey{padding:19px}}
+@media(max-width:610px){
+ .study-command-grid{gap:12px}
+ .study-route,.study-stars{padding:19px;border-radius:19px}
+ .study-route-header h2{font-size:21px}
+ .study-route-progress{width:88px;min-height:88px;padding:7px}
+ .study-route-progress span{font-size:8px}
+ .study-today-list{grid-template-columns:1fr;gap:8px}
+ .study-today-item{padding:11px}
+ .lesson-journey-head{gap:10px}
+ .lesson-journey-head h2{font-size:18px}
+ .lesson-journey-head p{font-size:11px}
+ .lesson-journey-score{min-width:72px;padding:8px 9px}
+ .lesson-journey-score strong{font-size:18px}
+ .lesson-journey-steps{gap:7px}
+ .lesson-journey-step{padding:8px 7px;gap:6px}
+ .lesson-journey-stepnum{width:27px;height:27px}
+ .lesson-journey-step small{font-size:9px}
+ .study-stars .study-star-day{min-height:66px}
+ .study-stars .study-star-day span{font-size:21px}
+ .study-stars .study-star-day small{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .study-today-item,.lesson-journey-step,.lesson-journey-track>span,.study-stars .study-star-day,.flashcard{animation:none!important;transition:none!important;transform:none!important}
+}
+
+/* Honest video discovery when no reviewed clip is available */
+.video-resource-gap{padding:16px;border:1px dashed #bfcfd8;border-radius:13px;background:#f6fafc;margin-top:11px}
+.video-resource-gap strong{font-size:13px;color:#25475c}
+.video-resource-gap p{font-size:11.5px;color:#607483;line-height:1.95}
+.video-resource-gap .btn{margin-top:7px;white-space:normal}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -8321,9 +8426,19 @@ function studyStars(){
  return '<section class="card study-stars"><div class="card-top"><div><span class="bento-overline">GENTLE PROGRESS / نجوم الإنجاز</span><h3>كل يوم له نجمته ⭐</h3></div><span class="chip tiny blue">'+days.filter(x=>x.earned).length+' / 7 نجوم</span></div><p>إذا أنهيتِ مذاكرتك اليوم اضغطي نجمة اليوم. ما فيه عقوبة ولا خسارة للنجوم لو ارتحتي يوم.</p><div class="study-star-days">'+days.map(x=>'<div class="study-star-day '+(x.earned?'earned':'')+'"><small>'+ESC(x.day)+'</small><span aria-label="'+(x.earned?'نجمة مكتسبة':'لم تُسجل نجمة')+'">'+(x.earned?'★':'☆')+'</span></div>').join('')+'</div><button class="btn btn-outline" type="button" data-action="study-star">'+(days[6].earned?'إلغاء نجمة اليوم':'⭐ خلصت مذاكرتي اليوم')+'</button></section>';
 }
 function studyRoute(lesson){
- const c=lesson.study_content||{};
- const vid=(COURSE.media_resources||[]).find(x=>x.kind==='youtube_video'&&(x.lesson_ids||[]).includes(lesson.id));
- return '<section class="card study-route"><span class="bento-overline">YOUR STUDY PLAN / خطوتك اليوم</span><h2>كيف تذاكرين هذا الدرس؟</h2><p><strong>'+ESC(lesson.title)+'</strong> · جلسة مرنة، مو لازم تكملين كل شيء دفعة واحدة.</p><ol><li><strong>افهمي (10 دقائق):</strong> اقرئي الفكرة الأساسية والنقاط، ثم قوليها بصوتك.</li><li><strong>شوفي (5–10 دقائق):</strong> '+(vid?'افتحي مقطع الدرس من قسم المقاطع التعليمية.':'راجعي الرسم المرتبط إن توفر؛ ما عندنا مقطع يوتيوب محدد ومراجع لهذا الدرس بعد.')+'</li><li><strong>لخّصي (5 دقائق):</strong> اكتبي ثلاث نقاط فهمتيها وسؤالًا ما زال محيرك في دفتر الدرس.</li><li><strong>اختبري (5 دقائق):</strong> جاوبي سؤال الدرس، وافهمي سبب التصحيح، ثم راجعي لاحقًا.</li></ol><a href="#/lesson/'+lesson.order+'" class="btn btn-primary">ابدئي خطوات الدرس ←</a><a href="#/study-guide" class="btn btn-outline">شرح طريقة المذاكرة</a></section>';
+ const video=(COURSE.media_resources||[]).find(x=>x.kind==='youtube_video'&&(x.lesson_ids||[]).includes(lesson.id));
+ const illustrated=(COURSE.learning_visuals||[]).some(x=>(x.lesson_ids||[]).includes(lesson.id));
+ const q=(COURSE.questions||[]).find(x=>x.lesson_id===lesson.id);
+ const note=!!String(state.notes?.[lesson.order]||'').trim(),answered=!!q&&Number.isInteger(state.answers[q.id]);
+ const read=!!state.studyRead?.[lesson.id];
+ const done=[read,note,answered].filter(Boolean).length;
+ const steps=[
+  ['01','افهمي الدرس','اقرئي الشرح وتعرّفي على الفكرة','reading',read],
+  ['02','شاهدي وتخيّلي',video?'يوتيوب مرتبط بهذا الدرس':illustrated?'رسم تفاعلي للموقف':'لا يوجد فيديو محدد بعد','lesson-videos',false],
+  ['03','اكتبي ملخصك','ثلاث نقاط وسؤال تحتاجين جوابه','notes',note],
+  ['04','اختبري فهمك','جاوبي السؤال وتعلمي من التفسير','practice',answered]
+ ];
+ return '<section class="card study-route"><div class="study-route-header"><div><span class="bento-overline">YOUR LEARNING STUDIO / جلسة اليوم</span><h2>ابدئي من هنا، خطوة بخطوة</h2><p>الدرس '+String(lesson.order).padStart(2,'0')+' · <strong>'+ESC(lesson.title)+'</strong></p></div><div class="study-route-progress" aria-label="أُنجز '+done+' من ثلاثة مؤشرات"><strong>'+done+'<small>/3</small></strong><span>فهم · ملاحظات · اختبار</span></div></div><div class="study-today-list">'+steps.map(([number,title,description,target,complete])=>'<a class="study-today-item '+(complete?'is-complete':'')+'" href="#/lesson/'+lesson.order+'"><span class="study-today-number">'+(complete?'✓':number)+'</span><span><strong>'+title+'</strong><small>'+ESC(description)+'</small></span><span class="study-today-arrow">↖</span></a>').join('')+'</div><div class="study-route-actions"><a href="#/lesson/'+lesson.order+'" class="btn btn-primary">افتحي مساحة الدرس ←</a><a href="#/study-guide" class="btn btn-outline">كيف أذاكر؟</a></div></section>';
 }
 function home(){
  const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress();
@@ -8335,7 +8450,7 @@ function home(){
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
   </div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
  </section>
- ${studyRoute(n)}${studyStars()}
+ <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('الأسئلة','48','تدريبًا بتفسير','quiz','questions')}</div>
  <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
@@ -8357,7 +8472,9 @@ function mediaBlock(l){
  const collections=items.filter(m=>m.kind!=='youtube_video');
  const clips=video.map(m=>'<article class="study-video"><div class="video-title"><span class="bento-overline">فيديو من مصدر تعليمي خارجي</span><strong>'+ESC(m.title)+'</strong></div><div class="video-player"><button type="button" class="video-load" data-action="video-load" data-video="'+ESC(m.youtube_id)+'" data-title="'+ESC(m.title)+'" aria-label="تشغيل '+ESC(m.title)+'"><span class="video-play-symbol">▶</span><span>شغّلي المقطع</span></button></div><p class="video-footnote">يُحمّل مشغّل YouTube فقط عند الضغط. بعض المقاطع قد تمنع التشغيل المضمّن.</p><a class="source-link" href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">مشاهدة المقطع من قناة المدرسة ↗</a>'+window.MasarHub.videoNotes(m,state)+'</article>').join('');
  const library=collections.map(m=>'<p><a href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer" class="source-link">'+icon('play')+' '+ESC(m.title)+' ↗</a><small class="note-preview">مكتبة فيديوهات خارجية من '+ESC(m.provider)+'، وليست فيديو مضمّنًا.</small></p>').join('');
- return '<section class="aside-card media-aside"><h3>المقاطع التعليمية</h3>'+(items.length?clips+library:'<p class="note-preview">لم نعثر بعد على فيديو مُحدّد لهذا الدرس. يبقى الشرح النصي والرسومات المتاحة للمذاكرة.</p>')+'</section>';
+ const searchUrl='https://www.youtube.com/results?search_query='+encodeURIComponent('تعليم القيادة السعودية شرح '+l.title);
+ const fallback='<div class="video-resource-gap"><strong>ما أضفنا فيديو موثّقًا لهذا الدرس بعد</strong><p>ذاكري الشرح والرسومات أولًا. يمكنك تصفح نتائج بحث يوتيوب المتعلقة بالموضوع، لكن هذه النتائج ليست مختارة أو مدققة من مِسار.</p><a class="btn btn-outline" href="'+ESC(searchUrl)+'" target="_blank" rel="noopener noreferrer">استكشفي مقاطع عن الموضوع ↗</a></div>';
+ return '<section class="aside-card media-aside"><h3>شوفي الشرح المرئي</h3>'+(clips||fallback)+library+'</section>';
 }
 function visualBlock(l){
  const items=(COURSE.learning_visuals||[]).filter(v=>(v.lesson_ids||[]).includes(l.id));
@@ -8370,7 +8487,24 @@ function visualBlock(l){
  }).join('')+'</div>';
 }
 
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="card lesson-study-steps"><h2>ابدئي من هنا: طريقة مذاكرة هذا الدرس</h2><p>① اقرئي الشرح · ② شاهدي الرسم أو الفيديو المتاح · ③ اكتبي ملخصًا من 3 نقاط · ④ حلي السؤال. إذا ما فيه فيديو مناسب، لا يعني أن الدرس مكتمل بصريًا.</p><a href="#/study-guide">كيف أذاكر بالتفصيل؟ ←</a></section><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
+function lessonJourney(l,q){
+ const read=!!state.studyRead?.[l.id],note=!!String(state.notes?.[l.order]||'').trim(),answered=Number.isInteger(state.answers[q.id]);
+ const visual=(COURSE.learning_visuals||[]).some(x=>(x.lesson_ids||[]).includes(l.id));
+ const video=(COURSE.media_resources||[]).some(x=>x.kind==='youtube_video'&&(x.lesson_ids||[]).includes(l.id));
+ const mediaAvailable=visual||video;
+ const seen=!!state.studySeen?.[l.id];
+ const count=[read,mediaAvailable?seen:false,note,answered].filter(Boolean).length;
+ const total=mediaAvailable?4:3;
+ const progress=Math.round(count/total*100);
+ const steps=[
+  {num:'01',title:'اقرئي',desc:'الفكرة والنقاط',target:'reading',done:read},
+  {num:'02',title:'شاهدي',desc:video?'فيديو تعليمي':visual?'رسم تفاعلي':'مقطع موثوق غير متوفر',target:'lesson-videos',done:mediaAvailable&&seen,unavailable:!mediaAvailable},
+  {num:'03',title:'لخّصي',desc:'ملاحظاتك الخاصة',target:'notes',done:note},
+  {num:'04',title:'اختبري',desc:'السؤال والتفسير',target:'practice',done:answered}
+ ];
+ return '<section class="lesson-journey" aria-label="خطوات المذاكرة"><div class="lesson-journey-head"><div><span class="bento-overline">FOCUS MODE / خطوة بخطوة</span><h2>مسار المذاكرة لهذا الدرس</h2><p>ابدئي بالشرح، ثم التدريب، واختبري فهمك. لا يلزم إكمالها كلها في جلسة واحدة.</p></div><div class="lesson-journey-score"><strong>'+count+' / '+total+'</strong><small>خطوات متابعة</small></div></div><div class="lesson-journey-track" role="progressbar" aria-label="متابعة الدرس" aria-valuenow="'+count+'" aria-valuemin="0" aria-valuemax="'+total+'"><span style="width:'+progress+'%"></span></div><div class="lesson-journey-steps">'+steps.map(x=>'<button type="button" class="lesson-journey-step '+(x.done?'done ':'')+(x.unavailable?'unavailable':'')+'" data-action="scroll" data-target="'+x.target+'"><span class="lesson-journey-stepnum">'+(x.done?'✓':x.num)+'</span><span><strong>'+x.title+'</strong><small>'+x.desc+'</small></span></button>').join('')+'</div><div class="lesson-journey-actions"><button type="button" class="btn '+(read?'btn-muted':'btn-primary')+'" data-action="study-read" data-lesson="'+ESC(l.id)+'">'+(read?'✓ تم تسجيل قراءة الدرس · إلغاء':'✓ قرأت الشرح وفهمت فكرته')+'</button>'+(mediaAvailable?'<button type="button" class="btn '+(seen?'btn-muted':'btn-outline')+'" data-action="study-seen" data-lesson="'+ESC(l.id)+'">'+(seen?'✓ اطلعت على الشرح المرئي · إلغاء':'اطلعت على الرسم أو المقطع')+'</button>':'<span class="lesson-video-gap">الفيديو غير متوفر لهذا الدرس حاليًا؛ لا يُحسب ضمن التقدم.</span>')+'</div></section>';
+}
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
 function flashcardsPage(){
  const cards=[
  ['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.','SG-01'],
@@ -8448,6 +8582,14 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='filter-weeks'){catalogFilter=el.dataset.filter||'all';render(true);return}
  if(action==='menu'){mobileOpen=!mobileOpen;render(true);return}
  if(action==='scroll'){document.getElementById(el.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});return}
+ if(action==='study-read'||action==='study-seen'){
+  const lessonId=el.dataset.lesson;
+  if(!lessons.some(x=>x.id===lessonId))return;
+  const key=action==='study-read'?'studyRead':'studySeen';
+  state[key]=state[key]||{};
+  if(state[key][lessonId])delete state[key][lessonId];else state[key][lessonId]=true;
+  save();render(true);toast(action==='study-read'?'تم تحديث متابعة القراءة':'تم تحديث متابعة الشرح المرئي');return
+ }
  if(action==='study-star'){const t=new Date(),key=[t.getFullYear(),String(t.getMonth()+1).padStart(2,'0'),String(t.getDate()).padStart(2,'0')].join('-');state.studyStars=state.studyStars||{};if(state.studyStars[key])delete state.studyStars[key];else state.studyStars[key]=true;save();render(true);return}
  if(action==='mark'){const s=new Set(state.done);s.has(n)?s.delete(n):s.add(n);state.done=[...s].sort((a,b)=>a-b);save();render(true);toast(isDone(n)?'تم حفظ إنجاز الدرس':'أزلنا علامة الإكمال');return}
  if(action==='bookmark'){const s=new Set(state.bookmarks);s.has(n)?s.delete(n):s.add(n);state.bookmarks=[...s];save();render(true);return}

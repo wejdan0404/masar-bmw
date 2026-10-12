@@ -2,7 +2,7 @@
 const fs=require('fs'),assert=require('assert');
 const d=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
 function unique(items,what){const ids=items.map(x=>x.id);assert.equal(new Set(ids).size,ids.length,'Duplicate '+what+' IDs')}
-for(const name of ['weeks','lessons','questions','sources','personal_documents','uploaded_image_index','external_study_sources','review_questions','practical_checklist','review_claims','media_resources','learning_visuals','lesson_reading_map','sign_library']) unique(d[name]||[],name);
+for(const name of ['weeks','lessons','questions','sources','personal_documents','uploaded_image_index','external_study_sources','review_questions','practical_checklist','review_claims','media_resources','learning_visuals','lesson_reading_map','sign_library','lesson_activities']) unique(d[name]||[],name);
 assert.equal(d.weeks.length,16);
 assert.equal(d.lessons.length,48);
 assert.equal(d.questions.length,48);
@@ -10,6 +10,9 @@ assert.equal(d.personal_documents.length,7);
 assert.equal(d.uploaded_image_index.length,6);
 assert.equal(d.review_questions.length,36);
 assert.equal(d.sign_library.length,24);
+assert.equal(d.lesson_activities.length,48);
+assert.equal(new Set(d.lesson_activities.map(x=>x.id)).size,48);
+for(const a of d.lesson_activities){assert(d.lessons.some(l=>l.id===a.lesson_id),'Activity with no lesson');assert(a.observation.length>25&&a.reasoning.length>20&&a.verification.length>20,'Insufficient activity '+a.id);assert(a.status==='original_practice_not_formal_assessment')}
 const signIds=new Set(d.sign_library.map(s=>s.id));assert.equal(signIds.size,24);
 for(const sign of d.sign_library){assert(['تحذيرية','تنظيمية'].includes(sign.category));assert(sign.title&&sign.meaning.length>=12&&sign.action.length>=12);assert(sign.pictogram_status==='educational_illustration_not_official');assert(sign.review_status==='requires_official_pictogram_comparison');assert(sign.source_url.startsWith('https://www.moi.gov.sa/'));for(const id of sign.lesson_ids)assert(d.lessons.some(l=>l.id===id),'Sign linked to missing lesson')}
 assert.equal(d.lesson_reading_map.length,48);

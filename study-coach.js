@@ -21,11 +21,27 @@ function activityBlock(course,lesson,state){
  const done=!!state.activityChecks?.[a.id],note=state.activityNotes?.[a.id]||'';
  return '<section class="coach-activity" id="coach-activity"><div class="coach-overline">PRACTICE / تطبيق معرفتك</div><div class="coach-activity-head"><h2>تدريب الدرس: '+E(a.title)+'</h2><span class="coach-state '+(done?'done':'')+'">'+(done?'راجعتِ التمرين':'قيد المذاكرة')+'</span></div><p class="coach-activity-intro">الهدف فهم القرار، مو حفظ جواب جاهز. اكتبي ما لاحظتِه بصياغتك.</p><div class="coach-prompts"><div><span>01 · لاحظي</span><p>'+E(a.observation)+'</p></div><div><span>02 · فكّري</span><p>'+E(a.reasoning)+'</p></div><div><span>03 · تحققي</span><p>'+E(a.verification)+'</p></div></div><label class="coach-notes">إجابتي وملاحظاتي<textarea data-activity-note="'+E(a.id)+'" placeholder="وش لاحظت؟ وش القرار الأنسب؟ وش أحتاج أتأكد منه قبل التطبيق؟" rows="4">'+E(note)+'</textarea></label><label class="coach-check"><input type="checkbox" data-activity-check="'+E(a.id)+'" '+(done?'checked':'')+'/><span>راجعت الأسئلة وكتبت ما فهمته (ليست شهادة إتقان قيادة عملية)</span></label><p class="coach-disclaimer">هذا نشاط تفكير ذاتي غير مصحّح آليًا؛ المواقف العملية تحتاج إشرافًا ومصدرًا معتمدًا.</p></section>';
 }
+function masterySnapshot(course,state){
+ const history=state.reviewHistory||{};
+ return (course.lessons||[]).map(lesson=>{
+  const activity=(course.lesson_activities||[]).find(a=>a.lesson_id===lesson.id);
+  const question=(course.questions||[]).find(q=>q.lesson_id===lesson.id);
+  const practiced=!!(activity&&state.activityChecks?.[activity.id]);
+  const result=question?history['lesson:'+question.id]:null;
+  const correctStreak=result?.correctStreak||0;
+  const level=!result?(practiced?'تمرين ذاتي فقط':'لم يُختبر'):!result.lastCorrect?'يحتاج مراجعة':correctStreak>=3?'ثبات أولي':'فهم قيد التثبيت';
+  return {lesson,level,practiced,correctStreak};
+ });
+}
 function reviewPage(course,state){
  const all=state.reviewHistory||{},now=Date.now(),items=Object.values(all);
  const due=items.filter(x=>new Date(x.nextDueAt).getTime()<=now || !x.lastCorrect).sort((a,b)=>(Number(a.lastCorrect)-Number(b.lastCorrect))||new Date(a.nextDueAt)-new Date(b.nextDueAt));
  const weak=items.filter(x=>!x.lastCorrect || x.correctStreak===0).length;
  const completed=(course.lesson_activities||[]).filter(x=>state.activityChecks?.[x.id]).length;
+ const mastery=masterySnapshot(course,state);
+ const stable=mastery.filter(x=>x.level==='ثبات أولي').length;
+ const building=mastery.filter(x=>x.level==='فهم قيد التثبيت').length;
+ const untested=mastery.filter(x=>x.level==='لم يُختبر'||x.level==='تمرين ذاتي فقط').length;
  const overdue=due.slice(0,24).map(x=>{
  let t='',link='';
  if(x.kind==='sign'){const sg=(course.sign_library||[]).find(y=>y.id===x.id);t=sg?'لوحة: '+sg.title:'إشارة '+x.id;link='#/traffic-signs'}
@@ -34,7 +50,7 @@ function reviewPage(course,state){
  return '<a class="coach-review-item" href="'+link+'"><span class="coach-review-symbol">'+(x.lastCorrect?'↺':'!')+'</span><span><strong>'+E(t)+'</strong><small>'+(x.lastCorrect?'حان وقت المراجعة':'إجابة خاطئة تحتاج فهمًا')+' · '+x.attempts+' محاولة</small></span><span class="coach-review-arrow">←</span></a>';
  }).join('');
  const notDone=(course.lesson_activities||[]).filter(x=>!state.activityChecks?.[x.id]).slice(0,5);
- return '<section class="coach-page"><div class="eyebrow">PERSONAL REVIEW / SMART REPETITION</div><h1 class="page-title">خطتي لمراجعة أخطائي</h1><p class="sub">يعتمد ترتيب المراجعة على نتائج الأسئلة التي حلّيتيها داخل الموقع؛ المواعيد مقترحة للتثبيت وليست معيارًا رسميًا للجاهزية.</p><div class="coach-summary"><article><strong>'+due.length+'</strong><span>بطاقة حان وقتها</span></article><article><strong>'+weak+'</strong><span>مفاهيم أخطأتِ فيها</span></article><article><strong>'+completed+' / '+(course.lesson_activities||[]).length+'</strong><span>تدريبات تفكير تمت مراجعتها</span></article></div><div class="coach-section-top"><h2>راجعي الآن</h2><span>تظهر النتائج بعد بدء حل الأسئلة</span></div><div class="coach-review-list">'+(overdue||'<div class="coach-empty">ما عندك مراجعات مستحقة حاليًا. خذي اختبارًا أو افتحي مكتبة اللوحات لتنشئين أول دورة مراجعة.</div>')+'</div><div class="coach-section-top"><h2>أنشطة دروس ما راجعتيها</h2><span>ابدئي بأول نشاط غير مكتمل</span></div><div class="coach-review-list">'+notDone.map(a=>'<a class="coach-review-item" href="#/lesson/'+nOf(a.lesson_id)+'"><span class="coach-review-symbol">✓</span><span><strong>'+E(a.title)+'</strong><small>تدريب التفكير والملاحظات</small></span><span class="coach-review-arrow">←</span></a>').join('')+'</div><div class="coach-guidance"><strong>كيف تعمل المراجعة؟</strong><p>بعد الإجابة الصحيحة نذكّرك بالتدريج بعد يوم، ثم 3 أيام، ثم أسبوع، ثم فترة أطول. وبعد الخطأ يعود الموضوع إلى «راجع الآن». يمكن تصدير هذه البيانات من الإعدادات.</p><a href="#/mock-exam" class="btn btn-primary">ابدئي محاكاة اختبار غير رسمي ←</a></div></section>';
+ return '<section class="coach-page"><div class="eyebrow">PERSONAL REVIEW / SMART REPETITION</div><h1 class="page-title">خطتي لمراجعة أخطائي</h1><p class="sub">يعتمد ترتيب المراجعة على نتائج الأسئلة التي حلّيتيها داخل الموقع؛ المواعيد مقترحة للتثبيت وليست معيارًا رسميًا للجاهزية.</p><div class="coach-summary"><article><strong>'+due.length+'</strong><span>بطاقة حان وقتها</span></article><article><strong>'+weak+'</strong><span>مفاهيم أخطأتِ فيها</span></article><article><strong>'+completed+' / '+(course.lesson_activities||[]).length+'</strong><span>تدريبات تفكير تمت مراجعتها</span></article></div><div class="coach-guidance"><strong>مؤشر تثبيت الفهم — غير رسمي</strong><p>ثبات أولي: '+stable+' درسًا · فهم قيد التثبيت: '+building+' · دون إجابات صحيحة مسجلة: '+untested+'. يعتمد المؤشر على آخر إجابة وعدد الإجابات الصحيحة المتتالية في مراجعات أسئلة الدرس، ولا يقيس القيادة العملية. إكمال نشاط التفكير وحده لا يعني الإتقان.</p></div><div class="coach-section-top"><h2>راجعي الآن</h2><span>تظهر النتائج بعد بدء حل الأسئلة</span></div><div class="coach-review-list">'+(overdue||'<div class="coach-empty">ما عندك مراجعات مستحقة حاليًا. خذي اختبارًا أو افتحي مكتبة اللوحات لتنشئين أول دورة مراجعة.</div>')+'</div><div class="coach-section-top"><h2>أنشطة دروس ما راجعتيها</h2><span>ابدئي بأول نشاط غير مكتمل</span></div><div class="coach-review-list">'+notDone.map(a=>'<a class="coach-review-item" href="#/lesson/'+nOf(a.lesson_id)+'"><span class="coach-review-symbol">✓</span><span><strong>'+E(a.title)+'</strong><small>تدريب التفكير والملاحظات</small></span><span class="coach-review-arrow">←</span></a>').join('')+'</div><div class="coach-guidance"><strong>كيف تعمل المراجعة؟</strong><p>بعد الإجابة الصحيحة نذكّرك بالتدريج بعد يوم، ثم 3 أيام، ثم أسبوع، ثم فترة أطول. وبعد الخطأ يعود الموضوع إلى «راجع الآن». يمكن تصدير هذه البيانات من الإعدادات.</p><a href="#/mock-exam" class="btn btn-primary">ابدئي محاكاة اختبار غير رسمي ←</a></div></section>';
 }
 function makeMock(course){
  const review=(course.review_questions||[]).slice(),lesson=(course.questions||[]).slice();

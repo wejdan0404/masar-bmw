@@ -396,3 +396,102 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .lesson-quick-recap{margin:15px 0;padding:23px;background:#edf3f6;border:1px solid #d7e3eb;border-radius:17px}
 .lesson-quick-recap h2{font-size:18px;margin:0 0 8px}
 .lesson-quick-recap p{font-size:13px;line-height:1.9}
+
+/* MASAR Learning Studio 2026 — design language informed by BentoGrids and 60fps.design.
+   No external JavaScript dependency: study content, offline use, focus and privacy come first. */
+:root{--studio-ink:#203746;--studio-burgundy:#800c1f;--studio-indigo:#57758a;--studio-cream:#fffaf0;--studio-honey:#dca642;--studio-surface:#fff;--studio-line:#dae4e9}
+.page{max-width:1560px}
+.page-title{letter-spacing:-1.1px}
+.card,.week-card,.aside-card,.stat{border-color:#e0e7e9}
+.card{box-shadow:0 8px 34px rgba(25,45,60,.042)}
+.btn{transition:transform .2s cubic-bezier(.2,.8,.2,1),background .2s,box-shadow .2s}
+.btn-primary{box-shadow:0 7px 19px rgba(128,12,31,.18)}
+.btn-primary:hover{box-shadow:0 11px 23px rgba(128,12,31,.25)}
+.study-command-grid{display:grid;grid-template-columns:minmax(0,1.58fr) minmax(290px,.95fr);gap:16px;align-items:stretch;margin:0 0 22px}
+.study-command-grid>.card{margin:0;height:100%}
+.study-route{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(138deg,#ffffff 7%,#f0f5f8 100%);padding:26px;border-radius:23px}
+.study-route:before{content:'';position:absolute;width:230px;height:230px;left:-100px;top:-120px;border:1px solid rgba(92,120,150,.13);border-radius:50%;pointer-events:none}
+.study-route-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;position:relative}
+.study-route-header h2{margin:5px 0 6px;font-size:clamp(18px,1.85vw,25px);letter-spacing:-.4px;line-height:1.5}
+.study-route-header p{font-size:12px;color:#627481;margin:0}
+.study-route-progress{width:108px;min-height:92px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid #d7e1e8;background:rgba(255,255,255,.8);border-radius:18px}
+.study-route-progress strong{font-size:28px;line-height:1.2;color:var(--crimson);font-variant-numeric:tabular-nums}
+.study-route-progress strong small{font-size:14px;color:#8a98a4}
+.study-route-progress span{font-size:9px;line-height:1.6;color:#5e7482}
+.study-today-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:17px 0 18px;position:relative}
+.study-today-item{display:flex;gap:10px;align-items:center;min-width:0;text-decoration:none;background:#fff;padding:13px 12px;border-radius:15px;border:1px solid #e2e8eb;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.study-today-item:hover{transform:translateY(-3px);border-color:#a9bfcb}
+.study-today-number{width:34px;height:34px;border-radius:10px;background:#e7edf2;color:#5d7990;display:grid;place-items:center;font-weight:900;font-size:12px;flex:none}
+.study-today-item.is-complete .study-today-number{background:#e1f1e8;color:#226347}
+.study-today-item>span:nth-child(2){min-width:0;flex:1}
+.study-today-item strong{display:block;font-size:12px;color:var(--navy)}
+.study-today-item small{display:block;font-size:10px;color:#6a7b86;line-height:1.65}
+.study-today-arrow{font-size:13px;color:#9db0bc}
+.study-route-actions{display:flex;gap:9px;flex-wrap:wrap}
+.study-stars{border-radius:23px;background:linear-gradient(165deg,#fffdf7 0%,#fff8e9 100%);border-color:#f0e6ce;display:flex;flex-direction:column;padding:24px}
+.study-stars .card-top{margin-bottom:7px}
+.study-stars .card-top h3{font-size:19px}
+.study-stars p{font-size:11.5px;color:#887455;line-height:1.85;min-height:56px}
+.study-stars .study-star-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin:auto 0 16px}
+.study-stars .study-star-day{border:1px solid #ebdfc6;min-height:78px;border-radius:12px;background:rgba(255,255,255,.76);transition:background .2s,transform .25s}
+.study-stars .study-star-day.earned{background:#fff0c4;border-color:#e8cd7c;animation:star-appear .4s cubic-bezier(.2,.7,.25,1)}
+.study-stars .study-star-day span{font-size:25px}
+.study-stars>.btn{align-self:stretch;background:white;border-color:#e5d6b0;color:#725422}
+.study-stars>.btn:hover{background:#fff1ce}
+.lesson-journey{position:relative;padding:24px 25px 20px;background:linear-gradient(125deg,#f7fbfd,#eef3f7);border:1px solid #d7e2e9;border-radius:20px;margin-bottom:14px;box-shadow:0 8px 26px rgba(36,59,79,.05)}
+.lesson-journey-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.lesson-journey-head h2{margin:5px 0;font-size:20px;letter-spacing:-.4px}
+.lesson-journey-head p{margin:0;color:#617787;font-size:12px;max-width:540px}
+.lesson-journey-score{background:#fff;border:1px solid #d8e2e9;border-radius:15px;padding:8px 17px;min-width:90px;text-align:center;flex:none}
+.lesson-journey-score strong{display:block;color:var(--crimson);font-size:22px;font-variant-numeric:tabular-nums}
+.lesson-journey-score small{font-size:10px;color:#617786}
+.lesson-journey-track{height:8px;overflow:hidden;border-radius:99px;background:#d9e4eb;margin:17px 0}
+.lesson-journey-track>span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#6991a2,#3c7865);transition:width .45s cubic-bezier(.2,.8,.2,1)}
+.lesson-journey-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.lesson-journey-step{border:1px solid #dce6eb;border-radius:14px;background:rgba(255,255,255,.86);padding:11px;display:flex;align-items:center;gap:9px;text-align:right;min-width:0;transition:transform .2s,border-color .2s}
+.lesson-journey-step:hover:not(.unavailable){transform:translateY(-2px);border-color:#afc4ce}
+.lesson-journey-step.done{background:#eaf5f0;border-color:#c6e5d5}
+.lesson-journey-step.unavailable{opacity:.58}
+.lesson-journey-stepnum{flex:none;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#e7eff4;color:#55778d;font-size:11px;font-weight:900}
+.lesson-journey-step.done .lesson-journey-stepnum{background:#c9e7d6;color:#245d47}
+.lesson-journey-step strong{display:block;font-size:12px}
+.lesson-journey-step small{display:block;font-size:10px;line-height:1.55;color:#6d818e}
+.lesson-journey-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:15px}
+.lesson-journey-actions>.btn{padding:10px 15px;font-size:11px}
+.lesson-video-gap{font-size:11px;color:#746b60}
+.lesson-quick-recap{background:linear-gradient(125deg,#eef5f7,#f8fafb);border-right:4px solid #62899e;padding:23px 25px}
+.lesson-quick-recap h2{color:#253f52}
+.lesson-body,.qbox{scroll-margin-top:105px}
+#lesson-videos,#notes,#practice,#reading,#visual-learning{scroll-margin-top:110px}
+.study-video{background:#fff;border:1px solid #e3eaef;border-radius:13px;padding:15px}
+.video-load{min-height:160px}
+.flashcard{transform-style:preserve-3d;transition:transform .32s cubic-bezier(.2,.9,.2,1),box-shadow .26s,background .25s}
+.flashcard:active{transform:scale(.98)}
+.card-premium-interactive:hover,.week-card:hover{box-shadow:0 14px 32px rgba(29,50,66,.1)}
+@keyframes star-appear{0%{transform:scale(.91)}70%{transform:scale(1.05)}100%{transform:scale(1)}}
+@media(max-width:1140px){.study-command-grid{grid-template-columns:1fr}.study-stars .study-star-days{margin:14px 0}.study-stars p{min-height:0}}
+@media(max-width:800px){.lesson-journey-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-journey{padding:19px}}
+@media(max-width:610px){
+ .study-command-grid{gap:12px}
+ .study-route,.study-stars{padding:19px;border-radius:19px}
+ .study-route-header h2{font-size:21px}
+ .study-route-progress{width:88px;min-height:88px;padding:7px}
+ .study-route-progress span{font-size:8px}
+ .study-today-list{grid-template-columns:1fr;gap:8px}
+ .study-today-item{padding:11px}
+ .lesson-journey-head{gap:10px}
+ .lesson-journey-head h2{font-size:18px}
+ .lesson-journey-head p{font-size:11px}
+ .lesson-journey-score{min-width:72px;padding:8px 9px}
+ .lesson-journey-score strong{font-size:18px}
+ .lesson-journey-steps{gap:7px}
+ .lesson-journey-step{padding:8px 7px;gap:6px}
+ .lesson-journey-stepnum{width:27px;height:27px}
+ .lesson-journey-step small{font-size:9px}
+ .study-stars .study-star-day{min-height:66px}
+ .study-stars .study-star-day span{font-size:21px}
+ .study-stars .study-star-day small{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .study-today-item,.lesson-journey-step,.lesson-journey-track>span,.study-stars .study-star-day,.flashcard{animation:none!important;transition:none!important;transform:none!important}
+}

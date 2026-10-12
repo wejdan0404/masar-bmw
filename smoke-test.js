@@ -13,7 +13,7 @@ const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
  location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
  setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
 vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
-for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/settings','إعدادات المذاكرة']]){
+for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/visuals','المكتبة المرئية'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
  console.log('PASS',hash);
@@ -41,3 +41,5 @@ if(!element('app').innerHTML.includes('خط متقطع'))throw Error('Road-marki
 context.location.hash='#/lesson/31';windowHandlers.hashchange();
 if(!element('app').innerHTML.includes('حركة السيارة عند الرجوع'))throw Error('Parking diagram missing');
 console.log('PASS visual learning diagrams and stage navigation');
+
+context.location.hash='#/visuals';windowHandlers.hashchange();if(!element('app').innerHTML.includes('مكتبات الفيديو الخارجية')||!element('app').innerHTML.includes('موقف تفاعلي'))throw Error('Visual library missing');console.log('PASS visual learning library');

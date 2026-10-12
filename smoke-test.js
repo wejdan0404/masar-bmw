@@ -153,3 +153,20 @@ if(level()!=='إجابات متكررة')throw Error('Correct repeats label must
 context.window.MasarCoach.record(masteryState,'lesson','QUIZ-900',false);
 if(level()!=='يحتاج مراجعة')throw Error('A wrong answer must reset the repeated answer indicator');
 console.log('PASS study indicator distinguishes self-study, repeated answers and regression after an error');
+
+
+// Learning Studio: visible guidance, progress tracking and soft stars survive a rerender.
+context.location.hash='#/home';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('study-command-grid')||!element('app').innerHTML.includes('study-today-list')||!element('app').innerHTML.includes('study-star-days'))throw Error('Learning Studio dashboard is missing');
+click({action:'study-star'});
+if(!JSON.parse(saved['masar-driving-v1']).studyStars || Object.values(JSON.parse(saved['masar-driving-v1']).studyStars).filter(Boolean).length!==1)throw Error('Daily study star was not persisted');
+click({action:'study-star'});
+if(Object.values(JSON.parse(saved['masar-driving-v1']).studyStars).filter(Boolean).length!==0)throw Error('Optional daily study star cannot be reversed');
+context.location.hash='#/lesson/2';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('lesson-journey')||!element('app').innerHTML.includes('data-action="study-read"'))throw Error('Guided lesson checklist is missing');
+click({action:'study-read',lesson:'LES-002'});
+if(!JSON.parse(saved['masar-driving-v1']).studyRead?.['LES-002'])throw Error('Reading completion was not saved');
+click({action:'study-read',lesson:'LES-002'});
+if(JSON.parse(saved['masar-driving-v1']).studyRead?.['LES-002'])throw Error('Reading completion toggle cannot be reversed');
+if(!element('app').innerHTML.includes('ملخص الدرس في دقيقة')||!element('app').innerHTML.includes('lesson-videos'))throw Error('Lesson recap or media section is missing');
+console.log('PASS Learning Studio, guided lesson steps, star tracker and local persistence');

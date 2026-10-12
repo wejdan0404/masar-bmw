@@ -6,10 +6,10 @@
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 2;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources'];
+  const DATABASE_VERSION = 3;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
-  const allStores = [...referenceStores, ...userStores];
+  const allStores = [...referenceStores, ...userStores, 'personal_files'];
   let dbPromise;
   let writeQueue = Promise.resolve();
 
@@ -31,6 +31,13 @@
         create('sources', 'id');
         create('learning_visuals', 'id');
         create('media_resources', 'id');
+        create('personal_documents', 'id');
+        create('uploaded_image_index', 'id');
+        create('external_study_sources', 'id');
+        create('review_questions', 'id');
+        create('practical_checklist', 'id');
+        create('review_claims', 'id');
+        create('personal_files', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
         create('notes', 'lesson_id');
@@ -95,7 +102,11 @@
       history: attempts.sort((a,b) => a.id-b.id).map(({id, ...attempt}) => attempt),
       visited: visits.map(x => x.lesson_id),
       lastOpened: prefs.lastOpened || 1,
-      readingPositions: prefs.readingPositions || {}
+      readingPositions: prefs.readingPositions || {},
+      videoNotes: prefs.videoNotes || {},
+      sourceNotes: prefs.sourceNotes || {},
+      practiceChecks: prefs.practiceChecks || {},
+      reviewAnswers: prefs.reviewAnswers || {}
     };
   }
 
@@ -114,6 +125,7 @@
     tx.objectStore('preferences').put({key: 'initialized', value: true});
     tx.objectStore('preferences').put({key: 'lastOpened', value: Number(snapshot.lastOpened) || 1});
     tx.objectStore('preferences').put({key: 'readingPositions', value: snapshot.readingPositions || {}});
+    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers']) tx.objectStore('preferences').put({key, value: snapshot[key] || {}});
     await completed(tx);
   }
 
@@ -124,6 +136,33 @@
     return writeQueue;
   }
 
-  window.MasarDB = Object.freeze({name: DATABASE_NAME, connect, seedReference, loadUser, saveUser,
+  async function savePersonalFile(id, file) {
+    if (!id || !file || !/^(application\/pdf|image\/(png|jpeg|webp))$/.test(file.type)) throw new Error('Unsupported file type');
+    const db = await connect();
+    const tx = db.transaction(['personal_files'], 'readwrite');
+    tx.objectStore('personal_files').put({id, filename:file.name, mime:file.type, size:file.size, updatedAt:new Date().toISOString(), blob:file});
+    await completed(tx);
+  }
+  async function getPersonalFile(id) {
+    const db = await connect();
+    return new Promise((resolve,reject) => {
+      const req = db.transaction('personal_files','readonly').objectStore('personal_files').get(id);
+      req.onsuccess=()=>resolve(req.result || null);req.onerror=()=>reject(req.error);
+    });
+  }
+  async function listPersonalFiles() {
+    const db = await connect();
+    const tx = db.transaction('personal_files','readonly');
+    const result = await getAll(tx.objectStore('personal_files'));
+    await completed(tx);
+    return result.map(({blob,...meta})=>meta);
+  }
+  async function deletePersonalFile(id) {
+    const db = await connect();
+    const tx = db.transaction(['personal_files'], 'readwrite');
+    tx.objectStore('personal_files').delete(id);
+    await completed(tx);
+  }
+  window.MasarDB = Object.freeze({name: DATABASE_NAME, connect, seedReference, loadUser, saveUser, savePersonalFile, getPersonalFile, listPersonalFiles, deletePersonalFile,
     stores: Object.freeze(allStores.slice())});
 })();

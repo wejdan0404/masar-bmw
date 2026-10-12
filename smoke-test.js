@@ -78,7 +78,7 @@ click({action:'sign-back'});
 click({action:'sign-mode',mode:'quiz'});
 if(!element('app').innerHTML.includes('وش معنى هذه اللوحة؟'))throw Error('Sign recognition quiz absent');
 // First quiz is SG-01. Test a wrong answer persists and is explainable.
-click({action:'sign-answer',choice:'SG-02'});
+click({action:'sign-answer',choice:'SG-03'});
 if(!saved['masar-driving-v1'].includes('"SG-01"'))throw Error('Sign review result not persisted');
 if(!element('app').innerHTML.includes('الإجابة المناسبة: قف'))throw Error('Wrong-answer explanation absent');
 click({action:'sign-filter',filter:'mistakes'});

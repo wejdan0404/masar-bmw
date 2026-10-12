@@ -29,6 +29,12 @@ function faultDetails(course){
  var ref=course.practical_assessment_reference;if(!ref)return '';
  return '<section class="hub-fault-ref"><h2>نماذج أخطاء التقييم العملي — للمقارنة فقط</h2><p>استخرجنا الملاحظات التي أرسلتيها وأعدنا تنظيمها: '+ref.immediate_failure_examples.length+' أمثلة على أخطاء حرجة، و'+ref.fault_categories.length+' فئة أخرى. القائمة من مصادر متعددة وقد تختلف المدرسة ومعاييرها.</p><details class="hub-fault-group"><summary>أمثلة أخطاء حرجة — لا تعمّمي معيار الرسوب على جميع المدارس</summary><ul>'+ref.immediate_failure_examples.map(function(x){return '<li>'+E(x.text)+'</li>'}).join('')+'</ul></details>'+ref.fault_categories.map(function(cat){return '<details class="hub-fault-group"><summary>'+cat.number+' — '+E(cat.title)+' ('+cat.mistakes.length+' أمثلة)</summary><ul>'+cat.mistakes.map(function(x){return '<li>'+E(x)+'</li>'}).join('')+'</ul></details>'}).join('')+'<p class="hub-legal">عبارة «4 حركات» والاختبارات الخاصة بناقل حركة يدوي لا تنطبق بالضرورة على سيارتك أو مدرسة اختبارك. لا يُحسب عدد أخطاء ولا ساعات تدريب هنا.</p></section>';
 }
+function lessonReadings(course,lesson){
+ var row=(course.lesson_reading_map||[]).find(function(x){return x.lesson_id===lesson.id});
+ if(!row)return '';
+ var list=row.resources||[];
+ return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">READING MAP / مراجع الدرس</div><h2>وين أقرأ هذا الموضوع في الكتب؟</h2><p>هذا فهرس قراءة للموضوع، <strong>وليس تصديقًا نهائيًا لكل جملة في الدرس</strong>. ترقيم PDF يختلف عن رقم الصفحة المطبوع في بعض الكتب.</p>'+list.map(function(a){var item=(course.personal_documents||[]).find(function(x){return x.id===a.source_id});var page=a.pdf_page_start,pg=page===a.pdf_page_end?'صفحة PDF '+page:'صفحات PDF '+page+'–'+a.pdf_page_end;return '<div class="lesson-source-row"><div><strong>'+E(a.source_title)+'</strong><small>'+pg+(a.printed_page_start?' · مطبوع '+a.printed_page_start+(a.printed_page_end!==a.printed_page_start?'–'+a.printed_page_end:''):'')+'</small></div><button type="button" class="btn btn-outline" data-action="hub-open-page" data-source="'+E(a.source_id)+'" data-page="'+page+'">افتحي المرجع</button></div>'}).join('')+'<p class="hub-legal">'+(row.review_status==='needs_fresh_primary_or_vehicle_confirmation'?'هذا الموضوع يحتاج كذلك تأكيدًا بمصدر حديث أو دليل السيارة أو تعليمات المدرسة.':'تم تحديد الفصل والصفحات المناسبة؛ المراجعة التفصيلية للنصوص مستمرة.')+'</p><a href="#/sources" class="inline-link">إذا ما أضفتِ الكتاب بعد، افتحي مكتبة المصادر ←</a></section>';
+}
 function practicePage(course,state){
  var blocks=course.practical_checklist||[],checked=state.practiceChecks||{};
  return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+faultDetails(course)+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
@@ -60,6 +66,18 @@ function click(action,el,ctx){
  if(action==='hub-next'){var count=(c.review_questions||[]).filter(function(q){return quizFilter==='all'||q.topic===quizFilter}).length;quizIndex=Math.min(count-1,quizIndex+1);ctx.render(true);return true}
  if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;ctx.save();ctx.render(true)}return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
+ if(action==='hub-open-page'){
+ var page=Number(el.dataset.page),id=el.dataset.source;
+ if(!Number.isInteger(page)||page<1||page>500)return true;
+ var popup=window.open('about:blank','_blank');
+ if(!popup){ctx.toast('اسمحي بالنوافذ المنبثقة لفتح مرجع PDF');return true}
+ ctx.db.getPersonalFile(id).then(function(f){
+  if(!f||f.mime!=='application/pdf')throw Error('PDF not in personal library');
+  var url=URL.createObjectURL(f.blob);popup.location.href=url+'#page='+page;
+  setTimeout(function(){URL.revokeObjectURL(url)},300000);
+ }).catch(function(){popup.close();ctx.toast('أضيفي ملف PDF من «المصادر» أولًا، ثم عودي لهذا الدرس')});
+ return true
+}
  if(action==='hub-open'){var popup=window.open('about:blank','_blank');ctx.db.getPersonalFile(el.dataset.source).then(function(f){if(!f||!popup)throw Error('Missing file or popup blocked');var url=URL.createObjectURL(f.blob);popup.location.href=url;setTimeout(function(){URL.revokeObjectURL(url)},180000)}).catch(function(){if(popup)popup.close();ctx.toast('لم نتمكن من فتح الملف؛ جربي السماح بالنوافذ المنبثقة')});return true}
  if(action==='hub-delete'){if(confirm('حذف نسختك المحلية من هذا المرجع؟ الملف الأصلي على الكمبيوتر لن يتأثر.'))ctx.db.deletePersonalFile(el.dataset.source).then(function(){delete cachedFiles[el.dataset.source];ctx.render(true);ctx.toast('أزلنا الملف من المتصفح فقط')}).catch(function(){ctx.toast('تعذّر حذف الملف')});return true}
  return false;
@@ -71,5 +89,5 @@ async function upload(input,ctx){
  try{await ctx.db.savePersonalFile(id,file);await refreshFiles(ctx.db);ctx.render(true);ctx.toast('حُفظ الملف الخاص في متصفحك؛ لم يُرفع إلى GitHub')}
  catch(e){console.warn(e);ctx.toast('لم يُحفظ الملف؛ قد لا تكون المساحة كافية. أبقي النسخة الأصلية على الكمبيوتر.')}
 }
-window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,videoNotes,notesPage,refreshFiles,click,upload,sign});
+window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,notesPage,refreshFiles,click,upload,sign});
 })();

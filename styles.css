@@ -495,3 +495,9 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 @media(prefers-reduced-motion:reduce){
  .study-today-item,.lesson-journey-step,.lesson-journey-track>span,.study-stars .study-star-day,.flashcard{animation:none!important;transition:none!important;transform:none!important}
 }
+
+/* Honest video discovery when no reviewed clip is available */
+.video-resource-gap{padding:16px;border:1px dashed #bfcfd8;border-radius:13px;background:#f6fafc;margin-top:11px}
+.video-resource-gap strong{font-size:13px;color:#25475c}
+.video-resource-gap p{font-size:11.5px;color:#607483;line-height:1.95}
+.video-resource-gap .btn{margin-top:7px;white-space:normal}

@@ -10,6 +10,8 @@
 | lessons | id | الدروس الـ48، وفهرس حسب week_id |
 | questions | id | الأسئلة والخيارات، وفهرس حسب lesson_id |
 | sources | id | روابط المراجع |
+| learning_visuals | id | ستة سيناريوهات رسم SVG وتتابع مراحلها |
+| media_resources | id | الفيديوهات ومكتباتها الخارجية وروابطها الرسمية |
 | progress | lesson_id | اكتمال كل درس |
 | answers | question_id | إجابات التحقق |
 | notes | lesson_id | ملاحظات المتدربة |
@@ -20,6 +22,8 @@
 
 العلاقات المنطقية: `weeks.id → lessons.week_id` و`lessons.id → questions.lesson_id`.
 
+**ترقية قاعدة البيانات:** الإصدار 2 يضيف مخزني `learning_visuals` و`media_resources` دون حذف أو إعادة ضبط مخازن المستخدم القديمة؛ يُحدّث المحتوى المرجعي عند التشغيل. وهي **ليست** مزامنة عبر السحابة.
+
 **المصدر التحريري:** `data/course.json`. عند فتح التطبيق يُحمّل المحتوى الموجود في `index.html`، ويُزرع في IndexedDB للاستخدام المحلي. لتعديل المحتوى غيّري JSON ثم شغّلي `python compile.py` وارفعي `index.html` الجديد.
 
 **حفظ تقدم قديم:** النسخة تتعامل أيضًا مع مفتاح `masar-driving-v1` في `localStorage` لاستعادة التقدم القديم ثم مزامنته إلى IndexedDB. النسخ الاحتياطية والاستيراد JSON متاحان من واجهة الموقع.
@@ -28,7 +32,7 @@
 
 ## PostgreSQL — مخطط مستقبلي اختياري
 
-`db/postgres-schema.sql` يعرّف جداول SQL مرجعية وجداول تقدم لكل مستخدم مع مفاتيح خارجية وسياسات RLS. `db/postgres-seed.sql` يُنشأ من `data/course.json` عبر `python scripts/generate_seed_sql.py`.
+`db/postgres-schema.sql` يعرّف جداول SQL للدروس والأسئلة والتقدم، لكنه **لا يزال مخططًا مستقبليًا غير متصل بالموقع** ولا يحتوي بعد مخازن الرسومات والوسائط الجديدة. يجب تحديثه قبل أي انتقال فعلي إلى PostgreSQL. `db/postgres-seed.sql` يُنشأ من `data/course.json` عبر `python scripts/generate_seed_sql.py`.
 
 **لم يتم تفعيل خدمة PostgreSQL ولا Supabase Auth ولا مزامنة سحابية.** لا تشغّلي مخطط PostgreSQL على مشروع قائم دون مراجعة، ولا تضعي مفاتيح سرية داخل موقع GitHub Pages.
 

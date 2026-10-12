@@ -66,3 +66,14 @@ for(const script of ['app.js','study-coach.js','traffic-signs.js','visuals.js','
  assert(html.includes(source),'Compiled index.html contains stale '+script+'; run python compile.py before publishing');
 }
 console.log('PASS compiled application scripts match source files');
+
+
+assert.equal(d.personal_documents.length,7,'All seven personal PDF records must remain indexed');
+for(const source of d.personal_documents){
+ assert(d.lesson_reading_map.some(r=>(r.resources||[]).some(x=>x.source_id===source.id)),
+   'A personal PDF is missing from the lesson reading index: '+source.id);
+ assert(source.available_on_public_site===false,'Do not publish copyrighted personal PDFs by default: '+source.id);
+}
+assert(html.includes('sidebar-nav-group'),'Compiled website is missing grouped educational navigation');
+assert(html.includes('Masar Thmanyah Sans'),'Locally installed Thmanyah typography fallback missing');
+console.log('PASS seven private references are lesson-indexed; grouped navigation and local font CSS are compiled');

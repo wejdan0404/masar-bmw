@@ -47,5 +47,5 @@ for(const file of d.personal_documents)assert(file.storage==='personal_upload_on
 for(const file of d.uploaded_image_index)assert(file.storage==='personal_upload_only'&&file.available_on_public_site===false,'Unauthorized public image');
 for(const claim of d.review_claims)assert(claim.allowed_in_quiz===false,'Unverified rule in quiz');
 for(const [idx,x] of d.community_pages.image_links.entries())assert(x.page===idx+1&&/saudirokhsa\.com/.test(x.url));
-const videos=d.media_resources.filter(x=>x.kind==='youtube_video');assert(videos.length===3);assert(videos.some(x=>x.youtube_id==='SIay14R3GKY'));
+const videos=d.media_resources.filter(x=>x.kind==='youtube_video');assert(videos.length===3);assert(d.media_resources.filter(x=>x.kind!=='youtube_video').length===3);assert(d.school_specific_evidence.length===2);for(const source of d.school_specific_evidence){assert(source.not_universal===true);assert(source.source_url.startsWith('https://sites.qu.edu.sa/'));}assert(videos.some(x=>x.youtube_id==='SIay14R3GKY'));
 console.log('PASS MASAR content validation: '+d.lessons.length+' lessons, '+d.review_questions.length+' original review questions, '+d.personal_documents.length+' personal PDFs, '+d.uploaded_image_index.length+' image references; no unverified evaluation thresholds used.');

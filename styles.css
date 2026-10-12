@@ -561,3 +561,7 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah Sans',
 .source-topic-index a{font-size:11px;text-decoration:none;background:#e9f1f6;color:#315b77;padding:5px 10px;border-radius:9px}
 .source-topic-index a:hover{text-decoration:underline}
 .source-topic-index small{font-size:10px;color:#627b88}
+
+/* Keep content aligned while the desktop sidebar is still visible at 901–1050px. */
+@media(min-width:901px) and (max-width:1050px){.app-main{margin-right:285px}}
+@media(max-width:900px){.app-main{margin-right:0}.sidebar{right:-295px}.sidebar.open{right:0}}

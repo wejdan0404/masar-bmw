@@ -138,6 +138,22 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .visual-resource-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:26px}
 .visual-resource-list .ref-card{margin:0}
 @media(max-width:800px){.visual-index-grid,.visual-resource-list{grid-template-columns:1fr}}
+
+
+/* Direct educational videos: load embed only after learner requests playback. */
+.media-aside{overflow:hidden}
+.study-video{padding:13px 0 15px;border-bottom:1px solid #dfe6ea;margin-bottom:10px}
+.study-video:last-child{border-bottom:0;margin-bottom:0}
+.video-title{display:grid;gap:4px;margin-bottom:10px}
+.video-title strong{color:#202D36;font-size:13px;line-height:1.65}
+.video-player{aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;border-radius:12px;background:radial-gradient(circle at 60% 30%,#556e7d,#202D36);color:white}
+.video-player iframe{width:100%;height:100%;border:0;display:block}
+.video-load{border:none;width:100%;height:100%;background:transparent;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;font-size:13px;font-weight:750}
+.video-play-symbol{width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#800C1F;color:white;font-size:19px;box-shadow:0 5px 22px rgba(0,0,0,.25);transition:transform .2s ease}
+.video-load:hover .video-play-symbol{transform:scale(1.08)}
+.video-load:focus-visible{outline:3px solid #7598B9;outline-offset:-4px}
+.video-footnote{font-size:11px!important;line-height:1.7;color:#617582;margin:8px 0!important}
+@media(prefers-reduced-motion:reduce){.video-play-symbol{transition:none}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -3032,6 +3048,36 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
   "road_traffic_direction": "keep_right_side_of_road",
   "media_resources": [
     {
+      "id": "VIDEO-QUDS-X",
+      "title": "مهارة X — الرجوع للخلف في موقف",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة (QUDS)",
+      "url": "https://www.youtube.com/watch?v=J36565XrCk4",
+      "kind": "youtube_video",
+      "youtube_id": "J36565XrCk4",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-035"
+      ],
+      "published": "2020-02-09",
+      "verification_note": "فيديو منشور باسم المدرسة على قناة QUDS؛ تشغيل التضمين داخل موقع آخر لم يُتحقق منه"
+    },
+    {
+      "id": "VIDEO-QUDS-GARAGE",
+      "title": "مهارة الكراج — مثال مصوّر من مدرسة جامعة القصيم",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة (QUDS)",
+      "url": "https://www.youtube.com/watch?v=Peyh1mXONAU",
+      "kind": "youtube_video",
+      "youtube_id": "Peyh1mXONAU",
+      "lesson_ids": [
+        "LES-031",
+        "LES-033",
+        "LES-035"
+      ],
+      "published": "2020-10-12",
+      "verification_note": "نتيجة YouTube باسم المدرسة؛ قد يمنع ناشر الفيديو التضمين في بعض المواقع"
+    },
+    {
       "id": "MEDIA-QASSIM-MANEUVERS",
       "title": "فيديوهات مهارات الركن والمناورات X وT وY",
       "provider": "مدرسة جامعة القصيم لتعليم القيادة",
@@ -3513,7 +3559,14 @@ function weeksPage(){return `<div class="eyebrow">THE LEARNING ROADMAP / 16 WEEK
 function weeksGrid(){const q=filterText.trim();const matched=weeks.filter(w=>{const finished=weeklyDone(w.number);const matchFilter=catalogFilter==='all'||(catalogFilter==='completed'?finished===3:finished>0&&finished<3);return matchFilter&&(!q||`${w.number} ${w.title} ${w.lesson_ids.map(id=>lessons.find(x=>x.id===id).title).join(' ')}`.includes(q))});return matched.length?`<div class="week-grid">${matched.map(weekCard).join('')}</div>`:`<div class="empty"><h3>ما فيه أسابيع هنا حاليًا</h3><p>جربي تغيير الفلتر أو كلمة البحث.</p><button class="btn btn-muted" type="button" data-action="filter-weeks" data-filter="all">عرض كل الأسابيع</button></div>`}
 function weekPage(n){const w=weeks[n-1];if(!w)return notFound();return `<div class="crumbs"><a href="#/weeks">الخطة الدراسية</a> / الأسبوع ${n}</div><div class="week-hero"><div><span class="eyebrow" style="color:#bbd0dc">WEEK ${p2(n)}</span><h1>${ESC(w.title)}</h1><p>خطة الأسبوع: السبت والثلاثاء والخميس للدروس، والجمعة للمراجعة. الترتيب مقترح وقابل للتغيير.</p></div><span class="rounded-num" style="background:#405969;color:white;border-color:#547082">${weeklyDone(n)} / 3 مكتمل</span></div><div class="section-head"><div><h2>دروس هذا الأسبوع</h2><p>اضغطي أي درس لبدء القراءة والحل وحفظ التقدم.</p></div></div><div class="card">${lessons.filter(l=>l.week===n).map(l=>`<a href="#/lesson/${l.order}" class="lesson-row ${isDone(l.order)?'done':''}"><span class="lesson-no">${isDone(l.order)?icon('check'):p2(l.order)}</span><span class="lesson-info"><b>${ESC(l.title)}</b><small>الهدف: ${ESC(l.study_content.goal)}</small></span><span class="lesson-arrow">${icon('left')}</span></a>`).join('')}</div><div class="section-head"><div><h2>مراجعة الأسبوع</h2><p>ثلاثة أسئلة قصيرة مخصصة لهذه المجموعة.</p></div></div><section class="callout"><h3>تأكدي إن المعلومات ثبتت</h3><p>راجعي المواقف بدل الحفظ السريع. النتيجة خاصة بالتدريب وليست درجة نجاح رسمية.</p><button type="button" class="btn btn-primary" data-action="start-quiz" data-week="${n}">اختبار الأسبوع ${icon('arrow')}</button></section>${footerNote()}`}
 function sourcesBlock(l){let arr=(l.source_ids_suggested||[]).map(s=>sourceById[s]).filter(Boolean);return arr.map(s=>`<a href="${ESC(s.url)}" class="source-link" target="_blank" rel="noopener noreferrer">↗ ${ESC(s.name)}</a>`).join('')+`<p style="font-size:10px;margin-top:8px">المراجع للاستزادة والتدقيق، وليست إثباتًا لاعتماد كل عبارة في الملخص.</p>`}
-function mediaBlock(l){const items=(COURSE.media_resources||[]).filter(m=>(m.lesson_ids||[]).includes(l.id));return `<section class="aside-card"><h3>مقاطع ومواد مرئية</h3>${items.length?items.map(m=>`<p><a href="${ESC(m.url)}" target="_blank" rel="noopener noreferrer" class="source-link">${icon('play')} ${ESC(m.title)} ↗</a><small class="note-preview">صفحة خارجية من ${ESC(m.provider)}. المقاطع غير مضمّنة هنا ولم يُراجع تشغيل كل مقطع.</small></p>`).join(''):'<p class="note-preview">لا يوجد فيديو مرتبط بهذا الدرس بعد.</p>'}</section>`}
+function mediaBlock(l){
+ const items=(COURSE.media_resources||[]).filter(m=>(m.lesson_ids||[]).includes(l.id));
+ const video=items.filter(m=>m.kind==='youtube_video'&&/^[\w-]{11}$/.test(m.youtube_id||''));
+ const collections=items.filter(m=>m.kind!=='youtube_video');
+ const clips=video.map(m=>'<article class="study-video"><div class="video-title"><span class="bento-overline">فيديو من مصدر تعليمي خارجي</span><strong>'+ESC(m.title)+'</strong></div><div class="video-player"><button type="button" class="video-load" data-action="video-load" data-video="'+ESC(m.youtube_id)+'" data-title="'+ESC(m.title)+'" aria-label="تشغيل '+ESC(m.title)+'"><span class="video-play-symbol">▶</span><span>شغّلي المقطع</span></button></div><p class="video-footnote">يُحمّل مشغّل YouTube فقط عند الضغط. بعض المقاطع قد تمنع التشغيل المضمّن.</p><a class="source-link" href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer">مشاهدة المقطع من قناة المدرسة ↗</a></article>').join('');
+ const library=collections.map(m=>'<p><a href="'+ESC(m.url)+'" target="_blank" rel="noopener noreferrer" class="source-link">'+icon('play')+' '+ESC(m.title)+' ↗</a><small class="note-preview">مكتبة فيديوهات خارجية من '+ESC(m.provider)+'، وليست فيديو مضمّنًا.</small></p>').join('');
+ return '<section class="aside-card media-aside"><h3>المقاطع التعليمية</h3>'+(items.length?clips+library:'<p class="note-preview">لم نعثر بعد على فيديو مُحدّد لهذا الدرس. يبقى الشرح النصي والرسومات المتاحة للمذاكرة.</p>')+'</section>';
+}
 function visualBlock(l){
  const items=(COURSE.learning_visuals||[]).filter(v=>(v.lesson_ids||[]).includes(l.id));
  if(!items.length)return '';
@@ -3553,6 +3606,7 @@ if(!pool.length){toast('ما عندك أسئلة في هذه المجموعة ا
 function recordTest(){if(!session||session.saved)return;const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;state.history.push({label:session.label,score,total:session.ids.length,date:new Date().toLocaleDateString('ar-SA')});state.history=state.history.slice(-30);session.saved=true;save()}
 function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;const action=el.dataset.action,n=Number(el.dataset.id);
  if(action==='persist-storage'){if(!navigator.storage?.persist){toast('المتصفح لا يدعم طلب تثبيت التخزين؛ احفظي نسخة احتياطية');return}navigator.storage.persist().then(granted=>toast(granted?'المتصفح وافق على التخزين المستمر في هذا الجهاز':'المتصفح لم يمنح ضمانًا ضد الحذف التلقائي')).catch(()=>toast('لم نتمكن من طلب التخزين المستمر'));return}
+ if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
  if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
  if(action==='filter-weeks'){catalogFilter=el.dataset.filter||'all';render(true);return}
  if(action==='menu'){mobileOpen=!mobileOpen;render(true);return}

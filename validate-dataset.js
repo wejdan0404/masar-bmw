@@ -9,12 +9,12 @@ assert.equal(d.questions.length,48);
 assert.equal(d.personal_documents.length,7);
 assert.equal(d.uploaded_image_index.length,6);
 assert.equal(d.review_questions.length,36);
-assert.equal(d.sign_library.length,24);
+assert(d.sign_library.length>=36,'Traffic sign library unexpectedly shrank');
 assert.equal(d.lesson_activities.length,48);
 assert.equal(new Set(d.lesson_activities.map(x=>x.id)).size,48);
 for(const a of d.lesson_activities){assert(d.lessons.some(l=>l.id===a.lesson_id),'Activity with no lesson');assert(a.observation.length>25&&a.reasoning.length>20&&a.verification.length>20,'Insufficient activity '+a.id);assert(a.status==='original_practice_not_formal_assessment')}
-const signIds=new Set(d.sign_library.map(s=>s.id));assert.equal(signIds.size,24);
-for(const sign of d.sign_library){assert(['تحذيرية','تنظيمية'].includes(sign.category));assert(sign.title&&sign.meaning.length>=12&&sign.action.length>=12);assert(sign.pictogram_status==='educational_illustration_not_official');assert(sign.review_status==='requires_official_pictogram_comparison');assert(sign.source_url.startsWith('https://www.moi.gov.sa/'));for(const id of sign.lesson_ids)assert(d.lessons.some(l=>l.id===id),'Sign linked to missing lesson')}
+const signIds=new Set(d.sign_library.map(s=>s.id));assert.equal(signIds.size,d.sign_library.length);
+for(const sign of d.sign_library){assert(['تحذيرية','تنظيمية','إرشادية','مناطق عمل ومؤقتة','علامات أرضية'].includes(sign.category));assert(sign.title&&sign.meaning.length>=12&&sign.action.length>=12);assert(sign.pictogram_status==='educational_illustration_not_official');assert(sign.review_status==='requires_official_pictogram_comparison');assert(sign.source_url.startsWith('https://www.moi.gov.sa/'));for(const id of sign.lesson_ids)assert(d.lessons.some(l=>l.id===id),'Sign linked to missing lesson')}
 assert.equal(d.lesson_reading_map.length,48);
 assert.equal(d.practical_assessment_reference.fault_categories.length,16);
 assert.equal(d.practical_assessment_reference.immediate_failure_examples.length,6);

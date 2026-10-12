@@ -24,5 +24,7 @@ jobs:
         run: |
           node validate-dataset.js
           node smoke-test.js
-      - name: Compile standalone site
-        run: python compile.py
+      - name: Compile standalone site and assert published HTML is synchronized
+        run: |
+          python compile.py
+          git diff --exit-code -- index.html

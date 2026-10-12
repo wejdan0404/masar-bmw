@@ -225,12 +225,74 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .hub-q-links .btn{font-size:11px}
 .hub-question .hub-source-note{margin:16px 0 7px}
 @media(max-width:700px){.lesson-sources{padding:16px!important}.lesson-source-row{align-items:flex-start;flex-direction:column}.lesson-source-row .btn{width:100%}}
+
+
+/* Traffic signs study gallery: high-contrast, keyboard accessible, RTL. */
+.ts-page{max-width:1180px;margin-inline:auto;padding-bottom:24px}
+.ts-header{display:flex;gap:24px;align-items:center;justify-content:space-between;padding:29px 31px;border-radius:24px;background:radial-gradient(ellipse at 5% 110%,#5C7896 0%,#202D36 48%,#17242c 100%);color:#fff;overflow:hidden}
+.ts-header>div:first-child{max-width:660px;min-width:0}
+.ts-overline{font-weight:800;font-size:11px;letter-spacing:.1em;color:#b0c9d9}
+.ts-header h1{color:#fff;font-size:clamp(28px,4.8vw,52px);margin:8px 0 10px;letter-spacing:-.04em}
+.ts-header p{color:#e4eef3;font-size:13px;line-height:2;max-width:610px;margin:0}
+.ts-header-counter{flex-shrink:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:15px 21px;min-width:160px;text-align:center}
+.ts-header-counter b{font-variant-numeric:tabular-nums;font-size:45px;display:block;line-height:1.3}
+.ts-header-counter small{font-size:18px;font-weight:500;color:#b4cedf}
+.ts-header-counter span{color:#d9e5eb;font-size:11px}
+.ts-facts{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}
+.ts-facts span{font-size:11px;color:#455f6f;border:1px solid #d7e4e9;background:#fff;padding:8px 12px;border-radius:20px}
+.ts-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 22px}
+.ts-toolbar>div{display:flex;flex-wrap:wrap;gap:5px}
+.ts-toolbar button{border:1px solid #d3e1e8;background:#fff;color:#486276;border-radius:10px;min-height:40px;padding:8px 12px;font-weight:700;font-size:12px;transition:background .15s}
+.ts-toolbar button.active,.ts-toolbar button[aria-pressed=true]{background:#202D36;color:#fff;border-color:#202D36}
+.ts-toolbar button:focus-visible,.ts-card:focus-visible,.ts-choice:focus-visible,.ts-next:focus-visible,.ts-return:focus-visible{outline:3px solid #7598B9;outline-offset:3px}
+.ts-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.ts-card{display:flex;align-items:center;flex-direction:column;gap:9px;border:1px solid #d8e4ea;border-radius:17px;background:#fff;padding:22px 12px 17px;min-height:240px;text-align:center;box-shadow:0 5px 14px rgba(32,45,54,.025);transition:transform .17s,border-color .17s,box-shadow .17s}
+.ts-card:hover{transform:translateY(-3px);border-color:#a8c6d7;box-shadow:0 12px 26px rgba(32,45,54,.085)}
+.ts-art{display:grid;place-items:center;min-height:138px;width:100%}
+.ts-sign-svg{width:135px;max-width:100%;height:auto;display:block}
+.ts-category{color:#678092;font-size:11px}
+.ts-card strong{color:#1f333e;font-size:14px;line-height:1.6}
+.ts-card-arrow{color:#800C1F;font-size:11px;font-weight:750;margin-top:auto}
+.ts-detail{border:1px solid #dfe7ec;border-radius:21px;background:#fff;padding:25px}
+.ts-return{border:0;background:#edf3f7;color:#25485e;padding:9px 15px;border-radius:10px;font-size:12px;font-weight:700;margin-bottom:16px}
+.ts-detail-grid{display:grid;grid-template-columns:minmax(190px,270px) 1fr;gap:32px;align-items:center}
+.ts-icon-panel{background:#f0f5f8;border:1px solid #dde7ed;border-radius:21px;min-height:275px;display:grid;place-items:center}
+.ts-icon-panel .ts-sign-svg{width:205px}
+.ts-detail h2{color:#202D36;font-size:27px;margin:5px 0 21px}
+.ts-detail h3{font-size:14px;margin:13px 0 3px;color:#800C1F}
+.ts-detail p{color:#405a6b;font-size:13px;line-height:1.95;margin:3px 0}
+.ts-link{display:inline-flex;color:#800C1F;font-size:13px;font-weight:750;margin-top:18px}
+.ts-exam{max-width:775px;margin:0 auto;padding:24px;border-radius:21px;background:#fff;border:1px solid #dfe7ed}
+.ts-exam-top{display:flex;justify-content:space-between;gap:12px;color:#657a88;font-size:11px}
+.ts-exam-art{border-radius:16px;background:#f0f5f8;margin:16px auto 18px;display:grid;place-items:center;min-height:225px}
+.ts-exam-art .ts-sign-svg{width:175px}
+.ts-exam h2{font-size:21px;color:#202D36;margin:18px 0 14px;text-align:center}
+.ts-choices{display:grid;gap:10px}
+.ts-choice{background:#fff;border:1px solid #d7e3eb;color:#273e4f;padding:13px 15px;min-height:49px;border-radius:11px;font-size:14px;text-align:right}
+.ts-choice:not(:disabled):hover{background:#eff6f9;border-color:#7598B9}
+.ts-choice.is-correct{border-color:#49a47c;background:#e6f5ed}
+.ts-choice.is-wrong{border-color:#ba425a;background:#ffeff1}
+.ts-explanation{border-inline-start:4px solid #629f83;background:#ebf6f0;margin:16px 0 9px;padding:13px 18px;border-radius:9px;color:#255448}
+.ts-explanation strong{font-size:14px}
+.ts-explanation p{font-size:12px;line-height:1.8;margin:8px 0}
+.ts-explanation a{display:inline-block;color:#800C1F;font-size:12px;font-weight:700;margin-top:7px}
+.ts-controls{display:flex;justify-content:flex-end;margin-top:14px}
+.ts-next{padding:11px 22px;border-radius:11px;background:#800C1F;color:#fff;border:0;font-size:13px;font-weight:750;min-height:42px}
+.ts-empty{padding:35px 20px;text-align:center;color:#4b6475;background:#fff;border:1px dashed #bbcfdc;border-radius:18px;font-size:14px}
+.ts-note{background:#f4f6f8;border-inline-start:4px solid #800C1F;border-radius:13px;padding:17px 21px;margin-top:25px;color:#435e6d}
+.ts-note strong{color:#202D36;font-size:13px}
+.ts-note p{line-height:1.9;font-size:12px;margin:7px 0}
+.ts-note a{color:#800C1F;font-weight:700;font-size:12px}
+@media(max-width:1050px){.ts-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.ts-header{padding:22px;align-items:flex-start;flex-direction:column}.ts-header-counter{display:flex;align-items:center;gap:9px;width:100%;justify-content:space-between}.ts-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ts-card{padding:14px 7px;min-height:213px}.ts-art{min-height:122px}.ts-sign-svg{width:113px}.ts-detail-grid{grid-template-columns:1fr}.ts-detail{padding:16px}.ts-icon-panel{min-height:210px}.ts-detail h2{font-size:23px}.ts-exam{padding:15px}.ts-exam-top{flex-wrap:wrap}}
+@media(max-width:380px){.ts-grid{grid-template-columns:1fr 1fr}.ts-card strong{font-size:12px}.ts-toolbar button{font-size:11px;padding:7px 9px}.ts-sign-svg{width:104px}}
+@media(prefers-reduced-motion:reduce){.ts-card,.ts-toolbar button{transition:none}.ts-card:hover{transform:none}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="course-data">{
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "project": "تعليم القيادة — السعودية",
   "generated_on": "2026-10-12",
   "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
@@ -6087,7 +6149,475 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       "review_status": "topic_index_mapped_pending_line_verification",
       "safety_note": ""
     }
-  ]
+  ],
+  "sign_library": [
+    {
+      "id": "SG-01",
+      "category": "تنظيمية",
+      "title": "قف",
+      "icon": "stop",
+      "meaning": "توقف كامل قبل مواصلة السير عندما يسمح التنظيم وتكون الحركة آمنة.",
+      "action": "توقفي عند الخط المناسب، ثم انظري للطريق والمشاة.",
+      "memory_tip": "اللوحة الثمانية تختلف عن مثلث التحذير من قف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-016",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-02",
+      "category": "تنظيمية",
+      "title": "أعط الأفضلية",
+      "icon": "yield",
+      "meaning": "افسحي الطريق لمَن له الأفضلية، وتوقفي عند الحاجة.",
+      "action": "خففي السرعة وراقبي المركبات قبل الدخول.",
+      "memory_tip": "لا يكفي مجرد عدم وجود علامة قف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-016",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-03",
+      "category": "تنظيمية",
+      "title": "ممنوع الدخول",
+      "icon": "no-entry",
+      "meaning": "يحظر الدخول من الجهة المواجهة للإشارة.",
+      "action": "استمري إلى مدخل أو طريق بديل مسموح.",
+      "memory_tip": "ممنوع الدخول لا يعني انتهاء منع التجاوز.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-04",
+      "category": "تنظيمية",
+      "title": "السرعة القصوى 60",
+      "icon": "speed60",
+      "meaning": "الرقم هنا مثال لحد السرعة القصوى بالكيلومتر/ساعة.",
+      "action": "لا تتجاوزي الحد حيث يسري وقد تكون السرعة الآمنة أقل.",
+      "memory_tip": "الحد الأقصى ليس سرعة مستهدفة دائمًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-025",
+        "LES-045"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-05",
+      "category": "تنظيمية",
+      "title": "ممنوع الدوران للخلف",
+      "icon": "no-uturn",
+      "meaning": "يحظر الدوران للخلف في نطاق اللوحة.",
+      "action": "واصلي إلى موضع مسموح بالدوران.",
+      "memory_tip": "منع الدوران للخلف لا يعني منع الانعطاف يسارًا بالضرورة.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-024"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-06",
+      "category": "تنظيمية",
+      "title": "ممنوع الانعطاف يسارًا",
+      "icon": "no-left",
+      "meaning": "لا يجوز الانعطاف يسارًا عند الموضع المعني.",
+      "action": "اتبعي الطريق المسموح به.",
+      "memory_tip": "ليس هو نفسه منع الدوران للخلف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-07",
+      "category": "تنظيمية",
+      "title": "ممنوع الانعطاف يمينًا",
+      "icon": "no-right",
+      "meaning": "لا يجوز الانعطاف يمينًا عند الموضع المعني.",
+      "action": "واصلي حسب تنظيم التقاطع والمسار.",
+      "memory_tip": "الانعطاف الأيمن ليس مسموحًا دائمًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-08",
+      "category": "تنظيمية",
+      "title": "ممنوع التجاوز",
+      "icon": "no-overtake",
+      "meaning": "يُحظر تجاوز المركبات وفق نطاق سريان اللوحة.",
+      "action": "حافظي على مسافة الأمان دون تجاوز.",
+      "memory_tip": "الغماز لا يلغي حظر التجاوز.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-023",
+        "LES-024"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-09",
+      "category": "تنظيمية",
+      "title": "ممنوع الوقوف",
+      "icon": "no-parking",
+      "meaning": "يحظر ركن المركبة في نطاق اللوحة وفق الشروط السارية.",
+      "action": "ابحثي عن موقف مسموح.",
+      "memory_tip": "اقرئي اللوحات المكملة للاستثناءات والأوقات.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-031",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-10",
+      "category": "تنظيمية",
+      "title": "ممنوع الوقوف والانتظار",
+      "icon": "no-stopping",
+      "meaning": "يحظر التوقف الاختياري والانتظار حيث يسري المنع.",
+      "action": "لا تتوقفي لانتظار أحد في الموضع المحظور.",
+      "memory_tip": "تختلف عن منع الوقوف ذي الشطب الواحد.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-031",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-11",
+      "category": "تنظيمية",
+      "title": "اتجاه إلزامي إلى اليمين",
+      "icon": "mandatory-right",
+      "meaning": "يلزم اتباع الاتجاه الأيمن المحدد باللوحة.",
+      "action": "هيئي مسارك مسبقًا ثم التزمي بالاتجاه.",
+      "memory_tip": "لوحة الإلزام ليست اقتراحًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-12",
+      "category": "تنظيمية",
+      "title": "اتجاه إلزامي إلى الأمام",
+      "icon": "mandatory-straight",
+      "meaning": "يلزم الاستمرار إلى الأمام حسب تنظيم اللوحة.",
+      "action": "لا تنعطفي إلى اتجاه مخالف للإلزام.",
+      "memory_tip": "قد توجد لوحات وأسهم أرضية مكملة.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-13",
+      "category": "تحذيرية",
+      "title": "إشارة ضوئية أمامك",
+      "icon": "warn-signal",
+      "meaning": "تحذّر من إشارات ضوئية قريبة.",
+      "action": "تهيّئي لرؤية الضوء الفعلي واتخاذ القرار عنده.",
+      "memory_tip": "المثلث ليس ضوءًا أحمر يوجب الوقوف فور رؤيته.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-017"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-14",
+      "category": "تحذيرية",
+      "title": "دوار أمامك",
+      "icon": "warn-roundabout",
+      "meaning": "تنبيه إلى اقتراب دوار.",
+      "action": "خففي السرعة واقرئي تنظيم الأولوية والمسارات.",
+      "memory_tip": "ليست تصريحًا بالدخول دون النظر.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-019",
+        "LES-020"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-15",
+      "category": "تحذيرية",
+      "title": "تقاطع طرق أمامك",
+      "icon": "warn-cross",
+      "meaning": "تنبيه إلى تقاطع يحتمل دخول مركبات من اتجاهات متعددة.",
+      "action": "راقبي الإشارات والأولوية قبل الوصول.",
+      "memory_tip": "رسم التقاطع لا يحدد وحده الأفضلية.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-16",
+      "category": "تحذيرية",
+      "title": "طريق فرعي من اليمين",
+      "icon": "warn-side-right",
+      "meaning": "تنبيه إلى اتصال طريق من جهة اليمين.",
+      "action": "انتبهي إلى مركبات قد تدخل من هذا الاتجاه.",
+      "memory_tip": "اتصال طريق لا يحدد وحده الأولوية.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-17",
+      "category": "تحذيرية",
+      "title": "طريق فرعي من اليسار",
+      "icon": "warn-side-left",
+      "meaning": "تنبيه إلى اتصال طريق من جهة اليسار.",
+      "action": "انتبهي إلى الحركة القادمة من هذا الاتجاه.",
+      "memory_tip": "لا تخلطي جهة اتصال الطريق باتجاه انعطافك.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-18",
+      "category": "تحذيرية",
+      "title": "عبور مشاة",
+      "icon": "warn-pedestrians",
+      "meaning": "تنبيه إلى احتمال عبور مشاة أمامك.",
+      "action": "خففي السرعة وتوقفي عند الحاجة مع الالتزام بأولوية المعبر.",
+      "memory_tip": "التحذير لا يلغي مراقبة الجانبين.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-012",
+        "LES-021"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-19",
+      "category": "تحذيرية",
+      "title": "عبور أطفال",
+      "icon": "warn-children",
+      "meaning": "قد يظهر أطفال يعبرون الطريق، خاصة قرب المدارس.",
+      "action": "خففي السرعة وتوقعي حركة مفاجئة.",
+      "memory_tip": "توقع الخطر مهم حتى لو بدا المكان خاليًا.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-012",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-20",
+      "category": "تحذيرية",
+      "title": "عبور حيوانات",
+      "icon": "warn-animals",
+      "meaning": "احتمال دخول حيوانات إلى الطريق.",
+      "action": "راقبي جانبي الطريق وخففي السرعة عند الحاجة.",
+      "memory_tip": "انتبهي لوجود أكثر من حيوان محتمل.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-028",
+        "LES-037"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-21",
+      "category": "تحذيرية",
+      "title": "مطب أو مطبات",
+      "icon": "warn-bump",
+      "meaning": "تنبيه إلى ارتفاع أو تغير مفاجئ بسطح الطريق.",
+      "action": "خففي تدريجيًا قبل موضع المطب.",
+      "memory_tip": "الفرملة العنيفة المتأخرة قد تخلق خطرًا.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-025",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-22",
+      "category": "تحذيرية",
+      "title": "طريق زلق",
+      "icon": "warn-slippery",
+      "meaning": "تحذير من نقص تماسك الإطارات بالسطح.",
+      "action": "خففي وزيدي مسافة الأمان وتجنبي التوجيه الحاد.",
+      "memory_tip": "ليست لمبة عطل السيارة.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-037",
+        "LES-038"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-23",
+      "category": "تحذيرية",
+      "title": "طريق يضيق من الجانبين",
+      "icon": "warn-narrow",
+      "meaning": "قد يقل عرض الطريق أمامك.",
+      "action": "راقبي المسار والسرعة والمرور المقابل.",
+      "memory_tip": "لا تستخدمي كتف الطريق كمسار بديل.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-013",
+        "LES-015"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-24",
+      "category": "تحذيرية",
+      "title": "طيران منخفض",
+      "icon": "warn-airplane",
+      "meaning": "تحذير من مرور طائرات منخفضة قرب الطريق.",
+      "action": "حافظي على التركيز والانتباه لحركة الطريق.",
+      "memory_tip": "اللوحة لا تعني إغلاق الطريق.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-028",
+        "LES-039"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    }
+  ],
+  "sign_learning": {
+    "title": "مكتبة الإشارات",
+    "categories": [
+      "تحذيرية",
+      "تنظيمية"
+    ],
+    "status": "مسودة تعليمية — ليست قاعدة شاملة أو معرضًا حكوميًا معتمدًا",
+    "category_source": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+    "coverage_notes": "24 بطاقة أولية، ولا تشمل جميع الإرشادية ومناطق العمل والمؤقتة. مطابقة الرموز الرسومية للرسومات الرسمية لم تكتمل."
+  }
 }
 </script>
 <script>/*
@@ -6098,8 +6628,8 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 4;
-  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map'];
+  const DATABASE_VERSION = 5;
+  const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map', 'sign_library'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
   const allStores = [...referenceStores, ...userStores, 'personal_files'];
   let dbPromise;
@@ -6130,6 +6660,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
         create('practical_checklist', 'id');
         create('review_claims', 'id');
         create('lesson_reading_map', 'id');
+        create('sign_library', 'id');
         create('personal_files', 'id');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
@@ -6199,7 +6730,8 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
       videoNotes: prefs.videoNotes || {},
       sourceNotes: prefs.sourceNotes || {},
       practiceChecks: prefs.practiceChecks || {},
-      reviewAnswers: prefs.reviewAnswers || {}
+      reviewAnswers: prefs.reviewAnswers || {},
+      signPractice: prefs.signPractice || {}
     };
   }
 
@@ -6218,7 +6750,7 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
     tx.objectStore('preferences').put({key: 'initialized', value: true});
     tx.objectStore('preferences').put({key: 'lastOpened', value: Number(snapshot.lastOpened) || 1});
     tx.objectStore('preferences').put({key: 'readingPositions', value: snapshot.readingPositions || {}});
-    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers']) tx.objectStore('preferences').put({key, value: snapshot[key] || {}});
+    for (const key of ['videoNotes','sourceNotes','practiceChecks','reviewAnswers','signPractice']) tx.objectStore('preferences').put({key, value: snapshot[key] || {}});
     await completed(tx);
   }
 
@@ -6412,12 +6944,110 @@ async function upload(input,ctx){
 }
 window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,notesPage,refreshFiles,click,upload,sign});
 })();
+/* MASAR BMW · original simplified SVG traffic sign illustrations, no external dependency.
+ * NOT exact official traffic-sign artwork. Compare with Saudi Traffic Department guide.
+ */
+(function(){
+'use strict';
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const red='#cf1726',blue='#2362a0',ink='#14222c';
+let mode='study',filter='all',selected=null,quizIndex=0,answered=null,answeredSignId=null;
+const P=(d,attrs='')=>'<path d="'+d+'" '+attrs+'/>';
+function pictogram(k){
+ const stroke='stroke="'+ink+'" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
+ const stem=(direction)=>P(direction==='left'?'M93 42L61 72L93 102':'M61 42L93 72L61 102',stroke);
+ switch(k){
+ case 'stop':return '<text x="75" y="78" text-anchor="middle" font-weight="900" font-size="26" fill="white" style="font-family:Tahoma,Arial">قف</text>';
+ case 'yield':return '';
+ case 'no-entry':return '<rect x="34" y="65" width="82" height="17" rx="3" fill="white"/>';
+ case 'speed60':return '<text x="75" y="91" text-anchor="middle" font-family="Arial" font-size="53" fill="'+ink+'">60</text>';
+ case 'no-uturn':return P('M97 106V55C97 30 58 30 58 55V93',stroke)+P('M40 75L58 95L76 75',stroke);
+ case 'no-left':return P('M95 104V69Q95 51 71 51H46M46 51L65 35M46 51L65 66',stroke);
+ case 'no-right':return P('M51 104V69Q51 51 75 51H100M100 51L81 35M100 51L81 66',stroke);
+ case 'no-overtake':return '<rect x="38" y="61" width="39" height="26" rx="5" fill="'+ink+'"/><rect x="80" y="61" width="30" height="26" rx="5" fill="'+red+'" opacity=".8"/><rect x="47" y="52" width="22" height="10" fill="'+ink+'"/><rect x="86" y="54" width="18" height="8" fill="'+red+'"/>';
+ case 'no-parking':return P('M33 26L117 111','stroke="'+red+'" stroke-width="10" fill="none"');
+ case 'no-stopping':return P('M33 26L117 111M117 26L33 111','stroke="'+red+'" stroke-width="9" fill="none"');
+ case 'mandatory-right':return P('M35 75H110M89 53L111 75L89 97','stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"');
+ case 'mandatory-straight':return P('M75 110V28M51 51L75 26L99 51','stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"');
+ case 'warn-signal':return '<rect x="65" y="40" width="23" height="73" rx="6" fill="'+ink+'"/>'+[0,1,2].map((v)=>'<circle cx="76.5" cy="'+(52+v*24)+'" r="8" fill="'+['#ed353e','#ffc22d','#259c55'][v]+'"/>').join('');
+ case 'warn-roundabout':return '<circle cx="75" cy="82" r="27" stroke="'+ink+'" stroke-width="6" fill="none" stroke-dasharray="32 10"/>'+P('M50 59L42 70L60 70M98 100L111 98L102 84',stroke);
+ case 'warn-cross':return P('M75 38V112M40 79H110',stroke);
+ case 'warn-side-right':return P('M64 35V110M64 70H101',stroke);
+ case 'warn-side-left':return P('M88 35V110M88 70H51',stroke);
+ case 'warn-pedestrians':return '<circle cx="76" cy="47" r="8" fill="'+ink+'"/>'+P('M73 60L65 82L87 96M67 81L46 97M72 63L96 69M87 95L99 112',stroke);
+ case 'warn-children':return '<circle cx="58" cy="53" r="7" fill="'+ink+'"/><circle cx="89" cy="61" r="6" fill="'+ink+'"/>'+P('M58 65L47 89M58 66L78 80M47 90L36 109M47 90L60 112M89 70L77 93M90 74L103 88M78 94L72 113M78 94L95 112',stroke);
+ case 'warn-animals':return '<ellipse cx="72" cy="82" rx="37" ry="15" fill="'+ink+'"/><circle cx="106" cy="66" r="13" fill="'+ink+'"/>'+P('M48 93V116M89 94V116M98 60L102 45M113 61L122 48',stroke);
+ case 'warn-bump':return P('M35 108H52Q58 67 75 67Q92 67 98 108H115',stroke);
+ case 'warn-slippery':return '<rect x="52" y="64" width="48" height="27" rx="8" fill="'+ink+'"/>'+P('M54 92Q43 108 54 116M72 94Q62 107 77 113M89 93Q110 104 101 115','stroke="'+ink+'" stroke-width="4" stroke-dasharray="7 8" fill="none"');
+ case 'warn-narrow':return P('M40 49L59 110M110 49L91 110',stroke);
+ case 'warn-airplane':return P('M75 35L85 71L119 84V95L85 91L82 113L92 121V127L75 120L58 127V121L68 113L65 91L31 95V84L65 71Z','fill="'+ink+'" stroke="'+ink+'" stroke-width="2"');
+ default:return '<text x="75" y="85" text-anchor="middle" font-size="55" font-weight="700" fill="'+ink+'">؟</text>';
+ }
+}
+function draw(sign,quiz=false){
+ const k=sign.icon;let frame='',pattern='';
+ if(k==='stop')frame='<path d="M45 8H105L142 45V105L105 142H45L8 105V45Z" fill="'+red+'" stroke="#fdfdfd" stroke-width="3"/>';
+ else if(k==='yield')frame='<path d="M75 138L8 12H142Z" fill="#fefefe" stroke="'+red+'" stroke-width="13" stroke-linejoin="round"/>';
+ else if(k.startsWith('warn-'))frame='<path d="M75 6L145 135H5Z" fill="white" stroke="'+red+'" stroke-width="11" stroke-linejoin="round"/>';
+ else if(k==='mandatory-right'||k==='mandatory-straight')frame='<circle cx="75" cy="75" r="65" fill="'+blue+'" stroke="#fff" stroke-width="3"/>';
+ else if(k==='no-entry')frame='<circle cx="75" cy="75" r="65" fill="'+red+'" stroke="#fff" stroke-width="3"/>';
+ else if(k==='no-parking'||k==='no-stopping')frame='<circle cx="75" cy="75" r="61" fill="'+blue+'" stroke="'+red+'" stroke-width="12"/>';
+ else frame='<circle cx="75" cy="75" r="62" fill="white" stroke="'+red+'" stroke-width="11"/>';
+ const cross=['no-uturn','no-left','no-right','no-overtake'].includes(k)?P('M27 27L123 123','stroke="'+red+'" stroke-width="10" fill="none"'):'';
+ const title=quiz?'رسم مبسط للوحة — اختاري معناها':sign.title+' — رسم مبسط للتدريب وليس نسخة رسمية';
+ return '<svg viewBox="0 0 150 150" class="ts-sign-svg" role="img" aria-label="'+esc(title)+'" xmlns="http://www.w3.org/2000/svg">'+frame+pictogram(k)+cross+'</svg>';
+}
+const stat=(state,id)=>state.signPractice?.[id]||{attempts:0,correct:0,wrong:0,lastResult:null};
+function choices(sign,signs){
+ let pool=signs.filter(x=>x.category===sign.category&&x.id!==sign.id);
+ const idx=Number(sign.id.slice(3));
+ const opts=[sign,pool[(idx*3)%pool.length],pool[(idx*7+5)%pool.length]];
+ if(opts[1]?.id===opts[2]?.id)opts[2]=pool[(idx*7+6)%pool.length];
+ const rot=idx%3;return opts.slice(rot).concat(opts.slice(0,rot));
+}
+function filtered(course,state){
+ let signs=course.sign_library||[];
+ if(filter==='تنظيمية'||filter==='تحذيرية')signs=signs.filter(x=>x.category===filter);
+ else if(filter==='mistakes')signs=signs.filter(x=>(stat(state,x.id).wrong||0)>0&&(stat(state,x.id).lastResult===false));
+ else if(filter==='new')signs=signs.filter(x=>stat(state,x.id).attempts===0);
+ return signs;
+}
+function page(course,state){
+ const signs=course.sign_library||[],items=filtered(course,state);const attempts=signs.reduce((n,x)=>n+stat(state,x.id).attempts,0),wrong=signs.filter(x=>stat(state,x.id).lastResult===false).length,studied=signs.filter(x=>stat(state,x.id).attempts>0).length;
+ let body='';
+ if(mode==='study'){
+  if(selected){const a=signs.find(x=>x.id===selected);body=a?'<section class="ts-detail"><button class="ts-return" type="button" data-action="sign-back">← جميع اللوحات</button><div class="ts-detail-grid"><div class="ts-icon-panel">'+draw(a)+'</div><div><span class="ts-overline">'+esc(a.category)+' / بطاقة '+a.id+'</span><h2>'+esc(a.title)+'</h2><h3>وش تعني؟</h3><p>'+esc(a.meaning)+'</p><h3>وش أسوي إذا شفتها؟</h3><p>'+esc(a.action)+'</p><h3>لا تخلطين بينها وبين…</h3><p>'+esc(a.memory_tip)+'</p><a class="ts-link" href="#/lesson/'+Number(a.lesson_ids[0].slice(-3))+'">راجعي درسها في المنهج ←</a></div></div></section>':'';
+  }else body='<div class="ts-grid">'+items.map(a=>'<button type="button" class="ts-card" data-action="sign-open" data-id="'+a.id+'"><span class="ts-art">'+draw(a)+'</span><span class="ts-category">'+esc(a.category)+' · '+(stat(state,a.id).attempts?'تمت مراجعتها':'جديدة')+'</span><strong>'+esc(a.title)+'</strong><span class="ts-card-arrow">المعنى والتصرف ←</span></button>').join('')+'</div>';
+ }else {
+  if(quizIndex>=items.length)quizIndex=0;
+  const q=answered!==null&&answeredSignId?signs.find(x=>x.id===answeredSignId):items[quizIndex];if(!q)body='<div class="ts-empty">ما عندك لوحات بهذه الحالة حاليًا. اختاري «الكل» وكمّلي المراجعة.</div>';
+  else{const opts=choices(q,signs),wasAnswered=answered!==null;
+   body='<section class="ts-exam"><div class="ts-exam-top"><span>لوحة '+(quizIndex+1)+' / '+items.length+'</span><span>الإجابة لا تُظهر الاسم قبل اختيارك</span></div><div class="ts-exam-art">'+draw(q,true)+'</div><h2>وش معنى هذه اللوحة؟</h2><div class="ts-choices">'+opts.map(x=>'<button type="button" data-action="sign-answer" data-choice="'+x.id+'" class="ts-choice '+(wasAnswered?(x.id===q.id?'is-correct':x.id===answered?'is-wrong':''):'')+'" '+(wasAnswered?'disabled':'')+'>'+esc(x.title)+'</button>').join('')+'</div>'+(wasAnswered?'<div role="status" class="ts-explanation"><strong>'+(answered===q.id?'صح!':'الإجابة المناسبة: '+esc(q.title))+'</strong><p>'+esc(q.meaning)+'</p><p><b>التصرف:</b> '+esc(q.action)+'</p><a href="#/lesson/'+Number(q.lesson_ids[0].slice(-3))+'">ارجعي للدرس المرتبط ←</a></div>':'')+'<div class="ts-controls"><button data-action="sign-next" class="ts-next" type="button">'+(quizIndex===items.length-1?'إعادة الجولة':'اللوحة التالية ←')+'</button></div></section>';
+  }
+ }
+ return '<div class="ts-page"><section class="ts-header"><div><span class="ts-overline">TRAFFIC SIGNS / تَعَلُّم بِالصُّورَة</span><h1>إشارات المرور</h1><p>تعرّفي على اللوحة، افهمي معناها، ثم اختبري نفسك بصورتها وحدها. الرسومات مبسّطة للتدريب، <strong>وليست صورًا رسمية مطابقة</strong>.</p></div><div class="ts-header-counter"><b>'+studied+'<small> / '+signs.length+'</small></b><span>لوحة دخلت مراجعتك</span></div></section><div class="ts-facts"><span>24 لوحة أولية · تنظيمية وتحذيرية</span><span>الإجابات المسجلة: '+attempts+'</span><span>تحتاج مراجعة: '+wrong+'</span></div><div class="ts-toolbar"><div role="group" aria-label="طريقة المذاكرة"><button type="button" data-action="sign-mode" data-mode="study" aria-pressed="'+(mode==='study')+'" class="'+(mode==='study'?'active':'')+'">مكتبة اللوحات</button><button type="button" data-action="sign-mode" data-mode="quiz" aria-pressed="'+(mode==='quiz')+'" class="'+(mode==='quiz'?'active':'')+'">اختبري نفسك</button></div><div class="ts-filters" role="group" aria-label="تصفية الإشارات">'+[['all','الكل'],['تحذيرية','تحذيرية'],['تنظيمية','تنظيمية'],['mistakes','أخطائي'],['new','الجديدة']].map(([id,txt])=>'<button type="button" data-action="sign-filter" data-filter="'+id+'" aria-pressed="'+(filter===id)+'" class="'+(filter===id?'active':'')+'">'+txt+'</button>').join('')+'</div></div>'+body+'<section class="ts-note"><strong>مهم قبل الاختبار</strong><p>المرور السعودي يضم أيضًا الإرشادية والمؤقتة؛ هذه مكتبة بداية ولا تغطي كل اللوحات. لم ننتهِ من مطابقة تفاصيل رسوماتها مع الرسم الحكومي الرسمي. عند اختلاف الشكل أو الاسم، اعتمدي مرجع المرور.</p><a href="https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/" target="_blank" rel="noopener noreferrer">دليل الإشارات المرورية — المرور السعودي ↗</a></section></div>';
+}
+function click(action,el,ctx){
+ const c=ctx.course,s=ctx.state;
+ if(action==='sign-mode'){mode=el.dataset.mode==='quiz'?'quiz':'study';selected=null;answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
+ if(action==='sign-filter'){filter=el.dataset.filter||'all';selected=null;answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
+ if(action==='sign-open'){if(c.sign_library.some(x=>x.id===el.dataset.id)){selected=el.dataset.id;ctx.render(true)}return true}
+ if(action==='sign-back'){selected=null;ctx.render(true);return true}
+ if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice;if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
+  s.signPractice=s.signPractice||{};const prior=stat(s,q.id);
+  s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,lastReviewed:new Date().toISOString()};
+  answered=choice;answeredSignId=q.id;ctx.save();ctx.render(true);return true}
+ if(action==='sign-next'){quizIndex++;answered=null;answeredSignId=null;ctx.render(true);return true}
+ return false;
+}
+window.MasarSigns=Object.freeze({page,draw,click});
+})();
 (() => {
 'use strict';
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
 const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, sourceById=Object.fromEntries(COURSE.sources.map(s=>[s.id,s]));
 const baseKey='masar-driving-v1';
-let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{}};
+let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{}};
 try { const saved=JSON.parse(localStorage.getItem(baseKey)||'null'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(e){console.warn('Local data unavailable',e)}
 let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
@@ -6467,7 +7097,7 @@ const weeklyDone=w=>lessons.filter(l=>l.week===w&&isDone(l.order)).length;
 const progress=()=>Math.round(completed().size/48*100);
 const nextLesson=()=>lessons.find(l=>!isDone(l.order))||lessons[47];
 const resumeLesson=()=>Number.isInteger(state.lastOpened)&&state.lastOpened>=1&&state.lastOpened<=48&&(state.visited||[]).includes(state.lastOpened)?getLesson(state.lastOpened):null;
-const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/practice-quiz','quiz','أسئلة التجميعات'],['/practice-checklist','cards','مهارات التقييم'],['/paper-practice','quiz','اختبار ورقي'],['/study-guide','book','كيف أذاكر؟'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
+const navData=[['/home','home','الرئيسية'],['/weeks','layers','الخطة الدراسية'],['/quiz','quiz','الاختبارات'],['/practice-quiz','quiz','أسئلة التجميعات'],['/traffic-signs','layers','إشارات المرور'],['/practice-checklist','cards','مهارات التقييم'],['/paper-practice','quiz','اختبار ورقي'],['/study-guide','book','كيف أذاكر؟'],['/cards','cards','بطاقات المراجعة'],['/visuals','layers','الشرح المرئي'],['/notes','note','ملاحظاتي'],['/sources','link','المصادر'],['/settings','setting','الإعدادات']];
 function sidebar(){const path=route();return `<aside class="sidebar ${mobileOpen?'open':''}" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">مساحتك التعليمية</div><nav class="nav">${navData.map(([href,ic,t])=>`<a href="#${href}" class="${path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':''}">${icon(ic)}<span>${t}</span>${href==='/weeks'?'<span class="tag">16</span>':''}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>مشوارك إلى الثقة</small><br><strong>${progress()}%</strong></div><div style="font-size:30px;color:#9eb5c8">${icon('road')}</div></div><div class="line"><i style="width:${progress()}%"></i></div><small>${completed().size} من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>`}
 function topbar(title){return `<header class="topbar"><div class="top-actions"><button type="button" class="chip menu-btn" data-action="menu" aria-label="فتح القائمة">${icon('menu')}</button><div class="crumb">لوحة التعلم <span style="padding:0 6px;color:#a8b5bd">/</span> <strong>${ESC(title)}</strong></div></div><div class="top-actions"><span class="chip">${icon('clock')} <span>30–45 دقيقة للجلسة</span></span><span class="chip red">${icon('road')} أكورد · سنة الطراز غير محددة</span></div></header>`}
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
@@ -6519,7 +7149,7 @@ function visualBlock(l){
  }).join('')+'</div>';
 }
 
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section><section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section>${mediaBlock(l)}<section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main"><section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section>${mediaBlock(l)}<section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
 function flashcardsPage(){const cards=[['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.'],['أعطِ الأفضلية','خففي السرعة وأفسحي المجال لمن له الأفضلية، وتوقفي عند الحاجة.'],['النقطة العمياء','منطقة قد لا تظهر بالكامل في المرايا، وتحتاج تحققًا مباشرًا آمنًا.'],['مسافة التوقف','مسافة رد الفعل + مسافة الفرملة.'],['الدوار','في الدوار المعتاد، الأولوية للمركبات التي تسير داخله.'],['النور العالي','يستخدم عندما تسمح الظروف دون إبهار المركبات الأخرى.'],['الخط المتقطع','قد يسمح بعبوره إذا كانت المناورة مسموحة وآمنة.'],['الركن P','وضع ناقل الحركة للركن، وليس مرادفًا لفرامل التوقف.'],['Brake Hold','مساعدة على تثبيت الفرامل وقت التوقف المؤقت، لا بدلًا عن تأمين ركن السيارة.'],['القيادة الوقائية','ألاحظ ← أتوقع ← أقرر ← أتصرف.'],['إشارة خضراء','تسمح بالحركة ضمن التنظيم دون إغلاق تقاطع مزدحم.'],['الرخصة','حجز أبشر ليس إصدارًا تلقائيًا للرخصة؛ هناك متطلبات وفحوص واختبارات.']];return `<div class="eyebrow">ACTIVE RECALL</div><h1 class="page-title">بطاقات تثبيت المعلومات</h1><p class="sub">حاولي تسترجعين المعنى من ذاكرتك أولًا، ثم اضغطي البطاقة لتظهر الإجابة. 12 بطاقة مفاهيمية سريعة.</p><div class="flashcards">${cards.map(([a,b],i)=>`<button type="button" class="flashcard ${flashFlips.has(i)?'flipped':''}" data-action="flip" data-id="${i}" aria-label="قلب بطاقة ${ESC(a)}"><span class="fc-title">${ESC(flashFlips.has(i)?b:a)}</span><span class="fc-hint">${flashFlips.has(i)?'اضغطي للعودة للسؤال':'اضغطي لإظهار الإجابة'} ${icon('reset')}</span></button>`).join('')}</div>${footerNote()}`}
 function visualLibraryPage(){
  const scenarios=COURSE.learning_visuals||[],resources=COURSE.media_resources||[];
@@ -6542,7 +7172,7 @@ if(session.index>=session.ids.length){const score=session.ids.filter(id=>session
 const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا قصيرًا، بصياغات تعليمية أولية تحتاج تدقيقًا قبل النشر العام.</div><div class="point"><i>2</i>48 سؤالًا تدريبيًا مع تفسير، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>البيانات منظمة داخل IndexedDB (دروس، أسئلة، ملاحظات، تقدم، اختبارات). لا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
-function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
+function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['المكتبة المرئية',visualLibraryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
 function timerHTML(){return `<div class="floating-timer" aria-label="مؤقت مذاكرة"><span style="font-size:11px;color:var(--steel);font-weight:850">${icon('clock')}</span><b id="timer-text">${p2(Math.floor(timer.seconds/60))}:${p2(timer.seconds%60)}</b><button type="button" data-action="timer-toggle" aria-label="${timer.active?'إيقاف المؤقت':'بدء المؤقت'}">${icon(timer.active?'pause':'play')}</button><button type="button" data-action="timer-reset" aria-label="إعادة ضبط المؤقت">${icon('reset')}</button></div>`}
 function render(keepScroll=false){const [title,content]=resolvePage();APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${content}</div></main>${timerHTML()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
@@ -6556,6 +7186,7 @@ if(!pool.length){toast('ما عندك أسئلة في هذه المجموعة ا
 function recordTest(){if(!session||session.saved)return;const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;state.history.push({label:session.label,score,total:session.ids.length,date:new Date().toLocaleDateString('ar-SA')});state.history=state.history.slice(-30);session.saved=true;save()}
 function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;const action=el.dataset.action,n=Number(el.dataset.id);
  if(action==='paper-print'){window.print();return}
+ if(action.startsWith('sign-')&&window.MasarSigns.click(action,el,{course:COURSE,state,save,render,toast}))return;
  if(action.startsWith('hub-')&&window.MasarHub.click(action,el,{course:COURSE,state,save,render,toast,db:window.MasarDB}))return;
  if(action==='persist-storage'){if(!navigator.storage?.persist){toast('المتصفح لا يدعم طلب تثبيت التخزين؛ احفظي نسخة احتياطية');return}navigator.storage.persist().then(granted=>toast(granted?'المتصفح وافق على التخزين المستمر في هذا الجهاز':'المتصفح لم يمنح ضمانًا ضد الحذف التلقائي')).catch(()=>toast('لم نتمكن من طلب التخزين المستمر'));return}
  if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
@@ -6576,7 +7207,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='timer-reset'){timer.active=false;timer.seconds=1800;render(true);return}
  if(action==='export'){const data=JSON.stringify({format:'masar-progress-v1',exportedAt:new Date().toISOString(),state},null,2);const blob=new Blob([data],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='masar-my-progress.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('تم تجهيز نسخة بياناتك الاحتياطية');return}
  if(action==='import'){document.getElementById('import-file')?.click();return}
- if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
+ if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
 }
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});

@@ -224,3 +224,65 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .hub-q-links .btn{font-size:11px}
 .hub-question .hub-source-note{margin:16px 0 7px}
 @media(max-width:700px){.lesson-sources{padding:16px!important}.lesson-source-row{align-items:flex-start;flex-direction:column}.lesson-source-row .btn{width:100%}}
+
+
+/* Traffic signs study gallery: high-contrast, keyboard accessible, RTL. */
+.ts-page{max-width:1180px;margin-inline:auto;padding-bottom:24px}
+.ts-header{display:flex;gap:24px;align-items:center;justify-content:space-between;padding:29px 31px;border-radius:24px;background:radial-gradient(ellipse at 5% 110%,#5C7896 0%,#202D36 48%,#17242c 100%);color:#fff;overflow:hidden}
+.ts-header>div:first-child{max-width:660px;min-width:0}
+.ts-overline{font-weight:800;font-size:11px;letter-spacing:.1em;color:#b0c9d9}
+.ts-header h1{color:#fff;font-size:clamp(28px,4.8vw,52px);margin:8px 0 10px;letter-spacing:-.04em}
+.ts-header p{color:#e4eef3;font-size:13px;line-height:2;max-width:610px;margin:0}
+.ts-header-counter{flex-shrink:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:15px 21px;min-width:160px;text-align:center}
+.ts-header-counter b{font-variant-numeric:tabular-nums;font-size:45px;display:block;line-height:1.3}
+.ts-header-counter small{font-size:18px;font-weight:500;color:#b4cedf}
+.ts-header-counter span{color:#d9e5eb;font-size:11px}
+.ts-facts{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}
+.ts-facts span{font-size:11px;color:#455f6f;border:1px solid #d7e4e9;background:#fff;padding:8px 12px;border-radius:20px}
+.ts-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 22px}
+.ts-toolbar>div{display:flex;flex-wrap:wrap;gap:5px}
+.ts-toolbar button{border:1px solid #d3e1e8;background:#fff;color:#486276;border-radius:10px;min-height:40px;padding:8px 12px;font-weight:700;font-size:12px;transition:background .15s}
+.ts-toolbar button.active,.ts-toolbar button[aria-pressed=true]{background:#202D36;color:#fff;border-color:#202D36}
+.ts-toolbar button:focus-visible,.ts-card:focus-visible,.ts-choice:focus-visible,.ts-next:focus-visible,.ts-return:focus-visible{outline:3px solid #7598B9;outline-offset:3px}
+.ts-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.ts-card{display:flex;align-items:center;flex-direction:column;gap:9px;border:1px solid #d8e4ea;border-radius:17px;background:#fff;padding:22px 12px 17px;min-height:240px;text-align:center;box-shadow:0 5px 14px rgba(32,45,54,.025);transition:transform .17s,border-color .17s,box-shadow .17s}
+.ts-card:hover{transform:translateY(-3px);border-color:#a8c6d7;box-shadow:0 12px 26px rgba(32,45,54,.085)}
+.ts-art{display:grid;place-items:center;min-height:138px;width:100%}
+.ts-sign-svg{width:135px;max-width:100%;height:auto;display:block}
+.ts-category{color:#678092;font-size:11px}
+.ts-card strong{color:#1f333e;font-size:14px;line-height:1.6}
+.ts-card-arrow{color:#800C1F;font-size:11px;font-weight:750;margin-top:auto}
+.ts-detail{border:1px solid #dfe7ec;border-radius:21px;background:#fff;padding:25px}
+.ts-return{border:0;background:#edf3f7;color:#25485e;padding:9px 15px;border-radius:10px;font-size:12px;font-weight:700;margin-bottom:16px}
+.ts-detail-grid{display:grid;grid-template-columns:minmax(190px,270px) 1fr;gap:32px;align-items:center}
+.ts-icon-panel{background:#f0f5f8;border:1px solid #dde7ed;border-radius:21px;min-height:275px;display:grid;place-items:center}
+.ts-icon-panel .ts-sign-svg{width:205px}
+.ts-detail h2{color:#202D36;font-size:27px;margin:5px 0 21px}
+.ts-detail h3{font-size:14px;margin:13px 0 3px;color:#800C1F}
+.ts-detail p{color:#405a6b;font-size:13px;line-height:1.95;margin:3px 0}
+.ts-link{display:inline-flex;color:#800C1F;font-size:13px;font-weight:750;margin-top:18px}
+.ts-exam{max-width:775px;margin:0 auto;padding:24px;border-radius:21px;background:#fff;border:1px solid #dfe7ed}
+.ts-exam-top{display:flex;justify-content:space-between;gap:12px;color:#657a88;font-size:11px}
+.ts-exam-art{border-radius:16px;background:#f0f5f8;margin:16px auto 18px;display:grid;place-items:center;min-height:225px}
+.ts-exam-art .ts-sign-svg{width:175px}
+.ts-exam h2{font-size:21px;color:#202D36;margin:18px 0 14px;text-align:center}
+.ts-choices{display:grid;gap:10px}
+.ts-choice{background:#fff;border:1px solid #d7e3eb;color:#273e4f;padding:13px 15px;min-height:49px;border-radius:11px;font-size:14px;text-align:right}
+.ts-choice:not(:disabled):hover{background:#eff6f9;border-color:#7598B9}
+.ts-choice.is-correct{border-color:#49a47c;background:#e6f5ed}
+.ts-choice.is-wrong{border-color:#ba425a;background:#ffeff1}
+.ts-explanation{border-inline-start:4px solid #629f83;background:#ebf6f0;margin:16px 0 9px;padding:13px 18px;border-radius:9px;color:#255448}
+.ts-explanation strong{font-size:14px}
+.ts-explanation p{font-size:12px;line-height:1.8;margin:8px 0}
+.ts-explanation a{display:inline-block;color:#800C1F;font-size:12px;font-weight:700;margin-top:7px}
+.ts-controls{display:flex;justify-content:flex-end;margin-top:14px}
+.ts-next{padding:11px 22px;border-radius:11px;background:#800C1F;color:#fff;border:0;font-size:13px;font-weight:750;min-height:42px}
+.ts-empty{padding:35px 20px;text-align:center;color:#4b6475;background:#fff;border:1px dashed #bbcfdc;border-radius:18px;font-size:14px}
+.ts-note{background:#f4f6f8;border-inline-start:4px solid #800C1F;border-radius:13px;padding:17px 21px;margin-top:25px;color:#435e6d}
+.ts-note strong{color:#202D36;font-size:13px}
+.ts-note p{line-height:1.9;font-size:12px;margin:7px 0}
+.ts-note a{color:#800C1F;font-weight:700;font-size:12px}
+@media(max-width:1050px){.ts-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.ts-header{padding:22px;align-items:flex-start;flex-direction:column}.ts-header-counter{display:flex;align-items:center;gap:9px;width:100%;justify-content:space-between}.ts-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.ts-card{padding:14px 7px;min-height:213px}.ts-art{min-height:122px}.ts-sign-svg{width:113px}.ts-detail-grid{grid-template-columns:1fr}.ts-detail{padding:16px}.ts-icon-panel{min-height:210px}.ts-detail h2{font-size:23px}.ts-exam{padding:15px}.ts-exam-top{flex-wrap:wrap}}
+@media(max-width:380px){.ts-grid{grid-template-columns:1fr 1fr}.ts-card strong{font-size:12px}.ts-toolbar button{font-size:11px;padding:7px 9px}.ts-sign-svg{width:104px}}
+@media(prefers-reduced-motion:reduce){.ts-card,.ts-toolbar button{transition:none}.ts-card:hover{transform:none}}

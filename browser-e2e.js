@@ -26,7 +26,7 @@ const assert=require('node:assert/strict');
   console.log('PASS Chromium: lesson reflection and check state survive reload');
   await page.goto(base+'#/traffic-signs',{waitUntil:'domcontentloaded'});
   await page.locator('.ts-grid .ts-card').first().waitFor();
-  assert.equal(await page.locator('.ts-grid .ts-card').count(),24);
+  assert.equal(await page.locator('.ts-grid .ts-card').count(),36);
   await page.locator('[data-action="sign-mode"][data-mode="quiz"]').click();
   await page.locator('[data-action="sign-answer"]').first().click();
   await page.locator('.ts-explanation').waitFor();

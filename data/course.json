@@ -6444,6 +6444,78 @@
       "pictogram_status": "educational_illustration_not_official",
       "review_status": "requires_official_pictogram_comparison",
       "is_official_exam_question": false
+    },
+    {
+      "id": "SG-29",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "أعمال على الطريق",
+      "icon": "temp-workers",
+      "meaning": "تنبيه إلى وجود أعمال صيانة أو إنشاء بالقرب من مسار الحركة.",
+      "action": "خففي السرعة حسب اللوحات القائمة، وزيدي مسافة الأمان وانتبهي للعمال.",
+      "memory_tip": "هذه بطاقة موقف تعليمية ولا تمثل نسخة مطابقة للوحة رسمية.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-30",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "تضييق مؤقت للمسار",
+      "icon": "temp-narrow",
+      "meaning": "تنبيه إلى أن مساحة المرور المتاحة قد تضيق قرب منطقة عمل.",
+      "action": "راقبي اللوحات والحواجز، ولا تغيّري المسار إلا بعد التأكد من الأمان.",
+      "memory_tip": "لا تفترضي أن المسار المجاور متاح قبل التحقق.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-022"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-31",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "تحويلة مرورية مؤقتة",
+      "icon": "temp-detour",
+      "meaning": "قد يُوجّه المرور إلى مسار بديل بسبب أعمال قائمة.",
+      "action": "اتبعي اتجاه التحويلة الفعلي ولا تتجاوزي الحواجز.",
+      "memory_tip": "الاتجاه في الرسم توضيحي فقط؛ اتبعي الأسهم الميدانية.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-32",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "حواجز منطقة عمل",
+      "icon": "temp-barrier",
+      "meaning": "توضح وجود منطقة عمل أو جزء غير متاح من الطريق.",
+      "action": "حافظي على مسافة كافية والتزمي بالمسار المفتوح الذي تحدده الإشارات.",
+      "memory_tip": "الحاجز وسيلة تنظيم ميدانية وليس لوحة أولوية.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-040"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
     }
   ],
   "sign_learning": {

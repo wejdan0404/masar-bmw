@@ -90,7 +90,7 @@ function click(action,el,ctx){
  if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice;if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
   s.signPractice=s.signPractice||{};const prior=stat(s,q.id);
   s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,lastReviewed:new Date().toISOString()};
-  answered=choice;answeredSignId=q.id;ctx.save();ctx.render(true);return true}
+  answered=choice;answeredSignId=q.id;window.MasarCoach?.record(s,'sign',q.id,choice===q.id);ctx.save();ctx.render(true);return true}
  if(action==='sign-next'){quizIndex++;answered=null;answeredSignId=null;ctx.render(true);return true}
  return false;
 }

@@ -548,3 +548,16 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah Sans',
 @media(min-width:1051px) and (max-width:1230px){.sidebar{width:258px}.app-main{margin-right:258px}}
 @media(max-width:1050px){.sidebar{padding:19px 13px}.sidebar .logo{margin-bottom:17px}}
 @media(prefers-reduced-motion:reduce){.sidebar-section-nav a{transition:none}}
+
+/* Source library — distinction between indexing and actual local attachment */
+.source-library-summary{display:flex;align-items:flex-start;flex-direction:column;gap:7px;padding:19px 22px;margin-bottom:16px;background:#edf3f6;border:1px solid #d5e3eb;border-right:4px solid #7095aa;border-radius:16px}
+.source-library-summary strong{font-size:15px;color:#203a4c}
+.source-library-summary span{font-size:12px;color:#5d7482;line-height:1.8}
+.source-role{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.source-role span{font-size:10px;background:#f1f5f7;border-radius:30px;padding:4px 9px;color:#536e7e;border:1px solid #e2e9ed}
+.source-topic-index{margin:12px 0;padding:10px 12px;border:1px solid #dbe4eb;border-radius:11px;background:#fafcfd}
+.source-topic-index summary{font-size:12px;font-weight:800;color:#35566e;cursor:pointer}
+.source-topic-index>div{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.source-topic-index a{font-size:11px;text-decoration:none;background:#e9f1f6;color:#315b77;padding:5px 10px;border-radius:9px}
+.source-topic-index a:hover{text-decoration:underline}
+.source-topic-index small{font-size:10px;color:#627b88}

@@ -208,3 +208,5 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
  .paper-item span{font-size:10pt}
  .eyebrow,.page-title,.sub{display:none!important}
 }
+
+.hub-fault-ref{margin:30px 0}.hub-fault-ref>h2{font-size:20px}.hub-fault-ref>p{color:#576e7d;font-size:13px}.hub-fault-group{border:1px solid #dae4e8;background:#fff;margin:9px 0;border-radius:12px;padding:12px 18px}.hub-fault-group summary{font-size:13px;font-weight:750;cursor:pointer;color:#293e4b}.hub-fault-group ul{padding-inline-start:23px;margin-top:12px}.hub-fault-group li{font-size:12px;line-height:1.95;padding:4px 0;color:#425b68}

@@ -22,6 +22,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check study-coach.js
+          node --check traffic-signs.js
+          node --check study-hub.js
+          node --check visuals.js
+          node --check db/indexeddb.js
+          node --check smoke-test.js
+          node --check validate-dataset.js
+          node --check browser-e2e.js
       - name: Validate content and compiled site
         run: node validate-dataset.js
       - name: Run smoke tests

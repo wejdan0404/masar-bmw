@@ -359,6 +359,17 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .coach-page button:focus-visible,.coach-review-item:focus-visible{outline:3px solid #7598B9;outline-offset:2px}
 @media(max-width:760px){.coach-summary{grid-template-columns:1fr 1fr}.coach-summary article:last-child{grid-column:1/-1}.coach-summary article{padding:16px}.coach-summary strong{font-size:24px}.coach-section-top{flex-direction:column;align-items:flex-start;gap:5px}.coach-mock-question{padding:15px}.coach-mock-question h2{font-size:18px}.coach-activity{padding:16px}}
 @media(prefers-reduced-motion:reduce){.coach-mock-progress span{transition:none}}
+
+
+/* Primary-source school policies are contextual, not nationwide licensing rules */
+.hub-school-policy{margin:22px 0;padding:19px;background:#edf3f7;border-radius:16px;border:1px solid #cfdfe9}
+.hub-school-policy h2{font-size:17px;color:#202D36;margin:0 0 7px}
+.hub-school-policy>p{font-size:12px;line-height:1.9;color:#435b6b}
+.hub-school-policy article{border:1px solid #dbe6ed;background:#fff;padding:13px 15px;margin:9px 0;border-radius:11px}
+.hub-school-policy article strong,.hub-school-policy article small,.hub-school-policy article a{display:block;line-height:1.8}
+.hub-school-policy article strong{font-size:13px;color:#223a48}
+.hub-school-policy article small{font-size:11px;color:#617d8b}
+.hub-school-policy article a{font-size:11px;color:#800C1F;font-weight:700}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -7675,9 +7686,13 @@ function lessonReadings(course,lesson){
  var list=row.resources||[];
  return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">READING MAP / مراجع الدرس</div><h2>وين أقرأ هذا الموضوع في الكتب؟</h2><p>هذا فهرس قراءة للموضوع، <strong>وليس تصديقًا نهائيًا لكل جملة في الدرس</strong>. ترقيم PDF يختلف عن رقم الصفحة المطبوع في بعض الكتب.</p>'+list.map(function(a){var item=(course.personal_documents||[]).find(function(x){return x.id===a.source_id});var page=a.pdf_page_start,pg=page===a.pdf_page_end?'صفحة PDF '+page:'صفحات PDF '+page+'–'+a.pdf_page_end;return '<div class="lesson-source-row"><div><strong>'+E(a.source_title)+'</strong><small>'+pg+(a.printed_page_start?' · مطبوع '+a.printed_page_start+(a.printed_page_end!==a.printed_page_start?'–'+a.printed_page_end:''):'')+'</small></div><button type="button" class="btn btn-outline" data-action="hub-open-page" data-source="'+E(a.source_id)+'" data-page="'+page+'">افتحي المرجع</button></div>'}).join('')+'<p class="hub-legal">'+(row.review_status==='needs_fresh_primary_or_vehicle_confirmation'?'هذا الموضوع يحتاج كذلك تأكيدًا بمصدر حديث أو دليل السيارة أو تعليمات المدرسة.':'تم تحديد الفصل والصفحات المناسبة؛ المراجعة التفصيلية للنصوص مستمرة.')+'</p><a href="#/sources" class="inline-link">إذا ما أضفتِ الكتاب بعد، افتحي مكتبة المصادر ←</a></section>';
 }
+function schoolPolicies(course){
+ var rows=course.school_specific_evidence||[];if(!rows.length)return '';
+ return '<section class="hub-school-policy"><h2>مثال موثق من مدرسة سعودية — وليس قاعدة لجميع المدارس</h2><p>بعض التجميعات تخلط بين عدد أخطاء التقييم وعدد ساعات برامج التدريب. هذه بيانات منشورة من مدرسة جامعة القصيم، ولا تنطبق تلقائيًا على مدرستك.</p>'+rows.map(function(x){return '<article><strong>'+E(x.claim)+'</strong><small>'+E(x.applies_to)+'</small><a href="'+E(x.source_url)+'" target="_blank" rel="noopener noreferrer">المصدر من موقع المدرسة ↗</a></article>'}).join('')+'</section>';
+}
 function practicePage(course,state){
  var blocks=course.practical_checklist||[],checked=state.practiceChecks||{};
- return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+faultDetails(course)+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
+ return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+schoolPolicies(course)+faultDetails(course)+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
 }
 function docsPage(course,state){
  var files=(course.personal_documents||[]).concat(course.uploaded_image_index||[]),byKind=(course.external_study_sources||[]);

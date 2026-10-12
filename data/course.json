@@ -2888,6 +2888,36 @@
   "road_traffic_direction": "keep_right_side_of_road",
   "media_resources": [
     {
+      "id": "VIDEO-QUDS-X",
+      "title": "مهارة X — الرجوع للخلف في موقف",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة (QUDS)",
+      "url": "https://www.youtube.com/watch?v=J36565XrCk4",
+      "kind": "youtube_video",
+      "youtube_id": "J36565XrCk4",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-035"
+      ],
+      "published": "2020-02-09",
+      "verification_note": "فيديو منشور باسم المدرسة على قناة QUDS؛ تشغيل التضمين داخل موقع آخر لم يُتحقق منه"
+    },
+    {
+      "id": "VIDEO-QUDS-GARAGE",
+      "title": "مهارة الكراج — مثال مصوّر من مدرسة جامعة القصيم",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة (QUDS)",
+      "url": "https://www.youtube.com/watch?v=Peyh1mXONAU",
+      "kind": "youtube_video",
+      "youtube_id": "Peyh1mXONAU",
+      "lesson_ids": [
+        "LES-031",
+        "LES-033",
+        "LES-035"
+      ],
+      "published": "2020-10-12",
+      "verification_note": "نتيجة YouTube باسم المدرسة؛ قد يمنع ناشر الفيديو التضمين في بعض المواقع"
+    },
+    {
       "id": "MEDIA-QASSIM-MANEUVERS",
       "title": "فيديوهات مهارات الركن والمناورات X وT وY",
       "provider": "مدرسة جامعة القصيم لتعليم القيادة",

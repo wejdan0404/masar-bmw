@@ -12,7 +12,7 @@ const context={console,Math,Date,Number,String,Array,Set,Object,JSON,URL,Blob,
  window:{scrollTo(){},addEventListener(t,fn){windowHandlers[t]=fn}},
  location:{hash:'#/home'},localStorage:{getItem(k){return saved[k]||null},setItem(k,v){saved[k]=v}},
  setInterval(){return 1},setTimeout(){return 1},clearTimeout(){},confirm(){return true}};
-vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/study-hub.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
+vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/study-hub.js','utf8'),context,{timeout:3000});vm.runInContext(fs.readFileSync(__dirname+'/traffic-signs.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
 for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/visuals','المكتبة المرئية'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);
@@ -69,3 +69,20 @@ console.log('PASS per-lesson private PDF reading references');
 context.location.hash='#/practice-quiz';windowHandlers.hashchange();
 if(!element('app').innerHTML.includes('أخطائي')||!element('app').innerHTML.includes('غير المحلول')||!element('app').innerHTML.includes('راجعي الدرس المرتبط'))throw Error('Mistakes filters and lesson links absent');
 console.log('PASS targeted mistakes review, per-question notes, chapter back-links');
+
+context.location.hash='#/traffic-signs';windowHandlers.hashchange();
+if(!element('app').innerHTML.includes('TRAFFIC SIGNS')||!element('app').innerHTML.includes('SG-01'))throw Error('Signs gallery not rendered');
+click({action:'sign-open',id:'SG-01'});
+if(!element('app').innerHTML.includes('توقف كامل')||!element('app').innerHTML.includes('راجعي درسها'))throw Error('Sign detail incomplete');
+click({action:'sign-back'});
+click({action:'sign-mode',mode:'quiz'});
+if(!element('app').innerHTML.includes('وش معنى هذه اللوحة؟'))throw Error('Sign recognition quiz absent');
+// First quiz is SG-01. Test a wrong answer persists and is explainable.
+click({action:'sign-answer',choice:'SG-02'});
+if(!saved['masar-driving-v1'].includes('"SG-01"'))throw Error('Sign review result not persisted');
+if(!element('app').innerHTML.includes('الإجابة المناسبة: قف'))throw Error('Wrong-answer explanation absent');
+click({action:'sign-filter',filter:'mistakes'});
+if(!element('app').innerHTML.includes('وش معنى هذه اللوحة؟'))throw Error('Mistakes-only quiz not available');
+click({action:'sign-answer',choice:'SG-01'});
+if(!element('app').innerHTML.includes('صح!'))throw Error('Correcting prior mistake failed');
+console.log('PASS traffic signs gallery, filtered quizzes, locally saved answers and retry');

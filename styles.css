@@ -358,3 +358,14 @@ body{background:var(--paper);font-family:'IBM Plex Sans Arabic','Noto Sans Arabi
 .coach-page button:focus-visible,.coach-review-item:focus-visible{outline:3px solid #7598B9;outline-offset:2px}
 @media(max-width:760px){.coach-summary{grid-template-columns:1fr 1fr}.coach-summary article:last-child{grid-column:1/-1}.coach-summary article{padding:16px}.coach-summary strong{font-size:24px}.coach-section-top{flex-direction:column;align-items:flex-start;gap:5px}.coach-mock-question{padding:15px}.coach-mock-question h2{font-size:18px}.coach-activity{padding:16px}}
 @media(prefers-reduced-motion:reduce){.coach-mock-progress span{transition:none}}
+
+
+/* Primary-source school policies are contextual, not nationwide licensing rules */
+.hub-school-policy{margin:22px 0;padding:19px;background:#edf3f7;border-radius:16px;border:1px solid #cfdfe9}
+.hub-school-policy h2{font-size:17px;color:#202D36;margin:0 0 7px}
+.hub-school-policy>p{font-size:12px;line-height:1.9;color:#435b6b}
+.hub-school-policy article{border:1px solid #dbe6ed;background:#fff;padding:13px 15px;margin:9px 0;border-radius:11px}
+.hub-school-policy article strong,.hub-school-policy article small,.hub-school-policy article a{display:block;line-height:1.8}
+.hub-school-policy article strong{font-size:13px;color:#223a48}
+.hub-school-policy article small{font-size:11px;color:#617d8b}
+.hub-school-policy article a{font-size:11px;color:#800C1F;font-weight:700}

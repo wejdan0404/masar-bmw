@@ -17,6 +17,7 @@ jobs:
           node --check visuals.js
           node --check study-hub.js
           node --check traffic-signs.js
+          node --check study-coach.js
           node --check validate-dataset.js
           node --check db/indexeddb.js
           node --check smoke-test.js

@@ -22,7 +22,9 @@ assert(d.practical_assessment_reference.official_unified_standard===false);
 assert.equal(d.community_pages.image_links.length,39);
 const lessonIds=new Set(d.lessons.map(x=>x.id)),weekIds=new Set(d.weeks.map(x=>x.id)),allSourceIds=new Set([...(d.personal_documents||[]),...(d.uploaded_image_index||[]),...(d.external_study_sources||[])].map(x=>x.id));
 for(const l of d.lessons)assert(weekIds.has(l.week_id),'Orphan lesson: '+l.id);
+const supportedReviewVisuals=new Set(['stop','yield','no-entry','speed60','no-parking','no-uturn','traffic-light','roundabout','blue-direction','warning','intersection','distance','lane','parking','seatbelt','tpms','check-engine','book','construction','road','pedestrians','overtake','fog']);
 for(const q of d.review_questions){
+ assert(supportedReviewVisuals.has(q.visual_key),'Missing review visual implementation: '+q.id+' -> '+q.visual_key);
  assert(Array.isArray(q.options)&&q.options.length>=3);
  assert(Number.isInteger(q.correct_option_index)&&q.correct_option_index>=0&&q.correct_option_index<q.options.length);
  assert(q.explanation.length>=25,'No explanation '+q.id);

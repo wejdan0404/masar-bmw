@@ -24,6 +24,7 @@ jobs:
           python-version: '3.12'
       - name: Check JavaScript syntax
         run: |
+          node --check learning-studio.js
           node --check app.js
           node --check study-coach.js
           node --check traffic-signs.js

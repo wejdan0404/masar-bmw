@@ -20,9 +20,8 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('خلف المقود'),'Home hero heading is missing');
   assert.match(await page.title(),/مِسار/);
   assert.equal(await page.locator('.hero-brooch-art,.brooch-svg,.hero-porsche-scene').count(),0,'Old jewelry/Porsche artwork must not return');
-  assert.equal(await page.locator('.hero-bmw-scene .bmw-hero-photo').count(),1,'Black BMW car photo must appear in hero');
-  assert.match(await page.locator('.bmw-hero-photo').getAttribute('src'),/images\.unsplash\.com\/photo-1616591938203/);
-  assert.equal(await page.locator('.bmw-silhouette').count(),1,'The offline fallback must be a car silhouette');
+  assert.equal(await page.locator('.hero-bmw-scene,.bmw-hero-photo,.bmw-silhouette,.hero-premium img').count(),0,
+    'Do not show any temporary car image until user supplies her chosen photo');
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','New visitors start in BMW dark mode');
   assert.equal(await page.locator('[data-action="theme-toggle"]').count(),1,'Theme switch exists in the top bar');
   const darkCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
@@ -114,18 +113,15 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.reload({waitUntil:'domcontentloaded'});
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','Dark preference persists');
   await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
-  console.log('PASS Chromium: black BMW hero, dark/light themes and persistence');
-  const heroDesktop=await page.locator('.hero-bmw-scene').evaluate(el=>{
-    const r=el.getBoundingClientRect(),style=getComputedStyle(el),img=el.querySelector('.bmw-hero-photo');
-    return {width:r.width,opacity:Number(style.opacity),imageOpacity:Number(getComputedStyle(img).opacity),
-      imageFilter:getComputedStyle(img).filter,hasFallback:!!el.querySelector('.bmw-silhouette')};
+  console.log('PASS Chromium: image-free hero and dark/light themes persist');
+  const heroDesktop=await page.locator('.hero-premium').evaluate(el=>{
+    const frame=el.getBoundingClientRect(),copy=el.querySelector('.hero-copy')?.getBoundingClientRect();
+    return {width:frame.width,copyWidth:copy?.width||0,mediaCount:el.querySelectorAll('img,svg.bmw-silhouette,.hero-bmw-scene').length};
   });
-  assert(heroDesktop.width>=450,'Desktop hero image area must be large enough: '+JSON.stringify(heroDesktop));
-  assert(heroDesktop.opacity>=.95,'Desktop car scene should no longer fade');
-  assert(heroDesktop.imageOpacity>=.95,'Car image should not be translucent');
-  assert(heroDesktop.hasFallback,'Offline fallback must be present');
-  console.log('PASS Chromium: high-visibility BMW on desktop');
-
+  assert(heroDesktop.width>=850,'Desktop hero should fill main reading column: '+JSON.stringify(heroDesktop));
+  assert(heroDesktop.copyWidth>=560,'Text should use space freed by deleted photo: '+JSON.stringify(heroDesktop));
+  assert.equal(heroDesktop.mediaCount,0,'Hero must stay image-free until photo is chosen');
+  console.log('PASS Chromium: accessible text-first hero without a placeholder photo');
 
   assert.equal(await page.locator('.studio-session').count(),0,'Home must not show a timer card');
   assert.equal(await page.locator('.studio-timer-dock,.floating-timer').count(),0,'No timer overlay on initial home visit');
@@ -351,20 +347,16 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   const homeSizes=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
   assert(homeSizes.scroll<=homeSizes.width+8,'Mobile learning studio horizontal overflow: '+JSON.stringify(homeSizes));
   console.log('PASS Chromium: mobile learning studio avoids horizontal scrolling');
-  const heroMobile=await page.evaluate(()=>{
-    const media=document.querySelector('.hero-bmw-scene'),copy=document.querySelector('.hero-premium .hero-copy'),
-      picture=document.querySelector('.bmw-hero-photo');
-    const mr=media.getBoundingClientRect(),cr=copy.getBoundingClientRect(),
-      ms=getComputedStyle(media),ps=getComputedStyle(picture);
-    return {width:mr.width,height:mr.height,top:mr.top,copyBottom:cr.bottom,
-      opacity:Number(ms.opacity),pictureOpacity:Number(ps.opacity),mask:ps.maskImage,overflow:document.documentElement.scrollWidth-innerWidth};
+  const heroMobile=await page.locator('.hero-premium').evaluate(el=>{
+    const rect=el.getBoundingClientRect(),copy=el.querySelector('.hero-copy')?.getBoundingClientRect();
+    return {width:rect.width,height:rect.height,copyWidth:copy?.width||0,
+      images:el.querySelectorAll('img,.hero-bmw-scene,.bmw-silhouette').length,
+      overflow:document.documentElement.scrollWidth-innerWidth};
   });
-  assert(heroMobile.width>=300&&heroMobile.height>=170,'Mobile BMW needs its own readable image panel: '+JSON.stringify(heroMobile));
-  assert(heroMobile.top>=heroMobile.copyBottom-8,'Image panel must be below the lesson headline, not behind it: '+JSON.stringify(heroMobile));
-  assert(heroMobile.opacity>=.95,'Mobile BMW picture should not be 20% opacity');
-  assert(heroMobile.pictureOpacity>=.95,'BMW media should not appear as faint watermark');
-  assert(heroMobile.overflow<=8,'Mobile hero should not cause horizontal overflow');
-  console.log('PASS Chromium: BMW hero has its own visible mobile media panel');
+  assert(heroMobile.copyWidth>=280,'Image-free mobile hero text must be readable: '+JSON.stringify(heroMobile));
+  assert.equal(heroMobile.images,0,'Mobile hero must have no temporary car image');
+  assert(heroMobile.overflow<=8,'Mobile image-free hero should not overflow: '+JSON.stringify(heroMobile));
+  console.log('PASS Chromium: mobile hero displays study content without a car photo');
 
   await page.goto(base+'#/traffic-signs',{waitUntil:'domcontentloaded'});
   await page.locator('.ts-grid').waitFor();

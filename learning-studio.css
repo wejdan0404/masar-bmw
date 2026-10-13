@@ -80,3 +80,17 @@ body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:0;poin
 .video-time-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
 .video-time-list button{font:inherit;font-size:12px;font-variant-numeric:tabular-nums;font-weight:800;background:white;border:1px solid #cbdce5;color:#7e122a;padding:8px 11px;min-height:38px;border-radius:9px;cursor:pointer}
 .video-time-list button:hover,.video-time-list button:focus-visible{outline:2px solid #7598b9;outline-offset:1px}
+
+/* Opt-in timer: prioritize the lesson, never a timer on the home screen. */
+.studio-lesson-tools{border:1px solid #e2e9ee;border-radius:15px;padding:12px 16px;margin:0 0 14px;background:#f8fafb}
+.studio-lesson-tool-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.studio-lesson-tool-head strong{font-size:13px;color:#344c5d}
+.studio-timer-opener{font:inherit;font-size:12px;font-weight:700;color:#516c7e;background:#fff;border:1px solid #dae3e9;border-radius:10px;padding:9px 12px;min-height:40px;cursor:pointer}
+.studio-timer-opener:hover,.studio-timer-opener:focus-visible{border-color:#800c1f;color:#800c1f}
+.studio-lesson-tools .studio-step-links{margin-top:9px;gap:6px}
+.studio-lesson-tools .studio-step-links a{font-size:11px;padding:6px 11px;min-height:34px;background:#edf2f5}
+.studio-focus-panel{padding:14px 0 0;margin-top:10px;border-top:1px solid #e1e8ed}
+.studio-focus-panel>p{font-size:12px;color:#5a7180;margin:0 0 11px}
+body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:1;pointer-events:auto;transform:none}
+body.studio-context-page:not(.studio-scrolled):has(.studio-focus-panel) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
+@media(max-width:610px){.studio-lesson-tools{padding:12px}.studio-lesson-tools .studio-step-links{flex-wrap:wrap}}

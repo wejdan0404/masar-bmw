@@ -185,7 +185,7 @@ for(const label of ['ابدئي من هنا','تعلمي النظري','شاهد
 }
 context.location.hash='#/sources';windowHandlers.hashchange();
 const libraryHtml=element('app').innerHTML;
-if(!libraryHtml.includes('7 كتب ومراجع PDF')||!libraryHtml.includes('source-topic-index'))throw Error('Seven source references and reading-map topics not accessible');
+if(!libraryHtml.includes('7 كتب ومراجع')||!libraryHtml.includes('source-topic-index')||!libraryHtml.includes('عرض المحتوى'))throw Error('Seven source references and reading-map topics not accessible');
 for(const name of ['درب السلامة','النزاوي','كتاب المتدربة','جدة المتطورة','تقييم مهارة القيادة']){
  if(!libraryHtml.includes(name))throw Error('Personal reference absent from source library: '+name);
 }

@@ -65,7 +65,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
       }
       return result;
     });
-    const rgb=/rgba?\\((\\d+)\\s*,\\s*(\\d+)\\s*,\\s*(\\d+)/g;
+    const rgb=/rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)/g;
     for(const entry of values)for(const color of entry.colors){
       for(const match of color.matchAll(rgb)){
         const channels=match.slice(1,4).map(Number);

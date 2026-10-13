@@ -104,7 +104,7 @@ function tick(state,save,render,toast){
  if(left===0){
   t.status='finished';t.endsAt=null;t.remaining=0;
   const info=ensure(state);info.sessions.push({at:new Date().toISOString(),minutes:t.duration});info.sessions=info.sessions.slice(-100);
-  save();render(true);toast('انتهت جلسة المذاكرة. تقدرين تكمّلين أو تاخذين استراحة.');
+  save();render(true);if(/^#\/lesson\/\d+$/.test(location.hash||'')&&openTimerForLesson!==null)toast('انتهت جلسة المذاكرة. تقدرين تكمّلين أو تاخذين استراحة.');
  }
 }
 function initialize(state,save){

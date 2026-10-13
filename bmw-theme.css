@@ -319,3 +319,143 @@ html[data-theme="light"] .bmw-scene-caption{background:rgba(10,38,65,.77);color:
 @media(prefers-reduced-motion:reduce){
  .hero-bmw-scene,.bmw-hero-photo{transition:none!important;animation:none!important}
 }
+
+
+/* MASAR UI coherence pass — Oct 2026: accessible, calm BMW-inspired learning */
+html[data-theme="dark"]{--bmw-bg:#090e14;--bmw-panel:#141c27;--bmw-panel-2:#1b2634;--bmw-border:#304050;--bmw-muted:#b9c8d8;--bmw-accent:#53aff5;--bmw-pill:#19344b;--bmw-text:#f3f7fb;--crimson:#53aff5;--wine:#0066b1;--sky:#53aff5}
+html[data-theme="light"]{--bmw-bg:#f5f7fa;--bmw-panel:#fff;--bmw-panel-2:#edf2f7;--bmw-border:#d5dfe8;--bmw-muted:#526375;--bmw-accent:#0066b1;--bmw-pill:#e6f2fb;--bmw-text:#162333;--crimson:#0066b1;--wine:#004b83;--sky:#0066b1}
+body{font-size:15px;line-height:1.75;letter-spacing:0}
+.page{max-width:1480px;padding-top:30px}
+.sidebar{width:248px;padding:26px 13px 20px;background:var(--bmw-panel)!important;border-left:1px solid var(--bmw-border)}
+.app-main{margin-right:248px}
+.sidebar .logo{margin-bottom:25px;padding:0 14px}
+.sidebar .logo strong{letter-spacing:0}
+.sidebar .side-label{font-size:11px;letter-spacing:.02em;margin:17px 14px 7px;color:var(--bmw-muted)}
+.sidebar .nav{gap:3px}
+.sidebar .nav a{min-height:43px;border-radius:10px;padding:9px 12px;font-size:13px;line-height:1.5;background:transparent;border:1px solid transparent;color:var(--bmw-muted)}
+.sidebar .nav a:hover{background:var(--bmw-panel-2);color:var(--bmw-text)}
+.sidebar .nav a.active{background:var(--bmw-pill)!important;border-color:var(--bmw-border)!important;color:var(--bmw-text)!important}
+.sidebar .nav a.active:before{background:var(--bmw-accent)}
+.sidebar .mini-progress{background:var(--bmw-panel-2);border-color:var(--bmw-border);padding:16px}
+.topbar{height:70px;border-color:var(--bmw-border);background:var(--bmw-bg);padding-inline:clamp(18px,3.4vw,46px)}
+.page-title{font-size:clamp(26px,2.8vw,38px);letter-spacing:0;line-height:1.45}
+.eyebrow{letter-spacing:.04em;color:var(--bmw-accent);font-size:12px}
+.hero.hero-premium{min-height:355px;padding:clamp(25px,3.4vw,46px);border-radius:20px;background:linear-gradient(110deg,#101923,#172d45)!important;border:1px solid #34495c;box-shadow:none!important;isolation:isolate}
+.hero.hero-premium:before,.hero.hero-premium:after{opacity:.3;pointer-events:none}
+.hero-premium .hero-copy{max-width:52%;flex:0 1 52%}
+.hero-premium h1,.hero h1{font-size:clamp(30px,3.3vw,47px);line-height:1.35;letter-spacing:0;max-width:16ch}
+.hero-premium p,.hero p{font-size:14px;line-height:1.85;color:#e0e9f1;max-width:47ch}
+.hero-bmw-scene{width:50%;background:#152232}
+.bmw-hero-photo{filter:brightness(1.5) contrast(.93) saturate(.77)!important;object-position:48% 55%;mask-image:linear-gradient(to right,#000 0%,#000 78%,transparent 100%);-webkit-mask-image:linear-gradient(to right,#000 0%,#000 78%,transparent 100%)}
+.bmw-scene-caption,.hero-serial,.hero-gauge{display:none!important}
+.hero .eyebrow{color:#9ed6ff}
+.hero .btn-primary,.btn-primary{background:#0066b1!important;color:white!important;box-shadow:none!important}
+.hero .btn-primary:hover,.btn-primary:hover{background:#00518d!important}
+.btn,.chip{font-size:13px;letter-spacing:0}
+.btn{min-height:43px;border-radius:10px}
+.stats{gap:12px}
+.stat,.card,.week-card,.day{box-shadow:none!important;border:1px solid var(--bmw-border)!important;border-radius:14px!important}
+.stat{padding:18px}
+.stat .val{font-size:clamp(21px,2.1vw,29px)}
+.section-head{margin:27px 0 13px}
+.section-head h2{font-size:19px;letter-spacing:0}
+.section-head a,.inline-link{color:var(--bmw-accent)!important}
+.card{padding:clamp(18px,2vw,26px)}
+.card h3{font-size:18px}
+.sub,.section-head p{font-size:13px;line-height:1.8}
+:where(.card,.stat,.week-card,.day,.topbar,.sidebar) *{text-shadow:none}
+:where(.btn,.nav a,.chip,.theme-toggle):focus-visible{outline:3px solid var(--bmw-accent)!important;outline-offset:3px}
+@media(max-width:1100px){.sidebar{width:225px}.app-main{margin-right:225px}.hero-premium .hero-copy{max-width:57%;flex-basis:57%}}
+@media(max-width:900px){.sidebar{width:min(320px,88vw)}.app-main{margin-right:0}.hero.hero-premium{min-height:0;gap:18px;padding:23px}.hero-premium .hero-copy{max-width:none;flex-basis:auto}.hero-premium h1{max-width:25ch}.hero-bmw-scene{width:100%;height:clamp(200px,34vw,300px);border-radius:12px}.bmw-hero-photo{mask-image:none!important;-webkit-mask-image:none!important;filter:brightness(1.4) contrast(.96) saturate(.8)!important}}
+@media(max-width:610px){.page{padding:20px 16px 65px}.hero.hero-premium{padding:20px;border-radius:16px}.hero-premium h1{font-size:clamp(28px,8vw,36px)}.hero-premium p{font-size:14px}.hero-bmw-scene{height:clamp(195px,55vw,265px)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:15px}.topbar{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* MASAR editorial refinement v2 — simplify the actual study-first homepage */
+.hero-premium .hero-topline{display:flex;align-items:center;margin-bottom:15px;gap:12px}
+.hero-premium .hero-kicker{font-size:12px;color:#b9dfff;letter-spacing:0;font-weight:700}
+.hero-premium .hero-edition{display:none!important}
+.hero-premium .hero-status-strip{display:none!important}
+.hero-premium .hero-copy{padding-block:9px}
+.hero-premium .resume-location{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:7px 12px;font-size:12px;color:#e8f2fb}
+.hero-premium .hero-actions{margin-top:19px;gap:10px}
+.hero-premium .btn-ghost{border:1px solid rgba(220,236,252,.45);background:rgba(255,255,255,.06);color:#f3f7fc;min-height:43px}
+.hero-premium .btn-ghost:hover{background:rgba(255,255,255,.13)}
+.hero-premium .hero-glow{opacity:.23;pointer-events:none}
+.hero-premium .hero-copy h1 span{color:#c7e7ff}
+.stats.stats-bento{margin-top:18px;margin-bottom:22px}
+.stats.stats-bento .stat{min-height:110px}
+.home-section-head .eyebrow{font-size:11px;letter-spacing:0}
+.study-command-grid{gap:14px}
+html[data-theme="light"] .sidebar{background:#fff!important}
+html[data-theme="light"] .sidebar .nav a{color:#526375}
+html[data-theme="light"] .sidebar .nav a:hover,html[data-theme="light"] .sidebar .nav a.active{color:#142a42!important}
+html[data-theme="light"] .sidebar .side-label{color:#526375}
+@media(max-width:900px){.hero-premium .hero-copy{padding:0}.hero-premium .hero-actions{justify-content:flex-start}}
+@media(max-width:610px){.hero-premium .hero-actions .btn{white-space:normal;text-align:center;min-height:44px}.hero-premium .hero-topline{margin-bottom:6px}}
+
+
+/* Light theme contrast reconciliation v3 */
+html[data-theme="light"] .sidebar,html[data-theme="light"] .sidebar.sidebar-premium{background:#fff!important;color:#182d40!important;border-left:1px solid #d7e2ec!important}
+html[data-theme="light"] .sidebar :is(.logo strong,.logo small,.foot-note){color:#294258!important}
+html[data-theme="light"] .sidebar :is(.side-label,.sidebar-group-title,.sidebar-nav-group[open]>.sidebar-group-title){color:#52687b!important}
+html[data-theme="light"] .sidebar :is(.sidebar-group-title svg,.sidebar-group-links svg,.nav svg){color:#0066b1!important}
+html[data-theme="light"] .sidebar :is(.sidebar-group-links a,.nav a){color:#263d52!important;background:transparent!important;border-color:transparent!important}
+html[data-theme="light"] .sidebar :is(.sidebar-group-links a:hover,.nav a:hover){color:#004b83!important;background:#edf5fb!important;border-color:#d3e5f2!important}
+html[data-theme="light"] .sidebar :is(.sidebar-group-links a.active,.nav a.active){color:#003d73!important;background:#dceefa!important;border-color:#9fc7e5!important}
+html[data-theme="light"] .sidebar .sidebar-nav-group{border-color:#e2eaf1!important}
+html[data-theme="light"] .sidebar .mini-progress{background:#f2f7fb!important;color:#152c40!important;border-color:#d3e0ea!important;box-shadow:none!important}
+html[data-theme="light"] .sidebar .mini-progress :is(strong,small,.mini-progress-top){color:#294258!important}
+html[data-theme="light"] .sidebar .mini-progress .line{background:#d5e3ef!important}
+html[data-theme="light"] .hero.hero-premium{background:linear-gradient(113deg,#f4f9fd 0%,#e5f2fa 72%,#cfdfeb 100%)!important;border-color:#bbd0e0!important}
+html[data-theme="light"] .hero-premium .hero-copy :is(h1,.eyebrow,.hero-kicker){color:#17354b!important}
+html[data-theme="light"] .hero-premium .hero-copy h1 span{color:#0066b1!important;background:none!important;-webkit-text-fill-color:#0066b1!important}
+html[data-theme="light"] .hero-premium .hero-copy p{color:#2d4b60!important}
+html[data-theme="light"] .hero-premium .resume-location{color:#29465e!important;background:rgba(255,255,255,.8)!important;border-color:#c9dbe8!important}
+html[data-theme="light"] .hero-premium .btn-ghost{color:#004f91!important;background:#fff!important;border-color:#a9cadd!important}
+html[data-theme="light"] .hero-premium .btn-ghost:hover{background:#e8f4fc!important}
+html[data-theme="light"] .hero-premium .hero-glow{opacity:.15!important}
+html[data-theme="light"] :is(.crumb,.sub,.stat-label,.section-head p){color:#52687b!important}
+html[data-theme="light"] .topbar{background:rgba(249,252,255,.95)!important}
+html[data-theme="light"] :is(.chip,.theme-toggle,.btn-outline,.btn-muted){border-color:#cbdce9!important;color:#17354b!important}
+
+
+/* LIGHT-MODE PARITY — robust contrast for nested learning surfaces and keyboard navigation */
+html[data-theme="light"] :is(.sidebar,.sidebar.sidebar-premium) :is(.sidebar-group-title,.sidebar-group-links a,.nav a,.logo,.logo strong,.logo small,.mini-progress,.foot-note){text-shadow:none!important}
+html[data-theme="light"] .sidebar .sidebar-group-links a[aria-current="page"]{background:#dceefa!important;color:#003d73!important;border-color:#9fc7e5!important}
+html[data-theme="light"] .sidebar :is(.sidebar-group-title,.sidebar-group-links a,.nav a):focus-visible{outline:3px solid #0066b1!important;outline-offset:2px}
+html[data-theme="light"] :is(.card,.stat,.week-card,.lesson-body,.test-card,.source-chapter,.hub-source,.hub-question,.settings-card,.study-video,.scenario){color:#172637!important;background:#fff!important;border-color:#d5e0e9!important}
+html[data-theme="light"] :is(.card,.stat,.week-card,.lesson-body,.hub-source,.hub-question,.settings-card) :is(h2,h3,h4,strong,b){color:#172637}
+html[data-theme="light"] :is(.source-chapter,.hub-source,.hub-question,.lesson-body) :is(p,li,small){color:#52687d}
+html[data-theme="light"] :is(.source-chapter,.hub-source,.hub-question,.lesson-body) :is(a:not(.btn),summary){color:#005a9f}
+html[data-theme="light"] :is(.lesson-body,.source-chapter,.hub-question) :is(a,button,summary,input):focus-visible{outline:3px solid #0066b1!important;outline-offset:2px}
+html[data-theme="light"] .hero-premium .hero-copy h1 span{-webkit-text-fill-color:#0066b1!important}
+@media(max-width:610px){
+ html[data-theme="light"] .topbar{border-bottom:1px solid #d5e0e9!important}
+ .page-title{overflow-wrap:anywhere}
+ .hero-premium .hero-actions{width:100%}
+ .hero-premium .hero-actions .btn{max-width:100%}
+}
+
+
+/* BMW navigation polish — no ornamental frames or competing strokes */
+.sidebar.sidebar-premium .sidebar-nav-group{
+ background:transparent!important;border:0!important;border-bottom:1px solid var(--bmw-border)!important;
+ box-shadow:none!important;border-radius:0!important;padding:0 0 8px!important;margin-bottom:8px!important
+}
+.sidebar.sidebar-premium .sidebar-group-title{background:transparent!important;border:0!important;box-shadow:none!important;padding-inline:10px!important;letter-spacing:0!important}
+.sidebar.sidebar-premium .sidebar-group-links a{box-shadow:none!important;border-radius:9px!important}
+.sidebar.sidebar-premium .sidebar-group-links a:not(.active){border-color:transparent!important}
+.sidebar.sidebar-premium .sidebar-group-links a.active{font-weight:800!important}
+html[data-theme="light"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#e1eaf2!important}
+html[data-theme="dark"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#2b3d50!important}
+.hero-premium .hero-topline .hero-kicker{letter-spacing:0!important}
+
+
+/* Display the matte-black BMW more clearly than the former dark wheel close-up.
+   Photo: Martin Katler / Unsplash, BMW M4 showroom (Djarq-Jgs2c). */
+.hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.02) saturate(.82) contrast(1.02)!important}
+html[data-theme="light"] .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.08) saturate(.83) contrast(.99)!important}
+@media(max-width:900px){
+ .hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.04) saturate(.84) contrast(1.02)!important}
+}

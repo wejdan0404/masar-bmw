@@ -920,3 +920,11 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
  .adaptive-priority{justify-self:start}
  .lesson-recall{padding:15px}
 }
+
+
+.learning-science-note{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:16px 0 22px;padding:18px 20px;border-radius:18px;background:#f7fafb;border:1px solid #dce5ea}
+.learning-science-note h2{margin:5px 0 6px;color:#263f4d;font-size:18px}
+.learning-science-note p{margin:0;max-width:780px;color:#667b87;font-size:11.5px;line-height:1.8}
+.learning-science-note a{flex:0 0 auto;color:#4d7086;font-size:10.5px;font-weight:850;text-decoration:none;border:1px solid #cedbe2;border-radius:999px;padding:9px 12px;background:#fff}
+.learning-science-note a:hover{text-decoration:underline}
+@media(max-width:760px){.learning-science-note{display:grid;align-items:start}.learning-science-note a{justify-self:start}}

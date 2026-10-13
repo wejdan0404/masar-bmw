@@ -35,9 +35,73 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.notEqual(lightPalette.link,'rgb(255, 255, 255)','Light sidebar links cannot remain white on white');
   assert((lightPalette.hero||'').startsWith('rgb('),'Light hero heading should have an explicit computed color');
   assert(!lightPalette.kicker.includes('THE DRIVING JOURNEY'),'Legacy marketing copy must not return after compilation');
+  const sidebarGroupBorders=await page.locator('.sidebar .sidebar-nav-group').first().evaluate(el=>({
+    top:getComputedStyle(el).borderTopWidth,left:getComputedStyle(el).borderLeftWidth,right:getComputedStyle(el).borderRightWidth
+  }));
+  assert.equal(sidebarGroupBorders.top,'0px','Light sidebar sections must not look like nested bordered cards');
+  assert.equal(sidebarGroupBorders.left,'0px','Light sidebar group left edges must be clean');
+  assert.equal(sidebarGroupBorders.right,'0px','Light sidebar group right edges must be clean');
   console.log('PASS Chromium: light sidebar text contrast and simplified hero copy');
   const lightCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.notEqual(darkCard,lightCard,'Card surfaces must change with theme');
+
+  // Survey actual computed colours across real pages, not only the theme toggle.
+  const contrastSnapshots=[];
+  for(const route of ['home','weeks','lesson/1','quiz','traffic-signs','videos','review','sources','settings']){
+    await page.goto(base+'#/'+route,{waitUntil:'domcontentloaded'});
+    const audit=await page.evaluate(()=>{
+      const selectors=['.sidebar','.sidebar .logo strong','.sidebar .sidebar-group-title',
+        '.sidebar .sidebar-group-links a','.sidebar .mini-progress','.topbar','.topbar .crumb',
+        '.page-title','.hero-premium','.hero-premium h1','.hero-premium p',
+        '.hero-premium .btn-ghost','.stat','.stat-label','.card','.card h3',
+        '.lesson-body','.lesson-body p','.hub-question','.hub-question p',
+        '.source-chapter','.source-chapter summary','.studio-lesson-tools','.week-card',
+        '.week-card h3','.settings-card','.theme-setting','.theme-setting p'];
+      const opaqueColor=el=>{
+        for(let n=el;n;n=n.parentElement){
+          const s=getComputedStyle(n),bg=s.backgroundColor;
+          if(bg&&bg.startsWith('rgb('))return bg;
+          if(bg&&bg.startsWith('rgba(')&&Number(bg.split(',').at(-1).replace(')','').trim())>=.98)return bg;
+        }
+        return getComputedStyle(document.documentElement).backgroundColor;
+      };
+      return selectors.map(sel=>{
+        const e=[...document.querySelectorAll(sel)].find(n=>{
+          const rect=n.getBoundingClientRect(),s=getComputedStyle(n);
+          return rect.width>0&&rect.height>0&&s.visibility!=='hidden'&&s.display!=='none';
+        });
+        return e?{selector:sel,fg:getComputedStyle(e).color,bg:opaqueColor(e)}:null;
+      }).filter(Boolean);
+    });
+    contrastSnapshots.push({route,audit});
+
+
+    const requiredSelectors=['.sidebar .logo strong','.sidebar .sidebar-group-title',
+      '.sidebar .sidebar-group-links a','.topbar .crumb','.page-title',
+      '.hero-premium h1','.hero-premium p','.stat-label','.card h3',
+      '.lesson-body p','.source-chapter summary','.week-card h3','.theme-setting p'];
+    const toRGB=v=>v?.startsWith('rgb(')?v.slice(4,-1).split(',').map(n=>Number(n.trim())):null;
+    const luminance=rgb=>rgb.map(c=>{const n=c/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4;})
+      .reduce((sum,x,i)=>sum+x*[.2126,.7152,.0722][i],0);
+    for(const item of audit.filter(x=>requiredSelectors.includes(x.selector))){
+      const fg=toRGB(item.fg),bg=toRGB(item.bg);
+      if(!fg||!bg)continue;
+      const l1=luminance(fg),l2=luminance(bg),ratio=(Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05);
+      assert(ratio>=4.5,'Light mode text fails WCAG AA contrast on '+route+' '+item.selector+': '+ratio.toFixed(2));
+    }
+
+  }
+
+  await page.goto(base+'#/sources',{waitUntil:'domcontentloaded'});
+  const sourceCover=await page.locator('.masar-library-cover').first().evaluate(el=>{
+    const title=el.querySelector('strong');
+    return {fg:getComputedStyle(title).color,bg:getComputedStyle(el).backgroundColor,font:parseFloat(getComputedStyle(title).fontSize)};
+  });
+  assert.equal(sourceCover.fg,'rgb(244, 250, 255)','Book cover title must be white on dark navy');
+  assert(sourceCover.font>=17,'Book title must be legible at desktop size');
+  console.log('PASS Chromium: dark blue book covers keep readable light titles');
+  await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
+  console.log('PASS Chromium: Light Mode WCAG AA sampled text contrast across '+contrastSnapshots.length+' pages');
   await page.reload({waitUntil:'domcontentloaded'});
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'light','Theme preference persists across reload');
   await page.goto(base+'#/settings',{waitUntil:'domcontentloaded'});

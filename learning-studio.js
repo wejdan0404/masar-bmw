@@ -23,7 +23,7 @@ function timerControls(state,large=false){
  <div class="studio-timer-buttons"><button type="button" data-action="studio-toggle" aria-label="${active?'إيقاف جلسة المذاكرة مؤقتًا':'بدء أو متابعة المذاكرة'}">${active?'إيقاف مؤقت':'▶ '+(t.status==='paused'?'متابعة':'ابدئي')}</button><button type="button" data-action="studio-reset" aria-label="إعادة ضبط الموقت">إعادة ضبط</button></div>
  ${times}</div>`;
 }
-function timerHTML(state){const t=ensure(state).timer;if(t.status!=='running'&&t.status!=='paused')return '';const contextPage=/^#\/(?:home|lesson\/\d+)/.test(location.hash||'');document.body?.classList?.toggle?.('studio-context-page',contextPage);return `<aside class="studio-timer-dock" aria-label="جلسة المذاكرة الحالية">${timerControls(state)}</aside>`;}
+// Floating countdown removed intentionally: the timer only renders after opening a lesson's optional control.
 
 function lessonCheck(course,state,l){
  const q=(course.questions||[]).find(x=>x.lesson_id===l.id);if(!q)return '';
@@ -44,7 +44,7 @@ function widgets(course,state,path){
   if(!lesson)return '';
   const expanded=openTimerForLesson===lessonNumber;
   return `<section class="studio-lesson-tools" aria-label="أدوات المذاكرة الاختيارية">
-    <div class="studio-lesson-tool-head"><strong>خطوات الدرس</strong><button type="button" class="studio-timer-opener" data-action="studio-panel-toggle" aria-expanded="${expanded}" ${expanded?'aria-controls="studio-focus-panel"':''}>${expanded?'إخفاء المؤقت':'◷ مؤقت اختياري'}</button></div>
+    <div class="studio-lesson-tool-head"><strong>خطوات الدرس</strong><button type="button" class="studio-timer-opener" data-action="studio-panel-toggle" aria-expanded="${expanded}" ${expanded?'aria-controls="studio-focus-panel"':''}>${expanded?'إخفاء المؤقت':(ensure(state).timer.status==='running'?'◷ عرض المؤقت الجاري':'◷ مؤقت اختياري')}</button></div>
     <nav class="studio-step-links" aria-label="خطوات الدرس"><a href="#reading" data-action="studio-jump" data-target="reading">الشرح</a><a href="#active-recall" data-action="studio-jump" data-target="active-recall">من الذاكرة</a><a href="#lesson-videos" data-action="studio-jump" data-target="lesson-videos">المقاطع</a><a href="#practice" data-action="studio-jump" data-target="practice">اختبار</a></nav>
     ${expanded?`<div class="studio-focus-panel" id="studio-focus-panel"><p>المؤقت اختياري ولا يوقف شرحك عند انتهاء المدة.</p>${timerControls(state,true)}</div>`:''}
    </section>${lessonCheck(course,state,lesson)}`;
@@ -104,7 +104,7 @@ function tick(state,save,render,toast){
  if(left===0){
   t.status='finished';t.endsAt=null;t.remaining=0;
   const info=ensure(state);info.sessions.push({at:new Date().toISOString(),minutes:t.duration});info.sessions=info.sessions.slice(-100);
-  save();render(true);toast('انتهت جلسة المذاكرة. تقدرين تكمّلين أو تاخذين استراحة.');
+  save();render(true);if(/^#\/lesson\/\d+$/.test(location.hash||'')&&openTimerForLesson!==null)toast('انتهت جلسة المذاكرة. تقدرين تكمّلين أو تاخذين استراحة.');
  }
 }
 function initialize(state,save){
@@ -121,5 +121,5 @@ document.addEventListener('keydown',e=>{
  if(e.key==='Escape')closeSearch();
 });
 document.addEventListener('click',e=>{if(e.target?.id==='studio-search-overlay')closeSearch();if(e.target.closest?.('.studio-result'))closeSearch()});
-window.MasarStudio={timerHTML,widgets,searchUI,click,tick,initialize};
+window.MasarStudio={widgets,searchUI,click,tick,initialize};
 })();

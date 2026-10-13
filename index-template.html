@@ -5,5 +5,5 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="application/json" id="course-data">/* COURSE DATA */</script>
 <script>/* APP CODE */</script>
-<script>if('serviceWorker' in navigator && (location.protocol==='https:' || ['localhost','127.0.0.1'].includes(location.hostname))){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('Offline mode unavailable',err)));}</script>
+<script>if('serviceWorker' in navigator && (location.protocol==='https:' || ['localhost','127.0.0.1'].includes(location.hostname))){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(err=>console.warn('Offline mode unavailable',err)));}</script>
 </body></html>

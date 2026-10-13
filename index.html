@@ -1395,6 +1395,9 @@ body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:0;poin
 body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:1;pointer-events:auto;transform:none}
 body.studio-context-page:not(.studio-scrolled):has(.studio-focus-panel) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
 @media(max-width:610px){.studio-lesson-tools{padding:12px}.studio-lesson-tools .studio-step-links{flex-wrap:wrap}}
+
+/* No floating timer anywhere: opt-in controls only inside an opened lesson panel. */
+.studio-timer-dock,.floating-timer{display:none!important}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -10786,7 +10789,7 @@ function timerControls(state,large=false){
  <div class="studio-timer-buttons"><button type="button" data-action="studio-toggle" aria-label="${active?'إيقاف جلسة المذاكرة مؤقتًا':'بدء أو متابعة المذاكرة'}">${active?'إيقاف مؤقت':'▶ '+(t.status==='paused'?'متابعة':'ابدئي')}</button><button type="button" data-action="studio-reset" aria-label="إعادة ضبط الموقت">إعادة ضبط</button></div>
  ${times}</div>`;
 }
-function timerHTML(state){const t=ensure(state).timer;if(t.status!=='running'&&t.status!=='paused')return '';const contextPage=/^#\/(?:home|lesson\/\d+)/.test(location.hash||'');document.body?.classList?.toggle?.('studio-context-page',contextPage);return `<aside class="studio-timer-dock" aria-label="جلسة المذاكرة الحالية">${timerControls(state)}</aside>`;}
+// Floating countdown removed intentionally: the timer only renders after opening a lesson's optional control.
 
 function lessonCheck(course,state,l){
  const q=(course.questions||[]).find(x=>x.lesson_id===l.id);if(!q)return '';
@@ -10807,7 +10810,7 @@ function widgets(course,state,path){
   if(!lesson)return '';
   const expanded=openTimerForLesson===lessonNumber;
   return `<section class="studio-lesson-tools" aria-label="أدوات المذاكرة الاختيارية">
-    <div class="studio-lesson-tool-head"><strong>خطوات الدرس</strong><button type="button" class="studio-timer-opener" data-action="studio-panel-toggle" aria-expanded="${expanded}" ${expanded?'aria-controls="studio-focus-panel"':''}>${expanded?'إخفاء المؤقت':'◷ مؤقت اختياري'}</button></div>
+    <div class="studio-lesson-tool-head"><strong>خطوات الدرس</strong><button type="button" class="studio-timer-opener" data-action="studio-panel-toggle" aria-expanded="${expanded}" ${expanded?'aria-controls="studio-focus-panel"':''}>${expanded?'إخفاء المؤقت':(ensure(state).timer.status==='running'?'◷ عرض المؤقت الجاري':'◷ مؤقت اختياري')}</button></div>
     <nav class="studio-step-links" aria-label="خطوات الدرس"><a href="#reading" data-action="studio-jump" data-target="reading">الشرح</a><a href="#active-recall" data-action="studio-jump" data-target="active-recall">من الذاكرة</a><a href="#lesson-videos" data-action="studio-jump" data-target="lesson-videos">المقاطع</a><a href="#practice" data-action="studio-jump" data-target="practice">اختبار</a></nav>
     ${expanded?`<div class="studio-focus-panel" id="studio-focus-panel"><p>المؤقت اختياري ولا يوقف شرحك عند انتهاء المدة.</p>${timerControls(state,true)}</div>`:''}
    </section>${lessonCheck(course,state,lesson)}`;
@@ -10867,7 +10870,7 @@ function tick(state,save,render,toast){
  if(left===0){
   t.status='finished';t.endsAt=null;t.remaining=0;
   const info=ensure(state);info.sessions.push({at:new Date().toISOString(),minutes:t.duration});info.sessions=info.sessions.slice(-100);
-  save();render(true);toast('انتهت جلسة المذاكرة. تقدرين تكمّلين أو تاخذين استراحة.');
+  save();render(true);if(/^#\/lesson\/\d+$/.test(location.hash||'')&&openTimerForLesson!==null)toast('انتهت جلسة المذاكرة. تقدرين تكمّلين أو تاخذين استراحة.');
  }
 }
 function initialize(state,save){
@@ -10884,7 +10887,7 @@ document.addEventListener('keydown',e=>{
  if(e.key==='Escape')closeSearch();
 });
 document.addEventListener('click',e=>{if(e.target?.id==='studio-search-overlay')closeSearch();if(e.target.closest?.('.studio-result'))closeSearch()});
-window.MasarStudio={timerHTML,widgets,searchUI,click,tick,initialize};
+window.MasarStudio={widgets,searchUI,click,tick,initialize};
 })();
 
 (() => {
@@ -11228,8 +11231,7 @@ const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answer
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>خط ثمانية في مِسار</h3><p>ضبطنا تصميم الموقع لاستخدام «ثمانية سانس» عند تثبيته على جهازك. ترخيص ثمانية لا يسمح برفع ملفات الخط إلى GitHub أو توزيعه للتنزيل من الموقع؛ إذا لم يكن الخط مثبتًا، سيظهر خط احتياطي واضح. ولا تُرسل ملفات الخط أو ملاحظاتك إلى خادم خارجي.</p><p><a class="source-link" href="https://font.thmanyah.com/" target="_blank" rel="noopener noreferrer">تحميل الخط من المصدر الرسمي وتثبيته على جهازك ↗</a> <a class="source-link" href="https://font.thmanyah.com/licenses" target="_blank" rel="noopener noreferrer">قراءة الترخيص ↗</a></p></section><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>تثبيت مِسار على جهازك والعمل دون إنترنت</h3><p>افتحي الموقع المنشور على Chrome أو Edge، ثم اختاري «تثبيت التطبيق» من قائمة المتصفح إذا ظهرت لك. بعد الزيارة الأولى والتحميل الناجح يمكن فتح الدروس الأساسية دون اتصال. الفيديوهات وملفات PDF الخارجية تحتاج إنترنت، أما الملفات التي أضفتِها للمتصفح فتظل محلية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="storage-health">فحص حالة الحفظ والمساحة</button></div><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا مع 48 تدريب تفكير مستقلًا؛ النصوص ما زالت تحتاج مراجعة المصدر المعتمد.</div><div class="point"><i>2</i>48 سؤال درس، و36 سؤال مراجعة إضافيًا، ومحاكاة اختبار تدريبي غير رسمي، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>المذاكرة والملاحظات ومحاولات المراجعة تُحفظ في IndexedDB على هذا المتصفح؛ PDF والملفات الخاصة لا تدخل ضمن النسخة الاحتياطية JSON ولا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
 function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/review')return ['مراجعتي',window.MasarCoach.reviewPage(COURSE,state)];if(r==='/mock-exam')return ['محاكاة الاختبار',window.MasarCoach.pageMock(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['الرسوم التفاعلية',visualLibraryPage()];if(r==='/videos')return ['مقاطع القيادة',videoGalleryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
-function timerHTML(){return window.MasarStudio.timerHTML(state)}
-function render(keepScroll=false){const [title,content]=resolvePage();const focus=!!state.uiPrefs?.focus;if(focus)APP.classList.add('focus-mode');else APP.classList.remove('focus-mode');APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${window.MasarStudio.widgets(COURSE,state,route())}${content}</div></main>${timerHTML()}${window.MasarStudio.searchUI()}${mobileDock()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
+function render(keepScroll=false){const [title,content]=resolvePage();const focus=!!state.uiPrefs?.focus;if(focus)APP.classList.add('focus-mode');else APP.classList.remove('focus-mode');APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${window.MasarStudio.widgets(COURSE,state,route())}${content}</div></main>${window.MasarStudio.searchUI()}${mobileDock()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
 let toastTimer;function toast(s){const el=document.getElementById('toast');el.textContent=s;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),3100)}
 function updateTimer(){}
@@ -11337,5 +11339,5 @@ if(window.MasarDB){
 }
 })();
 </script>
-<script>if('serviceWorker' in navigator && (location.protocol==='https:' || ['localhost','127.0.0.1'].includes(location.hostname))){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('Offline mode unavailable',err)));}</script>
+<script>if('serviceWorker' in navigator && (location.protocol==='https:' || ['localhost','127.0.0.1'].includes(location.hostname))){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(err=>console.warn('Offline mode unavailable',err)));}</script>
 </body></html>

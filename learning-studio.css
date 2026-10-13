@@ -94,3 +94,6 @@ body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:0;poin
 body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:1;pointer-events:auto;transform:none}
 body.studio-context-page:not(.studio-scrolled):has(.studio-focus-panel) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
 @media(max-width:610px){.studio-lesson-tools{padding:12px}.studio-lesson-tools .studio-step-links{flex-wrap:wrap}}
+
+/* No floating timer anywhere: opt-in controls only inside an opened lesson panel. */
+.studio-timer-dock,.floating-timer{display:none!important}

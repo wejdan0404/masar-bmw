@@ -479,7 +479,7 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
       "source_provenance": "ملخص المحادثات السابقة",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "مراجعة رسمية جزئية: وظيفة الإشارات التنظيمية ووجوب التوقف عند قف مدعومان بمصادر المرور؛ بقية تفاصيل الدرس ما تزال ضمن التدقيق.",
       "study_content": {
         "goal": "فهم العلامات التنظيمية",
         "introduction": "تخبرك العلامات التنظيمية بما يجب فعله أو ما يُمنع؛ مثل قف ومنع الدخول وحدود السرعة المنشورة.",
@@ -493,7 +493,15 @@
         "recap": "إذا تعارض اجتهادك مع تنظيم واضح اتبعي التنظيم"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-008"
+      "question_id": "QUIZ-008",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "وظيفة الإشارات التنظيمية، ووجوب التوقف التام عند علامة قف.",
+      "verification_urls": [
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1"
+      ]
     },
     {
       "id": "LES-009",
@@ -590,7 +598,7 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
       "source_provenance": "ملخص المحادثات السابقة",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "مراجعة رسمية جزئية لقواعد الأفضلية الأساسية؛ تصميم كل تقاطع وإشاراته الفعلية يظلان حاسمين.",
       "study_content": {
         "goal": "تحديد الأولوية بحسب نوع التقاطع",
         "introduction": "الأولوية ليست قاعدة واحدة دائمًا؛ افحصي اللوحات والإشارات وتصميم الطريق قبل تحديد من يمر أولًا.",
@@ -604,7 +612,15 @@
         "recap": "رجال المرور والإشارات المنظمة يغيرون ترتيب العبور"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-011"
+      "question_id": "QUIZ-011",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "أولوية الطريق الرئيسي، القادم من اليمين عند تقاطع متساوي الأفضلية، وأولوية تنظيم رجل المرور.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-012",
@@ -776,7 +792,7 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "مراجعة تحريرية احترازية للمفاهيم؛ اعتماد النص النظامي التفصيلي معلّق",
+      "verification_status": "تمت مراجعة الفرق الأساسي بين قف وأعط الأفضلية مقابل المصادر الرسمية؛ التفاصيل السياقية تبقى مرتبطة بالموقع الفعلي.",
       "study_content": {
         "goal": "الفصل بين قف وأعط الأفضلية",
         "introduction": "علامة «قف» تتطلب التوقف الكامل، أما «أعط الأفضلية» فتتطلب إفساح الطريق لمن له الأفضلية والتوقف عند الحاجة لمرورهم.",
@@ -791,7 +807,15 @@
       },
       "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
       "question_id": "QUIZ-016",
-      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "قف = توقف تام؛ أعط الأفضلية = إفساح المجال وقد يتطلب ذلك التوقف التام عند مرور مركبات ذات أفضلية.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-017",
@@ -852,7 +876,7 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "تكرار موضوع مبكر؛ المطلوب رفع مستوى التطبيق",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "verification_status": "تمت مراجعة قاعدة القادم من اليمين وترتيب تنظيم الحركة مقابل مصادر رسمية.",
       "study_content": {
         "goal": "تطبيق الأولوية على تقاطعات محددة",
         "introduction": "ابدئي بتحديد من ينظم التقاطع: رجل المرور، والإشارات الضوئية، ولوحات الأولوية. عند غياب تنظيم يغيّر الأفضلية، قد تنطبق قاعدة المركبة القادمة من اليمين عند تقاطع متساوي الأفضليات.",
@@ -867,7 +891,15 @@
       },
       "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
       "question_id": "QUIZ-018",
-      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "عند تقاطع متساوي الأفضلية دون تنظيم، تكون الأفضلية للقادمة من اليمين؛ ورجل المرور مقدم على الإشارة الضوئية عند تنظيمه للحركة.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-019",
@@ -890,7 +922,7 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "verification_status": "تمت مراجعة قاعدة أولوية المركبات داخل الدوار مقابل نظام المرور ولائحته.",
       "study_content": {
         "goal": "التعامل مع أفضلية المركبات داخل الدوار",
         "introduction": "إذا لم توجد إشارات ضوئية أو رجل مرور ينظّم الحركة على خلاف ذلك، فالأفضلية للمركبات التي تسير بالفعل داخل الدوار.",
@@ -905,7 +937,15 @@
       },
       "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
       "question_id": "QUIZ-019",
-      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "الأفضلية للمركبة الموجودة داخل الدوار عند عدم وجود إشارة ضوئية أو رجل مرور ينظم خلاف ذلك.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-020",
@@ -1734,21 +1774,29 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "تم تحديث أرقام الطوارئ وتغطية 911 من مصادر رسمية حديثة؛ تفاصيل التعامل مع الحادث تعتمد على وجود إصابات وموقع الحادث.",
       "study_content": {
         "goal": "التفريق بين الحوادث الطارئة وحوادث الأضرار المادية",
-        "introduction": "في حالة إصابة أو خطر فوري اطلبي خدمة الطوارئ الملائمة. ليست جميع الحوادث من اختصاص نجم.",
+        "introduction": "في حالة إصابة أو خطر فوري، الأولوية لطلب خدمة الطوارئ المناسبة وتأمين سلامة الموجودين بقدر الاستطاعة. ليست كل الحوادث من اختصاص نجم، ولا ينبغي انتظار خدمة أضرار مادية عند وجود مصاب يحتاج إسعافًا.",
         "key_points": [
-          "في مناطق 911 المغطاة يمكن الاتصال بالعمليات الأمنية الموحدة",
-          "997 رقم الإسعاف و993 المرور و996 أمن الطرق",
-          "للإبلاغ عن حادث مشمول بخدمة نجم راجعي شروطها وقنواتها الرسمية"
+          "مركز العمليات الأمنية الموحدة 911 يغطي مكة المكرمة والرياض والمنطقة الشرقية ويشمل المرور وأمن الطرق والجهات الأمنية المشمولة.",
+          "997 رقم الخدمة الإسعافية للهلال الأحمر السعودي؛ و993 لحوادث المرور في بقية المناطق وفق قائمة وزارة الداخلية.",
+          "عند وجود مصاب أو خطر طبي عاجل اطلبي الإسعاف فورًا، ولا تؤخري البلاغ الطبي بانتظار معالجة أضرار المركبات."
         ],
         "scenario": "حادث فيه مصاب في مكة ويحتاج مساعدة فورية.",
         "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
         "recap": "للإبلاغ عن حادث مشمول بخدمة نجم راجعي شروطها وقنواتها الرسمية"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-042"
+      "question_id": "QUIZ-042",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "997 للإسعاف؛ 911 للعمليات الأمنية الموحدة في مكة والرياض والشرقية؛ 993 للمرور في بقية المناطق.",
+      "verification_urls": [
+        "https://srca.org.sa/",
+        "https://www.moi.gov.sa/"
+      ]
     },
     {
       "id": "LES-043",
@@ -1881,21 +1929,28 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "تمت مراجعة متطلبات بطاقة الخدمة الحالية في أبشر بتاريخ 2026-10-13.",
       "study_content": {
         "goal": "فهم مراحل استخراج الرخصة في السعودية",
-        "introduction": "الحجز في أبشر خطوة للحصول على التدريب، وليس إصدار رخصة فورية. هناك فحص طبي وتدريب واختبارات وإجراءات دفع.",
+        "introduction": "حجز موعد مدرسة القيادة عبر أبشر خطوة ضمن مسار الحصول على الرخصة، وليس إصدارًا فوريًا. بطاقة الخدمة الحالية تذكر حدًا أدنى 18 سنة، حجز مدرسة قيادة، فحصًا طبيًا من مركز معتمد، وسداد رسوم الإصدار، ثم استكمال التدريب والاختبارات اللازمة.",
         "key_points": [
-          "الحد الأدنى لرخصة القيادة الخاصة 18 سنة بحسب بطاقة الخدمة",
-          "يمكن حجز موعد مدرسة معتمدة عبر أبشر",
-          "الرسوم الحكومية منفصلة عن رسوم التدريب"
+          "الحد الأدنى المذكور في بطاقة خدمة إصدار رخصة القيادة الخاصة هو 18 سنة.",
+          "يُحجز أو يُحدّث موعد التدريب في مدرسة قيادة معتمدة عبر أبشر.",
+          "الفحص الطبي المعتمد ورسوم الإصدار واستكمال التدريب والاختبارات مراحل منفصلة عن مجرد حجز الموعد."
         ],
         "scenario": "حجزتِ موعدًا بمدرسة معتمدة عبر أبشر.",
         "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
         "recap": "الرسوم الحكومية منفصلة عن رسوم التدريب"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-046"
+      "question_id": "QUIZ-046",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "شروط بطاقة خدمة إصدار رخصة القيادة في أبشر: العمر، حجز المدرسة، الفحص الطبي، الرسوم، واستكمال التدريب والاختبارات.",
+      "verification_urls": [
+        "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/"
+      ]
     },
     {
       "id": "LES-047",
@@ -1917,21 +1972,28 @@
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "المقتطف في المرفق ينتهي قبل اكتمال المراجعة؛ تحقق من أسعار مدرسة القيادة عند النشر",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "تم تصحيح نسبة مثال 6/15/30 إلى مدرسة جامعة القصيم؛ لا يعمم على جميع المدارس.",
       "study_content": {
         "goal": "فهم مستويات برامج تعليم القيادة",
-        "introduction": "تختلف البرامج بحسب تقييم المدرسة للمستوى. مثال مدرسة جدة المتطورة يعرض مسارات 30 و15 و6 ساعات بتكاليف مختلفة.",
+        "introduction": "تختلف برامج التدريب بحسب تقييم المدرسة للمستوى. كمثال منشور حاليًا من مدرسة جامعة القصيم لتعليم القيادة: 6 ساعات لمن يجيد القيادة، و15 ساعة لمتوسط الإجادة، و30 ساعة لمن لا يجيد القيادة.",
         "key_points": [
-          "البرنامج الأطول موجّه عادةً لمن تبدأ من الصفر",
-          "الساعات ومحتوى البرنامج تختلف بحسب المدرسة والسياسات الجارية",
-          "الرسوم المنشورة قابلة للتغيير فراجعي المدرسة قبل الدفع"
+          "في مثال مدرسة جامعة القصيم، برنامج 30 ساعة مخصص لمن لا يجيد القيادة.",
+          "برنامجا 15 و6 ساعات مرتبطان بتقييم مستوى المتدرب في المدرسة نفسها.",
+          "هذه الأرقام مثال من مدرسة محددة وليست قاعدة وطنية ثابتة لكل مدرسة؛ راجعي مدرستك قبل الدفع أو التخطيط."
         ],
         "scenario": "متدربة جديدة لم تتعلم القيادة قط.",
         "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
-        "recap": "الرسوم المنشورة قابلة للتغيير فراجعي المدرسة قبل الدفع"
+        "recap": "6/15/30 ساعة مثال منشور من مدرسة جامعة القصيم، وليس معيارًا موحدًا لكل مدارس المملكة."
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-047"
+      "question_id": "QUIZ-047",
+      "verification_level": "school_primary_support",
+      "verification_label": "موثق من مدرسة سعودية محددة",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "برامج 6 و15 و30 ساعة منشورة في مدرسة جامعة القصيم لتعليم القيادة.",
+      "verification_urls": [
+        "https://sites.qu.edu.sa/quds/quds-prices/"
+      ]
     },
     {
       "id": "LES-048",
@@ -2093,7 +2155,13 @@
       "correct_option_index": 0,
       "rationale": "علامة قف تتطلب التوقف الكامل.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
-      "provenance": "صياغة تعليمية جديدة"
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES"
+      ],
+      "verification_note": "تمت مراجعة قاعدة التوقف التام عند علامة قف؛ السؤال تعليمي وليس سؤال اختبار رسمي."
     },
     {
       "id": "QUIZ-009",
@@ -2143,8 +2211,13 @@
       "rationale": "اللوحة في هذا الموقف توجب إفساح المجال للمركبات ذات الأفضلية على الطريق الرئيسي.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "السؤال يذكر صراحة علامة أعط الأفضلية والطريق الرئيسي لتجنب التعميم."
     },
     {
       "id": "QUIZ-012",
@@ -2222,8 +2295,12 @@
       "rationale": "عند مرور مركبات لها الأفضلية، يجب إفساح المجال لها، وقد يتطلب ذلك التوقف الكامل.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1"
+      ],
+      "verification_note": "المفهوم مدعوم بنص المخالفات الرسمي؛ السؤال صياغة تعليمية جديدة."
     },
     {
       "id": "QUIZ-017",
@@ -2254,8 +2331,13 @@
       "rationale": "في حالة الوصول المتزامن لتقاطع متساوي الأفضلية دون إشارات أولوية، تكون الأفضلية للقادمة من اليمين.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "مقيد بحالة وصول متزامن وتقاطع متساوي الأفضلية دون لوحات أو إشارات."
     },
     {
       "id": "QUIZ-019",
@@ -2271,8 +2353,13 @@
       "rationale": "الأفضلية للمركبة الموجودة داخل الدوار ما لم توجد إشارات ضوئية أو رجل مرور ينظمان الحركة خلاف ذلك.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "السؤال يستثني صراحة وجود إشارة ضوئية أو رجل مرور."
     },
     {
       "id": "QUIZ-020",
@@ -2626,8 +2713,13 @@
       "rationale": "سلامة المصابين وطلب الإسعاف أولوية؛ يستقبل الهلال الأحمر السعودي البلاغات الإسعافية على 997، وتعمل خدمة 911 في المناطق المشمولة.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://srca.org.sa/",
+        "https://www.moi.gov.sa/"
+      ],
+      "verification_note": "الأولوية في السيناريو هي طلب الطوارئ الطبية للمصاب."
     },
     {
       "id": "QUIZ-043",
@@ -2687,22 +2779,32 @@
       "correct_option_index": 1,
       "rationale": "الحجز لا يعادل إتمام جميع الشروط.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
-      "provenance": "صياغة تعليمية جديدة"
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "verification_urls": [
+        "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/"
+      ],
+      "verification_note": "الحجز وحده لا يساوي إصدار الرخصة؛ يلزم استكمال المتطلبات المنشورة."
     },
     {
       "id": "QUIZ-047",
       "lesson_id": "LES-047",
       "week": 16,
-      "question": "أي مسار تعليمي تتوقعينه في مثال المدرسة؟",
+      "question": "بحسب مثال مدرسة جامعة القصيم المنشور، أي برنامج مخصص لمن لا يجيد القيادة؟",
       "options": [
-        "مسار مبتدئات 30 ساعة",
-        "دورة 6 ساعات حتمًا",
-        "بلا تدريب"
+        "برنامج 30 ساعة",
+        "برنامج 6 ساعات حتمًا",
+        "لا يحتاج تدريبًا"
       ],
       "correct_option_index": 0,
-      "rationale": "المدارس تحدد المسار وفق تقييم المستوى.",
+      "rationale": "صفحة تكاليف مدرسة جامعة القصيم تعرض برنامج 30 ساعة لمن لا يجيد القيادة، لكن المدارس الأخرى قد تختلف.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
-      "provenance": "صياغة تعليمية جديدة"
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "school_primary_checked_2026-10-13",
+      "verification_urls": [
+        "https://sites.qu.edu.sa/quds/quds-prices/"
+      ],
+      "verification_note": "معلومة خاصة بمثال مدرسة جامعة القصيم، وليست قاعدة وطنية موحدة."
     },
     {
       "id": "QUIZ-048",
@@ -7484,5 +7586,15 @@
     "lesson_reading_index_count": 48,
     "linking_policy": "topic index does not establish accuracy or current legal validity",
     "distribution_policy": "Do not publish user-provided PDFs, copyrighted signs/photographs, or proprietary font files to public GitHub without a license."
+  },
+  "content_verification": {
+    "last_reviewed": "2026-10-13",
+    "note": "حالة الثقة تصف الادعاء المحدد الذي تمت مراجعته ولا تعني اعتماد الدرس كاملًا أو أن أسئلته أسئلة اختبار رسمية.",
+    "levels": {
+      "official_current_support": "المفهوم المحدد مدعوم بمصدر رسمي سعودي حالي تمت مراجعته في التاريخ المبين.",
+      "school_primary_support": "المعلومة منشورة من مدرسة قيادة سعودية محددة وقد لا تنطبق على جميع المدارس.",
+      "training_reference_support": "المعلومة مدعومة بمرجع تدريبي مرفوع؛ يلزم تحديث الأحكام المتغيرة من المصدر الرسمي.",
+      "pending": "قيد التدقيق."
+    }
   }
 }

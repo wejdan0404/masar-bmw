@@ -241,6 +241,15 @@ function click(action,el,ctx){
   }).catch(function(){waiting.textContent='تعذر قراءة ملف PDF المحلي.'});
   return true;
  }
+ if(action==='hub-source-brief'){
+  var briefId=el.dataset.source,lessonId=el.dataset.lesson,start=Number(el.dataset.start)||1,end=Number(el.dataset.end)||start;
+  var item=[].concat(c.personal_documents||[],c.uploaded_image_index||[]).find(function(x){return x.id===briefId});
+  var area=el.closest('.hub-source')&&el.closest('.hub-source').querySelector('.source-inline-preview');
+  if(!item||!area)return true;
+  area.innerHTML=sourceBriefHtml(c,item,lessonId,start,end);
+  area.scrollIntoView({behavior:'smooth',block:'nearest'});
+  return true;
+ }
  if(action==='hub-extract-text'){
   var id=el.dataset.source,from=Number(el.dataset.from),to=Number(el.dataset.to);
   var parent=el.closest('.source-chapter'),region=parent&&parent.querySelector('.source-text-preview');

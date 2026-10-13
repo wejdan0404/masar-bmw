@@ -1,6 +1,6 @@
 (() => {
 'use strict';
-const COURSE=JSON.parse(document.getElementById('course-data').textContent);
+const COURSE=window.MasarCourse||JSON.parse(document.getElementById('course-data').textContent);
 const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, sourceById=Object.fromEntries(COURSE.sources.map(s=>[s.id,s]));
 const baseKey='masar-driving-v1';
 let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[],uiPrefs:{focus:false}};
@@ -443,18 +443,24 @@ window.addEventListener('storage',e=>{if(e.key===baseKey){try{state={...state,..
 tickInterval=setInterval(()=>{window.MasarCoach?.tick(COURSE,state,save,render);window.MasarStudio.tick(state,save,render,toast)},1000);
 render();restoreReadingPosition();
 if(window.MasarDB){
-  window.MasarDB.seedReference(COURSE).then(() => window.MasarDB.loadUser()).then(saved => {
-    databaseReady=true; databaseStatus='قاعدة IndexedDB جاهزة · حفظ محلي على هذا الجهاز';
+  // Restore personal learning progress first; expensive indexing is not needed for rendering.
+  window.MasarDB.loadUser().then(saved=>{
+    databaseReady=true;databaseStatus='قاعدة IndexedDB جاهزة · حفظ محلي على هذا الجهاز';
     window.MasarHub?.refreshFiles(window.MasarDB,()=>{if(route()==='/sources')render(true)});
-    // Preserve edits made in the current page or existing localStorage progress.
-    if(!savedMirrorPresent && !dirtyBeforeReady && saved){
+    if(!savedMirrorPresent&&!dirtyBeforeReady&&saved){
       state={...state,...saved};
       try{localStorage.setItem(baseKey,JSON.stringify(state))}catch(_){}
       render(true);restoreReadingPosition();
-    } else {
-      save();
-    }
+    } else save();
     const status=document.getElementById('db-status');if(status)status.textContent=databaseStatus;
-  }).catch(e=>{databaseStatus='IndexedDB غير متاحة · تم استخدام التخزين الاحتياطي المحلي';console.warn('MASAR database unavailable',e);const el=document.getElementById('db-status');if(el)el.textContent=databaseStatus;});
+  }).catch(e=>{
+    databaseStatus='IndexedDB غير متاحة · تم استخدام التخزين الاحتياطي المحلي';
+    console.warn('MASAR database unavailable',e);
+    const status=document.getElementById('db-status');if(status)status.textContent=databaseStatus;
+  }).finally(()=>{
+    const seed=()=>window.MasarDB.seedReference(COURSE).catch(e=>console.warn('Course index unavailable',e));
+    if(typeof window.requestIdleCallback==='function')window.requestIdleCallback(seed,{timeout:3500});
+    else setTimeout(seed,500);
+  });
 }
 })();

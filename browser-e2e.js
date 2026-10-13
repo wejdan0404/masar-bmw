@@ -54,11 +54,11 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert((await chapters.count())>=1,'A beginner must find a linked source inside the lesson');
   await chapters.first().locator('summary').click();
   assert(await chapters.first().locator('.source-chapter-inner').isVisible(),'Book chapter summary does not expand');
-  assert((await chapters.first().locator('.source-honesty').innerText()).includes('ليس نسخًا حرفيًا'),'The book paraphrase is not labeled');
-  await chapters.first().locator('[data-action="hub-inline-open"]').click();
-  await chapters.first().locator('.source-inline-info').waitFor({timeout:10000});
-  assert((await chapters.first().locator('.source-inline-info').innerText()).includes('أضيفي نسختك'),'A missing book should offer import without leaving the lesson');
-  console.log('PASS Chromium: beginner can expand the reference and see local-import guidance');
+  assert((await chapters.first().locator('.source-honesty').innerText()).includes('لا تحتاجين لرفع ملف'),'The source explanation must say manual upload is not required');
+  assert.equal(await chapters.first().locator('[data-action="hub-pick"]').count(),0,'Lesson sources must not ask the learner to upload a file');
+  assert((await chapters.first().innerText()).includes('لا يلزم رفع ملف'),'Lesson source should expose the ready-to-study state');
+  assert.equal(await chapters.first().getByRole('link',{name:'شوفي فهرس المصدر داخل مِسار'}).count(),1,'Lesson source should link to the built-in source index');
+  console.log('PASS Chromium: beginner can use source content without importing a file');
 
   await page.locator('textarea[data-activity-note="ACT-001"]').fill('اختبار حفظ Chromium: لاحظت الفرامل والحزام');
   await page.locator('input[data-activity-check="ACT-001"]').check();

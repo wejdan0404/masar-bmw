@@ -1951,6 +1951,23 @@ html[data-theme="light"] :is(.crumb,.sub,.stat-label,.section-head p){color:#526
 html[data-theme="light"] .topbar{background:rgba(249,252,255,.95)!important}
 html[data-theme="light"] :is(.chip,.theme-toggle,.btn-outline,.btn-muted){border-color:#cbdce9!important;color:#17354b!important}
 
+
+/* LIGHT-MODE PARITY — robust contrast for nested learning surfaces and keyboard navigation */
+html[data-theme="light"] :is(.sidebar,.sidebar.sidebar-premium) :is(.sidebar-group-title,.sidebar-group-links a,.nav a,.logo,.logo strong,.logo small,.mini-progress,.foot-note){text-shadow:none!important}
+html[data-theme="light"] .sidebar .sidebar-group-links a[aria-current="page"]{background:#dceefa!important;color:#003d73!important;border-color:#9fc7e5!important}
+html[data-theme="light"] .sidebar :is(.sidebar-group-title,.sidebar-group-links a,.nav a):focus-visible{outline:3px solid #0066b1!important;outline-offset:2px}
+html[data-theme="light"] :is(.card,.stat,.week-card,.lesson-body,.test-card,.source-chapter,.hub-source,.hub-question,.settings-card,.study-video,.scenario){color:#172637!important;background:#fff!important;border-color:#d5e0e9!important}
+html[data-theme="light"] :is(.card,.stat,.week-card,.lesson-body,.hub-source,.hub-question,.settings-card) :is(h2,h3,h4,strong,b){color:#172637}
+html[data-theme="light"] :is(.source-chapter,.hub-source,.hub-question,.lesson-body) :is(p,li,small){color:#52687d}
+html[data-theme="light"] :is(.source-chapter,.hub-source,.hub-question,.lesson-body) :is(a:not(.btn),summary){color:#005a9f}
+html[data-theme="light"] :is(.lesson-body,.source-chapter,.hub-question) :is(a,button,summary,input):focus-visible{outline:3px solid #0066b1!important;outline-offset:2px}
+html[data-theme="light"] .hero-premium .hero-copy h1 span{-webkit-text-fill-color:#0066b1!important}
+@media(max-width:610px){
+ html[data-theme="light"] .topbar{border-bottom:1px solid #d5e0e9!important}
+ .page-title{overflow-wrap:anywhere}
+ .hero-premium .hero-actions{width:100%}
+ .hero-premium .hero-actions .btn{max-width:100%}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>

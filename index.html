@@ -1763,6 +1763,95 @@ html[data-theme="dark"] .hub-explain{background:#16382f!important;border-right:4
 html[data-theme="light"] .hub-explain{background:#eaf7f1!important;border-right:4px solid #398b71!important}
 .paper-item{border-color:var(--bmw-border)!important}
 html[data-theme="dark"] .paper-visual{background:#f7fafc!important}
+
+
+/* UI/UX Pro Max audit / HERO VISIBILITY PASS
+   Hero media is a real content focal point; don't hide it behind body copy.
+   Desktop: 100% photo opacity, brighter car, controlled falloff at text edge.
+   Mobile: its own visual panel below text, full opacity, no image-as-watermark. */
+.hero.hero-premium{position:relative;overflow:hidden}
+.hero-premium .hero-copy{position:relative;z-index:4}
+.hero-bmw-scene{
+ left:0;right:auto;top:0;bottom:0;width:54%;opacity:1!important;
+ border-radius:0;overflow:hidden;
+ background:radial-gradient(ellipse at 52% 78%,rgba(0,116,205,.24),transparent 65%),#0a1420;
+}
+.bmw-scene-glow{opacity:.42;filter:blur(13px)}
+.bmw-hero-photo{
+ display:block;opacity:1!important;
+ object-fit:cover;object-position:50% 56%;
+ filter:brightness(1.32) saturate(.83) contrast(1.04);
+ -webkit-mask-image:linear-gradient(to right,#000 0%,#000 68%,rgba(0,0,0,.85) 79%,transparent 99%);
+ mask-image:linear-gradient(to right,#000 0%,#000 68%,rgba(0,0,0,.85) 79%,transparent 99%);
+}
+.bmw-hero-photo[hidden]{display:none!important}
+.bmw-silhouette{opacity:.96;bottom:6%;width:116%}
+.bmw-scene-caption{
+ display:block;left:6%;bottom:7%;z-index:2;
+ background:rgba(8,23,39,.72);border:1px solid rgba(128,196,245,.24);
+ border-radius:7px;padding:5px 10px;color:#d8efff;
+ backdrop-filter:blur(8px);letter-spacing:.12em
+}
+html[data-theme="light"] .bmw-hero-photo{
+ filter:brightness(1.18) saturate(.85) contrast(1.05);
+}
+html[data-theme="light"] .hero-bmw-scene{background:#d8e8f3}
+html[data-theme="light"] .bmw-scene-caption{background:rgba(10,38,65,.77);color:white}
+
+/* tablet: keep car readable without obscuring the title */
+@media(min-width:901px) and (max-width:1199px){
+ .hero-bmw-scene{width:48%;left:0;opacity:1!important}
+ .bmw-hero-photo{object-position:50% 50%;filter:brightness(1.35) saturate(.87) contrast(1.03)}
+ .hero-premium .hero-copy{max-width:57%;flex:0 1 57%}
+}
+
+/* mobile/tablet: dedicate a high-contrast image stage instead of 20% watermark */
+@media(max-width:900px){
+ .hero.hero-premium{
+   display:flex;flex-direction:column;align-items:stretch;gap:15px;
+   height:auto;min-height:unset;padding:26px 24px 20px;
+ }
+ .hero-premium .hero-copy{order:0;flex:none;width:100%;max-width:100%;z-index:4}
+ .hero-premium .hero-status-strip{position:relative;z-index:4}
+ .hero-bmw-scene{
+   position:relative;order:1;flex:none;align-self:stretch;
+   left:auto;right:auto;top:auto;bottom:auto;
+   width:100%;height:clamp(186px,32vw,290px);margin-top:2px;
+   opacity:1!important;border-radius:16px;
+   border:1px solid rgba(93,173,231,.25);
+   box-shadow:inset 0 1px 0 rgba(205,231,251,.12);
+ }
+ .bmw-hero-photo{
+   inset:0;width:100%;height:100%;opacity:1!important;
+   object-position:50% 54%;
+   filter:brightness(1.33) saturate(.86) contrast(1.04)!important;
+   -webkit-mask-image:none!important;mask-image:none!important;
+ }
+ .bmw-silhouette{bottom:2%;left:0;width:100%;max-height:95%}
+ .bmw-scene-caption{display:block;left:12px;bottom:12px}
+ .hero-bmw-scene:after{
+   content:"";position:absolute;inset:0;border-radius:inherit;
+   pointer-events:none;
+   box-shadow:inset 0 -30px 50px rgba(6,16,29,.16),inset 0 1px 0 rgba(255,255,255,.07)
+ }
+ .hero-premium .hero-gauge{display:none}
+ .hero-premium .hero-serial{display:none}
+}
+@media(max-width:610px){
+ .hero.hero-premium{padding:24px 18px 18px;gap:12px}
+ .hero-bmw-scene{
+   width:100%;left:auto;right:auto;top:auto;bottom:auto;
+   height:clamp(180px,52vw,250px);opacity:1!important;
+ }
+ .bmw-hero-photo{
+   object-position:50% 52%;
+   filter:brightness(1.34) saturate(.9) contrast(1.03)!important
+ }
+ .hero-premium .hero-copy{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-bmw-scene,.bmw-hero-photo{transition:none!important;animation:none!important}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -11413,7 +11502,7 @@ function footerNote(){return `<div class="warning" role="note">${icon('alert')} 
 function carArt(){return '<div class="hero-bmw-scene" aria-hidden="true">'
  +'<span class="bmw-scene-glow"></span>'
  +'<svg class="bmw-silhouette" viewBox="0 0 780 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="bmw-car-black" x1="0" x2=".9" y1="0" y2="1"><stop stop-color="#5a6877"/><stop offset=".3" stop-color="#242d37"/><stop offset=".68" stop-color="#111821"/><stop offset="1" stop-color="#05090f"/></linearGradient><linearGradient id="bmw-glass" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#6b869c"/><stop offset=".6" stop-color="#152637"/><stop offset="1" stop-color="#090f16"/></linearGradient></defs><ellipse cx="383" cy="327" rx="328" ry="26" fill="#05080e" opacity=".7"/><path d="M49 282Q47 257 92 244L153 230Q181 222 218 196L288 139Q329 105 400 111Q502 114 575 194Q666 203 718 237Q740 257 730 292L65 298Z" fill="url(#bmw-car-black)" stroke="#4b6479" stroke-width="3"/><path d="M230 193L294 145Q334 122 389 123Q468 128 525 190Z" fill="url(#bmw-glass)" stroke="#708697" stroke-width="3"/><path d="M393 127L391 190M525 192L549 227" stroke="#60758a" stroke-width="3"/><path d="M68 256Q127 229 180 223M593 219Q667 221 711 249" stroke="#97a9bb" stroke-width="4" opacity=".55" fill="none"/><path d="M67 272H212M597 278H728" stroke="#091017" stroke-width="7"/><path d="M99 244Q126 224 158 233Q170 247 151 261Q120 272 99 244Z" fill="#d6f0ff" stroke="#2f5b80" stroke-width="3"/><path d="M101 247Q125 234 150 238" stroke="#fff" stroke-width="5" fill="none"/><g transform="translate(228 237)" fill="#07141f" stroke="#a3b5c7" stroke-width="4"><path d="M0 0Q17 -9 32 0V40Q14 55 0 40Z"/><path d="M39 0Q56 -9 71 0V40Q55 55 39 40Z"/></g><g stroke="#a9c6de" stroke-width="3"><path d="M239 241V277M248 236V283M263 236V282M284 241V279"/></g><circle cx="217" cy="301" r="55" fill="#0a0e15" stroke="#3a4755" stroke-width="10"/><circle cx="217" cy="301" r="34" fill="#1b2734" stroke="#bac7d2" stroke-width="5"/><circle cx="217" cy="301" r="13" fill="#3a5669" stroke="#a3b5c7" stroke-width="3"/><circle cx="589" cy="301" r="55" fill="#0a0e15" stroke="#3a4755" stroke-width="10"/><circle cx="589" cy="301" r="34" fill="#1b2734" stroke="#bac7d2" stroke-width="5"/><circle cx="589" cy="301" r="13" fill="#3a5669" stroke="#a3b5c7" stroke-width="3"/><path d="M217 268V334M184 301H250M194 278L239 324M239 278L194 324M589 268V334M556 301H622M566 278L612 324M612 278L566 324" stroke="#91a7b8" stroke-width="5"/></svg>'
- +'<img class="bmw-hero-photo" src="https://images.unsplash.com/photo-1714434087671-06325b90f26a?auto=format&fit=crop&w=1150&q=82" alt="" decoding="async" fetchpriority="high" referrerpolicy="no-referrer"/>'
+ +'<img class="bmw-hero-photo" src="https://images.unsplash.com/photo-1714434087671-06325b90f26a?auto=format&fit=crop&w=1150&q=82" alt="" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.hidden=true"/>'
  +'<span class="bmw-scene-caption">BMW · BLACK EDITION</span></div>'}
 function stat(text,value,extra,ic,variant='') {return `<div class="stat stat-${variant} card-premium-interactive"><div class="stat-top"><span class="stat-label">${text}</span><span class="stat-icon">${icon(ic)}</span></div><div class="stat-content"><div class="val" data-count-value="${Number(value)}">${value}</div><div class="stat-caption">${extra}</div></div><span class="stat-decoration" aria-hidden="true"></span></div>`}
 const studyDays=[['السبت','درس 01','فهم أساسي'],['الثلاثاء','درس 02','شرح + مثال'],['الخميس','درس 03','تطبيق قصير'],['الجمعة','مراجعة','ثبتي المعلومات']];

@@ -38,6 +38,17 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','Dark preference persists');
   await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
   console.log('PASS Chromium: black BMW hero, dark/light themes and persistence');
+  const heroDesktop=await page.locator('.hero-bmw-scene').evaluate(el=>{
+    const r=el.getBoundingClientRect(),style=getComputedStyle(el),img=el.querySelector('.bmw-hero-photo');
+    return {width:r.width,opacity:Number(style.opacity),imageOpacity:Number(getComputedStyle(img).opacity),
+      imageFilter:getComputedStyle(img).filter,hasFallback:!!el.querySelector('.bmw-silhouette')};
+  });
+  assert(heroDesktop.width>=450,'Desktop hero image area must be large enough: '+JSON.stringify(heroDesktop));
+  assert(heroDesktop.opacity>=.95,'Desktop car scene should no longer fade');
+  assert(heroDesktop.imageOpacity>=.95,'Car image should not be translucent');
+  assert(heroDesktop.hasFallback,'Offline fallback must be present');
+  console.log('PASS Chromium: high-visibility BMW on desktop');
+
 
   assert.equal(await page.locator('.studio-session').count(),0,'Home must not show a timer card');
   assert.equal(await page.locator('.studio-timer-dock,.floating-timer').count(),0,'No timer overlay on initial home visit');
@@ -263,6 +274,21 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   const homeSizes=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
   assert(homeSizes.scroll<=homeSizes.width+8,'Mobile learning studio horizontal overflow: '+JSON.stringify(homeSizes));
   console.log('PASS Chromium: mobile learning studio avoids horizontal scrolling');
+  const heroMobile=await page.evaluate(()=>{
+    const media=document.querySelector('.hero-bmw-scene'),copy=document.querySelector('.hero-premium .hero-copy'),
+      picture=document.querySelector('.bmw-hero-photo');
+    const mr=media.getBoundingClientRect(),cr=copy.getBoundingClientRect(),
+      ms=getComputedStyle(media),ps=getComputedStyle(picture);
+    return {width:mr.width,height:mr.height,top:mr.top,copyBottom:cr.bottom,
+      opacity:Number(ms.opacity),pictureOpacity:Number(ps.opacity),mask:ps.maskImage,overflow:document.documentElement.scrollWidth-innerWidth};
+  });
+  assert(heroMobile.width>=300&&heroMobile.height>=170,'Mobile BMW needs its own readable image panel: '+JSON.stringify(heroMobile));
+  assert(heroMobile.top>=heroMobile.copyBottom-8,'Image panel must be below the lesson headline, not behind it: '+JSON.stringify(heroMobile));
+  assert(heroMobile.opacity>=.95,'Mobile BMW picture should not be 20% opacity');
+  assert(heroMobile.pictureOpacity>=.95,'BMW media should not appear as faint watermark');
+  assert(heroMobile.overflow<=8,'Mobile hero should not cause horizontal overflow');
+  console.log('PASS Chromium: BMW hero has its own visible mobile media panel');
+
   await page.goto(base+'#/traffic-signs',{waitUntil:'domcontentloaded'});
   await page.locator('.ts-grid').waitFor();
   const sizes=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));

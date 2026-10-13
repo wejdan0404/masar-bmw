@@ -788,3 +788,30 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
  .page{animation:none}
  .coach-mode-card,.sidebar-group-links a{transition:none!important;transform:none!important}
 }
+
+
+/* MASAR v1.5 — content trust, evidence visibility, and extra retrieval practice */
+.verification-chip{white-space:normal;text-align:center;line-height:1.45}
+.lesson-verification{border:1px solid #dce5ea;border-radius:14px;padding:13px 14px;background:#f8fafb;display:grid;gap:7px}
+.lesson-verification.official_current_support{background:#edf7f2;border-color:#c7dfd3}
+.lesson-verification.school_primary_support{background:#edf4f8;border-color:#cbdce7}
+.lesson-verification-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.lesson-verification-head small{font-size:9.5px;color:#738591}
+.lesson-verification>strong{font-size:12.5px;color:#263f4d}
+.lesson-verification p{font-size:11px;line-height:1.85;margin:0;color:#58707f}
+.verification-links{display:grid;gap:5px;margin-top:2px}
+.verification-source-link{font-size:10.5px;font-weight:800;color:#466b82;text-decoration:none;line-height:1.7}
+.verification-source-link:hover{text-decoration:underline}
+.verification-caveat{display:block;border-top:1px solid #dce5ea;padding-top:7px;color:#7a8c97;font-size:9.5px;line-height:1.65}
+.lesson-extra-question{position:relative;overflow:hidden}
+.lesson-extra-question:before{content:'';position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#7598B9,#800C1F)}
+.lesson-extra-question .flexline{align-items:flex-start}
+.lesson-extra-question .feedback{margin-top:14px}
+.lesson-extra-hint{margin:12px 0 0!important;color:#71828d!important;font-size:11px!important;line-height:1.8!important}
+.lesson-extra-question .chip{max-width:210px}
+@media(max-width:610px){
+ .lesson-verification{padding:12px}
+ .lesson-verification-head{align-items:flex-start}
+ .lesson-extra-question .flexline{display:grid}
+ .lesson-extra-question .chip{justify-self:start}
+}

@@ -1853,6 +1853,7 @@ html[data-theme="light"] .bmw-scene-caption{background:rgba(10,38,65,.77);color:
  .hero-bmw-scene,.bmw-hero-photo{transition:none!important;animation:none!important}
 }
 
+
 /* MASAR UI coherence pass — Oct 2026: accessible, calm BMW-inspired learning */
 html[data-theme="dark"]{--bmw-bg:#090e14;--bmw-panel:#141c27;--bmw-panel-2:#1b2634;--bmw-border:#304050;--bmw-muted:#b9c8d8;--bmw-accent:#53aff5;--bmw-pill:#19344b;--bmw-text:#f3f7fb;--crimson:#53aff5;--wine:#0066b1;--sky:#53aff5}
 html[data-theme="light"]{--bmw-bg:#f5f7fa;--bmw-panel:#fff;--bmw-panel-2:#edf2f7;--bmw-border:#d5dfe8;--bmw-muted:#526375;--bmw-accent:#0066b1;--bmw-pill:#e6f2fb;--bmw-text:#162333;--crimson:#0066b1;--wine:#004b83;--sky:#0066b1}
@@ -11674,8 +11675,8 @@ function home(){
  const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),watchedVideos=directVideos.filter(x=>state.videoWatched?.[x.id]).length;
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
   <div class="hero-glow" aria-hidden="true"></div>${carArt()}
-  <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> مِسار · تعلّم القيادة</span></div>
-   <div class="eyebrow">ابدئي من هنا</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
+  <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> MASAR / THE DRIVING JOURNEY</span><span class="hero-edition">EDITION 2026 — 01</span></div>
+   <div class="eyebrow">رحلتك تبدأ من هنا / START HERE</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
    <div class="hero-status-strip" aria-label="ملخص سريع للتعلم"><span><b>W${p2(week)}</b><small>الأسبوع الحالي</small></span><span class="${due?'needs-attention':''}"><b>${due}</b><small>مراجعة مستحقة</small></span><span><b>${masteredSigns}</b><small>إشارة مثبّتة</small></span><span><b>${watchedVideos}/${directVideos.length}</b><small>مقاطع شوهدت</small></span></div>
@@ -11684,7 +11685,7 @@ function home(){
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  ${adaptiveStudyPlan(n)}
  <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('بنك الأسئلة',questions.length+(COURSE.review_questions||[]).length,'سؤالًا تدريبيًا بتفسير','quiz','questions')}</div>
- <div class="section-head home-section-head"><div><div class="eyebrow">متابعة التعلّم</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
+ <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
  <div class="route-line">${lessons.filter(l=>l.week===week).map((l,i)=>`<a href="#/lesson/${l.order}" class="route-stop ${isDone(l.order)?'complete':''} ${n.order===l.order?'current':''}"><span class="route-indicator"><i>${isDone(l.order)?icon('check'):p2(l.order)}</i></span><span class="route-text"><b>${ESC(l.title)}</b><small>الدرس ${p2(l.order)} · ${l.estimated_minutes} دقيقة تقريبًا</small></span><span class="route-go">${icon('arrow')}</span></a>`).join('')}</div>
  <div class="journey-footer"><a href="#/week/${week}" class="btn btn-muted">تفاصيل الأسبوع</a><a href="#/quiz" class="btn btn-outline">اختبريني ${icon('arrow')}</a></div></section>

@@ -205,3 +205,28 @@ html[data-theme="light"] .bmw-scene-caption{color:#155781}
 @media(max-width:610px){.hero-bmw-scene{left:-29%;top:18%;bottom:auto;width:125%;height:81%;opacity:.20}.bmw-hero-photo{object-position:54% 45%;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 92%);mask-image:linear-gradient(to bottom,transparent 0%,#000 22%,#000 92%)}.theme-toggle{min-width:43px;padding:8px;justify-content:center}.topbar .theme-toggle{display:inline-flex!important}}
 @media print{html,html[data-theme="dark"]{color-scheme:light!important}body{background:white!important;color:black!important}.hero-bmw-scene,.theme-toggle{display:none!important}.card,.lesson-body{background:white!important;color:#111!important}}
 @media(prefers-reduced-motion:reduce){.hero-bmw-scene *,.theme-toggle{animation:none!important;transition:none!important}}
+
+/* Deep page parity: prevent old light-background lesson fragments in dark mode. */
+.lesson-hero,.lesson-journey,.source-chapter[open],.route-stop.current,.video-gallery-item,
+.hub-explain,.hub-q-top,.lesson-extra-question,.lesson-video-grid,.hub-school-policy,
+.source-role,.source-text-preview,.source-canvas-reader,.hub-guide-step,.adaptive-study-plan{
+ background:var(--bmw-gradient)!important;color:var(--bmw-text)!important;
+ border-color:var(--bmw-border)!important;
+}
+.lesson-hero h1,.lesson-hero h2,.lesson-journey strong,.lesson-main strong,
+.hub-question h2,.hub-source h3,.hub-guide-step h2,.study-route h2{color:var(--bmw-text)!important}
+.lesson-hero p,.lesson-journey p,.lesson-journey-step p,.hub-question p,
+.hub-explain p,.hub-guide-step p,.route-text small,.week-card small,
+.source-role span,.source-summary-lesson p{color:var(--bmw-muted)!important}
+.route-stop.current,.lesson-journey-step.is-active{border-color:var(--bmw-accent)!important;background:var(--bmw-pill)!important}
+.source-role span,.hub-filename,.hub-metrics>div{background:var(--bmw-panel-2)!important;color:var(--bmw-muted)!important}
+:where(.hub-q-top,.source-page-summary-head,.source-page-summary-head h3){color:var(--bmw-text)}
+:where(.source-chapter summary,.source-topic-index summary,.hub-fault-group summary){color:var(--bmw-text)!important}
+html[data-theme="dark"] .hub-choice.right{background:#113d32!important;color:#b4f5dc!important;border-color:#418c73!important}
+html[data-theme="dark"] .hub-choice.wrong{background:#4b2535!important;color:#ffcad4!important;border-color:#bd6379!important}
+html[data-theme="light"] .hub-choice.right{background:#e8f7f0!important;color:#176348!important;border-color:#69a68c!important}
+html[data-theme="light"] .hub-choice.wrong{background:#fff0f3!important;color:#a52b45!important;border-color:#ce7d8c!important}
+html[data-theme="dark"] .hub-explain{background:#16382f!important;border-right:4px solid #65c2a2!important}
+html[data-theme="light"] .hub-explain{background:#eaf7f1!important;border-right:4px solid #398b71!important}
+.paper-item{border-color:var(--bmw-border)!important}
+html[data-theme="dark"] .paper-visual{background:#f7fafc!important}

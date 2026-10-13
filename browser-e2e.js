@@ -30,7 +30,18 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.reload({waitUntil:'domcontentloaded'});
   assert((await page.locator('[data-action="study-read"]').innerText()).includes('تم تسجيل قراءة'),'Lesson reading state did not persist');
   await page.locator('[data-action="study-read"]').click();
-  console.log('PASS Chromium: four-step lesson journey and reading toggle');
+  console.log('PASS Chromium: four-step lesson journey and reading toggle'); 
+  // First-time learner flow: the reference should expand in the same lesson, not open a new tab.
+  const chapters=page.locator('.source-chapter');
+  assert((await chapters.count())>=1,'A beginner must find a linked source inside the lesson');
+  await chapters.first().locator('summary').click();
+  assert(await chapters.first().locator('.source-chapter-inner').isVisible(),'Book chapter summary does not expand');
+  assert((await chapters.first().locator('.source-honesty').innerText()).includes('ليس نسخًا حرفيًا'),'The book paraphrase is not labeled');
+  await chapters.first().locator('[data-action="hub-inline-open"]').click();
+  await chapters.first().locator('.source-inline-info').waitFor({timeout:10000});
+  assert((await chapters.first().locator('.source-inline-info').innerText()).includes('أضيفي نسختك'),'A missing book should offer import without leaving the lesson');
+  console.log('PASS Chromium: beginner can expand the reference and see local-import guidance');
+
   await page.locator('textarea[data-activity-note="ACT-001"]').fill('اختبار حفظ Chromium: لاحظت الفرامل والحزام');
   await page.locator('input[data-activity-check="ACT-001"]').check();
   await page.waitForTimeout(800);
@@ -53,6 +64,23 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.locator('.hub-school-policy').waitFor();
   assert((await page.locator('.hub-school-policy').innerText()).includes('6 و15 و30 ساعة'),'School-specific source policy missing');
   console.log('PASS Chromium: school assessment differences are properly labeled');
+  // Navigation and media: beginner should see understandable phases, and videos play in-page.
+  await page.goto(base+'#/weeks',{waitUntil:'domcontentloaded'});
+  await page.locator('.learning-phase').first().waitFor();
+  assert.equal(await page.locator('.learning-phase').count(),4,'The 16 weeks must be grouped by four learning stages');
+  await page.goto(base+'#/videos',{waitUntil:'domcontentloaded'});
+  await page.getByRole('heading',{name:'مقاطع تعليم القيادة'}).waitFor();
+  assert.equal(await page.locator('.video-gallery-grid .study-video').count(),3,'Only verified direct-video links may be presented as playable');
+  await page.locator('.video-gallery-grid [data-action="video-load"]').first().click();
+  const playerFrame=page.locator('.video-gallery-grid .video-player iframe').first();
+  await playerFrame.waitFor();
+  assert.match(await playerFrame.getAttribute('src'),/^https:\/\/www.youtube-nocookie.com\/embed\/[\w-]{11}$/);
+  assert.equal(page.url(),base+'#/videos','Video play should not navigate away from Masar');
+  await page.locator('.video-gallery-grid textarea[data-video-note]').first().fill('فحص درس الفيديو داخل مِسار');
+  await page.reload({waitUntil:'domcontentloaded'});
+  assert.equal(await page.locator('.video-gallery-grid textarea[data-video-note]').first().inputValue(),'فحص درس الفيديو داخل مِسار');
+  console.log('PASS Chromium: four learning phases, in-page video playback and notes persistence');
+
   await page.goto(base+'#/mock-exam',{waitUntil:'domcontentloaded'});
   await page.locator('[data-action="coach-mock-start"]').click();
   await page.locator('[data-action="coach-mock-answer"]').first().click();
@@ -71,6 +99,17 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.reload({waitUntil:'domcontentloaded'});
   await page.getByText('في مكتبتك').first().waitFor({timeout:10000});
   console.log('PASS Chromium: user-supplied PDF is stored locally in IndexedDB');
+  const localSource=page.locator('.hub-source').filter({has:page.locator('[data-source="DOC-NAZAWI"]')}).first();
+  await localSource.locator('[data-action="hub-open"]').click();
+  await localSource.locator('.source-embedded-file').waitFor({timeout:10000});
+  assert.match(await localSource.locator('.source-embedded-file').getAttribute('src'),/^blob:/,'Local PDF must stay inside the Masar page');
+  const [batchPicker]=await Promise.all([page.waitForEvent('filechooser'),page.locator('[data-action="hub-batch-pick"]').click()]);
+  await batchPicker.setFiles([{name:'16907764(3).pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF-1.4\n%%EOF')},{name:'ملخص تقييم المرور(2).pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF-1.4\n%%EOF')}]);
+  await page.waitForTimeout(950);
+  const storedBooks=await page.locator('.hub-source .chip.blue').count();
+  assert(storedBooks>=3,'Batch import failed to match the source file names and save them');
+  console.log('PASS Chromium: local PDF viewer and importing multiple user-held books');
+
   await page.goto(base+'#/review',{waitUntil:'domcontentloaded'});
   await page.getByText('خطتي لمراجعة أخطائي').waitFor();
   console.log('PASS Chromium: spaced-review dashboard renders');
@@ -97,6 +136,16 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   const sizes=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));
   assert(sizes.scroll<=sizes.width+8,'Mobile viewport has unwanted horizontal overflow: '+JSON.stringify(sizes));
   console.log('PASS Chromium: mobile layout avoids horizontal scrolling');
+  await page.goto(base+'#/videos',{waitUntil:'domcontentloaded'});
+  await page.locator('.video-gallery-grid').waitFor();
+  const mediaWidth=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));
+  assert(mediaWidth.scroll<=mediaWidth.viewport+8,'Mobile videos overflow horizontally: '+JSON.stringify(mediaWidth));
+  await page.goto(base+'#/lesson/1',{waitUntil:'domcontentloaded'});
+  await page.locator('.source-chapter').first().locator('summary').click();
+  const readingWidth=await page.evaluate(()=>({viewport:innerWidth,scroll:document.documentElement.scrollWidth}));
+  assert(readingWidth.scroll<=readingWidth.viewport+8,'Mobile textbook accordion overflows horizontally: '+JSON.stringify(readingWidth));
+  console.log('PASS Chromium: mobile video and on-page textbook reader avoid horizontal overflow');
+
   assert.deepEqual(errors,[], 'Unexpected browser script exceptions');
   console.log('PASS Chromium: no uncaught JavaScript page errors');
  }finally{await browser.close()}

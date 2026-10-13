@@ -35,6 +35,12 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.notEqual(lightPalette.link,'rgb(255, 255, 255)','Light sidebar links cannot remain white on white');
   assert((lightPalette.hero||'').startsWith('rgb('),'Light hero heading should have an explicit computed color');
   assert(!lightPalette.kicker.includes('THE DRIVING JOURNEY'),'Legacy marketing copy must not return after compilation');
+  const sidebarGroupBorders=await page.locator('.sidebar .sidebar-nav-group').first().evaluate(el=>({
+    top:getComputedStyle(el).borderTopWidth,left:getComputedStyle(el).borderLeftWidth,right:getComputedStyle(el).borderRightWidth
+  }));
+  assert.equal(sidebarGroupBorders.top,'0px','Light sidebar sections must not look like nested bordered cards');
+  assert.equal(sidebarGroupBorders.left,'0px','Light sidebar group left edges must be clean');
+  assert.equal(sidebarGroupBorders.right,'0px','Light sidebar group right edges must be clean');
   console.log('PASS Chromium: light sidebar text contrast and simplified hero copy');
   const lightCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.notEqual(darkCard,lightCard,'Card surfaces must change with theme');
@@ -94,6 +100,16 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
     console.log('LIGHT_DARK_SURFACES '+route+' '+JSON.stringify(darkSurfaces));
 
   }
+
+  await page.goto(base+'#/sources',{waitUntil:'domcontentloaded'});
+  const sourceCover=await page.locator('.masar-library-cover').first().evaluate(el=>{
+    const title=el.querySelector('strong');
+    return {fg:getComputedStyle(title).color,bg:getComputedStyle(el).backgroundColor,font:parseFloat(getComputedStyle(title).fontSize)};
+  });
+  assert.equal(sourceCover.fg,'rgb(244, 250, 255)','Book cover title must be white on dark navy');
+  assert(sourceCover.font>=17,'Book title must be legible at desktop size');
+  console.log('PASS Chromium: dark blue book covers keep readable light titles');
+  await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
   console.log('LIGHT_THEME_AUDIT '+JSON.stringify(contrastSnapshots));
   await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
   await page.reload({waitUntil:'domcontentloaded'});

@@ -450,3 +450,12 @@ html[data-theme="light"] .hero-premium .hero-copy h1 span{-webkit-text-fill-colo
 html[data-theme="light"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#e1eaf2!important}
 html[data-theme="dark"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#2b3d50!important}
 .hero-premium .hero-topline .hero-kicker{letter-spacing:0!important}
+
+
+/* Display the matte-black BMW more clearly than the former dark wheel close-up.
+   Photo: Martin Katler / Unsplash, BMW M4 showroom (Djarq-Jgs2c). */
+.hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.02) saturate(.82) contrast(1.02)!important}
+html[data-theme="light"] .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.08) saturate(.83) contrast(.99)!important}
+@media(max-width:900px){
+ .hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.04) saturate(.84) contrast(1.02)!important}
+}

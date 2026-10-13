@@ -36,6 +36,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.reload({waitUntil:'domcontentloaded'});
   assert((await page.locator('.studio-checkpoint .studio-diagnostic-feedback').count())===1,'Diagnostic answer must persist');
   console.log('PASS Chromium: diagnostic answer and learning recap');
+  await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
   await page.locator('.study-command-grid .study-today-item').first().waitFor();
   assert.equal(await page.locator('.study-today-item').count(),4,'Daily learning studio needs four clear steps');
   assert.equal(await page.locator('.adaptive-task').count(),3,'Home should build a three-part adaptive study session');

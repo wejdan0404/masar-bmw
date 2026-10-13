@@ -459,3 +459,60 @@ html[data-theme="light"] .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.08)
 @media(max-width:900px){
  .hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.04) saturate(.84) contrast(1.02)!important}
 }
+
+
+/* MASAR final light-mode readability and editorial hierarchy, 2026-10-14 */
+.sidebar .sidebar-nav-group,
+.sidebar .sidebar-nav-group[open]{
+  background:transparent!important;
+  border:0!important;
+  border-bottom:1px solid var(--bmw-border)!important;
+  border-radius:0!important;
+  padding:0 0 11px!important;
+  margin:0 0 9px!important;
+  box-shadow:none!important;
+}
+.sidebar .sidebar-nav-group:last-child{border-bottom:0!important}
+.sidebar .sidebar-group-title,
+.sidebar .sidebar-nav-group[open]>.sidebar-group-title{
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  color:var(--bmw-muted)!important;font-size:13px!important;letter-spacing:0!important;
+  font-weight:750;min-height:38px;padding:7px 10px!important;line-height:1.5
+}
+.sidebar .sidebar-group-links a{font-size:13px!important;min-height:43px;box-shadow:none!important}
+.sidebar .side-label{font-size:12px!important;letter-spacing:0!important;line-height:1.7;margin-bottom:16px}
+.sidebar .logo small{letter-spacing:.08em;font-size:10px}
+.sidebar .mini-progress small{font-size:12px!important;line-height:1.7}
+html[data-theme="light"] .sidebar .sidebar-nav-group{border-bottom-color:#dde6ee!important}
+html[data-theme="light"] .sidebar .sidebar-group-title,
+html[data-theme="light"] .sidebar .sidebar-nav-group[open]>.sidebar-group-title{color:#435b70!important}
+html[data-theme="dark"] .sidebar .sidebar-group-title,
+html[data-theme="dark"] .sidebar .sidebar-nav-group[open]>.sidebar-group-title{color:#c4d6e7!important}
+html[data-theme="dark"] .sidebar .sidebar-nav-group{border-bottom-color:#334357!important}
+.masar-library-cover>strong{
+ color:#f4faff!important;-webkit-text-fill-color:#f4faff!important;
+ text-shadow:0 1px 6px rgba(4,20,35,.4)!important;
+ font-size:clamp(17px,1.5vw,20px)!important;line-height:1.65
+}
+.masar-library-cover>span,.masar-library-cover>small{
+ color:#e4f3ff!important;-webkit-text-fill-color:#e4f3ff!important;
+}
+html[data-theme="light"] .masar-library-cover>strong{color:#f4faff!important;-webkit-text-fill-color:#f4faff!important}
+html[data-theme="light"] .masar-library-cover{border-color:#2774a8!important;border-inline-start-color:#005892!important}
+.lesson-body :is(p,li),.source-chapter :is(p,li),
+.hub-source>p,.hub-question>p,.hub-guide-step>p{
+ font-size:14px!important;line-height:1.95!important
+}
+:where(.source-summary-lesson p,.source-library-summary span,.source-inline-info,.hub-filename,.lesson-main small){
+ font-size:12px;line-height:1.8
+}
+:where(.section-head p,.sub,.card>p,.week-card p){font-size:13px!important;line-height:1.85}
+:where(.stat-label,.bento-overline,.source-role span){font-size:12px!important;letter-spacing:0!important}
+.study-command-grid{align-items:start}
+html[data-theme="light"] .sidebar .sidebar-group-links a.active{color:#004876!important}
+html[data-theme="light"] .sidebar .logo strong{color:#17354b!important}
+html[data-theme="light"] .topbar .theme-toggle:hover{background:#e9f4fb!important}
+@media(max-width:900px){
+ .sidebar .sidebar-group-title{min-height:44px!important}
+ .lesson-body :is(p,li),.source-chapter :is(p,li){font-size:14px!important}
+}

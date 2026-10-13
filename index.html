@@ -1298,6 +1298,104 @@ body{
  .source-canvas-toolbar .btn{min-width:0;padding-inline:8px}
  .source-canvas-viewport{padding:6px;max-height:66vh}
 }
+
+
+/* MASAR v2.1 — source library + complete review visuals */
+.hub-sign-scene{
+ min-height:210px;
+ background:
+ radial-gradient(240px 140px at 50% 45%,rgba(122,163,192,.12),transparent 72%),
+ linear-gradient(180deg,#f7fafb,#eef3f6);
+ border:1px solid #dce5ea;
+}
+.masar-review-visual{
+ width:min(190px,78%);
+ max-height:170px;
+ filter:drop-shadow(0 9px 14px rgba(31,45,54,.08));
+}
+.source-card-visual{
+ position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ min-height:128px;
+ margin:-20px -20px 17px;
+ padding:15px;
+ overflow:hidden;
+ background:
+ radial-gradient(260px 130px at 76% 8%,rgba(122,163,192,.16),transparent 70%),
+ linear-gradient(145deg,#edf3f6,#f8fafb);
+ border-bottom:1px solid #dce5ea;
+}
+.source-card-visual:after{
+ content:'';
+ position:absolute;
+ width:170px;height:170px;
+ border:1px solid rgba(88,121,149,.12);
+ border-radius:50%;
+ left:-70px;top:-78px;
+ box-shadow:0 0 0 24px rgba(88,121,149,.035);
+}
+.source-card-visual svg{width:180px;max-width:62%;height:auto;position:relative;z-index:1}
+.source-card-visual>span{
+ position:absolute;
+ left:13px;bottom:10px;z-index:2;
+ border:1px solid #d3e0e7;
+ background:rgba(255,255,255,.88);
+ color:#577181;
+ border-radius:999px;
+ padding:4px 9px;
+ font-size:9.5px;
+ font-weight:850;
+ backdrop-filter:blur(8px);
+}
+.hub-source{overflow:hidden}
+.hub-source>.flexline,.hub-source>p,.hub-source>.source-role,.hub-source>.source-topic-index,.hub-source>.hub-filename,.hub-source>.hub-source-buttons,.hub-source>.source-inline-preview,.hub-source>.hub-source-note{
+ position:relative;z-index:1;
+}
+.source-topic-row{grid-template-columns:minmax(0,1fr) auto minmax(180px,auto)}
+.source-topic-actions{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.source-topic-actions button{
+ min-height:34px;
+ border:1px solid #d0dfe8;
+ border-radius:9px;
+ background:#edf4f8;
+ color:#36566e;
+ padding:6px 10px;
+ font:inherit;
+ font-size:10.5px;
+ font-weight:800;
+ cursor:pointer;
+}
+.source-topic-actions button:hover{background:#dfeef6;border-color:#bdd3df}
+.source-topic-actions button+button{background:#fff}
+.source-built-in-brief{
+ margin:14px 0 4px;
+ border:1px solid #cfe0e8;
+ border-radius:15px;
+ background:linear-gradient(145deg,#fbfcfd,#eef5f8);
+ padding:17px 18px;
+ box-shadow:0 8px 24px rgba(31,45,54,.04);
+}
+.source-brief-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.source-built-in-brief h4{font-size:16px;margin:4px 0 0;color:#243d49}
+.source-built-in-brief>strong{display:block;font-size:13px;color:#4a6778;margin-bottom:6px}
+.source-built-in-brief>p{font-size:12.5px!important;line-height:1.9!important;color:#506a79!important;margin:0 0 9px!important}
+.source-built-in-brief ul{margin:8px 0 12px;padding-inline-start:20px;display:grid;gap:5px}
+.source-built-in-brief li{font-size:11.5px;line-height:1.8;color:#3d5664}
+.source-built-in-brief small{display:block;border-top:1px solid #d7e3e9;margin-top:12px;padding-top:9px;color:#738793;font-size:9.5px;line-height:1.7}
+.source-brief-actions{display:flex;gap:8px;flex-wrap:wrap}
+.source-library-summary+.sub{max-width:920px}
+.hub-source .chip.blue{background:#e9f2f7;color:#42657b;border-color:#cfe0e9}
+@media(max-width:700px){
+ .source-card-visual{margin:-20px -20px 15px;min-height:112px}
+ .source-card-visual svg{max-width:72%}
+ .source-topic-row{grid-template-columns:1fr auto}
+ .source-topic-row>span{grid-column:1}
+ .source-topic-actions{grid-column:2;grid-row:1/3;align-self:center;max-width:128px}
+ .source-topic-actions button{width:100%}
+ .source-brief-top{display:grid}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -9165,7 +9263,9 @@ var cachedFiles={}, quizFilter='all',quizIndex=0,pinnedQuestionId=null;
 var sourceFilter='all';
 function E(x){return String(x===undefined||x===null?'':x).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function sign(k){
- var red='#cf1522',blue='#1b578b',black='#19232d',shape='',label='';
+ var red='#cf1522',blue='#1b578b',black='#19232d',steel='#6f8797',paper='#f7fafb',green='#2b7a5f',amber='#d79b2b',shape='',label='';
+ var road='<rect x="10" y="18" width="130" height="96" rx="15" fill="#dfe7eb"/><path d="M75 23V109" stroke="white" stroke-width="4" stroke-dasharray="11 9"/>';
+ var car=function(x,y,color){return '<g transform="translate('+x+' '+y+')"><rect x="0" y="0" width="30" height="48" rx="9" fill="'+color+'"/><rect x="5" y="7" width="20" height="14" rx="5" fill="#bcd0dc"/><rect x="-3" y="9" width="4" height="11" rx="2" fill="#17242c"/><rect x="29" y="9" width="4" height="11" rx="2" fill="#17242c"/><rect x="-3" y="29" width="4" height="11" rx="2" fill="#17242c"/><rect x="29" y="29" width="4" height="11" rx="2" fill="#17242c"/></g>'};
  if(k==='stop'){shape='<polygon points="75,5 113,20 130,57 113,94 75,110 36,94 20,57 36,20" fill="'+red+'" stroke="white" stroke-width="4"/><text x="75" y="66" text-anchor="middle" fill="white" font-weight="900" font-size="22">قف</text>';label='إشارة الوقوف التام'}
  else if(k==='yield'){shape='<polygon points="75,116 8,8 142,8" fill="white" stroke="'+red+'" stroke-width="13" stroke-linejoin="round"/>';label='إفساح الطريق'}
  else if(k==='no-entry'){shape='<circle cx="75" cy="64" r="53" fill="'+red+'"/><rect x="38" y="57" width="74" height="15" rx="3" fill="white"/>';label='ممنوع الدخول'}
@@ -9174,8 +9274,23 @@ function sign(k){
  else if(k==='no-uturn'){shape='<circle cx="75" cy="64" r="54" fill="white" stroke="'+red+'" stroke-width="10"/><path d="M102 92V47Q102 22 76 22T48 47V78M48 78L36 64M48 78L62 64" fill="none" stroke="'+black+'" stroke-width="10" stroke-linejoin="round"/><path d="M33 24L116 106" stroke="'+red+'" stroke-width="10"/>';label='منع الدوران للخلف'}
  else if(k==='traffic-light'){shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><rect x="65" y="44" width="20" height="62" rx="6" fill="'+black+'"/><circle cx="75" cy="55" r="7" fill="#ed333a"/><circle cx="75" cy="74" r="7" fill="#f4c02d"/><circle cx="75" cy="93" r="7" fill="#28a35e"/>';label='إشارة ضوئية أمامك'}
  else if(k==='roundabout'){shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><circle cx="75" cy="73" r="25" fill="none" stroke="'+black+'" stroke-width="6" stroke-dasharray="31 12"/><path d="M56 52L50 67L68 66M86 96L101 93L90 79" fill="none" stroke="'+black+'" stroke-width="5"/>';label='الدوار'}
- else if(k==='blue-direction'){shape='<circle cx="75" cy="64" r="52" fill="'+blue+'"/><path d="M41 65H109M109 65L87 43M109 65L87 87" fill="none" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>';label='سهم اتجاه إلزامي توضيحي'}else {shape='<rect x="8" y="12" width="134" height="108" rx="17" fill="#eff5f9" stroke="#85a0b4" stroke-width="3"/><text x="75" y="78" text-anchor="middle" font-size="43" font-weight="800" fill="'+blue+'">؟</text>';label='مفهوم تدريبي، ليس شكل إشارة مرور معتمدة'}
- return '<svg class="masar-sign" viewBox="0 0 150 128" role="img" aria-label="'+E(label)+'" xmlns="http://www.w3.org/2000/svg">'+shape+'</svg>';
+ else if(k==='blue-direction'){shape='<circle cx="75" cy="64" r="52" fill="'+blue+'"/><path d="M41 65H109M109 65L87 43M109 65L87 87" fill="none" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>';label='سهم اتجاه إلزامي توضيحي'}
+ else if(k==='warning'){shape='<polygon points="75,8 9,116 141,116" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><path d="M75 42V78" stroke="'+black+'" stroke-width="10" stroke-linecap="round"/><circle cx="75" cy="96" r="6" fill="'+black+'"/>';label='علامة تحذير تعليمية'}
+ else if(k==='intersection'){shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><path d="M75 39V101M45 69H105" stroke="'+black+'" stroke-width="10" stroke-linecap="round"/>';label='تقاطع أمامك — رسم تعليمي'}
+ else if(k==='distance'){shape=road+car(28,30,'#86152d')+car(93,50,'#587995')+'<path d="M62 82H87M65 76L59 82L65 88M84 76L90 82L84 88" fill="none" stroke="'+amber+'" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>';label='مسافة الأمان بين مركبتين'}
+ else if(k==='lane'){shape=road+car(29,47,'#587995')+'<path d="M103 94V44M103 44L91 57M103 44L115 57" fill="none" stroke="'+blue+'" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 74C70 74 79 67 88 58" fill="none" stroke="'+red+'" stroke-width="4" stroke-dasharray="6 5"/>';label='تغيير مسار — رسم تعليمي'}
+ else if(k==='parking'){shape='<rect x="13" y="15" width="124" height="98" rx="15" fill="#e6edf1"/><path d="M28 24V104M122 24V104M75 24V104" stroke="white" stroke-width="4"/><text x="48" y="62" text-anchor="middle" fill="'+blue+'" font-size="30" font-weight="900">P</text>'+car(87,54,'#86152d')+'<path d="M98 47Q88 37 77 48" fill="none" stroke="'+amber+'" stroke-width="4"/><path d="M79 42L75 49L83 51" fill="none" stroke="'+amber+'" stroke-width="4"/>';label='الرجوع إلى موقف — رسم تعليمي'}
+ else if(k==='seatbelt'){shape='<rect x="19" y="13" width="112" height="102" rx="20" fill="#21343f"/><circle cx="53" cy="38" r="11" fill="#d8e4ea"/><path d="M52 52V91M52 65L86 95M86 54L60 92" stroke="#d8e4ea" stroke-width="9" stroke-linecap="round"/><rect x="84" y="88" width="15" height="10" rx="3" fill="'+red+'"/>';label='رمز حزام الأمان — رسم لوحة قيادة تعليمي'}
+ else if(k==='tpms'){shape='<rect x="17" y="14" width="116" height="100" rx="20" fill="#21343f"/><path d="M43 80Q34 57 45 39M107 80Q116 57 105 39M43 80Q75 101 107 80" fill="none" stroke="'+amber+'" stroke-width="9" stroke-linecap="round"/><path d="M75 46V70" stroke="'+amber+'" stroke-width="7" stroke-linecap="round"/><circle cx="75" cy="84" r="4" fill="'+amber+'"/>';label='رمز مراقبة ضغط الإطارات — رسم تعليمي'}
+ else if(k==='check-engine'){shape='<rect x="17" y="14" width="116" height="100" rx="20" fill="#21343f"/><path d="M39 52H53L62 41H96L104 50H113V84H104L97 93H55L47 84H36V59H39Z" fill="none" stroke="'+amber+'" stroke-width="7" stroke-linejoin="round"/><path d="M80 41V32M94 41V33" stroke="'+amber+'" stroke-width="6"/>';label='مؤشر فحص المحرك — رسم تعليمي'}
+ else if(k==='book'){shape='<rect x="11" y="15" width="128" height="98" rx="16" fill="'+paper+'" stroke="#b7c8d2" stroke-width="3"/><path d="M75 29C57 20 37 23 24 30V94C40 88 59 90 75 100M75 29C93 20 113 23 126 30V94C110 88 91 90 75 100V29Z" fill="white" stroke="'+blue+'" stroke-width="4"/><path d="M91 55L101 65L119 45" fill="none" stroke="'+green+'" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>';label='كتاب مراجعة — رسم تعليمي'}
+ else if(k==='construction'){shape='<polygon points="75,7 8,119 142,119" fill="#fff6e6" stroke="#e28a1b" stroke-width="10" stroke-linejoin="round"/><circle cx="66" cy="49" r="9" fill="'+black+'"/><path d="M64 61L55 84M63 68L84 76M57 82L44 101M58 82L77 100M83 78L104 101" fill="none" stroke="'+black+'" stroke-width="7" stroke-linecap="round"/>';label='منطقة عمل — رسم تعليمي'}
+ else if(k==='road'){shape=road+'<path d="M28 33H62M28 98H62M88 33H122M88 98H122" stroke="'+steel+'" stroke-width="4" stroke-linecap="round"/><path d="M105 82V47M105 47L94 58M105 47L116 58" fill="none" stroke="'+blue+'" stroke-width="6" stroke-linecap="round"/>'+car(29,47,'#86152d');label='اختيار مسار وطريق — رسم تعليمي'}
+ else if(k==='pedestrians'){shape='<polygon points="75,7 8,119 142,119" fill="white" stroke="'+red+'" stroke-width="10" stroke-linejoin="round"/><circle cx="74" cy="47" r="8" fill="'+black+'"/><path d="M73 57L64 77M73 61L88 72M64 77L52 96M65 76L82 95" fill="none" stroke="'+black+'" stroke-width="7" stroke-linecap="round"/><path d="M37 103H113" stroke="'+black+'" stroke-width="5" stroke-dasharray="11 7"/>';label='عبور مشاة — رسم تعليمي'}
+ else if(k==='overtake'){shape=road+car(28,39,'#587995')+car(91,49,'#86152d')+'<path d="M54 94C70 104 88 102 99 91" fill="none" stroke="'+amber+'" stroke-width="5" stroke-linecap="round"/><path d="M91 88L102 90L99 79" fill="none" stroke="'+amber+'" stroke-width="4"/>';label='مناورة تجاوز — رسم تعليمي'}
+ else if(k==='fog'){shape='<rect x="12" y="15" width="126" height="98" rx="16" fill="#d9e1e5"/>'+car(61,30,'#587995')+'<path d="M23 86H127M33 99H116M18 72H57M96 72H134" stroke="white" stroke-width="7" stroke-linecap="round" opacity=".95"/><path d="M53 59L31 66M97 59L119 66" stroke="#f3d272" stroke-width="5" stroke-linecap="round"/>';label='قيادة في الضباب — رسم تعليمي'}
+ else {shape='<rect x="8" y="12" width="134" height="108" rx="17" fill="#eff5f9" stroke="#85a0b4" stroke-width="3"/><path d="M44 83L65 61L80 74L105 45" fill="none" stroke="'+blue+'" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>';label='رسم تعليمي للموقف'}
+ return '<svg class="masar-sign masar-review-visual" data-visual-key="'+E(k||'generic')+'" viewBox="0 0 150 128" role="img" aria-label="'+E(label)+'" xmlns="http://www.w3.org/2000/svg">'+shape+'</svg>';
 }
 function filteredQuestions(course,state){
  return (course.review_questions||[]).filter(function(q){
@@ -9206,17 +9321,15 @@ function lessonReadings(course,lesson){
   var page=a.pdf_page_start,pg=page===a.pdf_page_end?'PDF صفحة '+page:'PDF صفحات '+page+'–'+a.pdf_page_end;
   var loaded=!!cachedFiles[a.source_id];
   return '<details class="source-chapter"><summary><span class="chapter-title">'+E(a.source_title)+'</span><span class="chapter-page">'+pg+'</span><span class="chapter-toggle" aria-hidden="true">⌄</span></summary>'
-   +'<div class="source-chapter-inner"><h3>محتوى الدرس المرتبط بهذا الفصل</h3><p>'+intro+'</p><ul>'+keypoints+'</ul>'
-   +'<p class="source-honesty">هذا شرح أصلي من مِسار للموضوع المرتبط بالكتاب، وليس نسخًا حرفيًا لجميع صفحاته. يمكنك استعراض صفحات ملفك الأصلي أسفله من داخل الموقع.</p>'
-   +'<div class="source-chapter-actions"><button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">اعرضي صفحات الكتاب هنا</button><button type="button" class="btn btn-outline" data-action="hub-extract-text" data-source="'+E(a.source_id)+'" data-from="'+page+'" data-to="'+a.pdf_page_end+'">اظهري نص صفحات الكتاب</button>'
-   +(!loaded?'<button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(a.source_id)+'">أضيفي ملفك مرة واحدة</button>':'<span class="chip tiny success">ملفك محفوظ على هذا المتصفح</span>')
-   +'</div><div class="source-text-preview" aria-live="polite"></div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
+   +'<div class="source-chapter-inner"><h3>المحتوى المرتبط بهذا الموضع</h3><p>'+intro+'</p><ul>'+keypoints+'</ul>'
+   +'<p class="source-honesty">هذا شرح أصلي من مِسار مبني على موضوع الدرس وفهرسة المصدر. لا تحتاجين لرفع ملف حتى تذاكرين هذا الجزء، وهو ليس نسخًا حرفيًا من صفحات الكتاب.</p>'
+   +'<div class="source-chapter-actions">'+(loaded?'<button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">فتح الصفحة الأصلية المحفوظة</button><button type="button" class="btn btn-outline" data-action="hub-extract-text" data-source="'+E(a.source_id)+'" data-from="'+page+'" data-to="'+a.pdf_page_end+'">استخراج نص الصفحة</button><span class="chip tiny success">نسخة PDF موجودة على هذا المتصفح</span>':'<a class="btn btn-outline" href="#/sources">شوفي فهرس المصدر داخل مِسار</a><span class="chip tiny blue">لا يلزم رفع ملف</span>')+'</div>'
+   +'<div class="source-text-preview" aria-live="polite"></div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
    +'<p class="source-page-hint">'+E(a.note||'')+'</p></div></details>';
  }).join('');
- return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>اقرئي من الكتب هنا، بدون الخروج من مِسار</h2>'
- +'<p>افتحي اسم أي كتاب لتشاهدي خلاصة الموضوع، ثم صفحات المرجع الأصلي داخل الدرس عند إضافته إلى مكتبتك الخاصة.</p>'
- +'<input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/>'
- +'<div class="source-chapter-list">'+cards+'</div><p class="hub-legal">تختلف طبعات بعض المراجع وأرقام صفحاتها، وقد تحتاج المعلومات النظامية إلى تحديث. يحتفظ المتصفح بملفاتك محليًا، ولا نرفعها إلى GitHub.</p></section>';
+ return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>المراجع مرتبطة بالدرس داخل مِسار</h2>'
+ +'<p>افتحي اسم المرجع لتقرئين شرح الموضوع ونقاطه الأساسية مباشرة. إذا كان عندك من إصدار سابق ملف PDF محفوظ محليًا، يظهر خيار الصفحة الأصلية تلقائيًا؛ غير كذا ما تحتاجين تسوين أي رفع يدوي.</p>'
+ +'<div class="source-chapter-list">'+cards+'</div><p class="hub-legal">أرقام الصفحات مرجع لفهرسة المصدر فقط. النسخ الكاملة المحمية أو مجهولة الترخيص لا تُنشر في مستودع GitHub العام، بينما المحتوى التعليمي المطلوب للمذاكرة يبقى ظاهرًا داخل الدرس.</p></section>';
 }
 function schoolPolicies(course){
  var rows=course.school_specific_evidence||[];if(!rows.length)return '';
@@ -9226,29 +9339,71 @@ function practicePage(course,state){
  var blocks=course.practical_checklist||[],checked=state.practiceChecks||{};
  return '<div class="eyebrow">PRACTICAL EVALUATION / مراجعة</div><h1 class="page-title">قائمة المهارات العملية</h1><p class="sub">تستخدمين هذه القائمة للتذكّر والتقييم الذاتي النظري؛ لا تقيّم مهارتك في القيادة فعليًا ولا تضمن اجتياز الفحص. مصدر بنودها نموذج التقييم الذي رفعتيه ومناهج المدارس.</p><div class="hub-warning"><strong>معايير الرسوب والـ6/12/30 ساعة</strong><p>الأرقام المذكورة في التجميع غير مثبتة كسياسة وطنية موحدة. لا تُستخدم لتقدير نتيجتك الفعلية؛ مرجعك هو المدرسة التي ستختبرين فيها.</p></div>'+schoolPolicies(course)+faultDetails(course)+blocks.map(function(b){var n=b.items.filter(function(_,i){return checked[b.id+':'+i]}).length;return '<section class="hub-rubric card"><div class="flexline"><h2>'+E(b.title)+'</h2><span class="chip">'+n+' / '+b.items.length+'</span></div><div class="hub-checklist">'+b.items.map(function(item,i){return '<label class="hub-check"><input type="checkbox" data-practice-id="'+E(b.id+':'+i)+'" '+(checked[b.id+':'+i]?'checked':'')+'/><span>'+E(item)+'</span></label>'}).join('')+'</div><p class="hub-legal">جاهزية نظرية للمراجعة، وليست إثبات أداء عملي.</p></section>'}).join('')+'<p><a href="#/sources">عرض نماذج التقييم التي أرسلتيها ←</a></p>';
 }
-function studySourceDetails(course,item){
- if(!item.pages)return '';
+function sourceVisual(item){
+ var kind=item.category||'',inside='',label='مرجع تعليمي';
+ if(kind==='traffic_signs'){
+  inside='<polygon points="58,16 17,88 99,88" fill="white" stroke="#cf1522" stroke-width="8"/><circle cx="135" cy="57" r="37" fill="white" stroke="#cf1522" stroke-width="8"/><path d="M119 57H151" stroke="#19232d" stroke-width="8" stroke-linecap="round"/>';
+  label='إشارات مرور — رسم توضيحي';
+ }else if(kind==='intersections'){
+  inside='<rect x="18" y="15" width="144" height="90" rx="16" fill="#dfe7eb"/><path d="M90 20V100M27 60H153" stroke="white" stroke-width="20"/><path d="M90 20V100M27 60H153" stroke="#7893a3" stroke-width="3" stroke-dasharray="9 8"/>';
+  label='تقاطع طرق — رسم توضيحي';
+ }else if(kind==='dashboard_symbols'){
+  inside='<rect x="18" y="17" width="144" height="86" rx="21" fill="#21343f"/><circle cx="55" cy="59" r="18" fill="none" stroke="#d79b2b" stroke-width="6"/><path d="M55 45V64" stroke="#d79b2b" stroke-width="5"/><circle cx="55" cy="75" r="3.5" fill="#d79b2b"/><path d="M92 48H113L121 57H137V76H128L122 84H99L92 76H85V56H92Z" fill="none" stroke="#d79b2b" stroke-width="5"/>';
+  label='رموز لوحة القيادة — رسم توضيحي';
+ }else if(kind==='assessment_sheet'){
+  inside='<rect x="31" y="12" width="118" height="98" rx="12" fill="white" stroke="#b9c9d2" stroke-width="4"/><path d="M51 39H127M51 61H127M51 83H127" stroke="#9fb0ba" stroke-width="4" stroke-linecap="round"/><path d="M41 38L45 42L52 33M41 60L45 64L52 55M41 82L45 86L52 77" fill="none" stroke="#2b7a5f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>';
+  label='نموذج تقييم — رسم توضيحي';
+ }else if(kind.includes('question')){
+  inside='<rect x="32" y="13" width="116" height="96" rx="12" fill="white" stroke="#b9c9d2" stroke-width="4"/><text x="90" y="72" text-anchor="middle" font-size="50" font-weight="900" fill="#587995">؟</text><path d="M49 92H131" stroke="#d7e1e6" stroke-width="4"/>';
+  label='تجميع أسئلة — رسم توضيحي';
+ }else if(kind.includes('practical')||kind.includes('individual')){
+  inside='<rect x="15" y="16" width="150" height="90" rx="17" fill="#dfe7eb"/><path d="M90 22V100" stroke="white" stroke-width="5" stroke-dasharray="10 8"/><rect x="54" y="45" width="31" height="48" rx="9" fill="#86152d"/><path d="M109 75V42M109 42L98 53M109 42L120 53" fill="none" stroke="#587995" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>';
+  label='مرجع تدريب عملي — رسم توضيحي';
+ }else{
+  inside='<path d="M30 27C52 17 72 20 90 31C108 20 128 17 150 27V99C127 91 108 93 90 104C72 93 53 91 30 99V27Z" fill="white" stroke="#587995" stroke-width="4"/><path d="M90 31V104M46 48H76M46 65H76M104 48H134M104 65H134" stroke="#b2c1c9" stroke-width="4" stroke-linecap="round"/>';
+  label='كتاب أو مرجع — رسم توضيحي';
+ }
+ return '<div class="source-card-visual" role="img" aria-label="'+E(label)+'"><svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg">'+inside+'</svg><span>'+E(item.pages?item.pages+' صفحة':'مرجع بصري')+'</span></div>';
+}
+function sourceReferences(course,item){
  var lessonById=Object.fromEntries((course.lessons||[]).map(function(l){return [l.id,l]}));
- var references=(course.lesson_reading_map||[]).flatMap(function(row){
+ return (course.lesson_reading_map||[]).flatMap(function(row){
   return (row.resources||[]).filter(function(ref){return ref.source_id===item.id}).map(function(ref){
-   return {lesson:lessonById[row.lesson_id],start:ref.pdf_page_start,end:ref.pdf_page_end};
+   return {lesson:lessonById[row.lesson_id],start:ref.pdf_page_start,end:ref.pdf_page_end,note:ref.note||''};
   });
  }).filter(function(x){return !!x.lesson});
+}
+function sourceBriefHtml(course,item,lessonId,start,end){
+ var lesson=(course.lessons||[]).find(function(l){return l.id===lessonId});
+ if(!lesson)return '<p class="source-inline-info">تعذر العثور على الدرس المرتبط بهذا الموضع.</p>';
+ var s=lesson.study_content||{},points=(s.key_points||[]).slice(0,5);
+ var pg='PDF '+start+(end&&end!==start?'–'+end:'');
+ return '<section class="source-built-in-brief"><div class="source-brief-top"><div><span class="bento-overline">محتوى جاهز داخل مِسار</span><h4>'+E(item.title)+'</h4></div><span class="chip tiny blue">'+E(pg)+'</span></div><strong>'+E(lesson.title)+'</strong><p>'+E(s.introduction||s.goal||'هذا الموضع مرتبط بموضوع الدرس الحالي.')+'</p>'+(points.length?'<ul>'+points.map(function(x){return '<li>'+E(x)+'</li>'}).join('')+'</ul>':'')+'<div class="source-brief-actions"><a class="btn btn-primary" href="#/lesson/'+lesson.order+'">افتحي الدرس الكامل ←</a></div><small>هذا تلخيص تعليمي أصلي من مِسار للموضع المفهرس، وليس نسخة حرفية من صفحة الكتاب.</small></section>';
+}
+function studySourceDetails(course,item){
+ if(!item.pages)return '';
+ var references=sourceReferences(course,item);
  var status=item.verification==='practice_unverified'?'تجميع غير مؤكد':item.verification==='reference_only'?'مرجع يحتاج التحقق':'خطوات تدريب مرتبطة بالمصدر';
+ var loaded=!!cachedFiles[item.id];
  var linked=references.map(function(r){
   var pg='PDF '+r.start+(r.end&&r.end!==r.start?'–'+r.end:'');
-  return '<div class="source-topic-row"><a href="#/lesson/'+r.lesson.order+'">'+E(r.lesson.title)+'</a><span>'+E(pg)+'</span><button type="button" data-action="hub-open-page" data-source="'+E(item.id)+'" data-page="'+E(r.start)+'">فتح الصفحة</button></div>';
+  return '<div class="source-topic-row"><a href="#/lesson/'+r.lesson.order+'">'+E(r.lesson.title)+'</a><span>'+E(pg)+'</span><div class="source-topic-actions"><button type="button" data-action="hub-source-brief" data-source="'+E(item.id)+'" data-lesson="'+E(r.lesson.id)+'" data-start="'+E(r.start)+'" data-end="'+E(r.end||r.start)+'">عرض المحتوى</button>'+(loaded?'<button type="button" data-action="hub-open-page" data-source="'+E(item.id)+'" data-page="'+E(r.start)+'">فتح PDF</button>':'')+'</div></div>';
  }).join('');
- return '<div class="source-role"><span>'+E(item.pages)+' صفحة</span><span>'+E(item.publisher||'مرجع إضافي')+'</span><span>'+E(status)+'</span></div><details class="source-topic-index"><summary>مواضع القراءة في دروس مِسار · '+references.length+'</summary><div class="source-topic-list">'+(linked||'<p>لم تُضف لهذا المرجع إحالات صفحات بعد.</p>')+'</div><small>الربط بالصفحات لا يعني تدقيق الكتاب كاملًا أو صلاحية الأسئلة للاختبار الحالي.</small></details>';
+ return '<div class="source-role"><span>'+E(item.pages)+' صفحة</span><span>'+E(item.publisher||'مرجع إضافي')+'</span><span>'+E(status)+'</span></div><details class="source-topic-index"><summary>مواضع القراءة في دروس مِسار · '+references.length+'</summary><div class="source-topic-list">'+(linked||'<p>لم تُضف لهذا المرجع إحالات صفحات بعد.</p>')+'</div><small>زر «عرض المحتوى» يعمل بدون رفع أي ملف ويعرض خلاصة مِسار المرتبطة بالموضع. أرقام الصفحات فهرسة مرجعية وليست إعادة نشر للكتاب.</small></details>';
 }
 function docsPage(course,state){
  var files=(course.personal_documents||[]).concat(course.uploaded_image_index||[]),byKind=(course.external_study_sources||[]);
- var booksReady=(course.personal_documents||[]).filter(function(x){return !!cachedFiles[x.id]}).length;
+ var mapped=(course.personal_documents||[]).filter(function(x){return sourceReferences(course,x).length}).length;
  var filteredFiles=files.filter(function(item){return sourceFilter==='all'||(sourceFilter==='books'?!!item.pages:!item.pages)});
- var cards=filteredFiles.map(function(item,i){var file=cachedFiles[item.id],isBook=!!item.pages,prev=i?!!filteredFiles[i-1].pages:null,header=i===0||prev!==isBook?'<h2 class="hub-library-subtitle">'+(isBook?'الكتب ومراجع القيادة · '+(course.personal_documents||[]).length:'الصور والملصقات المرجعية · '+(course.uploaded_image_index||[]).length)+'</h2>':'';return header+'<article class="hub-source card"><div class="flexline"><div><span class="bento-overline">'+(item.pages?E(item.pages)+' صفحة · ':'صورة مرجعية · ')+'ملف شخصي</span><h3>'+E(item.title)+'</h3></div><span class="chip '+(file?'blue':'')+'">'+(file?'في مكتبتك':'غير مرفوع بعد')+'</span></div><p>'+E(item.scope||item.note||'صورة للتعلم والمقارنة')+'</p>'+studySourceDetails(course,item)+'<p class="hub-filename">'+E(item.filename)+'</p><div class="hub-source-buttons"><button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(item.id)+'">إضافة نسختك للمكتبة</button>'+(file?'<button type="button" class="btn btn-primary" data-action="hub-open" data-source="'+E(item.id)+'">فتح الملف</button><button type="button" class="btn btn-outline" data-action="hub-delete" data-source="'+E(item.id)+'">إزالة</button>':'')+'</div><div class="source-inline-preview" data-source-preview="'+E(item.id)+'" aria-live="polite"></div><label class="hub-source-note">ملاحظاتي على المرجع<textarea data-source-note="'+E(item.id)+'" placeholder="رقم الصفحة، وش فهمت، وش أحتاج أراجع؟">'+E((state.sourceNotes||{})[item.id]||'')+'</textarea></label></article>'}).join('');
+ var cards=filteredFiles.map(function(item,i){
+  var file=cachedFiles[item.id],isBook=!!item.pages,prev=i?!!filteredFiles[i-1].pages:null;
+  var header=i===0||prev!==isBook?'<h2 class="hub-library-subtitle">'+(isBook?'الكتب ومراجع القيادة · '+(course.personal_documents||[]).length:'الصور والملصقات المرجعية · '+(course.uploaded_image_index||[]).length)+'</h2>':'';
+  var stateLabel=file?'المحتوى + PDF محلي':'جاهز داخل مِسار';
+  return header+'<article class="hub-source card" data-source-card="'+E(item.id)+'">'+sourceVisual(item)+'<div class="flexline"><div><span class="bento-overline">'+(item.pages?E(item.pages)+' صفحة · ':'مرجع بصري · ')+'فهرسة تعليمية</span><h3>'+E(item.title)+'</h3></div><span class="chip '+(file?'success':'blue')+'">'+stateLabel+'</span></div><p>'+E(item.scope||item.note||'صورة للتعلم والمقارنة')+'</p>'+studySourceDetails(course,item)+'<p class="hub-filename">'+E(item.filename)+'</p>'+(file?'<div class="hub-source-buttons"><button type="button" class="btn btn-primary" data-action="hub-open" data-source="'+E(item.id)+'">فتح النسخة الكاملة المحفوظة</button><button type="button" class="btn btn-outline" data-action="hub-delete" data-source="'+E(item.id)+'">إزالة النسخة المحلية</button></div>':'')+'<div class="source-inline-preview" data-source-preview="'+E(item.id)+'" aria-live="polite"></div><label class="hub-source-note">ملاحظاتي على المرجع<textarea data-source-note="'+E(item.id)+'" placeholder="وش فهمت؟ وش أحتاج أراجع؟">'+E((state.sourceNotes||{})[item.id]||'')+'</textarea></label></article>';
+ }).join('');
  var urls=byKind.map(function(x){return '<div class="hub-online-source"><div><strong>'+E(x.title)+'</strong><small>'+E(x.note)+'</small></div><a href="'+E(x.url)+'" target="_blank" rel="noopener noreferrer">زيارة المصدر ↗</a></div>'}).join('');
  var links=course.community_pages&&course.community_pages.image_links||[];
- return '<div class="eyebrow">YOUR PERSONAL SOURCE LIBRARY</div><h1 class="page-title">المصادر وملفاتي الخاصة</h1><div class="source-library-summary"><strong>'+(course.personal_documents||[]).length+' كتب ومراجع PDF · '+(course.uploaded_image_index||[]).length+' صور مرجعية · '+byKind.length+' روابط تعليمية</strong><div class="source-coverage" role="status"><span>ملفات الكتب المتاحة للقراءة على هذا الجهاز: <b>'+booksReady+' / '+(course.personal_documents||[]).length+'</b></span><div class="source-coverage-track" aria-hidden="true"><i style="width:'+((course.personal_documents||[]).length?Math.round(100*booksReady/course.personal_documents.length):0)+'%"></i></div></div><span>كل الكتب مفهرسة، لكن فتح الملف يتطلب إضافته محليًا من جهازك؛ لا ننشر ملفات PDF على GitHub.</span></div><p class="sub">رتبنا الكتب والصور التي أرسلتيها وفصلنا المكرر. لإبقائها خاصة ولا نخالف حقوق النشر: اختاري ملفاتك من الكمبيوتر مرة واحدة، ويحفظها متصفحك محليًا في IndexedDB، لا في GitHub ولا على خادم عام.</p><div class="hub-warning"><strong>مهم للحفظ</strong><p>الملفات الكبيرة تعتمد على مساحة المتصفح وقد تُحذف عند تنظيف بيانات الموقع. نسخة التقدم JSON لا تحتوي ملفات PDF أو الصور المرفوعة. احتفظي بنسخ الملفات الأصلية على الكمبيوتر.</p></div><input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/><section class="bulk-source-import"><div><strong>أضيفي كتب القيادة دفعة واحدة</strong><p>اختاري ملفات PDF السبعة من جهازك، وسنحاول ربط كل ملف بمرجعه تلقائيًا حتى لا ترفعي كل كتاب منفصلًا. يظل كل ملف في متصفحك فقط.</p></div><input type="file" hidden id="hub-batch" multiple accept="application/pdf,.pdf" data-source="batch"/><button type="button" class="btn btn-primary" data-action="hub-batch-pick">اختيار مجموعة الملفات</button></section><div class="hub-metrics"><div><strong>'+files.length+'</strong><small>مرجعًا مختلفًا</small></div><div><strong>'+Object.keys(cachedFiles).length+'</strong><small>ملفًا أضفتِه محليًا</small></div></div><div class="source-filter-tabs" role="group" aria-label="تصنيف مكتبة المراجع">'+[['all','الكل'],['books','الكتب السبعة'],['images','الصور والملصقات']].map(function(o){return '<button type="button" data-action="hub-source-filter" data-filter="'+o[0]+'" class="source-filter-tab '+(sourceFilter===o[0]?'selected':'')+'" aria-pressed="'+(sourceFilter===o[0])+'">'+o[1]+'</button>'}).join('')+'</div><div class="hub-source-grid">'+cards+'</div><h2 class="hub-section-title">روابط المصادر على الإنترنت</h2><div class="hub-online-list">'+urls+'</div><details class="hub-page-list"><summary>صور تجميع النزاوي: '+links.length+' رابط صفحة خارجية</summary><p>هذه روابط مقدمة من موقع طرف ثالث؛ لم نتحقق من صحة جميع الصفحات أو الحق في إعادة توزيعها.</p><div>'+links.map(function(it){return '<a href="'+E(it.url)+'" target="_blank" rel="noopener noreferrer">صفحة '+it.page+'</a>'}).join('')+'</div></details>';
+ return '<div class="eyebrow">SOURCE LIBRARY / BUILT INTO MASAR</div><h1 class="page-title">المصادر داخل مِسار</h1><div class="source-library-summary"><strong>'+(course.personal_documents||[]).length+' كتب ومراجع · '+(course.uploaded_image_index||[]).length+' مراجع بصرية · '+byKind.length+' مصادر إلكترونية</strong><span>المذاكرة لا تتطلب منك رفع الملفات. مواضع القراءة وملخصاتها مرتبطة بالدروس وتفتح مباشرة داخل مِسار.</span></div><p class="sub">رتبت المراجع التي أرسلتيها كفهرس تعلم داخل الموقع: كل كتاب يوضح موضوعاته، الصفحات المرتبطة، والدروس التي تستخدمه. النسخ الكاملة المحمية أو مجهولة الترخيص لا ننشرها في مستودع GitHub العام؛ لذلك يعرض مِسار محتوى تعليميًا أصليًا مرتبطًا بها بدل زر رفع إجباري.</p><div class="hub-warning"><strong>وش صار بدل «غير مرفوع بعد»؟</strong><p>ألغينا اعتماد صفحة المصادر على رفعك للملفات. «عرض المحتوى» يعمل مباشرة من الفهرسة الموجودة. إذا كان متصفحك يحتوي أصلًا نسخة PDF محلية من إصدار سابق، سيظهر أيضًا زر فتح النسخة الكاملة.</p></div><div class="hub-metrics"><div><strong>'+files.length+'</strong><small>مرجعًا منظّمًا</small></div><div><strong>'+mapped+' / '+(course.personal_documents||[]).length+'</strong><small>كتب مرتبطة بالدروس</small></div><div><strong>'+((course.lesson_reading_map||[]).length)+'</strong><small>درسًا له خريطة قراءة</small></div></div><div class="source-filter-tabs" role="group" aria-label="تصنيف مكتبة المراجع">'+[['all','الكل'],['books','الكتب السبعة'],['images','المراجع البصرية']].map(function(o){return '<button type="button" data-action="hub-source-filter" data-filter="'+o[0]+'" class="source-filter-tab '+(sourceFilter===o[0]?'selected':'')+'" aria-pressed="'+(sourceFilter===o[0])+'">'+o[1]+'</button>'}).join('')+'</div><div class="hub-source-grid">'+cards+'</div><h2 class="hub-section-title">المصادر الإلكترونية</h2><div class="hub-online-list">'+urls+'</div>'+(links.length?'<details class="hub-page-list"><summary>فهرس صور تجميع النزاوي · '+links.length+' رابطًا</summary><p>هذه روابط طرف ثالث وليست صورًا معتمدة للاختبار. داخل بنك المراجعة يستخدم مِسار رسومًا تعليمية أصلية بدل ترك الأسئلة بلا صورة.</p><div>'+links.map(function(it){return '<a href="'+E(it.url)+'" target="_blank" rel="noopener noreferrer">صفحة '+it.page+'</a>'}).join('')+'</div></details>':'');
 }
 function paperPage(course){
  var arr=course.review_questions||[];
@@ -9340,6 +9495,15 @@ function click(action,el,ctx){
    if(!file||file.mime!=='application/pdf'){waiting.textContent='هذا القارئ مخصص لملفات PDF المحلية.';return}
    renderPdfCanvas(mobileArea,file,mobileId,mobilePg);
   }).catch(function(){waiting.textContent='تعذر قراءة ملف PDF المحلي.'});
+  return true;
+ }
+ if(action==='hub-source-brief'){
+  var briefId=el.dataset.source,lessonId=el.dataset.lesson,start=Number(el.dataset.start)||1,end=Number(el.dataset.end)||start;
+  var item=[].concat(c.personal_documents||[],c.uploaded_image_index||[]).find(function(x){return x.id===briefId});
+  var area=el.closest('.hub-source')&&el.closest('.hub-source').querySelector('.source-inline-preview');
+  if(!item||!area)return true;
+  area.innerHTML=sourceBriefHtml(c,item,lessonId,start,end);
+  area.scrollIntoView({behavior:'smooth',block:'nearest'});
   return true;
  }
  if(action==='hub-extract-text'){

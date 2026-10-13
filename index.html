@@ -9490,7 +9490,7 @@ function studySourceDetails(course,item){
   var pg='PDF '+r.start+(r.end&&r.end!==r.start?'–'+r.end:'');
   return '<div class="source-topic-row"><a href="#/lesson/'+r.lesson.order+'">'+E(r.lesson.title)+'</a><span>'+E(pg)+'</span><button type="button" data-action="hub-open-page" data-source="'+E(item.id)+'" data-page="'+E(r.start)+'" data-page-end="'+E(r.end||r.start)+'">فتح الصفحة داخل مِسار</button></div>';
  }).join('');
- return '<div class="source-role"><span>'+E(item.pages)+' صفحة</span><span>'+E(item.publisher||'مرجع إضافي')+'</span><span>'+E(status)+'</span></div><details class="source-topic-index"><summary>مواضع القراءة في دروس مِسار · '+references.length+'</summary><div class="source-topic-list">'+(linked||'<p>لم تُضف لهذا المرجع إحالات صفحات بعد.</p>')+'</div><small>الربط بالصفحات لا يعني تدقيق الكتاب كاملًا أو صلاحية الأسئلة للاختبار الحالي.</small></details>';
+ return '<div class="source-role"><span>'+E(item.pages)+' صفحة</span><span>'+E(item.publisher||'مرجع إضافي')+'</span><span>'+E(status)+'</span></div><details class="source-topic-index" open><summary>مواضع القراءة في دروس مِسار · '+references.length+'</summary><div class="source-topic-list">'+(linked||'<p>لم تُضف لهذا المرجع إحالات صفحات بعد.</p>')+'</div><small>الربط بالصفحات لا يعني تدقيق الكتاب كاملًا أو صلاحية الأسئلة للاختبار الحالي.</small></details>';
 }
 function docsPage(course,state){
  var files=(course.personal_documents||[]).concat(course.uploaded_image_index||[]),byKind=(course.external_study_sources||[]);

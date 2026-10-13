@@ -59,17 +59,17 @@ context.document.createElement=oldCreate;
 if(!loadedFrame||loadedFrame.src!=='https://www.youtube-nocookie.com/embed/J36565XrCk4'||loadedFrame.loading!=='lazy')throw Error('Click-to-load video does not work');
 console.log('PASS click-to-load privacy-enhanced video player');
 
-context.location.hash='#/practice-quiz';windowHandlers.hashchange();if(!element('app').innerHTML.includes('تجميعات وأسئلة المراجعة')||!element('app').innerHTML.includes('SIG-01'))throw Error('Training bank missing');console.log('PASS original quiz bank');
+context.location.hash='#/practice-quiz';windowHandlers.hashchange();if(!element('app').innerHTML.includes('تجميعات وأسئلة المراجعة')||!element('app').innerHTML.includes('SIG-01')||!element('app').innerHTML.includes('data-visual-key="warning"'))throw Error('Training bank or first review visual missing');console.log('PASS original quiz bank with purpose-built visual');
 context.location.hash='#/practice-checklist';windowHandlers.hashchange();if(!element('app').innerHTML.includes('قائمة المهارات العملية')||!element('app').innerHTML.includes('PRA-1:0'))throw Error('Practical checklist missing');if(!element('app').innerHTML.includes('نماذج أخطاء التقييم العملي')||!element('app').innerHTML.includes('FAULT-16') && !element('app').innerHTML.includes('الخروج من الموقف'))throw Error('Practical fault groups missing');console.log('PASS practical checklist');
-context.location.hash='#/sources';windowHandlers.hashchange();if(!element('app').innerHTML.includes('المصادر وملفاتي الخاصة')||!element('app').innerHTML.includes('DOC-NAZAWI')||!element('app').innerHTML.includes('صفحة 39'))throw Error('Private source index missing');console.log('PASS private PDF and 39 external-page index');
+context.location.hash='#/sources';windowHandlers.hashchange();if(!element('app').innerHTML.includes('المصادر داخل مِسار')||!element('app').innerHTML.includes('data-source-card="DOC-NAZAWI"')||!element('app').innerHTML.includes('صفحة 39')||element('app').innerHTML.includes('غير مرفوع بعد')||element('app').innerHTML.includes('data-action="hub-pick"'))throw Error('Built-in source index is incomplete or still requires uploads');console.log('PASS built-in source library and 39 external-page index');
 documentHandlers.input({target:{dataset:{videoNote:'VIDEO-QUDS-X'},value:'الدقيقة 01:20: تعليم خاص'}});if(!saved['masar-driving-v1'].includes('الدقيقة 01:20'))throw Error('Video notes were not persisted');console.log('PASS per-video note persistence');
 
 context.location.hash='#/study-guide';windowHandlers.hashchange();if(!element('app').innerHTML.includes('كيف أذاكر وأفهم السواقة'))throw Error('Study guide missing');
 context.location.hash='#/paper-practice';windowHandlers.hashchange();if(!element('app').innerHTML.includes('اختبار ورقي تجريبي')||!element('app').innerHTML.includes('طباعة نموذج الأسئلة'))throw Error('Printable practice missing');if(!element('app').innerHTML.includes('36 سؤالًا'))throw Error('Printed paper count stale');console.log('PASS study guide and 36-question paper assessment');
 
 context.location.hash='#/lesson/19';windowHandlers.hashchange();
-if(!element('app').innerHTML.includes('اقرئي من الكتب هنا')||!element('app').innerHTML.includes('data-action="hub-inline-open"'))throw Error('Indexed PDF lesson reading missing');
-console.log('PASS per-lesson private PDF reading references');
+if(!element('app').innerHTML.includes('المراجع مرتبطة بالدرس داخل مِسار')||!element('app').innerHTML.includes('لا يلزم رفع ملف')||element('app').innerHTML.includes('data-action="hub-pick"'))throw Error('Indexed source lesson reading should work without upload');
+console.log('PASS per-lesson source reading without manual upload requirement');
 context.location.hash='#/practice-quiz';windowHandlers.hashchange();
 if(!element('app').innerHTML.includes('أخطائي')||!element('app').innerHTML.includes('غير المحلول')||!element('app').innerHTML.includes('راجعي الدرس المرتبط'))throw Error('Mistakes filters and lesson links absent');
 console.log('PASS targeted mistakes review, per-question notes, chapter back-links');

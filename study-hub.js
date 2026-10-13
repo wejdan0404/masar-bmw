@@ -122,6 +122,46 @@ function loadPdfTextLibrary(){
  }).catch(function(e){pdfTextLibraryPromise=null;throw e});
  return pdfTextLibraryPromise;
 }
+var pdfDocumentCache={};
+function appleMobilePdf(){
+ try{return /iPad|iPhone|iPod/.test(navigator.userAgent)||navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1}catch(_){return false}
+}
+async function localPdfDocument(id,file){
+ var cached=pdfDocumentCache[id];
+ if(cached&&cached.size===file.blob.size&&cached.modified===(file.lastModified||0))return cached.pdf;
+ var pdfjs=await loadPdfTextLibrary(),bytes=new Uint8Array(await file.blob.arrayBuffer());
+ var pdf=await pdfjs.getDocument({data:bytes}).promise;
+ pdfDocumentCache[id]={size:file.blob.size,modified:file.lastModified||0,pdf:pdf};
+ return pdf;
+}
+async function renderPdfCanvas(area,file,id,pageNo){
+ area.replaceChildren();
+ var shell=document.createElement('section');shell.className='source-canvas-reader';shell.setAttribute('aria-label','قارئ PDF داخل مِسار');
+ var toolbar=document.createElement('div');toolbar.className='source-canvas-toolbar';
+ var status=document.createElement('span');status.className='source-canvas-status';status.textContent='جارٍ تجهيز الصفحة…';
+ var viewport=document.createElement('div');viewport.className='source-canvas-viewport';
+ var canvas=document.createElement('canvas');canvas.className='source-pdf-canvas';viewport.appendChild(canvas);
+ toolbar.appendChild(status);shell.append(toolbar,viewport);area.appendChild(shell);
+ try{
+  var pdf=await localPdfDocument(id,file),safe=Math.max(1,Math.min(Number(pageNo)||1,pdf.numPages));
+  var page=await pdf.getPage(safe),base=page.getViewport({scale:1});
+  var available=Math.max(280,Math.min(940,(area.clientWidth||820)-20)),scale=Math.min(2.2,Math.max(.82,available/base.width));
+  var view=page.getViewport({scale:scale}),dpr=Math.min(2,window.devicePixelRatio||1),ctx=canvas.getContext('2d');
+  canvas.width=Math.floor(view.width*dpr);canvas.height=Math.floor(view.height*dpr);canvas.style.width=Math.floor(view.width)+'px';canvas.style.height=Math.floor(view.height)+'px';
+  await page.render({canvasContext:ctx,viewport:view,transform:dpr!==1?[dpr,0,0,dpr,0,0]:null}).promise;
+  toolbar.replaceChildren();
+  var prev=document.createElement('button');prev.type='button';prev.className='btn btn-outline';prev.dataset.action='hub-mobile-reader';prev.dataset.source=id;prev.dataset.page=String(Math.max(1,safe-1));prev.textContent='→ السابقة';prev.disabled=safe<=1;
+  var label=document.createElement('span');label.className='source-canvas-status';label.textContent='صفحة '+safe+' من '+pdf.numPages;
+  var next=document.createElement('button');next.type='button';next.className='btn btn-outline';next.dataset.action='hub-mobile-reader';next.dataset.source=id;next.dataset.page=String(Math.min(pdf.numPages,safe+1));next.textContent='التالية ←';next.disabled=safe>=pdf.numPages;
+  toolbar.append(prev,label,next);
+  var note=document.createElement('p');note.className='source-inline-info';note.textContent='قارئ متوافق مع الجوال باستخدام PDF.js. ملفك يبقى محليًا في المتصفح؛ تُحمّل مكتبة العرض فقط من CDN عند الحاجة.';
+  shell.appendChild(note);
+ }catch(err){
+  console.warn(err);area.replaceChildren();
+  var fail=document.createElement('p');fail.className='source-inline-info';fail.textContent='تعذّر تشغيل القارئ المتوافق على هذا المتصفح. جربي قارئ PDF المدمج أو استخراج النص.';
+  area.appendChild(fail);
+ }
+}
 function click(action,el,ctx){
  var c=ctx.course,st=ctx.state;
  if(action==='hub-source-filter'){sourceFilter=el.dataset.filter||'all';ctx.render(true);return true}
@@ -132,6 +172,16 @@ function click(action,el,ctx){
  if(action==='hub-retry'){st.reviewAnswers=st.reviewAnswers||{};delete st.reviewAnswers[el.dataset.qid];pinnedQuestionId=null;var idx=filteredQuestions(c,st).findIndex(function(q){return q.id===el.dataset.qid});if(idx>=0)quizIndex=idx;ctx.save();ctx.render(true);return true}
  if(action==='hub-batch-pick'){var batchInput=document.getElementById('hub-batch');if(batchInput){batchInput.value='';batchInput.click()}return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
+ if(action==='hub-mobile-reader'){
+  var mobileId=el.dataset.source,mobilePg=Number(el.dataset.page)||1,mobileArea=el.closest('.source-inline-preview')||el.closest('.source-chapter,.hub-source,.source-topic-index')?.querySelector('.source-inline-preview');
+  if(!mobileArea||!ctx.db||!Number.isInteger(mobilePg)||mobilePg<1)return true;
+  var waiting=document.createElement('p');waiting.className='source-inline-loading';waiting.textContent='جارٍ فتح القارئ المتوافق مع الجوال…';mobileArea.replaceChildren(waiting);
+  ctx.db.getPersonalFile(mobileId).then(function(file){
+   if(!file||file.mime!=='application/pdf'){waiting.textContent='هذا القارئ مخصص لملفات PDF المحلية.';return}
+   renderPdfCanvas(mobileArea,file,mobileId,mobilePg);
+  }).catch(function(){waiting.textContent='تعذر قراءة ملف PDF المحلي.'});
+  return true;
+ }
  if(action==='hub-extract-text'){
   var id=el.dataset.source,from=Number(el.dataset.from),to=Number(el.dataset.to);
   var parent=el.closest('.source-chapter'),region=parent&&parent.querySelector('.source-text-preview');
@@ -184,18 +234,25 @@ function click(action,el,ctx){
     var pick=document.createElement('button');pick.type='button';pick.className='btn btn-outline';pick.dataset.action='hub-pick';pick.dataset.source=id;pick.textContent='إضافة ملف الكتاب';
     area.append(message,pick);return;
    }
+   if(f.mime==='application/pdf'&&appleMobilePdf()){
+    renderPdfCanvas(area,f,id,pg);return;
+   }
    var url=URL.createObjectURL(f.blob);
    var viewer=document.createElement('iframe');viewer.className='source-embedded-file';viewer.title='عرض المرجع داخل مِسار، صفحة '+pg;
    viewer.loading='lazy';viewer.src=url+(f.mime==='application/pdf'?'#page='+pg:'');
    area.appendChild(viewer);
    var caption=document.createElement('p');caption.className='source-inline-info';
-   caption.textContent='المصدر مفتوح داخل مِسار من نسختك الشخصية. إذا لم يعرض متصفحك PDF داخل الإطار، جربي متصفح كمبيوتر حديثًا.';
+   caption.textContent='المصدر مفتوح داخل مِسار من نسختك الشخصية. إذا كان قارئ PDF في المتصفح غير مريح، استخدمي القارئ المتوافق مع الجوال.';
    area.appendChild(caption);
+   if(f.mime==='application/pdf'){
+    var mobileReader=document.createElement('button');mobileReader.type='button';mobileReader.className='btn btn-outline source-mobile-reader-btn';mobileReader.dataset.action='hub-mobile-reader';mobileReader.dataset.source=id;mobileReader.dataset.page=String(pg);mobileReader.textContent='فتح قارئ PDF المتوافق مع الجوال';
+    area.appendChild(mobileReader);
+   }
    setTimeout(function(){URL.revokeObjectURL(url)},1800000);
   }).catch(function(){status.textContent='تعذر قراءة المرجع من التخزين المحلي. أعيدي إضافة الملف من المكتبة.'});
   return true;
  }
- if(action==='hub-delete'){if(confirm('حذف نسختك المحلية من هذا المرجع؟ الملف الأصلي على الكمبيوتر لن يتأثر.'))ctx.db.deletePersonalFile(el.dataset.source).then(function(){delete cachedFiles[el.dataset.source];ctx.render(true);ctx.toast('أزلنا الملف من المتصفح فقط')}).catch(function(){ctx.toast('تعذّر حذف الملف')});return true}
+ if(action==='hub-delete'){if(confirm('حذف نسختك المحلية من هذا المرجع؟ الملف الأصلي على الكمبيوتر لن يتأثر.'))ctx.db.deletePersonalFile(el.dataset.source).then(function(){if(pdfDocumentCache[el.dataset.source]){try{pdfDocumentCache[el.dataset.source].pdf.destroy()}catch(_){}delete pdfDocumentCache[el.dataset.source]}delete cachedFiles[el.dataset.source];ctx.render(true);ctx.toast('أزلنا الملف من المتصفح فقط')}).catch(function(){ctx.toast('تعذّر حذف الملف')});return true}
  return false;
 }
 function normalizedFileName(filename){

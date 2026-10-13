@@ -679,6 +679,13 @@ body{font-size:15px}
 .video-resource-gap{border:1px dashed #c8d9e4;padding:20px;border-radius:12px;background:#f4f8fa}
 .video-resource-gap p{font-size:13px}
 @media(max-width:610px){.video-hub-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.video-topics-index{grid-template-columns:1fr}.video-gallery-grid,.lesson-video-grid{grid-template-columns:1fr}.video-external-frame{height:400px}}
+
+/* Friendlier import for user's seven personally held PDF books */
+.bulk-source-import{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#eaf1f5;border:1px solid #d0e0e9;padding:19px 22px;border-radius:14px;margin:18px 0}
+.bulk-source-import strong{font-size:16px;color:#223d50}
+.bulk-source-import p{font-size:12px;color:#516e82;line-height:1.85;margin:5px 0}
+.bulk-source-import .btn{flex-shrink:0}
+@media(max-width:610px){.bulk-source-import{display:grid;gap:10px}.bulk-source-import .btn{width:100%}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -8463,7 +8470,7 @@ function lessonReadings(course,lesson){
  }).join('');
  return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>اقرئي من الكتب هنا، بدون الخروج من مِسار</h2>'
  +'<p>افتحي اسم أي كتاب لتشاهدي خلاصة الموضوع، ثم صفحات المرجع الأصلي داخل الدرس عند إضافته إلى مكتبتك الخاصة.</p>'
- +'<input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/>'
+ +'<input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/><section class="bulk-source-import"><div><strong>أضيفي كتب القيادة دفعة واحدة</strong><p>اختاري ملفات PDF السبعة من جهازك، وسنحاول ربط كل ملف بمرجعه تلقائيًا حتى لا ترفعي كل كتاب منفصلًا. يظل كل ملف في متصفحك فقط.</p></div><input type="file" hidden id="hub-batch" multiple accept="application/pdf,.pdf" data-source="batch"/><button type="button" class="btn btn-primary" data-action="hub-batch-pick">اختيار مجموعة الملفات</button></section>'
  +'<div class="source-chapter-list">'+cards+'</div><p class="hub-legal">تختلف طبعات بعض المراجع وأرقام صفحاتها، وقد تحتاج المعلومات النظامية إلى تحديث. يحتفظ المتصفح بملفاتك محليًا، ولا نرفعها إلى GitHub.</p></section>';
 }
 function schoolPolicies(course){
@@ -8491,7 +8498,7 @@ function studySourceDetails(course,item){
 }
 function docsPage(course,state){
  var files=(course.personal_documents||[]).concat(course.uploaded_image_index||[]),byKind=(course.external_study_sources||[]);
- var cards=files.map(function(item,i){var file=cachedFiles[item.id];var header=i===0?'<h2 class="hub-library-subtitle">الكتب ومراجع القيادة · '+(course.personal_documents||[]).length+'</h2>':i===(course.personal_documents||[]).length?'<h2 class="hub-library-subtitle">الصور والملصقات المرجعية · '+(course.uploaded_image_index||[]).length+'</h2>':'';return header+'<article class="hub-source card"><div class="flexline"><div><span class="bento-overline">'+(item.pages?E(item.pages)+' صفحة · ':'صورة مرجعية · ')+'ملف شخصي</span><h3>'+E(item.title)+'</h3></div><span class="chip '+(file?'blue':'')+'">'+(file?'في مكتبتك':'غير مرفوع بعد')+'</span></div><p>'+E(item.scope||item.note||'صورة للتعلم والمقارنة')+'</p>'+studySourceDetails(course,item)+'<p class="hub-filename">'+E(item.filename)+'</p><div class="hub-source-buttons"><button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(item.id)+'">اختيار الملف من الكمبيوتر</button>'+(file?'<button type="button" class="btn btn-primary" data-action="hub-open" data-source="'+E(item.id)+'">فتح الملف</button><button type="button" class="btn btn-outline" data-action="hub-delete" data-source="'+E(item.id)+'">إزالة</button>':'')+'</div><label class="hub-source-note">ملاحظاتي على المرجع<textarea data-source-note="'+E(item.id)+'" placeholder="رقم الصفحة، وش فهمت، وش أحتاج أراجع؟">'+E((state.sourceNotes||{})[item.id]||'')+'</textarea></label></article>'}).join('');
+ var cards=files.map(function(item,i){var file=cachedFiles[item.id];var header=i===0?'<h2 class="hub-library-subtitle">الكتب ومراجع القيادة · '+(course.personal_documents||[]).length+'</h2>':i===(course.personal_documents||[]).length?'<h2 class="hub-library-subtitle">الصور والملصقات المرجعية · '+(course.uploaded_image_index||[]).length+'</h2>':'';return header+'<article class="hub-source card"><div class="flexline"><div><span class="bento-overline">'+(item.pages?E(item.pages)+' صفحة · ':'صورة مرجعية · ')+'ملف شخصي</span><h3>'+E(item.title)+'</h3></div><span class="chip '+(file?'blue':'')+'">'+(file?'في مكتبتك':'غير مرفوع بعد')+'</span></div><p>'+E(item.scope||item.note||'صورة للتعلم والمقارنة')+'</p>'+studySourceDetails(course,item)+'<p class="hub-filename">'+E(item.filename)+'</p><div class="hub-source-buttons"><button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(item.id)+'">اختيار الملف من الكمبيوتر</button>'+(file?'<button type="button" class="btn btn-primary" data-action="hub-open" data-source="'+E(item.id)+'">فتح الملف</button><button type="button" class="btn btn-outline" data-action="hub-delete" data-source="'+E(item.id)+'">إزالة</button>':'')+'</div><div class="source-inline-preview" data-source-preview="'+E(item.id)+'" aria-live="polite"></div><label class="hub-source-note">ملاحظاتي على المرجع<textarea data-source-note="'+E(item.id)+'" placeholder="رقم الصفحة، وش فهمت، وش أحتاج أراجع؟">'+E((state.sourceNotes||{})[item.id]||'')+'</textarea></label></article>'}).join('');
  var urls=byKind.map(function(x){return '<div class="hub-online-source"><div><strong>'+E(x.title)+'</strong><small>'+E(x.note)+'</small></div><a href="'+E(x.url)+'" target="_blank" rel="noopener noreferrer">زيارة المصدر ↗</a></div>'}).join('');
  var links=course.community_pages&&course.community_pages.image_links||[];
  return '<div class="eyebrow">YOUR PERSONAL SOURCE LIBRARY</div><h1 class="page-title">المصادر وملفاتي الخاصة</h1><div class="source-library-summary"><strong>'+(course.personal_documents||[]).length+' كتب ومراجع PDF · '+(course.uploaded_image_index||[]).length+' صور مرجعية · '+byKind.length+' روابط تعليمية</strong><span>كل الكتب مفهرسة، لكن فتح الملف يتطلب إضافته محليًا من جهازك؛ لا ننشر ملفات PDF على GitHub.</span></div><p class="sub">رتبنا الكتب والصور التي أرسلتيها وفصلنا المكرر. لإبقائها خاصة ولا نخالف حقوق النشر: اختاري ملفاتك من الكمبيوتر مرة واحدة، ويحفظها متصفحك محليًا في IndexedDB، لا في GitHub ولا على خادم عام.</p><div class="hub-warning"><strong>مهم للحفظ</strong><p>الملفات الكبيرة تعتمد على مساحة المتصفح وقد تُحذف عند تنظيف بيانات الموقع. نسخة التقدم JSON لا تحتوي ملفات PDF أو الصور المرفوعة. احتفظي بنسخ الملفات الأصلية على الكمبيوتر.</p></div><input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/><div class="hub-metrics"><div><strong>'+files.length+'</strong><small>مرجعًا مختلفًا</small></div><div><strong>'+Object.keys(cachedFiles).length+'</strong><small>ملفًا أضفتِه محليًا</small></div></div><div class="hub-source-grid">'+cards+'</div><h2 class="hub-section-title">روابط المصادر على الإنترنت</h2><div class="hub-online-list">'+urls+'</div><details class="hub-page-list"><summary>صور تجميع النزاوي: '+links.length+' رابط صفحة خارجية</summary><p>هذه روابط مقدمة من موقع طرف ثالث؛ لم نتحقق من صحة جميع الصفحات أو الحق في إعادة توزيعها.</p><div>'+links.map(function(it){return '<a href="'+E(it.url)+'" target="_blank" rel="noopener noreferrer">صفحة '+it.page+'</a>'}).join('')+'</div></details>';
@@ -8516,15 +8523,13 @@ function click(action,el,ctx){
  if(action==='hub-next'){var remaining=filteredQuestions(c,st),stillThere=remaining.some(function(q){return q.id===pinnedQuestionId});quizIndex=Math.max(0,Math.min(remaining.length-1,quizIndex+(pinnedQuestionId&&!stillThere?0:1)));pinnedQuestionId=null;ctx.render(true);return true}
  if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;pinnedQuestionId=q.id;window.MasarCoach?.record(st,'bank',q.id,a===q.correct_option_index);ctx.save();ctx.render(true)}return true}
  if(action==='hub-retry'){st.reviewAnswers=st.reviewAnswers||{};delete st.reviewAnswers[el.dataset.qid];pinnedQuestionId=null;var idx=filteredQuestions(c,st).findIndex(function(q){return q.id===el.dataset.qid});if(idx>=0)quizIndex=idx;ctx.save();ctx.render(true);return true}
+ if(action==='hub-batch-pick'){var batchInput=document.getElementById('hub-batch');if(batchInput){batchInput.value='';batchInput.click()}return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
  if(action==='hub-inline-open'||action==='hub-open-page'||action==='hub-open'){
   var id=el.dataset.source,pg=Number(el.dataset.page)||1;
   if(!Number.isInteger(pg)||pg<1||pg>500)return true;
   var area=el.closest('.source-chapter,.hub-source,.source-topic-index')?.querySelector('.source-inline-preview');
-  if(!area){
-   var doc=el.closest('.hub-source');
-   area=doc&&doc.querySelector('.source-inline-preview');
-  }
+  if(!area){var doc=el.closest('.hub-source');area=doc&&doc.querySelector('.source-inline-preview');}
   if(!area){ctx.toast('افتحي قسم المرجع لعرض صفحات الكتاب هنا');return true}
   area.replaceChildren();
   var status=document.createElement('p');status.className='source-inline-loading';status.textContent='جارٍ تجهيز صفحات المرجع داخل الموقع…';area.appendChild(status);
@@ -8551,13 +8556,32 @@ function click(action,el,ctx){
  if(action==='hub-delete'){if(confirm('حذف نسختك المحلية من هذا المرجع؟ الملف الأصلي على الكمبيوتر لن يتأثر.'))ctx.db.deletePersonalFile(el.dataset.source).then(function(){delete cachedFiles[el.dataset.source];ctx.render(true);ctx.toast('أزلنا الملف من المتصفح فقط')}).catch(function(){ctx.toast('تعذّر حذف الملف')});return true}
  return false;
 }
+function normalizedFileName(filename){
+ return String(filename||'').normalize('NFKC').replace(/\s*\(\d+\)(?=\.[^.]+$)/g,'').replace(/[\u064B-\u065F\u0670]/g,'').replace(/[^\p{L}\p{N}]+/gu,'').toLowerCase();
+}
 async function upload(input,ctx){
+ if(input.dataset.source==='batch'){
+  var picked=Array.from(input.files||[]);
+  if(!picked.length)return;
+  var library=ctx.course.personal_documents||[],success=[],unknown=[],failed=[];
+  for(const file of picked){
+   var expected=library.find(function(x){return normalizedFileName(x.filename)===normalizedFileName(file.name)});
+   if(!expected){unknown.push(file.name);continue}
+   try{await ctx.db.savePersonalFile(expected.id,file);success.push(expected.title)}
+   catch(err){console.warn(err);failed.push(file.name)}
+  }
+  try{await refreshFiles(ctx.db)}catch(err){console.warn(err)}
+  ctx.render(true);
+  ctx.toast('أضفنا '+success.length+' كتب محليًا'+(unknown.length?' · '+unknown.length+' اسم غير مطابق':'')+(failed.length?' · تعذر حفظ '+failed.length:''));
+  return;
+ }
  var file=input.files&&input.files[0],id=input.dataset.source;
  if(!file||!id)return;
  if(file.size>80*1024*1024){ctx.toast('هذا الملف كبير جدًا لهذا المتصفح، احتفظي بنسختك على الكمبيوتر');return}
- try{await ctx.db.savePersonalFile(id,file);await refreshFiles(ctx.db);ctx.render(true);ctx.toast('حُفظ الملف الخاص في متصفحك؛ لم يُرفع إلى GitHub')}
+ try{await ctx.db.savePersonalFile(id,file);await refreshFiles(ctx.db);ctx.render(true);ctx.toast('حُفظ المرجع في متصفحك، وافتحي قسمه الآن لقراءة الصفحات هنا')}
  catch(e){console.warn(e);ctx.toast('لم يُحفظ الملف؛ قد لا تكون المساحة كافية. أبقي النسخة الأصلية على الكمبيوتر.')}
 }
+
 window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,notesPage,refreshFiles,click,upload,sign});
 })();
 /* MASAR BMW · original simplified SVG traffic sign illustrations, no external dependency.

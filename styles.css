@@ -1297,3 +1297,113 @@ body{
  .source-canvas-toolbar .btn{min-width:0;padding-inline:8px}
  .source-canvas-viewport{padding:6px;max-height:66vh}
 }
+
+
+/* MASAR media completeness — source and review visuals */
+.hub-sign-scene{
+ min-height:210px;
+ padding:18px;
+ display:grid;
+ place-items:center;
+ background:
+  radial-gradient(260px 160px at 50% 15%,rgba(122,163,192,.14),transparent 72%),
+  linear-gradient(180deg,#f8fafb,#edf3f6);
+ border:1px solid #dbe5ea;
+ border-radius:18px;
+ overflow:hidden;
+}
+.masar-question-visual{width:min(100%,280px);height:auto;display:block}
+.masar-question-visual.scene{width:min(100%,320px)}
+.source-visual-preview{
+ margin:14px 0 16px;
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:9px;
+ padding:12px;
+ border:1px solid #dde7ec;
+ border-radius:16px;
+ background:linear-gradient(145deg,#f5f8fa,#eef3f6);
+}
+.source-visual-preview .masar-question-visual{
+ width:100%;
+ max-height:132px;
+ border-radius:11px;
+ background:#fff;
+ box-shadow:0 5px 16px rgba(31,45,54,.05);
+}
+.source-visual-preview>small{
+ grid-column:1/-1;
+ color:#687c89;
+ font-size:10px;
+ line-height:1.65;
+}
+.source-page-summary{
+ margin-top:14px;
+ padding:18px;
+ border:1px solid #d3e0e7;
+ border-radius:15px;
+ background:linear-gradient(145deg,#fff,#f5f8fa);
+}
+.source-page-summary-head{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-bottom:8px;
+}
+.source-page-summary-head h3{margin:0;font-size:15px}
+.source-page-summary>p{
+ margin:0 0 13px;
+ color:#607685;
+ font-size:11px;
+ line-height:1.85;
+}
+.source-summary-lessons{display:grid;gap:10px}
+.source-summary-lesson{
+ border:1px solid #dfe7eb;
+ border-radius:12px;
+ background:#fff;
+ padding:13px 14px;
+}
+.source-summary-lesson>div{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.source-summary-lesson span{
+ font:800 9px/1 Arial,sans-serif;
+ letter-spacing:.04em;
+ color:#7890a0;
+ background:#edf3f6;
+ border-radius:999px;
+ padding:5px 7px;
+}
+.source-summary-lesson strong{font-size:12.5px;color:#263f4d}
+.source-summary-lesson ul{margin:9px 0;padding-inline-start:20px;color:#536b7a}
+.source-summary-lesson li{font-size:11px;line-height:1.8;margin:3px 0}
+.source-summary-lesson a{font-size:10.5px;font-weight:850;color:#7f2035;text-decoration:none}
+.source-summary-lesson a:hover{text-decoration:underline}
+.hub-source .source-inline-preview:not(:empty){margin-top:12px}
+.hub-source .chip.success{white-space:nowrap}
+.paper-visual{
+ float:left;
+ width:118px;
+ margin:0 0 8px 12px;
+ border:1px solid #dde5ea;
+ border-radius:10px;
+ padding:4px;
+ background:#f8fafb;
+}
+.paper-visual .masar-question-visual{width:100%}
+.paper-item::after{content:'';display:block;clear:both}
+
+@media(max-width:700px){
+ .source-visual-preview{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .source-visual-preview .masar-question-visual:last-of-type:nth-child(3){grid-column:1/-1;max-width:220px;justify-self:center}
+ .hub-sign-scene{min-height:180px;padding:12px}
+ .source-page-summary{padding:14px}
+ .paper-visual{float:none;width:100%;max-width:210px;margin:0 auto 10px}
+}
+@media print{
+ .hub-sign-scene{break-inside:avoid}
+ .paper-visual{display:block!important;width:90px!important;margin:0 0 6px 10px!important;border:1px solid #bbb!important}
+ .paper-visual .masar-question-visual{width:100%!important;height:auto!important}
+ .source-page-summary,.source-visual-preview{box-shadow:none!important}
+}

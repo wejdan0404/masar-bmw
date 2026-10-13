@@ -1375,6 +1375,12 @@ body.studio-search-open{overflow:hidden}
 body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
 .studio-timer-dock{transition:opacity .18s ease,transform .18s ease}
 @media(prefers-reduced-motion:reduce){.studio-timer-dock{transition:none}}
+
+.video-time-jumps{padding:11px 13px;margin-top:7px;border-radius:12px;background:#f2f7f9;border:1px solid #dbe6eb}
+.video-time-jumps small{font-size:11px;color:#536b7b;line-height:1.7}
+.video-time-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.video-time-list button{font:inherit;font-size:12px;font-variant-numeric:tabular-nums;font-weight:800;background:white;border:1px solid #cbdce5;color:#7e122a;padding:8px 11px;min-height:38px;border-radius:9px;cursor:pointer}
+.video-time-list button:hover,.video-time-list button:focus-visible{outline:2px solid #7598b9;outline-offset:1px}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -9331,8 +9337,21 @@ function paperPage(course){
  var arr=course.review_questions||[];
  return '<div class="eyebrow">PAPER PRACTICE / SELF ASSESSMENT</div><h1 class="page-title">اختبار ورقي تجريبي — '+arr.length+' سؤالًا</h1><p class="sub">ورقة مُعدّة من أسئلة تعليمية أصلية وليست أسئلة الامتحان الرسمي. طبعيها وحليها بالقلم قبل فتح مفتاح الحل. وإذا كنتِ على الجوال، افتحي نفس بنك الأسئلة في الوضع التفاعلي ليظهر لك صح/خطأ والشرح فورًا.</p><div class="paper-actions"><a class="btn btn-primary" href="#/practice-quiz">حل تفاعلي على الجوال · تصحيح فوري</a><button class="btn btn-outline paper-print-btn" type="button" data-action="paper-print">طباعة نموذج الأسئلة</button></div><section class="paper-sheet"><header><strong>مسار BMW — ورقة تقييم تدريبية</strong><span>الاسم: ______________ التاريخ: ______________</span><p>حددي إجابة واحدة لكل سؤال؛ استخدمي قلمًا مختلفًا لمراجعة الأخطاء بعد الحل.</p></header>'+arr.map(function(q,i){return '<article class="paper-item"><strong>'+(i+1)+'. '+E(q.question)+'</strong><div>'+q.options.map(function(o,n){return '<span>□ '+['أ','ب','ج','د'][n]+' — '+E(o)+'</span>'}).join('')+'</div></article>'}).join('')+'</section><details class="hub-page-list paper-key"><summary>عرض مفتاح الحل بعد إنهاء الورقة</summary><ol>'+arr.map(function(q,i){return '<li><strong>'+(i+1)+' — '+['أ','ب','ج','د'][q.correct_option_index]+'</strong>: '+E(q.explanation)+'</li>'}).join('')+'</ol></details>';
 }
+
+function videoTimeLinks(id,note){
+ var seen=new Set(),stamps=[],re=/(?:^|[^\d])(\d{1,2}):([0-5]\d)(?!\d)/g,m;
+ while((m=re.exec(String(note||'')))&&stamps.length<12){
+  var seconds=Number(m[1])*60+Number(m[2]),label=m[1].padStart(2,'0')+':'+m[2];
+  if(!seen.has(seconds)){seen.add(seconds);stamps.push({seconds:seconds,label:label})}
+ }
+ return '<div class="video-time-jumps" aria-label="العودة للحظات الفيديو المحفوظة">'
+ +(stamps.length?'<small>ارجعي إلى وقت الملاحظة داخل الفيديو:</small><div class="video-time-list">'
+ +stamps.map(function(x){return '<button type="button" data-action="video-seek" data-video-resource="'+E(id)+'" data-seconds="'+x.seconds+'">↪ '+x.label+'</button>'}).join('')+'</div>'
+ :'<small>اكتبي في ملاحظتك مثلًا 02:15 لتظهر هنا وصلة إلى نفس اللحظة.</small>')
+ +'</div>';
+}
 function videoNotes(video,state){
- return '<label class="hub-source-note video-learning-notes">ملاحظاتي على هذا الفيديو<textarea data-video-note="'+E(video.id)+'" placeholder="الدقيقة 00:00 — لاحظتِ إيش؟&#10;قاعدة جديدة: ...&#10;سؤالي للمدربة: ...">'+E((state.videoNotes||{})[video.id]||'')+'</textarea><small>احفظي اسم الخطوة ووقتها والسؤال الذي تريدين مراجعته؛ تُحفظ الملاحظة محليًا.</small></label>';
+ return '<label class="hub-source-note video-learning-notes">ملاحظاتي على هذا الفيديو<textarea data-video-note="'+E(video.id)+'" placeholder="الدقيقة 00:00 — لاحظتِ إيش؟&#10;قاعدة جديدة: ...&#10;سؤالي للمدربة: ...">'+E((state.videoNotes||{})[video.id]||'')+'</textarea><small>احفظي اسم الخطوة ووقتها والسؤال الذي تريدين مراجعته؛ تُحفظ الملاحظة محليًا.</small></label>'+videoTimeLinks(video.id,(state.videoNotes||{})[video.id]||'');
 }
 function notesPage(state,course){
  var videos=Object.entries(state.videoNotes||{}).filter(function(x){return x[1]&&x[1].trim()}).map(function(x){var v=(course.media_resources||[]).find(function(m){return m.id===x[0]});return '<article class="ref-card"><h3>فيديو: '+E(v?v.title:x[0])+'</h3><p style="white-space:pre-wrap">'+E(x[1])+'</p></article>'}).join('');
@@ -9518,7 +9537,7 @@ async function upload(input,ctx){
  catch(e){console.warn(e);ctx.toast('لم يُحفظ الملف؛ قد لا تكون المساحة كافية. أبقي النسخة الأصلية على الكمبيوتر.')}
 }
 
-window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,notesPage,refreshFiles,click,upload,sign});
+window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,videoTimeLinks,notesPage,refreshFiles,click,upload,sign});
 })();
 /* MASAR BMW · original simplified SVG traffic sign illustrations, no external dependency.
  * NOT exact official traffic-sign artwork. Compare with Saudi Traffic Department guide.
@@ -11235,7 +11254,19 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
   if(state.videoWatched[id])delete state.videoWatched[id];else state.videoWatched[id]=new Date().toISOString();
   save();render(true);toast(state.videoWatched[id]?'تم تسجيل مشاهدة المقطع':'أزلنا علامة المشاهدة');return
  }
- if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
+ if(action==='video-seek'){
+   const resource=(COURSE.media_resources||[]).find(m=>m.id===el.dataset.videoResource&&m.kind==='youtube_video');
+   const seconds=Number(el.dataset.seconds);
+   if(!resource||!/^[A-Za-z0-9_-]{11}$/.test(resource.youtube_id||'')||!Number.isInteger(seconds)||seconds<0||seconds>7200)return;
+   const holder=el.closest('.study-video')?.querySelector('.video-player');if(!holder)return;
+   const frame=document.createElement('iframe');
+   frame.src='https://www.youtube-nocookie.com/embed/'+resource.youtube_id+'?start='+seconds+'&autoplay=1';
+   frame.title='متابعة '+resource.title+' من '+Math.floor(seconds/60)+' دقيقة';
+   frame.loading='lazy';frame.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');
+   frame.setAttribute('allowfullscreen','');frame.referrerPolicy='strict-origin-when-cross-origin';
+   holder.replaceChildren(frame);return
+  }
+  if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
  if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
  if(action==='filter-weeks'){catalogFilter=el.dataset.filter||'all';render(true);return}
  if(action==='focus-mode'){state.uiPrefs=state.uiPrefs||{};state.uiPrefs.focus=!state.uiPrefs.focus;save();render(true);toast(state.uiPrefs.focus?'تم تفعيل وضع التركيز':'رجعنا العرض الكامل');return}
@@ -11266,7 +11297,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
 }
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive,.week-card,.action-tile,.adaptive-task,.ts-card,.study-video,.coach-review-item,.hub-guide-step');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
-document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save()}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}if(e.target.dataset.activityNote){state.activityNotes=state.activityNotes||{};state.activityNotes[e.target.dataset.activityNote]=e.target.value;save()}});
+document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save();const jumps=e.target.closest('.study-video')?.querySelector('.video-time-jumps');if(jumps)jumps.outerHTML=window.MasarHub.videoTimeLinks(e.target.dataset.videoNote,e.target.value)}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}if(e.target.dataset.activityNote){state.activityNotes=state.activityNotes||{};state.activityNotes[e.target.dataset.activityNote]=e.target.value;save()}});
 document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if((e.target.id==='hub-file'||e.target.id==='hub-batch')&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast,course:COURSE});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.dataset.activityCheck){state.activityChecks=state.activityChecks||{};state.activityChecks[e.target.dataset.activityCheck]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(e.target.files[0].size>5*1024*1024||obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done)||!obj.state.done.every(n=>Number.isInteger(n)&&n>=1&&n<=48)||!obj.state.answers||typeof obj.state.answers!=='object'||Array.isArray(obj.state.answers))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
 function lessonNumberFromRoute(path){const m=/^\/lesson\/(\d+)$/.exec(path||'');const n=Number(m?.[1]);return n>=1&&n<=48?n:null}
 function captureReadingPosition(path=displayedRoute){const n=lessonNumberFromRoute(path);if(!n||restoringScroll)return;const y=Math.max(0,Math.round(window.scrollY||document.documentElement?.scrollTop||0));state.readingPositions=state.readingPositions||{};if(state.readingPositions[n]!==y){state.readingPositions[n]=y;save()}}

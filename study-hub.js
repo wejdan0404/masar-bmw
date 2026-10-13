@@ -63,17 +63,15 @@ function lessonReadings(course,lesson){
   var page=a.pdf_page_start,pg=page===a.pdf_page_end?'PDF صفحة '+page:'PDF صفحات '+page+'–'+a.pdf_page_end;
   var loaded=!!cachedFiles[a.source_id];
   return '<details class="source-chapter"><summary><span class="chapter-title">'+E(a.source_title)+'</span><span class="chapter-page">'+pg+'</span><span class="chapter-toggle" aria-hidden="true">⌄</span></summary>'
-   +'<div class="source-chapter-inner"><h3>محتوى الدرس المرتبط بهذا الفصل</h3><p>'+intro+'</p><ul>'+keypoints+'</ul>'
-   +'<p class="source-honesty">هذا شرح أصلي من مِسار للموضوع المرتبط بالكتاب، وليس نسخًا حرفيًا لجميع صفحاته. يمكنك استعراض صفحات ملفك الأصلي أسفله من داخل الموقع.</p>'
-   +'<div class="source-chapter-actions"><button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">اعرضي صفحات الكتاب هنا</button><button type="button" class="btn btn-outline" data-action="hub-extract-text" data-source="'+E(a.source_id)+'" data-from="'+page+'" data-to="'+a.pdf_page_end+'">اظهري نص صفحات الكتاب</button>'
-   +(!loaded?'<button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(a.source_id)+'">أضيفي ملفك مرة واحدة</button>':'<span class="chip tiny success">ملفك محفوظ على هذا المتصفح</span>')
-   +'</div><div class="source-text-preview" aria-live="polite"></div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
+   +'<div class="source-chapter-inner"><h3>المحتوى المرتبط بهذا الموضع</h3><p>'+intro+'</p><ul>'+keypoints+'</ul>'
+   +'<p class="source-honesty">هذا شرح أصلي من مِسار مبني على موضوع الدرس وفهرسة المصدر. لا تحتاجين لرفع ملف حتى تذاكرين هذا الجزء، وهو ليس نسخًا حرفيًا من صفحات الكتاب.</p>'
+   +'<div class="source-chapter-actions">'+(loaded?'<button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">فتح الصفحة الأصلية المحفوظة</button><button type="button" class="btn btn-outline" data-action="hub-extract-text" data-source="'+E(a.source_id)+'" data-from="'+page+'" data-to="'+a.pdf_page_end+'">استخراج نص الصفحة</button><span class="chip tiny success">نسخة PDF موجودة على هذا المتصفح</span>':'<a class="btn btn-outline" href="#/sources">شوفي فهرس المصدر داخل مِسار</a><span class="chip tiny blue">لا يلزم رفع ملف</span>')+'</div>'
+   +'<div class="source-text-preview" aria-live="polite"></div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
    +'<p class="source-page-hint">'+E(a.note||'')+'</p></div></details>';
  }).join('');
- return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>اقرئي من الكتب هنا، بدون الخروج من مِسار</h2>'
- +'<p>افتحي اسم أي كتاب لتشاهدي خلاصة الموضوع، ثم صفحات المرجع الأصلي داخل الدرس عند إضافته إلى مكتبتك الخاصة.</p>'
- +'<input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/>'
- +'<div class="source-chapter-list">'+cards+'</div><p class="hub-legal">تختلف طبعات بعض المراجع وأرقام صفحاتها، وقد تحتاج المعلومات النظامية إلى تحديث. يحتفظ المتصفح بملفاتك محليًا، ولا نرفعها إلى GitHub.</p></section>';
+ return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>المراجع مرتبطة بالدرس داخل مِسار</h2>'
+ +'<p>افتحي اسم المرجع لتقرئين شرح الموضوع ونقاطه الأساسية مباشرة. إذا كان عندك من إصدار سابق ملف PDF محفوظ محليًا، يظهر خيار الصفحة الأصلية تلقائيًا؛ غير كذا ما تحتاجين تسوين أي رفع يدوي.</p>'
+ +'<div class="source-chapter-list">'+cards+'</div><p class="hub-legal">أرقام الصفحات مرجع لفهرسة المصدر فقط. النسخ الكاملة المحمية أو مجهولة الترخيص لا تُنشر في مستودع GitHub العام، بينما المحتوى التعليمي المطلوب للمذاكرة يبقى ظاهرًا داخل الدرس.</p></section>';
 }
 function schoolPolicies(course){
  var rows=course.school_specific_evidence||[];if(!rows.length)return '';

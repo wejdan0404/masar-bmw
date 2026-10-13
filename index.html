@@ -789,6 +789,33 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
  .page{animation:none}
  .coach-mode-card,.sidebar-group-links a{transition:none!important;transform:none!important}
 }
+
+
+/* MASAR v1.5 — content trust, evidence visibility, and extra retrieval practice */
+.verification-chip{white-space:normal;text-align:center;line-height:1.45}
+.lesson-verification{border:1px solid #dce5ea;border-radius:14px;padding:13px 14px;background:#f8fafb;display:grid;gap:7px}
+.lesson-verification.official_current_support{background:#edf7f2;border-color:#c7dfd3}
+.lesson-verification.school_primary_support{background:#edf4f8;border-color:#cbdce7}
+.lesson-verification-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.lesson-verification-head small{font-size:9.5px;color:#738591}
+.lesson-verification>strong{font-size:12.5px;color:#263f4d}
+.lesson-verification p{font-size:11px;line-height:1.85;margin:0;color:#58707f}
+.verification-links{display:grid;gap:5px;margin-top:2px}
+.verification-source-link{font-size:10.5px;font-weight:800;color:#466b82;text-decoration:none;line-height:1.7}
+.verification-source-link:hover{text-decoration:underline}
+.verification-caveat{display:block;border-top:1px solid #dce5ea;padding-top:7px;color:#7a8c97;font-size:9.5px;line-height:1.65}
+.lesson-extra-question{position:relative;overflow:hidden}
+.lesson-extra-question:before{content:'';position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,#7598B9,#800C1F)}
+.lesson-extra-question .flexline{align-items:flex-start}
+.lesson-extra-question .feedback{margin-top:14px}
+.lesson-extra-hint{margin:12px 0 0!important;color:#71828d!important;font-size:11px!important;line-height:1.8!important}
+.lesson-extra-question .chip{max-width:210px}
+@media(max-width:610px){
+ .lesson-verification{padding:12px}
+ .lesson-verification-head{align-items:flex-start}
+ .lesson-extra-question .flexline{display:grid}
+ .lesson-extra-question .chip{justify-self:start}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -1274,7 +1301,7 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
       "source_provenance": "ملخص المحادثات السابقة",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "مراجعة رسمية جزئية: وظيفة الإشارات التنظيمية ووجوب التوقف عند قف مدعومان بمصادر المرور؛ بقية تفاصيل الدرس ما تزال ضمن التدقيق.",
       "study_content": {
         "goal": "فهم العلامات التنظيمية",
         "introduction": "تخبرك العلامات التنظيمية بما يجب فعله أو ما يُمنع؛ مثل قف ومنع الدخول وحدود السرعة المنشورة.",
@@ -1288,7 +1315,15 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
         "recap": "إذا تعارض اجتهادك مع تنظيم واضح اتبعي التنظيم"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-008"
+      "question_id": "QUIZ-008",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "وظيفة الإشارات التنظيمية، ووجوب التوقف التام عند علامة قف.",
+      "verification_urls": [
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1"
+      ]
     },
     {
       "id": "LES-009",
@@ -1385,7 +1420,7 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
       "source_provenance": "ملخص المحادثات السابقة",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "مراجعة رسمية جزئية لقواعد الأفضلية الأساسية؛ تصميم كل تقاطع وإشاراته الفعلية يظلان حاسمين.",
       "study_content": {
         "goal": "تحديد الأولوية بحسب نوع التقاطع",
         "introduction": "الأولوية ليست قاعدة واحدة دائمًا؛ افحصي اللوحات والإشارات وتصميم الطريق قبل تحديد من يمر أولًا.",
@@ -1399,7 +1434,15 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
         "recap": "رجال المرور والإشارات المنظمة يغيرون ترتيب العبور"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-011"
+      "question_id": "QUIZ-011",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "أولوية الطريق الرئيسي، القادم من اليمين عند تقاطع متساوي الأفضلية، وأولوية تنظيم رجل المرور.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-012",
@@ -1571,7 +1614,7 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "مراجعة تحريرية احترازية للمفاهيم؛ اعتماد النص النظامي التفصيلي معلّق",
+      "verification_status": "تمت مراجعة الفرق الأساسي بين قف وأعط الأفضلية مقابل المصادر الرسمية؛ التفاصيل السياقية تبقى مرتبطة بالموقع الفعلي.",
       "study_content": {
         "goal": "الفصل بين قف وأعط الأفضلية",
         "introduction": "علامة «قف» تتطلب التوقف الكامل، أما «أعط الأفضلية» فتتطلب إفساح الطريق لمن له الأفضلية والتوقف عند الحاجة لمرورهم.",
@@ -1586,7 +1629,15 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       },
       "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
       "question_id": "QUIZ-016",
-      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "قف = توقف تام؛ أعط الأفضلية = إفساح المجال وقد يتطلب ذلك التوقف التام عند مرور مركبات ذات أفضلية.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-017",
@@ -1647,7 +1698,7 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "تكرار موضوع مبكر؛ المطلوب رفع مستوى التطبيق",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "verification_status": "تمت مراجعة قاعدة القادم من اليمين وترتيب تنظيم الحركة مقابل مصادر رسمية.",
       "study_content": {
         "goal": "تطبيق الأولوية على تقاطعات محددة",
         "introduction": "ابدئي بتحديد من ينظم التقاطع: رجل المرور، والإشارات الضوئية، ولوحات الأولوية. عند غياب تنظيم يغيّر الأفضلية، قد تنطبق قاعدة المركبة القادمة من اليمين عند تقاطع متساوي الأفضليات.",
@@ -1662,7 +1713,15 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       },
       "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
       "question_id": "QUIZ-018",
-      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "عند تقاطع متساوي الأفضلية دون تنظيم، تكون الأفضلية للقادمة من اليمين؛ ورجل المرور مقدم على الإشارة الضوئية عند تنظيمه للحركة.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-019",
@@ -1685,7 +1744,7 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "verification_status": "تمت مراجعة قاعدة أولوية المركبات داخل الدوار مقابل نظام المرور ولائحته.",
       "study_content": {
         "goal": "التعامل مع أفضلية المركبات داخل الدوار",
         "introduction": "إذا لم توجد إشارات ضوئية أو رجل مرور ينظّم الحركة على خلاف ذلك، فالأفضلية للمركبات التي تسير بالفعل داخل الدوار.",
@@ -1700,7 +1759,15 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       },
       "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
       "question_id": "QUIZ-019",
-      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "الأفضلية للمركبة الموجودة داخل الدوار عند عدم وجود إشارة ضوئية أو رجل مرور ينظم خلاف ذلك.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
     },
     {
       "id": "LES-020",
@@ -2529,21 +2596,29 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "تم تحديث أرقام الطوارئ وتغطية 911 من مصادر رسمية حديثة؛ تفاصيل التعامل مع الحادث تعتمد على وجود إصابات وموقع الحادث.",
       "study_content": {
         "goal": "التفريق بين الحوادث الطارئة وحوادث الأضرار المادية",
-        "introduction": "في حالة إصابة أو خطر فوري اطلبي خدمة الطوارئ الملائمة. ليست جميع الحوادث من اختصاص نجم.",
+        "introduction": "في حالة إصابة أو خطر فوري، الأولوية لطلب خدمة الطوارئ المناسبة وتأمين سلامة الموجودين بقدر الاستطاعة. ليست كل الحوادث من اختصاص نجم، ولا ينبغي انتظار خدمة أضرار مادية عند وجود مصاب يحتاج إسعافًا.",
         "key_points": [
-          "في مناطق 911 المغطاة يمكن الاتصال بالعمليات الأمنية الموحدة",
-          "997 رقم الإسعاف و993 المرور و996 أمن الطرق",
-          "للإبلاغ عن حادث مشمول بخدمة نجم راجعي شروطها وقنواتها الرسمية"
+          "مركز العمليات الأمنية الموحدة 911 يغطي مكة المكرمة والرياض والمنطقة الشرقية ويشمل المرور وأمن الطرق والجهات الأمنية المشمولة.",
+          "997 رقم الخدمة الإسعافية للهلال الأحمر السعودي؛ و993 لحوادث المرور في بقية المناطق وفق قائمة وزارة الداخلية.",
+          "عند وجود مصاب أو خطر طبي عاجل اطلبي الإسعاف فورًا، ولا تؤخري البلاغ الطبي بانتظار معالجة أضرار المركبات."
         ],
         "scenario": "حادث فيه مصاب في مكة ويحتاج مساعدة فورية.",
         "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
         "recap": "للإبلاغ عن حادث مشمول بخدمة نجم راجعي شروطها وقنواتها الرسمية"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-042"
+      "question_id": "QUIZ-042",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "997 للإسعاف؛ 911 للعمليات الأمنية الموحدة في مكة والرياض والشرقية؛ 993 للمرور في بقية المناطق.",
+      "verification_urls": [
+        "https://srca.org.sa/",
+        "https://www.moi.gov.sa/"
+      ]
     },
     {
       "id": "LES-043",
@@ -2676,21 +2751,28 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "تمت مراجعة متطلبات بطاقة الخدمة الحالية في أبشر بتاريخ 2026-10-13.",
       "study_content": {
         "goal": "فهم مراحل استخراج الرخصة في السعودية",
-        "introduction": "الحجز في أبشر خطوة للحصول على التدريب، وليس إصدار رخصة فورية. هناك فحص طبي وتدريب واختبارات وإجراءات دفع.",
+        "introduction": "حجز موعد مدرسة القيادة عبر أبشر خطوة ضمن مسار الحصول على الرخصة، وليس إصدارًا فوريًا. بطاقة الخدمة الحالية تذكر حدًا أدنى 18 سنة، حجز مدرسة قيادة، فحصًا طبيًا من مركز معتمد، وسداد رسوم الإصدار، ثم استكمال التدريب والاختبارات اللازمة.",
         "key_points": [
-          "الحد الأدنى لرخصة القيادة الخاصة 18 سنة بحسب بطاقة الخدمة",
-          "يمكن حجز موعد مدرسة معتمدة عبر أبشر",
-          "الرسوم الحكومية منفصلة عن رسوم التدريب"
+          "الحد الأدنى المذكور في بطاقة خدمة إصدار رخصة القيادة الخاصة هو 18 سنة.",
+          "يُحجز أو يُحدّث موعد التدريب في مدرسة قيادة معتمدة عبر أبشر.",
+          "الفحص الطبي المعتمد ورسوم الإصدار واستكمال التدريب والاختبارات مراحل منفصلة عن مجرد حجز الموعد."
         ],
         "scenario": "حجزتِ موعدًا بمدرسة معتمدة عبر أبشر.",
         "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
         "recap": "الرسوم الحكومية منفصلة عن رسوم التدريب"
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-046"
+      "question_id": "QUIZ-046",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "شروط بطاقة خدمة إصدار رخصة القيادة في أبشر: العمر، حجز المدرسة، الفحص الطبي، الرسوم، واستكمال التدريب والاختبارات.",
+      "verification_urls": [
+        "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/"
+      ]
     },
     {
       "id": "LES-047",
@@ -2712,21 +2794,28 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "publication_status": "غير جاهز للنشر",
       "improvement_note": "المقتطف في المرفق ينتهي قبل اكتمال المراجعة؛ تحقق من أسعار مدرسة القيادة عند النشر",
       "source_provenance": "ملف التدقيق المرفق",
-      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "verification_status": "تم تصحيح نسبة مثال 6/15/30 إلى مدرسة جامعة القصيم؛ لا يعمم على جميع المدارس.",
       "study_content": {
         "goal": "فهم مستويات برامج تعليم القيادة",
-        "introduction": "تختلف البرامج بحسب تقييم المدرسة للمستوى. مثال مدرسة جدة المتطورة يعرض مسارات 30 و15 و6 ساعات بتكاليف مختلفة.",
+        "introduction": "تختلف برامج التدريب بحسب تقييم المدرسة للمستوى. كمثال منشور حاليًا من مدرسة جامعة القصيم لتعليم القيادة: 6 ساعات لمن يجيد القيادة، و15 ساعة لمتوسط الإجادة، و30 ساعة لمن لا يجيد القيادة.",
         "key_points": [
-          "البرنامج الأطول موجّه عادةً لمن تبدأ من الصفر",
-          "الساعات ومحتوى البرنامج تختلف بحسب المدرسة والسياسات الجارية",
-          "الرسوم المنشورة قابلة للتغيير فراجعي المدرسة قبل الدفع"
+          "في مثال مدرسة جامعة القصيم، برنامج 30 ساعة مخصص لمن لا يجيد القيادة.",
+          "برنامجا 15 و6 ساعات مرتبطان بتقييم مستوى المتدرب في المدرسة نفسها.",
+          "هذه الأرقام مثال من مدرسة محددة وليست قاعدة وطنية ثابتة لكل مدرسة؛ راجعي مدرستك قبل الدفع أو التخطيط."
         ],
         "scenario": "متدربة جديدة لم تتعلم القيادة قط.",
         "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
-        "recap": "الرسوم المنشورة قابلة للتغيير فراجعي المدرسة قبل الدفع"
+        "recap": "6/15/30 ساعة مثال منشور من مدرسة جامعة القصيم، وليس معيارًا موحدًا لكل مدارس المملكة."
       },
       "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
-      "question_id": "QUIZ-047"
+      "question_id": "QUIZ-047",
+      "verification_level": "school_primary_support",
+      "verification_label": "موثق من مدرسة سعودية محددة",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "برامج 6 و15 و30 ساعة منشورة في مدرسة جامعة القصيم لتعليم القيادة.",
+      "verification_urls": [
+        "https://sites.qu.edu.sa/quds/quds-prices/"
+      ]
     },
     {
       "id": "LES-048",
@@ -2888,7 +2977,13 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "correct_option_index": 0,
       "rationale": "علامة قف تتطلب التوقف الكامل.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
-      "provenance": "صياغة تعليمية جديدة"
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES"
+      ],
+      "verification_note": "تمت مراجعة قاعدة التوقف التام عند علامة قف؛ السؤال تعليمي وليس سؤال اختبار رسمي."
     },
     {
       "id": "QUIZ-009",
@@ -2938,8 +3033,13 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "rationale": "اللوحة في هذا الموقف توجب إفساح المجال للمركبات ذات الأفضلية على الطريق الرئيسي.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "السؤال يذكر صراحة علامة أعط الأفضلية والطريق الرئيسي لتجنب التعميم."
     },
     {
       "id": "QUIZ-012",
@@ -3017,8 +3117,12 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "rationale": "عند مرور مركبات لها الأفضلية، يجب إفساح المجال لها، وقد يتطلب ذلك التوقف الكامل.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1"
+      ],
+      "verification_note": "المفهوم مدعوم بنص المخالفات الرسمي؛ السؤال صياغة تعليمية جديدة."
     },
     {
       "id": "QUIZ-017",
@@ -3049,8 +3153,13 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "rationale": "في حالة الوصول المتزامن لتقاطع متساوي الأفضلية دون إشارات أولوية، تكون الأفضلية للقادمة من اليمين.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "مقيد بحالة وصول متزامن وتقاطع متساوي الأفضلية دون لوحات أو إشارات."
     },
     {
       "id": "QUIZ-019",
@@ -3066,8 +3175,13 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "rationale": "الأفضلية للمركبة الموجودة داخل الدوار ما لم توجد إشارات ضوئية أو رجل مرور ينظمان الحركة خلاف ذلك.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "السؤال يستثني صراحة وجود إشارة ضوئية أو رجل مرور."
     },
     {
       "id": "QUIZ-020",
@@ -3421,8 +3535,13 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "rationale": "سلامة المصابين وطلب الإسعاف أولوية؛ يستقبل الهلال الأحمر السعودي البلاغات الإسعافية على 997، وتعمل خدمة 911 في المناطق المشمولة.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
       "provenance": "صياغة تعليمية جديدة",
-      "review_status": "editorial_revised_pending_formal_legal_verification",
-      "is_official_exam_question": false
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://srca.org.sa/",
+        "https://www.moi.gov.sa/"
+      ],
+      "verification_note": "الأولوية في السيناريو هي طلب الطوارئ الطبية للمصاب."
     },
     {
       "id": "QUIZ-043",
@@ -3482,22 +3601,32 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "correct_option_index": 1,
       "rationale": "الحجز لا يعادل إتمام جميع الشروط.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
-      "provenance": "صياغة تعليمية جديدة"
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "verification_urls": [
+        "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/"
+      ],
+      "verification_note": "الحجز وحده لا يساوي إصدار الرخصة؛ يلزم استكمال المتطلبات المنشورة."
     },
     {
       "id": "QUIZ-047",
       "lesson_id": "LES-047",
       "week": 16,
-      "question": "أي مسار تعليمي تتوقعينه في مثال المدرسة؟",
+      "question": "بحسب مثال مدرسة جامعة القصيم المنشور، أي برنامج مخصص لمن لا يجيد القيادة؟",
       "options": [
-        "مسار مبتدئات 30 ساعة",
-        "دورة 6 ساعات حتمًا",
-        "بلا تدريب"
+        "برنامج 30 ساعة",
+        "برنامج 6 ساعات حتمًا",
+        "لا يحتاج تدريبًا"
       ],
       "correct_option_index": 0,
-      "rationale": "المدارس تحدد المسار وفق تقييم المستوى.",
+      "rationale": "صفحة تكاليف مدرسة جامعة القصيم تعرض برنامج 30 ساعة لمن لا يجيد القيادة، لكن المدارس الأخرى قد تختلف.",
       "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
-      "provenance": "صياغة تعليمية جديدة"
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "school_primary_checked_2026-10-13",
+      "verification_urls": [
+        "https://sites.qu.edu.sa/quds/quds-prices/"
+      ],
+      "verification_note": "معلومة خاصة بمثال مدرسة جامعة القصيم، وليست قاعدة وطنية موحدة."
     },
     {
       "id": "QUIZ-048",
@@ -8279,6 +8408,16 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
     "lesson_reading_index_count": 48,
     "linking_policy": "topic index does not establish accuracy or current legal validity",
     "distribution_policy": "Do not publish user-provided PDFs, copyrighted signs/photographs, or proprietary font files to public GitHub without a license."
+  },
+  "content_verification": {
+    "last_reviewed": "2026-10-13",
+    "note": "حالة الثقة تصف الادعاء المحدد الذي تمت مراجعته ولا تعني اعتماد الدرس كاملًا أو أن أسئلته أسئلة اختبار رسمية.",
+    "levels": {
+      "official_current_support": "المفهوم المحدد مدعوم بمصدر رسمي سعودي حالي تمت مراجعته في التاريخ المبين.",
+      "school_primary_support": "المعلومة منشورة من مدرسة قيادة سعودية محددة وقد لا تنطبق على جميع المدارس.",
+      "training_reference_support": "المعلومة مدعومة بمرجع تدريبي مرفوع؛ يلزم تحديث الأحكام المتغيرة من المصدر الرسمي.",
+      "pending": "قيد التدقيق."
+    }
   }
 }
 </script>
@@ -10060,7 +10199,38 @@ function weeksGrid(){const q=filterText.trim();const matched=weeks.filter(w=>{co
  return matchedWeeks.length?'<section class="learning-phase"><div class="phase-heading"><h2>'+section.title+'</h2><p>'+section.sub+'</p></div><div class="week-grid">'+matchedWeeks.map(weekCard).join('')+'</div></section>':'';
 }).join('')+'</div>':`<div class="empty"><h3>ما فيه أسابيع هنا حاليًا</h3><p>جربي تغيير الفلتر أو كلمة البحث.</p><button class="btn btn-muted" type="button" data-action="filter-weeks" data-filter="all">عرض كل الأسابيع</button></div>`}
 function weekPage(n){const w=weeks[n-1];if(!w)return notFound();return `<div class="crumbs"><a href="#/weeks">الخطة الدراسية</a> / الأسبوع ${n}</div><div class="week-hero"><div><span class="eyebrow" style="color:#bbd0dc">WEEK ${p2(n)}</span><h1>${ESC(w.title)}</h1><p>خطة الأسبوع: السبت والثلاثاء والخميس للدروس، والجمعة للمراجعة. الترتيب مقترح وقابل للتغيير.</p></div><span class="rounded-num" style="background:#405969;color:white;border-color:#547082">${weeklyDone(n)} / 3 مكتمل</span></div><div class="section-head"><div><h2>دروس هذا الأسبوع</h2><p>اضغطي أي درس لبدء القراءة والحل وحفظ التقدم.</p></div></div><div class="card">${lessons.filter(l=>l.week===n).map(l=>`<a href="#/lesson/${l.order}" class="lesson-row ${isDone(l.order)?'done':''}"><span class="lesson-no">${isDone(l.order)?icon('check'):p2(l.order)}</span><span class="lesson-info"><b>${ESC(l.title)}</b><small>الهدف: ${ESC(l.study_content.goal)}</small></span><span class="lesson-arrow">${icon('left')}</span></a>`).join('')}</div><div class="section-head"><div><h2>مراجعة الأسبوع</h2><p>ثلاثة أسئلة قصيرة مخصصة لهذه المجموعة.</p></div></div><section class="callout"><h3>تأكدي إن المعلومات ثبتت</h3><p>راجعي المواقف بدل الحفظ السريع. النتيجة خاصة بالتدريب وليست درجة نجاح رسمية.</p><button type="button" class="btn btn-primary" data-action="start-quiz" data-week="${n}">اختبار الأسبوع ${icon('arrow')}</button></section>${footerNote()}`}
+function verificationSourceLabel(url){
+ if(/laws\.boe\.gov\.sa/.test(url))return 'نظام المرور — هيئة الخبراء';
+ if(/moi\.gov\.sa/.test(url))return 'وزارة الداخلية / المرور';
+ if(/absher\.sa/.test(url))return 'أبشر — خدمة إصدار الرخصة';
+ if(/srca\.org\.sa/.test(url))return 'هيئة الهلال الأحمر السعودي';
+ if(/qu\.edu\.sa/.test(url))return 'مدرسة جامعة القصيم لتعليم القيادة';
+ return 'المصدر الداعم';
+}
+function lessonVerificationChip(l){
+ const level=l.verification_level||'pending';
+ if(level==='official_current_support')return '<span class="chip tiny success verification-chip" title="تمت مراجعة الادعاء المحدد بمصدر رسمي سعودي حالي">موثق رسميًا في نطاق محدد</span>';
+ if(level==='school_primary_support')return '<span class="chip tiny blue verification-chip" title="المعلومة منشورة من مدرسة قيادة سعودية محددة وقد لا تنطبق على جميع المدارس">خاص بمدرسة موثقة</span>';
+ if(level==='training_reference_support')return '<span class="chip tiny verification-chip">مدعوم بمرجع تدريبي</span>';
+ return '<span class="chip tiny red verification-chip" title="يحتاج تدقيقًا إضافيًا قبل اعتباره محتوى نهائيًا">قيد التدقيق</span>';
+}
+function lessonVerificationPanel(l){
+ const urls=Array.isArray(l.verification_urls)?l.verification_urls:[];
+ const links=urls.map((url,i)=>'<a class="verification-source-link" href="'+ESC(url)+'" target="_blank" rel="noopener noreferrer">↗ '+ESC(verificationSourceLabel(url))+'</a>').join('');
+ const level=l.verification_level||'pending';
+ const heading=level==='official_current_support'?'تم التحقق من هذا الجزء':'حالة التحقق';
+ const body=l.verification_scope||l.verification_status||'الدرس ما زال ضمن التدقيق التحريري.';
+ const date=l.verification_checked_on?'آخر مراجعة: '+ESC(l.verification_checked_on):'';
+ return '<div class="lesson-verification '+ESC(level)+'"><div class="lesson-verification-head">'+lessonVerificationChip(l)+'<small>'+date+'</small></div><strong>'+heading+'</strong><p>'+ESC(body)+'</p>'+(links?'<div class="verification-links">'+links+'</div>':'')+'<small class="verification-caveat">حالة الثقة تخص الادعاء المحدد أعلاه، ولا تعني أن الدرس أو السؤال اختبار رسمي معتمد.</small></div>';
+}
 function sourcesBlock(l){let arr=(l.source_ids_suggested||[]).map(s=>sourceById[s]).filter(Boolean);return arr.map(s=>`<a href="${ESC(s.url)}" class="source-link" target="_blank" rel="noopener noreferrer">↗ ${ESC(s.name)}</a>`).join('')+`<p style="font-size:10px;margin-top:8px">المراجع للاستزادة والتدقيق، وليست إثباتًا لاعتماد كل عبارة في الملخص.</p>`}
+function lessonExtraQuestion(l){
+ const q=(COURSE.review_questions||[]).find(x=>x.lesson_id===l.id);
+ if(!q)return '';
+ const ans=state.reviewAnswers?.[q.id],answered=Number.isInteger(ans),correct=answered&&ans===q.correct_option_index;
+ const sourceName=q.source_id==='EXT-MOI-SIGNS'?'المرور السعودي':q.source_id==='DOC-TRAINEE'?'كتاب المتدربة':q.source_id==='DOC-DARB'?'درب السلامة':q.source_id==='DOC-NAZAWI'?'تجميع النزاوي':q.source_id==='DOC-NARIMAN'?'ملخص التقييم':q.source_id==='DOC-SHARD'?'مدرسة شرق':q.source_id==='DOC-JEDDAH'?'منهج جدة':q.source_id?.startsWith('IMG-')?'مرجع بصري مرفوع':'بنك المراجعة';
+ return '<section class="qbox lesson-extra-question" id="practice-extra"><div class="eyebrow">04 / تثبيت إضافي</div><div class="flexline"><h2>سؤال مراجعة ثاني</h2><span class="chip tiny">'+ESC(sourceName)+'</span></div><p>'+ESC(q.question)+'</p><div class="options">'+q.options.map((opt,i)=>'<button type="button" class="option '+(answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):'')+'" data-action="hub-answer" data-qid="'+ESC(q.id)+'" data-answer="'+i+'" '+(answered?'disabled':'')+'><span class="bullet">'+p2(i+1)+'</span>'+ESC(opt)+'</button>').join('')+'</div>'+(answered?'<div class="feedback '+(correct?'':'wrong')+'"><strong>'+(correct?'صح ✓':'راجعيها مرة ثانية')+'</strong><span class="feedback-reason">'+ESC(q.explanation||'راجعي قاعدة الدرس ثم أعيدي السؤال من مركز التجميعات.')+'</span><small class="feedback-source">مصدر الفكرة: '+ESC(sourceName)+(q.source_pdf_page?' · PDF ص '+ESC(q.source_pdf_page):'')+' · هذا سؤال تدريبي غير رسمي.</small></div>':'<p class="lesson-extra-hint">جاوبي بدون الرجوع للشرح؛ الهدف نتأكد إن الفكرة ثبتت بشكل مختلف.</p>')+'</section>';
+}
 function videoCard(m){
  const first=lessons.find(l=>(m.lesson_ids||[]).includes(l.id));
  return '<article class="study-video video-gallery-item"><div class="video-title"><span class="bento-overline">مقطع مباشر من مصدر تعليمي</span><strong>'+ESC(m.title)+'</strong></div>'
@@ -10126,7 +10296,7 @@ function lessonJourney(l,q){
  ];
  return '<section class="lesson-journey" aria-label="خطوات المذاكرة"><div class="lesson-journey-head"><div><span class="bento-overline">FOCUS MODE / خطوة بخطوة</span><h2>مسار المذاكرة لهذا الدرس</h2><p>ابدئي بالشرح، ثم التدريب، واختبري فهمك. لا يلزم إكمالها كلها في جلسة واحدة.</p></div><div class="lesson-journey-score"><strong>'+count+' / '+total+'</strong><small>خطوات متابعة</small></div></div><div class="lesson-journey-track" role="progressbar" aria-label="متابعة الدرس" aria-valuenow="'+count+'" aria-valuemin="0" aria-valuemax="'+total+'"><span style="width:'+progress+'%"></span></div><div class="lesson-journey-steps">'+steps.map(x=>'<button type="button" class="lesson-journey-step '+(x.done?'done ':'')+(x.unavailable?'unavailable':'')+'" data-action="scroll" data-target="'+x.target+'"><span class="lesson-journey-stepnum">'+(x.done?'✓':x.num)+'</span><span><strong>'+x.title+'</strong><small>'+x.desc+'</small></span></button>').join('')+'</div><div class="lesson-journey-actions"><button type="button" class="btn '+(read?'btn-muted':'btn-primary')+'" data-action="study-read" data-lesson="'+ESC(l.id)+'">'+(read?'✓ تم تسجيل قراءة الدرس · إلغاء':'✓ قرأت الشرح وفهمت فكرته')+'</button>'+(mediaAvailable?'<button type="button" class="btn '+(seen?'btn-muted':'btn-outline')+'" data-action="study-seen" data-lesson="'+ESC(l.id)+'">'+(seen?'✓ اطلعت على الشرح المرئي · إلغاء':'اطلعت على الرسم أو المقطع')+'</button>':'<span class="lesson-video-gap">الفيديو غير متوفر لهذا الدرس حاليًا؛ لا يُحسب ضمن التقدم.</span>')+'</div></section>';
 }
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span><span class="chip tiny red" title="مصدر تدريبي يحتاج تدقيقًا قبل اعتماده للاختبار">قيد التدقيق</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarGuides.render(l)}${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong><span class="feedback-reason">${ESC(q.rationale)}</span>${questionReferenceNote(n)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="lesson-deep-dive">الشرح خطوة بخطوة</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span>${lessonVerificationChip(l)}</div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarGuides.render(l)}${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong><span class="feedback-reason">${ESC(q.rationale)}</span>${questionReferenceNote(n)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section>${lessonExtraQuestion(l)}<section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="lesson-deep-dive">الشرح خطوة بخطوة</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button>${(COURSE.review_questions||[]).some(x=>x.lesson_id===l.id)?'<button type="button" class="toc-item" data-action="scroll" data-target="practice-extra">سؤال مراجعة إضافي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى والثقة</h3>${lessonVerificationPanel(l)}</section></aside></div>`}
 function flashcardsPage(){
  const cards=[
  ['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.','SG-01'],

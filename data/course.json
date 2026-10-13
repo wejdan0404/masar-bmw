@@ -7596,5 +7596,17 @@
       "training_reference_support": "المعلومة مدعومة بمرجع تدريبي مرفوع؛ يلزم تحديث الأحكام المتغيرة من المصدر الرسمي.",
       "pending": "قيد التدقيق."
     }
+  },
+  "sign_library_metadata": {
+    "reviewed_on": "2026-10-13",
+    "official_guide_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy83V0CTQ0cA71d_T1djI0MXA30gxOL9L24FMCAC07oR-HXFQHVAVUOp_QjM7MKC6Mc9aOS8_NKUitK9CNKihLT0jKTVQ2gDIXEIlWD3MTMPIRIcWY60K3F-gXZ7uEA0o5r2w!!/",
+    "official_categories": [
+      "تحذيرية",
+      "تنظيمية",
+      "إرشادية",
+      "مناطق عمل ومؤقتة"
+    ],
+    "scope": "مكتبة مِسار الحالية مجموعة تعليمية منتقاة وليست كتالوجًا حكوميًا كاملًا. المفاهيم مرتبطة بمرجع المرور، بينما الرسومات SVG أصلية مبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+    "mastery_rule": "تُعد اللوحة مثبّتة داخل مِسار بعد إجابتين صحيحتين متتاليتين على الأقل؛ هذه قاعدة تعلم داخلية وليست معيار اختبار رسمي."
   }
 }

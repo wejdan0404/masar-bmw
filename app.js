@@ -3,7 +3,7 @@
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
 const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, sourceById=Object.fromEntries(COURSE.sources.map(s=>[s.id,s]));
 const baseKey='masar-driving-v1';
-let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};
+let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};
 try { const saved=JSON.parse(localStorage.getItem(baseKey)||'null'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(e){console.warn('Local data unavailable',e)}
 let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
@@ -172,10 +172,11 @@ function lessonExtraQuestion(l){
 }
 function videoCard(m){
  const first=lessons.find(l=>(m.lesson_ids||[]).includes(l.id));
- return '<article class="study-video video-gallery-item"><div class="video-title"><span class="bento-overline">مقطع مباشر من مصدر تعليمي</span><strong>'+ESC(m.title)+'</strong></div>'
+ const watched=!!state.videoWatched?.[m.id];
+ return '<article class="study-video video-gallery-item '+(watched?'is-watched':'')+'"><div class="video-title"><span class="bento-overline">مقطع مباشر من مصدر تعليمي</span><strong>'+ESC(m.title)+'</strong><span class="video-watch-status '+(watched?'done':'')+'">'+(watched?'تمت المشاهدة ✓':'لم يُسجل كمشاهَد')+'</span></div>'
  +'<div class="video-player"><button type="button" class="video-load" data-action="video-load" data-video="'+ESC(m.youtube_id)+'" data-title="'+ESC(m.title)+'" aria-label="تشغيل '+ESC(m.title)+'"><span class="video-play-symbol">▶</span><span>تشغيل داخل مِسار</span></button></div>'
- +'<p class="video-footnote">المشاهدة داخل الصفحة إذا سمحت إعدادات صاحب الفيديو بالتضمين. لا نُعيد نشر المقطع أو نحمّله.</p>'
- +(first?'<a class="inline-link" href="#/lesson/'+first.order+'">الدرس المرتبط ←</a>':'')
+ +'<div class="video-learning-actions"><button type="button" class="btn '+(watched?'btn-muted':'btn-outline')+'" data-action="video-watched" data-video-resource="'+ESC(m.id)+'">'+(watched?'✓ شاهدته · إلغاء':'علّميه كمشاهَد')+'</button>'+(first?'<a class="btn btn-outline" href="#/lesson/'+first.order+'">الدرس المرتبط ←</a>':'')+'</div>'
+ +'<p class="video-footnote">المشاهدة داخل الصفحة إذا سمحت إعدادات صاحب الفيديو بالتضمين. علامة «شاهدته» للتنظيم الشخصي فقط ولا تعني إتقان المهارة.</p>'
  +window.MasarHub.videoNotes(m,state)+'</article>';
 }
 function collectionCard(m){
@@ -194,11 +195,11 @@ function mediaBlock(l){
  +(extra.length?'<details class="video-source-collections"><summary>مكتبات فيديو إضافية مرتبطة بهذا الدرس ('+extra.length+')</summary>'+extra.map(collectionCard).join('')+'</details>':'')+'</section>';
 }
 function videoGalleryPage(){
- const list=(COURSE.media_resources||[]),videos=list.filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),collections=list.filter(x=>x.kind!=='youtube_video');
+ const list=(COURSE.media_resources||[]),videos=list.filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),collections=list.filter(x=>x.kind!=='youtube_video'),watched=videos.filter(x=>state.videoWatched?.[x.id]).length;
  const skills=[['X','الرجوع إلى الخلف في موقف'],['90','الصف الأمامي والخلفي بين سيارتين'],['T','الانعطاف لليسار والرجوع للخلف'],['الكراج','دخول الموقف'],['Y','الانعطاف ثلاثي النقاط'],['المخاطر','القيادة الوقائية'],['أخرى','ثلاثة فيديوهات مدرسية بعناوين عامة']];
  return '<div class="eyebrow">VIDEO STUDIO / مِسار</div><h1 class="page-title">مقاطع تعليم القيادة</h1>'
  +'<p class="sub">هنا نجمع مشغلات الفيديو وملاحظاتك في مكان واحد. ثلاثة مقاطع مرتبطة بروابط YouTube مباشرة، وتعرض مدرسة جامعة القصيم تسعة عناوين في مكتبتها؛ لا نعدّ الفيديوهات الأخرى قابلة للتشغيل داخل مِسار حتى نعثر على روابطها المباشرة المصرّح بتضمينها.</p>'
- +'<div class="video-hub-summary"><div><strong>'+videos.length+'</strong><span>مقاطع مباشرة</span></div><div><strong>'+collections.length+'</strong><span>مكتبات تعليمية</span></div><div><strong>9</strong><span>عناوين في مكتبة القصيم (ليست كلها مستخرجة)</span></div></div>'
+ +'<div class="video-hub-summary"><div><strong>'+videos.length+'</strong><span>مقاطع مباشرة</span></div><div><strong>'+watched+' / '+videos.length+'</strong><span>سجلتِ مشاهدتها</span></div><div><strong>'+collections.length+'</strong><span>مكتبات تعليمية</span></div><div><strong>9</strong><span>عناوين في مكتبة القصيم (ليست كلها مستخرجة)</span></div></div>'
  +'<div class="section-head"><div><h2>المقاطع القابلة للتشغيل داخل الصفحة</h2><p>اضغطي زر التشغيل داخل البطاقة؛ احفظي ملاحظة مرتبطة بالمقطع تحتها.</p></div></div>'
  +'<div class="video-gallery-grid">'+videos.map(videoCard).join('')+'</div>'
  +'<div class="section-head"><div><h2>فهرس فيديوهات مدرسة جامعة القصيم</h2><p>تصنيف كامل للعناوين المذكورة في مكتبة المدرسة، وليس ادعاء بوجود رابط صالح لكل واحد.</p></div></div>'
@@ -223,7 +224,8 @@ function lessonJourney(l,q){
  const visual=(COURSE.learning_visuals||[]).some(x=>(x.lesson_ids||[]).includes(l.id));
  const video=(COURSE.media_resources||[]).some(x=>x.kind==='youtube_video'&&(x.lesson_ids||[]).includes(l.id));
  const mediaAvailable=visual||video;
- const seen=!!state.studySeen?.[l.id];
+ const watchedVideo=video&&(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&(x.lesson_ids||[]).includes(l.id)).some(x=>state.videoWatched?.[x.id]);
+ const seen=!!state.studySeen?.[l.id]||!!watchedVideo;
  const count=[read,mediaAvailable?seen:false,note,answered].filter(Boolean).length;
  const total=mediaAvailable?4:3;
  const progress=Math.round(count/total*100);
@@ -320,6 +322,13 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
   const note=document.createElement('p');note.className='video-footnote';note.textContent='قد تمنع بعض المواقع عرض هذه الصفحة داخل موقع آخر. إذا ظهرت فارغة، فهذه المكتبة لا تسمح بالتضمين هنا.';place.appendChild(note);
   return;
  }
+ if(action==='video-watched'){
+  const id=el.dataset.videoResource,resource=(COURSE.media_resources||[]).find(x=>x.id===id&&x.kind==='youtube_video');
+  if(!resource)return;
+  state.videoWatched=state.videoWatched||{};
+  if(state.videoWatched[id])delete state.videoWatched[id];else state.videoWatched[id]=new Date().toISOString();
+  save();render(true);toast(state.videoWatched[id]?'تم تسجيل مشاهدة المقطع':'أزلنا علامة المشاهدة');return
+ }
  if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
  if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
  if(action==='filter-weeks'){catalogFilter=el.dataset.filter||'all';render(true);return}
@@ -347,7 +356,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='timer-reset'){timer.active=false;timer.seconds=1800;render(true);return}
  if(action==='export'){const data=JSON.stringify({format:'masar-progress-v1',exportedAt:new Date().toISOString(),state},null,2);const blob=new Blob([data],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='masar-my-progress.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('تم تجهيز نسخة بياناتك الاحتياطية');return}
  if(action==='import'){document.getElementById('import-file')?.click();return}
- if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
+ if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
 }
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});

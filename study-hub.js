@@ -94,8 +94,21 @@ function paperPage(course){
  var arr=course.review_questions||[];
  return '<div class="eyebrow">PAPER PRACTICE / SELF ASSESSMENT</div><h1 class="page-title">اختبار ورقي تجريبي — '+arr.length+' سؤالًا</h1><p class="sub">ورقة مُعدّة من أسئلة تعليمية أصلية وليست أسئلة الامتحان الرسمي. طبعيها وحليها بالقلم قبل فتح مفتاح الحل. وإذا كنتِ على الجوال، افتحي نفس بنك الأسئلة في الوضع التفاعلي ليظهر لك صح/خطأ والشرح فورًا.</p><div class="paper-actions"><a class="btn btn-primary" href="#/practice-quiz">حل تفاعلي على الجوال · تصحيح فوري</a><button class="btn btn-outline paper-print-btn" type="button" data-action="paper-print">طباعة نموذج الأسئلة</button></div><section class="paper-sheet"><header><strong>مسار BMW — ورقة تقييم تدريبية</strong><span>الاسم: ______________ التاريخ: ______________</span><p>حددي إجابة واحدة لكل سؤال؛ استخدمي قلمًا مختلفًا لمراجعة الأخطاء بعد الحل.</p></header>'+arr.map(function(q,i){return '<article class="paper-item"><strong>'+(i+1)+'. '+E(q.question)+'</strong><div>'+q.options.map(function(o,n){return '<span>□ '+['أ','ب','ج','د'][n]+' — '+E(o)+'</span>'}).join('')+'</div></article>'}).join('')+'</section><details class="hub-page-list paper-key"><summary>عرض مفتاح الحل بعد إنهاء الورقة</summary><ol>'+arr.map(function(q,i){return '<li><strong>'+(i+1)+' — '+['أ','ب','ج','د'][q.correct_option_index]+'</strong>: '+E(q.explanation)+'</li>'}).join('')+'</ol></details>';
 }
+
+function videoTimeLinks(id,note){
+ var seen=new Set(),stamps=[],re=/(?:^|[^\d])(\d{1,2}):([0-5]\d)(?!\d)/g,m;
+ while((m=re.exec(String(note||'')))&&stamps.length<12){
+  var seconds=Number(m[1])*60+Number(m[2]),label=m[1].padStart(2,'0')+':'+m[2];
+  if(!seen.has(seconds)){seen.add(seconds);stamps.push({seconds:seconds,label:label})}
+ }
+ return '<div class="video-time-jumps" aria-label="العودة للحظات الفيديو المحفوظة">'
+ +(stamps.length?'<small>ارجعي إلى وقت الملاحظة داخل الفيديو:</small><div class="video-time-list">'
+ +stamps.map(function(x){return '<button type="button" data-action="video-seek" data-video-resource="'+E(id)+'" data-seconds="'+x.seconds+'">↪ '+x.label+'</button>'}).join('')+'</div>'
+ :'<small>اكتبي في ملاحظتك مثلًا 02:15 لتظهر هنا وصلة إلى نفس اللحظة.</small>')
+ +'</div>';
+}
 function videoNotes(video,state){
- return '<label class="hub-source-note video-learning-notes">ملاحظاتي على هذا الفيديو<textarea data-video-note="'+E(video.id)+'" placeholder="الدقيقة 00:00 — لاحظتِ إيش؟&#10;قاعدة جديدة: ...&#10;سؤالي للمدربة: ...">'+E((state.videoNotes||{})[video.id]||'')+'</textarea><small>احفظي اسم الخطوة ووقتها والسؤال الذي تريدين مراجعته؛ تُحفظ الملاحظة محليًا.</small></label>';
+ return '<label class="hub-source-note video-learning-notes">ملاحظاتي على هذا الفيديو<textarea data-video-note="'+E(video.id)+'" placeholder="الدقيقة 00:00 — لاحظتِ إيش؟&#10;قاعدة جديدة: ...&#10;سؤالي للمدربة: ...">'+E((state.videoNotes||{})[video.id]||'')+'</textarea><small>احفظي اسم الخطوة ووقتها والسؤال الذي تريدين مراجعته؛ تُحفظ الملاحظة محليًا.</small></label>'+videoTimeLinks(video.id,(state.videoNotes||{})[video.id]||'');
 }
 function notesPage(state,course){
  var videos=Object.entries(state.videoNotes||{}).filter(function(x){return x[1]&&x[1].trim()}).map(function(x){var v=(course.media_resources||[]).find(function(m){return m.id===x[0]});return '<article class="ref-card"><h3>فيديو: '+E(v?v.title:x[0])+'</h3><p style="white-space:pre-wrap">'+E(x[1])+'</p></article>'}).join('');
@@ -281,5 +294,5 @@ async function upload(input,ctx){
  catch(e){console.warn(e);ctx.toast('لم يُحفظ الملف؛ قد لا تكون المساحة كافية. أبقي النسخة الأصلية على الكمبيوتر.')}
 }
 
-window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,notesPage,refreshFiles,click,upload,sign});
+window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonReadings,videoNotes,videoTimeLinks,notesPage,refreshFiles,click,upload,sign});
 })();

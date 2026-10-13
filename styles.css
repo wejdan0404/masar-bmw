@@ -1409,41 +1409,6 @@ body{
 }
 
 
-/* Porsche 911 burgundy — real automotive hero instead of jewel/brooch.
-   Photo: Mat Kilkeary / Unsplash, free under Unsplash License
-   https://unsplash.com/photos/a-shiny-burgundy-porsche-car-is-pictured-dGBCPudXmsM
-   Fallback: original CSS/SVG silhouette if external image does not load.
-   Visual styling informed by restrained Magic UI Bento and Aceternity glass panels. */
-.hero.hero-premium{
- background:radial-gradient(ellipse 520px 350px at 6% 54%,rgba(127,22,55,.39),transparent 82%),linear-gradient(110deg,#160d15 0%,#26121e 37%,#1d212a 71%,#202d36);
- box-shadow:0 24px 65px rgba(28,15,26,.23),inset 0 1px 0 rgba(252,218,205,.10);
- border:1px solid rgba(223,181,159,.2);min-height:390px;isolation:isolate;
-}
-.hero.hero-premium:before,.hero.hero-premium:after{border-color:rgba(235,185,161,.08)}
-.hero-premium .hero-copy{max-width:580px;flex:1;position:relative;z-index:4}
-.hero-premium .hero-glow{background:radial-gradient(ellipse at 18% 50%,rgba(146,31,67,.16),transparent 55%)}
-.hero-premium .hero-edition,.hero-premium .hero-kicker{color:#e7c6bd}
-.hero-premium .hero-topline{color:#e0cdc5}
-.hero-premium .eyebrow{color:#f0b7c0}
-.hero-premium h1 span{background:linear-gradient(92deg,#fff0e6,#ebc5c6 47%,#d6aac0);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-premium .btn-primary{background:linear-gradient(110deg,#a02b4e,#7c1937);border:1px solid rgba(255,207,214,.24);box-shadow:0 8px 20px rgba(40,7,20,.23)}
-.hero-premium .btn-primary:hover{background:linear-gradient(110deg,#b62f55,#891c3b)}
-.hero-premium .btn-ghost{border-color:rgba(231,204,196,.28)}
-.hero-porsche-scene{position:absolute;left:-3%;top:0;bottom:0;width:50%;overflow:hidden;pointer-events:none;z-index:1;isolation:isolate;display:grid;align-items:center}
-.porsche-ambient{position:absolute;inset:8% 0;background:radial-gradient(ellipse at 45% 58%,rgba(154,26,64,.40),transparent 72%);filter:blur(16px);z-index:-1}
-.porsche-floor{position:absolute;left:0;right:0;bottom:8%;height:21%;background:radial-gradient(ellipse at 46% 45%,rgba(190,53,91,.22),transparent 62%);transform:perspective(480px) rotateX(62deg)}
-.porsche-fallback-car{position:absolute;left:0;bottom:14%;width:110%;height:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.48));opacity:.95}
-.porsche-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:53% 50%;filter:saturate(.8) contrast(1.09) brightness(.81);-webkit-mask-image:linear-gradient(to right,#000 0%,#000 58%,transparent 99%);mask-image:linear-gradient(to right,#000 0%,#000 58%,transparent 99%)}
-.porsche-edition{position:absolute;left:12%;bottom:7%;font:700 10px/1.5 Arial,sans-serif;letter-spacing:.16em;color:#eccbbb;display:flex;align-items:center;gap:9px;text-shadow:0 2px 8px #12090f}
-.porsche-edition i{width:4px;height:4px;background:#dc8a9e;border-radius:50%}
-.hero-premium .hero-status-strip{background:rgba(255,255,255,.065);border-color:rgba(243,216,215,.11)}
-.hero-premium .hero-status-strip>span{background:rgba(16,9,19,.40)}
-.hero-premium .hero-serial{color:#efdbcd;opacity:.27}
-@media(max-width:1100px){.hero-porsche-scene{width:47%;left:-7%}.porsche-edition{bottom:11%;left:16%}}
-@media(max-width:900px){.hero.hero-premium{min-height:358px}.hero-porsche-scene{width:60%;left:-13%;opacity:.57}.hero-premium .hero-copy{max-width:100%}.porsche-edition{display:none}}
-@media(max-width:610px){.hero.hero-premium{padding:28px 22px 23px;min-height:370px}.hero-porsche-scene{left:-21%;top:22%;bottom:auto;width:125%;height:77%;opacity:.22}.porsche-hero-photo{object-position:50% 45%;filter:saturate(.66) contrast(1.08) brightness(.73);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 28%,#000 95%);mask-image:linear-gradient(to bottom,transparent 0%,#000 28%,#000 95%)}.hero-premium .hero-copy,.hero-premium .hero-status-strip{z-index:4}.hero-premium h1{font-size:clamp(34px,9vw,46px)}}
-@media print{.hero-porsche-scene{display:none!important}}
-
 /* Illustrated reference-library covers: intentionally not reproductions of original PDFs. */
 .masar-library-cover{
  position:relative;isolation:isolate;max-width:340px;min-height:212px;margin:14px 0 20px;padding:22px 25px 18px;

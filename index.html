@@ -706,6 +706,89 @@ body{font-size:15px}
 .source-coverage span{display:block;font-size:12px;color:#3b566a;margin-bottom:7px}
 .source-coverage-track{width:100%;height:8px;border-radius:999px;overflow:hidden;background:#d8e5ec}
 .source-coverage-track i{display:block;height:100%;background:#34755e;border-radius:inherit;transition:width .3s ease}
+
+
+/* MASAR v1.4 — Thmanyah-first learning UI + clearer instant feedback
+   Font binaries are NOT hosted. These faces resolve only fonts installed locally. */
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Regular'),local('ThmanyahSans-Regular'),local('thmanyahsans-Regular'),local('Thmanyah Sans');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Medium'),local('ThmanyahSans-Medium'),local('thmanyahsans-Medium');font-style:normal;font-weight:500 600;font-display:swap}
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Bold'),local('ThmanyahSans-Bold'),local('thmanyahsans-Bold');font-style:normal;font-weight:700 800;font-display:swap}
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Black'),local('ThmanyahSans-Black'),local('thmanyahsans-Black');font-style:normal;font-weight:900;font-display:swap}
+:root{
+ --navy:#1f2d36;
+ --steel:#587995;
+ --sky:#7aa3c0;
+ --wine:#4a0711;
+ --crimson:#86152d;
+ --paper:#f5f7f8;
+ --ink:#1f2d36;
+ --muted:#657783;
+ --border:#dbe3e8;
+ --pale:#eaf0f4;
+ --blush:#f7ecef;
+ --success:#276b55;
+ --warning:#9a6728;
+ --surface:#ffffff;
+ --surface-soft:#f0f4f6;
+ --shadow:0 14px 42px rgba(25,45,59,.07);
+}
+body,button,input,textarea,select{
+ font-family:'Masar Thmanyah','Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif;
+}
+body{font-size:15.5px;line-height:1.9;background:linear-gradient(180deg,#f8f9fa 0,var(--paper) 22rem)}
+h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif}
+.page-title{letter-spacing:-.55px}
+.sub{font-size:13.5px;line-height:1.95}
+.lesson-body p,.scenario p{font-size:13.5px;line-height:2.05}
+.card,.lesson-body,.qbox,.test-card,.ref-card,.week-card,.aside-card{border-color:#dce5ea;box-shadow:0 8px 24px rgba(31,45,54,.045)}
+.sidebar-group-title{font-size:11.5px;color:#c1ced6}
+.sidebar-group-title span:first-of-type{font-weight:850}
+.sidebar-group-links a{font-size:12.5px}
+.sidebar-nav-group[open]>.sidebar-group-title{color:#fff}
+.sidebar-nav-group[open]>.sidebar-group-title svg{color:#e1a9b5}
+.sidebar-group-links a{transition:background .18s ease,transform .18s ease,color .18s ease}
+.sidebar-group-links a:hover{transform:translateX(-2px)}
+.option,.hub-choice,.ts-choice,.coach-mock-options button{min-height:48px}
+.feedback{
+ display:grid;
+ grid-template-columns:1fr;
+ gap:4px;
+ border-right:4px solid #4b8b70;
+ padding:13px 15px 12px;
+ font-size:13px;
+ line-height:1.75;
+}
+.feedback.wrong{border-right-color:#b64055}
+.feedback strong{font-size:13px}
+.feedback-reason{display:block;font-size:12.25px;line-height:1.8;color:inherit}
+.feedback-source{display:block;margin-top:5px;padding-top:7px;border-top:1px solid currentColor;opacity:.72;font-size:10.5px;line-height:1.7}
+.feedback-source span{opacity:.8}
+.hub-explain p,.ts-explanation p{font-size:12.25px;line-height:1.85}
+.coach-mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.coach-mode-card{border:1px solid #cfdae1;background:#fff;color:#253b49;border-radius:16px;padding:18px;text-align:right;display:grid;gap:7px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.coach-mode-card strong{font-size:16px}.coach-mode-card span{font-size:12px;color:#657b89;line-height:1.8}
+.coach-mode-card:hover{transform:translateY(-2px);border-color:#8facbf;box-shadow:0 12px 28px rgba(31,45,54,.08)}
+.coach-mode-card.is-learning{background:linear-gradient(145deg,#eef6f3,#fff);border-color:#bdd9cc}
+.coach-mock-mode-pill{display:inline-flex;margin:0 0 12px;padding:7px 11px;border-radius:999px;font-size:11px;font-weight:800}
+.coach-mock-mode-pill.learning{background:#e7f4ee;color:#276b55;border:1px solid #c5ded2}
+.coach-mock-mode-pill.simulation{background:#edf2f5;color:#496779;border:1px solid #d5e1e8}
+.coach-mock-options button.is-correct{border-color:#4b9a78!important;background:#eaf7f1!important;color:#215c47!important}
+.coach-mock-options button.is-wrong{border-color:#c45668!important;background:#fceef1!important;color:#86243a!important}
+.coach-live-feedback{margin-top:13px;border-radius:12px;padding:12px 14px;display:grid;gap:4px;border-right:4px solid #4b8b70;background:#edf7f2;color:#275e4a}
+.coach-live-feedback.wrong{border-right-color:#b64055;background:#fbeff1;color:#85253a}
+.coach-live-feedback strong{font-size:13px}.coach-live-feedback small{font-size:11.5px;line-height:1.8}.coach-live-feedback a{font-size:11px;font-weight:800;color:inherit;margin-top:2px}
+.page{animation:masar-page-in .26s cubic-bezier(.2,.7,.25,1)}
+@keyframes masar-page-in{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:610px){
+ body{font-size:15px}
+ .sub,.lesson-body p,.scenario p{font-size:13px}
+ .coach-mode-grid{grid-template-columns:1fr}
+ .feedback-source{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .page{animation:none}
+ .coach-mode-card,.sidebar-group-links a{transition:none!important;transform:none!important}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -8831,11 +8914,11 @@ function reviewPage(course,state){
  const notDone=(course.lesson_activities||[]).filter(x=>!state.activityChecks?.[x.id]).slice(0,5);
  return '<section class="coach-page"><div class="eyebrow">PERSONAL REVIEW / SMART REPETITION</div><h1 class="page-title">خطتي لمراجعة أخطائي</h1><p class="sub">يعتمد ترتيب المراجعة على نتائج الأسئلة التي حلّيتيها داخل الموقع؛ المواعيد مقترحة للتثبيت وليست معيارًا رسميًا للجاهزية.</p><div class="coach-summary"><article><strong>'+due.length+'</strong><span>بطاقة حان وقتها</span></article><article><strong>'+weak+'</strong><span>مفاهيم أخطأتِ فيها</span></article><article><strong>'+completed+' / '+(course.lesson_activities||[]).length+'</strong><span>تدريبات تفكير تمت مراجعتها</span></article></div><div class="coach-guidance"><strong>مؤشر تثبيت الفهم — غير رسمي</strong><p>إجابات صحيحة متكررة: '+stable+' درسًا · فهم قيد التثبيت: '+building+' · دون إجابات صحيحة مسجلة: '+untested+'. يعتمد المؤشر على آخر إجابة وعدد مرات الإجابة الصحيحة المتتالية على سؤال الدرس ذاته. تكرار السؤال لا يثبت إتقان المفهوم أو القدرة على تطبيقه في موقف جديد، ولا يقيس القيادة العملية. إكمال نشاط التفكير وحده لا يعني الإتقان.</p></div><div class="coach-section-top"><h2>راجعي الآن</h2><span>تظهر النتائج بعد بدء حل الأسئلة</span></div><div class="coach-review-list">'+(overdue||'<div class="coach-empty">ما عندك مراجعات مستحقة حاليًا. خذي اختبارًا أو افتحي مكتبة اللوحات لتنشئين أول دورة مراجعة.</div>')+'</div><div class="coach-section-top"><h2>أنشطة دروس ما راجعتيها</h2><span>ابدئي بأول نشاط غير مكتمل</span></div><div class="coach-review-list">'+notDone.map(a=>'<a class="coach-review-item" href="#/lesson/'+nOf(a.lesson_id)+'"><span class="coach-review-symbol">✓</span><span><strong>'+E(a.title)+'</strong><small>تدريب التفكير والملاحظات</small></span><span class="coach-review-arrow">←</span></a>').join('')+'</div><div class="coach-guidance"><strong>كيف تعمل المراجعة؟</strong><p>بعد الإجابة الصحيحة نذكّرك بالتدريج بعد يوم، ثم 3 أيام، ثم أسبوع، ثم فترة أطول. وبعد الخطأ يعود الموضوع إلى «راجع الآن». يمكن تصدير هذه البيانات من الإعدادات.</p><a href="#/mock-exam" class="btn btn-primary">ابدئي محاكاة اختبار غير رسمي ←</a></div></section>';
 }
-function makeMock(course){
+function makeMock(course,mode='learning'){
  const review=(course.review_questions||[]).slice(),lesson=(course.questions||[]).slice();
  function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
  const ids=shuffle([...shuffle(review).slice(0,10),...shuffle(lesson).slice(0,10)]).map(x=>x.id);
- return {id:'MOCK-'+Date.now(),questionIds:ids,answers:{},startedAt:Date.now(),timeLimitMs:25*60*1000,finishedAt:null,score:null,status:'active'};
+ return {id:'MOCK-'+Date.now(),questionIds:ids,answers:{},startedAt:Date.now(),timeLimitMs:25*60*1000,finishedAt:null,score:null,status:'active',feedbackMode:mode==='simulation'?'simulation':'learning'};
 }
 function elapsed(m,now=Date.now()){return Math.max(0,Math.ceil((m.startedAt+m.timeLimitMs-now)/1000))}
 function finishMock(state,course,now=Date.now()){
@@ -8851,15 +8934,16 @@ function finishMock(state,course,now=Date.now()){
 function pageMock(course,state){
  let m=state.mockSession;
  const past=state.mockHistory||[];
+ const mode=m?.feedbackMode||'learning';
  let head='<div class="eyebrow">NON-OFFICIAL SIMULATION / تدريب</div><h1 class="page-title">محاكاة اختبار نظري</h1><p class="sub">20 سؤالًا تدريبيًا في 25 دقيقة (إعداد داخل «مسار» وليس مدة أو عددًا رسميًا للاختبار السعودي). الخيارات من بنكنا التعليمي، ولم نؤكد تطابقها مع أسئلة المدارس.</p>';
- if(!m){return '<section class="coach-page">'+head+'<div class="coach-mock-intro"><h2>قبل ما تبدئين</h2><p>الاختبار يجمع 10 أسئلة من الدروس و10 أسئلة مراجعة. لا يعرض التصحيح إلا في النهاية، ثم يربط كل خطأ بالدرس المناسب.</p><button type="button" class="btn btn-primary" data-action="coach-mock-start">ابدئي المحاكاة · 20 سؤالًا</button></div>'+history(past)+'</section>'}
+ if(!m){return '<section class="coach-page">'+head+'<div class="coach-mock-intro"><h2>اختاري طريقة الحل</h2><p>نفس بنك الـ20 سؤالًا، لكن عندك وضع تعلّم يصحح فورًا ووضع محاكاة يؤجل التصحيح للنهاية.</p><div class="coach-mode-grid"><button type="button" class="coach-mode-card is-learning" data-action="coach-mock-start" data-mode="learning"><strong>وضع التعلّم</strong><span>صح/خطأ فورًا + سبب مختصر بعد كل إجابة</span></button><button type="button" class="coach-mode-card" data-action="coach-mock-start" data-mode="simulation"><strong>وضع المحاكاة</strong><span>بدون تصحيح أثناء الحل؛ النتيجة والتفسير في النهاية</span></button></div></div>'+history(past)+'</section>'}
  if(m.status==='finished'){
   const all=new Map(allQuestions(course).map(q=>[q.id,q]));const wrong=m.questionIds.filter(id=>!Number.isInteger(m.answers[id])||m.answers[id]!==all.get(id)?.correct_option_index);
-  return '<section class="coach-page">'+head+'<div class="coach-mock-result"><strong>'+m.score+' <small>/ '+m.questionIds.length+'</small></strong><h2>نتيجة تدريبية شخصية</h2><p>لا تساوي نجاحًا أو رسوبًا رسميًا. هذه الملاحظات تساعدك على فهم الإجابات.</p><button type="button" class="btn btn-primary" data-action="coach-mock-new">محاكاة جديدة</button></div><h2 class="coach-section-heading">الأسئلة التي تحتاج مراجعة ('+wrong.length+')</h2><div class="coach-review-list">'+(wrong.length?wrong.map(id=>{const q=all.get(id);if(!q)return '';return '<article class="coach-mock-mistake"><strong>'+E(q.question)+'</strong><p>الإجابة: '+E(q.options[q.correct_option_index])+'</p><small>'+E(q.rationale||q.explanation||'راجعي درس المفهوم.')+'</small><a href="#/lesson/'+nOf(q.lesson_id)+'">الدرس المرتبط ←</a></article>'}).join(''):'<div class="coach-empty">جميع إجاباتك صحيحة في هذا النموذج. جربي نموذجًا آخر لأن تذكر هذه الأسئلة لا يضمن تغطية الاختبار الحقيقي.</div>')+'</div>'+history(past)+'</section>';
+  return '<section class="coach-page">'+head+'<div class="coach-mock-result"><strong>'+m.score+' <small>/ '+m.questionIds.length+'</small></strong><h2>نتيجة تدريبية شخصية</h2><p>لا تساوي نجاحًا أو رسوبًا رسميًا. هذه الملاحظات تساعدك على فهم الإجابات.</p><button type="button" class="btn btn-primary" data-action="coach-mock-new" data-mode="'+mode+'">نموذج جديد بنفس الوضع</button></div><h2 class="coach-section-heading">الأسئلة التي تحتاج مراجعة ('+wrong.length+')</h2><div class="coach-review-list">'+(wrong.length?wrong.map(id=>{const q=all.get(id);if(!q)return '';return '<article class="coach-mock-mistake"><strong>'+E(q.question)+'</strong><p>الإجابة: '+E(q.options[q.correct_option_index])+'</p><small>'+E(q.rationale||q.explanation||'راجعي درس المفهوم.')+'</small><a href="#/lesson/'+nOf(q.lesson_id)+'">الدرس المرتبط ←</a></article>'}).join(''):'<div class="coach-empty">جميع إجاباتك صحيحة في هذا النموذج. جربي نموذجًا آخر لأن تذكر هذه الأسئلة لا يضمن تغطية الاختبار الحقيقي.</div>')+'</div>'+history(past)+'</section>';
  }
  const qs=new Map(allQuestions(course).map(q=>[q.id,q])),idx=Math.max(0,Math.min(m.questionIds.length-1,mockPosition));const q=qs.get(m.questionIds[idx]);if(!q)return '<p>تعذر العثور على سؤال من هذه الجلسة. يُرجى بدء نموذج جديد.</p>';
- const remain=elapsed(m),chosen=m.answers[q.id],answered=Object.keys(m.answers).length;
- return '<section class="coach-page">'+head+'<div class="coach-mock-top"><div><strong>سؤال '+(idx+1)+' من '+m.questionIds.length+'</strong><small>'+answered+' سؤال تمت الإجابة عنه</small></div><div class="coach-clock" id="coach-mock-clock" role="timer" aria-live="off">'+formatTime(remain)+'</div></div><div class="coach-mock-progress"><span style="width:'+(answered/m.questionIds.length*100)+'%"></span></div><article class="coach-mock-question"><h2>'+E(q.question)+'</h2><div class="coach-mock-options">'+q.options.map((answer,j)=>'<button type="button" data-action="coach-mock-answer" data-option="'+j+'" class="'+(chosen===j?'active':'')+'" aria-pressed="'+(chosen===j)+'">'+String.fromCharCode(65+j)+' · '+E(answer)+'</button>').join('')+'</div><div class="coach-mock-nav"><button data-action="coach-mock-prev" type="button" class="btn btn-outline" '+(idx===0?'disabled':'')+'>السابق</button><button data-action="coach-mock-next" type="button" class="btn btn-outline" '+(idx===m.questionIds.length-1?'disabled':'')+'>التالي ←</button></div><div class="coach-mock-tiles" aria-label="الانتقال بين الأسئلة">'+m.questionIds.map((id,i)=>'<button type="button" aria-label="السؤال '+(i+1)+'" class="'+(i===idx?'selected ':'')+(Number.isInteger(m.answers[id])?'done':'')+'" data-action="coach-mock-jump" data-index="'+i+'">'+(i+1)+'</button>').join('')+'</div><p class="coach-disclaimer">ينتهي المؤقت بعد 25 دقيقة حسب ساعة جهازك؛ يمكن إنهاء النموذج قبلها. لن يظهر التصحيح قبل التسليم.</p><button type="button" class="btn btn-primary" data-action="coach-mock-finish">إنهاء وتصحيح المحاكاة ('+answered+'/'+m.questionIds.length+')</button></article></section>';
+ const remain=elapsed(m),chosen=m.answers[q.id],answered=Object.keys(m.answers).length,immediate=mode!=='simulation',instantDone=immediate&&Number.isInteger(chosen),instantCorrect=instantDone&&chosen===q.correct_option_index;
+ return '<section class="coach-page">'+head+'<div class="coach-mock-mode-pill '+(immediate?'learning':'simulation')+'">'+(immediate?'وضع التعلّم · تصحيح فوري':'وضع المحاكاة · التصحيح بالنهاية')+'</div><div class="coach-mock-top"><div><strong>سؤال '+(idx+1)+' من '+m.questionIds.length+'</strong><small>'+answered+' سؤال تمت الإجابة عنه</small></div><div class="coach-clock" id="coach-mock-clock" role="timer" aria-live="off">'+formatTime(remain)+'</div></div><div class="coach-mock-progress"><span style="width:'+(answered/m.questionIds.length*100)+'%"></span></div><article class="coach-mock-question"><h2>'+E(q.question)+'</h2><div class="coach-mock-options">'+q.options.map((answer,j)=>'<button type="button" data-action="coach-mock-answer" data-option="'+j+'" class="'+(chosen===j?'active ':'')+(instantDone?(j===q.correct_option_index?'is-correct':chosen===j?'is-wrong':''):'')+'" aria-pressed="'+(chosen===j)+'" '+(instantDone?'disabled':'')+'>'+String.fromCharCode(65+j)+' · '+E(answer)+'</button>').join('')+'</div>'+(instantDone?'<div class="coach-live-feedback '+(instantCorrect?'correct':'wrong')+'" role="status"><strong>'+(instantCorrect?'صح ✓':'مو صحيح — الإجابة الصحيحة موضحة بالأخضر')+'</strong><small>'+E(q.rationale||q.explanation||'راجعي تفسير المفهوم في الدرس المرتبط.')+'</small><a href="#/lesson/'+nOf(q.lesson_id)+'">راجعي الدرس المرتبط ←</a></div>':'')+'<div class="coach-mock-nav"><button data-action="coach-mock-prev" type="button" class="btn btn-outline" '+(idx===0?'disabled':'')+'>السابق</button><button data-action="coach-mock-next" type="button" class="btn btn-outline" '+(idx===m.questionIds.length-1?'disabled':'')+'>التالي ←</button></div><div class="coach-mock-tiles" aria-label="الانتقال بين الأسئلة">'+m.questionIds.map((id,i)=>'<button type="button" aria-label="السؤال '+(i+1)+'" class="'+(i===idx?'selected ':'')+(Number.isInteger(m.answers[id])?'done':'')+'" data-action="coach-mock-jump" data-index="'+i+'">'+(i+1)+'</button>').join('')+'</div><p class="coach-disclaimer">ينتهي المؤقت بعد 25 دقيقة حسب ساعة جهازك؛ يمكن إنهاء النموذج قبلها. '+(immediate?'في وضع التعلّم يظهر التصحيح والسبب مباشرة بعد أول اختيار.':'في وضع المحاكاة لن يظهر التصحيح قبل التسليم.')+'</p><button type="button" class="btn btn-primary" data-action="coach-mock-finish">إنهاء وتصحيح النموذج ('+answered+'/'+m.questionIds.length+')</button></article></section>';
 }
 function history(past){return past.length?'<section class="coach-mock-history"><h2>محاولاتي السابقة</h2>'+past.slice(-5).reverse().map(x=>'<div><strong>'+x.score+' / '+x.total+'</strong><span>'+E(new Date(x.finishedAt).toLocaleDateString('ar-SA'))+'</span></div>').join('')+'</section>':''}
 function formatTime(seconds){let s=Math.max(0,Number(seconds)||0);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
@@ -8870,10 +8954,11 @@ function tick(course,state,save,render){
 }
 function click(action,el,ctx){
  const s=ctx.state,c=ctx.course,m=s.mockSession;
- if(action==='coach-mock-start'||action==='coach-mock-new'){s.mockSession=makeMock(c);mockPosition=0;ctx.save();ctx.render(false);return true}
+ if(action==='coach-mock-start'||action==='coach-mock-new'){s.mockSession=makeMock(c,el.dataset.mode||m?.feedbackMode||'learning');mockPosition=0;ctx.save();ctx.render(false);return true}
  if(!m||m.status!=='active')return false;
  if(action==='coach-mock-answer'){
   const qid=m.questionIds[mockPosition],q=allQuestions(c).find(q=>q.id===qid),option=Number(el.dataset.option);
+  if((m.feedbackMode||'learning')!=='simulation'&&Number.isInteger(m.answers[qid]))return true;
   if(q&&Number.isInteger(option)&&option>=0&&option<q.options.length){m.answers[qid]=option;ctx.save();ctx.render(true)}return true
  }
  if(action==='coach-mock-next'){mockPosition=Math.min(m.questionIds.length-1,mockPosition+1);ctx.render(true);return true}
@@ -8884,6 +8969,957 @@ function click(action,el,ctx){
 }
 window.MasarCoach=Object.freeze({activityBlock,reviewPage,pageMock,record,tick,click,finishMock,masterySnapshot});
 })();
+/* MASAR original educational expansions. Supplementary educational explanations; not official test material. */
+(function(){
+"use strict";
+const data=Object.create(null);
+const escape=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const para=s=>"<p>"+escape(s)+"</p>";
+function render(lesson){
+ const item=data[lesson.order];
+ if(!item)return '<section class="deep-guide-missing" role="note">الشرح الموسع لهذا الدرس لم يُنشر بعد؛ استخدمي صفحات مرجع الدرس وتحققي من المعلومة قبل الاعتماد عليها.</section>';
+ return '<section class="lesson-deep-dive" id="lesson-deep-dive" aria-label="الشرح التعليمي الموسع">'
+ +'<div class="deep-guide-head"><div class="eyebrow">دليل التعلم / شرح أصلي موسع</div><h2>نفهم '+escape(lesson.title)+' خطوة بخطوة</h2><p>اقرئي الشرح ثم المثال؛ بعدها جاوبي من ذاكرتك قبل كشف الحل.</p></div>'
+ +'<div class="deep-guide-content"><h3>الفكرة ببساطة</h3>'+para(item.foundation)+para(item.why)
+ +'<h3>خطوات ومفاهيم مهمة</h3><ol class="deep-guide-steps">'+item.steps.map(v=>'<li>'+escape(v)+'</li>').join("")+'</ol>'
+ +'<div class="deep-example"><h3>مثال من الطريق</h3>'+para(item.example)+'</div>'
+ +'<h3>انتبهي لهذه الأخطاء</h3><ul>'+item.errors.map(v=>'<li>'+escape(v)+'</li>').join("")+'</ul>'
+ +'<div class="deep-guide-recall"><h3>فكّري قبل كشف الإجابة</h3><p>'+escape(item.prompt)+'</p><details><summary>اكشفي التفسير بعد المحاولة</summary>'+para(item.answer)+'</details></div>'
+ +'<div class="deep-guide-homework"><h3>تطبيقك خارج الدرس</h3>'+para(item.homework)+'</div>'
+ +'<p class="deep-source-note">هذه صياغة تعليمية أصلية للفهم، وليست نصًا رسميًا من الاختبار. راجعي «مراجع وصفحات الدرس» للتحقق من التفاصيل؛ تختلف بعض إجراءات المدارس وأزرار السيارات بحسب المكان والموديل.</p>'
+ +'</div></section>';
+}
+window.MasarGuides=Object.freeze({register(items){for(const item of items){if(!Number.isInteger(item.id)||data[item.id])throw Error("Invalid or repeated educational guide "+item.id);data[item.id]=item;}},render,getCount:()=>Object.keys(data).length});
+})();
+
+/* Original teaching guides, part 1 / 4. */
+window.MasarGuides.register([
+  {
+    "id": 1,
+    "foundation": "أول خطوة قبل السواقة هي فهم وظيفة الأشياء التي تتحكم بحركة السيارة. خلف المقود يوجد مقود للتوجيه، ودواستان في السيارة الأوتوماتيكية: البنزين لزيادة قوة الحركة، والفرامل لتقليل السرعة أو التوقف. ناقل الحركة يحدد حالة السيارة واتجاه الحركة، أما فرامل التوقف فتساعد على تأمين السيارة عند ركنها.",
+    "why": "الفهم أهم من معرفة اسم الزر وحده. إذا اختلط عليك عمل البنزين والفرامل أو ظننتِ أن وضع P يغني دائمًا عن فرامل التوقف، فقد تتخذين قرارًا غير صحيح عند التعلم العملي. سيارة هوندا أكورد ليست نسخة واحدة؛ مكان زر التشغيل وفرامل التوقف وخصائص المساعدة يختلف باختلاف السنة والفئة.",
+    "steps": [
+      "ميّزي المقود والدواستين بعينيك والسيارة مطفأة؛ في الأوتوماتيك تُستخدم القدم اليمنى للفرامل والبنزين عادةً، وليس كل قدم لدواسة.",
+      "افهمي أن P للركن وR للرجوع للخلف وN للوضع المحايد وD للسير للأمام؛ لا تحرّكي الناقل عشوائيًا.",
+      "ميّزي فرامل الخدمة التي تضغطينها بقدمك عن فرامل التوقف اليدوية أو الإلكترونية، وراجعي دليل سيارتك.",
+      "تعرّفي على ذراع الإشارة، المسّاحات، الأنوار، المنبّه وزر التحذير الرباعي دون تشغيل المركبة."
+    ],
+    "example": "أنت جالسة في سيارة متوقفة والمحرك مطفأ. يسألك أخوك: «ما الفرق بين الفرامل وفرامل التوقف؟» اشرحي أن دواسة الفرامل تتحكم بالتباطؤ والتوقف أثناء السير، بينما فرامل التوقف تُستخدم لتأمين المركبة عند ركنها بحسب تعليمات الشركة.",
+    "errors": [
+      "اعتبار كل سيارة أكورد ذات ترتيب أزرار واحد؛ لا نعطي تعليمات ضغط أزرار دقيقة قبل معرفة موديلها.",
+      "تجربة ناقل الحركة أو الدواسات لإثبات الفهم أثناء وجود أشخاص حول السيارة؛ الاختبار الأول يكون لفظيًا وبالسيارة متوقفة."
+    ],
+    "prompt": "ما الذي يحدد اتجاه حركة السيارة، وما الأداة التي تقلل سرعتها؟",
+    "answer": "ناقل الحركة يحدد وضع السير مثل D أو R، ودواسة الفرامل تقلل سرعة المركبة وتساعد على إيقافها. اختيار الوضع الصحيح لا يلغي ضرورة مراقبة المحيط.",
+    "homework": "ارسمي لوحة أمامية بسيطة واكتبي أسماء ست أدوات ووظائفها. في جلسة الجمعة حددي مواقعها داخل سيارة متوقفة وآمنة والمحرك مطفأ."
+  },
+  {
+    "id": 2,
+    "foundation": "الاستعداد للقيادة سلسلة فحوص قبل التفكير في الحركة: تفقد ما حول السيارة، والجلوس المناسب، وضبط مسند الرأس، والمرايا، وربط الحزام، ثم الانتباه لما يظهر على لوحة العدادات. الترتيب مهم لأنه يقلل الحاجة إلى تعديل الأشياء أثناء السير.",
+    "why": "عندما يكون المقعد بعيدًا جدًا قد لا تصلي إلى الدواسات براحة، وعندما يكون قريبًا جدًا قد تصبح الحركة محدودة. المرايا تعطي مجالات رؤية مختلفة لكنها لا تلغي وجود مناطق عمياء. لذلك نراجع وضعية الجلوس ومحيط المركبة معًا.",
+    "steps": [
+      "انظري حول السيارة قبل الدخول: أطفال، عوائق، تسربات ظاهرة، وأجسام أمام العجلات أو خلفها.",
+      "اضبطي المقعد ومسند الظهر بحيث تصلين إلى الفرامل براحة دون مد الساق بالكامل، ويكون التحكم بالمقود طبيعيًا.",
+      "اضبطي مسند الرأس والمرايا الداخلية والخارجية لزيادة مجال الرؤية، ثم اربطي الحزام بصورة صحيحة.",
+      "تأكدي من الأبواب والتنبيهات المهمة، وحددي المكان الذي ستتحققين فيه من النقطة العمياء عند الحاجة."
+    ],
+    "example": "سجلتِ في دفتر التعلم أنك رأيتِ سيارة تتراجع من موقف والمشاة خلفها. اسألي: هل يكفي النظر إلى المرآة الخلفية؟ لا؛ ينبغي التأكد من المنطقة المحيطة كلها واستخدام الوسائل المناسبة دون الاعتماد الكامل على الكاميرا.",
+    "errors": [
+      "إهمال فحص المحيط والاعتماد على حساسات الركن أو الكاميرا وحدها.",
+      "ضبط المقعد أو المرآة أثناء حركة السيارة بدل إتمامه قبل الانطلاق."
+    ],
+    "prompt": "لماذا لا يكفي ضبط المرآة الوسطى وحدها؟",
+    "answer": "لأنها تركز على المجال الخلفي المباشر، بينما الجانبيتان تكشفان أجزاء أخرى وتظل هناك زوايا قد لا تظهر في أي مرآة. فحص المحيط والنقطة العمياء ضروري عند المناورة.",
+    "homework": "اكتبي قائمة استعداد من أربع مراحل، وراجعيها شفهيًا مع أخوك عند وقوف السيارة من دون تحريكها."
+  },
+  {
+    "id": 3,
+    "foundation": "لوحة القيادة تنقل معلومات أساسية أثناء السير. مقياس السرعة يوضح سرعة المركبة، ومؤشر الوقود يبين المقدار المتبقي، وقد تظهر معلومات درجة حرارة المحرك أو ضغط الإطارات والتنبيهات الأخرى. ليس كل ضوء مضيء باللوحة معناه عطل؛ بعضها يدل على تشغيل وظيفة.",
+    "why": "تمييز لون الرمز ومعناه وسياقه يساعدك على تقدير أهمية الرسالة، لكن اللون وحده لا يحدد الإجراء الصحيح. يُفضّل الرجوع إلى دليل مالك السيارة، خاصة في الرموز المرتبطة بالمحرك والزيت والفرامل والبطارية، لأنها تختلف بين الأجيال والفئات.",
+    "steps": [
+      "حددي مؤشر السرعة والوقود وإشارات الاتجاه وحالة الإنارة في صورة لوحة عدادات.",
+      "صنفي الرموز إلى معلومات تشغيل عادية، أو تنبيهات تتطلب انتباهًا، أو تحذيرات تستلزم اتباع دليل المركبة والتوقف الآمن عند الضرورة.",
+      "ميّزي بين لمبة فحص المحرك ولمبة ضغط الزيت ولمبة البطارية وتحذير الفرامل؛ لا تتعاملي معها باعتبارها رمزًا واحدًا.",
+      "عندما يظهر تحذير أثناء السير، ركزي أولًا على السيطرة على المركبة والوصول إلى موضع آمن ثم اتبعي إرشاد الدليل أو اطلبِي مساعدة مختصة."
+    ],
+    "example": "ظهر تحذير متعلق بزيت المحرك أثناء القيادة. لا تفترضي أن الحل زيادة السرعة أو إكمال المشوار؛ اختاري موضع توقف آمنًا واتّبعي تعليمات الدليل الخاص بالموديل لتجنب ضرر المحرك.",
+    "errors": [
+      "محاولة قراءة رسالة طويلة في شاشة العدادات أثناء الحركة.",
+      "الاعتماد على صورة لوحة عدادات عامة لتحديد معنى رمز في هوندا أكورد من سنة مختلفة."
+    ],
+    "prompt": "هل يكفي معرفة أن ضوء التحذير أحمر لتحديد الإجراء الدقيق؟",
+    "answer": "لا. الأحمر يدل غالبًا على أهمية التنبيه، لكن الإجراء الصحيح يعتمد على الرمز المحدد وتعليمات السيارة والظروف المحيطة. الأولوية للسلامة وعدم مواصلة القيادة مع تحذير خطير دون تقييم.",
+    "homework": "اختاري خمسة رموز من الدليل النظري، واكتبي ماذا تعني بصورة عامة، ثم تأكدي من شكلها في دليل الأكورد عندما يتحدد الموديل."
+  },
+  {
+    "id": 4,
+    "foundation": "الطريق ليس مجرد مساحة أسفلت. فيه مسارات للمركبات، وأكتاف أو جوانب بحسب نوع الطريق، وأرصفة للمشاة، وجزر فاصلة، ومعابر ومناطق توقف. لكل مساحة وظيفة؛ والخطوط واللوحات تساعد على معرفة طريقة استخدامها.",
+    "why": "إذا لم تميزي بين المسار والكتف أو الرصيف فقد تفسرين المشهد خطأً. فهم أجزاء الطريق يُستخدم لاحقًا في تغيير المسار والانعطاف والوقوف قرب المشاة واختيار المسار المناسب قبل التقاطع.",
+    "steps": [
+      "حددي في رسم الطريق مكان المسار الذي تسير فيه المركبة وحدوده اليمنى واليسرى.",
+      "ابحثي عن الرصيف ومعبر المشاة والجزر الفاصلة، وفسري لماذا لا تعامل كمسارات عامة للمركبات.",
+      "ميّزي بين الخطوط الأرضية واللوحات العمودية والإشارات الضوئية، فالعلامة الأرضية جزء من تنظيم السير.",
+      "تعرفي على الفرق بين طريق باتجاه واحد وطريق باتجاهين بالنظر إلى العلامات والتنظيم وليس بالتخمين."
+    ],
+    "example": "ترين سيارة متوقفة على كتف طريق سريع. هل الكتف مسار عادي للتجاوز؟ لا؛ وظيفته تختلف عن المسارات المخصصة للحركة، ولا يُستخدم لاختصار الزحام.",
+    "errors": [
+      "اعتبار كل فراغ واسع بجانب الطريق مساحة مسموحة للقيادة.",
+      "تفسير شكل الطريق وحده دون قراءة الأسهم والخطوط واللوحات."
+    ],
+    "prompt": "كيف تفرّقين بين المسار ومعبر المشاة في صورة تقاطع؟",
+    "answer": "المسار جزء مخصص لحركة المركبات وينظمه تخطيط الطريق، بينما معبر المشاة مساحة محددة لعبور الأشخاص وتوجب مراعاة سلامتهم وقواعد الأفضلية والتنظيم عند الاقتراب.",
+    "homework": "ارسمي تقاطعًا بسيطًا وحددي عليه خمسة أجزاء: مسار، رصيف، خط توقف، معبر مشاة، جزيرة."
+  },
+  {
+    "id": 5,
+    "foundation": "المسار هو الجزء الذي تنتظم فيه المركبات للسير في اتجاه محدد. قد يضم الطريق مسارًا واحدًا أو عدة مسارات، وتحدد الأسهم والخطوط واللوحات المسارات المناسبة للانعطاف أو الاستمرار. اختيار المسار مبكرًا أسهل وأكثر أمانًا من الانتقال المفاجئ قرب التقاطع.",
+    "why": "المسارات تساعد على توقع تصرفات الآخرين. السائق الذي يستمر في مساره بطريقة واضحة يكون أسهل توقعًا من الذي يتنقل فجأةً بلا إشارة أو فحص. الإشارة تعلم الآخرين بالنية لكنها لا تمنح الأولوية تلقائيًا.",
+    "steps": [
+      "اقرئي الأسهم المرسومة على الأرض: قد يخصص بعضها للسير المستقيم وبعضها للانعطاف.",
+      "راقبي الخط الفاصل بين المسارات، لأن المتصل والمتقطع لا يعطيان المعنى نفسه.",
+      "قبل تغيير مسار فكري في المرايا، الإشارة، النقطة العمياء، وسلامة المسافة والسرعة.",
+      "إذا اكتشفتِ أنك في مسار غير مناسب للمخرج، لا تقطعي عدة مسارات بعجلة؛ تابعي إلى فرصة نظامية آمنة."
+    ],
+    "example": "أنت في المسار المستقيم وفجأة تذكرتِ أن مخرجك قريب على اليمين. القرار الصحيح ليس الانحراف أمام المركبات؛ الأفضل الاستمرار إلى فرصة مناسبة إذا تعذر الانتقال الآمن.",
+    "errors": [
+      "اعتبار تشغيل الإشارة حقًا للانتقال مباشرةً.",
+      "تغيير المسار فوق خط متصل أو قبل التقاطع دون مراجعة العلامات والتنظيم."
+    ],
+    "prompt": "إذا شغّلت السائقة الإشارة وكانت سيارة في المسار الآخر قريبة، هل يصبح المسار خاليًا لها؟",
+    "answer": "لا. الإشارة وسيلة تواصل فقط، وعلى السائقة التأكد من أن الانتقال مسموح وآمن ولا يعرض الآخرين للخطر.",
+    "homework": "في مقعد الراكب لاحظي خطًا متصلًا وخطًا متقطعًا، واكتبي كيف يغيران فهم استخدام المسارات."
+  },
+  {
+    "id": 6,
+    "foundation": "الطريق مساحة مشتركة بين سائقي السيارات والمشاة وراكبي الدراجات والحافلات والمركبات الكبيرة ومركبات الطوارئ. اختلاف حجم المركبات وسرعاتها ومناطق رؤيتها يعني أن سلوك الجميع ليس متشابهًا.",
+    "why": "لا يكفي أن تعرفي ما يسمح لك به التنظيم؛ عليك أيضًا توقع أخطاء الآخرين. الطفل قرب المدرسة قد يتحرك فجأة، والمركبة الكبيرة قد يكون حولها نطاق لا يراه قائدها بسهولة، والمشاة يحتاجون وقتًا للعبور.",
+    "steps": [
+      "توقعي وجود مشاة عند المعابر والمدارس والأسواق والمواقف.",
+      "اتركي مجالًا مناسبًا لراكبي الدراجات ولا تتعاملي معهم كعوائق يجب تجاوزها بأي ثمن.",
+      "عند الاقتراب من شاحنة، انتبهي لاتساع مناورتها ومناطق الرؤية المحدودة.",
+      "إذا لاحظتِ شخصًا مترددًا قرب الطريق، خففي وفق الموقف واستعدي للتوقف بدل افتراض أنه سيبقى مكانه."
+    ],
+    "example": "ترين كرة تتدحرج من بين سيارتين واقفتين قرب حي سكني. حتى لو لم تري طفلًا، يجب اعتبار احتمال خروج طفل خلف الكرة خطرًا يستلزم انتباهًا واستجابة مبكرة.",
+    "errors": [
+      "التركيز على السيارة التي أمامك ونسيان المشاة والجانبين.",
+      "الافتراض أن الطرف الآخر شاهدك أو سيتصرف دائمًا بالطريقة الصحيحة."
+    ],
+    "prompt": "لماذا نخفض سرعتنا قبل منطقة يوجد فيها أطفال حتى لو لم يعبر أحد؟",
+    "answer": "لأن الأطفال قد يتصرفون على نحو مفاجئ وتقل القدرة على التنبؤ بحركتهم؛ تخفيف السرعة مبكرًا يعطي وقتًا ومسافة أكبر للاستجابة.",
+    "homework": "شاهدي شارعًا من مقعد الراكب وعددي ثلاث فئات من مستخدمي الطريق، وما الخطر الذي ينبغي الانتباه له مع كل فئة."
+  },
+  {
+    "id": 7,
+    "foundation": "إشارات التحذير تنبهك إلى خطر أو تغير محتمل قبل الوصول إليه: منعطف، تقاطع، مطب، مشاة، أطفال، طريق زلق أو تضيق في المسارات. الهدف أن تتوقعي الخطر وتعدلي أسلوب القيادة مبكرًا، وليس أن تحفظي أسماء الصور فقط.",
+    "why": "تذكري الفرق بين علامة تحذرك بوجود شيء قادم وعلامة تنظيمية تأمرك أو تمنعك. مثلث بداخله رسم إشارة ضوئية يخبرك أن هناك إشارات قادمة، لكنه ليس ضوءًا أحمر يأمرك بالتوقف في موقع المثلث.",
+    "steps": [
+      "افحصي شكل اللوحة وألوانها ورمزها معًا لا الشكل وحده.",
+      "سمّي الخطر الذي تتوقعينه بعد ظهور اللوحة: هل هو تقاطع، مستخدم طريق، تغير هندسي أم سطح الطريق؟",
+      "اختاري الاستجابة المناسبة: تقليل السرعة عند الحاجة، ترك مسافة، زيادة الملاحظة، والاستعداد للتوقف.",
+      "بعد مشاهدة الصورة، حاولي وصف موقف واقعي تظهر فيه اللوحة وما ينبغي الحذر منه."
+    ],
+    "example": "رأيتِ مثلثًا يحذر من مطب أمامك. لا تنتظري رؤية المطب على بعد مترين؛ خففي بصورة مبكرة وآمنة وراقبي المركبات حولك.",
+    "errors": [
+      "خلط لوحة «قف» الثمانية ذات الأمر المباشر بالمثلث الذي يحذر من وجود «قف» أمامك.",
+      "اعتبار أي لوحة تحذيرية أمرًا بالتوقف الكامل، بينما التصرف يعتمد على الخطر والتنظيم الفعلي."
+    ],
+    "prompt": "ما الفرق بين علامة تحذير من إشارة ضوئية وبين الضوء الأحمر نفسه؟",
+    "answer": "العلامة التحذيرية تنبه إلى وجود الإشارة لاحقًا، أما الضوء الأحمر عند التقاطع فهو الذي ينظم الوقوف والمرور في مكانه وفق التعليمات.",
+    "homework": "من مكتبة الإشارات اختاري ثماني لوحات تحذيرية، وسجلي «الخطر المتوقع» و«تصرفي قبل الوصول» لكل واحدة."
+  },
+  {
+    "id": 8,
+    "foundation": "الإشارات التنظيمية تضبط ما يجب فعله أو ما لا يجوز فعله: الوقوف التام، إعطاء الأفضلية، الدخول الممنوع، بعض الاتجاهات الإلزامية وحدود السرعة بحسب اللوحة. لمعرفة معناها لا يكفي التقاط اللون؛ يجب قراءة الرمز أو النص واللوحات المكملة.",
+    "why": "تزداد الأخطاء عندما تعتمد السائقة على شكل واحد لجميع الحالات. دائرة عليها حد سرعة لا تعني مجرد سرعة مقترحة، وعلامة ممنوع الدخول ليست إشارة تحدد جهة الوجهة. كما قد توجد لوحات إضافية تحدد أوقات سريان المنع أو استثناءاته.",
+    "steps": [
+      "تعلمي لوحة قف وما تتطلبه من توقف كامل في الموضع النظامي ومراجعة حركة الطريق.",
+      "تعلمي «أعط الأفضلية» بوصفها التزامًا بإفساح المرور والتوقف عند الحاجة، لا أنها دائمًا تعني نفس إجراء قف.",
+      "ميزي إشارات المنع من إشارات الإلزام: الأولى تقيد مناورة والثانية توجهك إلى مسار أو اتجاه محدد.",
+      "اقرئي اللوحة المضافة أسفل الإشارة إن وجدت؛ قد تفسر النطاق أو الزمن أو الاستثناء."
+    ],
+    "example": "عند مدخل شارع توجد لوحة «ممنوع الدخول»، رغم أن الشارع يبدو واسعًا وفارغًا. لا يدخل السائق اعتمادًا على عدم وجود مركبات؛ التنظيم هو الذي يحدد الاتجاه المسموح.",
+    "errors": [
+      "ظن أن عدم وجود سيارات يلغي تعليمات الإشارة.",
+      "الخلط بين «أعط الأفضلية» و«قف» رغم اختلاف الأمر وطريقة التعامل."
+    ],
+    "prompt": "هل «أعط الأفضلية» تعني أن تتوقفي كاملًا في جميع الظروف مثل «قف»؟",
+    "answer": "ليستا متطابقتين؛ على السائقة إفساح الطريق لمن له الأفضلية والتوقف عندما يلزم، أما إشارة قف فتأمر بالتوقف التام وفق تنظيم الموقع.",
+    "homework": "اصنعي جدولًا لأربع إشارات: قف، أعط الأفضلية، ممنوع الدخول، واتجاه إلزامي. اكتبي الأمر وما الخطأ الشائع في تفسير كل واحدة."
+  },
+  {
+    "id": 9,
+    "foundation": "الإشارات الإرشادية تساعدك في الوصول إلى الوجهة، مثل أسماء المدن والطرق والخدمات والمواقف والمستشفيات. أما إشارات مناطق العمل المؤقتة فتنبه إلى تغير غير دائم في الطريق: تحويلة، عمال، مسار مغلق أو حواجز. لكل فئة وظيفة مختلفة.",
+    "why": "الإرشاد الصحيح يساعدك على التخطيط لمسارك مبكرًا بدل التردد عند المخرج. ومنطقة العمل تتطلب انتباهًا إضافيًا لأن وضع المسارات والعوائق قد يختلف عما تعرفينه في الطريق نفسه.",
+    "steps": [
+      "عند لوحة إرشادية، حاولي تحديد الوجهة واتجاه السير من الأسهم والمسافات.",
+      "إذا وجدت إشارة لخدمة كالمستشفى أو الوقود، افهمي أنها تعطي معلومة مكانية ولا تسمح بمناورة خطرة للوصول فورًا.",
+      "في منطقة عمل، انتبهي للوحات المؤقتة والمخاريط والحواجز والعمال، واتّبعي المسار المتاح والمنظم.",
+      "لا تتجاهلي التحويلة بحجة أنك تعرفين الطريق القديم؛ الوضع المؤقت قد يغير السماح بالدخول والخروج."
+    ],
+    "example": "تقتربين من مخرج محطة وقود وأنت في المسار البعيد. الأفضل ليس قطع المسارات مفاجأة للوصول إليها؛ استمري بصورة آمنة واختاري فرصة دخول مناسبة.",
+    "errors": [
+      "اعتبار لوحة الخدمات تصريحًا بالانعطاف في أي مكان.",
+      "تطبيق مسارات الطريق القديمة داخل منطقة أعمال رغم وجود إرشادات مؤقتة جديدة."
+    ],
+    "prompt": "ما الفرق بين لوحة مستشفى ولوحة تحويلة مؤقتة؟",
+    "answer": "الأولى إرشادية تُعلمك بمكان خدمة، والثانية تنظم أو توجه الحركة عبر وضع مؤقت وقد تستلزم تغيير الطريق المألوف.",
+    "homework": "راجعي أربع إشارات إرشادية وأربعًا تخص مناطق العمل، واكتبي إن كانت «معلومة وجهة» أم «تنبيه لتغير حركة السير»."
+  },
+  {
+    "id": 10,
+    "foundation": "الإشارات الضوئية تنظم حركة المركبات والمشاة عند التقاطعات. الأحمر يعني الوقوف وفق التنظيم، والأخضر يسمح بالحركة في الاتجاه المسموح عندما يكون الطريق أمامك آمنًا، والأصفر يحتاج تقديرًا آمنًا وفق التعليمات والموقف، لا تسارعًا مفاجئًا للحاق به.",
+    "why": "من الأخطاء تفسير الأخضر بأنه إذن مفتوح للدخول إلى تقاطع مغلق بالمركبات أو تجاهل المشاة. كما يجب الانتباه إلى الأسهم الضوئية واللوحات؛ فهي قد تخصص اتجاهًا مختلفًا عن الضوء العام.",
+    "steps": [
+      "حددي خط الوقوف ومكان معبر المشاة قبل قراءة لون الضوء.",
+      "راقبي ما إذا كانت هناك أسهم ضوئية أو إشارات خاصة بمسار معين.",
+      "عند السماح بالحركة، تفقدي أن المسار واضح ولا تعوقي التقاطع أو تعرّضي المشاة للخطر.",
+      "عند وجود رجل مرور يوجه الحركة، اتبعي التنظيم المعمول به وإشاراته بحسب قواعد المرور."
+    ],
+    "example": "تحولت الإشارة إلى الأخضر لكن الشارع بعد التقاطع مزدحم جدًا ولا يوجد موضع كاف لسيارتك. لا تدخلي وتسدّي التقاطع؛ انتظري حتى تسمح حركة المرور بعبورك بأمان.",
+    "errors": [
+      "زيادة السرعة بمجرد رؤية الضوء الأصفر.",
+      "التحرك للأمام عند الأخضر دون مراقبة المشاة أو مركبة قد تكون ما زالت تخرج من التقاطع."
+    ],
+    "prompt": "الضوء أخضر لكن مكان خروجك من التقاطع مسدود؛ ما القرار؟",
+    "answer": "انتظري في موضع آمن ولا تدخلي تقاطعًا لا تستطيعين إخلاءه؛ الأخضر لا يلغي واجب الانتباه ومنع التعارض.",
+    "homework": "ارسمي تقاطعًا بخط توقف ومعبر مشاة وإشارة سهم، وحددي أين تنتظر المركبة إذا كان الخروج مزدحمًا."
+  },
+  {
+    "id": 11,
+    "foundation": "التقاطع موضع تتقابل فيه اتجاهات سير مختلفة، لذلك يحتاج قراءة دقيقة لتنظيم المرور. قد تنظمه إشارات ضوئية، أو رجل مرور، أو لوحات قف وأعط الأفضلية، أو قواعد أولوية في التقاطعات غير المنظمة. لا توجد قاعدة واحدة تستعمل بدل كل هذه الحالات.",
+    "why": "قبل أن تحددي من يمر أولًا، اسألي: هل يوجد تنظيم ظاهر؟ من أين تأتي المركبات؟ وأي مسار سوف تقطعينه؟ الأولوية تهدف لمنع التعارض لكنها لا تعفي صاحبتها من الانتباه والسلامة.",
+    "steps": [
+      "تعرفي إلى التقاطع من بعيد وخففي السرعة بما يتناسب مع الرؤية وحركة الطريق.",
+      "حددي نوع التنظيم: رجل مرور، إشارة ضوئية، لوحات، أو غيابها.",
+      "اعملي رسمًا للأسهم: من يتجه مستقيمًا، من ينعطف، وأين يتقاطع مسارهما؟",
+      "اتخذي القرار بعد معرفة صاحب الأفضلية والتأكد من خلو المسار، ولا تفترضي أن الآخرين سيحترمون التنظيم دائمًا."
+    ],
+    "example": "تقتربين من تقاطع عليه لوحة قف، بينما مركبة أخرى تسير على الطريق المقاطع. تُلزمك اللوحة بالتوقف وتقييم حركة المرور قبل مواصلة السير عندما يكون ذلك مسموحًا وآمنًا.",
+    "errors": [
+      "الاعتماد على قاعدة محفوظة من تقاطع آخر دون النظر إلى الإشارات الموجودة.",
+      "التقدم لأن سائقًا آخر بدا بطيئًا، دون التأكد من أولويته ومسافة وصوله."
+    ],
+    "prompt": "لماذا نبدأ حل سؤال «من له الأولوية؟» بتحديد الإشارات قبل مقارنة اتجاه السيارات؟",
+    "answer": "لأن الإشارات أو توجيه رجل المرور قد يحددان الأولوية ويغيران حكم الموقف، فلا يصح تطبيق قواعد التقاطع غير المنظم على تقاطع منظم.",
+    "homework": "اختاري ثلاثة رسومات تقاطع من كتاب المتدربة، واكتبي أولًا نوع التنظيم ثم أصحاب المسارات المتعارضة."
+  },
+  {
+    "id": 12,
+    "foundation": "معبر المشاة مساحة منظمة لعبور الأشخاص، ويجب الانتباه إليها قبل الوصول، خاصة قرب المدارس والمجمعات والمرافق العامة. يتقاطع مسار المركبة مع أشخاص أبطأ حركة وقد يحتاجون وقتًا إضافيًا للعبور، لذلك تُعد الملاحظة المبكرة أساسية.",
+    "why": "وجود معبر واضح لا يعني أن جميع المشاة ملتزمون دائمًا بمسارات محددة. القيادة الوقائية تتوقع احتمال وجود شخص يتقدم من خلف مركبة متوقفة أو طفل لا يقدر سرعة السيارة بصورة صحيحة.",
+    "steps": [
+      "تعرفي إلى علامة معبر المشاة وخطوطه، وانظري إلى جانبي الطريق قبل الاقتراب.",
+      "خففي السرعة عند الحاجة وكوني مستعدة للتوقف وإعطاء الأفضلية وفق التنظيم.",
+      "لا تتجاوزي مركبة متوقفة عند المعبر قبل فهم سبب توقفها؛ قد يكون أمامها مشاة لا ترينهم.",
+      "بعد اجتياز منطقة العبور بأمان، راجعي المرايا والمحيط وعدّلي السرعة تدريجيًا وفق الطريق."
+    ],
+    "example": "ترين سيارة تتوقف قبل خطوط معبر مشاة وتحجب جزءًا من المنظر. لا تمرّي بجانبها بسرعة ظنًا أنها توقفت من دون سبب؛ قد يكون شخص يعبر أمامها.",
+    "errors": [
+      "النظر إلى مكان السيارات فقط وإهمال الرصيفين.",
+      "التعامل مع طفل يقف عند المعبر باعتباره قادرًا على تقدير حركة السيارات بنفس دقة البالغين."
+    ],
+    "prompt": "توقفت مركبة قبل معبر وموقع المشاة لا يظهر لك؛ كيف تتصرفين؟",
+    "answer": "عاملي المكان باعتباره خطرًا محتملًا للمشاة، وخففي واستعدي للتوقف وفق الوضع والتنظيم؛ لا تتجاوزي دون تحقق من سلامة العبور.",
+    "homework": "راجعي دروس الإشارات والأولوية ومعابر المشاة معًا، ثم حلي اختبار الأسبوع دون الرجوع للشرح وسجلي سبب كل خطأ."
+  }
+]);
+
+/* Original teaching guides, part 2 / 4. */
+window.MasarGuides.register([
+  {
+    "id": 13,
+    "foundation": "في الدروس الأولى عرفنا أجزاء الطريق. الآن سنقرأ المشهد بوصفه شبكة تعليمات: حدود المسارات، الجزيرة، مداخل الطرق الجانبية، مواقع التوقف، ولوحات اتجاه السير. كل عنصر يغيّر ما يجوز أن تفعليه بالمركبة.",
+    "why": "قد يبدو مساران متجاوران متشابهين، لكن أحدهما ينتهي أو يتجه إلى مخرج. قراءة الطريق مبكرًا تساعدك على البقاء في المسار الصحيح وتقلل محاولات الاندماج المفاجئة.",
+    "steps": [
+      "افحصي الطريق أمامك إلى مسافة تسمح بقراءة اللوحات والأسهم قبل الوصول إليها.",
+      "ابحثي عن خطوط حدود المسار؛ هل يتسع الطريق، يضيق، أم توجد منطقة فصل لا تعبرها المركبات؟",
+      "حددي المدخل والمخرج ومعبر المشاة وخط التوقف في رسم واحد.",
+      "اسألي قبل كل مناورة: هل المسار المختار يسمح بها؟ وهل توجد مساحة آمنة لتنفيذها؟"
+    ],
+    "example": "ترين خطًا متقطعًا يتحول إلى خط متصل قبل التقاطع. افهمي أن مرحلة الاقتراب من التقاطع تحتاج ترتيب مسارك قبل الوصول إلى المنطقة التي تمنع تغيير الاتجاه.",
+    "errors": [
+      "تفسير الأسهم الأرضية من لونها فقط بدل اتجاهها ونوعها.",
+      "الاقتراب من المخرج بسرعة ثم قطع المسارات حتى لا يفوتك."
+    ],
+    "prompt": "لماذا نراقب الطريق قبل التقاطع بمسافة، بدل الاكتفاء بالنظر عند خط التوقف؟",
+    "answer": "حتى نختار المسار الصحيح مبكرًا، ونرى العلامات والتقاطعات والمشاة ونخفف بطريقة تدريجية ومفهومة لبقية مستخدمي الطريق.",
+    "homework": "استخدمي رسم الطريق في المرجع وحددي ستة عناصر تنظيمية. ثم قارني الرسم بما ترينه من مقعد الراكب."
+  },
+  {
+    "id": 14,
+    "foundation": "الخطوط الطولية المرسومة على الطريق توجه حركة المركبات وتحدد مواضع فصل المسارات. الخط المتقطع قد يسمح بالانتقال عندما يجيزه التنظيم ويتوفر الأمان، بينما الخط المتصل يدل عادة على تقييد عبوره. لا تُفهم الخطوط منفصلة عن اللوحات والسهام الأخرى.",
+    "why": "الخط المرسوم يساعد السائقين على توقع مسارات بعضهم. عندما يتجاهله أحدهم تحدث مناورات مباغتة عند التقاطعات والمخارج والمنعطفات.",
+    "steps": [
+      "قارني بين رسم لخط متصل وآخر متقطع وحددي الفرق في الحركة المتوقعة.",
+      "راجعي الأسهم الأرضية واللوحات القريبة قبل تقرير تغيير المسار.",
+      "لا تعتمدي على الخط المتقطع وحده: فحص المرايا والنقطة العمياء والمسافة يظل ضروريًا.",
+      "عند اختفاء التخطيط بسبب المطر أو أشغال الطريق، خففي بما يناسب الرؤية واتبعي التنظيم المؤقت."
+    ],
+    "example": "بينك وبين المسار المجاور خط متقطع، لكن توجد مركبة بجوارك مباشرة. الخط قد يسمح بالمناورة من حيث التخطيط، لكنه لا يجعل المسار خاليًا أو الانتقال آمنًا.",
+    "errors": [
+      "اعتبار المتقطع إذنًا مفتوحًا لعبوره في أي لحظة.",
+      "اجتياز خط متصل فقط لأن الطريق يبدو فارغًا."
+    ],
+    "prompt": "هل يجوز تغيير مسارك فورًا لمجرد ظهور خط متقطع؟",
+    "answer": "لا. يجب أن تسمح قواعد الطريق بالمناورة وأن تتحققي من سلامتها ووجود مسافة كافية، باستخدام الملاحظة والإشارة المناسبة.",
+    "homework": "ارسمي ثلاثة أنواع من الحدود الأرضية واذكري في كل مثال ما الذي ستتحققين منه قبل الانتقال."
+  },
+  {
+    "id": 15,
+    "foundation": "اختيار المسار الصحيح قرار يبدأ قبل التقاطع وليس عند دخوله. في بعض الطرق مسار للانعطاف يمينًا، وآخر للسير المستقيم، وثالث قد يخدم أكثر من اتجاه. معنى السهم الأرضي واللوحات فوق الطريق أساسي لفهم وظيفة المسار.",
+    "why": "خطأ اختيار المسار لا يُصحح دائمًا بمناورة سريعة. السائقة الآمنة تستطيع قبول تفويت المخرج والتوجه إلى طريق بديل بدل المخاطرة بقطع الطريق على الآخرين.",
+    "steps": [
+      "اقرئي اسم المخرج أو الاتجاه المرغوب به قبل الوصول إلى الأسهم.",
+      "حددي المسار الذي يسمح بالحركة التي تريدين تنفيذها، واختاريه مبكرًا.",
+      "عند الانتقال راقبي المرايا وأشيري وتحققي من النقطة العمياء والمسافة.",
+      "إذا لم يتوفر وقت أو مكان آمن، استمري مع الاتجاه المسموح بدل مخالفة التخطيط."
+    ],
+    "example": "أنت في مسار يسار إجباري لكنك تريدين متابعة السير مباشرة. لا تتجاهلي السهم عند خط الوقوف؛ التزمي بالاتجاه المسموح وابحثي عن طريق تصحيحي لاحقًا.",
+    "errors": [
+      "الوقوف فجأة داخل مسار الحركة للتفكير في المخرج.",
+      "القطع أمام المركبات من المسار غير الصحيح في آخر لحظة."
+    ],
+    "prompt": "عند اكتشاف مسار خاطئ قبل التقاطع بثوانٍ، ما الأولوية؟",
+    "answer": "الالتزام بالتخطيط والتنظيم وعدم تنفيذ تغيير مسار غير آمن؛ يمكن تغيير الطريق لاحقًا بأمان.",
+    "homework": "حددي ثلاثة سيناريوهات لمسارات بأسهم مختلفة، وارسمي المسار الذي ستختارينه لكل وجهة."
+  },
+  {
+    "id": 16,
+    "foundation": "علامة قف وعلامة أعط الأفضلية تنظمان من يمكنه مواصلة الحركة عند نقطة تعارض. قف تطلب التوقف الكامل في الموضع الصحيح، بينما أعط الأفضلية تركز على إفساح المجال لمن له حق المرور وقد تستلزم التوقف عندما توجد مركبات أو أشخاص يجب إفساح الطريق لهم.",
+    "why": "الفارق ليس شكليًا. التباطؤ البسيط ليس كافيًا بدل التوقف الكامل عند قف، وفي المقابل الوقوف بلا سبب في موضع غير مناسب قد يفاجئ المركبات خلفك. المطلوب قراءة التنظيم والموقف معًا.",
+    "steps": [
+      "تعرفي إلى لوحة قف الثمانية ولوحة أعط الأفضلية المثلثة.",
+      "ابحثي عن خط التوقف أو الموضع الذي يحدده التنظيم.",
+      "توقفي تمامًا عند قف، وافحصي الجهات التي يمكن أن تأتي منها مركبات أو مشاة.",
+      "عند أعط الأفضلية خففي واستعدي للتوقف، ولا تدخلي قبل إفساح الطريق لمن له الأفضلية."
+    ],
+    "example": "تقتربين من طريق رئيسي وعندك علامة أعط الأفضلية. سيارة قادمة في الطريق الرئيسي؛ لا تندفعي اعتمادًا على أن المسافة تبدو مقبولة من النظرة الأولى.",
+    "errors": [
+      "المرور البطيء على قف دون توقف كامل.",
+      "اعتبار علامة أعط الأفضلية ترخيصًا بالدخول أمام المركبات لمجرد إعطاء الإشارة."
+    ],
+    "prompt": "ما الفرق العملي الأول بين لوحة قف ولوحة أعط الأفضلية؟",
+    "answer": "قف تطلب توقفًا كاملًا، بينما أعط الأفضلية يركز على عدم إعاقة أصحاب الأولوية والتوقف عندما يلزم ذلك.",
+    "homework": "استخدمي مرجع كتاب المتدربة وصفحتَي قف والأفضلية، ثم اكتبي موقفًا يكون فيه الوقوف إلزاميًا وآخر حسب الحركة."
+  },
+  {
+    "id": 17,
+    "foundation": "الضوء عند التقاطع لا يعمل وحده؛ اقرأيه مع خط الوقوف والأسهم واللوحات المرافقة وحركة المشاة. في التقاطعات التي تسمح بانعطاف يمين عند الإشارة الحمراء بشروط، لا يعني ذلك أن الانعطاف مسموح دائمًا أو دون توقف.",
+    "why": "تختلف هندسة التقاطع وتوجد حالات تمنع الالتفاف، مثل سهم أحمر أو لوحة منع أو تنظيم خاص للمسار. قواعد الالتفاف عند الأحمر من المعلومات النظامية التي يجب مراجعتها في مرجع المرور الحالي قبل القيادة الفعلية.",
+    "steps": [
+      "حددي الإشارة الخاصة بمسارك، ولا تخلطي بين سهم اتجاه وبين الضوء العام.",
+      "اقتربي من خط الوقوف بسرعة مناسبة واستعدي للتوقف في الموضع النظامي.",
+      "إذا كنت تفكرين في الانعطاف عند الأحمر، تحققي أولًا من سماحه رسميًا وتنظيم الموقع وشروطه، ولا تتحركي دون إفساح الطريق للمشاة والمركبات.",
+      "إذا ظهرت أي إشارة تمنع الانعطاف أو لم تتأكدي من شروطه، انتظري التنظيم الذي يسمح بالحركة بدل التخمين."
+    ],
+    "example": "سيارة خلفك تضغط المنبه وأنت عند إشارة حمراء تريدين اليمين، لكن لوحة واضحة تمنع الانعطاف. لا تتبعي ضغط السائق الآخر؛ الالتزام باللوحة مقدّم.",
+    "errors": [
+      "التعامل مع الأحمر كأنه يسمح آليًا بالالتفاف يمينًا في كل تقاطع.",
+      "الخلط بين الإشارة العامة وسهم أحمر مضيء يخص اتجاه الحركة."
+    ],
+    "prompt": "إذا منع سهم أحمر مضيء الالتفاف، هل تتجاوزينه لأن الطريق خالٍ؟",
+    "answer": "لا. اتبعي التنظيم الضوئي الخاص بالمسار واللوحات الموجودة، ولا تنفذي التفافًا محظورًا ولو بدا الطريق خاليًا.",
+    "homework": "شاهدي مثالين لتقاطعين مختلفين في التنظيم؛ اكتبي ما الذي يسمح به الضوء والسهم واللوحات، وحددي موضع خط الوقوف."
+  },
+  {
+    "id": 18,
+    "foundation": "عندما تتقاطع المركبات يجب البحث عن مصدر تنظيم الحركة قبل محاولة تحديد من يمر أولًا. قد توجد إشارات ضوئية، أو رجل مرور، أو لوحات، أو تقاطع غير منظم. لكل حالة قاعدة يجب الرجوع إليها، فلا نستخدم «الأولوية لليمين» جوابًا لكل سؤال.",
+    "why": "المخطط المروري أهم من ترتيب السيارات في الرسم. قد يظهر طريق رئيسي وفرعي، أو سهم انعطاف يخالف اتجاه مستقيم، أو عبور مشاة. تحليل الأطراف يمنع الحفظ السطحي لصور الاختبارات.",
+    "steps": [
+      "حددي نوع التقاطع: ثلاثي، رباعي، دوار، أو مدخل من مرفق.",
+      "حددي وسائل التنظيم الفعلية قبل مقارنة اتجاهات السيارات.",
+      "ارسمي مسارات المركبات المتقاطعة، وحددي من يتأثر بمسار من.",
+      "راجعي قاعدة الأولوية الصحيحة لهذا التنظيم من المرجع ولا تبني الإجابة على حجم السيارة أو سرعتها."
+    ],
+    "example": "رسم يحتوي ثلاث سيارات مع لوحة قف على أحد المداخل. ابدئي بلوحة قف، لا بعدّ السيارات أو سؤال من جاء أولًا؛ بعدها انظري إلى تعارض مسارات المركبات الأخرى.",
+    "errors": [
+      "الافتراض أن المركبة الأكبر أو الأسرع لها الأفضلية.",
+      "تطبيق قاعدة محفوظة من صورة سابقة رغم تغير الإشارات."
+    ],
+    "prompt": "أي عنصر يجب قراءته أولًا في سؤال أولوية تقاطع مصور؟",
+    "answer": "تنظيم الموقع: إشارة أو رجل مرور أو لوحة وقوف أو أفضلية؛ ثم مواقع المركبات واتجاهات سيرها.",
+    "homework": "خذي ثلاث مسائل أولوية، وحلي كل مسألة بأربعة أسطر: التنظيم، الجهات، تقاطع المسارات، ثم سبب القرار."
+  },
+  {
+    "id": 19,
+    "foundation": "الدوار تقاطع تتجمع فيه مداخل ومخارج حول جزيرة مركزية. في الدوار المعتاد تكون الأفضلية للمركبات التي تسير داخله، مع ضرورة قراءة أي إشارة أو تنظيم خاص قد يغير حركة المرور عند المدخل.",
+    "why": "الدخول للدوار ليس سباقًا للفجوة الأقرب. يجب تقدير حركة السيارات الموجودة وسرعتها والمسار الذي تسلكه، مع الانتباه إلى مشاة عند المداخل والمخارج.",
+    "steps": [
+      "حددي المدخل والمخرج والجزيرة المركزية ومسارات السير في رسم الدوار.",
+      "عند الاقتراب خففي وفق الحركة وراقبي المركبات الموجودة داخله ولوحات الأفضلية.",
+      "لا تدخلي قبل وجود فرصة آمنة ومتاحة بحسب تنظيم الدوار.",
+      "قبل الخروج تابعي مسارك والإشارة المناسبة والاهتمام بالمركبات والمشاة خارج الدوار."
+    ],
+    "example": "تريدين دخول دوار، وترين مركبة تقترب من داخل الدوار نحو مدخلك. لا تفترضي أنها ستخرج في آخر لحظة؛ انتظري اتضاح مسارها وفرصة دخول آمنة.",
+    "errors": [
+      "الدخول إلى الدوار لأن المركبات القادمة صغيرة أو تسير ببطء ظاهري.",
+      "النظر إلى جهة واحدة ونسيان معبر المشاة والمركبات القريبة من المخرج."
+    ],
+    "prompt": "من الذي له الأفضلية عادة عند مدخل الدوار غير المنظم بإشارة ضوئية؟",
+    "answer": "غالبًا المركبات الموجودة داخل الدوار، ما لم يحدد تنظيم الموقع خلاف ذلك؛ لا يجوز الدخول ما لم تتوفر فرصة آمنة.",
+    "homework": "ارسمي دوارًا بسيطًا وحددي مركبتين بالداخل وثالثة على المدخل، واشرحي لماذا يجب على القادمة الانتظار."
+  },
+  {
+    "id": 20,
+    "foundation": "اختيار مسار الدوار والمخرج يعتمد على اللوحات والأسهم وعدد المسارات ومكان وجهتك. لا توجد قاعدة ثابتة واحدة مثل «أول مخرج يمين دائمًا من كل مسار» تصلح لكل دوار؛ تخطيط المكان هو الذي يحكم.",
+    "why": "تتكرر الأخطاء عندما يحاول السائق تغيير مسارين دفعة واحدة قرب المخرج. التفكير في مخرجك قبل دخول الدوار يمنحك وقتًا لاتخاذ قرارات يمكن توقعها.",
+    "steps": [
+      "اقرئي العلامات قبل مدخل الدوار: أي مسار يخص المخرج الذي تريدينه؟",
+      "تابعي التخطيط الأرضي والتزمِي بالمسار المسموح عند الدوران.",
+      "قبل التحرك بين المسارات، تحققي من المرايا والنقطة العمياء وأعطي الإشارة وتحققي من وجود فرصة آمنة.",
+      "إن فاتك المخرج فلا تقطعي الدوار بصورة مفاجئة؛ اتبعي التنظيم وابحثي عن طريقة آمنة لتصحيح المسار."
+    ],
+    "example": "أنت في مسار داخلي وتقتربين من المخرج، وفي الخارج سيارة تسير بجانبك. لا تنعطفي عبر مسارها؛ اتركي المخرج عند عدم إمكان الوصول إليه بأمان.",
+    "errors": [
+      "الاعتماد على قاعدة عامة عن عدد المخارج دون النظر إلى الأسهم.",
+      "تغيير المسار داخل الدوار بلا مراقبة المركبات التي تسير بالتوازي."
+    ],
+    "prompt": "فوتِّ مخرجك من الدوار لأن الانتقال إليه غير آمن؛ ماذا تفعلين؟",
+    "answer": "لا تنفذي قطعًا مفاجئًا؛ استمري بحسب تنظيم الدوار وابحثي عن فرصة نظامية آمنة للوصول إلى وجهتك.",
+    "homework": "استخدمي رسم دوار بثلاثة مخارج، وجربي تغيير وجهتك وقارني المسارات المسموح بها وفق الأسهم المرسومة."
+  },
+  {
+    "id": 21,
+    "foundation": "الأولوية للمشاة ليست مجرد شكل لوحة. هي التزام باحترام تنظيم المعابر وحماية من يتحركون سيرًا على الأقدام، خصوصًا الأشخاص الذين يحتاجون وقتًا إضافيًا أو الذين قد لا يلاحظون اقتراب السيارة.",
+    "why": "المشاة قد يخرجون من خلف حافلة أو مركبة متوقفة، وقد يتردد طفل على الرصيف ثم يعبر فجأة. لذلك تبدأ الملاحظة قبل الوصول إلى المعبر لا فوق خطوطه فقط.",
+    "steps": [
+      "ابحثي عن إشارات معبر المشاة والخطوط الأرضية والرصيفين.",
+      "راقبي إن كان شخص ينتظر العبور أو يعبر بالفعل؛ خففي واستعدي للتوقف وفق التنظيم.",
+      "إذا كانت مركبة أمامك توقفت قرب المعبر، فافترضي احتمال وجود شخص لا يظهر من زاويتك.",
+      "عند الانعطاف قرب معبر، افحصي مسار المشاة الذي ستقطعينه قبل متابعة الحركة."
+    ],
+    "example": "تنعطفين من شارع جانبي إلى شارع رئيسي ويوجد معبر عند زاوية الانعطاف. لا تراقبي المركبات القادمة فقط؛ انظري إلى مسار من يعبر أمام مقدمتك أيضًا.",
+    "errors": [
+      "تجاوز مركبة متوقفة قبل معبر دون معرفة سبب توقفها.",
+      "توقع أن الماشي سيبتعد لأن السيارة اقتربت منه."
+    ],
+    "prompt": "هل تستبدل نظرة واحدة إلى المعبر قبل مئة متر فحص المكان عند الاقتراب؟",
+    "answer": "لا. يجب تجديد الملاحظة لأن المشهد قد يتغير بوجود أشخاص يدخلون منطقة العبور.",
+    "homework": "سجلي من مقعد الراكب ثلاثة أماكن تظهر فيها حركة مشاة أكثر، وما العلامات التي تدل على اقترابك من معبر."
+  },
+  {
+    "id": 22,
+    "foundation": "تغيير المسار مهارة تجمع مراقبة المرايا واستخدام الإشارة وفحص النقطة العمياء والانتقال التدريجي. النقطة العمياء مساحة قد لا تظهر كاملة في المرايا؛ لهذا لا يكفي النظر السريع إلى المرآة الجانبية وحدها.",
+    "why": "يشرح ملخص تقييم المهارة خطوات المرايا والإشارة وفحص الكتف ضمن تسلسل تدريبي. المهم فهم هدف كل خطوة لا حفظ حروف مختصرة ثم تنفيذها آليًا؛ ويجب تطبيق المهارة عمليًا بإشراف مؤهل.",
+    "steps": [
+      "اسألي أولًا: هل يسمح التخطيط الأرضي بتغيير المسار أصلًا؟",
+      "افحصي حركة المرور في المرآة الوسطى والجانبية المناسبة، وحددي مسافة المركبات وسرعاتها بصورة عامة.",
+      "أعطي إشارة الاتجاه الملائمة، ثم تحققي من المنطقة العمياء بطريقة آمنة دون إطالة صرف النظر عن الطريق أمامك.",
+      "انتقلي تدريجيًا عند وجود مسافة آمنة، ثم ثبتي المسار وأوقفي الإشارة إذا لم تتوقف تلقائيًا."
+    ],
+    "example": "تريدين الانتقال يمينًا، لكن هناك دراجة نارية في المنطقة التي لا تراها المرآة بوضوح. فحص النقطة العمياء يمنع الانتقال إلى نفس المساحة.",
+    "errors": [
+      "اعتبار الإشارة طلبًا يلزم الآخرين بإفساح الطريق.",
+      "تحويل الرأس لمدة طويلة وفقدان مراقبة الطريق الأمامي أثناء فحص الكتف."
+    ],
+    "prompt": "ما الذي يمكن أن تفوته المرايا حتى عندما تبدو مضبوطة جيدًا؟",
+    "answer": "قد تخفي النقطة العمياء مركبة أو دراجة أو مستخدمًا آخر للطريق؛ لذلك تتكامل المرايا مع الملاحظة المباشرة المناسبة والمناورة الآمنة.",
+    "homework": "راجعي شرح المرايا والنقطة العمياء من ملخص المهارات، واكتبي تسلسل الفحص بكلماتك دون حركة للسيارة."
+  },
+  {
+    "id": 23,
+    "foundation": "التجاوز مناورة تختلف عن تغيير مسار عادي؛ فهي تتضمن الاقتراب من مركبة أبطأ، والانتقال إلى مسار مناسب، ثم اجتيازها والعودة عند السماح والأمان. اختيار جهة التجاوز تحكمه أنظمة الطريق وعلاماته، وليس الرغبة في الوصول الأسرع.",
+    "why": "قبل التجاوز يجب أن تكون الرؤية كافية وأن يسمح المكان والتخطيط والحركة بالمناورة. مجرد أن مركبة أمامك تسير ببطء لا يجعلك ملزمة بالتجاوز.",
+    "steps": [
+      "تحققي أن التجاوز مسموح في الموضع بحسب اللوحات والخطوط ومسارات الطريق.",
+      "قدري هل توجد مساحة ورؤية ووقت كافٍ من دون الاقتراب المفرط من المركبة الأمامية.",
+      "استخدمي المرايا والإشارة وفحص المنطقة العمياء قبل تغيير المسار.",
+      "بعد تجاوز المركبة، لا تعودي إلى مسارها قبل توفر مسافة آمنة ورؤية مناسبة، ثم استقري في المسار."
+    ],
+    "example": "مركبة أمامك بطيئة والشارع أمامك يقترب من منعطف يحجب الرؤية. قد تكون أفضل مناورة هي عدم التجاوز أصلًا حتى تتوفر رؤية وتنظيم مناسب.",
+    "errors": [
+      "التجاوز في موضع رؤية غير كافية أو قرب تقاطع يمنع المناورة.",
+      "العودة مباشرة أمام السيارة المتجاوزة دون ترك مسافة آمنة."
+    ],
+    "prompt": "هل يصبح التجاوز واجبًا بمجرد أن المركبة أمامك أبطأ؟",
+    "answer": "لا؛ هو مناورة مشروطة بالسماح القانوني وتوفر السلامة والرؤية والمسافة، ويمكن الانتظار خلف المركبة عند عدم توافر الشروط.",
+    "homework": "اكتبي خمسة أسئلة تراجعينها قبل التجاوز: هل مسموح؟ هل أرى؟ هل الطريق خالٍ؟ هل هناك مسافة؟ وكيف سأعود؟"
+  },
+  {
+    "id": 24,
+    "foundation": "يحظر التجاوز أو يكون غير آمن في مواضع تقل فيها الرؤية أو يضطرب فيها تنظيم الحركة. الأمثلة تشمل حالات الخطوط التي تمنع العبور، والمنعطفات العمياء، والاقتراب من مواقع عبور أو تقاطعات وفق التنظيم الساري.",
+    "why": "المخاطر ليست في سرعة السيارة فقط. عند اقترابك من قمة مرتفع أو منحدر أو منعطف قد لا تري مركبة قادمة. وعند معبر مشاة يمكن أن تحجب السيارة التي أمامك شخصًا يعبر.",
+    "steps": [
+      "ابحثي أولًا عن إشارة منع التجاوز أو تخطيط أرضي لا يسمح بالانتقال.",
+      "اسألي هل ترين المسافة المطلوبة أمامك أم يخفي المنعطف أو المرتفع جزءًا منها.",
+      "راقبي التقاطعات والمعابر والمركبات المتوقفة على جانبي الطريق.",
+      "إذا كانت الإجابة غير واضحة، اختاري البقاء خلف المركبة مع مسافة أمان بدل مناورة مخاطرة."
+    ],
+    "example": "تسيرين خلف مركبة أمام معبر مشاة وهي تبطئ. لا تتجاوزي على نحو قد يحجب عنك شخصًا يعبر؛ افحصي سبب التباطؤ أولًا.",
+    "errors": [
+      "الاعتماد على سرعة مركبتك العالية لتجاوز سريع في منطقة محظورة.",
+      "تجاهل مخاطر الرؤية لأن الخط يبدو متقطعًا في جزء سابق من الطريق."
+    ],
+    "prompt": "ما المشكلة في تجاوز مركبة أمام معبر مشاة؟",
+    "answer": "قد تحجب المركبة شخصًا يعبر، كما أن تنظيم موقع المعبر قد يمنع المناورة؛ الأولوية للسلامة وعدم تجاوز دون وضوح وقانونية.",
+    "homework": "اختاري أربع صور من موضوع التجاوز في كتاب المتدربة، وصنفيها: مسموح وآمن، أو ممنوع، أو غير آمن بسبب عدم كفاية المعلومات."
+  }
+]);
+
+/* Original teaching guides, part 3 / 4. */
+window.MasarGuides.register([
+  {
+    "id": 25,
+    "foundation": "السرعة الآمنة ليست دائمًا مساوية للحد الأعلى المكتوب على اللوحة. حد السرعة يوضح الحد النظامي حيث ينطبق، لكن الظروف قد تتطلب قيادة أبطأ: زحام، أطفال، مطر، ضباب، منعطف أو رؤية محدودة.",
+    "why": "كلما زادت السرعة زادت المسافة التي تقطعها السيارة خلال لحظة ملاحظتك للخطر وزادت صعوبة التوقف في مساحة قصيرة. لا يعني وجود أنظمة فرامل حديثة أن قوانين الحركة لا تنطبق.",
+    "steps": [
+      "تعرّفي إلى لوحة الحد الأعلى للسرعة ومتى يتغير التنظيم بحسب اللوحات.",
+      "راقبي مستوى الرؤية وحالة سطح الطريق وحركة المركبات والمشاة.",
+      "اختاري سرعة تمنحك وقتًا للفهم والاستجابة ضمن الحد النظامي، وخففي قبل المخاطر لا داخلها فقط.",
+      "اتركي مسافة مناسبة للمركبة الأمامية وتجنبي التسارع والتباطؤ العنيف غير الضروري."
+    ],
+    "example": "طريق حدّه الأعلى 100 كم/ساعة لكن المطر غزير والرؤية محدودة. لا تتعاملي مع 100 على أنه هدف يجب الوصول إليه؛ تقتضي الظروف سرعة أقل ومسافة أكبر.",
+    "errors": [
+      "الاعتقاد بأن الالتزام بالحد الأعلى يكفي وحده لقيادة آمنة.",
+      "الفرملة المفاجئة قرب مطب أو منعطف كان يمكن توقعه من بعيد."
+    ],
+    "prompt": "إذا كان الحد الأعلى يسمح بسرعة معينة لكن الطريق زلق، ما المعيار الأهم؟",
+    "answer": "الالتزام بالحد النظامي مع اختيار سرعة أقل إذا تطلبت الظروف ذلك حتى تتمكني من ملاحظة المخاطر والتوقف والتحكم بالمركبة بأمان.",
+    "homework": "اكتبي أربعة عوامل تغير اختيار السرعة المناسبة، وقدمي مثالًا من طريق شاهدتِه بالفعل مع شخص يقود."
+  },
+  {
+    "id": 26,
+    "foundation": "مسافة التوقف تتكون من جزءين: مسافة تقطعها السيارة بينما تتعرف السائقة على الخطر وتبدأ الاستجابة، ثم مسافة تقطعها أثناء التباطؤ بالفرامل حتى تتوقف. كلاهما يتأثر بالسرعة والظروف.",
+    "why": "لنفهم الفكرة بحساب تعليمي بسيط: السيارة عند 60 كم/ساعة تقطع نحو 16.7 مترًا في ثانية واحدة قبل احتساب الفرملة، بينما عند 90 كم/ساعة تقطع نحو 25 مترًا في الثانية. هذه مسافة الحركة خلال ثانية فقط، وليست رقمًا ثابتًا لمسافة التوقف.",
+    "steps": [
+      "ميزي زمن رد الفعل عن زمن عمل الفرامل؛ الأول يحدث قبل بدء التباطؤ الفعلي.",
+      "تذكري أن مضاعفة السرعة لا تعني بالضرورة مضاعفة مسافة الفرملة فقط؛ التغير قد يكون أكبر بحسب الظروف.",
+      "ضعي في الحسبان سطح الطريق والإطارات والرؤية وتعب السائقة.",
+      "عند رؤية خطر بعيد، خففي تدريجيًا في وقت مناسب بدل انتظار اللحظة الأخيرة."
+    ],
+    "example": "أمامك سيارة تتوقف فجأة، وتحتاجين ثانية لتدركي الخطر. إذا كنت تسيرين 90 كم/ساعة فقد قطعت السيارة نحو 25 مترًا خلال هذه الثانية وحدها قبل مسافة الفرملة.",
+    "errors": [
+      "الخلط بين مسافة رد الفعل ومسافة الفرملة وكأنهما الشيء نفسه.",
+      "اعتبار الأرقام التقريبية في ورقة اختبار قياسًا مضمونًا لكل سيارة وطريق."
+    ],
+    "prompt": "لماذا تزيد مسافة التوقف مع السرعة حتى لو لم يتغير زمن رد فعلك؟",
+    "answer": "لأن السيارة تقطع أمتارًا أكثر خلال زمن رد الفعل، وغالبًا تحتاج مسافة فرملة أكبر كلما ارتفعت سرعتها، مع اختلاف المسافة حسب التماسك وحالة المركبة.",
+    "homework": "جرّبي حساب مسافة الحركة في ثانية واحدة لسرعتَي 36 و72 كم/ساعة باستخدام قسمة السرعة بالكيلومتر/ساعة على 3.6."
+  },
+  {
+    "id": 27,
+    "foundation": "مسافة الأمان هي المجال الذي تتركينه أمام مركبتك لتستجيبي إذا تباطأت السيارة الأمامية أو توقفت. يمكن استخدام عد الثواني بين مرور السيارة الأمامية بنقطة ثابتة ومرور سيارتك بالنقطة نفسها كطريقة تعليمية لفهم الفاصل الزمني.",
+    "why": "يذكر ملخص التقييم قاعدة الثانيتين في الظروف الجيدة ومضاعفة المسافة عند سوء الرؤية أو التماسك. هذه نقطة بداية تعليمية لا تضمن السلامة في كل سرعة أو طقس؛ لا بد من زيادتها بحسب المطر والضباب وحالة الطريق.",
+    "steps": [
+      "اختاري علامة ثابتة على جانب الطريق مثل عمود أو لوحة.",
+      "عندما تمر المركبة الأمامية بالعلامة، ابدئي عد الثواني حتى تصل مركبتك إلى النقطة نفسها.",
+      "إذا كان الفاصل قصيرًا جدًا، خففي لتوسيع المسافة تدريجيًا دون فرملة متهورة.",
+      "عند المطر أو سوء الرؤية أو خلف مركبة كبيرة تحجب المشهد، اتركي هامشًا أكبر مناسبًا للظروف."
+    ],
+    "example": "تتابعين مركبة في طريق مبلل، والفاصل بينكما ثانيتان فقط. لا تعتبري الرقم سحرًا؛ يحتاج الطريق المبلل مجالًا إضافيًا لأن التماسك والرؤية قد يتغيران.",
+    "errors": [
+      "قياس المسافة بعدد أمتار واحد لجميع السرعات والظروف.",
+      "زيادة السرعة عمدًا عندما يدخل أحد أمامك لتضييق الفراغ."
+    ],
+    "prompt": "لماذا نستخدم النقطة الثابتة عند عد الثواني؟",
+    "answer": "لأنها تجعل المقارنة الزمنية ممكنة بين مرور المركبتين بالنقطة نفسها، بدل التخمين البصري من حجم السيارة.",
+    "homework": "أثناء ركوبك مع أخوك كراكبة راقبي الفاصل الزمني بطريقة العد، وسجلي كيف يتغير مع الزحام دون تشتيت السائق."
+  },
+  {
+    "id": 28,
+    "foundation": "القيادة الوقائية تعني توقع الخطأ أو الخطر قبل أن يفرض نفسه عليك. بدلاً من التركيز على السيارة أمامك وحدها، اقرئي الطريق البعيد والقريب والجانبين والمرايا، وابحثي عن أشخاص أو مركبات يمكن أن تدخل مسارك.",
+    "why": "الملاحظة الجيدة تمنحك وقتًا لتختاري استجابة سلسة: تخفيف السرعة، توسيع المسافة، أو الاستعداد للتوقف. هدفها ليس توقع كل شيء بدقة، بل تقليل المفاجآت.",
+    "steps": [
+      "انظري إلى المشهد البعيد لمعرفة تغير المسارات والإشارات والزحام.",
+      "امسحي المنطقة القريبة بحثًا عن مركبات تبطئ أو مشاة أو عوائق.",
+      "توقعي أكثر من احتمال: ماذا لو خرجت سيارة من الموقف أو عبر طفل؟",
+      "اختاري إجراء وقائيًا مبكرًا ومتناسبًا مع المخاطر بدل الاستجابة الحادة المتأخرة."
+    ],
+    "example": "أمامك صف سيارات مركونة وبينه فتحة لا ترى ما خلفها. قد تخرج مركبة أو شخص؛ خففي وفق المكان واتركي مجالًا جانبيًا مناسبًا وتابعي الرصد.",
+    "errors": [
+      "تركيز النظر على نقطة واحدة حتى تغيب الأخطار من الجوانب.",
+      "افتراض أن السائقين الآخرين سيستخدمون الإشارات ويطبقون الأفضلية دائمًا."
+    ],
+    "prompt": "ما الفرق بين قيادة رد الفعل والقيادة الوقائية؟",
+    "answer": "الأولى تستجيب بعد ظهور الخطر بشكل مفاجئ، أما الوقائية فتبني هامش أمان عبر ملاحظة مبكرة وتوقع معقول لتغير الموقف.",
+    "homework": "اكتبي ثلاثة مواقف من الشارع تبدأ بعبارة «ماذا لو؟»، ثم اختاري لكل منها استجابة استباقية بسيطة."
+  },
+  {
+    "id": 29,
+    "foundation": "العادات الخطرة أثناء القيادة تشمل استخدام الجوال، والتشتت، ومتابعة الطريق من دون مسافة كافية، والمناورات المفاجئة، والتسرع، والقيادة عند الإرهاق الشديد. ليست الخطورة محصورة في المخالفة المباشرة؛ قد تكون في ضعف القدرة على رؤية الخطر والاستجابة له.",
+    "why": "حتى التشتت القصير يغير مكان السيارة بينما ينصرف انتباه السائقة. كذلك قد يقود الغضب أو الرغبة في ملاحقة سيارة إلى قرارات متعجلة. إدراك تأثير المشاعر والتعب جزء من التعليم الوقائي.",
+    "steps": [
+      "قبل الحركة اضبطي وجهتك وموسيقاك واحتياجاتك لتقليل التعامل مع الشاشة.",
+      "أبقي الانتباه على الطريق؛ إذا احتجتِ إجراء يتطلب تركيزًا، توقفي في مكان نظامي آمن.",
+      "تجنبي الالتصاق بالمركبة الأمامية أو الضغط على من يقود ببطء.",
+      "إذا كنت مرهقة أو تركيزك متدهورًا، أعيدي تقييم ملاءمة القيادة وخذي راحة مناسبة."
+    ],
+    "example": "رنّ هاتفك أثناء اقترابك من تقاطع. لا تبحثي عن الهاتف أو تكتبي ردًا خلال الحركة؛ انتبهي للطريق واختاري مكانًا آمنًا إذا لزم التواصل.",
+    "errors": [
+      "الاعتقاد أن النظر إلى الشاشة لثانية لا يغير السيطرة على المركبة.",
+      "اتخاذ تصرف انتقامي عندما يقطع سائق آخر المسار أمامك."
+    ],
+    "prompt": "ما الرابط بين الغضب والمسافة التي تتركينها للسيارة الأمامية؟",
+    "answer": "الغضب قد يدفع إلى التسارع أو تقليص المسافة واتخاذ قرارات اندفاعية، فتقل مساحة ووقت الاستجابة للخطر.",
+    "homework": "أعدّي لنفسك قائمة من ثلاث مشتتات شائعة، وقرارًا واضحًا لتجنب كل واحدة قبل الانطلاق."
+  },
+  {
+    "id": 30,
+    "foundation": "اختبار اكتشاف الخطر بالفيديو لا يطلب دائمًا معرفة اسم اللوحة؛ بل يسألك متى بدأ خطر يتطور إلى موقف يستلزم الانتباه أو تغيير القرار. مثل ظهور عجلة دراجة خلف حافلة، أو مركبة تتحرك من موقف، أو مشاة يقتربون من حافة الرصيف.",
+    "why": "عندما تشاهدين المقطع مرة ثانية ستلاحظين إشارات مبكرة لم تريها أولًا. هذه المهارة تقوي الملاحظة؛ لكن الفيديو لا يحل محل تقييم الطريق الحقيقي أثناء التدريب النظامي.",
+    "steps": [
+      "شاهدي أولًا دون إيقاف وحددي أين انتقل المشهد من عادي إلى موقف يحتمل خطرًا.",
+      "في المشاهدة الثانية أوقفي عند أول علامة للخطر، واكتبي الدقيقة والثانية.",
+      "اشرحي ماذا يمكن أن يحدث خلال ثوانٍ وما استجابتك الوقائية المناسبة.",
+      "قارني توقعك بما حدث في المقطع، وميّزي بين خطر محتمل وخطر بدأ بالفعل."
+    ],
+    "example": "حافلة متوقفة قرب معبر، ويظهر ظل حركة بجانبها. قد يخرج شخص من خلفها؛ لا تنتظري رؤية الشخص في مسارك حتى تبدأي ملاحظة الخطر.",
+    "errors": [
+      "الضغط على الإجابة بعد وقوع الحدث بدل تحديد مؤشر الخطر المبكر.",
+      "حفظ ترتيب المشاهد دون أن تقدري على تفسير سبب الخطر."
+    ],
+    "prompt": "أيّهما أدق في تحليل فيديو: «ظهر طفل أمام السيارة» أم «كانت هناك كرة تتحرك نحو الشارع قبل ظهور الطفل»؟",
+    "answer": "الثانية تشير إلى مؤشر مبكر يساعد على التوقع، بينما الأولى تصف الخطر بعد ظهوره بالفعل.",
+    "homework": "شاهدي مقطعًا قصيرًا تعليميًا موثوقًا مرتين، وسجلي ثلاث لقطات زمنية: العلامة الأولى، تطور الخطر، الاستجابة المناسبة."
+  },
+  {
+    "id": 31,
+    "foundation": "الموقف أو الركن يختلف باختلاف اتجاه الدخول والمساحة المتاحة: أمامي، خلفي، جانبي أو موازٍ للرصيف. الهدف ليس إدخال السيارة داخل الخطوط فقط، بل اختيار موقف مسموح وآمن يمكن الوصول إليه والخروج منه دون إزعاج المشاة والمركبات.",
+    "why": "يعرض كتيب مدرسة شرق وملخص التقييم رسومات لعدة مواقف. نقاط تدوير المقود المذكورة فيها تعتمد على أبعاد مركبات التدريب ومواقع العلامات، ولذلك لا يصح تعميم عدد لفات المقود على كل هوندا أكورد.",
+    "steps": [
+      "قبل اختيار الموقف تأكدي أن الوقوف مسموح ولا يحجب مخرجًا أو معبرًا.",
+      "راقبي حدود الموقف والمركبات والعوائق والأشخاص حوله.",
+      "ميّزي مفهوميًا بين الدخول للأمام والرجوع للخلف والركن الموازي.",
+      "تعلمي كيف تستخدمين المرايا مع فحص المحيط في كل مرحلة، ثم اتركي تنفيذ الحركة الفعلية لتدريب مؤهل."
+    ],
+    "example": "موقف ضيق جدًا بين سيارتين بينما هناك موقف آخر أوسع قليلًا. في مرحلة التعلم اختيار الموقف الآمن الأوسع أفضل من الإصرار على أول فراغ.",
+    "errors": [
+      "حفظ «لفة ونصف» أو نقطة مرايا كقاعدة ثابتة لكل سيارة.",
+      "الاعتماد على خطوط الموقف وحدها ونسيان طفل أو عربة تسير خلف السيارة."
+    ],
+    "prompt": "لماذا قد تختلف نقطة بداية تدوير المقود عند الركن بين سيارة وأخرى؟",
+    "answer": "بسبب اختلاف طول السيارة والعجلات ونصف قطر الدوران وأبعاد الموقف وزاوية الاقتراب؛ التفاصيل تحتاج تدريبًا عمليًا يناسب المركبة.",
+    "homework": "قارني رسومات المواقف الثلاثة في كتاب مدرسة شرق، ثم اكتبي كيف تختلف مساحة الرؤية المطلوبة في كل نوع."
+  },
+  {
+    "id": 32,
+    "foundation": "الرجوع للخلف مناورة تحتاج ملاحظة إضافية لأن مجال الرؤية خلف المركبة أقل من الأمام، وقد توجد عوائق منخفضة لا تظهر في المرايا بسهولة. كما أن الرجوع للخلف يختلف عن الالتفاف U-turn؛ الأول حركة بالناقل R والثاني مناورة تغير اتجاه السير.",
+    "why": "الخلط بين «الرجوع للخلف» بمعنى الحركة للخلف و«الدوران للخلف» U-turn يسبب سوء فهم للأسئلة والتعليمات. يجب تحديد المقصود من السياق قبل حل التمرين.",
+    "steps": [
+      "عرّفي اتجاه حركة السيارة في وضع R مقابل اتجاه السير بعد دوران U.",
+      "قبل التراجع افحصي محيط المركبة والمشاة والأجسام المنخفضة.",
+      "افهمي أهمية الحركة البطيئة القابلة للتحكم والإيقاف عند عدم وضوح المسار.",
+      "إذا كان التدريب يتعلق بدوران U، راجعي اللوحات وخطوط الطريق والمسارات المسموحة، ولا تطبقي نقاط الدوران آليًا."
+    ],
+    "example": "تريدين الخروج من موقف خلفي، وخلف سيارتك مساحة غير ظاهرة في الشاشة. قبل أي حركة فعلية يجب فحص المكان؛ الكاميرا قد لا تكشف كل الأشخاص والأجسام.",
+    "errors": [
+      "استخدام الكاميرا فقط دون النظر حول السيارة.",
+      "اعتبار وصف U-turn في ملخص التدريب مرادفًا لوضع القير R."
+    ],
+    "prompt": "ما الفرق الأساسي بين Reverse وU-turn؟",
+    "answer": "Reverse يعني تحريك المركبة للخلف، بينما U-turn تغيير اتجاه السير إلى الاتجاه المعاكس بمناورة مسموحة، وقد يتحقق دون الرجوع بالسيارة للخلف.",
+    "homework": "ارسمي حركة السيارة في تراجع مستقيم وفي دوران U، وضعي أسهمًا توضّح اتجاه الحركة في كل مثال."
+  },
+  {
+    "id": 33,
+    "foundation": "الخروج من الموقف بالرجوع للخلف يبدأ قبل تحريك السيارة: تأكدي من عدم وجود مشاة أو عوائق خلفها، وحددي الاتجاه الذي ستدخلين إليه عندما تصيرين في الممر. وجود حساسات أو كاميرا يساعد لكنه لا يضمن رؤية المحيط كله.",
+    "why": "تكثر حركة المشاة والعربات الصغيرة في المواقف، كما قد تدخل مركبة أخرى إلى الممر بينما تتراجعين. الانتباه المتجدد أهم من فحص واحد في البداية فقط.",
+    "steps": [
+      "حددي أولًا الجهة التي تريدين الوصول إليها بعد الخروج من الموقف.",
+      "افحصي المساحة الخلفية والجانبين والممر المتقاطع مع خط خروجك.",
+      "اعرفي من أين ستظهر المركبات والمشاة أثناء الحركة للخلف، وما الذي تحجبه السيارات المركونة.",
+      "توقفي عن المناورة عند عدم وضوح حركة مستخدمي الممر إلى أن يصبح الاستمرار آمنًا وفق تدريب المدربة."
+    ],
+    "example": "بينما تتراجعين نظريًا في رسم تعليمي، دخل شخص من جهة السيارة المركونة المجاورة. القرار ليس متابعة الحركة لأن الممر كان فارغًا عند البداية؛ الموقف تغير.",
+    "errors": [
+      "فحص المحيط مرة واحدة ثم متابعة المناورة دون تحديث الملاحظة.",
+      "رفع السرعة للخروج سريعًا قبل مرور مركبة قادمة في الممر."
+    ],
+    "prompt": "لماذا لا يكفي كون الممر فارغًا قبل بدء الرجوع للخلف؟",
+    "answer": "لأن مركبات أو أشخاصًا قد يدخلون المساحة خلال الحركة؛ تحتاج السائقة إلى مراقبة مستمرة واستعداد للتوقف.",
+    "homework": "استخدمي مخطط موقف من كتاب التدريب العملي، وحددي ثلاث مناطق قد يخرج منها خطر خلال الرجوع."
+  },
+  {
+    "id": 34,
+    "foundation": "الركن الموازي يضع السيارة بمحاذاة الرصيف بين مساحتين أو مركبتين، وهو أصعب من الحفظ اللفظي لأنك تحتاجين فهم المسافات واتجاه عجلات المركبة والمحيط الأمامي والخلفي.",
+    "why": "رسومات الملخص العملي تقدم نقاط مرجعية للتدريب، لكنها ليست وصفة موحدة لكل مركبة. يجب أن يكون الأساس مراقبة المكان وتقدير المسافات وإجراء التعديل المناسب تحت إشراف مدربة.",
+    "steps": [
+      "تعرفي إلى حدود المساحة المطلوب ركن السيارة داخلها وهل الوقوف مسموح.",
+      "افهمي كيف يغير اتجاه المقود مسار السيارة عند الرجوع للخلف دون تجربة الحركة قبل التدريب المعتمد.",
+      "حددي في الرسم المواضع التي يجب عندها مراقبة مقدمة السيارة ومؤخرتها والرصيف والمركبات المحيطة.",
+      "بعد الركن، تأكدي نظريًا أن السيارة لا تحجب الطريق أو معبرًا وأن تأمينها يتم وفق دليل السيارة."
+    ],
+    "example": "أنت تتدربين على رسم ركن موازٍ. عندما يقترب الجزء الخلفي من الرصيف، يجب أن تضعي في الحساب مسار المقدمة التي قد تبرز نحو الطريق أثناء تعديل الاتجاه.",
+    "errors": [
+      "محاولة تقليد «عدد لفات مقود» من سيارة مدرسة تختلف عن مركبتك.",
+      "التركيز على العجلة الخلفية ونسيان مقدمة السيارة والمشاة."
+    ],
+    "prompt": "لماذا نحتاج مراقبة مقدمة السيارة عند الركن الموازي للخلف؟",
+    "answer": "لأن المقدمة قد تتحرك جانبًا أثناء تغيير اتجاه المقود، ويجب التأكد من عدم اقترابها من مركبة أو شخص.",
+    "homework": "اشرحِي بالكلمات ما الذي يحدث لمقدمة السيارة ومؤخرتها في رسم ركن موازٍ، واستفسري من المدربة عن نقاط المرجع المناسبة للأكورد."
+  },
+  {
+    "id": 35,
+    "foundation": "ترد في بعض مناهج المدارس تدريبات موسومة X وT وY والكراج. هذه أسماء وتمارين تستخدم داخل ساحات التدريب لتعليم تغيير الاتجاه والمناورة بين حدود أو علامات. قد يختلف تعريف كل رسم أو طريقة تقييمه بين مدرسة وأخرى.",
+    "why": "الأهم ليس الاسم المختصر بل الهدف الحركي: إدراك الأبعاد، وتوجيه العجلات، وتقدير الفراغ، وفحص المحيط. المناورة في ساحة التدريب ليست تصريحًا بتطبيقها على الطريق العام بالطريقة نفسها.",
+    "steps": [
+      "افتحي صفحة المناورة في منهج جدة المتطورة وحددي شكل المسار وحدوده.",
+      "قارني حركة السيارة المتوقعة في رسم U وT وX أو Y دون محاولة دمجها في مناورة واحدة.",
+      "اكتبي أين يجب أن تتوقف المركبة للملاحظة والتقييم قبل تغيير الاتجاه.",
+      "اسألي المدرسة مستقبلًا عن المقاييس وعدد المحاولات وأسماء المهارات المعتمدة لديها، لأنها تختلف."
+    ],
+    "example": "في تمرين T توجد مساحة صغيرة للتغيير بين اتجاهات حركة، وفي الكراج الهدف دخول مساحة محددة. كل منهما يختبر أبعاد السيارة والملاحظة، لكن خطوات المقود التي تنجح بسيارة صغيرة قد لا تنجح بأكورد أطول.",
+    "errors": [
+      "اعتبار تعليمات مدرسة بعينها نظامًا عامًا لجميع مدارس السعودية.",
+      "استخدام الاسم X أو Y دون فهم أي حركة يفترض تنفيذها بالضبط."
+    ],
+    "prompt": "لماذا لا نعتمد عدد لفات المقود من كتيب تدريب مختلف باعتباره قاعدة لسيارتك؟",
+    "answer": "لاختلاف أبعاد السيارة ونصف قطر دورانها ومقاييس ساحة المدرسة وعلامات التقييم، لذا يلزم توجيه عملي مطابق للمركبة والمنهج.",
+    "homework": "ارسمي ثلاثة مسارات من المنهج العملي، وحددي لكل مسار هدف المهارة ومكان مراقبة العوائق."
+  },
+  {
+    "id": 36,
+    "foundation": "عند التوقف أو الانطلاق على طريق مائل، تؤثر الجاذبية في حركة المركبة أكثر من الطريق المستوي. تهدف وسائل مثل دواسة الفرامل وفرامل التوقف وبعض أنظمة المساعدة إلى إبقاء السيارة تحت السيطرة وفق طريقة التشغيل الصحيحة.",
+    "why": "قد تتضمن هوندا أكورد نظام تثبيت فرامل أو مساعدة بدء الصعود في بعض الفئات، لكن وجود النظام وطريقة عمله يختلفان حسب سنة السيارة، ولا يغنيان تلقائيًا عن الإجراءات المعتمدة في دليلها.",
+    "steps": [
+      "تعرفي إلى الفرق بين التوقف المؤقت على مرتفع وركن السيارة وتركها.",
+      "راجعي مكان فرامل التوقف في سيارتك ونوعها قبل تعليم أي تسلسل أزرار.",
+      "افهمي أن الاتجاه المائل يخلق ميلًا للحركة عند تحرير الفرامل؛ لذلك لا تُجرب المناورة دون إشراف مناسب.",
+      "عند الحديث عن ركن المركبة على منحدر، راجعي طريقة تأمينها من دليل مالك المركبة وقواعد الوقوف في مكانك."
+    ],
+    "example": "توقفت سيارة تدريب على مرتفع خلف مركبة أخرى. الهدف أن تبقى المسافة آمنة وأن لا تتحرك للخلف عند استئناف السير. لا تفترضي أن زر Brake Hold موجود أو مُفعّل دون التحقق.",
+    "errors": [
+      "اعتبار وضع P بديلًا كاملًا عن إجراءات تأمين الركن الموصى بها من الشركة.",
+      "استخدام نظام مساعد لم تتم معرفة وجوده أو طريقة تشغيله في فئة السيارة."
+    ],
+    "prompt": "لماذا تتغير إجراءات تأمين المركبة عند الوقوف في طريق مائل؟",
+    "answer": "لأن الجاذبية قد تجعلها تتحرك في اتجاه الميل عند عدم تثبيتها بصورة مناسبة، فيجب تطبيق تعليمات الشركة والتنظيم المحلي.",
+    "homework": "قارني الوصف العام في ملخص ناريمان ومنهج جدة مع دليل سيارة أكورد عند معرفة الموديل؛ اكتبي الأسئلة التي ستطرحينها على المدربة."
+  }
+]);
+
+/* Original teaching guides, part 4 / 4. */
+window.MasarGuides.register([
+  {
+    "id": 37,
+    "foundation": "عند المطر تقل جودة الرؤية وقد يتغير تماسك الإطارات مع الطريق. ليس كل سطح مبتل له درجة الخطورة نفسها؛ فوجود ماء متجمع أو بقع زيت أو إطارات غير مناسبة يزيد صعوبة التحكم.",
+    "why": "في الظروف الرطبة قد تحتاج المركبة وقتًا ومسافة أكبر للتباطؤ، كما قد تحجب رذاذات المركبات الأخرى الرؤية. لذلك يعتمد القرار على تخفيف السرعة بما يناسب الوضع وترك مسافة أمان أكبر.",
+    "steps": [
+      "قبل الرحلة راجعي حالة المساحات والأنوار والإطارات بصورة عامة.",
+      "عند بدء المطر خففي السرعة تدريجيًا وزيدي مسافة الأمان، ولا تعتمدي على الحد الأعلى للسرعة كهدف.",
+      "تجنبي المناورات الحادة غير الضرورية والفرملة القوية التي قد تقلل السيطرة.",
+      "إذا واجهتِ ماءً متجمعًا أو انخفضت الرؤية بدرجة كبيرة، أعيدي تقييم استمرار الرحلة واخترِي التوقف في مكان آمن عند الحاجة."
+    ],
+    "example": "دخلتِ طريقًا سريعًا وبدأ المطر مع رش الماء من سيارة كبيرة أمامك. لا تقتربي منها لتحتمي من الريح؛ وسعي الفاصل وقللي السرعة المناسبة للمشهد لتحسني الرؤية ووقت الاستجابة.",
+    "errors": [
+      "استخدام مثبت السرعة أو أنظمة المساعدة دون فهم حدودها عند ضعف التماسك.",
+      "الفرملة المفاجئة فوق بقعة ماء مع وجود مجال للتخفيف قبلها."
+    ],
+    "prompt": "لماذا تزداد مسافة الأمان في المطر حتى لو كان السائق يقود تحت الحد الأعلى؟",
+    "answer": "لأن تماسك الإطارات والرؤية قد يقلان، ويمكن أن تزيد المسافة اللازمة للاستجابة والتوقف بأمان.",
+    "homework": "شاهدي رسمًا لطريق جاف وآخر مبلل، واكتبي ثلاثة فروق في اختيار السرعة والمسافة وطريقة المناورة."
+  },
+  {
+    "id": 38,
+    "foundation": "الغبار والضباب يخفضان مدى الرؤية أمام المركبة ويجعلان تقدير المسافة أصعب. قد يظهر العائق قريبًا فجأةً، أو تبدو سرعة المركبات الأخرى مختلفة عن حقيقتها بسبب ضعف التباين البصري.",
+    "why": "الاستجابة لا تقتصر على تشغيل الأنوار. يجب اختيار سرعة تسمح بالتوقف ضمن المسافة التي تستطيعين رؤيتها، وتوسيع الفاصل عن المركبة الأمامية وتجنب التجاوز عندما لا تكون الرؤية كافية.",
+    "steps": [
+      "راقبي مدى وضوح الخطوط والحواجز والمركبات قبل الدخول في منطقة رؤية محدودة.",
+      "خففي السرعة تدريجيًا واتركي مسافة أكبر؛ لا تتبعي أضواء السيارة الأمامية على مسافة قريبة.",
+      "عادةً تُستخدم الأنوار المنخفضة والضباب المناسبة عند الحاجة، مع الرجوع لتعليمات المركبة والتنظيم؛ العالي قد يسبب انعكاسًا مزعجًا.",
+      "إذا تعذرت الرؤية اللازمة للاستمرار بأمان، ابحثي عن موضع توقف نظامي بعيد عن حركة السير قدر الإمكان."
+    ],
+    "example": "أنت على طريق بدأ فيه الغبار يغطي العلامات الأرضية. لا تحاولي تجاوز سيارة بطيئة رغم أنك لا ترين ما وراءها بوضوح؛ قللي السرعة وأجلي المناورة.",
+    "errors": [
+      "استخدام الضوء العالي ظنًا أنه يحسّن الرؤية دائمًا داخل الضباب.",
+      "التوقف المفاجئ داخل مسار السير دون ضرورة أو دون تقييم لسلامة موضع التوقف."
+    ],
+    "prompt": "ما العلاقة بين مدى الرؤية والسرعة المختارة في الضباب؟",
+    "answer": "ينبغي أن تسمح السرعة بالتوقف داخل المسافة التي ترينها بصورة كافية، ولذلك يقلل ضعف الرؤية السرعة الآمنة المتاحة عادة.",
+    "homework": "اكتبي مقارنة بين المطر والغبار والضباب: كيف تختلف المشكلة البصرية؟ وما السلوك الوقائي المشترك؟"
+  },
+  {
+    "id": 39,
+    "foundation": "القيادة الليلية تحتاج توزيع الانتباه بين الطريق والعلامات والمشاة والأضواء القادمة من المركبات. الأنوار المنخفضة والعالية وأنوار الضباب ليست أسماء لسطوع مختلف فقط؛ لكل نوع وظيفة وحدود استخدام حسب الرؤية والتنظيم.",
+    "why": "قد يسبب النور العالي إبهارًا للسائق المقابل أو الذي أمامك عبر المرايا، ويقلل قدرته على رؤية الطريق. كذلك قد تكون الملابس الداكنة للمشاة صعبة الرؤية في الأماكن ذات الإضاءة الضعيفة.",
+    "steps": [
+      "راجعي وظيفة أنوار الموضع والمنخفض والعالي والإشارات وأنوار الضباب وفق دليل السيارة.",
+      "استخدمي إنارة مناسبة للطريق، وخففي إلى المنخفض عندما قد يسبب العالي إبهارًا لمستخدم آخر.",
+      "راقبي جوانب الطريق ومسار المشاة أكثر في الأماكن غير المضاءة.",
+      "إذا تعرضتِ لإبهار شديد، تجنبي النظر المباشر إلى المصدر وركزي على المحافظة على مسارك والتحكم الآمن."
+    ],
+    "example": "تسيرين في طريق مظلم مستخدمة النور العالي، وظهرت مركبة مقابلة. الانتقال إلى النور المنخفض في وقت مناسب يحمي قدرة السائقين الاثنين على الرؤية.",
+    "errors": [
+      "نسيان تغيير النور العالي عند الاقتراب من المركبات.",
+      "الاعتماد على الأنوار وحدها مع سرعة أكبر من مدى الرؤية المتاح."
+    ],
+    "prompt": "لماذا لا نستخدم النور العالي دائمًا لمجرد أن الطريق مظلم؟",
+    "answer": "لأنه قد يبهر السائقين الآخرين، كما أن فائدته تختلف حسب الظروف؛ يجب اختيار نوع الإنارة الملائم دون تعريض الآخرين للخطر.",
+    "homework": "حددي من دليل المتدربة رموز الإنارة الرئيسة، ثم قارنيها بلوحة سيارة أكورد عند معرفة سنة الموديل."
+  },
+  {
+    "id": 40,
+    "foundation": "عطل السيارة على الطريق قد يحدث من إطار أو محرك أو نظام كهربائي أو مؤشر حرارة أو غير ذلك. التصرف الأول هو المحافظة على السيطرة وتقييم أين يمكن التوقف بأمان، لا محاولة تشخيص العطل بينما المركبة تتحرك.",
+    "why": "التوقف في مسار سريع أو النزول إلى جانب حركة المرور قد يعرضك لخطر أكبر من العطل نفسه. لذلك تعتمد الأولويات على المكان وحركة المركبات والرؤية ونوع التحذير.",
+    "steps": [
+      "إذا ظهر تحذير مهم أو فقدت المركبة أداءها، حافظي على الانتباه للمسار وابحثي عن أقرب موضع توقف آمن حسب الحالة.",
+      "استخدمي التحذير الرباعي وفق الحاجة والتنظيم لتنبيه المركبات الأخرى.",
+      "بعد التوقف قيّمي سلامة البقاء داخل المركبة أو الانتقال إلى مكان أكثر أمانًا بحسب موقعها وحركة المرور.",
+      "اطلبي المساعدة المناسبة ولا تعملي على إصلاح خطر في جانب طريق سريع أو عند حركة مركبات قريبة."
+    ],
+    "example": "تعطلت مركبتك قرب منعطف مع رؤية محدودة. لا تندفعي لوضع مثلث تحذير إذا كان ذلك يستلزم دخول مسار خطير؛ سلامة الأشخاص أولًا وطلب المساعدة جزء من القرار.",
+    "errors": [
+      "النزول مباشرةً من جانب مواجه لحركة المركبات دون تقييم الخطر.",
+      "مواصلة الرحلة مع تحذير خطير للمحرك دون الرجوع لتعليمات الشركة."
+    ],
+    "prompt": "ما أولويتك عند تعطل السيارة في مكان يمر فيه المرور السريع قريبًا جدًا؟",
+    "answer": "تقييم سلامة الأشخاص وموقع المركبة ومنع زيادة الخطر وطلب المساعدة المناسبة، بدل محاولة الإصلاح أو وضع تحذيرات بطريقة تعرضك للحوادث.",
+    "homework": "اكتبي بطاقة طوارئ شخصية تضم: موقع التوقف الآمن، التحذير، طلب المساعدة، وما الذي يجب تجنب فعله."
+  },
+  {
+    "id": 41,
+    "foundation": "تجمع لوحة عدادات هوندا أكورد بين رسائل تشغيل وتنبيهات أنظمة القيادة والتحذيرات الفنية. قد تتغير الرموز والقوائم بين أكورد قديمة وحديثة، أو بين فئة لديها Brake Hold وأخرى تختلف تجهيزاتها.",
+    "why": "بعض المؤشرات تخبرك أن نظامًا مُفعّل، بينما أخرى تشير إلى مشكلة تتطلب التوقف أو الفحص. الخلط بينها يؤدي إلى تجاهل تحذير مهم أو القلق من رمز تشغيل طبيعي.",
+    "steps": [
+      "ابدئي بالتحذيرات العامة المعروفة: الزيت والبطارية والفرامل وحرارة المحرك وضغط الإطارات.",
+      "ابحثي عن اسم الرمز ووظيفته في دليل مالك هوندا أكورد المطابق للسنة والفئة.",
+      "ميزي بين لمبة تظهر للحظات عند التشغيل بوصفها فحصًا وبين رمز يستمر أو يظهر أثناء القيادة.",
+      "لا تجربي إطفاء رمز إنذار بمسح بيانات أو تغيير إعدادات عشوائية؛ اتبعي دليل المالك أو فحصًا مختصًا."
+    ],
+    "example": "ظهرت أيقونة تحذير ضغط زيت المحرك أثناء القيادة. لا تفسريها بأنها مجرد موعد تغيير الزيت؛ توقفِي في مكان آمن واتّبعي ما يحدده دليل الموديل عن التحذير.",
+    "errors": [
+      "نسخ صورة لوحة عدادات سيارة أخرى والاعتماد عليها لفهم كل الرموز.",
+      "اعتبار وجود نظام مساعد للفرملة دليلًا على أنه يعمل في جميع السرعات والظروف."
+    ],
+    "prompt": "لماذا نحتاج سنة الموديل والفئة عند شرح لوحة قيادة هوندا أكورد؟",
+    "answer": "لأن تصميم اللوحة والرموز ونوعية أنظمة المساعدة وتجهيزات السيارة يختلف عبر الأجيال والفئات، ولا يجوز اختلاق تفاصيل زر أو رمز غير مؤكد.",
+    "homework": "اكتبي أسئلة نحتاج الإجابة عنها من دليل سيارتك: السنة، الفئة، نوع فرامل التوقف، وجود Brake Hold ومكان دليل التحذيرات."
+  },
+  {
+    "id": 42,
+    "foundation": "الحادث المروري قد يكون بسيطًا في الأضرار أو يتضمن إصابات تحتاج استجابة عاجلة. عند حدوثه، الأهم تقييم سلامة الأشخاص والموقع وطلب الجهات المختصة، مع عدم عرقلة أو تعريض نفسك والمصابين لخطر إضافي.",
+    "why": "تختلف إجراءات البلاغ بحسب وجود إصابات أو أطراف أو نوع الضرر والموقع الجغرافي؛ لذلك لا يكفي حفظ رقم واحد دون معرفة الجهة والخدمة التي تحتاجينها. ابحثي في المصادر الحكومية الحالية عن رقم الطوارئ المناسب لمنطقتك.",
+    "steps": [
+      "افحصي من مكان آمن هل توجد إصابات أو خطر مباشر مثل حريق أو حركة مرور سريعة.",
+      "اطلبي خدمة الطوارئ المناسبة واذكري الموقع وطبيعة الحادث وعدد المصابين إن عُرف.",
+      "لا تحركي مصابًا حركة غير لازمة إلا إذا اقتضت سلامته المباشرة ذلك، واتّبعي تعليمات مختصي الطوارئ.",
+      "للحوادث البسيطة دون إصابات اتّبعي إجراءات الإبلاغ المعتمدة ومطالب الجهة المختصة ولا تنشري بيانات الآخرين."
+    ],
+    "example": "وقع حادث أمامك وتوجد إصابة واضحة. الأولوية ليست تصوير السيارات لأجل التأمين، بل طلب المساعدة الإسعافية وحماية المكان دون تعريض نفسك للخطر.",
+    "errors": [
+      "الانتظار طويلًا لتوثيق الضرر بينما توجد إصابة عاجلة.",
+      "حفظ رقم من تجميع قديم دون التأكد من تغطيته منطقتك ونوع الحالة."
+    ],
+    "prompt": "لو حدث حادث وفيه إصابة، هل تنتظرين تسوية التأمين قبل طلب الإسعاف؟",
+    "answer": "لا. سلامة المصابين وطلب الطوارئ المناسبة يتقدمان على الإجراءات الإدارية والتأمينية.",
+    "homework": "استخدمي موقع جهة طوارئ سعودية رسميًا لتدوين أرقام وخدمات مناسبة لمنطقتك، مع ذكر المصدر وتاريخ التحقق في دفتر الدرس."
+  },
+  {
+    "id": 43,
+    "foundation": "المراجعة الشاملة للإشارات تهدف إلى ربط شكل العلامة بما يتطلبه التصرف الفعلي. قد تتشابه ألوان بعض اللوحات، لكن الفرق بين تحذير وتنظيم وإرشاد يظهر من الرمز والسياق.",
+    "why": "الحفظ بالصور وحده يجعل الإجابة أصعب عندما تتغير زاوية الرسم أو صياغة السؤال. الأفضل أن تسترجعي المعنى ثم تختاري التصرف المناسب في موقف جديد.",
+    "steps": [
+      "صنفي الإشارة قبل قراءة الخيارات: تحذيرية أو تنظيمية أو إرشادية أو مؤقتة أو علامة أرضية.",
+      "اشرحي ماذا تعني اللوحة بلغة بسيطة لا بقراءة عنوانها فقط.",
+      "اختاري كيف تتصرفين عند رؤيتها في موقف طريق فعلي.",
+      "ارجعي إلى بطاقات أخطائك وحاولي شرح سبب الإجابة الصحيحة والخيارات الخاطئة."
+    ],
+    "example": "لديك علامة تحذيرية لوجود إشارات ضوئية قادمة وأخرى فيها الضوء الأحمر نفسه. رغم وجود رسم ضوء في الحالتين فإن الأولى تنبيه مسبق والثانية تنظيم لحظي عند التقاطع.",
+    "errors": [
+      "تفسير علامة من لونها فقط دون الرمز.",
+      "الحفظ السريع لجميع الصور ثم تجاهل اللوحات التي تتشابه في تفاصيل صغيرة."
+    ],
+    "prompt": "ماذا تضيفين إلى بطاقة الإشارة حتى تصبح أداة فهم لا حفظ؟",
+    "answer": "تضيفين معنى الإشارة، والتصرف المطلوب، وخطأ شائعًا، وموقفًا حقيقيًا يُظهر سبب وجودها.",
+    "homework": "راجعي 20 إشارة من المكتبة وسجلي أي علامة أخطأت فيها مرتين. أعيديها بعد يوم بدل إعادة جميع البطاقات."
+  },
+  {
+    "id": 44,
+    "foundation": "اختبارات الأولوية تجمع أكثر من مهارة: قراءة تنظيم التقاطع، ومعرفة موضع المركبات، وتوقع اتجاهاتها، وتحديد نقاط التعارض، ثم اختيار الترتيب الآمن للحركة. الدوار حالة من التقاطع وليست موضوعًا منفصلًا عن التفكير في الأولوية.",
+    "why": "من السهل حفظ صورة تظهر سيارة حمراء على اليمين، لكن إذا تغيرت اللوحة أو اتجاه السيارة تغيرت الإجابة. لذلك لا تستخدمي اللون أو حجم المركبة بوصفه دليلًا على الأولوية.",
+    "steps": [
+      "اكتبي نوع التنظيم في أعلى الرسم: إشارة ضوئية أو لوحة أو رجل مرور أو غير منظم.",
+      "حددي الأسهم التي تبين اتجاه كل مركبة وخطوط مساراتها.",
+      "تعرفي على موقع التعارض: أين قد تلتقي المركبتان إذا تحركتا معًا؟",
+      "حددي القرار المناسب واستدلّي بوسيلة التنظيم؛ أعيدي تحليل السؤال إذا ظهرت إشارة إضافية."
+    ],
+    "example": "ثلاث سيارات عند تقاطع، إحداها تواجه لوحة قف والأخرى تريد انعطافًا. لا تختاري بحسب لون السيارات؛ ابدئي باللوحة ثم ادرسي التعارض.",
+    "errors": [
+      "استخدام إجابة محفوظة دون تحليل صورة جديدة.",
+      "الافتراض أن مركبة تريد الخروج من دوار تحصل تلقائيًا على الأولوية على جميع المسارات حولها."
+    ],
+    "prompt": "ما الخطوات الأربع قبل إعطاء إجابة لمسألة أولوية؟",
+    "answer": "تحديد التنظيم، ثم اتجاهات المركبات، ثم نقاط التعارض، ثم تطبيق القاعدة المناسبة مع الانتباه للسلامة.",
+    "homework": "حلي خمس مسائل متنوعة؛ بعد كل واحدة اكتبي تفسيرًا من جملة كاملة بدل وضع علامة على الاختيار فقط."
+  },
+  {
+    "id": 45,
+    "foundation": "تجمع مواقف السرعة والمخاطر والطوارئ بين ملاحظة الخطر المبكر وتقدير سرعة آمنة ومسافة مناسبة وإجراء يقلل الضرر عند حدوث موقف غير متوقع.",
+    "why": "في الطريق الحقيقي قد تظهر عدة ظروف مرة واحدة: مطر، زحام، ضعف رؤية، ومركبة متعطلة. القرار الجيد لا يعتمد على قاعدة واحدة بل ترتيب الأولويات وفق شدة الخطر وموقع المركبة.",
+    "steps": [
+      "حددي الخطر الرئيسي في السيناريو وما الخطر الثانوي.",
+      "اسألي هل يمكن تخفيف الخطر بتغيير السرعة أو توسيع المسافة قبل حدوث طارئ؟",
+      "في حالة تعطل أو حادث، قدمي سلامة الأشخاص والتوقف المناسب وطلب المساعدة.",
+      "بعد حل السيناريو اشرحي لماذا قد تكون الخيارات الأخرى أخطر حتى لو بدت أسرع."
+    ],
+    "example": "أثناء مطر وغبار خفيف رأيتِ أضواء تحذير لمركبة متوقفة أمامك على الكتف. الأفضل توسيع الانتباه وتخفيف السرعة وفق الظروف وعدم الانتقال المفاجئ لمسار آخر.",
+    "errors": [
+      "التعامل مع الطارئ على أنه اختبار في السرعة ورد الفعل لا في التخطيط المبكر.",
+      "استمرار القيادة لأن لوحة السرعة لم تتغير رغم أن الرؤية تدهورت."
+    ],
+    "prompt": "كيف تتخذين القرار عندما يجتمع طريق مبتل مع حادث أمامك؟",
+    "answer": "تخفيف السرعة وزيادة مجال الأمان وفق الظروف، ومراقبة المحيط، ثم الالتزام بإرشادات الطوارئ والتنظيم عند الاقتراب؛ سلامة الأشخاص أولًا.",
+    "homework": "اختاري موقفين من بنك الأسئلة، وصنفي إجابتك إلى «وقاية قبل الخطر» و«تصرف بعد وقوعه»."
+  },
+  {
+    "id": 46,
+    "foundation": "إصدار رخصة القيادة في السعودية إجراء مستقل عن مجرد حجز موعد أو قراءة المنهج النظري. يشمل استيفاء الشروط المعمول بها، والتسجيل أو حجز التدريب وفق خدمة الجهة المختصة، واجتياز التقييمات والمتطلبات، وسداد الرسوم المقررة عند الحاجة.",
+    "why": "التفاصيل الإجرائية مثل المواعيد والمتطلبات والرسوم يمكن أن تتغير؛ لذلك يُستخدم دليل المتدربة القديم للتعرف على الفكرة العامة فقط، بينما يجب مراجعة أبشر والمرور والمدرسة المعتمدة للتحقق من الإجراء الحالي.",
+    "steps": [
+      "ادخلي إلى منصة أبشر أو الجهة الحكومية المختصة للتحقق من خدمة الرخص ومتطلباتها الحالية.",
+      "ميزي بين موعد مدرسة القيادة وبرنامج التدريب ومرحلة الاختبارات وإصدار الرخصة.",
+      "احتفظي بقائمة وثائق وخطوات مستمدة من التعليمات الرسمية وقت الحجز لا من تجميع متداول.",
+      "لا تفترضي أن مدة 16 أسبوعًا في مِسار شرط رسمي للحصول على الرخصة؛ هي خطة تعلم ذاتي مرنة."
+    ],
+    "example": "حجزتِ موعدًا إلكترونيًا في مدرسة قيادة. هذا يعني أنك حصلتِ على خطوة إجرائية، ولا يعني صدور الرخصة أو أن الاختبار النظري أصبح منجزًا.",
+    "errors": [
+      "نقل رسوم أو ساعات قديمة من مدرسة أخرى واعتبارها موحدة.",
+      "الخلط بين التقدم في موقع مِسار وبين اجتياز تقييم مدرسة القيادة."
+    ],
+    "prompt": "هل يساوي تأكيد موعد مدرسة القيادة امتلاك رخصة سارية؟",
+    "answer": "لا. الحجز خطوة ضمن الإجراءات، ويجب استيفاء المتطلبات والتدريب والاختبارات وإصدار الرخصة وفق الجهات المختصة.",
+    "homework": "راجعي خدمة الرخصة في أبشر وحددي حالتك: لم أبدأ، حجزت، بدأت تدريبًا، أم أكملت. دوّني المستند الرسمي وتاريخ قراءته."
+  },
+  {
+    "id": 47,
+    "foundation": "تختلف برامج التدريب في مدارس القيادة بحسب نتيجة التقييم ومستوى المتدربة وسياسة المدرسة. قد تنشر بعض المدارس مسارات بعدد ساعات مختلف للمبتدئات ومن لديهن خبرة، مع قواعد لإعادة الاختبارات أو إعادة جدولة المواعيد.",
+    "why": "لا يجوز تحويل عدد أخطاء نموذج من الإنترنت إلى قرار مؤكد لعدد ساعات التدريب؛ هذا يحدده تقييم المدرسة وإجراءاتها. وملخصات مهارات مثل POM وMSPSL مفيدة لفهم العناصر التي تلاحظها المدربة، لكنها ليست معيارًا موحدًا لجميع المدارس.",
+    "steps": [
+      "ميزي بين تقييم المستوى قبل البرنامج وبين الاختبار النظري والاختبار العملي.",
+      "افتحي صفحة المدرسة التي تختارينها وسجلي ساعات البرامج ورسومها من مصدرها المباشر بتاريخ اليوم.",
+      "راجعي تعليمات الحضور وإعادة الاختبار والإلغاء والتعديل قبل الحجز.",
+      "إذا التحقتِ بالمدرسة، اكتبي ما الذي أنجزتِه مع المدربة وما الذي يحتاج تكرارًا ولا تعتمدي تقييمك الذاتي وحده."
+    ],
+    "example": "تقول تجميعة إن عددًا محددًا من الأخطاء يعني برنامجًا بعينه. لا تتعاملي مع هذا كقرار رسمي؛ قد تعتمد المدرسة أسلوبًا مختلفًا لتقييم مستواك.",
+    "errors": [
+      "الاعتقاد أن المتدربة تختار دائمًا برنامج الساعات الأقل دون تقييم.",
+      "الخلط بين رسوم تدريب مدرسة ورسوم إصدار الرخصة الحكومية."
+    ],
+    "prompt": "من يحدد عادة مسار التدريب المناسب لمستواك في المدرسة؟",
+    "answer": "المدرسة المعتمدة وفق نظام تقييمها وتعليماتها، ولا تُستنتج النتيجة من نموذج غير رسمي موجود على الإنترنت.",
+    "homework": "اختاري مدرسة محتملة، وقارني صفحة برامجها الرسمية ببيانات تجميعاتك؛ علّمي أي فرق يحتاج تحققًا."
+  },
+  {
+    "id": 48,
+    "foundation": "الاستعداد للاختبار النظري لا يعني حفظ إجابات مجموعة واحدة. الأهم القدرة على تفسير الإشارات واتخاذ القرار في التقاطعات والمسارات والسرعة والحالات الخاصة، ثم التعرف إلى سبب الخطأ ومعالجته قبل الاختبار.",
+    "why": "مِسار أداة مذاكرة شخصية وليست اختبارًا حكوميًا رسميًا. حتى بعد تحقيق درجة عالية فيه، يجب التأكد من متطلبات المدرسة وموادها، ولا تُعد نتيجة الموقع تصريحًا للقيادة.",
+    "steps": [
+      "راجعي موضوعات الأخطاء المتكررة قبل حل اختبار شامل جديد.",
+      "حلي اختبارًا متنوعًا دون النظر إلى التفسيرات، ثم صنفي كل خطأ حسب المفهوم.",
+      "عودي إلى الدرس ومرجعه عند الحاجة، واكتبي سبب الإجابة الصحيحة بكلماتك.",
+      "استعدي للمرحلة التالية عمليًا عبر مدرسة معتمدة، مع الاحتفاظ بالمراجعات النظرية كمرجع مستمر بعد الحصول على الرخصة."
+    ],
+    "example": "حصلتِ على درجة مرتفعة في أسئلة الإشارات لكن تتكرر أخطاؤك في حق الأولوية عند التقاطعات. لا يكفي إعادة نفس الأسئلة سهلة الحفظ؛ تحتاجين مواقف مختلفة توضح موضع التعارض وتنظيمه.",
+    "errors": [
+      "اعتبار إنهاء جميع دروس الموقع إثباتًا للقدرة على قيادة مركبة في الطريق.",
+      "نسخ إجابات تجميعات قديمة دون فحص صحة القاعدة التي تعتمد عليها."
+    ],
+    "prompt": "كيف تعرفين أنك فهمتِ سؤال الأولوية ولم تحفظي شكله فقط؟",
+    "answer": "يمكنك تفسير القاعدة وتحليل صورة جديدة مع تغيير اتجاهات المركبات أو اللوحات، وتحديد سبب اختيارك والبدائل الخاطئة.",
+    "homework": "اكتبي خطة مراجعة أخيرة: أصعب ثلاثة موضوعات، عدد اختباراتك المستقلة، ومتى ستراجعين المصدر الرسمي للمدرسة والرخصة."
+  }
+]);
+
 (() => {
 'use strict';
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
@@ -8935,6 +9971,15 @@ const route=()=>{let v=decodeURI(location.hash.slice(1));return v.startsWith('/'
 const weekForLesson=n=>Math.ceil(n/3);
 const getLesson=n=>lessons[n-1];
 const getQuestion=n=>questions[n-1];
+const questionReferenceNote=n=>{
+ const lessonId='LES-'+String(n).padStart(3,'0');
+ const map=(COURSE.lesson_reading_map||[]).find(x=>x.lesson_id===lessonId);
+ const ref=map?.resources?.[0];
+ if(!ref)return '';
+ const page=ref.printed_page_start||ref.pdf_page_start;
+ return '<small class="feedback-source">مرجع للمراجعة: '+ESC(ref.source_title||'مرجع الدرس')+(page?' · ص '+page:'')+'<span> · ربط موضوعي للدرس، وليس اعتمادًا رسميًا للسؤال.</span></small>';
+};
+const questionReferenceByQuestion=q=>questionReferenceNote(Number(String(q?.lesson_id||'').split('-').pop()));
 const weeklyDone=w=>lessons.filter(l=>l.week===w&&isDone(l.order)).length;
 const progress=()=>Math.round(completed().size/48*100);
 const nextLesson=()=>lessons.find(l=>!isDone(l.order))||lessons[47];
@@ -9081,7 +10126,7 @@ function lessonJourney(l,q){
  ];
  return '<section class="lesson-journey" aria-label="خطوات المذاكرة"><div class="lesson-journey-head"><div><span class="bento-overline">FOCUS MODE / خطوة بخطوة</span><h2>مسار المذاكرة لهذا الدرس</h2><p>ابدئي بالشرح، ثم التدريب، واختبري فهمك. لا يلزم إكمالها كلها في جلسة واحدة.</p></div><div class="lesson-journey-score"><strong>'+count+' / '+total+'</strong><small>خطوات متابعة</small></div></div><div class="lesson-journey-track" role="progressbar" aria-label="متابعة الدرس" aria-valuenow="'+count+'" aria-valuemin="0" aria-valuemax="'+total+'"><span style="width:'+progress+'%"></span></div><div class="lesson-journey-steps">'+steps.map(x=>'<button type="button" class="lesson-journey-step '+(x.done?'done ':'')+(x.unavailable?'unavailable':'')+'" data-action="scroll" data-target="'+x.target+'"><span class="lesson-journey-stepnum">'+(x.done?'✓':x.num)+'</span><span><strong>'+x.title+'</strong><small>'+x.desc+'</small></span></button>').join('')+'</div><div class="lesson-journey-actions"><button type="button" class="btn '+(read?'btn-muted':'btn-primary')+'" data-action="study-read" data-lesson="'+ESC(l.id)+'">'+(read?'✓ تم تسجيل قراءة الدرس · إلغاء':'✓ قرأت الشرح وفهمت فكرته')+'</button>'+(mediaAvailable?'<button type="button" class="btn '+(seen?'btn-muted':'btn-outline')+'" data-action="study-seen" data-lesson="'+ESC(l.id)+'">'+(seen?'✓ اطلعت على الشرح المرئي · إلغاء':'اطلعت على الرسم أو المقطع')+'</button>':'<span class="lesson-video-gap">الفيديو غير متوفر لهذا الدرس حاليًا؛ لا يُحسب ضمن التقدم.</span>')+'</div></section>';
 }
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span><span class="chip tiny red" title="مصدر تدريبي يحتاج تدقيقًا قبل اعتماده للاختبار">قيد التدقيق</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarGuides.render(l)}${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="lesson-deep-dive">الشرح خطوة بخطوة</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span><span class="chip tiny red" title="مصدر تدريبي يحتاج تدقيقًا قبل اعتماده للاختبار">قيد التدقيق</span></div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarGuides.render(l)}${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong><span class="feedback-reason">${ESC(q.rationale)}</span>${questionReferenceNote(n)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section><section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="lesson-deep-dive">الشرح خطوة بخطوة</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button><button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى</h3><span class="chip tiny red">مسودة تعليمية</span><p style="margin-top:10px">تمت صياغة الشرح للنسخة التجريبية، ويحتاج تدقيقًا قبل اعتباره محتوى نهائيًا.</p></section></aside></div>`}
 function flashcardsPage(){
  const cards=[
  ['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.','SG-01'],
@@ -9132,7 +10177,7 @@ function notesPage(){const entries=Object.keys(state.notes).map(Number).filter(n
 function quizPage(){const options=weeks.map(w=>`<option value="${w.number}">${w.number} — ${ESC(w.title)}</option>`).join(''); const wrong=Object.entries(state.answers).filter(([id,v])=>{const q=questions.find(q=>q.id===id);return q&&q.correct_option_index!==v}).length;return `<div class="eyebrow">KNOWLEDGE CHECK</div><h1 class="page-title">مركز الاختبارات</h1><p class="sub">اختاري أسبوعًا لتختبري ثلاثة مفاهيم، أو خوضي اختبارًا شاملًا من 12 سؤالًا متنوعة من المنهج. جميع الدرجات للتدريب الشخصي فقط.</p><div class="quiz-controls"><button class="btn btn-primary" type="button" data-action="start-quiz" data-week="all">اختبار شامل · 12 سؤالًا ${icon('arrow')}</button><button class="btn btn-muted" type="button" data-action="start-quiz" data-week="wrong" ${wrong===0?'disabled':''}>راجعي الأخطاء (${wrong})</button><select class="select" id="choose-week" aria-label="اختيار أسبوع للاختبار"><option value="">اختبار أسبوع معين...</option>${options}</select></div><div id="quiz-stage">${renderQuizStage()}</div><div class="section-head"><div><h2>مراجعة الأسئلة على مستوى الدروس</h2><p>كل درس يحتوي سؤالًا خاصًا به وتفسيرًا بعد الإجابة.</p></div><a href="#/weeks">خطة الدروس ←</a></div>${footerNote()}`}
 function renderQuizStage(){if(!session){let hist=state.history.slice(-4).reverse();return `<div class="card"><div class="flexline"><h3>ابدئي اختبارك التالي</h3><span class="chip blue">${icon('quiz')} تمهيد</span></div><p class="sub" style="margin-top:10px">إذا ظهرت لك إجابة خطأ، سترين السبب فورًا. والاختبار الأسبوعي من ثلاث أسئلة، بينما الاختبار الشامل يختار 12 سؤالًا من الأسابيع المختلفة.</p>${hist.length?`<div class="section-head"><h2>المحاولات الأخيرة</h2></div>${hist.map(h=>`<div class="lesson-row"><span class="lesson-no">${h.score}/${h.total}</span><span class="lesson-info"><b>${ESC(h.label)}</b><small>${ESC(h.date)}</small></span></div>`).join('')}`:''}</div>`}
 if(session.index>=session.ids.length){const score=session.ids.filter(id=>session.answers[id]===questions.find(q=>q.id===id).correct_option_index).length;const total=session.ids.length;return `<div class="test-results"><div class="eyebrow">RESULTS / النتيجة</div><div class="score">${score}<span style="font-size:30px;color:var(--fog)"> / ${total}</span></div><h2>${score===total?'أبدعتي! كل الإجابات صحيحة.':score>=total*.7?'شغل ممتاز، وراجعي بعض النقاط.':'المهم تعرفين سبب الخطأ وتراجعينه.'}</h2><p>هذه درجة تدريبية داخل الموقع، وليست درجة نجاح رسمية للرخصة.</p><div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px"><button class="btn btn-primary" type="button" data-action="quiz-restart">إعادة الاختبار</button><button class="btn btn-outline" type="button" data-action="quiz-end">العودة للمركز</button></div></div>`}
-const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong> ${ESC(q.rationale)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
+const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answers[q.id], answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="quiz-layout"><div class="test-card"><div class="flexline"><span class="test-index">سؤال ${p2(session.index+1)} من ${p2(session.ids.length)}</span><span class="chip tiny blue">الأسبوع ${q.week}</span></div><div class="microbar" style="margin:18px 0 9px"><span style="width:${session.index/session.ids.length*100}%"></span></div><h2>${ESC(q.question)}</h2><div class="options">${q.options.map((t,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="test-answer" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(t)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'ممتاز، صحيح.':'الإجابة الصحيحة موضحة بالأخضر.'}</strong><span class="feedback-reason">${ESC(q.rationale)}</span>${questionReferenceByQuestion(q)}</div>`:''}<div class="lesson-footer"><span class="note-preview">اسألي نفسك: ليش هذا الخيار أفضل من البقية؟</span><button type="button" class="btn btn-primary" data-action="quiz-next" ${answered?'':'disabled'}>${session.index+1===session.ids.length?'اعرضي النتيجة':'السؤال التالي'} ${icon('arrow')}</button></div></div><div class="aside-card"><h3>تفاصيل الاختبار</h3><p>${ESC(session.label)}</p><div class="microbar"><span style="width:${Math.round(session.index/session.ids.length*100)}%"></span></div><p>${session.ids.length} سؤالًا · يصحح كل سؤال عند الإجابة</p><button type="button" class="btn btn-outline" data-action="quiz-end">إنهاء الجلسة</button></div></div>`}
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="card settings-card"><h3>خط ثمانية في مِسار</h3><p>ضبطنا تصميم الموقع لاستخدام «ثمانية سانس» عند تثبيته على جهازك. ترخيص ثمانية لا يسمح برفع ملفات الخط إلى GitHub أو توزيعه للتنزيل من الموقع؛ إذا لم يكن الخط مثبتًا، سيظهر خط احتياطي واضح. ولا تُرسل ملفات الخط أو ملاحظاتك إلى خادم خارجي.</p><p><a class="source-link" href="https://font.thmanyah.com/" target="_blank" rel="noopener noreferrer">تحميل الخط من المصدر الرسمي وتثبيته على جهازك ↗</a> <a class="source-link" href="https://font.thmanyah.com/licenses" target="_blank" rel="noopener noreferrer">قراءة الترخيص ↗</a></p></section><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>تثبيت مِسار على جهازك والعمل دون إنترنت</h3><p>افتحي الموقع المنشور على Chrome أو Edge، ثم اختاري «تثبيت التطبيق» من قائمة المتصفح إذا ظهرت لك. بعد الزيارة الأولى والتحميل الناجح يمكن فتح الدروس الأساسية دون اتصال. الفيديوهات وملفات PDF الخارجية تحتاج إنترنت، أما الملفات التي أضفتِها للمتصفح فتظل محلية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="storage-health">فحص حالة الحفظ والمساحة</button></div><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا مع 48 تدريب تفكير مستقلًا؛ النصوص ما زالت تحتاج مراجعة المصدر المعتمد.</div><div class="point"><i>2</i>48 سؤال درس، و36 سؤال مراجعة إضافيًا، ومحاكاة اختبار تدريبي غير رسمي، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>المذاكرة والملاحظات ومحاولات المراجعة تُحفظ في IndexedDB على هذا المتصفح؛ PDF والملفات الخاصة لا تدخل ضمن النسخة الاحتياطية JSON ولا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
 function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/review')return ['مراجعتي',window.MasarCoach.reviewPage(COURSE,state)];if(r==='/mock-exam')return ['محاكاة الاختبار',window.MasarCoach.pageMock(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['الرسوم التفاعلية',visualLibraryPage()];if(r==='/videos')return ['مقاطع القيادة',videoGalleryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}

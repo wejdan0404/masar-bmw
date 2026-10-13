@@ -61,7 +61,7 @@ function sourceSummaryHTML(course,id,from,to){
  }).filter(function(x){return !!x.lesson});
  var cards=hits.map(function(x){
   var sc=x.lesson.study_content||{},pts=(sc.key_points||[]).slice(0,4);
-  return '<article class="source-summary-lesson"><div><span>الدرس '+String(x.lesson.order).padStart(2,'0')+'</span><strong>'+E(x.lesson.title)+'</strong></div>'+(pts.length?'<ul>'+pts.map(function(p){return '<li>'+E(p)+'</li>'}).join('')+'</ul>':'')+'<a href="#/lesson/'+x.lesson.order+'">فتح الدرس الكامل ←</a></article>';
+  return '<article class="source-summary-lesson"><div><span>الدرس '+String(x.lesson.order).padStart(2,'0')+'</span><strong>'+E(x.lesson.title)+'</strong></div>'+(sc.introduction?'<p>'+E(sc.introduction)+'</p>':'')+(pts.length?'<ul>'+pts.map(function(p){return '<li>'+E(p)+'</li>'}).join('')+'</ul>':'')+'<a href="#/lesson/'+x.lesson.order+'">فتح الدرس الكامل ←</a></article>';
  }).join('');
  return '<section class="source-page-summary"><div class="source-page-summary-head"><span class="chip tiny blue">'+E(doc&&doc.pages?'PDF ص '+a+(b!==a?'–'+b:''):'مرجع بصري')+'</span><h3>'+E(doc?doc.title:id)+'</h3></div><p>هذا عرض مِسار للمحتوى المرتبط بهذا الموضع، وليس صورة أو نسخًا حرفيًا للصفحة الأصلية.</p><div class="source-summary-lessons">'+(cards||'<div class="empty">لا يوجد درس مربوط بهذه الصفحة بعد.</div>')+'</div></section>';
 }
@@ -234,9 +234,10 @@ function click(action,el,ctx){
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
  if(action==='hub-open-page'||action==='hub-source-summary'){
   var sid=el.dataset.source,from=Number(el.dataset.page||el.dataset.from)||1,to=Number(el.dataset.pageEnd||el.dataset.to)||from;
-  var area=el.closest('.source-chapter,.hub-source,.source-topic-index')?.querySelector('.source-inline-preview');
-  if(!area){var card=el.closest('.hub-source');area=card&&card.querySelector('.source-inline-preview')}
-  if(!area){ctx.toast('تعذر فتح ملخص الصفحة هنا');return true}
+  var region=el.closest('.source-chapter,.hub-source');
+  var area=region&&region.querySelector('[data-source-preview="'+sid+'"]');
+  if(!area&&region)area=region.querySelector('.source-inline-preview')
+  if(!area){ctx.toast('تعذّر تحديد مساحة شرح المرجع');return true}
   area.innerHTML=sourceSummaryHTML(c,sid,from,to);
   area.scrollIntoView({behavior:'smooth',block:'nearest'});
   return true;

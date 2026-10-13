@@ -436,3 +436,17 @@ html[data-theme="light"] .hero-premium .hero-copy h1 span{-webkit-text-fill-colo
  .hero-premium .hero-actions{width:100%}
  .hero-premium .hero-actions .btn{max-width:100%}
 }
+
+
+/* BMW navigation polish — no ornamental frames or competing strokes */
+.sidebar.sidebar-premium .sidebar-nav-group{
+ background:transparent!important;border:0!important;border-bottom:1px solid var(--bmw-border)!important;
+ box-shadow:none!important;border-radius:0!important;padding:0 0 8px!important;margin-bottom:8px!important
+}
+.sidebar.sidebar-premium .sidebar-group-title{background:transparent!important;border:0!important;box-shadow:none!important;padding-inline:10px!important;letter-spacing:0!important}
+.sidebar.sidebar-premium .sidebar-group-links a{box-shadow:none!important;border-radius:9px!important}
+.sidebar.sidebar-premium .sidebar-group-links a:not(.active){border-color:transparent!important}
+.sidebar.sidebar-premium .sidebar-group-links a.active{font-weight:800!important}
+html[data-theme="light"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#e1eaf2!important}
+html[data-theme="dark"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#2b3d50!important}
+.hero-premium .hero-topline .hero-kicker{letter-spacing:0!important}

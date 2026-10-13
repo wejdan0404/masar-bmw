@@ -705,3 +705,86 @@ body{font-size:15px}
 .source-coverage span{display:block;font-size:12px;color:#3b566a;margin-bottom:7px}
 .source-coverage-track{width:100%;height:8px;border-radius:999px;overflow:hidden;background:#d8e5ec}
 .source-coverage-track i{display:block;height:100%;background:#34755e;border-radius:inherit;transition:width .3s ease}
+
+
+/* MASAR v1.4 — Thmanyah-first learning UI + clearer instant feedback
+   Font binaries are NOT hosted. These faces resolve only fonts installed locally. */
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Regular'),local('ThmanyahSans-Regular'),local('thmanyahsans-Regular'),local('Thmanyah Sans');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Medium'),local('ThmanyahSans-Medium'),local('thmanyahsans-Medium');font-style:normal;font-weight:500 600;font-display:swap}
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Bold'),local('ThmanyahSans-Bold'),local('thmanyahsans-Bold');font-style:normal;font-weight:700 800;font-display:swap}
+@font-face{font-family:'Masar Thmanyah';src:local('Thmanyah Sans Black'),local('ThmanyahSans-Black'),local('thmanyahsans-Black');font-style:normal;font-weight:900;font-display:swap}
+:root{
+ --navy:#1f2d36;
+ --steel:#587995;
+ --sky:#7aa3c0;
+ --wine:#4a0711;
+ --crimson:#86152d;
+ --paper:#f5f7f8;
+ --ink:#1f2d36;
+ --muted:#657783;
+ --border:#dbe3e8;
+ --pale:#eaf0f4;
+ --blush:#f7ecef;
+ --success:#276b55;
+ --warning:#9a6728;
+ --surface:#ffffff;
+ --surface-soft:#f0f4f6;
+ --shadow:0 14px 42px rgba(25,45,59,.07);
+}
+body,button,input,textarea,select{
+ font-family:'Masar Thmanyah','Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',Tahoma,sans-serif;
+}
+body{font-size:15.5px;line-height:1.9;background:linear-gradient(180deg,#f8f9fa 0,var(--paper) 22rem)}
+h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masar Thmanyah Sans','thmanyah sans','IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif}
+.page-title{letter-spacing:-.55px}
+.sub{font-size:13.5px;line-height:1.95}
+.lesson-body p,.scenario p{font-size:13.5px;line-height:2.05}
+.card,.lesson-body,.qbox,.test-card,.ref-card,.week-card,.aside-card{border-color:#dce5ea;box-shadow:0 8px 24px rgba(31,45,54,.045)}
+.sidebar-group-title{font-size:11.5px;color:#c1ced6}
+.sidebar-group-title span:first-of-type{font-weight:850}
+.sidebar-group-links a{font-size:12.5px}
+.sidebar-nav-group[open]>.sidebar-group-title{color:#fff}
+.sidebar-nav-group[open]>.sidebar-group-title svg{color:#e1a9b5}
+.sidebar-group-links a{transition:background .18s ease,transform .18s ease,color .18s ease}
+.sidebar-group-links a:hover{transform:translateX(-2px)}
+.option,.hub-choice,.ts-choice,.coach-mock-options button{min-height:48px}
+.feedback{
+ display:grid;
+ grid-template-columns:1fr;
+ gap:4px;
+ border-right:4px solid #4b8b70;
+ padding:13px 15px 12px;
+ font-size:13px;
+ line-height:1.75;
+}
+.feedback.wrong{border-right-color:#b64055}
+.feedback strong{font-size:13px}
+.feedback-reason{display:block;font-size:12.25px;line-height:1.8;color:inherit}
+.feedback-source{display:block;margin-top:5px;padding-top:7px;border-top:1px solid currentColor;opacity:.72;font-size:10.5px;line-height:1.7}
+.feedback-source span{opacity:.8}
+.hub-explain p,.ts-explanation p{font-size:12.25px;line-height:1.85}
+.coach-mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.coach-mode-card{border:1px solid #cfdae1;background:#fff;color:#253b49;border-radius:16px;padding:18px;text-align:right;display:grid;gap:7px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.coach-mode-card strong{font-size:16px}.coach-mode-card span{font-size:12px;color:#657b89;line-height:1.8}
+.coach-mode-card:hover{transform:translateY(-2px);border-color:#8facbf;box-shadow:0 12px 28px rgba(31,45,54,.08)}
+.coach-mode-card.is-learning{background:linear-gradient(145deg,#eef6f3,#fff);border-color:#bdd9cc}
+.coach-mock-mode-pill{display:inline-flex;margin:0 0 12px;padding:7px 11px;border-radius:999px;font-size:11px;font-weight:800}
+.coach-mock-mode-pill.learning{background:#e7f4ee;color:#276b55;border:1px solid #c5ded2}
+.coach-mock-mode-pill.simulation{background:#edf2f5;color:#496779;border:1px solid #d5e1e8}
+.coach-mock-options button.is-correct{border-color:#4b9a78!important;background:#eaf7f1!important;color:#215c47!important}
+.coach-mock-options button.is-wrong{border-color:#c45668!important;background:#fceef1!important;color:#86243a!important}
+.coach-live-feedback{margin-top:13px;border-radius:12px;padding:12px 14px;display:grid;gap:4px;border-right:4px solid #4b8b70;background:#edf7f2;color:#275e4a}
+.coach-live-feedback.wrong{border-right-color:#b64055;background:#fbeff1;color:#85253a}
+.coach-live-feedback strong{font-size:13px}.coach-live-feedback small{font-size:11.5px;line-height:1.8}.coach-live-feedback a{font-size:11px;font-weight:800;color:inherit;margin-top:2px}
+.page{animation:masar-page-in .26s cubic-bezier(.2,.7,.25,1)}
+@keyframes masar-page-in{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:610px){
+ body{font-size:15px}
+ .sub,.lesson-body p,.scenario p{font-size:13px}
+ .coach-mode-grid{grid-template-columns:1fr}
+ .feedback-source{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .page{animation:none}
+ .coach-mode-card,.sidebar-group-links a{transition:none!important;transform:none!important}
+}

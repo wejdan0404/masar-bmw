@@ -2017,6 +2017,40 @@ html[data-theme="light"] .hero.hero-premium .hero-copy h1 span{color:#0066b1!imp
 }
 @media(prefers-reduced-motion:reduce){.hero.hero-premium .hero-bmw-scene,.hero.hero-premium .bmw-hero-photo{animation:none!important;transition:none!important}}
 
+
+
+/* MASAR hero without a car image. User will supply her chosen photo later. */
+.hero.hero-premium{
+ display:flex!important;align-items:center!important;justify-content:flex-start!important;
+ min-height:290px!important;overflow:hidden!important;
+ padding:clamp(28px,4vw,56px)!important;
+ background:radial-gradient(ellipse at 10% 80%,rgba(39,151,228,.2),transparent 44%),linear-gradient(125deg,#101e30,#192f47 72%,#132338)!important;
+ border:1px solid #34516e!important
+}
+.hero.hero-premium:before,.hero.hero-premium:after{display:none!important}
+.hero-premium .hero-copy{
+ width:100%!important;max-width:860px!important;flex:1 1 auto!important;
+ padding:0!important;position:relative;z-index:1;
+}
+.hero-premium .hero-glow{background:radial-gradient(ellipse at 85% 50%,rgba(67,156,220,.14),transparent 55%)!important;opacity:1!important}
+.hero-premium h1{max-width:20ch!important}
+.hero-premium .hero-copy p{max-width:62ch!important}
+html[data-theme="light"] .hero.hero-premium{
+ background:radial-gradient(ellipse at 8% 86%,rgba(62,145,203,.13),transparent 45%),linear-gradient(125deg,#f7fbfe,#e7f3fb 72%,#daeafa)!important;
+ border:1px solid #c2d9ea!important
+}
+html[data-theme="light"] .hero-premium .hero-glow{
+ background:radial-gradient(ellipse at 85% 50%,rgba(20,109,183,.07),transparent 54%)!important
+}
+@media(max-width:900px){
+ .hero.hero-premium{min-height:0!important;padding:clamp(24px,5vw,38px)!important}
+ .hero-premium .hero-copy{max-width:100%!important}
+}
+@media(max-width:610px){
+ .hero.hero-premium{padding:24px 20px!important}
+ .hero-premium h1{font-size:clamp(29px,8vw,38px)!important;max-width:100%!important}
+ .hero-premium .hero-actions{flex-wrap:wrap!important}
+}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -11678,11 +11712,6 @@ function mobileDock(){
  return '<nav class="mobile-dock" aria-label="تنقل سريع">'+items.map(([href,ic,label])=>'<a href="#'+href+'" class="'+(path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':'')+'" '+(path===href?'aria-current="page"':'')+'>'+icon(ic)+'<span>'+ESC(label)+'</span></a>').join('')+'</nav>';
 }
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
-function carArt(){return '<div class="hero-bmw-scene" aria-hidden="true">'
- +'<span class="bmw-scene-glow"></span>'
- +'<svg class="bmw-silhouette" viewBox="0 0 780 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="bmw-car-black" x1="0" x2=".9" y1="0" y2="1"><stop stop-color="#5a6877"/><stop offset=".3" stop-color="#242d37"/><stop offset=".68" stop-color="#111821"/><stop offset="1" stop-color="#05090f"/></linearGradient><linearGradient id="bmw-glass" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#6b869c"/><stop offset=".6" stop-color="#152637"/><stop offset="1" stop-color="#090f16"/></linearGradient></defs><ellipse cx="383" cy="327" rx="328" ry="26" fill="#05080e" opacity=".7"/><path d="M49 282Q47 257 92 244L153 230Q181 222 218 196L288 139Q329 105 400 111Q502 114 575 194Q666 203 718 237Q740 257 730 292L65 298Z" fill="url(#bmw-car-black)" stroke="#4b6479" stroke-width="3"/><path d="M230 193L294 145Q334 122 389 123Q468 128 525 190Z" fill="url(#bmw-glass)" stroke="#708697" stroke-width="3"/><path d="M393 127L391 190M525 192L549 227" stroke="#60758a" stroke-width="3"/><path d="M68 256Q127 229 180 223M593 219Q667 221 711 249" stroke="#97a9bb" stroke-width="4" opacity=".55" fill="none"/><path d="M67 272H212M597 278H728" stroke="#091017" stroke-width="7"/><path d="M99 244Q126 224 158 233Q170 247 151 261Q120 272 99 244Z" fill="#d6f0ff" stroke="#2f5b80" stroke-width="3"/><path d="M101 247Q125 234 150 238" stroke="#fff" stroke-width="5" fill="none"/><g transform="translate(228 237)" fill="#07141f" stroke="#a3b5c7" stroke-width="4"><path d="M0 0Q17 -9 32 0V40Q14 55 0 40Z"/><path d="M39 0Q56 -9 71 0V40Q55 55 39 40Z"/></g><g stroke="#a9c6de" stroke-width="3"><path d="M239 241V277M248 236V283M263 236V282M284 241V279"/></g><circle cx="217" cy="301" r="55" fill="#0a0e15" stroke="#3a4755" stroke-width="10"/><circle cx="217" cy="301" r="34" fill="#1b2734" stroke="#bac7d2" stroke-width="5"/><circle cx="217" cy="301" r="13" fill="#3a5669" stroke="#a3b5c7" stroke-width="3"/><circle cx="589" cy="301" r="55" fill="#0a0e15" stroke="#3a4755" stroke-width="10"/><circle cx="589" cy="301" r="34" fill="#1b2734" stroke="#bac7d2" stroke-width="5"/><circle cx="589" cy="301" r="13" fill="#3a5669" stroke="#a3b5c7" stroke-width="3"/><path d="M217 268V334M184 301H250M194 278L239 324M239 278L194 324M589 268V334M556 301H622M566 278L612 324M612 278L566 324" stroke="#91a7b8" stroke-width="5"/></svg>'
- +'<img class="bmw-hero-photo" src="https://images.unsplash.com/photo-1616591938203-9b5630a01006?auto=format&fit=crop&w=1150&q=82" alt="" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.hidden=true"/>'
- +'<span class="bmw-scene-caption">BMW · BLACK EDITION</span></div>'}
 function stat(text,value,extra,ic,variant='') {return `<div class="stat stat-${variant} card-premium-interactive"><div class="stat-top"><span class="stat-label">${text}</span><span class="stat-icon">${icon(ic)}</span></div><div class="stat-content"><div class="val" data-count-value="${Number(value)}">${value}</div><div class="stat-caption">${extra}</div></div><span class="stat-decoration" aria-hidden="true"></span></div>`}
 const studyDays=[['السبت','درس 01','فهم أساسي'],['الثلاثاء','درس 02','شرح + مثال'],['الخميس','درس 03','تطبيق قصير'],['الجمعة','مراجعة','ثبتي المعلومات']];
 function schedule(){return `<div class="schedule">${studyDays.map((x,i)=>`<div class="day ${i===3?'is-review':''}"><small>${x[0]}</small><b>${x[1]}</b><strong>${x[2]}</strong></div>`).join('')}</div><div class="note-preview">جدول مقترح غير نهائي: يمكنك المذاكرة في أي يوم ومن أي درس.</div>`}
@@ -11736,7 +11765,7 @@ function home(){
  const masteredSigns=(COURSE.sign_library||[]).filter(s=>{const x=state.signPractice?.[s.id]||{};return (x.meaningCorrect||0)>=1&&(x.actionCorrect||0)>=1}).length;
  const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),watchedVideos=directVideos.filter(x=>state.videoWatched?.[x.id]).length;
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
-  <div class="hero-glow" aria-hidden="true"></div>${carArt()}
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> مِسار · تعلّم القيادة</span></div>
    <div class="eyebrow">ابدئي من هنا</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}

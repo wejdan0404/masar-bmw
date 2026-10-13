@@ -47,9 +47,9 @@ function lessonReadings(course,lesson){
   return '<details class="source-chapter"><summary><span class="chapter-title">'+E(a.source_title)+'</span><span class="chapter-page">'+pg+'</span><span class="chapter-toggle" aria-hidden="true">⌄</span></summary>'
    +'<div class="source-chapter-inner"><h3>محتوى الدرس المرتبط بهذا الفصل</h3><p>'+intro+'</p><ul>'+keypoints+'</ul>'
    +'<p class="source-honesty">هذا شرح أصلي من مِسار للموضوع المرتبط بالكتاب، وليس نسخًا حرفيًا لجميع صفحاته. يمكنك استعراض صفحات ملفك الأصلي أسفله من داخل الموقع.</p>'
-   +'<div class="source-chapter-actions"><button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">اعرضي صفحات الكتاب هنا</button>'
+   +'<div class="source-chapter-actions"><button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">اعرضي صفحات الكتاب هنا</button><button type="button" class="btn btn-outline" data-action="hub-extract-text" data-source="'+E(a.source_id)+'" data-from="'+page+'" data-to="'+a.pdf_page_end+'">اظهري نص صفحات الكتاب</button>'
    +(!loaded?'<button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(a.source_id)+'">أضيفي ملفك مرة واحدة</button>':'<span class="chip tiny success">ملفك محفوظ على هذا المتصفح</span>')
-   +'</div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
+   +'</div><div class="source-text-preview" aria-live="polite"></div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
    +'<p class="source-page-hint">'+E(a.note||'')+'</p></div></details>';
  }).join('');
  return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>اقرئي من الكتب هنا، بدون الخروج من مِسار</h2>'
@@ -100,6 +100,25 @@ function notesPage(state,course){
  return '<div class="section-head"><h2>ملاحظاتي على الفيديوهات والملفات</h2></div>'+(videos+sources||'<div class="empty">عند كتابة ملاحظة في صفحة فيديو أو مرجع، تظهر هنا تلقائيًا.</div>');
 }
 async function refreshFiles(db,rerender){try{var list=await db.listPersonalFiles();cachedFiles=Object.fromEntries(list.map(function(it){return [it.id,it]}));if(rerender)rerender()}catch(e){console.warn('Personal library unavailable',e)}}
+
+var pdfTextLibraryPromise=null;
+function loadPdfTextLibrary(){
+ if(window.pdfjsLib)return Promise.resolve(window.pdfjsLib);
+ if(pdfTextLibraryPromise)return pdfTextLibraryPromise;
+ pdfTextLibraryPromise=new Promise(function(resolve,reject){
+  var script=document.createElement('script');
+  script.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+  script.async=true;script.referrerPolicy='no-referrer';
+  script.onload=function(){
+   if(!window.pdfjsLib){reject(Error('PDF reader missing'));return}
+   window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+   resolve(window.pdfjsLib);
+  };
+  script.onerror=function(){reject(Error('PDF text reader unavailable'))};
+  document.head.appendChild(script);
+ }).catch(function(e){pdfTextLibraryPromise=null;throw e});
+ return pdfTextLibraryPromise;
+}
 function click(action,el,ctx){
  var c=ctx.course,st=ctx.state;
  if(action==='hub-filter'){quizFilter=el.dataset.topic||'all';quizIndex=0;pinnedQuestionId=null;ctx.render(true);return true}
@@ -109,6 +128,41 @@ function click(action,el,ctx){
  if(action==='hub-retry'){st.reviewAnswers=st.reviewAnswers||{};delete st.reviewAnswers[el.dataset.qid];pinnedQuestionId=null;var idx=filteredQuestions(c,st).findIndex(function(q){return q.id===el.dataset.qid});if(idx>=0)quizIndex=idx;ctx.save();ctx.render(true);return true}
  if(action==='hub-batch-pick'){var batchInput=document.getElementById('hub-batch');if(batchInput){batchInput.value='';batchInput.click()}return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
+ if(action==='hub-extract-text'){
+  var id=el.dataset.source,from=Number(el.dataset.from),to=Number(el.dataset.to);
+  var parent=el.closest('.source-chapter'),region=parent&&parent.querySelector('.source-text-preview');
+  if(!region||!Number.isInteger(from)||!Number.isInteger(to)||from<1||from>to)return true;
+  if(!ctx.db){ctx.toast('القراءة المحلية غير متاحة على هذا المتصفح');return true}
+  el.disabled=true;el.textContent='جارٍ قراءة نص الصفحات…';
+  (async function(){
+    try{
+      var file=await ctx.db.getPersonalFile(id);
+      if(!file||file.mime!=='application/pdf'){region.textContent='أضيفي نسخة PDF الأصلية إلى مكتبتك أولًا، ثم افتحي النص من هنا.';return}
+      var pdfjs=await loadPdfTextLibrary();
+      var bytes=new Uint8Array(await file.blob.arrayBuffer());
+      var pdf=await pdfjs.getDocument({data:bytes}).promise;
+      region.replaceChildren();
+      var last=Math.min(pdf.numPages,to,from+7),hadText=false;
+      for(var pageNo=from;pageNo<=last;pageNo++){
+        var page=await pdf.getPage(pageNo),contents=await page.getTextContent();
+        var readable=(contents.items||[]).map(function(x){return x.str||''}).join(' ').replace(/\s+/g,' ').trim();
+        var section=document.createElement('section');section.className='source-text-page';
+        var heading=document.createElement('h4');heading.textContent='نص صفحة PDF '+pageNo;section.appendChild(heading);
+        var body=document.createElement('p');body.dir='auto';body.textContent=readable||'هذه الصفحة مصورة أو ليس لها نص قابل للاستخراج. اعرضي الصفحة الأصلية في قارئ الكتاب أعلاه.';section.appendChild(body);
+        region.appendChild(section);
+        if(readable)hadText=true;
+      }
+      var info=document.createElement('p');info.className='source-inline-info';info.textContent='هذا نص مستخرج آليًا من ملفك على جهازك، وليس تصحيحًا لغويًا معتمدًا؛ ارجعي لصورة الصفحة عند تشوّه ترتيب الكلمات. النص لا يُنشر على GitHub.';region.appendChild(info);
+      if(last<Math.min(pdf.numPages,to)){
+        var next=document.createElement('button');next.type='button';next.className='btn btn-outline';next.dataset.action='hub-extract-text';next.dataset.source=id;next.dataset.from=last+1;next.dataset.to=to;next.textContent='اقرئي الصفحات التالية ('+(last+1)+'–'+Math.min(last+8,to)+')';region.appendChild(next);
+      }
+      await pdf.destroy();
+    }catch(err){
+      console.warn(err);region.textContent='تعذّر استخراج النص تلقائيًا. يمكنك قراءة الصفحات الأصلية من قارئ PDF داخل الدرس؛ بعض الكتب عبارة عن صور ممسوحة ضوئيًا.';
+    }finally{el.disabled=false;el.textContent='إظهار نص الصفحات مجددًا'}
+  })();
+  return true;
+ }
  if(action==='hub-inline-open'||action==='hub-open-page'||action==='hub-open'){
   var id=el.dataset.source,pg=Number(el.dataset.page)||1;
   if(!Number.isInteger(pg)||pg<1||pg>500)return true;

@@ -156,11 +156,11 @@ function home(){
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> مِسار · تعلّم القيادة</span></div>
-   <div class="eyebrow">ابدئي من هنا</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
+   <div class="eyebrow">ابدئي من هنا</div><h1 id="hero-title">مسارك لتعلّم القيادة <span>من الصفر.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
    <div class="hero-status-strip" aria-label="ملخص سريع للتعلم"><span><b>W${p2(week)}</b><small>الأسبوع الحالي</small></span><span class="${due?'needs-attention':''}"><b>${due}</b><small>مراجعة مستحقة</small></span><span><b>${masteredSigns}</b><small>إشارة مثبّتة</small></span><span><b>${watchedVideos}/${directVideos.length}</b><small>مقاطع شوهدت</small></span></div>
-  </div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
+  </div><div class="hero-car-wrap" aria-hidden="true"><img class="hero-car-image" src="./assets/masar-bmw-selected.avif" width="640" height="700" alt="" decoding="async" fetchpriority="high"></div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  ${adaptiveStudyPlan(n)}

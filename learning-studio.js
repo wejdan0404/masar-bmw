@@ -5,6 +5,7 @@ const pad=n=>String(n).padStart(2,'0');
 const now=()=>Date.now();
 const fmt=n=>`${pad(Math.floor(Math.max(0,n)/60))}:${pad(Math.max(0,n)%60)}`;
 const defaults=()=>({timer:{duration:30,remaining:1800,status:'idle',endsAt:null},sessions:[],lastVisitAt:null});
+let openTimerForLesson=null;
 function ensure(state){
  if(!state.studyStudio||typeof state.studyStudio!=='object')state.studyStudio=defaults();
  const data=state.studyStudio;if(!data.timer||!Number.isFinite(data.timer.duration))data.timer=defaults().timer;
@@ -22,7 +23,7 @@ function timerControls(state,large=false){
  <div class="studio-timer-buttons"><button type="button" data-action="studio-toggle" aria-label="${active?'إيقاف جلسة المذاكرة مؤقتًا':'بدء أو متابعة المذاكرة'}">${active?'إيقاف مؤقت':'▶ '+(t.status==='paused'?'متابعة':'ابدئي')}</button><button type="button" data-action="studio-reset" aria-label="إعادة ضبط الموقت">إعادة ضبط</button></div>
  ${times}</div>`;
 }
-function timerHTML(state){const t=ensure(state).timer;if(t.status==='idle')return '';const contextPage=/^#\/(?:home|lesson\/\d+)/.test(location.hash||'');document.body?.classList?.toggle?.('studio-context-page',contextPage);return `<aside class="studio-timer-dock" aria-label="جلسة المذاكرة الحالية">${timerControls(state)}</aside>`;}
+function timerHTML(state){const t=ensure(state).timer;if(t.status!=='running'&&t.status!=='paused')return '';const contextPage=/^#\/(?:home|lesson\/\d+)/.test(location.hash||'');document.body?.classList?.toggle?.('studio-context-page',contextPage);return `<aside class="studio-timer-dock" aria-label="جلسة المذاكرة الحالية">${timerControls(state)}</aside>`;}
 
 function lessonCheck(course,state,l){
  const q=(course.questions||[]).find(x=>x.lesson_id===l.id);if(!q)return '';
@@ -37,22 +38,18 @@ function lessonCheck(course,state,l){
  <details class="studio-explain"><summary>ما فهمت؟ ابدئي بخلاصة أبسط</summary><div class="studio-checkpoint-body"><p>${escapeHTML(l.study_content?.recap||l.study_content?.goal||'')}</p><p><strong>تأكدي من هذه النقاط:</strong></p><ul>${(l.study_content?.key_points||[]).slice(0,3).map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul><p>هذه خلاصة من الدرس نفسه وليست معلومات مرورية جديدة. افتحي الشرح الموسع إذا احتجتِ أمثلة إضافية.</p></div></details>`;
 }
 function widgets(course,state,path){
- const s=ensure(state);
- const lessonN=/^\/lesson\/(\d+)$/.exec(path||'');
- if(path==='/home'||lessonN){
-   const current=lessonN?course.lessons.find(l=>l.order===Number(lessonN[1])):course.lessons.find(l=>!(state.done||[]).includes(l.order));
-   const l=current||course.lessons[course.lessons.length-1];
-   const away=s.lastVisitAt&&now()-Date.parse(s.lastVisitAt)>6*86400000;
-   const recents=s.sessions.slice(-3).reverse();
-   const guide=lessonN?`<nav class="studio-step-links" aria-label="خطوات المذاكرة"><a href="#reading" data-action="studio-jump" data-target="reading">اقرئي الشرح</a><a href="#active-recall" data-action="studio-jump" data-target="active-recall">من الذاكرة</a><a href="#lesson-videos" data-action="studio-jump" data-target="lesson-videos">شرح مرئي</a><a href="#practice" data-action="studio-jump" data-target="practice">اختبري فهمك</a></nav>`:`<a class="studio-go-lesson" href="#/lesson/${l.order}">افتحي ${escapeHTML(l.title)} ←</a>`;
-   return `<section class="studio-session card" aria-label="جلسة مذاكرة موجهة"><div class="studio-heading"><div><span class="bento-overline">STUDY COMPANION / جلسة تركيز</span><h2>مذاكرتك، على راحتك</h2><p>المؤقت اختياري، وما يقطع الدرس أو ينقلك تلقائيًا.</p></div><span class="studio-session-icon" aria-hidden="true">◷</span></div>
-   ${away?'<p class="studio-return">رجعتِ بعد فترة؟ ابدئي بمراجعة بسيطة، ثم كمّلي من آخر درس. <a href="#/review">افتحي مراجعتي</a></p>':''}
-   ${timerControls(state,true)}${guide}${lessonN?lessonCheck(course,state,l):''}
-   ${s.timer.status==='finished'?`<div class="studio-session-summary" role="status"><strong>أحسنتِ، انتهت الجلسة.</strong><p>الجلسة انتهت، لكن فهمك أهم من المدة. جربي سؤالًا من الدرس أو خذي استراحة.</p><a href="#/review">راجعي ما تعلمتِه</a></div>`:''}
-   ${path==='/home'&&recents.length?`<p class="studio-session-history">آخر جلسة: ${escapeHTML(new Date(recents[0].at).toLocaleDateString('ar-SA'))} · ${recents[0].minutes} دقيقة</p>`:''}
-   </section>`;
+ const n=/^\/lesson\/(\d+)$/.exec(path||'');
+ if(n){
+  const lessonNumber=Number(n[1]),lesson=(course.lessons||[]).find(l=>l.order===lessonNumber);
+  if(!lesson)return '';
+  const expanded=openTimerForLesson===lessonNumber;
+  return `<section class="studio-lesson-tools" aria-label="أدوات المذاكرة الاختيارية">
+    <div class="studio-lesson-tool-head"><strong>خطوات الدرس</strong><button type="button" class="studio-timer-opener" data-action="studio-panel-toggle" aria-expanded="${expanded}" ${expanded?'aria-controls="studio-focus-panel"':''}>${expanded?'إخفاء المؤقت':'◷ مؤقت اختياري'}</button></div>
+    <nav class="studio-step-links" aria-label="خطوات الدرس"><a href="#reading" data-action="studio-jump" data-target="reading">الشرح</a><a href="#active-recall" data-action="studio-jump" data-target="active-recall">من الذاكرة</a><a href="#lesson-videos" data-action="studio-jump" data-target="lesson-videos">المقاطع</a><a href="#practice" data-action="studio-jump" data-target="practice">اختبار</a></nav>
+    ${expanded?`<div class="studio-focus-panel" id="studio-focus-panel"><p>المؤقت اختياري ولا يوقف شرحك عند انتهاء المدة.</p>${timerControls(state,true)}</div>`:''}
+   </section>${lessonCheck(course,state,lesson)}`;
  }
- if(path==='/settings')return `<section class="card studio-settings"><h2>مساعد المذاكرة</h2><p>وقت التركيز اختياري ويُحفظ محليًا مع تقدمك. اختيار مدة جديدة يعيد ضبط الجلسة الحالية.</p><p>يمكنك فتح البحث السريع من أعلى الشاشة أو بلوحة المفاتيح <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p><p>ملفات الكتب الخاصة تُحفظ على جهازك وتحتاج نسخًا احتياطيًا منفصلًا عن ملف تقدم المذاكرة.</p></section>`;
+ if(path==='/settings')return `<section class="card studio-settings"><h2>مساعد المذاكرة</h2><p>مؤقت التركيز اختياري؛ افتحي أي درس واختاري «مؤقت اختياري» إذا احتجتِه. لا يظهر مؤقت عند دخول الرئيسية.</p><p>البحث السريع متاح من أعلى الشاشة أو باختصار <kbd>Ctrl</kbd> + <kbd>K</kbd>.</p><p>ملفات الكتب الخاصة تُحفظ على جهازك وتحتاج نسخة احتياطية منفصلة عن تقدم المذاكرة.</p></section>`;
  return '';
 }
 function searchUI(){return `<section class="studio-search-overlay" id="studio-search-overlay" role="dialog" aria-modal="true" aria-label="البحث في مِسار" hidden><div class="studio-search-window"><header><h2>ابحثي في مِسار</h2><button type="button" data-action="studio-search-close" aria-label="إغلاق البحث">✕</button></header><label for="studio-search-input">ابحثي عن درس أو إشارة أو سؤال أو ملاحظة</label><input id="studio-search-input" type="search" placeholder="مثال: النقطة العمياء، أولوية، قف…" autocomplete="off" aria-controls="studio-search-results"/><div id="studio-search-results" role="region" aria-live="polite"></div><footer>اختصار البحث: Ctrl + K · إغلاق: Esc</footer></div></section>`;}
@@ -84,6 +81,7 @@ function closeSearch(){const o=document.getElementById('studio-search-overlay');
 function click(action,el,ctx){
  if(action==='studio-search'){openSearch(ctx);return true}
  if(action==='studio-search-close'){closeSearch();return true}
+ if(action==='studio-panel-toggle'){const n=/^#\/lesson\/(\d+)$/.exec(location.hash||'');if(!n)return true;const lessonNumber=Number(n[1]);openTimerForLesson=openTimerForLesson===lessonNumber?null:lessonNumber;ctx.render(true);return true}
  if(action==='studio-jump'){const node=document.getElementById(el.dataset.target);if(node)node.scrollIntoView({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});return true}
  if(!action.startsWith('studio-'))return false;
  if(action==='studio-diagnostic'){const q=(ctx.course.questions||[]).find(q=>q.id===el.dataset.question);const choice=Number(el.dataset.choice);if(!q||!Number.isInteger(choice)||choice<0||choice>=q.options.length)return true;const d=ensure(ctx.state);d.diagnostics=d.diagnostics||{};if(d.diagnostics[q.id])return true;d.diagnostics[q.id]={choice,at:new Date().toISOString()};ctx.save();ctx.render(true);return true;}

@@ -1,5 +1,5 @@
 /* MASAR offline navigation cache: no user notes, credentials or external content cached. */
-const CACHE_NAME = 'masar-static-v6-study-notes';
+const CACHE_NAME = 'masar-static-v7-opt-in-focus';
 const SCOPE = self.registration.scope;
 const CORE = ['./','./index.html','./icon.svg','./manifest.webmanifest'];
 self.addEventListener('install', event => {

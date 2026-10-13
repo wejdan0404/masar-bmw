@@ -341,7 +341,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.equal(sw,true,'service worker should register on localhost for offline testing');
   await context.setOffline(true);
   await page.reload({waitUntil:'domcontentloaded'});
-  await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('خلف المقود'),'Home hero heading is missing');
+  await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('مسارك لتعلّم القيادة'),'Home hero heading is missing');
   console.log('PASS Chromium: site loads from service-worker cache without network');
   await context.setOffline(false);
   await page.setViewportSize({width:390,height:844});

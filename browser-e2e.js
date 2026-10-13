@@ -18,7 +18,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.match(await page.title(),/مِسار/);
   assert.equal(await page.locator('.hero-brooch-art,.brooch-svg,.hero-porsche-scene').count(),0,'Old jewelry/Porsche artwork must not return');
   assert.equal(await page.locator('.hero-bmw-scene .bmw-hero-photo').count(),1,'Black BMW car photo must appear in hero');
-  assert.match(await page.locator('.bmw-hero-photo').getAttribute('src'),/images\.unsplash\.com\/photo-1714434087671/);
+  assert.match(await page.locator('.bmw-hero-photo').getAttribute('src'),/images\.unsplash\.com\/photo-1616591938203/);
   assert.equal(await page.locator('.bmw-silhouette').count(),1,'The offline fallback must be a car silhouette');
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','New visitors start in BMW dark mode');
   assert.equal(await page.locator('[data-action="theme-toggle"]').count(),1,'Theme switch exists in the top bar');

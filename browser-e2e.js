@@ -5,6 +5,7 @@ const fs=require('node:fs');
 const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
 (async()=>{
  const base=process.env.MASAR_E2E_URL||'http://127.0.0.1:8765/';
+ assert(fs.statSync(__dirname+'/index.html').size<8000,'Fast public shell must be small');
  const browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
  const context=await browser.newContext({viewport:{width:1365,height:900},locale:'ar-SA',acceptDownloads:true});
  const page=await context.newPage();const errors=[];
@@ -12,6 +13,8 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
  page.on('dialog',async d=>d.accept());
  try{
   await page.goto(base,{waitUntil:'domcontentloaded'});
+  assert.equal(await page.locator('script[src="./assets/site.js"]').count(),1,'Compiled app asset missing');
+  assert.equal(await page.locator('.loading-screen').count(),0,'Loading shell was not replaced');
   await page.waitForTimeout(800);
   console.log('E2E debug initial page',JSON.stringify({url:page.url(),title:await page.title(),body:(await page.locator('body').innerText()).slice(0,450),errors}));
   await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('خلف المقود'),'Home hero heading is missing');

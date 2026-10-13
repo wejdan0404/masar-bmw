@@ -51,7 +51,16 @@ const videos=d.media_resources.filter(x=>x.kind==='youtube_video');assert(videos
 console.log('PASS MASAR content validation: '+d.lessons.length+' lessons, '+d.review_questions.length+' original review questions, '+d.personal_documents.length+' personal PDFs, '+d.uploaded_image_index.length+' image references; no unverified evaluation thresholds used.');
 
 
-const html=fs.readFileSync(__dirname+'/index.html','utf8');
+const html=fs.readFileSync(__dirname+'/index-standalone.html','utf8');
+const shell=fs.readFileSync(__dirname+'/index.html','utf8');
+const publicBundle=fs.readFileSync(__dirname+'/assets/site.js','utf8');
+const courseAsset=fs.readFileSync(__dirname+'/assets/course-data.js','utf8');
+assert(Buffer.byteLength(shell,'utf8')<8000,'Public HTML must stay under 8 KB');
+for(const file of ['site.css','course-data.js','site.js'])assert(shell.includes('./assets/'+file),'Missing public asset '+file);
+assert(publicBundle.includes('const COURSE=window.MasarCourse||'),'Public app course bootstrap missing');
+assert(courseAsset.startsWith('window.MasarCourse='),'Missing external curriculum');
+assert.deepStrictEqual(JSON.parse(courseAsset.slice('window.MasarCourse='.length).trim().replace(/;$/, '')).lessons,d.lessons);
+console.log('PASS fast public shell and split assets');
 const embedded=html.match(/<script\s+type="application\/json"\s+id="course-data">([\s\S]*?)<\/script>/);
 assert(embedded,'Compiled website is missing embedded course data');
 const published=JSON.parse(embedded[1]);

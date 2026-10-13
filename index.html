@@ -3,34 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090e15">
+<meta name="theme-color" content="#0d0d0d">
 <meta name="description" content="مِسار: منصة عربية شخصية لتعلم أساسيات القيادة في السعودية بخطة 16 أسبوعًا ودروس واختبارات تفاعلية.">
 <meta name="color-scheme" content="dark light">
 <title>مِسار — تعلّم القيادة من الصفر</title>
 <link rel="icon" type="image/svg+xml" href="./icon.svg">
 <link rel="manifest" href="./manifest.webmanifest">
 <style>
-:root{color-scheme:dark;--load-bg:#090e15;--load-text:#f1f7ff;--load-muted:#aabdd0}
-:root[data-theme=light]{color-scheme:light;--load-bg:#f4f7fa;--load-text:#172637;--load-muted:#52687d}
+:root{color-scheme:dark;--load-bg:#0d0d0d;--load-text:#f5f5f5;--load-muted:#bcbcbc}
+:root[data-theme=light]{color-scheme:light;--load-bg:#f7f7f7;--load-text:#171717;--load-muted:#595959}
 html,body{margin:0;min-height:100%;background:var(--load-bg);color:var(--load-text)}
 .loading-screen{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:28px;box-sizing:border-box;text-align:center;font:16px/1.9 Tahoma,Arial,sans-serif}
 .loading-screen h1{font-size:clamp(28px,7vw,38px);margin:0;font-weight:800}
 .loading-screen p{font-size:13px;margin:0;color:var(--load-muted);max-width:420px}
 .loading-track{width:min(210px,80vw);height:4px;border-radius:8px;background:rgba(122,166,204,.2);overflow:hidden}
-.loading-track:before{content:'';display:block;height:100%;width:35%;border-radius:8px;background:#3199eb;animation:loading-progress 1.2s ease-in-out infinite alternate}
+.loading-track:before{content:'';display:block;height:100%;width:35%;border-radius:8px;background:#ededed;animation:loading-progress 1.2s ease-in-out infinite alternate}
 @keyframes loading-progress{from{transform:translateX(175%)}to{transform:translateX(-175%)}}
 @media(prefers-reduced-motion:reduce){.loading-track:before{animation:none;width:100%}}
 </style>
 <script>
 try{var pref=JSON.parse(localStorage.getItem('masar-driving-v1')||'null');document.documentElement.dataset.theme=(pref&&pref.uiPrefs&&pref.uiPrefs.theme==='light')?'light':'dark'}
 catch(_){document.documentElement.dataset.theme='dark'}
-function masarStartupError(){var el=document.getElementById('app');if(el&&el.querySelector('.loading-screen'))el.innerHTML='<main class="loading-screen" role="alert"><h1>تعذّر تشغيل مِسار</h1><p>تحققي من الاتصال ثم أعيدي تحميل الصفحة. إن استمر الخطأ، افتحي الموقع في تبويب جديد.</p><button onclick="location.reload()" style="padding:10px 20px;border:0;border-radius:8px;background:#0066b1;color:white;font:inherit">إعادة المحاولة</button></main>'}
+function masarStartupError(){var el=document.getElementById('app');if(el&&el.querySelector('.loading-screen'))el.innerHTML='<main class="loading-screen" role="alert"><h1>تعذّر تشغيل مِسار</h1><p>تحققي من الاتصال ثم أعيدي تحميل الصفحة. إن استمر الخطأ، افتحي الموقع في تبويب جديد.</p><button onclick="location.reload()" style="padding:10px 20px;border:0;border-radius:8px;background:var(--load-text);color:var(--load-bg);font:inherit">إعادة المحاولة</button></main>'}
 </script>
 <link rel="stylesheet" href="./assets/site.css">
 </head>
 <body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
-<div class="app" id="app"><main class="loading-screen" role="status" aria-live="polite"><h1>مِسار<span style="color:#3199eb">.</span></h1><p>نجهّز مساحة المذاكرة الخاصة بك…</p><div class="loading-track" aria-hidden="true"></div></main></div>
+<div class="app" id="app"><main class="loading-screen" role="status" aria-live="polite"><h1>مِسار<span style="color:#ededed">.</span></h1><p>نجهّز مساحة المذاكرة الخاصة بك…</p><div class="loading-track" aria-hidden="true"></div></main></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script defer src="./assets/course-data.js" onerror="masarStartupError()"></script>
 <script defer src="./assets/site.js" onerror="masarStartupError()"></script>

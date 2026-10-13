@@ -16,6 +16,11 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   console.log('E2E debug initial page',JSON.stringify({url:page.url(),title:await page.title(),body:(await page.locator('body').innerText()).slice(0,450),errors}));
   await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('خلف المقود'),'Home hero heading is missing');
   assert.match(await page.title(),/مِسار/);
+  assert.equal(await page.locator('.hero-brooch-art .brooch-svg').count(),1,'Burgundy brooch is the main visual on home');
+  assert.equal(await page.locator('.hero-car,.hero-road').count(),0,'Old illustration should be removed from hero');
+  assert((await page.locator('.brooch-svg [id="masar-ruby"]').count())===1,'Gemstone vector gradient must render');
+  console.log('PASS Chromium: new source-owned burgundy jewel hero');
+
   assert.equal(await page.locator('.studio-session').count(),0,'Home must not show a timer card');
   assert.equal(await page.locator('.studio-timer-dock,.floating-timer').count(),0,'No timer overlay on initial home visit');
   assert.equal(await page.locator('[data-action="studio-panel-toggle"]').count(),0,'Timer opener belongs in lessons only');

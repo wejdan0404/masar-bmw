@@ -1407,3 +1407,47 @@ body{
  .paper-visual .masar-question-visual{width:100%!important;height:auto!important}
  .source-page-summary,.source-visual-preview{box-shadow:none!important}
 }
+
+
+/* MASAR — Burgundy Jewel Brooch hero / source-owned vector art.
+   Bento hierarchy inspired by Magic UI; restrained glint inspired by Aceternity.
+   No external imagery, fonts, network requests, or React dependencies. */
+.hero.hero-premium{
+ background:
+  radial-gradient(ellipse 480px 360px at 12% 45%,rgba(147,35,73,.35),transparent 80%),
+  radial-gradient(ellipse 500px 280px at 84% -8%,rgba(119,71,78,.28),transparent 80%),
+  linear-gradient(116deg,#150d16 0%,#25121e 34%,#221c26 64%,#202d36 100%);
+ box-shadow:0 28px 65px rgba(32,20,32,.22),inset 0 1px 0 rgba(252,218,205,.12);
+ border:1px solid rgba(223,181,159,.20);
+ min-height:388px;
+}
+.hero.hero-premium:before,.hero.hero-premium:after{border-color:rgba(235,185,161,.12)}
+.hero-premium .hero-copy{max-width:580px;flex:1;position:relative;z-index:4}
+.hero-premium .hero-glow{background:radial-gradient(ellipse at 20% 48%,rgba(141,26,60,.15),transparent 53%)}
+.hero-premium .hero-edition,.hero-premium .hero-kicker{color:#e4c8b4}
+.hero-premium .hero-topline{color:#dfc5bb}
+.hero-premium .eyebrow{color:#f0b7c0}
+.hero-premium h1 span{background:linear-gradient(92deg,#fff0e6,#ecc1bc 47%,#d9a4b9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-premium .btn-primary{background:linear-gradient(113deg,#a3284a,#76182f);border:1px solid rgba(255,207,214,.24);box-shadow:0 8px 20px rgba(40,7,20,.23)}
+.hero-premium .btn-primary:hover{background:linear-gradient(113deg,#b82c53,#84142f)}
+.hero-premium .btn-ghost{border-color:rgba(231,204,196,.28)}
+.hero-brooch-art{position:absolute;pointer-events:none;left:0;top:0;bottom:0;width:43%;z-index:1;overflow:visible;display:grid;place-items:center}
+.brooch-aura{position:absolute;inset:8% 0;background:radial-gradient(ellipse at 49% 50%,rgba(173,50,86,.33),rgba(105,17,46,.16) 38%,transparent 71%);filter:blur(20px)}
+.brooch-svg{position:relative;width:min(110%,465px);max-height:102%;height:auto;overflow:visible;filter:drop-shadow(0 18px 22px rgba(8,3,8,.38));transform:rotate(-4deg);transform-origin:50% 50%}
+.brooch-orbit{position:absolute;left:50%;top:51%;width:84%;max-width:392px;aspect-ratio:1;border:1px solid rgba(229,188,153,.18);border-radius:50%;transform:translate(-50%,-50%) rotate(-23deg)}
+.brooch-orbit-b{width:65%;border:1px dashed rgba(234,190,158,.13);transform:translate(-50%,-50%) rotate(20deg)}
+.brooch-caption{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);font:700 10px/1.4 Arial,sans-serif;letter-spacing:.27em;white-space:nowrap;color:#e5ba9b;opacity:.80;display:flex;align-items:center;gap:12px}
+.brooch-caption i{display:inline-block;width:4px;height:4px;border-radius:50%;background:#d5a773}
+.hero-premium .hero-status-strip{background:rgba(255,255,255,.065);border-color:rgba(243,216,215,.11)}
+.hero-premium .hero-status-strip>span{background:rgba(16,9,19,.38)}
+.hero-premium .hero-serial{color:#efdbcd;opacity:.26}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .brooch-svg{animation:masarBroochFloat 10s ease-in-out infinite}
+ .brooch-facets{animation:masarBroochSparkle 6s ease-in-out infinite}
+}
+@keyframes masarBroochFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(-3deg)}}
+@keyframes masarBroochSparkle{0%,100%{opacity:.62}48%{opacity:1}65%{opacity:.82}}
+@media(max-width:1150px){.hero-brooch-art{width:39%;opacity:.86}.brooch-caption{bottom:12%}}
+@media(max-width:900px){.hero.hero-premium{min-height:355px}.hero-brooch-art{width:47%;left:-8%;opacity:.40;filter:saturate(.9)}.hero-premium .hero-copy{max-width:100%}.brooch-caption{display:none}}
+@media(max-width:610px){.hero.hero-premium{padding:28px 22px 23px;min-height:370px;isolation:isolate}.hero-brooch-art{top:8%;bottom:auto;left:-94px;width:300px;height:300px;opacity:.23}.hero-premium .hero-copy{position:relative;z-index:4}.hero-premium .hero-status-strip{position:relative;z-index:4}.hero-premium h1{font-size:clamp(34px,9vw,46px)}}
+@media print{.hero-brooch-art{display:none!important}}

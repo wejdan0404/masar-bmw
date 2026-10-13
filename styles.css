@@ -1073,13 +1073,13 @@ body{
 .topbar-review-pill b{font:900 12px/1 Arial,sans-serif}
 
 /* Full-screen reading mode */
-.focus-mode .sidebar{transform:translateX(110%);pointer-events:none;opacity:0}
+.focus-mode .sidebar{transform:translateX(110%);pointer-events:none;opacity:0;visibility:hidden}
 .focus-mode .app-main{margin-right:0}
 .focus-mode .page{max-width:1320px}
 .focus-mode .lesson-layout{grid-template-columns:minmax(0,var(--reading));justify-content:center}
 .focus-mode .lesson-aside{display:none}
 .focus-mode .topbar{padding-inline:clamp(20px,5vw,72px)}
-.sidebar{transition:transform .28s ease,opacity .22s ease}
+.sidebar{transition:transform .28s ease,opacity .22s ease,visibility 0s linear .28s}.app:not(.focus-mode) .sidebar{visibility:visible;transition-delay:0s}
 
 /* Home — Magic UI inspired bento + automotive HUD */
 .hero-premium{

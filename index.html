@@ -860,6 +860,75 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
  .video-learning-actions{display:grid}
  .video-learning-actions .btn{width:100%}
 }
+
+
+/* MASAR v1.7 — adaptive learning, retrieval practice, and dual sign recall */
+.adaptive-plan{margin:18px 0 22px;padding:20px;border:1px solid #d9e3e8;background:linear-gradient(145deg,#fbfcfd 0%,#f3f7f9 100%);overflow:hidden;position:relative}
+.adaptive-plan:after{content:'';position:absolute;inset:auto -80px -95px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(122,163,192,.16),transparent 68%);pointer-events:none}
+.adaptive-plan-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:15px}
+.adaptive-plan-head h2{margin:4px 0 5px;color:#203844}
+.adaptive-plan-head p{margin:0;color:#6b7f8b;font-size:12px;line-height:1.75}
+.adaptive-priority{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:850;white-space:nowrap;background:#eef3f6;color:#607884}
+.adaptive-priority.has-priority{background:#f8e9ec;color:#7b2134}
+.adaptive-priority.clear{background:#e8f4ee;color:#276b55}
+.adaptive-task-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.adaptive-task{position:relative;display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start;padding:14px;border:1px solid #dce5ea;background:#fff;border-radius:15px;text-decoration:none;color:inherit;min-height:142px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.adaptive-task:hover{transform:translateY(-2px);border-color:#bdcfd9;box-shadow:0 10px 26px rgba(31,45,54,.07)}
+.adaptive-task-no{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#edf3f6;color:#4c6b7d;font-size:10px;font-weight:900}
+.adaptive-task-time{display:block;font-size:9px;letter-spacing:.04em;color:#80909a;font-weight:850;margin:1px 0 6px}
+.adaptive-task strong{display:block;color:#243d49;font-size:13px;line-height:1.6}
+.adaptive-task p{margin:5px 0 8px;color:#6f818c;font-size:10.5px;line-height:1.75}
+.adaptive-task small{font-size:10px;font-weight:850;color:#4e738b}
+.adaptive-task.review{border-top:3px solid #86152d}
+.adaptive-task.lesson{border-top:3px solid #587995}
+.adaptive-task.signs{border-top:3px solid #7aa3c0}
+.adaptive-task.quiz{border-top:3px solid #4a0711}
+.adaptive-task.video{border-top:3px solid #6e8799}
+.adaptive-task.cards{border-top:3px solid #839aa9}
+.adaptive-plan-foot{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid #dce5ea;margin-top:14px;padding-top:11px;font-size:10px;color:#778993}
+.adaptive-plan-foot a{color:#4f7186;text-decoration:none;font-weight:800}
+.lesson-recall{margin:18px 0;padding:19px;border-radius:18px;background:linear-gradient(145deg,#263c49,#1f303a);color:#f4f7f8;box-shadow:0 14px 38px rgba(26,44,54,.12)}
+.lesson-recall-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.lesson-recall-head h2{color:#fff;margin:5px 0 6px}
+.lesson-recall-head p{margin:0;color:#c9d5dc;font-size:11.5px;line-height:1.75}
+.lesson-recall .bento-overline{color:#a9c4d5}
+.lesson-recall .chip{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.13);color:#dce8ee}
+.lesson-recall-prompts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0}
+.lesson-recall-prompts>div{background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:12px}
+.lesson-recall-prompts span{display:inline-flex;width:27px;height:27px;align-items:center;justify-content:center;border-radius:8px;background:rgba(255,255,255,.1);font-size:9px;font-weight:900;color:#bcd0dc;margin-bottom:8px}
+.lesson-recall-prompts strong{display:block;color:#fff;font-size:12px;margin-bottom:4px}
+.lesson-recall-prompts small{color:#b8c7cf;font-size:9.5px;line-height:1.65}
+.lesson-recall-answer{border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(255,255,255,.05);overflow:hidden}
+.lesson-recall-answer summary{cursor:pointer;padding:12px 14px;font-size:11px;font-weight:850;color:#f3f7f9;list-style:none}
+.lesson-recall-answer summary::-webkit-details-marker{display:none}
+.lesson-recall-answer summary:after{content:'⌄';float:left;color:#b9cad4;font-size:16px;transition:transform .2s ease}
+.lesson-recall-answer[open] summary:after{transform:rotate(180deg)}
+.lesson-recall-answer>div{border-top:1px solid rgba(255,255,255,.1);padding:10px 14px 12px}
+.lesson-recall-answer p{margin:5px 0;color:#d7e2e8;font-size:10.5px;line-height:1.75}
+.lesson-recall-note{margin:10px 0 0!important;color:#9fb3be!important;font-size:9.5px!important;line-height:1.7!important}
+.ts-quiz-kind{display:flex;justify-content:center;gap:7px;margin:10px auto 16px;flex-wrap:wrap}
+.ts-quiz-kind button{border:1px solid #d4dfe5;background:#f7f9fa;color:#607785;border-radius:999px;padding:7px 12px;font:inherit;font-size:10px;font-weight:850;cursor:pointer}
+.ts-quiz-kind button.active{background:#263f4d;color:white;border-color:#263f4d}
+.ts-retrieval-note{display:block;margin:10px 0;padding:8px 10px;border-radius:10px;background:#edf4f7;color:#587180;font-size:10px;line-height:1.65}
+@media(max-width:900px){
+ .adaptive-task-grid{grid-template-columns:1fr}
+ .adaptive-task{min-height:auto}
+ .lesson-recall-prompts{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .adaptive-plan{padding:15px}
+ .adaptive-plan-head,.adaptive-plan-foot,.lesson-recall-head{display:grid}
+ .adaptive-priority{justify-self:start}
+ .lesson-recall{padding:15px}
+}
+
+
+.learning-science-note{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:16px 0 22px;padding:18px 20px;border-radius:18px;background:#f7fafb;border:1px solid #dce5ea}
+.learning-science-note h2{margin:5px 0 6px;color:#263f4d;font-size:18px}
+.learning-science-note p{margin:0;max-width:780px;color:#667b87;font-size:11.5px;line-height:1.8}
+.learning-science-note a{flex:0 0 auto;color:#4d7086;font-size:10.5px;font-weight:850;text-decoration:none;border:1px solid #cedbe2;border-radius:999px;padding:9px 12px;background:#fff}
+.learning-science-note a:hover{text-decoration:underline}
+@media(max-width:760px){.learning-science-note{display:grid;align-items:start}.learning-science-note a{justify-self:start}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -8473,7 +8542,15 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
       "مناطق عمل ومؤقتة"
     ],
     "scope": "مكتبة مِسار الحالية مجموعة تعليمية منتقاة وليست كتالوجًا حكوميًا كاملًا. المفاهيم مرتبطة بمرجع المرور، بينما الرسومات SVG أصلية مبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
-    "mastery_rule": "تُعد اللوحة مثبّتة داخل مِسار بعد إجابتين صحيحتين متتاليتين على الأقل؛ هذه قاعدة تعلم داخلية وليست معيار اختبار رسمي."
+    "mastery_rule": "تُعد اللوحة مثبّتة داخل مِسار بعد إجابة صحيحة واحدة على معناها وإجابة صحيحة واحدة على التصرف المرتبط بها؛ هذا معيار تعلم داخلي وليس معيار اختبار رسمي."
+  },
+  "learning_design": {
+    "reviewed_on": "2026-10-13",
+    "retrieval_practice": {
+      "label": "الاسترجاع النشط والتكرار المتباعد",
+      "source_url": "https://www.nature.com/articles/s44159-022-00089-1",
+      "note": "يستخدم مِسار أسئلة الاسترجاع والمراجعة المتباعدة كاستراتيجية تعلم؛ مؤشرات الإتقان داخل الموقع تنظيمية وليست درجات جاهزية أو اختبار رسمي."
+    }
   }
 }
 </script>
@@ -8947,7 +9024,7 @@ window.MasarHub=Object.freeze({quizPage,practicePage,docsPage,paperPage,lessonRe
 'use strict';
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const red='#cf1726',blue='#2362a0',ink='#14222c';
-let mode='study',filter='all',selected=null,quizIndex=0,answered=null,answeredSignId=null;
+let mode='study',filter='all',selected=null,quizIndex=0,answered=null,answeredSignId=null,quizKind='mixed';
 const P=(d,attrs='')=>'<path d="'+d+'" '+attrs+'/>';
 function pictogram(k){
  const stroke='stroke="'+ink+'" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"';
@@ -9008,10 +9085,14 @@ function draw(sign,quiz=false){
  const title=quiz?'رسم مبسط للوحة — اختاري معناها':sign.title+' — رسم مبسط للتدريب وليس نسخة رسمية';
  return '<svg viewBox="0 0 150 150" class="ts-sign-svg" role="img" aria-label="'+esc(title)+'" xmlns="http://www.w3.org/2000/svg">'+frame+pictogram(k)+cross+'</svg>';
 }
-const stat=(state,id)=>state.signPractice?.[id]||{attempts:0,correct:0,wrong:0,lastResult:null,streak:0};
+const stat=(state,id)=>state.signPractice?.[id]||{attempts:0,correct:0,wrong:0,lastResult:null,streak:0,meaningCorrect:0,actionCorrect:0};
+function kindCorrect(s,kind){return Number(kind==='action'?s.actionCorrect:s.meaningCorrect)||0}
+function currentQuizKind(){return quizKind==='mixed'?(quizIndex%2===0?'meaning':'action'):quizKind}
 function mastery(state,id){
  const s=stat(state,id);
- if((s.streak||0)>=2&&(s.correct||0)>=2)return 'mastered';
+ const checkedMeaning=(s.meaningCorrect||0)>=1,checkedAction=(s.actionCorrect||0)>=1;
+ const legacy=(s.meaningCorrect===undefined&&s.actionCorrect===undefined&&(s.streak||0)>=2&&(s.correct||0)>=2);
+ if((checkedMeaning&&checkedAction)||legacy)return 'mastered';
  if((s.attempts||0)>0)return 'learning';
  return 'new';
 }
@@ -9062,22 +9143,23 @@ function page(course,state){
  }else {
   if(quizIndex>=items.length)quizIndex=0;
   const q=answered!==null&&answeredSignId?signs.find(x=>x.id===answeredSignId):items[quizIndex];if(!q)body='<div class="ts-empty">ما عندك لوحات بهذه الحالة حاليًا. اختاري «الكل» وكمّلي المراجعة.</div>';
-  else{const opts=choices(q,signs),wasAnswered=answered!==null;
-   body='<section class="ts-exam"><div class="ts-exam-top"><span>لوحة '+(quizIndex+1)+' / '+items.length+'</span><span>الإجابة لا تُظهر الاسم قبل اختيارك</span></div><div class="ts-exam-art">'+draw(q,true)+'</div><h2>وش معنى هذه اللوحة؟</h2><div class="ts-choices">'+opts.map(x=>'<button type="button" data-action="sign-answer" data-choice="'+x.id+'" class="ts-choice '+(wasAnswered?(x.id===q.id?'is-correct':x.id===answered?'is-wrong':''):'')+'" '+(wasAnswered?'disabled':'')+'>'+esc(x.title)+'</button>').join('')+'</div>'+(wasAnswered?'<div role="status" class="ts-explanation"><strong>'+(answered===q.id?'صح!':'الإجابة المناسبة: '+esc(q.title))+'</strong><p>'+esc(q.meaning)+'</p><p><b>التصرف:</b> '+esc(q.action)+'</p><a href="#/lesson/'+Number(q.lesson_ids[0].slice(-3))+'">ارجعي للدرس المرتبط ←</a></div>':'')+'<div class="ts-controls"><button data-action="sign-next" class="ts-next" type="button">'+(quizIndex===items.length-1?'إعادة الجولة':'اللوحة التالية ←')+'</button></div></section>';
+  else{const opts=choices(q,signs),wasAnswered=answered!==null,kind=currentQuizKind(),askAction=kind==='action';
+   body='<section class="ts-exam"><div class="ts-exam-top"><span>لوحة '+(quizIndex+1)+' / '+items.length+'</span><span>'+(askAction?'اختاري التصرف الأنسب':'اختاري اسم/معنى اللوحة')+'</span></div><div class="ts-quiz-kind" role="group" aria-label="نوع سؤال الإشارة">'+[['mixed','مختلط'],['meaning','المعنى'],['action','التصرف']].map(([id,label])=>'<button type="button" data-action="sign-quiz-kind" data-kind="'+id+'" aria-pressed="'+(quizKind===id)+'" class="'+(quizKind===id?'active':'')+'">'+label+'</button>').join('')+'</div><div class="ts-exam-art">'+draw(q,true)+'</div><h2>'+(askAction?'وش التصرف الأنسب إذا شفتي هذه اللوحة؟':'وش معنى هذه اللوحة؟')+'</h2><div class="ts-choices">'+opts.map(x=>'<button type="button" data-action="sign-answer" data-choice="'+x.id+'" data-kind="'+kind+'" class="ts-choice '+(wasAnswered?(x.id===q.id?'is-correct':x.id===answered?'is-wrong':''):'')+'" '+(wasAnswered?'disabled':'')+'>'+esc(askAction?x.action:x.title)+'</button>').join('')+'</div>'+(wasAnswered?'<div role="status" class="ts-explanation"><strong>'+(answered===q.id?'صح!':'الإجابة الصحيحة مرتبطة بلوحة: '+esc(q.title))+'</strong><p><b>المعنى:</b> '+esc(q.meaning)+'</p><p><b>التصرف:</b> '+esc(q.action)+'</p><span class="ts-retrieval-note">للتثبيت في مِسار: جاوبي مرة على المعنى ومرة على التصرف، مو حفظ اسم اللوحة فقط.</span><a href="#/lesson/'+Number(q.lesson_ids[0].slice(-3))+'">ارجعي للدرس المرتبط ←</a></div>':'')+'<div class="ts-controls"><button data-action="sign-next" class="ts-next" type="button">'+(quizIndex===items.length-1?'إعادة الجولة':'اللوحة التالية ←')+'</button></div></section>';
   }
  }
- return '<div class="ts-page"><section class="ts-header"><div><span class="ts-overline">TRAFFIC SIGNS / تَعَلُّم بِالصُّورَة</span><h1>إشارات المرور</h1><p>تعرّفي على اللوحة، افهمي معناها، ثم اختبري نفسك بصورتها وحدها. الرسومات مبسّطة للتدريب، <strong>وليست صورًا رسمية مطابقة</strong>.</p></div><div class="ts-header-counter"><b>'+mastered+'<small> / '+signs.length+'</small></b><span>لوحة وصلت لمرحلة التثبيت</span></div></section><div class="ts-mastery-summary"><div><strong>'+studied+'</strong><span>بدأتِ مراجعتها</span></div><div><strong>'+learning+'</strong><span>قيد التثبيت</span></div><div><strong>'+mastered+'</strong><span>مثبّتة</span></div><div><strong>'+wrong+'</strong><span>آخر إجابة خطأ</span></div></div><div class="ts-facts"><span>'+signs.length+' لوحة تعليمية · '+esc([...new Set(signs.map(x=>x.category))].join('، '))+'</span><span>الإجابات المسجلة: '+attempts+'</span><span>التثبيت = إجابتان صحيحتان متتاليتان على الأقل</span></div><div class="ts-toolbar"><div role="group" aria-label="طريقة المذاكرة"><button type="button" data-action="sign-mode" data-mode="study" aria-pressed="'+(mode==='study')+'" class="'+(mode==='study'?'active':'')+'">مكتبة اللوحات</button><button type="button" data-action="sign-mode" data-mode="quiz" aria-pressed="'+(mode==='quiz')+'" class="'+(mode==='quiz'?'active':'')+'">اختبري نفسك</button></div><div class="ts-filters" role="group" aria-label="تصفية الإشارات">'+[['all','الكل'],...[...new Set(signs.map(x=>x.category))].map(c=>[c,c]),['focus','تحتاج تثبيت'],['mistakes','أخطائي'],['learning','قيد التثبيت'],['mastered','مثبّتة'],['new','الجديدة']].map(([id,txt])=>'<button type="button" data-action="sign-filter" data-filter="'+id+'" aria-pressed="'+(filter===id)+'" class="'+(filter===id?'active':'')+'">'+txt+'</button>').join('')+'</div></div>'+body+'<section class="ts-note"><strong>مهم قبل الاختبار</strong><p>وزارة الداخلية تنشر دليلًا للإشارات التحذيرية والتنظيمية والإرشادية وإشارات مناطق العمل. مكتبة مِسار الحالية للتدريب وليست كتالوجًا حكوميًا كاملًا، والرسومات فيها مبسطة. عند اختلاف الشكل أو الاسم، اعتمدي دليل المرور.</p><a href="https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy83V0CTQ0cA71d_T1djI0MXA30gxOL9L24FMCAC07oR-HXFQHVAVUOp_QjM7MKC6Mc9aOS8_NKUitK9CNKihLT0jKTVQ2gDIXEIlWD3MTMPIRIcWY60K3F-gXZ7uEA0o5r2w!!/" target="_blank" rel="noopener noreferrer">دليل الإشارات المرورية — المرور السعودي ↗</a></section></div>';
+ return '<div class="ts-page"><section class="ts-header"><div><span class="ts-overline">TRAFFIC SIGNS / تَعَلُّم بِالصُّورَة</span><h1>إشارات المرور</h1><p>تعرّفي على اللوحة، افهمي معناها، ثم اختبري نفسك بصورتها وحدها. الرسومات مبسّطة للتدريب، <strong>وليست صورًا رسمية مطابقة</strong>.</p></div><div class="ts-header-counter"><b>'+mastered+'<small> / '+signs.length+'</small></b><span>لوحة وصلت لمرحلة التثبيت</span></div></section><div class="ts-mastery-summary"><div><strong>'+studied+'</strong><span>بدأتِ مراجعتها</span></div><div><strong>'+learning+'</strong><span>قيد التثبيت</span></div><div><strong>'+mastered+'</strong><span>مثبّتة</span></div><div><strong>'+wrong+'</strong><span>آخر إجابة خطأ</span></div></div><div class="ts-facts"><span>'+signs.length+' لوحة تعليمية · '+esc([...new Set(signs.map(x=>x.category))].join('، '))+'</span><span>الإجابات المسجلة: '+attempts+'</span><span>التثبيت = إجابة صحيحة على المعنى + إجابة صحيحة على التصرف</span></div><div class="ts-toolbar"><div role="group" aria-label="طريقة المذاكرة"><button type="button" data-action="sign-mode" data-mode="study" aria-pressed="'+(mode==='study')+'" class="'+(mode==='study'?'active':'')+'">مكتبة اللوحات</button><button type="button" data-action="sign-mode" data-mode="quiz" aria-pressed="'+(mode==='quiz')+'" class="'+(mode==='quiz'?'active':'')+'">اختبري نفسك</button></div><div class="ts-filters" role="group" aria-label="تصفية الإشارات">'+[['all','الكل'],...[...new Set(signs.map(x=>x.category))].map(c=>[c,c]),['focus','تحتاج تثبيت'],['mistakes','أخطائي'],['learning','قيد التثبيت'],['mastered','مثبّتة'],['new','الجديدة']].map(([id,txt])=>'<button type="button" data-action="sign-filter" data-filter="'+id+'" aria-pressed="'+(filter===id)+'" class="'+(filter===id?'active':'')+'">'+txt+'</button>').join('')+'</div></div>'+body+'<section class="ts-note"><strong>مهم قبل الاختبار</strong><p>وزارة الداخلية تنشر دليلًا للإشارات التحذيرية والتنظيمية والإرشادية وإشارات مناطق العمل. مكتبة مِسار الحالية للتدريب وليست كتالوجًا حكوميًا كاملًا، والرسومات فيها مبسطة. عند اختلاف الشكل أو الاسم، اعتمدي دليل المرور.</p><a href="https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy83V0CTQ0cA71d_T1djI0MXA30gxOL9L24FMCAC07oR-HXFQHVAVUOp_QjM7MKC6Mc9aOS8_NKUitK9CNKihLT0jKTVQ2gDIXEIlWD3MTMPIRIcWY60K3F-gXZ7uEA0o5r2w!!/" target="_blank" rel="noopener noreferrer">دليل الإشارات المرورية — المرور السعودي ↗</a></section></div>';
 }
 function click(action,el,ctx){
  const c=ctx.course,s=ctx.state;
  if(action==='sign-mode'){mode=el.dataset.mode==='quiz'?'quiz':'study';selected=null;answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
+ if(action==='sign-quiz-kind'){quizKind=['meaning','action','mixed'].includes(el.dataset.kind)?el.dataset.kind:'mixed';answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
  if(action==='sign-filter'){filter=el.dataset.filter||'all';selected=null;answered=null;answeredSignId=null;quizIndex=0;ctx.render(true);return true}
  if(action==='sign-open'){if(c.sign_library.some(x=>x.id===el.dataset.id)){selected=el.dataset.id;ctx.render(true)}return true}
  if(action==='sign-back'){selected=null;ctx.render(true);return true}
- if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice;if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
-  s.signPractice=s.signPractice||{};const prior=stat(s,q.id);
-  s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,streak:choice===q.id?(prior.streak||0)+1:0,lastReviewed:new Date().toISOString()};
-  answered=choice;answeredSignId=q.id;window.MasarCoach?.record(s,'sign',q.id,choice===q.id);ctx.save();ctx.render(true);return true}
+ if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice,kind=['meaning','action'].includes(el.dataset.kind)?el.dataset.kind:currentQuizKind();if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
+  s.signPractice=s.signPractice||{};const prior=stat(s,q.id),correct=choice===q.id;
+  s.signPractice[q.id]={...prior,attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(correct?1:0),wrong:(prior.wrong||0)+(correct?0:1),lastResult:correct,streak:correct?(prior.streak||0)+1:0,meaningCorrect:(prior.meaningCorrect||0)+(correct&&kind==='meaning'?1:0),actionCorrect:(prior.actionCorrect||0)+(correct&&kind==='action'?1:0),lastKind:kind,lastReviewed:new Date().toISOString()};
+  answered=choice;answeredSignId=q.id;window.MasarCoach?.record(s,'sign',q.id,correct);ctx.save();ctx.render(true);return true}
  if(action==='sign-next'){quizIndex++;answered=null;answeredSignId=null;ctx.render(true);return true}
  return false;
 }
@@ -10250,6 +10332,31 @@ function studyRoute(lesson){
  ];
  return '<section class="card study-route"><div class="study-route-header"><div><span class="bento-overline">YOUR LEARNING STUDIO / جلسة اليوم</span><h2>ابدئي من هنا، خطوة بخطوة</h2><p>الدرس '+String(lesson.order).padStart(2,'0')+' · <strong>'+ESC(lesson.title)+'</strong></p></div><div class="study-route-progress" aria-label="أُنجز '+done+' من ثلاثة مؤشرات"><strong>'+done+'<small>/3</small></strong><span>فهم · ملاحظات · اختبار</span></div></div><div class="study-today-list">'+steps.map(([number,title,description,target,complete])=>'<a class="study-today-item '+(complete?'is-complete':'')+'" href="#/lesson/'+lesson.order+'"><span class="study-today-number">'+(complete?'✓':number)+'</span><span><strong>'+title+'</strong><small>'+ESC(description)+'</small></span><span class="study-today-arrow">↖</span></a>').join('')+'</div><div class="study-route-actions"><a href="#/lesson/'+lesson.order+'" class="btn btn-primary">افتحي مساحة الدرس ←</a><a href="#/study-guide" class="btn btn-outline">كيف أذاكر؟</a></div></section>';
 }
+function adaptiveStudyPlan(lesson){
+ const now=Date.now(),history=Object.values(state.reviewHistory||{});
+ const due=history.filter(x=>!x.lastCorrect||new Date(x.nextDueAt||0).getTime()<=now);
+ const wrongLessonQs=questions.filter(q=>Number.isInteger(state.answers[q.id])&&state.answers[q.id]!==q.correct_option_index);
+ const signs=COURSE.sign_library||[];
+ const signFocus=signs.filter(s=>{const x=state.signPractice?.[s.id]||{};return !((x.meaningCorrect||0)>=1&&(x.actionCorrect||0)>=1)});
+ const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||''));
+ const unwatched=directVideos.filter(x=>!state.videoWatched?.[x.id]);
+ const tasks=[];
+ if(due.length){
+   tasks.push({tone:'review',time:'8–10 د',title:'راجعي المستحق الآن',desc:due.length+' عنصرًا ظهر وقت مراجعته أو كانت آخر إجابته خطأ.',href:'#/review',cta:'افتحي المراجعة'});
+ }else{
+   tasks.push({tone:'signs',time:'6–8 د',title:'ثبتي إشارات الطريق',desc:signFocus.length?signFocus.length+' لوحة ما زالت تحتاج معنى + تصرف.':'الإشارات التي تدربتِ عليها وصلت لمرحلة التثبيت.',href:'#/traffic-signs',cta:'تدريب الإشارات'});
+ }
+ tasks.push({tone:'lesson',time:(lesson.estimated_minutes||15)+' د',title:'كمّلي الدرس '+p2(lesson.order),desc:lesson.title+' — اقرئي، لخّصي، ثم جاوبي بدون الرجوع للنص.',href:'#/lesson/'+lesson.order,cta:'افتحي الدرس'});
+ if(wrongLessonQs.length){
+   tasks.push({tone:'quiz',time:'5–7 د',title:'صححي خطأ قديم',desc:wrongLessonQs.length+' أسئلة دروس ما زالت آخر إجابة مسجلة فيها غير صحيحة.',href:'#/quiz',cta:'اختبار الأخطاء'});
+ }else if(unwatched.length){
+   tasks.push({tone:'video',time:'5–8 د',title:'شاهدي ثم اكتبي ملاحظة',desc:'عندك '+unwatched.length+' مقطع مباشر لم تسجلي مشاهدته بعد. اكتبي الدقيقة + الخطوة + السبب.',href:'#/videos',cta:'مقاطع القيادة'});
+ }else{
+   tasks.push({tone:'cards',time:'5 د',title:'استرجاع سريع بدون قراءة',desc:'اختاري عدة بطاقات وحاولي الإجابة قبل قلبها.',href:'#/cards',cta:'بطاقات التذكّر'});
+ }
+ const score=due.length+wrongLessonQs.length+(signFocus.length?1:0);
+ return '<section class="adaptive-plan card" aria-label="جلسة مذاكرة ذكية مقترحة"><div class="adaptive-plan-head"><div><span class="bento-overline">SMART SESSION / مبنية على نشاطك</span><h2>وش تذاكرين الآن؟</h2><p>رتبتها لك من بيانات إجاباتك ومراجعاتك داخل مِسار، بدل ما تختارين عشوائيًا.</p></div><span class="adaptive-priority '+(score?'has-priority':'clear')+'">'+(score?'فيه نقاط تحتاج مراجعة':'الجلسة مفتوحة للتقدم')+'</span></div><div class="adaptive-task-grid">'+tasks.map((t,i)=>'<a href="'+t.href+'" class="adaptive-task '+t.tone+'"><span class="adaptive-task-no">0'+(i+1)+'</span><div><span class="adaptive-task-time">'+t.time+'</span><strong>'+ESC(t.title)+'</strong><p>'+ESC(t.desc)+'</p><small>'+ESC(t.cta)+' ←</small></div></a>').join('')+'</div><div class="adaptive-plan-foot"><span>الخطة تتغير تلقائيًا مع إجاباتك.</span><a href="#/review">ليش ظهر لي هذا؟ راجعي سجل التكرار ←</a></div></section>';
+}
 function home(){
  const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress();
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
@@ -10261,6 +10368,7 @@ function home(){
   </div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
+ ${adaptiveStudyPlan(n)}
  <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('الأسئلة','48','تدريبًا بتفسير','quiz','questions')}</div>
  <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
@@ -10382,7 +10490,12 @@ function lessonJourney(l,q){
  ];
  return '<section class="lesson-journey" aria-label="خطوات المذاكرة"><div class="lesson-journey-head"><div><span class="bento-overline">FOCUS MODE / خطوة بخطوة</span><h2>مسار المذاكرة لهذا الدرس</h2><p>ابدئي بالشرح، ثم التدريب، واختبري فهمك. لا يلزم إكمالها كلها في جلسة واحدة.</p></div><div class="lesson-journey-score"><strong>'+count+' / '+total+'</strong><small>خطوات متابعة</small></div></div><div class="lesson-journey-track" role="progressbar" aria-label="متابعة الدرس" aria-valuenow="'+count+'" aria-valuemin="0" aria-valuemax="'+total+'"><span style="width:'+progress+'%"></span></div><div class="lesson-journey-steps">'+steps.map(x=>'<button type="button" class="lesson-journey-step '+(x.done?'done ':'')+(x.unavailable?'unavailable':'')+'" data-action="scroll" data-target="'+x.target+'"><span class="lesson-journey-stepnum">'+(x.done?'✓':x.num)+'</span><span><strong>'+x.title+'</strong><small>'+x.desc+'</small></span></button>').join('')+'</div><div class="lesson-journey-actions"><button type="button" class="btn '+(read?'btn-muted':'btn-primary')+'" data-action="study-read" data-lesson="'+ESC(l.id)+'">'+(read?'✓ تم تسجيل قراءة الدرس · إلغاء':'✓ قرأت الشرح وفهمت فكرته')+'</button>'+(mediaAvailable?'<button type="button" class="btn '+(seen?'btn-muted':'btn-outline')+'" data-action="study-seen" data-lesson="'+ESC(l.id)+'">'+(seen?'✓ اطلعت على الشرح المرئي · إلغاء':'اطلعت على الرسم أو المقطع')+'</button>':'<span class="lesson-video-gap">الفيديو غير متوفر لهذا الدرس حاليًا؛ لا يُحسب ضمن التقدم.</span>')+'</div></section>';
 }
-function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span>${lessonVerificationChip(l)}</div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarGuides.render(l)}${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong><span class="feedback-reason">${ESC(q.rationale)}</span>${questionReferenceNote(n)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section>${lessonExtraQuestion(l)}<section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="lesson-deep-dive">الشرح خطوة بخطوة</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button>${(COURSE.review_questions||[]).some(x=>x.lesson_id===l.id)?'<button type="button" class="toc-item" data-action="scroll" data-target="practice-extra">سؤال مراجعة إضافي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى والثقة</h3>${lessonVerificationPanel(l)}</section></aside></div>`}
+function lessonRecallBlock(l){
+ const points=(l.study_content?.key_points||[]).slice(0,4);
+ if(!points.length)return '';
+ return '<section class="lesson-recall" id="active-recall"><div class="lesson-recall-head"><div><span class="bento-overline">RETRIEVAL PRACTICE / من الذاكرة</span><h2>قفلي الشرح دقيقة… وش تتذكرين؟</h2><p>حاولي تجاوبين بصوتك أو في ورقة قبل فتح نقاط التحقق.</p></div><span class="chip tiny">بدون درجة</span></div><div class="lesson-recall-prompts"><div><span>01</span><strong>وش القاعدة الأساسية؟</strong><small>قوليها بجملة واحدة من ذاكرتك.</small></div><div><span>02</span><strong>متى أطبقها؟</strong><small>تخيلي موقفًا من الطريق.</small></div><div><span>03</span><strong>وش الخطأ اللي أتجنبه؟</strong><small>اذكري قرارًا خاطئًا واحدًا.</small></div></div><details class="lesson-recall-answer"><summary>جربت من الذاكرة — اكشفي نقاط التحقق</summary><div>'+points.map((x,i)=>'<p><b>'+(i+1)+'.</b> '+ESC(x)+'</p>').join('')+'</div></details><p class="lesson-recall-note">هذا تمرين استرجاع من محتوى الدرس نفسه، وليس سؤال اختبار رسمي. إذا ما تذكرتِ النقاط، ارجعي للشرح ثم جربي مرة ثانية لاحقًا.</p></section>';
+}
+function lessonPage(n){const l=getLesson(n);if(!l)return notFound();const changed=state.lastOpened!==n||!(state.visited||[]).includes(n);state.lastOpened=n;state.visited=state.visited||[];if(!state.visited.includes(n))state.visited.push(n);if(changed&&(savedMirrorPresent||databaseReady||dirtyBeforeReady))save();let c=l.study_content,q=getQuestion(n),ans=state.answers[q.id],answered=Number.isInteger(ans),correct=ans===q.correct_option_index;return `<div class="crumbs"><a href="#/weeks">الخطة</a> / <a href="#/week/${l.week}">الأسبوع ${l.week}</a> / الدرس ${p2(n)}</div><div class="lesson-layout"><div class="lesson-main">${lessonJourney(l,q)}<section class="lesson-hero"><div class="flexline"><span class="chip tiny dark">LESSON ${p2(n)} / 48</span><span class="chip tiny">${l.estimated_minutes} دقيقة مقترحة</span>${lessonVerificationChip(l)}</div><h1>${ESC(l.title)}</h1><p>${ESC(c.goal)}</p></section>${[7,8,9,43].includes(n)?'<a class="btn btn-outline" style="margin:12px 0" href="#/traffic-signs">افتحي مكتبة إشارات المرور المصورة ←</a>':''}<section class="lesson-body" id="reading"><div class="eyebrow">01 / الفكرة الأساسية</div><h2>نفهمها أولًا</h2><p>${ESC(c.introduction)}</p><div class="eyebrow" style="margin-top:24px">02 / معلومات تثبّتينها</div>${c.key_points.map((t,i)=>`<div class="point"><i>${i+1}</i><span>${ESC(t)}</span></div>`).join('')}</section>${window.MasarGuides.render(l)}${window.MasarHub.lessonReadings(COURSE,l)}${visualBlock(l)}<div id="lesson-videos">${mediaBlock(l)}</div><section class="lesson-quick-recap"><h2>ملخص الدرس في دقيقة</h2><p>${ESC(c.recap||c.goal)}</p><p class="sub">اسألي نفسك: وش القاعدة؟ متى أطبقها؟ وش الخطأ اللي لازم أتجنبه؟ اكتبي الإجابة في ملاحظاتك تحت.</p></section>${lessonRecallBlock(l)}${window.MasarCoach.activityBlock(COURSE,l,state)}<section class="scenario" id="scenario"><div class="tag-s">DRIVE THINKING · تمرين تفكير</div><h2>تخيّلي الموقف</h2><p>${ESC(c.scenario)}</p></section><section class="qbox" id="practice"><div class="eyebrow">03 / اختبري الفهم</div><h2>قرار واحد صحيح</h2><p>${ESC(q.question)}</p><div class="options">${q.options.map((opt,i)=>`<button type="button" class="option ${answered?(i===q.correct_option_index?'correct':i===ans?'wrong':''):''}" data-action="lesson-answer" data-id="${n}" data-choice="${i}" ${answered?'disabled':''}><span class="bullet">${p2(i+1)}</span>${ESC(opt)}</button>`).join('')}</div>${answered?`<div class="feedback ${correct?'':'wrong'}"><strong>${correct?'إجابة صحيحة!':'خلينا نفهم السبب:'}</strong><span class="feedback-reason">${ESC(q.rationale)}</span>${questionReferenceNote(n)}</div>`:''}<div class="lesson-footer"><button type="button" class="btn ${isDone(n)?'btn-muted':'btn-primary'}" data-action="mark" data-id="${n}">${icon('check')} ${isDone(n)?'تم إكمال الدرس · إلغاء العلامة':'أكملت هذا الدرس'}</button><button type="button" class="btn btn-outline" data-action="bookmark" data-id="${n}">${icon('star')} ${state.bookmarks.includes(n)?'إزالة الحفظ':'حفظ للمراجعة'}</button></div></section>${lessonExtraQuestion(l)}<section class="lesson-body note-box" id="notes"><div class="eyebrow">04 / دفتر ملاحظاتي</div><h2>اكتبيها بطريقتك</h2><p>ملاحظاتك تُحفظ محليًا على نفس المتصفح، ويمكنك تصديرها من الإعدادات.</p><textarea data-note="${n}" placeholder="وش أهم شيء فهمتيه؟ أو وش تبغين تراجعينه؟">${ESC(state.notes[n]||'')}</textarea></section><div class="lesson-footer" style="margin-top:20px"><a href="#/lesson/${Math.max(1,n-1)}" class="btn btn-outline" ${n===1?'aria-disabled="true"':''}>← الدرس السابق</a><a href="${n===48?'#/weeks':`#/lesson/${n+1}`}" class="btn btn-primary">${n===48?'العودة للخطة':'الدرس التالي'} ${icon('left')}</a></div></div><aside class="lesson-aside"><section class="aside-card"><h3>في هذا الدرس</h3><button type="button" class="toc-item" data-action="scroll" data-target="reading">الفكرة الأساسية</button><button type="button" class="toc-item" data-action="scroll" data-target="lesson-deep-dive">الشرح خطوة بخطوة</button><button type="button" class="toc-item" data-action="scroll" data-target="source-reading">مراجع وصفحات الدرس</button><button type="button" class="toc-item" data-action="scroll" data-target="active-recall">استرجاع من الذاكرة</button><button type="button" class="toc-item" data-action="scroll" data-target="coach-activity">تطبيق عملي للفهم</button>${(COURSE.learning_visuals||[]).some(v=>(v.lesson_ids||[]).includes(l.id))?'<button type="button" class="toc-item" data-action="scroll" data-target="visual-learning">الشرح المرئي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="scenario">الموقف التطبيقي</button><button type="button" class="toc-item" data-action="scroll" data-target="practice">سؤال الفهم</button>${(COURSE.review_questions||[]).some(x=>x.lesson_id===l.id)?'<button type="button" class="toc-item" data-action="scroll" data-target="practice-extra">سؤال مراجعة إضافي</button>':''}<button type="button" class="toc-item" data-action="scroll" data-target="notes">ملاحظاتي</button><div class="microbar"><span style="width:${isDone(n)?100:0}%"></span></div><span style="font-size:11px;color:var(--muted)">${isDone(n)?'أحسنتِ، الدرس مكتمل':'حددي إكمال الدرس بعد الانتهاء'}</span></section><section class="aside-card"><h3>المصادر والمرجع</h3>${sourcesBlock(l)}</section><section class="aside-card"><h3>حالة المحتوى والثقة</h3>${lessonVerificationPanel(l)}</section></aside></div>`}
 function flashcardsPage(){
  const cards=[
  ['قف','يجب التوقف التام ثم العبور عندما يسمح التنظيم وتتوفر السلامة.','SG-01'],
@@ -10421,6 +10534,7 @@ function visualLibraryPage(){
 }
 function studyGuidePage(){
 return '<div class="eyebrow">HOW TO STUDY / STUDY GUIDE</div><h1 class="page-title">كيف أذاكر وأفهم السواقة؟</h1><p class="sub">ما تحتاجين تحفظين الصور فقط. المطلوب تفهمين: وش العلامة؟ وش الخطر؟ وش القرار الصحيح؟ وكيف تتذكرين القاعدة إذا تغير شكل السؤال؟</p>'+
+'<section class="learning-science-note"><div><span class="bento-overline">WHY THIS WORKS / ليش نذاكر كذا؟</span><h2>الاسترجاع أفضل من إعادة القراءة وحدها</h2><p>مِسار يخليك تحاولين تتذكرين القاعدة قبل كشف الإجابة، ثم يرجع لك الموضوع لاحقًا إذا أخطأتِ أو حان وقت المراجعة. هذا مبني على استراتيجيات الاسترجاع النشط والتكرار المتباعد المدروسة في أبحاث التعلم، لكنه لا يحوّل نتيجة الموقع إلى قياس رسمي للجاهزية.</p></div><a href="https://www.nature.com/articles/s44159-022-00089-1" target="_blank" rel="noopener noreferrer">مراجعة علمية عن spacing + retrieval practice ↗</a></section>'+
 '<div class="hub-guide-steps">'+
 '<section class="card hub-guide-step"><span>01 / إشارات الطريق</span><h2>احفظي المعنى والتصرف، مو الاسم فقط</h2><p>ابدئي بالشكل واللون: مثلث تحذيري، دائرة تنظيمية، لوحة إرشادية. اسألي نفسك: هل تُحذّر أم تمنع أم تُلزم؟ وبعدها: ماذا أفعل إذا شاهدتها؟</p><p><strong>مثال:</strong> المثلث الذي بداخله رسم إشارة ضوئية يحذّرك من إشارة قادمة؛ ليس ضوءًا أحمر فعليًا يأمرك بالتوقف فور رؤية المثلث.</p><a href="#/practice-quiz" class="btn btn-outline">اختبري إشارات الطريق</a></section>'+
 '<section class="card hub-guide-step"><span>02 / مشاهدة الفيديو</span><h2>شوفي المقطع مرتين، واكتبي الدقيقة</h2><p>الأولى لفهم الموقف كاملًا؛ في الثانية أوقفي الفيديو عند الخطوة غير الواضحة، ثم اكتبي في ملاحظات الفيديو: الزمن، ماذا فعلت المدربة، لماذا فعلته، وما السؤال الذي ستسألينه.</p><div class="hub-note-example"><strong>مثال لملاحظة</strong><p>01:20 — فحص المرآة والنقطة العمياء قبل الحركة.<br/>أفهم لماذا، لكن أبي أسأل المدربة متى أعيد الفحص؟</p></div><a href="#/visuals" class="btn btn-outline">افتحي المقاطع والرسومات</a></section>'+

@@ -87,7 +87,7 @@ const wrongSignChoice=visibleSignChoices.find(id=>id!=='SG-01');
 if(!wrongSignChoice)throw Error('Sign quiz must show a valid incorrect option alongside SG-01');
 click({action:'sign-answer',choice:wrongSignChoice});
 if(!saved['masar-driving-v1'].includes('"SG-01"'))throw Error('Sign review result not persisted');
-if(!element('app').innerHTML.includes('الإجابة المناسبة: قف'))throw Error('Wrong-answer explanation absent');
+if(!element('app').innerHTML.includes('الإجابة الصحيحة مرتبطة بلوحة: قف'))throw Error('Wrong-answer explanation absent');
 click({action:'sign-filter',filter:'mistakes'});
 if(!element('app').innerHTML.includes('وش معنى هذه اللوحة؟'))throw Error('Mistakes-only quiz not available');
 click({action:'sign-answer',choice:'SG-01'});

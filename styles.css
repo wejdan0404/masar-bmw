@@ -859,3 +859,72 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
  .video-learning-actions{display:grid}
  .video-learning-actions .btn{width:100%}
 }
+
+
+/* MASAR v1.7 — adaptive learning, retrieval practice, and dual sign recall */
+.adaptive-plan{margin:18px 0 22px;padding:20px;border:1px solid #d9e3e8;background:linear-gradient(145deg,#fbfcfd 0%,#f3f7f9 100%);overflow:hidden;position:relative}
+.adaptive-plan:after{content:'';position:absolute;inset:auto -80px -95px auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(122,163,192,.16),transparent 68%);pointer-events:none}
+.adaptive-plan-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:15px}
+.adaptive-plan-head h2{margin:4px 0 5px;color:#203844}
+.adaptive-plan-head p{margin:0;color:#6b7f8b;font-size:12px;line-height:1.75}
+.adaptive-priority{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:850;white-space:nowrap;background:#eef3f6;color:#607884}
+.adaptive-priority.has-priority{background:#f8e9ec;color:#7b2134}
+.adaptive-priority.clear{background:#e8f4ee;color:#276b55}
+.adaptive-task-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.adaptive-task{position:relative;display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:start;padding:14px;border:1px solid #dce5ea;background:#fff;border-radius:15px;text-decoration:none;color:inherit;min-height:142px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.adaptive-task:hover{transform:translateY(-2px);border-color:#bdcfd9;box-shadow:0 10px 26px rgba(31,45,54,.07)}
+.adaptive-task-no{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#edf3f6;color:#4c6b7d;font-size:10px;font-weight:900}
+.adaptive-task-time{display:block;font-size:9px;letter-spacing:.04em;color:#80909a;font-weight:850;margin:1px 0 6px}
+.adaptive-task strong{display:block;color:#243d49;font-size:13px;line-height:1.6}
+.adaptive-task p{margin:5px 0 8px;color:#6f818c;font-size:10.5px;line-height:1.75}
+.adaptive-task small{font-size:10px;font-weight:850;color:#4e738b}
+.adaptive-task.review{border-top:3px solid #86152d}
+.adaptive-task.lesson{border-top:3px solid #587995}
+.adaptive-task.signs{border-top:3px solid #7aa3c0}
+.adaptive-task.quiz{border-top:3px solid #4a0711}
+.adaptive-task.video{border-top:3px solid #6e8799}
+.adaptive-task.cards{border-top:3px solid #839aa9}
+.adaptive-plan-foot{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid #dce5ea;margin-top:14px;padding-top:11px;font-size:10px;color:#778993}
+.adaptive-plan-foot a{color:#4f7186;text-decoration:none;font-weight:800}
+.lesson-recall{margin:18px 0;padding:19px;border-radius:18px;background:linear-gradient(145deg,#263c49,#1f303a);color:#f4f7f8;box-shadow:0 14px 38px rgba(26,44,54,.12)}
+.lesson-recall-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.lesson-recall-head h2{color:#fff;margin:5px 0 6px}
+.lesson-recall-head p{margin:0;color:#c9d5dc;font-size:11.5px;line-height:1.75}
+.lesson-recall .bento-overline{color:#a9c4d5}
+.lesson-recall .chip{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.13);color:#dce8ee}
+.lesson-recall-prompts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:16px 0}
+.lesson-recall-prompts>div{background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:12px}
+.lesson-recall-prompts span{display:inline-flex;width:27px;height:27px;align-items:center;justify-content:center;border-radius:8px;background:rgba(255,255,255,.1);font-size:9px;font-weight:900;color:#bcd0dc;margin-bottom:8px}
+.lesson-recall-prompts strong{display:block;color:#fff;font-size:12px;margin-bottom:4px}
+.lesson-recall-prompts small{color:#b8c7cf;font-size:9.5px;line-height:1.65}
+.lesson-recall-answer{border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(255,255,255,.05);overflow:hidden}
+.lesson-recall-answer summary{cursor:pointer;padding:12px 14px;font-size:11px;font-weight:850;color:#f3f7f9;list-style:none}
+.lesson-recall-answer summary::-webkit-details-marker{display:none}
+.lesson-recall-answer summary:after{content:'⌄';float:left;color:#b9cad4;font-size:16px;transition:transform .2s ease}
+.lesson-recall-answer[open] summary:after{transform:rotate(180deg)}
+.lesson-recall-answer>div{border-top:1px solid rgba(255,255,255,.1);padding:10px 14px 12px}
+.lesson-recall-answer p{margin:5px 0;color:#d7e2e8;font-size:10.5px;line-height:1.75}
+.lesson-recall-note{margin:10px 0 0!important;color:#9fb3be!important;font-size:9.5px!important;line-height:1.7!important}
+.ts-quiz-kind{display:flex;justify-content:center;gap:7px;margin:10px auto 16px;flex-wrap:wrap}
+.ts-quiz-kind button{border:1px solid #d4dfe5;background:#f7f9fa;color:#607785;border-radius:999px;padding:7px 12px;font:inherit;font-size:10px;font-weight:850;cursor:pointer}
+.ts-quiz-kind button.active{background:#263f4d;color:white;border-color:#263f4d}
+.ts-retrieval-note{display:block;margin:10px 0;padding:8px 10px;border-radius:10px;background:#edf4f7;color:#587180;font-size:10px;line-height:1.65}
+@media(max-width:900px){
+ .adaptive-task-grid{grid-template-columns:1fr}
+ .adaptive-task{min-height:auto}
+ .lesson-recall-prompts{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .adaptive-plan{padding:15px}
+ .adaptive-plan-head,.adaptive-plan-foot,.lesson-recall-head{display:grid}
+ .adaptive-priority{justify-self:start}
+ .lesson-recall{padding:15px}
+}
+
+
+.learning-science-note{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin:16px 0 22px;padding:18px 20px;border-radius:18px;background:#f7fafb;border:1px solid #dce5ea}
+.learning-science-note h2{margin:5px 0 6px;color:#263f4d;font-size:18px}
+.learning-science-note p{margin:0;max-width:780px;color:#667b87;font-size:11.5px;line-height:1.8}
+.learning-science-note a{flex:0 0 auto;color:#4d7086;font-size:10.5px;font-weight:850;text-decoration:none;border:1px solid #cedbe2;border-radius:999px;padding:9px 12px;background:#fff}
+.learning-science-note a:hover{text-decoration:underline}
+@media(max-width:760px){.learning-science-note{display:grid;align-items:start}.learning-science-note a{justify-self:start}}

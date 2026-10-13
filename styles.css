@@ -693,3 +693,9 @@ body{font-size:15px}
 .source-text-page h4{font-size:13px;color:#425e73;margin:0 0 6px}
 .source-text-page p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:2;font-size:14px;color:#2f4657}
 .source-text-preview>.btn{margin:14px 0 4px}
+
+/* Source library category-first reading */
+.source-filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 10px}
+.source-filter-tab{font-family:inherit;padding:10px 17px;border:1px solid #cbd8df;border-radius:999px;background:#fff;color:#4a6477;min-height:43px;font-weight:750;cursor:pointer}
+.source-filter-tab.selected{background:#334f62;border-color:#334f62;color:white}
+.source-filter-tab:focus-visible{outline:3px solid #7598b9;outline-offset:2px}

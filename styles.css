@@ -1281,3 +1281,19 @@ body{
  .week-card:hover,.adaptive-task:hover,.ts-card:hover,.study-video:hover,.coach-review-item:hover,.hub-guide-step:hover,.route-stop:hover,.btn:hover{transform:none!important}
 }
 @media print{.mobile-dock{display:none!important}}
+
+
+/* Local PDF canvas reader — iPhone/mobile fallback */
+.source-mobile-reader-btn{margin-top:8px}
+.source-canvas-reader{margin-top:12px;border:1px solid var(--line);border-radius:16px;background:#eef3f6;overflow:hidden;box-shadow:var(--elev-1)}
+.source-canvas-toolbar{min-height:58px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:9px;padding:9px 11px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}
+.source-canvas-toolbar .btn{min-height:38px;padding:8px 11px;font-size:10.5px}
+.source-canvas-status{text-align:center;font-size:11px;font-weight:850;color:#526c7c}
+.source-canvas-viewport{display:flex;justify-content:center;align-items:flex-start;padding:12px;overflow:auto;max-height:72vh;background:linear-gradient(180deg,#dfe7eb,#eef3f5)}
+.source-pdf-canvas{display:block;max-width:100%;height:auto!important;background:#fff;box-shadow:0 8px 28px rgba(27,43,53,.15);border-radius:4px}
+.source-canvas-reader>.source-inline-info{margin:0!important;padding:9px 12px;background:#fff;border-top:1px solid var(--line);font-size:10px!important}
+@media(max-width:610px){
+ .source-canvas-toolbar{grid-template-columns:1fr auto 1fr;padding:8px}
+ .source-canvas-toolbar .btn{min-width:0;padding-inline:8px}
+ .source-canvas-viewport{padding:6px;max-height:66vh}
+}

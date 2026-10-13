@@ -33,6 +33,11 @@ jobs:
           node --check smoke-test.js
           node --check validate-dataset.js
           node --check browser-e2e.js
+          node --check lesson-guides-core.js
+          node --check lesson-guides-01.js
+          node --check lesson-guides-02.js
+          node --check lesson-guides-03.js
+          node --check lesson-guides-04.js
       - name: Validate content and compiled site
         run: node validate-dataset.js
       - name: Run smoke tests
@@ -41,3 +46,31 @@ jobs:
         run: python compile.py
       - name: Ensure published HTML is reproducible
         run: git diff --exit-code -- index.html
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser test dependencies
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.56.0
+          npx playwright install --with-deps chromium
+      - name: Run local website
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/masar-server.log 2>&1 &
+          echo $! > /tmp/masar-server.pid
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8765/ -o /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail http://127.0.0.1:8765/ -o /dev/null
+      - name: First-time learner Chromium journey
+        env:
+          MASAR_E2E_URL: http://127.0.0.1:8765/
+        run: node browser-e2e.js

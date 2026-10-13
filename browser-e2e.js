@@ -5,7 +5,7 @@ const fs=require('node:fs');
 const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
 (async()=>{
  const base=process.env.MASAR_E2E_URL||'http://127.0.0.1:8765/';
- const browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
  const context=await browser.newContext({viewport:{width:1365,height:900},locale:'ar-SA',acceptDownloads:true});
  const page=await context.newPage();const errors=[];
  page.on('pageerror',e=>errors.push(e.message));
@@ -23,6 +23,11 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert((await page.locator('[data-action="study-star"]').innerText()).includes('إلغاء نجمة اليوم'),'Daily study star did not persist after reload');
   await page.locator('[data-action="study-star"]').click();
   console.log('PASS Chromium: daily learning studio and optional stars persist');
+  // Start from a beginner's menu: a menu group must expose its contents.
+  await page.goto(base+'#/weeks',{waitUntil:'domcontentloaded'});
+  assert.equal(await page.locator('.learning-phase').count(),4,'Educational phase grouping is incomplete');
+  await page.locator('.sidebar-nav-group').first().locator('summary').click();
+  assert((await page.locator('.sidebar-nav-group').first().getAttribute('open'))!==null,'Menu category accordion did not expand');
   await page.goto(base+'#/lesson/1',{waitUntil:'domcontentloaded'});
   await page.locator('textarea[data-activity-note="ACT-001"]').waitFor();
   await page.locator('.lesson-journey').waitFor();

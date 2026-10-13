@@ -16,7 +16,7 @@ vm.createContext(context);vm.runInContext(fs.readFileSync(__dirname+'/visuals.js
 for(const g of ['lesson-guides-core.js','lesson-guides-01.js','lesson-guides-02.js','lesson-guides-03.js','lesson-guides-04.js']){
  vm.runInContext(fs.readFileSync(__dirname+'/'+g,'utf8'),context,{timeout:3000});
 }
-if(context.window.MasarGuides.getCount()!==48)throw Error('Expanded guides missing');vm.runInContext(text,context,{timeout:3000});
+if(context.window.MasarGuides.getCount()!==48)throw Error('Expanded guides missing');vm.runInContext(fs.readFileSync(__dirname+'/learning-studio.js','utf8'),context,{timeout:3000});vm.runInContext(text,context,{timeout:3000});
 for(const [hash,label] of [['#/home','خلف المقود'],['#/weeks','خريطة مشوارك'],['#/week/7','أولوية الدخول إلى الدوار'],['#/lesson/26','مسافة التوقف'],['#/quiz','مركز الاختبارات'],['#/cards','بطاقات تثبيت المعلومات'],['#/notes','دفتر مذاكرتي'],['#/visuals','المكتبة المرئية'],['#/settings','إعدادات المذاكرة']]){
  context.location.hash=hash;windowHandlers.hashchange();
  if(!element('app').innerHTML.includes(label))throw Error('Missing route '+hash);

@@ -1,7 +1,7 @@
 from pathlib import Path
 root=Path(__file__).parent
 s=(root/'index-template.html').read_text(encoding='utf-8')
-css=(root/'styles.css').read_text(encoding='utf-8')
+css=(root/'styles.css').read_text(encoding='utf-8')+'\n'+(root/'learning-studio.css').read_text(encoding='utf-8')
 js=(root/'app.js').read_text(encoding='utf-8')
 db_js=(root/'db'/'indexeddb.js').read_text(encoding='utf-8')
 visual_js=(root/'visuals.js').read_text(encoding='utf-8')
@@ -10,6 +10,6 @@ signs_js=(root/'traffic-signs.js').read_text(encoding='utf-8')
 coach_js=(root/'study-coach.js').read_text(encoding='utf-8')
 guide_js='\n'.join((root/name).read_text(encoding='utf-8') for name in ('lesson-guides-core.js','lesson-guides-01.js','lesson-guides-02.js','lesson-guides-03.js','lesson-guides-04.js'))
 json_text=(root/'data'/'course.json').read_text(encoding='utf-8').replace('</script','<\\/script')
-s=s.replace('/* STYLES */',css).replace('/* COURSE DATA */',json_text).replace('/* APP CODE */',db_js+'\n'+visual_js+'\n'+hub_js+'\n'+signs_js+'\n'+coach_js+'\n'+guide_js+'\n'+js)
+s=s.replace('/* STYLES */',css).replace('/* COURSE DATA */',json_text).replace('/* APP CODE */',db_js+'\n'+visual_js+'\n'+hub_js+'\n'+signs_js+'\n'+coach_js+'\n'+guide_js+'\n'+(root/'learning-studio.js').read_text(encoding='utf-8')+'\n'+js)
 (root/'index.html').write_text(s,encoding='utf-8')
 print('Built',root/'index.html',len(s),'chars')

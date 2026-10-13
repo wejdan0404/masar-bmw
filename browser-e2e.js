@@ -17,11 +17,15 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.equal(await page.locator('.loading-screen').count(),0,'Loading shell was not replaced');
   await page.waitForTimeout(800);
   console.log('E2E debug initial page',JSON.stringify({url:page.url(),title:await page.title(),body:(await page.locator('body').innerText()).slice(0,450),errors}));
-  await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('خلف المقود'),'Home hero heading is missing');
+  await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('مسارك لتعلّم القيادة'),'Home hero heading is missing');
   assert.match(await page.title(),/مِسار/);
   assert.equal(await page.locator('.hero-brooch-art,.brooch-svg,.hero-porsche-scene').count(),0,'Old jewelry/Porsche artwork must not return');
-  assert.equal(await page.locator('.hero-bmw-scene,.bmw-hero-photo,.bmw-silhouette,.hero-premium img').count(),0,
-    'Do not show any temporary car image until user supplies her chosen photo');
+  assert.equal(await page.locator('.hero-premium img.hero-car-image').count(),1,
+    'The user-selected transparent BMW image should be displayed');
+  assert.match(await page.locator('.hero-car-image').getAttribute('src'),/assets\/masar-bmw-selected\.webp/);
+  await page.locator('.hero-car-image').evaluate(img=>img.decode());
+  assert(await page.locator('.hero-car-image').evaluate(img=>img.naturalWidth>=700),
+    'User image must load from GitHub-hosted optimized asset');
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','New visitors start in BMW dark mode');
   assert.equal(await page.locator('[data-action="theme-toggle"]').count(),1,'Theme switch exists in the top bar');
   const darkCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
@@ -113,15 +117,18 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await page.reload({waitUntil:'domcontentloaded'});
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','Dark preference persists');
   await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
-  console.log('PASS Chromium: image-free hero and dark/light themes persist');
+  console.log('PASS Chromium: user-selected BMW hero image and dark/light themes persist');
   const heroDesktop=await page.locator('.hero-premium').evaluate(el=>{
-    const frame=el.getBoundingClientRect(),copy=el.querySelector('.hero-copy')?.getBoundingClientRect();
-    return {width:frame.width,copyWidth:copy?.width||0,mediaCount:el.querySelectorAll('img,svg.bmw-silhouette,.hero-bmw-scene').length};
+    const frame=el.getBoundingClientRect(),copy=el.querySelector('.hero-copy')?.getBoundingClientRect(),
+      img=el.querySelector('.hero-car-image'),ir=img?.getBoundingClientRect();
+    return {width:frame.width,copyWidth:copy?.width||0,imageWidth:ir?.width||0,
+      loaded:!!img?.naturalWidth,overlap:copy&&ir?Math.max(0,Math.min(copy.right,ir.right)-Math.max(copy.left,ir.left)):0};
   });
-  assert(heroDesktop.width>=850,'Desktop hero should fill main reading column: '+JSON.stringify(heroDesktop));
-  assert(heroDesktop.copyWidth>=560,'Text should use space freed by deleted photo: '+JSON.stringify(heroDesktop));
-  assert.equal(heroDesktop.mediaCount,0,'Hero must stay image-free until photo is chosen');
-  console.log('PASS Chromium: accessible text-first hero without a placeholder photo');
+  assert(heroDesktop.loaded,'User-selected car must load on desktop');
+  assert(heroDesktop.copyWidth>=300,'Headline needs readable desktop column: '+JSON.stringify(heroDesktop));
+  assert(heroDesktop.imageWidth>=200,'Car photo needs a visible desktop panel: '+JSON.stringify(heroDesktop));
+  assert(heroDesktop.overlap<30,'Car should not cover headline on desktop: '+JSON.stringify(heroDesktop));
+  console.log('PASS Chromium: BMW image and title occupy separate desktop columns');
 
   assert.equal(await page.locator('.studio-session').count(),0,'Home must not show a timer card');
   assert.equal(await page.locator('.studio-timer-dock,.floating-timer').count(),0,'No timer overlay on initial home visit');
@@ -348,15 +355,18 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert(homeSizes.scroll<=homeSizes.width+8,'Mobile learning studio horizontal overflow: '+JSON.stringify(homeSizes));
   console.log('PASS Chromium: mobile learning studio avoids horizontal scrolling');
   const heroMobile=await page.locator('.hero-premium').evaluate(el=>{
-    const rect=el.getBoundingClientRect(),copy=el.querySelector('.hero-copy')?.getBoundingClientRect();
-    return {width:rect.width,height:rect.height,copyWidth:copy?.width||0,
-      images:el.querySelectorAll('img,.hero-bmw-scene,.bmw-silhouette').length,
+    const copy=el.querySelector('.hero-copy').getBoundingClientRect(),
+      img=el.querySelector('.hero-car-image'),frame=img.getBoundingClientRect();
+    return {copyWidth:copy.width,imageWidth:frame.width,imageHeight:frame.height,
+      imageTop:frame.top,copyBottom:copy.bottom,loaded:img.naturalWidth>0,
       overflow:document.documentElement.scrollWidth-innerWidth};
   });
-  assert(heroMobile.copyWidth>=280,'Image-free mobile hero text must be readable: '+JSON.stringify(heroMobile));
-  assert.equal(heroMobile.images,0,'Mobile hero must have no temporary car image');
-  assert(heroMobile.overflow<=8,'Mobile image-free hero should not overflow: '+JSON.stringify(heroMobile));
-  console.log('PASS Chromium: mobile hero displays study content without a car photo');
+  assert(heroMobile.copyWidth>=280,'Mobile title must be readable: '+JSON.stringify(heroMobile));
+  assert(heroMobile.loaded,'User selected BMW photo must load on mobile');
+  assert(heroMobile.imageTop>=heroMobile.copyBottom-8,'BMW car must stack below text on mobile: '+JSON.stringify(heroMobile));
+  assert(heroMobile.imageHeight>=180,'Mobile BMW photograph should remain clear: '+JSON.stringify(heroMobile));
+  assert(heroMobile.overflow<=8,'Mobile BMW hero cannot overflow: '+JSON.stringify(heroMobile));
+  console.log('PASS Chromium: selected transparent BMW stacks below title on mobile');
 
   await page.goto(base+'#/traffic-signs',{waitUntil:'domcontentloaded'});
   await page.locator('.ts-grid').waitFor();

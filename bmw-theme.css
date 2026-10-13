@@ -484,3 +484,37 @@ html[data-theme="light"] .hero.hero-premium .hero-copy h1 span{color:#0066b1!imp
 }
 @media(prefers-reduced-motion:reduce){.hero.hero-premium .hero-bmw-scene,.hero.hero-premium .bmw-hero-photo{animation:none!important;transition:none!important}}
 
+
+
+/* MASAR hero without a car image. User will supply her chosen photo later. */
+.hero.hero-premium{
+ display:flex!important;align-items:center!important;justify-content:flex-start!important;
+ min-height:290px!important;overflow:hidden!important;
+ padding:clamp(28px,4vw,56px)!important;
+ background:radial-gradient(ellipse at 10% 80%,rgba(39,151,228,.2),transparent 44%),linear-gradient(125deg,#101e30,#192f47 72%,#132338)!important;
+ border:1px solid #34516e!important
+}
+.hero.hero-premium:before,.hero.hero-premium:after{display:none!important}
+.hero-premium .hero-copy{
+ width:100%!important;max-width:860px!important;flex:1 1 auto!important;
+ padding:0!important;position:relative;z-index:1;
+}
+.hero-premium .hero-glow{background:radial-gradient(ellipse at 85% 50%,rgba(67,156,220,.14),transparent 55%)!important;opacity:1!important}
+.hero-premium h1{max-width:20ch!important}
+.hero-premium .hero-copy p{max-width:62ch!important}
+html[data-theme="light"] .hero.hero-premium{
+ background:radial-gradient(ellipse at 8% 86%,rgba(62,145,203,.13),transparent 45%),linear-gradient(125deg,#f7fbfe,#e7f3fb 72%,#daeafa)!important;
+ border:1px solid #c2d9ea!important
+}
+html[data-theme="light"] .hero-premium .hero-glow{
+ background:radial-gradient(ellipse at 85% 50%,rgba(20,109,183,.07),transparent 54%)!important
+}
+@media(max-width:900px){
+ .hero.hero-premium{min-height:0!important;padding:clamp(24px,5vw,38px)!important}
+ .hero-premium .hero-copy{max-width:100%!important}
+}
+@media(max-width:610px){
+ .hero.hero-premium{padding:24px 20px!important}
+ .hero-premium h1{font-size:clamp(29px,8vw,38px)!important;max-width:100%!important}
+ .hero-premium .hero-actions{flex-wrap:wrap!important}
+}

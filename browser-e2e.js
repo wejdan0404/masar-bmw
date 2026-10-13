@@ -54,8 +54,8 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
       const opaqueColor=el=>{
         for(let n=el;n;n=n.parentElement){
           const s=getComputedStyle(n),bg=s.backgroundColor;
-          if(bg&&/^rgb\\(/.test(bg))return bg;
-          if(bg&&/^rgba\\(/.test(bg)&&Number(bg.match(/,\\s*([.\\d]+)\\)$/)?.[1])>=.98)return bg;
+          if(bg&&bg.startsWith('rgb('))return bg;
+          if(bg&&bg.startsWith('rgba(')&&Number(bg.split(',').at(-1).replace(')','').trim())>=.98)return bg;
         }
         return getComputedStyle(document.documentElement).backgroundColor;
       };

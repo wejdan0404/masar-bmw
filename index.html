@@ -1969,6 +1969,20 @@ html[data-theme="light"] .hero-premium .hero-copy h1 span{-webkit-text-fill-colo
  .hero-premium .hero-actions{width:100%}
  .hero-premium .hero-actions .btn{max-width:100%}
 }
+
+
+/* BMW navigation polish — no ornamental frames or competing strokes */
+.sidebar.sidebar-premium .sidebar-nav-group{
+ background:transparent!important;border:0!important;border-bottom:1px solid var(--bmw-border)!important;
+ box-shadow:none!important;border-radius:0!important;padding:0 0 8px!important;margin-bottom:8px!important
+}
+.sidebar.sidebar-premium .sidebar-group-title{background:transparent!important;border:0!important;box-shadow:none!important;padding-inline:10px!important;letter-spacing:0!important}
+.sidebar.sidebar-premium .sidebar-group-links a{box-shadow:none!important;border-radius:9px!important}
+.sidebar.sidebar-premium .sidebar-group-links a:not(.active){border-color:transparent!important}
+.sidebar.sidebar-premium .sidebar-group-links a.active{font-weight:800!important}
+html[data-theme="light"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#e1eaf2!important}
+html[data-theme="dark"] .sidebar.sidebar-premium .sidebar-nav-group{border-bottom-color:#2b3d50!important}
+.hero-premium .hero-topline .hero-kicker{letter-spacing:0!important}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -11627,7 +11641,7 @@ function schedule(){return `<div class="schedule">${studyDays.map((x,i)=>`<div c
 function studyStars(){
  const today=new Date(),dates=state.studyStars||{};
  const days=Array.from({length:7},(_,i)=>{const d=new Date(today);d.setDate(today.getDate()-(6-i));const key=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');return {day:d.toLocaleDateString('ar-SA',{weekday:'short'}),date:key,earned:!!dates[key],today:i===6}});
- return '<section class="card study-stars"><div class="card-top"><div><span class="bento-overline">GENTLE PROGRESS / نجوم الإنجاز</span><h3>كل يوم له نجمته ⭐</h3></div><span class="chip tiny blue">'+days.filter(x=>x.earned).length+' / 7 نجوم</span></div><p>إذا أنهيتِ مذاكرتك اليوم اضغطي نجمة اليوم. ما فيه عقوبة ولا خسارة للنجوم لو ارتحتي يوم.</p><div class="study-star-days">'+days.map(x=>'<div class="study-star-day '+(x.earned?'earned':'')+'"><small>'+ESC(x.day)+'</small><span aria-label="'+(x.earned?'نجمة مكتسبة':'لم تُسجل نجمة')+'">'+(x.earned?'★':'☆')+'</span></div>').join('')+'</div><button class="btn btn-outline" type="button" data-action="study-star">'+(days[6].earned?'إلغاء نجمة اليوم':'⭐ خلصت مذاكرتي اليوم')+'</button></section>';
+ return '<section class="card study-stars"><div class="card-top"><div><span class="bento-overline">نجوم الإنجاز</span><h3>كل يوم له نجمته ⭐</h3></div><span class="chip tiny blue">'+days.filter(x=>x.earned).length+' / 7 نجوم</span></div><p>إذا أنهيتِ مذاكرتك اليوم اضغطي نجمة اليوم. ما فيه عقوبة ولا خسارة للنجوم لو ارتحتي يوم.</p><div class="study-star-days">'+days.map(x=>'<div class="study-star-day '+(x.earned?'earned':'')+'"><small>'+ESC(x.day)+'</small><span aria-label="'+(x.earned?'نجمة مكتسبة':'لم تُسجل نجمة')+'">'+(x.earned?'★':'☆')+'</span></div>').join('')+'</div><button class="btn btn-outline" type="button" data-action="study-star">'+(days[6].earned?'إلغاء نجمة اليوم':'⭐ خلصت مذاكرتي اليوم')+'</button></section>';
 }
 function studyRoute(lesson){
  const video=(COURSE.media_resources||[]).find(x=>x.kind==='youtube_video'&&(x.lesson_ids||[]).includes(lesson.id));
@@ -11675,8 +11689,8 @@ function home(){
  const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),watchedVideos=directVideos.filter(x=>state.videoWatched?.[x.id]).length;
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
   <div class="hero-glow" aria-hidden="true"></div>${carArt()}
-  <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> MASAR / THE DRIVING JOURNEY</span><span class="hero-edition">EDITION 2026 — 01</span></div>
-   <div class="eyebrow">رحلتك تبدأ من هنا / START HERE</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
+  <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> مِسار · تعلّم القيادة</span></div>
+   <div class="eyebrow">ابدئي من هنا</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
    <div class="hero-status-strip" aria-label="ملخص سريع للتعلم"><span><b>W${p2(week)}</b><small>الأسبوع الحالي</small></span><span class="${due?'needs-attention':''}"><b>${due}</b><small>مراجعة مستحقة</small></span><span><b>${masteredSigns}</b><small>إشارة مثبّتة</small></span><span><b>${watchedVideos}/${directVideos.length}</b><small>مقاطع شوهدت</small></span></div>
@@ -11685,11 +11699,11 @@ function home(){
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  ${adaptiveStudyPlan(n)}
  <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('بنك الأسئلة',questions.length+(COURSE.review_questions||[]).length,'سؤالًا تدريبيًا بتفسير','quiz','questions')}</div>
- <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
- <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
+ <div class="section-head home-section-head"><div><div class="eyebrow">متابعة التعلّم</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
+ <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
  <div class="route-line">${lessons.filter(l=>l.week===week).map((l,i)=>`<a href="#/lesson/${l.order}" class="route-stop ${isDone(l.order)?'complete':''} ${n.order===l.order?'current':''}"><span class="route-indicator"><i>${isDone(l.order)?icon('check'):p2(l.order)}</i></span><span class="route-text"><b>${ESC(l.title)}</b><small>الدرس ${p2(l.order)} · ${l.estimated_minutes} دقيقة تقريبًا</small></span><span class="route-go">${icon('arrow')}</span></a>`).join('')}</div>
  <div class="journey-footer"><a href="#/week/${week}" class="btn btn-muted">تفاصيل الأسبوع</a><a href="#/quiz" class="btn btn-outline">اختبريني ${icon('arrow')}</a></div></section>
- <div class="bento-side"><section class="callout card-premium-interactive"><span class="bento-overline">CAR KNOWLEDGE / 01</span><div class="callout-illustration" aria-hidden="true">${icon('road')}<span class="callout-track"></span></div><h3>افهمي سيارتك<br>قبل أي انطلاقة.</h3><p>مبادئ تخص السيارة عمومًا، دون افتراض أزرار أو أنظمة في أكورد قبل تحديد سنة الموديل.</p><a href="#/lesson/1">استكشفي أدوات السيارة ${icon('arrow')}</a></section>
+ <div class="bento-side"><section class="callout card-premium-interactive"><span class="bento-overline">معرفة السيارة</span><div class="callout-illustration" aria-hidden="true">${icon('road')}<span class="callout-track"></span></div><h3>افهمي سيارتك<br>قبل أي انطلاقة.</h3><p>مبادئ تخص السيارة عمومًا، دون افتراض أزرار أو أنظمة في أكورد قبل تحديد سنة الموديل.</p><a href="#/lesson/1">استكشفي أدوات السيارة ${icon('arrow')}</a></section>
  <section class="card schedule-card"><div class="card-top"><div><span class="bento-overline">STUDY RHYTHM / 02</span><h3>روتينك المرن</h3></div>${icon('clock')}</div>${schedule()}</section></div></div>
  <div class="section-head"><div><div class="eyebrow">PRACTICE MAKES PROGRESS</div><h2>تعلّمي، ثم اختبري نفسك</h2><p>التطبيق القصير يثبت الفهم أكثر من إعادة القراءة فقط.</p></div></div>
  <div class="action-bento"><a href="#/cards" class="action-tile action-tile-blue"><div class="action-visual">${icon('cards')}</div><span class="bento-overline">RECALL / 01</span><h3>بطاقات التذكّر</h3><p>اقلبي البطاقة واسترجعي الإجابة بنفسك.</p><span class="action-link">راجعي البطاقات ${icon('arrow')}</span></a><a href="#/quiz" class="action-tile action-tile-wine"><div class="action-visual">${icon('quiz')}</div><span class="bento-overline">PRACTICE / 02</span><h3>اختبار المواقف</h3><p>سؤال، قرار، وتفسير يشرح لك السبب.</p><span class="action-link">ابدئي اختبارًا ${icon('arrow')}</span></a></div>${footerNote()}`

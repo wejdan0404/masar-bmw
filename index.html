@@ -1410,49 +1410,40 @@ body{
 }
 
 
-/* MASAR — Burgundy Jewel Brooch hero / source-owned vector art.
-   Bento hierarchy inspired by Magic UI; restrained glint inspired by Aceternity.
-   No external imagery, fonts, network requests, or React dependencies. */
+/* Porsche 911 burgundy — real automotive hero instead of jewel/brooch.
+   Photo: Mat Kilkeary / Unsplash, free under Unsplash License
+   https://unsplash.com/photos/a-shiny-burgundy-porsche-car-is-pictured-dGBCPudXmsM
+   Fallback: original CSS/SVG silhouette if external image does not load.
+   Visual styling informed by restrained Magic UI Bento and Aceternity glass panels. */
 .hero.hero-premium{
- background:
-  radial-gradient(ellipse 480px 360px at 12% 45%,rgba(147,35,73,.35),transparent 80%),
-  radial-gradient(ellipse 500px 280px at 84% -8%,rgba(119,71,78,.28),transparent 80%),
-  linear-gradient(116deg,#150d16 0%,#25121e 34%,#221c26 64%,#202d36 100%);
- box-shadow:0 28px 65px rgba(32,20,32,.22),inset 0 1px 0 rgba(252,218,205,.12);
- border:1px solid rgba(223,181,159,.20);
- min-height:388px;
+ background:radial-gradient(ellipse 520px 350px at 6% 54%,rgba(127,22,55,.39),transparent 82%),linear-gradient(110deg,#160d15 0%,#26121e 37%,#1d212a 71%,#202d36);
+ box-shadow:0 24px 65px rgba(28,15,26,.23),inset 0 1px 0 rgba(252,218,205,.10);
+ border:1px solid rgba(223,181,159,.2);min-height:390px;isolation:isolate;
 }
-.hero.hero-premium:before,.hero.hero-premium:after{border-color:rgba(235,185,161,.12)}
+.hero.hero-premium:before,.hero.hero-premium:after{border-color:rgba(235,185,161,.08)}
 .hero-premium .hero-copy{max-width:580px;flex:1;position:relative;z-index:4}
-.hero-premium .hero-glow{background:radial-gradient(ellipse at 20% 48%,rgba(141,26,60,.15),transparent 53%)}
-.hero-premium .hero-edition,.hero-premium .hero-kicker{color:#e4c8b4}
-.hero-premium .hero-topline{color:#dfc5bb}
+.hero-premium .hero-glow{background:radial-gradient(ellipse at 18% 50%,rgba(146,31,67,.16),transparent 55%)}
+.hero-premium .hero-edition,.hero-premium .hero-kicker{color:#e7c6bd}
+.hero-premium .hero-topline{color:#e0cdc5}
 .hero-premium .eyebrow{color:#f0b7c0}
-.hero-premium h1 span{background:linear-gradient(92deg,#fff0e6,#ecc1bc 47%,#d9a4b9);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-premium .btn-primary{background:linear-gradient(113deg,#a3284a,#76182f);border:1px solid rgba(255,207,214,.24);box-shadow:0 8px 20px rgba(40,7,20,.23)}
-.hero-premium .btn-primary:hover{background:linear-gradient(113deg,#b82c53,#84142f)}
+.hero-premium h1 span{background:linear-gradient(92deg,#fff0e6,#ebc5c6 47%,#d6aac0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-premium .btn-primary{background:linear-gradient(110deg,#a02b4e,#7c1937);border:1px solid rgba(255,207,214,.24);box-shadow:0 8px 20px rgba(40,7,20,.23)}
+.hero-premium .btn-primary:hover{background:linear-gradient(110deg,#b62f55,#891c3b)}
 .hero-premium .btn-ghost{border-color:rgba(231,204,196,.28)}
-.hero-brooch-art{position:absolute;pointer-events:none;left:0;top:0;bottom:0;width:43%;z-index:1;overflow:visible;display:grid;place-items:center}
-.brooch-aura{position:absolute;inset:8% 0;background:radial-gradient(ellipse at 49% 50%,rgba(173,50,86,.33),rgba(105,17,46,.16) 38%,transparent 71%);filter:blur(20px)}
-.brooch-svg{position:relative;width:min(110%,465px);max-height:102%;height:auto;overflow:visible;filter:drop-shadow(0 18px 22px rgba(8,3,8,.38));transform:rotate(-4deg);transform-origin:50% 50%}
-.brooch-orbit{position:absolute;left:50%;top:51%;width:84%;max-width:392px;aspect-ratio:1;border:1px solid rgba(229,188,153,.18);border-radius:50%;transform:translate(-50%,-50%) rotate(-23deg)}
-.brooch-orbit-b{width:65%;border:1px dashed rgba(234,190,158,.13);transform:translate(-50%,-50%) rotate(20deg)}
-.brooch-caption{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);font:700 10px/1.4 Arial,sans-serif;letter-spacing:.27em;white-space:nowrap;color:#e5ba9b;opacity:.80;display:flex;align-items:center;gap:12px}
-.brooch-caption i{display:inline-block;width:4px;height:4px;border-radius:50%;background:#d5a773}
+.hero-porsche-scene{position:absolute;left:-3%;top:0;bottom:0;width:50%;overflow:hidden;pointer-events:none;z-index:1;isolation:isolate;display:grid;align-items:center}
+.porsche-ambient{position:absolute;inset:8% 0;background:radial-gradient(ellipse at 45% 58%,rgba(154,26,64,.40),transparent 72%);filter:blur(16px);z-index:-1}
+.porsche-floor{position:absolute;left:0;right:0;bottom:8%;height:21%;background:radial-gradient(ellipse at 46% 45%,rgba(190,53,91,.22),transparent 62%);transform:perspective(480px) rotateX(62deg)}
+.porsche-fallback-car{position:absolute;left:0;bottom:14%;width:110%;height:auto;filter:drop-shadow(0 18px 24px rgba(0,0,0,.48));opacity:.95}
+.porsche-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:53% 50%;filter:saturate(.8) contrast(1.09) brightness(.81);-webkit-mask-image:linear-gradient(to right,#000 0%,#000 58%,transparent 99%);mask-image:linear-gradient(to right,#000 0%,#000 58%,transparent 99%)}
+.porsche-edition{position:absolute;left:12%;bottom:7%;font:700 10px/1.5 Arial,sans-serif;letter-spacing:.16em;color:#eccbbb;display:flex;align-items:center;gap:9px;text-shadow:0 2px 8px #12090f}
+.porsche-edition i{width:4px;height:4px;background:#dc8a9e;border-radius:50%}
 .hero-premium .hero-status-strip{background:rgba(255,255,255,.065);border-color:rgba(243,216,215,.11)}
-.hero-premium .hero-status-strip>span{background:rgba(16,9,19,.38)}
-.hero-premium .hero-serial{color:#efdbcd;opacity:.26}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){
- .brooch-svg{animation:masarBroochFloat 10s ease-in-out infinite}
- .brooch-facets{animation:masarBroochSparkle 6s ease-in-out infinite}
-}
-@keyframes masarBroochFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(-3deg)}}
-@keyframes masarBroochSparkle{0%,100%{opacity:.62}48%{opacity:1}65%{opacity:.82}}
-@media(max-width:1150px){.hero-brooch-art{width:39%;opacity:.86}.brooch-caption{bottom:12%}}
-@media(max-width:900px){.hero.hero-premium{min-height:355px}.hero-brooch-art{width:47%;left:-8%;opacity:.40;filter:saturate(.9)}.hero-premium .hero-copy{max-width:100%}.brooch-caption{display:none}}
-@media(max-width:610px){.hero.hero-premium{padding:28px 22px 23px;min-height:370px;isolation:isolate}.hero-brooch-art{top:8%;bottom:auto;left:-94px;width:300px;height:300px;opacity:.23}.hero-premium .hero-copy{position:relative;z-index:4}.hero-premium .hero-status-strip{position:relative;z-index:4}.hero-premium h1{font-size:clamp(34px,9vw,46px)}}
-@media print{.hero-brooch-art{display:none!important}}
-
+.hero-premium .hero-status-strip>span{background:rgba(16,9,19,.40)}
+.hero-premium .hero-serial{color:#efdbcd;opacity:.27}
+@media(max-width:1100px){.hero-porsche-scene{width:47%;left:-7%}.porsche-edition{bottom:11%;left:16%}}
+@media(max-width:900px){.hero.hero-premium{min-height:358px}.hero-porsche-scene{width:60%;left:-13%;opacity:.57}.hero-premium .hero-copy{max-width:100%}.porsche-edition{display:none}}
+@media(max-width:610px){.hero.hero-premium{padding:28px 22px 23px;min-height:370px}.hero-porsche-scene{left:-21%;top:22%;bottom:auto;width:125%;height:77%;opacity:.22}.porsche-hero-photo{object-position:50% 45%;filter:saturate(.66) contrast(1.08) brightness(.73);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 28%,#000 95%);mask-image:linear-gradient(to bottom,transparent 0%,#000 28%,#000 95%)}.hero-premium .hero-copy,.hero-premium .hero-status-strip{z-index:4}.hero-premium h1{font-size:clamp(34px,9vw,46px)}}
+@media print{.hero-porsche-scene{display:none!important}}
 
 /* Illustrated reference-library covers: intentionally not reproductions of original PDFs. */
 .masar-library-cover{
@@ -11213,7 +11204,11 @@ function mobileDock(){
  return '<nav class="mobile-dock" aria-label="تنقل سريع">'+items.map(([href,ic,label])=>'<a href="#'+href+'" class="'+(path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':'')+'" '+(path===href?'aria-current="page"':'')+'>'+icon(ic)+'<span>'+ESC(label)+'</span></a>').join('')+'</nav>';
 }
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
-function carArt(){return '<div class="hero-brooch-art" aria-hidden="true"><span class="brooch-aura"></span><span class="brooch-orbit brooch-orbit-a"></span><span class="brooch-orbit brooch-orbit-b"></span><svg class="brooch-svg" viewBox="0 0 460 480" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="masar-ruby" cx="28%" cy="21%" r="88%"><stop offset="0%" stop-color="#ffafc0"/><stop offset="14%" stop-color="#d74967"/><stop offset="46%" stop-color="#7c102d"/><stop offset="80%" stop-color="#310916"/><stop offset="100%" stop-color="#160710"/></radialGradient><linearGradient id="masar-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff5db"/><stop offset="19%" stop-color="#dcb977"/><stop offset="37%" stop-color="#79522e"/><stop offset="54%" stop-color="#fae9be"/><stop offset="72%" stop-color="#b28a52"/><stop offset="100%" stop-color="#fff1cb"/></linearGradient><linearGradient id="masar-bezel" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fbe5b4"/><stop offset="38%" stop-color="#886442"/><stop offset="64%" stop-color="#e9c987"/><stop offset="100%" stop-color="#6f4727"/></linearGradient><radialGradient id="masar-glow"><stop offset="0%" stop-color="#d15d7f" stop-opacity=".33"/><stop offset="100%" stop-color="#be1947" stop-opacity="0"/></radialGradient><filter id="masar-shadow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="13"/></filter></defs><ellipse cx="230" cy="413" rx="150" ry="24" fill="#030406" opacity=".58" filter="url(#masar-shadow)"/><circle cx="230" cy="226" r="190" fill="url(#masar-glow)"/><g class="brooch-medallion" transform="rotate(-12 230 226)"><circle cx="230" cy="226" r="156" fill="#170a10" stroke="#ad7e45" stroke-width="5"/><circle cx="230" cy="226" r="151" fill="url(#masar-bezel)" stroke="#3a211c" stroke-width="3"/><circle cx="230" cy="226" r="144" fill="#271019" stroke="url(#masar-gold)" stroke-width="3"/><circle cx="230" cy="226" r="132" fill="#57152a" stroke="#e6bf79" stroke-width="1.6"/><circle cx="230" cy="226" r="123" fill="#230913" stroke="#c49c61" stroke-width="9"/><circle cx="230" cy="226" r="117" fill="url(#masar-ruby)" stroke="url(#masar-gold)" stroke-width="3"/><path d="M139 196Q179 118 260 121Q294 129 317 153Q280 127 234 142Q167 163 147 211Z" fill="#ffe1e7" opacity=".28"/><path d="M156 272Q212 335 313 263" fill="none" stroke="#ffb0c4" stroke-opacity=".15" stroke-width="15" stroke-linecap="round"/><path d="M230 128L292 182L292 270L230 324L168 270L168 182Z" fill="none" stroke="#f7dba5" stroke-opacity=".56" stroke-width="2.7"/><path d="M230 154L275 192L275 260L230 300L185 260L185 192Z" fill="#3b0a1d" opacity=".55" stroke="#e7bd83" stroke-width="1"/><path d="M188 259L211 193L230 225L249 193L272 259M200 259H261" fill="none" stroke="url(#masar-gold)" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="225" r="8" fill="#fff1c7" opacity=".9"/><path d="M230 70v23M230 359v23M74 226h23M363 226h23" stroke="#f7ddb0" stroke-opacity=".68" stroke-width="2.2"/><g fill="#fff0ca"><circle cx="121" cy="119" r="5"/><circle cx="339" cy="119" r="5"/><circle cx="121" cy="333" r="5"/><circle cx="339" cy="333" r="5"/></g><g fill="#f4d49c" opacity=".86"><circle cx="230" cy="83" r="4"/><circle cx="230" cy="369" r="4"/><circle cx="87" cy="226" r="4"/><circle cx="373" cy="226" r="4"/></g></g><g class="brooch-facets" fill="none" stroke="#e9c793" stroke-linecap="round"><path d="M77 140l7 18 17 7-17 7-7 18-7-18-17-7 17-7Z" fill="#fff1c7" stroke="none" opacity=".94"/><path d="M376 292l4 11 11 4-11 4-4 11-4-11-11-4 11-4Z" fill="#fff0bf" stroke="none" opacity=".85"/><path d="M360 120l3 9 9 3-9 3-3 9-3-9-9-3 9-3Z" fill="#fff1d0" stroke="none" opacity=".84"/></g></svg><span class="brooch-caption">MASAR <i></i> 2026</span></div>'}
+function carArt(){return '<div class="hero-porsche-scene" aria-hidden="true">'
+ +'<span class="porsche-ambient"></span><span class="porsche-floor"></span>'
+ +'<svg class="porsche-fallback-car" viewBox="0 0 780 390" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="fallback-body" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#e27a92"/><stop offset=".27" stop-color="#962840"/><stop offset=".65" stop-color="#55101f"/><stop offset="1" stop-color="#220710"/></linearGradient><linearGradient id="fallback-window" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#6e8590"/><stop offset=".65" stop-color="#131921"/><stop offset="1" stop-color="#0a0e15"/></linearGradient></defs><ellipse cx="386" cy="333" rx="332" ry="32" fill="#07070c" opacity=".65"/><path d="M48 280Q50 254 81 243L137 226Q174 218 223 197L285 136Q328 102 394 109Q493 111 568 186Q653 197 698 222Q730 238 730 270L722 299L66 299Q48 298 48 280Z" fill="url(#fallback-body)" stroke="#c46a7d" stroke-width="3"/><path d="M237 193L291 146Q329 117 385 123Q450 125 525 184Z" fill="url(#fallback-window)" stroke="#ad7e83" stroke-width="3"/><path d="M383 126L381 193M529 189L564 220" fill="none" stroke="#bb8390" stroke-width="3"/><path d="M109 238Q165 211 216 205M580 202Q651 210 694 237" stroke="#f7b0b5" stroke-width="5" opacity=".45" fill="none"/><path d="M64 270Q171 254 286 266M459 269Q605 248 718 270" stroke="#210a13" stroke-width="5" fill="none"/><path d="M84 252Q115 230 138 238Q147 248 130 262Q95 275 84 252Z" fill="#f3e1d7" stroke="#a85e69" stroke-width="3"/><path d="M82 250Q111 236 129 242" stroke="#fffefa" stroke-width="5" fill="none"/><path d="M705 243L720 251" stroke="#d55262" stroke-width="9"/><circle cx="210" cy="302" r="57" fill="#111418" stroke="#292d34" stroke-width="10"/><circle cx="210" cy="302" r="37" fill="#525861" stroke="#b6bbc2" stroke-width="5"/><circle cx="210" cy="302" r="15" fill="#20252a" stroke="#e2b3ae" stroke-width="4"/><circle cx="583" cy="302" r="57" fill="#111418" stroke="#292d34" stroke-width="10"/><circle cx="583" cy="302" r="37" fill="#525861" stroke="#b6bbc2" stroke-width="5"/><circle cx="583" cy="302" r="15" fill="#20252a" stroke="#e2b3ae" stroke-width="4"/><path d="M210 264V338M173 302H247M185 277L235 327M235 277L185 327M583 264V338M546 302H620M557 277L608 327M608 277L557 327" stroke="#b6bbc2" stroke-width="5"/></svg>'
+ +'<img class="porsche-hero-photo" src="https://images.unsplash.com/photo-1747891616275-f669323d04b6?auto=format&fit=crop&w=1100&q=82" alt="" decoding="async" fetchpriority="high" referrerpolicy="no-referrer"/>'
+ +'<span class="porsche-edition">PORSCHE 911 <i></i> BURGUNDY</span></div>'}
 function stat(text,value,extra,ic,variant='') {return `<div class="stat stat-${variant} card-premium-interactive"><div class="stat-top"><span class="stat-label">${text}</span><span class="stat-icon">${icon(ic)}</span></div><div class="stat-content"><div class="val" data-count-value="${Number(value)}">${value}</div><div class="stat-caption">${extra}</div></div><span class="stat-decoration" aria-hidden="true"></span></div>`}
 const studyDays=[['السبت','درس 01','فهم أساسي'],['الثلاثاء','درس 02','شرح + مثال'],['الخميس','درس 03','تطبيق قصير'],['الجمعة','مراجعة','ثبتي المعلومات']];
 function schedule(){return `<div class="schedule">${studyDays.map((x,i)=>`<div class="day ${i===3?'is-review':''}"><small>${x[0]}</small><b>${x[1]}</b><strong>${x[2]}</strong></div>`).join('')}</div><div class="note-preview">جدول مقترح غير نهائي: يمكنك المذاكرة في أي يوم ومن أي درس.</div>`}

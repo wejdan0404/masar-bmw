@@ -38,6 +38,39 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   console.log('PASS Chromium: light sidebar text contrast and simplified hero copy');
   const lightCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.notEqual(darkCard,lightCard,'Card surfaces must change with theme');
+
+  // Survey actual computed colours across real pages, not only the theme toggle.
+  const contrastSnapshots=[];
+  for(const route of ['home','weeks','lesson/1','quiz','traffic-signs','videos','review','sources','settings']){
+    await page.goto(base+'#/'+route,{waitUntil:'domcontentloaded'});
+    const audit=await page.evaluate(()=>{
+      const selectors=['.sidebar','.sidebar .logo strong','.sidebar .sidebar-group-title',
+        '.sidebar .sidebar-group-links a','.sidebar .mini-progress','.topbar','.topbar .crumb',
+        '.page-title','.hero-premium','.hero-premium h1','.hero-premium p',
+        '.hero-premium .btn-ghost','.stat','.stat-label','.card','.card h3',
+        '.lesson-body','.lesson-body p','.hub-question','.hub-question p',
+        '.source-chapter','.source-chapter summary','.studio-lesson-tools','.week-card',
+        '.week-card h3','.settings-card','.theme-setting','.theme-setting p'];
+      const opaqueColor=el=>{
+        for(let n=el;n;n=n.parentElement){
+          const s=getComputedStyle(n),bg=s.backgroundColor;
+          if(bg&&/^rgb\\(/.test(bg))return bg;
+          if(bg&&/^rgba\\(/.test(bg)&&Number(bg.match(/,\\s*([.\\d]+)\\)$/)?.[1])>=.98)return bg;
+        }
+        return getComputedStyle(document.documentElement).backgroundColor;
+      };
+      return selectors.map(sel=>{
+        const e=[...document.querySelectorAll(sel)].find(n=>{
+          const rect=n.getBoundingClientRect(),s=getComputedStyle(n);
+          return rect.width>0&&rect.height>0&&s.visibility!=='hidden'&&s.display!=='none';
+        });
+        return e?{selector:sel,fg:getComputedStyle(e).color,bg:opaqueColor(e)}:null;
+      }).filter(Boolean);
+    });
+    contrastSnapshots.push({route,audit});
+  }
+  console.log('LIGHT_THEME_AUDIT '+JSON.stringify(contrastSnapshots));
+  await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
   await page.reload({waitUntil:'domcontentloaded'});
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'light','Theme preference persists across reload');
   await page.goto(base+'#/settings',{waitUntil:'domcontentloaded'});

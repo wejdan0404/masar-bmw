@@ -5,7 +5,7 @@ const fs=require('node:fs');
 const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
 (async()=>{
  const base=process.env.MASAR_E2E_URL||'http://127.0.0.1:8765/';
- const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+ const browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
  const context=await browser.newContext({viewport:{width:1365,height:900},locale:'ar-SA',acceptDownloads:true});
  const page=await context.newPage();const errors=[];
  page.on('pageerror',e=>errors.push(e.message));

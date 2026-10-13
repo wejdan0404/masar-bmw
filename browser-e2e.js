@@ -29,6 +29,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'dark','New visitors start in BMW dark mode');
   assert.equal(await page.locator('[data-action="theme-toggle"]').count(),1,'Theme switch exists in the top bar');
   const darkCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
+  await assertNeutralUI('dark');
   assert.notEqual(darkCard,'rgb(255, 255, 255)','Dark theme cards should not be white');
   await page.locator('[data-action="theme-toggle"]').click();
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'light','Theme switch activates light mode');
@@ -48,6 +49,33 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.equal(sidebarGroupBorders.left,'0px','Light sidebar group left edges must be clean');
   assert.equal(sidebarGroupBorders.right,'0px','Light sidebar group right edges must be clean');
   console.log('PASS Chromium: light sidebar text contrast and simplified hero copy');
+
+  // Premium monochrome brand palette: buttons, cards, text, navigation and hero are achromatic.
+  async function assertNeutralUI(mode) {
+    const values=await page.evaluate(()=>{
+      const selectors=['body','.sidebar','.sidebar .logo-icon','.sidebar .sidebar-group-title',
+        '.sidebar .sidebar-group-links a','.topbar','.hero.hero-premium',
+        '.hero-premium h1','.hero-premium p','.hero-premium .btn-primary',
+        '.hero-premium .btn-ghost','.stat','.stat-label','.card'];
+      const result=[];
+      for(const selector of selectors){
+        const el=document.querySelector(selector);if(!el)continue;
+        const cs=getComputedStyle(el);
+        result.push({selector,colors:[cs.color,cs.backgroundColor,cs.backgroundImage,cs.borderTopColor]});
+      }
+      return result;
+    });
+    const rgb=/rgba?\\((\\d+)\\s*,\\s*(\\d+)\\s*,\\s*(\\d+)/g;
+    for(const entry of values)for(const color of entry.colors){
+      for(const match of color.matchAll(rgb)){
+        const channels=match.slice(1,4).map(Number);
+        assert(channels[0]===channels[1]&&channels[1]===channels[2],
+          'Non-monochrome UI in '+mode+' '+entry.selector+': '+color);
+      }
+    }
+    console.log('PASS Chromium: monochrome '+mode+' palette across '+values.length+' UI components');
+  }
+  await assertNeutralUI('light');
   const lightCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.notEqual(darkCard,lightCard,'Card surfaces must change with theme');
 
@@ -103,9 +131,9 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
     const title=el.querySelector('strong');
     return {fg:getComputedStyle(title).color,bg:getComputedStyle(el).backgroundColor,font:parseFloat(getComputedStyle(title).fontSize)};
   });
-  assert.equal(sourceCover.fg,'rgb(244, 250, 255)','Book cover title must be white on dark navy');
+  assert.equal(sourceCover.fg,'rgb(244, 244, 244)','Book cover title must be legible on charcoal');
   assert(sourceCover.font>=17,'Book title must be legible at desktop size');
-  console.log('PASS Chromium: dark blue book covers keep readable light titles');
+  console.log('PASS Chromium: charcoal book covers keep readable light titles');
   await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
   console.log('PASS Chromium: Light Mode WCAG AA sampled text contrast across '+contrastSnapshots.length+' pages');
   await page.reload({waitUntil:'domcontentloaded'});

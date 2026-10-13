@@ -22,7 +22,20 @@ function timerControls(state,large=false){
  <div class="studio-timer-buttons"><button type="button" data-action="studio-toggle" aria-label="${active?'إيقاف جلسة المذاكرة مؤقتًا':'بدء أو متابعة المذاكرة'}">${active?'إيقاف مؤقت':'▶ '+(t.status==='paused'?'متابعة':'ابدئي')}</button><button type="button" data-action="studio-reset" aria-label="إعادة ضبط الموقت">إعادة ضبط</button></div>
  ${times}</div>`;
 }
-function timerHTML(state){const t=ensure(state).timer;if(t.status==='idle')return '';return `<aside class="studio-timer-dock" aria-label="جلسة المذاكرة الحالية">${timerControls(state)}</aside>`;}
+function timerHTML(state){const t=ensure(state).timer;if(t.status==='idle')return '';const contextPage=/^#\/(?:home|lesson\/\d+)/.test(location.hash||'');document.body?.classList?.toggle?.('studio-context-page',contextPage);return `<aside class="studio-timer-dock" aria-label="جلسة المذاكرة الحالية">${timerControls(state)}</aside>`;}
+
+function lessonCheck(course,state,l){
+ const q=(course.questions||[]).find(x=>x.lesson_id===l.id);if(!q)return '';
+ const s=ensure(state);const answer=s.diagnostics?.[q.id];
+ const has=Number.isInteger(answer?.choice),correct=answer?.choice===q.correct_option_index;
+ return `<details class="studio-checkpoint" ${has?'open':''}><summary>اختبار قبلي خفيف · هل أعرف هذه الفكرة؟</summary>
+ <div class="studio-checkpoint-body"><p>سؤال للتشخيص الشخصي فقط، ما يغيّر نتيجة اختباراتك الأساسية.</p>
+ <strong>${escapeHTML(q.question)}</strong>
+ <div class="studio-diagnostic-answers">${q.options.map((o,i)=>`<button type="button" data-action="studio-diagnostic" data-question="${escapeHTML(q.id)}" data-choice="${i}" ${has?'disabled':''} class="${has?(i===q.correct_option_index?'is-correct':i===answer.choice?'is-wrong':''):''}">${escapeHTML(o)}</button>`).join('')}</div>
+ ${has?`<div class="studio-diagnostic-feedback" role="status"><b>${correct?'إجابة صحيحة — ممتاز':'خلينا نثبت الفكرة معًا'}</b><p>${escapeHTML(q.rationale||'ارجعي لنقاط الشرح ثم حاولي سؤالًا آخر.')}</p><a href="#reading" data-action="studio-jump" data-target="reading">راجعي شرح هذا الدرس</a></div>`:''}
+ </div></details>
+ <details class="studio-explain"><summary>ما فهمت؟ ابدئي بخلاصة أبسط</summary><div class="studio-checkpoint-body"><p>${escapeHTML(l.study_content?.recap||l.study_content?.goal||'')}</p><p><strong>تأكدي من هذه النقاط:</strong></p><ul>${(l.study_content?.key_points||[]).slice(0,3).map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul><p>هذه خلاصة من الدرس نفسه وليست معلومات مرورية جديدة. افتحي الشرح الموسع إذا احتجتِ أمثلة إضافية.</p></div></details>`;
+}
 function widgets(course,state,path){
  const s=ensure(state);
  const lessonN=/^\/lesson\/(\d+)$/.exec(path||'');
@@ -34,7 +47,7 @@ function widgets(course,state,path){
    const guide=lessonN?`<nav class="studio-step-links" aria-label="خطوات المذاكرة"><a href="#reading" data-action="studio-jump" data-target="reading">اقرئي الشرح</a><a href="#active-recall" data-action="studio-jump" data-target="active-recall">من الذاكرة</a><a href="#lesson-videos" data-action="studio-jump" data-target="lesson-videos">شرح مرئي</a><a href="#practice" data-action="studio-jump" data-target="practice">اختبري فهمك</a></nav>`:`<a class="studio-go-lesson" href="#/lesson/${l.order}">افتحي ${escapeHTML(l.title)} ←</a>`;
    return `<section class="studio-session card" aria-label="جلسة مذاكرة موجهة"><div class="studio-heading"><div><span class="bento-overline">STUDY COMPANION / جلسة تركيز</span><h2>مذاكرتك، على راحتك</h2><p>المؤقت اختياري، وما يقطع الدرس أو ينقلك تلقائيًا.</p></div><span class="studio-session-icon" aria-hidden="true">◷</span></div>
    ${away?'<p class="studio-return">رجعتِ بعد فترة؟ ابدئي بمراجعة بسيطة، ثم كمّلي من آخر درس. <a href="#/review">افتحي مراجعتي</a></p>':''}
-   ${timerControls(state,true)}${guide}
+   ${timerControls(state,true)}${guide}${lessonN?lessonCheck(course,state,l):''}
    ${s.timer.status==='finished'?`<div class="studio-session-summary" role="status"><strong>أحسنتِ، انتهت الجلسة.</strong><p>الجلسة انتهت، لكن فهمك أهم من المدة. جربي سؤالًا من الدرس أو خذي استراحة.</p><a href="#/review">راجعي ما تعلمتِه</a></div>`:''}
    ${path==='/home'&&recents.length?`<p class="studio-session-history">آخر جلسة: ${escapeHTML(new Date(recents[0].at).toLocaleDateString('ar-SA'))} · ${recents[0].minutes} دقيقة</p>`:''}
    </section>`;
@@ -73,6 +86,7 @@ function click(action,el,ctx){
  if(action==='studio-search-close'){closeSearch();return true}
  if(action==='studio-jump'){const node=document.getElementById(el.dataset.target);if(node)node.scrollIntoView({behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});return true}
  if(!action.startsWith('studio-'))return false;
+ if(action==='studio-diagnostic'){const q=(ctx.course.questions||[]).find(q=>q.id===el.dataset.question);const choice=Number(el.dataset.choice);if(!q||!Number.isInteger(choice)||choice<0||choice>=q.options.length)return true;const d=ensure(ctx.state);d.diagnostics=d.diagnostics||{};if(d.diagnostics[q.id])return true;d.diagnostics[q.id]={choice,at:new Date().toISOString()};ctx.save();ctx.render(true);return true;}
  const studio=ensure(ctx.state),t=studio.timer;
  if(action==='studio-duration'){const n=Number(el.dataset.min);if(![15,25,30,45].includes(n))return true;t.duration=n;t.remaining=n*60;t.status='idle';t.endsAt=null}
  else if(action==='studio-reset'){t.status='idle';t.endsAt=null;t.remaining=t.duration*60}
@@ -103,6 +117,7 @@ function initialize(state,save){
 document.addEventListener('input',e=>{
  if(e.target?.id==='studio-search-input'&&currentContext)results(currentContext.course,currentContext.state,e.target.value);
 });
+window.addEventListener('scroll',()=>{document.body?.classList?.toggle?.('studio-scrolled',(window.scrollY||0)>380)},{passive:true});
 document.addEventListener('keydown',e=>{
  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();const btn=document.querySelector('[data-action="studio-search"]');btn?.click()}
  if(e.key==='Escape')closeSearch();

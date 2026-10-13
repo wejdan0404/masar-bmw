@@ -55,3 +55,22 @@ body.studio-search-open{overflow:hidden}
 @media(max-width:610px){.studio-session{padding:15px}.studio-timer-large{align-items:flex-start}.studio-duration{margin-inline-start:0}.studio-timer-dock .studio-clock small{display:none}.studio-timer-dock .studio-timer-buttons button{font-size:11px}.studio-timer-dock .studio-clock span{font-size:16px}.studio-search-overlay{padding-top:6vh}.studio-search-window{max-height:90vh;padding:16px}}
 @media print{.studio-timer-dock,.studio-search-overlay,.studio-session{display:none!important}}
 @media(prefers-reduced-motion:reduce){.studio-search-overlay *, .studio-session *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Second-pass study comprehension and contextual dock */
+.studio-checkpoint,.studio-explain{margin-top:12px;border:1px solid #dee7eb;border-radius:13px;background:#fff;overflow:hidden}
+.studio-checkpoint summary,.studio-explain summary{cursor:pointer;padding:14px 16px;font-weight:800;color:#283f50;list-style-position:inside}
+.studio-checkpoint-body{padding:14px 16px;border-top:1px solid #edf1f4;line-height:1.9}
+.studio-checkpoint-body p{font-size:12px;color:#506a7a}
+.studio-diagnostic-answers{display:grid;gap:8px;margin-top:10px}
+.studio-diagnostic-answers button{padding:11px 13px;border-radius:10px;border:1px solid #d3e0e6;background:#f7fafb;text-align:start;cursor:pointer;font:inherit;color:#263d4e}
+.studio-diagnostic-answers button:hover:not(:disabled){border-color:#800c1f;background:#fff8fa}
+.studio-diagnostic-answers button:disabled{cursor:default}
+.studio-diagnostic-answers button.is-correct{background:#e8f5eb;border-color:#519567}
+.studio-diagnostic-answers button.is-wrong{background:#fff0f0;border-color:#c57979}
+.studio-diagnostic-feedback{padding:12px;border-radius:9px;background:#f0f5f7;margin-top:12px}
+.studio-diagnostic-feedback p{margin:4px 0}
+.studio-diagnostic-feedback a{font-weight:800;color:#800c1f}
+.studio-explain li{margin:4px 0;font-size:13px}
+body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
+.studio-timer-dock{transition:opacity .18s ease,transform .18s ease}
+@media(prefers-reduced-motion:reduce){.studio-timer-dock{transition:none}}

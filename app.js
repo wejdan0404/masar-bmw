@@ -143,13 +143,16 @@ function adaptiveStudyPlan(lesson){
  return '<section class="adaptive-plan card" aria-label="جلسة مذاكرة ذكية مقترحة"><div class="adaptive-plan-head"><div><span class="bento-overline">SMART SESSION / مبنية على نشاطك</span><h2>وش تذاكرين الآن؟</h2><p>رتبتها لك من بيانات إجاباتك ومراجعاتك داخل مِسار، بدل ما تختارين عشوائيًا.</p></div><span class="adaptive-priority '+(score?'has-priority':'clear')+'">'+(score?'فيه نقاط تحتاج مراجعة':'الجلسة مفتوحة للتقدم')+'</span></div><div class="adaptive-task-grid">'+tasks.map((t,i)=>'<a href="'+t.href+'" class="adaptive-task '+t.tone+'"><span class="adaptive-task-no">0'+(i+1)+'</span><div><span class="adaptive-task-time">'+t.time+'</span><strong>'+ESC(t.title)+'</strong><p>'+ESC(t.desc)+'</p><small>'+ESC(t.cta)+' ←</small></div></a>').join('')+'</div><div class="adaptive-plan-foot"><span>الخطة تتغير تلقائيًا مع إجاباتك.</span><a href="#/review">ليش ظهر لي هذا؟ راجعي سجل التكرار ←</a></div></section>';
 }
 function home(){
- const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress();
+ const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress(),due=reviewDueCount();
+ const masteredSigns=(COURSE.sign_library||[]).filter(s=>{const x=state.signPractice?.[s.id]||{};return (x.meaningCorrect||0)>=1&&(x.actionCorrect||0)>=1}).length;
+ const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),watchedVideos=directVideos.filter(x=>state.videoWatched?.[x.id]).length;
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
   <div class="hero-glow" aria-hidden="true"></div>${carArt()}
   <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> MASAR / THE DRIVING JOURNEY</span><span class="hero-edition">EDITION 2026 — 01</span></div>
    <div class="eyebrow">رحلتك تبدأ من هنا / START HERE</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
+   <div class="hero-status-strip" aria-label="ملخص سريع للتعلم"><span><b>W${p2(week)}</b><small>الأسبوع الحالي</small></span><span class="${due?'needs-attention':''}"><b>${due}</b><small>مراجعة مستحقة</small></span><span><b>${masteredSigns}</b><small>إشارة مثبّتة</small></span><span><b>${watchedVideos}/${directVideos.length}</b><small>مقاطع شوهدت</small></span></div>
   </div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>

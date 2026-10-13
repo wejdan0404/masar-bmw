@@ -1,7 +1,7 @@
 from pathlib import Path
 root=Path(__file__).parent
 s=(root/'index-template.html').read_text(encoding='utf-8')
-css=(root/'styles.css').read_text(encoding='utf-8')+'\n'+(root/'learning-studio.css').read_text(encoding='utf-8')
+css=(root/'styles.css').read_text(encoding='utf-8')+'\n'+(root/'learning-studio.css').read_text(encoding='utf-8')+'\n'+(root/'bmw-theme.css').read_text(encoding='utf-8')
 js=(root/'app.js').read_text(encoding='utf-8')
 db_js=(root/'db'/'indexeddb.js').read_text(encoding='utf-8')
 visual_js=(root/'visuals.js').read_text(encoding='utf-8')

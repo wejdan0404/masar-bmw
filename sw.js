@@ -1,22 +1,20 @@
-/* MASAR offline navigation cache: no user notes, credentials or external content cached. */
-const CACHE_NAME = 'masar-static-v16-theme-consistency';
-const SCOPE = self.registration.scope;
-const CORE = ['./','./index.html','./icon.svg','./manifest.webmanifest'];
-self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
-});
-self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('masar-static-') && key !== CACHE_NAME).map(key => caches.delete(key)))).then(() => self.clients.claim()));
-});
-self.addEventListener('fetch', event => {
-  const request = event.request;
-  if (request.method !== 'GET' || !request.url.startsWith(SCOPE)) return;
-  if (request.mode !== 'navigate') return;
-  event.respondWith(fetch(request).then(response => {
-    if (response && response.ok && response.type === 'basic') {
-      const copy = response.clone();
-      event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy)));
-    }
-    return response;
-  }).catch(() => caches.match('./index.html')));
+/* Cache only application files, never personal notes, PDFs or external media. */
+const CACHE_NAME='masar-static-v17-fast-start';
+const SCOPE=self.registration.scope;
+const CORE=['./','./index.html','./assets/site.css','./assets/course-data.js','./assets/site.js','./icon.svg','./manifest.webmanifest'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('masar-static-')&&k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{
+ const req=e.request;
+ if(req.method!=='GET'||!req.url.startsWith(SCOPE))return;
+ if(req.mode==='navigate'){
+   e.respondWith(fetch(req).then(res=>{
+     if(res&&res.ok){const copy=res.clone();e.waitUntil(caches.open(CACHE_NAME).then(c=>c.put('./index.html',copy)))}
+     return res;
+   }).catch(()=>caches.match('./index.html')));
+   return;
+ }
+ if(new URL(req.url).pathname.includes('/assets/')){
+   e.respondWith(caches.match(req).then(cached=>cached||fetch(req)));
+ }
 });

@@ -6,10 +6,10 @@
 (() => {
   'use strict';
   const DATABASE_NAME = 'masar-bmw-study';
-  const DATABASE_VERSION = 6;
+  const DATABASE_VERSION = 7;
   const referenceStores = ['weeks', 'lessons', 'questions', 'sources', 'learning_visuals', 'media_resources', 'personal_documents', 'uploaded_image_index', 'external_study_sources', 'review_questions', 'practical_checklist', 'review_claims', 'lesson_reading_map', 'sign_library', 'lesson_activities'];
   const userStores = ['progress', 'answers', 'notes', 'bookmarks', 'attempts', 'visits', 'preferences'];
-  const allStores = [...referenceStores, ...userStores, 'personal_files'];
+  const allStores = [...referenceStores, ...userStores, 'personal_files', 'metadata'];
   let dbPromise;
   let writeQueue = Promise.resolve();
 
@@ -41,6 +41,7 @@
         create('sign_library', 'id');
         create('lesson_activities', 'id');
         create('personal_files', 'id');
+        create('metadata', 'key');
         create('progress', 'lesson_id');
         create('answers', 'question_id');
         create('notes', 'lesson_id');
@@ -75,18 +76,31 @@
     });
   }
 
+  // Avoid clearing and rewriting every course record at each visit.
+  function courseFingerprint(course) {
+    const value=JSON.stringify(course);
+    let hash=2166136261;
+    for(let i=0;i<value.length;i++)hash=Math.imul(hash^value.charCodeAt(i),16777619);
+    return value.length.toString(36)+'-'+(hash>>>0).toString(36);
+  }
   async function seedReference(course) {
-    const db = await connect();
-    const tx = db.transaction(referenceStores, 'readwrite');
-    for (const name of referenceStores) {
-      const store = tx.objectStore(name);
+    const db=await connect();
+    const revision=courseFingerprint(course);
+    const saved=await new Promise((resolve,reject)=>{
+      const req=db.transaction('metadata','readonly').objectStore('metadata').get('courseRevision');
+      req.onsuccess=()=>resolve(req.result?.value);
+      req.onerror=()=>reject(req.error);
+    });
+    if(saved===revision)return {unchanged:true,revision};
+    const tx=db.transaction([...referenceStores,'metadata'],'readwrite');
+    for(const name of referenceStores){
+      const store=tx.objectStore(name);
       store.clear();
-      for (const item of course[name] || []) store.put(item);
+      for(const item of course[name]||[])store.put(item);
     }
+    tx.objectStore('metadata').put({key:'courseRevision',value:revision});
     await completed(tx);
-    return { weeks: (course.weeks || []).length, lessons: (course.lessons || []).length,
-      questions: (course.questions || []).length, sources: (course.sources || []).length,
-      visuals: (course.learning_visuals || []).length, media: (course.media_resources || []).length };
+    return {unchanged:false,revision};
   }
 
   async function loadUser() {

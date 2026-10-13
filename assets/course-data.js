@@ -1,0 +1,7621 @@
+window.MasarCourse={
+  "schema_version": "1.5.1",
+  "project": "تعليم القيادة — السعودية",
+  "generated_on": "2026-10-12",
+  "content_state": "نسخة تفاعلية تعليمية أولية؛ ليست اعتمادًا قانونيًا نهائيًا",
+  "language": "ar-SA",
+  "description": "خطة أساسية من 48 درسًا و48 سؤال درس، و36 سؤال مراجعة إضافيًا أصليًا، وملفات مصادر مفهرسة محليًا؛ المسودة ليست اعتمادًا رسميًا.",
+  "license_status": "unknown",
+  "car": {
+    "make": "Honda",
+    "model": "Accord",
+    "year": null,
+    "trim": null
+  },
+  "schedule_proposal": {
+    "days": [
+      "السبت",
+      "الثلاثاء",
+      "الخميس"
+    ],
+    "weekly_review": "الجمعة",
+    "minutes_min": 30,
+    "minutes_max": 45,
+    "approved": false
+  },
+  "weeks": [
+    {
+      "id": "WK-01",
+      "number": 1,
+      "title": "التعرف على السيارة",
+      "lesson_ids": [
+        "LES-001",
+        "LES-002",
+        "LES-003"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-02",
+      "number": 2,
+      "title": "أجزاء الطريق ومستخدموه",
+      "lesson_ids": [
+        "LES-004",
+        "LES-005",
+        "LES-006"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-03",
+      "number": 3,
+      "title": "الإشارات المرورية",
+      "lesson_ids": [
+        "LES-007",
+        "LES-008",
+        "LES-009"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-04",
+      "number": 4,
+      "title": "الإشارات والأولوية الأساسية",
+      "lesson_ids": [
+        "LES-010",
+        "LES-011",
+        "LES-012"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-05",
+      "number": 5,
+      "title": "الخطوط والمسارات — تعميق",
+      "lesson_ids": [
+        "LES-013",
+        "LES-014",
+        "LES-015"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-06",
+      "number": 6,
+      "title": "التقاطعات والأولوية — تعميق",
+      "lesson_ids": [
+        "LES-016",
+        "LES-017",
+        "LES-018"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-07",
+      "number": 7,
+      "title": "الدوارات والمشاة",
+      "lesson_ids": [
+        "LES-019",
+        "LES-020",
+        "LES-021"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-08",
+      "number": 8,
+      "title": "تغيير المسار والتجاوز",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023",
+        "LES-024"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-09",
+      "number": 9,
+      "title": "السرعة ومسافة الأمان",
+      "lesson_ids": [
+        "LES-025",
+        "LES-026",
+        "LES-027"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-10",
+      "number": 10,
+      "title": "القيادة الوقائية واكتشاف المخاطر",
+      "lesson_ids": [
+        "LES-028",
+        "LES-029",
+        "LES-030"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-11",
+      "number": 11,
+      "title": "المواقف والرجوع للخلف",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-033"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-12",
+      "number": 12,
+      "title": "المناورات والمرتفعات",
+      "lesson_ids": [
+        "LES-034",
+        "LES-035",
+        "LES-036"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-13",
+      "number": 13,
+      "title": "المطر والغبار والقيادة الليلية",
+      "lesson_ids": [
+        "LES-037",
+        "LES-038",
+        "LES-039"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-14",
+      "number": 14,
+      "title": "الأعطال والتحذيرات والحوادث",
+      "lesson_ids": [
+        "LES-040",
+        "LES-041",
+        "LES-042"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-15",
+      "number": 15,
+      "title": "المراجعة الشاملة",
+      "lesson_ids": [
+        "LES-043",
+        "LES-044",
+        "LES-045"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    },
+    {
+      "id": "WK-16",
+      "number": 16,
+      "title": "الاختبارات والرخصة",
+      "lesson_ids": [
+        "LES-046",
+        "LES-047",
+        "LES-048"
+      ],
+      "assessment_status": "الأصل غير مسترجع"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "LES-001",
+      "order": 1,
+      "week_id": "WK-01",
+      "week": 1,
+      "week_topic": "التعرف على السيارة",
+      "title": "أدوات السيارة",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "تعرّف على الأجزاء",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S004"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تفاصيل السيارة تحتاج سنة وفئة الأكورد",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تحديد أدوات التحكم الأساسية قبل تشغيل السيارة",
+        "introduction": "تعرفي على وظائف المقود والدواسات وناقل الحركة والإشارات؛ الهدف أن تميزي بين التحكم في الحركة وبين أدوات الراحة.",
+        "key_points": [
+          "دواسة الفرامل تقلل السرعة وتثبت السيارة",
+          "في سيارة أوتوماتيكية هناك دواسة للبنزين وأخرى للفرامل",
+          "مواقع الأزرار تتغير باختلاف سنة وفئة هوندا أكورد"
+        ],
+        "scenario": "السيارة متوقفة في مكان آمن: أشيري إلى دواسة الفرامل وناقل الحركة دون تشغيلها.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "مواقع الأزرار تتغير باختلاف سنة وفئة هوندا أكورد"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-001"
+    },
+    {
+      "id": "LES-002",
+      "order": 2,
+      "week_id": "WK-01",
+      "week": 1,
+      "week_topic": "التعرف على السيارة",
+      "title": "التهيئة والسلامة",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "قائمة تحقق",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S004"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "إعداد جلوس آمن قبل أي تحرك",
+        "introduction": "جلسة القيادة الصحيحة تعطيك وصولًا مريحًا للدواسات وتحكمًا بالمقود ورؤية واضحة. اضبطي المقعد والمرايا وحزام الأمان والسيارة ثابتة.",
+        "key_points": [
+          "ضعي الحزام بحيث يستقر فوق الكتف والحوض بشكل صحيح",
+          "تأكدي أن القدم تصل إلى الفرامل دون تمدد مفرط",
+          "اتركي مساحة مناسبة عن المقود والوسادة الهوائية وفق دليل السيارة"
+        ],
+        "scenario": "قبل رحلة نظرية، رتبي فحصًا قصيرًا: المقعد ← المرايا ← الحزام ← الأبواب.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "اتركي مساحة مناسبة عن المقود والوسادة الهوائية وفق دليل السيارة"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-002"
+    },
+    {
+      "id": "LES-003",
+      "order": 3,
+      "week_id": "WK-01",
+      "week": 1,
+      "week_topic": "التعرف على السيارة",
+      "title": "لوحة القيادة",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "تعرّف على المؤشرات",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S004"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تفاصيل السيارة تحتاج سنة وفئة الأكورد",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "قراءة مؤشرات لوحة القيادة دون خلطها",
+        "introduction": "تعرض لوحة العدادات السرعة والوقود والرسائل ومؤشرات تنبيه تختلف حسب طراز السيارة. بعض الأيقونات تظهر مؤقتًا عند تشغيل المركبة للفحص.",
+        "key_points": [
+          "ليس كل رمز مضيء عطلًا",
+          "افهمي كل تحذير في سياقه ورسالة الشاشة",
+          "لا تهملي تحذيرات الفرامل أو الزيت أو الحرارة"
+        ],
+        "scenario": "تظهر لمبة عند تشغيل السيارة ثم تختفي بعد الفحص: هل يلزم افتراض عطل؟",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تهملي تحذيرات الفرامل أو الزيت أو الحرارة"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-003"
+    },
+    {
+      "id": "LES-004",
+      "order": 4,
+      "week_id": "WK-02",
+      "week": 2,
+      "week_topic": "أجزاء الطريق ومستخدموه",
+      "title": "أجزاء الطريق",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "خريطة توضيحية",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "التفريق بين الطريق والرصيف والكتف",
+        "introduction": "يتكون مقطع الطريق من أجزاء مختلفة تؤدي وظائف مختلفة؛ لا يُعد كل سطح ممهد مسارًا مخصصًا للسير.",
+        "key_points": [
+          "الرصيف أو الممشى للمشاة",
+          "كتف الطريق ليس مسار سير إضافيًا عادةً",
+          "اتبعي العلامات والأجهزة المنظمة لحركة المرور"
+        ],
+        "scenario": "ترين كتف طريق واسعًا وسيارات أمامك بطيئة؛ هل يصبح مسارًا جديدًا؟",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "اتبعي العلامات والأجهزة المنظمة لحركة المرور"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-004"
+    },
+    {
+      "id": "LES-005",
+      "order": 5,
+      "week_id": "WK-02",
+      "week": 2,
+      "week_topic": "أجزاء الطريق ومستخدموه",
+      "title": "المسارات",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "خريطة توضيحية",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "فهم المسار والاتجاه",
+        "introduction": "يمكن أن يحتوي الاتجاه الواحد على مسارين أو أكثر؛ والاتجاه شيء مختلف عن عدد المسارات.",
+        "key_points": [
+          "تحدّد خطوط الأرضية حدود المسارات",
+          "السهم الأرضي يحدد الحركات المسموحة من المسار",
+          "التبديل يحتاج مناورة آمنة لا مجرد مسار خالٍ ظاهر"
+        ],
+        "scenario": "طريق بثلاثة مسارات تتجه جميعها للأمام: كم اتجاهًا للسير؟",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "التبديل يحتاج مناورة آمنة لا مجرد مسار خالٍ ظاهر"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-005"
+    },
+    {
+      "id": "LES-006",
+      "order": 6,
+      "week_id": "WK-02",
+      "week": 2,
+      "week_topic": "أجزاء الطريق ومستخدموه",
+      "title": "مستخدمو الطريق",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "التنبّه للمشاة والدراجات والمركبات",
+        "introduction": "الطريق مساحة مشتركة؛ اختلاف حجم مستخدميه ورؤيتهم يزيد أهمية التوقع والانتظار.",
+        "key_points": [
+          "توقعي دخول المشاة قرب المدارس والمواقف",
+          "الدراجات النارية أصغر وقد يصعب تقدير بعدها",
+          "انتبهي للمركبات الكبيرة ونقاطها العمياء"
+        ],
+        "scenario": "سيارة متوقفة قرب معبر وفي جوارها طفل: ما الاحتمال الذي تراقبينه؟",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "انتبهي للمركبات الكبيرة ونقاطها العمياء"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-006"
+    },
+    {
+      "id": "LES-007",
+      "order": 7,
+      "week_id": "WK-03",
+      "week": 3,
+      "week_topic": "الإشارات المرورية",
+      "title": "إشارات التحذير",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "بطاقات لوحات",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تمييز وظيفة علامات التحذير",
+        "introduction": "علامات التحذير تنبهك إلى خطر أو تغير قادم؛ الشكل والرمز واللوحات الإضافية تُقرأ معًا.",
+        "key_points": [
+          "خففي سرعتك عند الحاجة قبل موقع الخطر",
+          "لا تفترضي أن كل علامة تحذير تفرض حدًا رقميًا جديدًا",
+          "اربطي الرمز بالتصرف المتوقع"
+        ],
+        "scenario": "علامة تنبه لمنعطف خطر على طريق سريع.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "اربطي الرمز بالتصرف المتوقع"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-007"
+    },
+    {
+      "id": "LES-008",
+      "order": 8,
+      "week_id": "WK-03",
+      "week": 3,
+      "week_topic": "الإشارات المرورية",
+      "title": "الإشارات التنظيمية",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "بطاقات لوحات",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "مراجعة رسمية جزئية: وظيفة الإشارات التنظيمية ووجوب التوقف عند قف مدعومان بمصادر المرور؛ بقية تفاصيل الدرس ما تزال ضمن التدقيق.",
+      "study_content": {
+        "goal": "فهم العلامات التنظيمية",
+        "introduction": "تخبرك العلامات التنظيمية بما يجب فعله أو ما يُمنع؛ مثل قف ومنع الدخول وحدود السرعة المنشورة.",
+        "key_points": [
+          "اللوحات التنظيمية تؤثر على الحركة المسموحة",
+          "اقرئي نص أو رقم اللوحة بوضوح",
+          "إذا تعارض اجتهادك مع تنظيم واضح اتبعي التنظيم"
+        ],
+        "scenario": "وصلت إلى علامة قف والطريق يبدو خاليًا.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "إذا تعارض اجتهادك مع تنظيم واضح اتبعي التنظيم"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-008",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "وظيفة الإشارات التنظيمية، ووجوب التوقف التام عند علامة قف.",
+      "verification_urls": [
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES",
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1"
+      ]
+    },
+    {
+      "id": "LES-009",
+      "order": 9,
+      "week_id": "WK-03",
+      "week": 3,
+      "week_topic": "الإشارات المرورية",
+      "title": "الإشارات الإرشادية والمؤقتة",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "بطاقات لوحات",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "التمييز بين اللوحات الإرشادية والمؤقتة",
+        "introduction": "الإرشادية تساعد على الاتجاه إلى وجهة أو خدمة، والمؤقتة ترتبط غالبًا بأعمال طريق أو تحذير مؤقت.",
+        "key_points": [
+          "اللوحة المؤقتة لا تُهمَل لمجرد أن الطريق مألوف",
+          "خذي قرار تغيير المسار مبكرًا وبشكل آمن",
+          "لا تقرئي لوحة طويلة على حساب مراقبة الطريق"
+        ],
+        "scenario": "توجد لوحة مؤقتة توجّهك لمسار بسبب صيانة.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تقرئي لوحة طويلة على حساب مراقبة الطريق"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-009"
+    },
+    {
+      "id": "LES-010",
+      "order": 10,
+      "week_id": "WK-04",
+      "week": 4,
+      "week_topic": "الإشارات والأولوية الأساسية",
+      "title": "الإشارات الضوئية",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة إشارة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "قراءة الإشارات الضوئية الأساسية",
+        "introduction": "الأحمر يقتضي التوقف، والأصفر يدعو للاستعداد للتوقف الآمن، والأخضر يسمح بالحركة ضمن الأولويات والتنظيم.",
+        "key_points": [
+          "الأخضر لا يضمن أن التقاطع فارغ",
+          "لا تدخلي تقاطعًا مسدودًا بالازدحام",
+          "السهم أو اللوحة قد يخصصان حركة دون غيرها"
+        ],
+        "scenario": "إشارتك خضراء لكن المركبات عالقة داخل التقاطع.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "السهم أو اللوحة قد يخصصان حركة دون غيرها"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-010"
+    },
+    {
+      "id": "LES-011",
+      "order": 11,
+      "week_id": "WK-04",
+      "week": 4,
+      "week_topic": "الإشارات والأولوية الأساسية",
+      "title": "التقاطعات والأولوية",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو أولوية",
+      "recommended_media": "رسم تقاطع أصلي",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "مراجعة رسمية جزئية لقواعد الأفضلية الأساسية؛ تصميم كل تقاطع وإشاراته الفعلية يظلان حاسمين.",
+      "study_content": {
+        "goal": "تحديد الأولوية بحسب نوع التقاطع",
+        "introduction": "الأولوية ليست قاعدة واحدة دائمًا؛ افحصي اللوحات والإشارات وتصميم الطريق قبل تحديد من يمر أولًا.",
+        "key_points": [
+          "للطرق الرئيسية أفضلية في الحالة المعتادة ما لم يوجد تنظيم مختلف",
+          "قاعدة القادم من اليمين لها ظروف محددة",
+          "رجال المرور والإشارات المنظمة يغيرون ترتيب العبور"
+        ],
+        "scenario": "دخلت تقاطعًا من طريق فرعي وطريق رئيسي مشغول.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "رجال المرور والإشارات المنظمة يغيرون ترتيب العبور"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-011",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "أولوية الطريق الرئيسي، القادم من اليمين عند تقاطع متساوي الأفضلية، وأولوية تنظيم رجل المرور.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
+    },
+    {
+      "id": "LES-012",
+      "order": 12,
+      "week_id": "WK-04",
+      "week": 4,
+      "week_topic": "الإشارات والأولوية الأساسية",
+      "title": "معابر المشاة ومراجعة الشهر",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو مشاة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "ممارسة مراجعة شهرية للمشاة والإشارات",
+        "introduction": "نراجع هنا أسس الشهر الأول بتفسير موقف، لا بحفظ شكل العلامة فقط.",
+        "key_points": [
+          "ابحثي عن معبر مشاة قبل الانعطاف",
+          "السرعة الملائمة تعتمد على الرؤية والازدحام",
+          "التوقف الصحيح أهم من الوصول السريع"
+        ],
+        "scenario": "أنتِ تريدين الانعطاف ويوجد مشاة على المعبر.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "التوقف الصحيح أهم من الوصول السريع"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-012"
+    },
+    {
+      "id": "LES-013",
+      "order": 13,
+      "week_id": "WK-05",
+      "week": 5,
+      "week_topic": "الخطوط والمسارات — تعميق",
+      "title": "أجزاء الطريق والمسارات",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "خريطة توضيحية",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 106,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تكرار موضوع مبكر؛ المطلوب رفع مستوى التطبيق",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تمييز أجزاء الطريق في رسمة متعددة المسارات",
+        "introduction": "المسار منطقة حركة داخل الطريق؛ الاتجاه هو وجهة الحركة. يفضّل تمثيلهما بسهم واحد للاتجاه وأسهم أصغر للمسارات.",
+        "key_points": [
+          "قد تشترك مسارات عدة في اتجاه واحد",
+          "الرصيف منطقة مشاة وليس شريط تجاوز",
+          "الكتف ليس امتدادًا طبيعيًا لمسار السير"
+        ],
+        "scenario": "ترين ثلاثة خطوط حركة باتجاه شمال الطريق.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "الكتف ليس امتدادًا طبيعيًا لمسار السير"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-013"
+    },
+    {
+      "id": "LES-014",
+      "order": 14,
+      "week_id": "WK-05",
+      "week": 5,
+      "week_topic": "الخطوط والمسارات — تعميق",
+      "title": "الخطوط المتصلة والمتقطعة",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "تمييز علامات الطريق",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 123,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية للمفاهيم؛ اعتماد النص النظامي التفصيلي معلّق",
+      "study_content": {
+        "goal": "قراءة الخطوط الأرضية دون تعميم",
+        "introduction": "لا يكفي شكل الخط وحده لاتخاذ القرار؛ انتبهي لنوع العلامة ولونها وموضعها واللوحات المجاورة. وجود خط متقطع لا يعني أن تغيير المسار آمن دائمًا.",
+        "key_points": [
+          "اقرئي وظيفة الخط المتصل أو المتقطع حسب موضعه وتنظيم الطريق؛ لا تعتمدي على لون الخط وحده.",
+          "لا تعبري خطًا يمنع عبوره، وراجعي اللوحات المصاحبة عند الشك.",
+          "حتى حيث يسمح تغيير المسار، تحققي من المرايا والنقطة العمياء وأولوية المركبات في المسار المجاور."
+        ],
+        "scenario": "خط أبيض متقطع بين مسارين وسيارة قريبة في المجاور.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "قبل عبور أي خط افحصي المرايا والنقطة العمياء وأولوية المسار"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
+      "question_id": "QUIZ-014",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-015",
+      "order": 15,
+      "week_id": "WK-05",
+      "week": 5,
+      "week_topic": "الخطوط والمسارات — تعميق",
+      "title": "اختيار المسار",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "اختيار مسار تفاعلي",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 140,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "اختيار المسار قبل الوصول إلى التقاطع",
+        "introduction": "اختاري المسار وفق الأسهم واللوحات والوجهة، وحافظي على القرار بدل حركة أخيرة خطرة.",
+        "key_points": [
+          "خططي للخروج مبكرًا",
+          "إذا فاتك مخرج تابعي إلى مكان مناسب لإعادة المسار",
+          "لا تنعطفي من مسار للأمام فقط إذا كانت العلامات تمنع"
+        ],
+        "scenario": "سهم مسارك للأمام فقط لكن تريدين يمينًا.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تنعطفي من مسار للأمام فقط إذا كانت العلامات تمنع"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-015"
+    },
+    {
+      "id": "LES-016",
+      "order": 16,
+      "week_id": "WK-06",
+      "week": 6,
+      "week_topic": "التقاطعات والأولوية — تعميق",
+      "title": "قف وأعط الأفضلية",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 157,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "تمت مراجعة الفرق الأساسي بين قف وأعط الأفضلية مقابل المصادر الرسمية؛ التفاصيل السياقية تبقى مرتبطة بالموقع الفعلي.",
+      "study_content": {
+        "goal": "الفصل بين قف وأعط الأفضلية",
+        "introduction": "علامة «قف» تتطلب التوقف الكامل، أما «أعط الأفضلية» فتتطلب إفساح الطريق لمن له الأفضلية والتوقف عند الحاجة لمرورهم.",
+        "key_points": [
+          "عند علامة «قف» توقفي توقفًا تامًا قبل الاستمرار عندما يكون ذلك آمنًا.",
+          "عند «أعط الأفضلية» لا تدخلي أمام مركبة لها الأولوية؛ وقد يلزم توقف كامل لإفساح الطريق.",
+          "تأكدي من المشاة والمركبات ولا تعتمدي على عدد ثوانٍ ثابت بوصفه شرطًا نظاميًا عامًا."
+        ],
+        "scenario": "هناك علامة أعط الأفضلية ولا توجد مركبة أخرى قريبة.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تحولي مدة معينة إلى شرط قانوني عام دون سند"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
+      "question_id": "QUIZ-016",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "قف = توقف تام؛ أعط الأفضلية = إفساح المجال وقد يتطلب ذلك التوقف التام عند مرور مركبات ذات أفضلية.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES"
+      ]
+    },
+    {
+      "id": "LES-017",
+      "order": 17,
+      "week_id": "WK-06",
+      "week": 6,
+      "week_topic": "التقاطعات والأولوية — تعميق",
+      "title": "الإشارات الضوئية",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة إشارة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 176,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية للمفاهيم؛ اعتماد النص النظامي التفصيلي معلّق",
+      "study_content": {
+        "goal": "فهم الضوء الأخضر والانعطاف عند الأحمر",
+        "introduction": "لون الإشارة الضوئية يُقرأ مع أسهم المسارات واللوحات وتعليمات رجل المرور. لا تستنتجي السماح بالانعطاف يمينًا أثناء الأحمر من اللون وحده.",
+        "key_points": [
+          "لا تدخلي تقاطعًا مزدحمًا إذا لم يكن هناك مجال آمن لإكمال عبوره.",
+          "اتبعي الأسهم واللوحات المانعة أو المنظمة للانعطاف.",
+          "قبل أي انعطاف عند الأحمر تحققي من التنظيم والشروط السارية لذلك الموقع؛ لا تعتمدي على قاعدة عامة غير موثقة."
+        ],
+        "scenario": "توجد لوحة تمنع الانعطاف يمينًا عند الأحمر.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "تنظيم الالتفاف عند الأحمر السعودي له شروط إضافية يجب الرجوع للنص الجاري"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
+      "question_id": "QUIZ-017",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-018",
+      "order": 18,
+      "week_id": "WK-06",
+      "week": 6,
+      "week_topic": "التقاطعات والأولوية — تعميق",
+      "title": "أولوية التقاطعات",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو أولوية",
+      "recommended_media": "رسم تقاطع أصلي",
+      "review_note_available": true,
+      "source_line": 187,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تكرار موضوع مبكر؛ المطلوب رفع مستوى التطبيق",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "تمت مراجعة قاعدة القادم من اليمين وترتيب تنظيم الحركة مقابل مصادر رسمية.",
+      "study_content": {
+        "goal": "تطبيق الأولوية على تقاطعات محددة",
+        "introduction": "ابدئي بتحديد من ينظم التقاطع: رجل المرور، والإشارات الضوئية، ولوحات الأولوية. عند غياب تنظيم يغيّر الأفضلية، قد تنطبق قاعدة المركبة القادمة من اليمين عند تقاطع متساوي الأفضليات.",
+        "key_points": [
+          "تعليمات رجل المرور المنظمة للحركة مقدمة على الإشارات الضوئية.",
+          "المركبات على الطريق الرئيسي لها أفضلية وفق تنظيم الطريق.",
+          "عند تقاطع متساوي الأفضليات ودون إشارات، راعي أفضلية القادمة من اليمين وفق حالة الوصول المتزامن."
+        ],
+        "scenario": "تقاطع بلا تنظيم وطرق متساوية وتصل سيارتان في الوقت نفسه.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "إذا تعذر رؤية المكان لا تدخلي بالتخمين"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-018",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "عند تقاطع متساوي الأفضلية دون تنظيم، تكون الأفضلية للقادمة من اليمين؛ ورجل المرور مقدم على الإشارة الضوئية عند تنظيمه للحركة.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
+    },
+    {
+      "id": "LES-019",
+      "order": 19,
+      "week_id": "WK-07",
+      "week": 7,
+      "week_topic": "الدوارات والمشاة",
+      "title": "أولوية الدخول إلى الدوار",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة دوار",
+      "recommended_media": "SVG تفاعلي",
+      "review_note_available": true,
+      "source_line": 202,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "تمت مراجعة قاعدة أولوية المركبات داخل الدوار مقابل نظام المرور ولائحته.",
+      "study_content": {
+        "goal": "التعامل مع أفضلية المركبات داخل الدوار",
+        "introduction": "إذا لم توجد إشارات ضوئية أو رجل مرور ينظّم الحركة على خلاف ذلك، فالأفضلية للمركبات التي تسير بالفعل داخل الدوار.",
+        "key_points": [
+          "راقبي المركبات الموجودة داخل الدوار قبل الدخول.",
+          "خففي السرعة وأفسحي المجال لمن داخل الدوار عند غياب تنظيم مخالف.",
+          "لا تدخلي إلا حين توجد فجوة آمنة، حتى لو ظننتِ أن الآخرين سيتوقفون."
+        ],
+        "scenario": "ترين مركبة داخل الدوار تقترب من نقطة دخولك.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا يلزم توقف كامل إن كان الدخول آمنًا ولا توجد علامة توقف"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-019",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "الأفضلية للمركبة الموجودة داخل الدوار عند عدم وجود إشارة ضوئية أو رجل مرور ينظم خلاف ذلك.",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ]
+    },
+    {
+      "id": "LES-020",
+      "order": 20,
+      "week_id": "WK-07",
+      "week": 7,
+      "week_topic": "الدوارات والمشاة",
+      "title": "اختيار مسار الدوار والمخرج الصحيح",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة دوار",
+      "recommended_media": "SVG تفاعلي",
+      "review_note_available": true,
+      "source_line": 218,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "study_content": {
+        "goal": "اختيار مسار الدوار حسب اللوحات والتخطيط",
+        "introduction": "مسارات الدوارات تختلف حسب تخطيط الموقع وأسهمه ولوحاته. اختاري مسارك وفق التعليمات مبكرًا، ولا تقطعي مسارات أخرى فجأة للحاق بمخرج.",
+        "key_points": [
+          "اتبعي الأسهم الأرضية واللوحات التي تحدد وجهة كل مسار.",
+          "إذا فاتك المخرج أو تعذر الوصول إليه بأمان، لا تنعطفي بشكل مفاجئ أو تعترضي مسار غيرك.",
+          "انتبهي لمعابر المشاة عند الخروج وأعطي الأولوية وفق إشارات الموقع."
+        ],
+        "scenario": "أنت داخل دوار ووجدت أنك في مسار لا يسمح بالمخرج المرغوب.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "انتبهِي لعبور مشاة عند مخرج الدوار"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-020",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-021",
+      "order": 21,
+      "week_id": "WK-07",
+      "week": 7,
+      "week_topic": "الدوارات والمشاة",
+      "title": "أولوية المشاة",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو مشاة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 256,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية للمفاهيم؛ اعتماد النص النظامي التفصيلي معلّق",
+      "study_content": {
+        "goal": "إعطاء المشاة حقهم عند المعابر",
+        "introduction": "عند الاقتراب من معبر المشاة، خففي السرعة وراقبي من بدأ العبور أو يستعد له، والتزمي بتنظيم الإشارات والأولوية الخاصة بالموقع.",
+        "key_points": [
+          "انتبهي لمعابر المشاة عند التقاطعات ومخارج الدوارات والانعطاف.",
+          "تجنبي حجب المعبر وأفسحي مرور المشاة وفق تنظيم الموقع.",
+          "لا تفترضي أن المعبر خالٍ لمجرد خلو المسار الذي أمامك."
+        ],
+        "scenario": "تخرجين من دوار وتجدين مشاة يعبرون عند المخرج.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تفترضي خلو المعبر لمجرد خلو الطريق أمامك"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
+      "question_id": "QUIZ-021",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-022",
+      "order": 22,
+      "week_id": "WK-08",
+      "week": 8,
+      "week_topic": "تغيير المسار والتجاوز",
+      "title": "تغيير المسار والنقطة العمياء",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة انتقال",
+      "recommended_media": "SVG تفاعلي",
+      "review_note_available": true,
+      "source_line": 271,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تمت مراجعة الصياغة للحد من التعميم؛ يلزم مطابقة كل حكم تفصيلي بالدليل/اللائحة",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية للمفاهيم؛ اعتماد النص النظامي التفصيلي معلّق",
+      "study_content": {
+        "goal": "تنفيذ تسلسل آمن لتغيير المسار",
+        "introduction": "تغيير المسار يتطلب ملاحظة حركة المرور واستخدام الإشارة والتحقق من النقطة العمياء قبل الانتقال عند توفر مساحة آمنة.",
+        "key_points": [
+          "افحصي المرايا وموقع المركبات في النقطة العمياء قبل تغيير المسار.",
+          "تشغيل إشارة الانعطاف تنبيه للآخرين وليس حق أولوية.",
+          "لا تنتقلي قبل توفر فجوة مناسبة ودون إرباك المركبات في المسار الآخر."
+        ],
+        "scenario": "تشغلين الإشارة إلى اليسار وهناك مركبة بمحاذاتك.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تنتقلي حتى تتوفر فجوة آمنة"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية 2026-10-12؛ لا تُعد اعتمادًا قانونيًا",
+      "question_id": "QUIZ-022",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-023",
+      "order": 23,
+      "week_id": "WK-08",
+      "week": 8,
+      "week_topic": "تغيير المسار والتجاوز",
+      "title": "التجاوز من اليسار أو اليمين",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو تجاوز",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 300,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "فهم قاعدة التجاوز واستثناءاتها",
+        "introduction": "الأصل أن التجاوز يكون من اليسار، مع استثناءات تنظيمية محددة لا تجعل التجاوز من اليمين خيارًا آمنًا دائمًا.",
+        "key_points": [
+          "التجاوز لا يبرر زيادة السرعة فوق الحد النظامي",
+          "الاستثناء القانوني لا يغني عن شروط الرؤية والمسافة",
+          "قد يحظر المكان التجاوز بغض النظر عن عدد المسارات"
+        ],
+        "scenario": "أمامك مركبة بطيئة لكن الطريق أمامها منحنى يحجب الرؤية.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "قد يحظر المكان التجاوز بغض النظر عن عدد المسارات"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-023"
+    },
+    {
+      "id": "LES-024",
+      "order": 24,
+      "week_id": "WK-08",
+      "week": 8,
+      "week_topic": "تغيير المسار والتجاوز",
+      "title": "متى يكون التجاوز محظورًا؟",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "تصنيف حالات",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 316,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تحديد حالات منع التجاوز",
+        "introduction": "راجعي المعابر والخطوط المتصلة والتقاطعات وضعف الرؤية وحدود السرعة قبل مناورة التجاوز.",
+        "key_points": [
+          "لا تتجاوزي إذا تطلب الأمر عبور خط مانع",
+          "لا تتجاوزي عند معبر مشاة",
+          "إذا بدأ سائق خلفك بالتجاوز لا تنفذي مناورة متعارضة"
+        ],
+        "scenario": "ترين معبر مشاة أمام السيارة البطيئة.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "إذا بدأ سائق خلفك بالتجاوز لا تنفذي مناورة متعارضة"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-024"
+    },
+    {
+      "id": "LES-025",
+      "order": 25,
+      "week_id": "WK-09",
+      "week": 9,
+      "week_topic": "السرعة ومسافة الأمان",
+      "title": "السرعة المناسبة",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "اختيار سرعة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 566,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "study_content": {
+        "goal": "اختيار سرعة تناسب الواقع لا اللوحة وحدها",
+        "introduction": "السرعة المحددة على اللوحة حد أعلى، وليست وعدًا بأن القيادة عندها آمنة في كل ظرف؛ يجب مواءمة القيادة مع الرؤية والطريق والمركبات.",
+        "key_points": [
+          "لا تتجاوزي الحد النظامي المعلن.",
+          "خففي السرعة عند ضعف الرؤية أو التماسك أو ازدحام الطريق.",
+          "اتركي مسافة مناسبة تسمح بالاستجابة للخطر دون فرملة مفاجئة غير مبررة."
+        ],
+        "scenario": "اللوحة 80 كم/س مع ضباب كثيف.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "إذا شككت في الرؤية خففي السرعة تدريجيًا وبشكل آمن"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-025",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-026",
+      "order": 26,
+      "week_id": "WK-09",
+      "week": 9,
+      "week_topic": "السرعة ومسافة الأمان",
+      "title": "مسافة التوقف",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "حاسبة تعليمية",
+      "recommended_media": "حاسبة ويب",
+      "review_note_available": true,
+      "source_line": 575,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "study_content": {
+        "goal": "حساب مسافة التوقف على نحو تقريبي",
+        "introduction": "مسافة التوقف هي مجموع ما تقطعه السيارة أثناء استجابة السائق وبعد بدء الفرملة. الأرقام التعليمية تختلف باختلاف فرضيات سرعة الاستجابة وحالة الطريق والفرامل؛ لا تحفظي رقمًا واحدًا باعتباره ثابتًا لكل سيارة.",
+        "key_points": [
+          "مسافة الاستجابة تعتمد على السرعة والزمن الذي تستغرقه ملاحظة الخطر والتصرف.",
+          "مسافة الفرملة تتغير مع السرعة وتماسك الطريق والإطارات والظروف.",
+          "استخدمي أمثلة الحساب لفهم العلاقة، لا بوصفها ضمانًا لتوقف هوندا أكورد في عدد أمتار محدد."
+        ],
+        "scenario": "تسيرين بسرعة 80 كم/ساعة وفق النموذج التعليمي الوارد في الدليل.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "زيادة السرعة ترفع مسافة الفرملة بشدة"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-026",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-027",
+      "order": 27,
+      "week_id": "WK-09",
+      "week": 9,
+      "week_topic": "السرعة ومسافة الأمان",
+      "title": "مسافة الأمان وقاعدة الثانيتين",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة مسافة الأمان",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 687,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "study_content": {
+        "goal": "قياس الفاصل الآمن زمنيًا",
+        "introduction": "استخدمي العد الزمني بين سيارتك والمركبة أمامك عند مروركما بعلامة ثابتة لتقدير مسافة المتابعة. قاعدة الثانيتين وسيلة تدريب تقريبية للظروف الجيدة، وليست مسافة مضمونة أو كافية في كل الظروف.",
+        "key_points": [
+          "إذا كان الطريق مبتلًا أو الرؤية ضعيفة أو استجابة السائق بطيئة، زيدي الفاصل.",
+          "لا تخلطي مسافة متابعة المركبة الأمامية مع مسافة التوقف الكاملة.",
+          "تجنبي الاقتراب من المركبة الأمامية مهما كانت سرعة المرور."
+        ],
+        "scenario": "بدأ المطر والطريق مزدحم.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "العد يعتمد على نقطة ثابتة وليس النظر للأمتار فقط"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-027",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-028",
+      "order": 28,
+      "week_id": "WK-10",
+      "week": 10,
+      "week_topic": "القيادة الوقائية واكتشاف المخاطر",
+      "title": "القيادة الوقائية واكتشاف الأخطار",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "رصد مخاطر",
+      "recommended_media": "صور / فيديو مرخّص",
+      "review_note_available": true,
+      "source_line": 703,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تطبيق دورة رصد الخطر والتصرف",
+        "introduction": "استعملي تسلسلًا تدريبيًا: ألاحظ ← أتوقع ← أقرر ← أتصرف. الهدف اتخاذ قرار بناء على مؤشر مرئي وليس التخمين.",
+        "key_points": [
+          "فرّقي بين الملاحظة والتوقع",
+          "خططي لطريق خروج آمن عند احتمال الخطر",
+          "راقبي مناطق تحجبها المركبات المتوقفة"
+        ],
+        "scenario": "كرة تظهر من خلف سيارة عند حديقة.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "راقبي مناطق تحجبها المركبات المتوقفة"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-028"
+    },
+    {
+      "id": "LES-029",
+      "order": 29,
+      "week_id": "WK-10",
+      "week": 10,
+      "week_topic": "القيادة الوقائية واكتشاف المخاطر",
+      "title": "عادات القيادة الخطرة",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "اختيار قرار",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 731,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تمييز العادات التي ترفع خطر الحوادث",
+        "introduction": "التشتت والنعاس والسرعة العدوانية والالتصاق بالمركبة الأمامية كلها ممارسات تزيد الخطر.",
+        "key_points": [
+          "لا تستخدمي الهاتف أثناء القيادة",
+          "توقفي في مكان آمن عند النعاس",
+          "لا تردي على سائق ملتصق خلفك بفرملة انتقامية"
+        ],
+        "scenario": "سائق خلفك يقترب جدًا منك.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تردي على سائق ملتصق خلفك بفرملة انتقامية"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-029"
+    },
+    {
+      "id": "LES-030",
+      "order": 30,
+      "week_id": "WK-10",
+      "week": 10,
+      "week_topic": "القيادة الوقائية واكتشاف المخاطر",
+      "title": "اختبارات اكتشاف الأخطار بالفيديو",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "فيديو تفاعلي",
+      "recommended_media": "فيديو خارجي موثق",
+      "review_note_available": true,
+      "source_line": 749,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "فهم الفرق بين تدريب إدراك الأخطار والقيادة",
+        "introduction": "اختبارات الفيديو تعلّمك ملاحظة المؤشرات المبكرة وتوقيت القرار، لكنها لا تعوّض التمرين العملي تحت إشراف مناسب.",
+        "key_points": [
+          "انتبهي لما يتغير داخل المشهد",
+          "اذكري سبب توقعك للخطر",
+          "لا تساوي بين نجاح الاختبار البصري وإتقان التوجيه أو الفرملة"
+        ],
+        "scenario": "نجحتِ في اختبار فيديو للتنبؤ بالخطر.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تساوي بين نجاح الاختبار البصري وإتقان التوجيه أو الفرملة"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-030"
+    },
+    {
+      "id": "LES-031",
+      "order": 31,
+      "week_id": "WK-11",
+      "week": 11,
+      "week_topic": "المواقف والرجوع للخلف",
+      "title": "أنواع المواقف",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "مقارنة صور",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 763,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "التعرف على أشكال مواقف السيارات",
+        "introduction": "المواقف الشائعة: موازية ومائلة وعمودية. الركن للخلف أسلوب للدخول وليس نوع موقف مستقل.",
+        "key_points": [
+          "تأكدي من أن المكان يسمح بوقوف السيارة",
+          "انتبهي إلى الأبواب والمشاة وخطوط التحديد",
+          "اختاري مكانًا أوسع عند التدريب الأول"
+        ],
+        "scenario": "سيارة تدخل موقفًا عموديًا بالرجوع للخلف.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "اختاري مكانًا أوسع عند التدريب الأول"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-031"
+    },
+    {
+      "id": "LES-032",
+      "order": 32,
+      "week_id": "WK-11",
+      "week": 11,
+      "week_topic": "المواقف والرجوع للخلف",
+      "title": "الرجوع للخلف",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة حركة",
+      "recommended_media": "SVG متحرك",
+      "review_note_available": true,
+      "source_line": 772,
+      "source_ids_suggested": [
+        "S004"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تفاصيل السيارة تحتاج سنة وفئة الأكورد",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "إدراك مسار المركبة وحدود الكاميرا",
+        "introduction": "عند الرجوع تتجه مؤخرة السيارة غالبًا نحو جهة تدوير المقود، مع تأرجح محتمل للمقدمة في الجهة الأخرى.",
+        "key_points": [
+          "الكاميرا لا تعرض جميع المناطق الخلفية",
+          "تحققي بصريًا من المحيط والمرايا",
+          "نفذي الرجوع ببطء وتحت إشراف عملي مناسب"
+        ],
+        "scenario": "الكاميرا تعرض المسار خلفك دون عوائق.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "نفذي الرجوع ببطء وتحت إشراف عملي مناسب"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-032"
+    },
+    {
+      "id": "LES-033",
+      "order": 33,
+      "week_id": "WK-11",
+      "week": 11,
+      "week_topic": "المواقف والرجوع للخلف",
+      "title": "الخروج من الموقف بالرجوع للخلف",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة حركة",
+      "recommended_media": "SVG متحرك",
+      "review_note_available": true,
+      "source_line": 797,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "الخروج الآمن من الموقف بالخلف",
+        "introduction": "يتطلب الخروج فحص الممر وحركة المشاة ومقدمة السيارة أيضًا، لأن دورانها قد يقربها من المركبات المجاورة.",
+        "key_points": [
+          "استعدي لاحتمال مرور مشاة خلف السيارة",
+          "خروج الموقف المائل يختلف عن العمودي",
+          "لا تتعجلي وتوقفي عند أي خطر"
+        ],
+        "scenario": "تراجعين والمقدمة اقتربت من سيارة بجوارك.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تتعجلي وتوقفي عند أي خطر"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-033"
+    },
+    {
+      "id": "LES-034",
+      "order": 34,
+      "week_id": "WK-12",
+      "week": 12,
+      "week_topic": "المناورات والمرتفعات",
+      "title": "الركن الموازي",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة حركة",
+      "recommended_media": "SVG متحرك",
+      "review_note_available": true,
+      "source_line": 807,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "فهم خطوات الركن الموازي بشكل مفاهيمي",
+        "introduction": "ابدئي من مكان آمن ومسموح، وافحصي المسافة بين السيارات والمشاة، ثم تقدمي تدريجيًا في المناورة مع الإشارات والفحص.",
+        "key_points": [
+          "اتجاه المناورة يختلف بين السير على اليمين واليسار",
+          "لا تحفظي نقاط لف مقود من سيارة أخرى حرفيًا",
+          "أكملي التمركز دون إعاقة الحركة أو احتكاك"
+        ],
+        "scenario": "فيديو أجنبي يركن بمحاذاة الرصيف الأيسر.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "أكملي التمركز دون إعاقة الحركة أو احتكاك"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-034"
+    },
+    {
+      "id": "LES-035",
+      "order": 35,
+      "week_id": "WK-12",
+      "week": 12,
+      "week_topic": "المناورات والمرتفعات",
+      "title": "مناورات X وT وY",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة مناورة",
+      "recommended_media": "SVG متحرك",
+      "review_note_available": true,
+      "source_line": 818,
+      "source_ids_suggested": [
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تمييز المناورات التعليمية دون تعميم اختبارها",
+        "introduction": "قد تستخدم بعض المدارس مسميات X وT وY و90 للمناورات. شكل التدريب والاختبار يختلف باختلاف المدرسة.",
+        "key_points": [
+          "تعلمي مفاهيم الرجوع والدوران متعدد النقاط",
+          "راجعي تعليمات مدرستك قبل حفظ أسماء المناورات",
+          "نقاط المرجع الدقيقة تُتعلّم بمركبة التدريب"
+        ],
+        "scenario": "صديقة تقول إن كل مدارس السعودية تختبر Y بنفس الرسم.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "نقاط المرجع الدقيقة تُتعلّم بمركبة التدريب"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-035"
+    },
+    {
+      "id": "LES-036",
+      "order": 36,
+      "week_id": "WK-12",
+      "week": 12,
+      "week_topic": "المناورات والمرتفعات",
+      "title": "المرتفعات وفرامل التوقف",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "دليل السيارة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 851,
+      "source_ids_suggested": [
+        "S004"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تفاصيل السيارة تحتاج سنة وفئة الأكورد",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "الفصل بين P وفرامل التوقف ومساعدات التوقف",
+        "introduction": "في الأوتوماتيك، وضع P يختلف عن فرامل التوقف، كما أن Brake Hold يختلف عن Hill Start Assist.",
+        "key_points": [
+          "Brake Hold ليس تأمينًا للسيارة المتروكة",
+          "اتّبعي دليل أكورد الفعلية لإجراءات الركن",
+          "لا تبدلي بين D وR قبل التوقف الكامل"
+        ],
+        "scenario": "تريدين ترك سيارة أوتوماتيكية مركونة على منحدر.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تبدلي بين D وR قبل التوقف الكامل"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-036"
+    },
+    {
+      "id": "LES-037",
+      "order": 37,
+      "week_id": "WK-13",
+      "week": 13,
+      "week_topic": "المطر والغبار والقيادة الليلية",
+      "title": "المطر والتماسك ومسافة الأمان",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو طقس",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1109,
+      "source_ids_suggested": [
+        "S005",
+        "S009"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "تعديل القيادة في المطر",
+        "introduction": "المطر يقلل الرؤية وقد يقلل التماسك. حافظي على خط سير مستقر وتجنبي تجمعات المياه غير المعروفة العمق.",
+        "key_points": [
+          "خففي السرعة بشكل مناسب",
+          "اتركي مسافة إضافية لتفادي الكبح المفاجئ",
+          "الانزلاق المائي ليس مرادفًا لكل انزلاق على سطح مبتل"
+        ],
+        "scenario": "أمامك تجمع ماء لا تستطيعين تقدير عمقه.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "الانزلاق المائي ليس مرادفًا لكل انزلاق على سطح مبتل"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-037"
+    },
+    {
+      "id": "LES-038",
+      "order": 38,
+      "week_id": "WK-13",
+      "week": 13,
+      "week_topic": "المطر والغبار والقيادة الليلية",
+      "title": "الغبار والضباب",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو طقس",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1124,
+      "source_ids_suggested": [
+        "S005",
+        "S009"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "اختيار الأنوار والاستجابة لضعف الرؤية",
+        "introduction": "في الضباب والغبار خففي السرعة وزيدي الفاصل واستخدمي النور المنخفض عند الحاجة، وتجنبي العالي الذي قد يزيد الوهج.",
+        "key_points": [
+          "الفلشر ليس بديلًا عن الأنوار المطلوبة",
+          "عند سوء الرؤية الشديد قد يكون تأجيل الرحلة الأفضل",
+          "لا تتوقفي فجأة داخل مسار سير سريع"
+        ],
+        "scenario": "ضباب كثيف ونورك العالي يزيد انعكاس الضوء أمامك.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "لا تتوقفي فجأة داخل مسار سير سريع"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-038"
+    },
+    {
+      "id": "LES-039",
+      "order": 39,
+      "week_id": "WK-13",
+      "week": 13,
+      "week_topic": "المطر والغبار والقيادة الليلية",
+      "title": "القيادة الليلية وأنواع الأنوار",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "تعرّف على الإضاءة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1133,
+      "source_ids_suggested": [
+        "S005",
+        "S009"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "التفريق بين النور العالي والمنخفض والتحذيري",
+        "introduction": "النور المنخفض للإضاءة الأساسية دون إبهار، والعالي يوسّع المدى في ظروف تسمح، وأضواء التحذير تنبّه إلى خطر.",
+        "key_points": [
+          "لا تستخدمي العالي أمام مركبات مقابلة",
+          "أنوار الموضع وحدها ليست بديلًا عن أنوار السير اللازمة",
+          "تأكدي من المصابيح المناسبة لحالة الطقس والطريق"
+        ],
+        "scenario": "تقابلين مركبة ليلًا على طريق غير مضاء.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "تأكدي من المصابيح المناسبة لحالة الطقس والطريق"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-039"
+    },
+    {
+      "id": "LES-040",
+      "order": 40,
+      "week_id": "WK-14",
+      "week": 14,
+      "week_topic": "الأعطال والتحذيرات والحوادث",
+      "title": "تعطل السيارة على الطريق",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "شجرة قرار",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1192,
+      "source_ids_suggested": [
+        "S001"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "مراجعة تحريرية احترازية بمراجع سعودية؛ لا تمثل اعتمادًا قانونيًا كاملًا",
+      "study_content": {
+        "goal": "التصرف الآمن عند تعطل السيارة",
+        "introduction": "عند تعطل المركبة، الأولوية لحماية الأرواح. حافظي على التحكم وحاولي الوصول إلى مكان أكثر أمانًا إن أمكن؛ ثم اطلبي المساعدة وفق نوع الخطر وموقعك.",
+        "key_points": [
+          "لا تخرجي إلى جانب يعرّضك لحركة المركبات السريعة.",
+          "شغلي إشارات التحذير إذا أمكن وبما لا يصرفك عن التحكم بالمركبة.",
+          "لا تحاولي وضع مثلث التحذير أو إصلاح المركبة بنفسك في مكان يعرضك للدهس."
+        ],
+        "scenario": "تعطلتِ بجانب طريق سريع والخروج إلى حركة المرور خطير.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "إذا ظهر دخان أو حريق فتعاملي مع الخطر الطارئ واطلبي النجدة"
+      },
+      "study_content_status": "مراجعة تعليمية احترازية بتاريخ 2026-10-12",
+      "question_id": "QUIZ-040",
+      "editorial_reference_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/"
+    },
+    {
+      "id": "LES-041",
+      "order": 41,
+      "week_id": "WK-14",
+      "week": 14,
+      "week_topic": "الأعطال والتحذيرات والحوادث",
+      "title": "لمبات التحذير في هوندا",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "بطاقات تحذير",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1201,
+      "source_ids_suggested": [
+        "S004"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "تفاصيل السيارة تحتاج سنة وفئة الأكورد",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "قراءة مؤشرات الزيت والحرارة والفرامل",
+        "introduction": "هناك فرق بين مؤشر حالة ورسالة فحص وتحذير خطير. دليل سنة موديل أكورد الفعلي هو المرجع لتصرف دقيق.",
+        "key_points": [
+          "انخفاض ضغط زيت المحرك قد يستوجب التوقف الآمن سريعًا",
+          "حرارة المحرك العالية خطر ولا تفتحي غطاء الرديتر وهو ساخن",
+          "ضوء الفرامل الأحمر قد يرتبط بفرامل التوقف أو مشكلة أخرى"
+        ],
+        "scenario": "ظهر تحذير ضغط زيت المحرك أثناء التشغيل.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "ضوء الفرامل الأحمر قد يرتبط بفرامل التوقف أو مشكلة أخرى"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-041"
+    },
+    {
+      "id": "LES-042",
+      "order": 42,
+      "week_id": "WK-14",
+      "week": 14,
+      "week_topic": "الأعطال والتحذيرات والحوادث",
+      "title": "الحوادث وأرقام الطوارئ",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "شجرة قرار",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1233,
+      "source_ids_suggested": [
+        "S001"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "تم تحديث أرقام الطوارئ وتغطية 911 من مصادر رسمية حديثة؛ تفاصيل التعامل مع الحادث تعتمد على وجود إصابات وموقع الحادث.",
+      "study_content": {
+        "goal": "التفريق بين الحوادث الطارئة وحوادث الأضرار المادية",
+        "introduction": "في حالة إصابة أو خطر فوري، الأولوية لطلب خدمة الطوارئ المناسبة وتأمين سلامة الموجودين بقدر الاستطاعة. ليست كل الحوادث من اختصاص نجم، ولا ينبغي انتظار خدمة أضرار مادية عند وجود مصاب يحتاج إسعافًا.",
+        "key_points": [
+          "مركز العمليات الأمنية الموحدة 911 يغطي مكة المكرمة والرياض والمنطقة الشرقية ويشمل المرور وأمن الطرق والجهات الأمنية المشمولة.",
+          "997 رقم الخدمة الإسعافية للهلال الأحمر السعودي؛ و993 لحوادث المرور في بقية المناطق وفق قائمة وزارة الداخلية.",
+          "عند وجود مصاب أو خطر طبي عاجل اطلبي الإسعاف فورًا، ولا تؤخري البلاغ الطبي بانتظار معالجة أضرار المركبات."
+        ],
+        "scenario": "حادث فيه مصاب في مكة ويحتاج مساعدة فورية.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "للإبلاغ عن حادث مشمول بخدمة نجم راجعي شروطها وقنواتها الرسمية"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-042",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "997 للإسعاف؛ 911 للعمليات الأمنية الموحدة في مكة والرياض والشرقية؛ 993 للمرور في بقية المناطق.",
+      "verification_urls": [
+        "https://srca.org.sa/",
+        "https://www.moi.gov.sa/"
+      ]
+    },
+    {
+      "id": "LES-043",
+      "order": 43,
+      "week_id": "WK-15",
+      "week": 15,
+      "week_topic": "المراجعة الشاملة",
+      "title": "مراجعة الإشارات والخطوط",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "مراجعة مصورة",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1290,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "استعادة فهم الإشارات والخطوط",
+        "introduction": "راجعي المعنى من شكل العلامة ورمزها وموقعها، وطبقيه على طريق محدد بدل تعميم اللون أو شكل الخط وحده.",
+        "key_points": [
+          "الخط المتقطع لا يلغي السلامة",
+          "علامة قف تتطلب توقفًا تامًا",
+          "السهم الأرضي قد يقيد اتجاه المسار"
+        ],
+        "scenario": "خط متقطع بين مسارين وتريدين تغيير المسار.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "السهم الأرضي قد يقيد اتجاه المسار"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-043"
+    },
+    {
+      "id": "LES-044",
+      "order": 44,
+      "week_id": "WK-15",
+      "week": 15,
+      "week_topic": "المراجعة الشاملة",
+      "title": "الأولوية والتقاطعات والدوارات",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "محاكاة أولوية",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1301,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "حل سيناريو الأولوية كاملًا",
+        "introduction": "حددي أولًا هل هناك تنظيم للإشارة، ثم افحصي نوع الطريق والدوار والمشاة، ثم اتخذي قرارًا واضحًا.",
+        "key_points": [
+          "أولوية الداخل في الدوار المعتاد",
+          "أولوية المشاة على معبرهم",
+          "القادم من اليمين ينطبق ضمن شروط محددة"
+        ],
+        "scenario": "هناك مشاة يعبرون عند مخرج دوار بينما أنت داخل الدوار.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "القادم من اليمين ينطبق ضمن شروط محددة"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-044"
+    },
+    {
+      "id": "LES-045",
+      "order": 45,
+      "week_id": "WK-15",
+      "week": 15,
+      "week_topic": "المراجعة الشاملة",
+      "title": "السرعة والمخاطر والطوارئ",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "سيناريو شامل",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1306,
+      "source_ids_suggested": [
+        "S001",
+        "S005"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "نص الدرس الأصلي غير موجود في الملف",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "الربط بين السرعة ومسافة الأمان والطوارئ",
+        "introduction": "السرعة الفعلية والظروف والتشتت والفاصل بين السيارات عوامل متداخلة. أي اختبار شامل يجب أن يقيّم القرار لا المصطلح فقط.",
+        "key_points": [
+          "قاعدة الثانيتين حد أولي تعليمي",
+          "الطريق المبتل قد يزيد مسافة التوقف",
+          "التشتت يقلل القدرة على إدراك الخطر مبكرًا"
+        ],
+        "scenario": "تسيرين بسرعة 60 مع انشغال بالجوال.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "التشتت يقلل القدرة على إدراك الخطر مبكرًا"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-045"
+    },
+    {
+      "id": "LES-046",
+      "order": 46,
+      "week_id": "WK-16",
+      "week": 16,
+      "week_topic": "الاختبارات والرخصة",
+      "title": "إجراءات إصدار الرخصة",
+      "day_suggestion": "السبت",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "خطوات إجرائية",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1341,
+      "source_ids_suggested": [
+        "S007"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "تمت مراجعة متطلبات بطاقة الخدمة الحالية في أبشر بتاريخ 2026-10-13.",
+      "study_content": {
+        "goal": "فهم مراحل استخراج الرخصة في السعودية",
+        "introduction": "حجز موعد مدرسة القيادة عبر أبشر خطوة ضمن مسار الحصول على الرخصة، وليس إصدارًا فوريًا. بطاقة الخدمة الحالية تذكر حدًا أدنى 18 سنة، حجز مدرسة قيادة، فحصًا طبيًا من مركز معتمد، وسداد رسوم الإصدار، ثم استكمال التدريب والاختبارات اللازمة.",
+        "key_points": [
+          "الحد الأدنى المذكور في بطاقة خدمة إصدار رخصة القيادة الخاصة هو 18 سنة.",
+          "يُحجز أو يُحدّث موعد التدريب في مدرسة قيادة معتمدة عبر أبشر.",
+          "الفحص الطبي المعتمد ورسوم الإصدار واستكمال التدريب والاختبارات مراحل منفصلة عن مجرد حجز الموعد."
+        ],
+        "scenario": "حجزتِ موعدًا بمدرسة معتمدة عبر أبشر.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "الرسوم الحكومية منفصلة عن رسوم التدريب"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-046",
+      "verification_level": "official_current_support",
+      "verification_label": "مدعوم بمصدر رسمي حالي",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "شروط بطاقة خدمة إصدار رخصة القيادة في أبشر: العمر، حجز المدرسة، الفحص الطبي، الرسوم، واستكمال التدريب والاختبارات.",
+      "verification_urls": [
+        "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/"
+      ]
+    },
+    {
+      "id": "LES-047",
+      "order": 47,
+      "week_id": "WK-16",
+      "week": 16,
+      "week_topic": "الاختبارات والرخصة",
+      "title": "برامج التدريب والاختبارات",
+      "day_suggestion": "الثلاثاء",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "مقارنة مسارات تدريب",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": true,
+      "source_line": 1378,
+      "source_ids_suggested": [
+        "S007"
+      ],
+      "editorial_status": "مقتطف تدقيق فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "المقتطف في المرفق ينتهي قبل اكتمال المراجعة؛ تحقق من أسعار مدرسة القيادة عند النشر",
+      "source_provenance": "ملف التدقيق المرفق",
+      "verification_status": "تم تصحيح نسبة مثال 6/15/30 إلى مدرسة جامعة القصيم؛ لا يعمم على جميع المدارس.",
+      "study_content": {
+        "goal": "فهم مستويات برامج تعليم القيادة",
+        "introduction": "تختلف برامج التدريب بحسب تقييم المدرسة للمستوى. كمثال منشور حاليًا من مدرسة جامعة القصيم لتعليم القيادة: 6 ساعات لمن يجيد القيادة، و15 ساعة لمتوسط الإجادة، و30 ساعة لمن لا يجيد القيادة.",
+        "key_points": [
+          "في مثال مدرسة جامعة القصيم، برنامج 30 ساعة مخصص لمن لا يجيد القيادة.",
+          "برنامجا 15 و6 ساعات مرتبطان بتقييم مستوى المتدرب في المدرسة نفسها.",
+          "هذه الأرقام مثال من مدرسة محددة وليست قاعدة وطنية ثابتة لكل مدرسة؛ راجعي مدرستك قبل الدفع أو التخطيط."
+        ],
+        "scenario": "متدربة جديدة لم تتعلم القيادة قط.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "6/15/30 ساعة مثال منشور من مدرسة جامعة القصيم، وليس معيارًا موحدًا لكل مدارس المملكة."
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-047",
+      "verification_level": "school_primary_support",
+      "verification_label": "موثق من مدرسة سعودية محددة",
+      "verification_checked_on": "2026-10-13",
+      "verification_scope": "برامج 6 و15 و30 ساعة منشورة في مدرسة جامعة القصيم لتعليم القيادة.",
+      "verification_urls": [
+        "https://sites.qu.edu.sa/quds/quds-prices/"
+      ]
+    },
+    {
+      "id": "LES-048",
+      "order": 48,
+      "week_id": "WK-16",
+      "week": 16,
+      "week_topic": "الاختبارات والرخصة",
+      "title": "الاستعداد للاختبار النهائي وما بعد الرخصة",
+      "day_suggestion": "الخميس",
+      "estimated_minutes": 35,
+      "recommended_ui_type": "خطة الاستعداد",
+      "recommended_media": "رسم/صورة أصلية بحسب الحاجة",
+      "review_note_available": false,
+      "source_line": null,
+      "source_ids_suggested": [
+        "S007"
+      ],
+      "editorial_status": "عنوان مستعاد فقط",
+      "publication_status": "غير جاهز للنشر",
+      "improvement_note": "مراجعة تحديثات الإجراءات والرسوم عند النشر",
+      "source_provenance": "ملخص المحادثات السابقة",
+      "verification_status": "لم يُعتمد سطرًا بسطر",
+      "study_content": {
+        "goal": "الاستعداد للدراسة والاختبارات وما بعدها",
+        "introduction": "الاستعداد الجيد يجمع فهم اللوحات ومهارة اتخاذ القرار والتدريب النظامي العملي. لا يعتبر نجاح اختبار تدريبي في هذا الموقع إصدارًا للرخصة.",
+        "key_points": [
+          "راجعي مواضع أخطائك بدل إعادة الإجابات عشوائيًا",
+          "جهزي الأوراق والمتطلبات المعتمدة من مدرستك",
+          "بعد الحصول على الرخصة استمري في القيادة الوقائية والتعلم"
+        ],
+        "scenario": "أجبتِ عن جميع أسئلة موقعنا بنجاح.",
+        "practice": "اقرئي الموقف وحاولي صياغة القرار بصوتك، ثم اختاري الإجابة وراجعي سببها.",
+        "recap": "بعد الحصول على الرخصة استمري في القيادة الوقائية والتعلم"
+      },
+      "study_content_status": "نص تعليمي جديد، بحاجة لمراجعة واعتماد قبل النشر العام",
+      "question_id": "QUIZ-048"
+    }
+  ],
+  "questions": [
+    {
+      "id": "QUIZ-001",
+      "lesson_id": "LES-001",
+      "week": 1,
+      "question": "ما أضمن طريقة لمعرفة موقع زر في أكورد غير محددة السنة؟",
+      "options": [
+        "التخمين من فيديو قديم",
+        "الرجوع لدليل السيارة الفعلي",
+        "اعتماد مكانه في أي هوندا"
+      ],
+      "correct_option_index": 1,
+      "rationale": "دليل السنة والفئة هما المرجع للمفاتيح والتجهيزات.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-002",
+      "lesson_id": "LES-002",
+      "week": 1,
+      "question": "متى نضبط المرايا الأساسية؟",
+      "options": [
+        "أثناء الالتفاف",
+        "والسيارة متوقفة قبل بدء السير",
+        "فقط عند الوقوف في إشارة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الضبط قبل التحرك يقلل التشتت.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-003",
+      "lesson_id": "LES-003",
+      "week": 1,
+      "question": "أثناء تشغيل هوندا أكورد ظهرت لمبة تحذير وبقيت مضاءة بعد بدء السير. ما التصرف المناسب؟",
+      "options": [
+        "أعتبر جميع اللمبات أعطالًا متطابقة",
+        "أحدد الرمز وأراجع دليل سنة السيارة وفئتها وأتعامل مع التحذير بحسب شدته",
+        "أتجاهل اللمبة ما دامت السيارة تتحرك"
+      ],
+      "correct_option_index": 1,
+      "rationale": "تختلف دلالة الأضواء وخطورة التحذير حسب الرمز وحالته وطراز السيارة؛ التحذيرات الحرجة قد تتطلب التوقف الآمن.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-004",
+      "lesson_id": "LES-004",
+      "week": 2,
+      "question": "أي جزء ليس مسارًا عاديًا للقيادة؟",
+      "options": [
+        "المسار المرسوم",
+        "كتف الطريق",
+        "الطريق الرئيسي"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الكتف لا يُستخدم للاختصار العادي.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-005",
+      "lesson_id": "LES-005",
+      "week": 2,
+      "question": "هل ثلاثة مسارات تعني ثلاثة اتجاهات؟",
+      "options": [
+        "نعم دائمًا",
+        "لا، قد تكون جميعها في اتجاه واحد",
+        "تعني ثلاث تقاطعات"
+      ],
+      "correct_option_index": 1,
+      "rationale": "المسارات والاتجاهات مفهومان مستقلان.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-006",
+      "lesson_id": "LES-006",
+      "week": 2,
+      "question": "تسيرين قرب سيارات متوقفة تحجب رؤية الرصيف في منطقة يوجد بها مشاة. ما السلوك الوقائي؟",
+      "options": [
+        "أسرّع لتجاوز المكان",
+        "أخفف السرعة وأستعد لتوقف آمن عند ظهور شخص",
+        "أستخدم البوق وأستمر بنفس السرعة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الحجب البصري قد يخفي أحد مستخدمي الطريق؛ خفض السرعة يزيد فرصة الاستجابة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-007",
+      "lesson_id": "LES-007",
+      "week": 3,
+      "question": "ما الفائدة الأساسية لإشارة التحذير؟",
+      "options": [
+        "التعريف بخدمات الطريق",
+        "التنبيه لخطر يتطلب استعدادًا",
+        "السماح بالتجاوز"
+      ],
+      "correct_option_index": 1,
+      "rationale": "وظيفتها زيادة الانتباه قبل الوصول للخطر.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-008",
+      "lesson_id": "LES-008",
+      "week": 3,
+      "question": "ماذا تفعلين عند علامة قف؟",
+      "options": [
+        "تتوقفين توقفًا تامًا وتتحققين",
+        "تكتفين بالتخفيف",
+        "تتجاوزينها إذا لم تري سيارات"
+      ],
+      "correct_option_index": 0,
+      "rationale": "علامة قف تتطلب التوقف الكامل.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES"
+      ],
+      "verification_note": "تمت مراجعة قاعدة التوقف التام عند علامة قف؛ السؤال تعليمي وليس سؤال اختبار رسمي."
+    },
+    {
+      "id": "QUIZ-009",
+      "lesson_id": "LES-009",
+      "week": 3,
+      "question": "أمامك تحويلة مرورية بسبب أعمال صيانة، والمسار المعتاد مغلق بحواجز. ماذا تفعلين؟",
+      "options": [
+        "أتجاهل الحواجز وأكمل عبر المسار المعتاد",
+        "أتبع اللوحات ومسار التحويلة وأتخذ القرار مبكرًا وبأمان",
+        "أتوقف وسط الحركة لأقرأ كل لوحة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "اللوحات والحواجز المؤقتة تنظم المرور حول منطقة الأعمال؛ اتبعي توجيهها.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-010",
+      "lesson_id": "LES-010",
+      "week": 4,
+      "question": "إشارتك خضراء لكن المركبات متوقفة داخل التقاطع ولا توجد مساحة للخروج منه. ما القرار؟",
+      "options": [
+        "أدخل سريعًا لأن الإشارة خضراء",
+        "أنتظر قبل التقاطع حتى تتوفر مساحة للعبور دون إغلاقه",
+        "أستخدم البوق ثم أدخل"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الإشارة الخضراء لا تجعل إغلاق التقاطع آمنًا أو مقبولًا.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-011",
+      "lesson_id": "LES-011",
+      "week": 4,
+      "question": "تقتربين من تقاطع فرعي توجد عنده علامة «أعط الأفضلية» لصالح الطريق الرئيسي، وتقترب مركبة على الرئيسي. لمن تفسحين المجال؟",
+      "options": [
+        "للمركبة على الطريق الرئيسي",
+        "للمركبة الخارجة من الطريق الفرعي دائمًا",
+        "للمركبة الأسرع مهما كان التنظيم"
+      ],
+      "correct_option_index": 0,
+      "rationale": "اللوحة في هذا الموقف توجب إفساح المجال للمركبات ذات الأفضلية على الطريق الرئيسي.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "السؤال يذكر صراحة علامة أعط الأفضلية والطريق الرئيسي لتجنب التعميم."
+    },
+    {
+      "id": "QUIZ-012",
+      "lesson_id": "LES-012",
+      "week": 4,
+      "question": "عند انعطافك يوجد مشاة يعبرون المعبر المخصص وفق تنظيمه. ما القرار الأكثر أمانًا؟",
+      "options": [
+        "أنعطف قبل وصولهم بأقصى سرعة",
+        "أفسح المجال وأتوقف بشكل آمن عند الحاجة",
+        "أشغل الإشارة ليبتعد المشاة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "تجنبي قطع طريق المشاة المتواجدين على المعبر والتزمي بإشارات الموقع.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-013",
+      "lesson_id": "LES-013",
+      "week": 5,
+      "question": "التمييز الصحيح؟",
+      "options": [
+        "ثلاثة اتجاهات",
+        "ثلاثة مسارات باتجاه قد يكون واحدًا",
+        "ثلاثة طرق مستقلة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "عدد المسارات لا يساوي عدد الاتجاهات.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-014",
+      "lesson_id": "LES-014",
+      "week": 5,
+      "question": "هل تتحولين مباشرة؟",
+      "options": [
+        "نعم لأن الخط متقطع",
+        "لا حتى تصبح المناورة مسموحة وآمنة",
+        "نعم إذا استخدمت الإشارة فقط"
+      ],
+      "correct_option_index": 1,
+      "rationale": "السماح بالخَطّ غير كافٍ وحده.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-015",
+      "lesson_id": "LES-015",
+      "week": 5,
+      "question": "ماذا تفعلين؟",
+      "options": [
+        "الانعطاف يمينًا فورًا",
+        "الالتزام بالسهم وإعادة التخطيط",
+        "الوقوف وسط المسار"
+      ],
+      "correct_option_index": 1,
+      "rationale": "اتّباع مسار مسموح أفضل من التفاف مفاجئ.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-016",
+      "lesson_id": "LES-016",
+      "week": 6,
+      "question": "تقتربين من لوحة «أعط الأفضلية»، وتوجد مركبة تمر على الطريق الذي له الأفضلية. ماذا تفعلين؟",
+      "options": [
+        "أدخل التقاطع فورًا لأن اللوحة لا تعني قف",
+        "أفسح الطريق وأتوقف توقفًا كاملًا عند الحاجة لمرور المركبة",
+        "أتابع دون خفض السرعة ما دمت أشغّل الإشارة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "عند مرور مركبات لها الأفضلية، يجب إفساح المجال لها، وقد يتطلب ذلك التوقف الكامل.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1"
+      ],
+      "verification_note": "المفهوم مدعوم بنص المخالفات الرسمي؛ السؤال صياغة تعليمية جديدة."
+    },
+    {
+      "id": "QUIZ-017",
+      "lesson_id": "LES-017",
+      "week": 6,
+      "question": "ما القرار؟",
+      "options": [
+        "الامتناع عن الانعطاف حتى يسمح التنظيم",
+        "الانعطاف إن لم ترَي أحدًا",
+        "الانعطاف مع الفلشر"
+      ],
+      "correct_option_index": 0,
+      "rationale": "علامة المنع لها أثر مستقل عن حركة المرور.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-018",
+      "lesson_id": "LES-018",
+      "week": 6,
+      "question": "وصلت مركبتان في الوقت نفسه إلى تقاطع متساوي الأفضلية، ولا توجد لوحات أو إشارات تحدد الأولوية. لمن تعطى الأفضلية؟",
+      "options": [
+        "للمركبة القادمة من اليمين",
+        "للمركبة الأكبر حجمًا",
+        "للمركبة القادمة من اليسار دائمًا"
+      ],
+      "correct_option_index": 0,
+      "rationale": "في حالة الوصول المتزامن لتقاطع متساوي الأفضلية دون إشارات أولوية، تكون الأفضلية للقادمة من اليمين.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "مقيد بحالة وصول متزامن وتقاطع متساوي الأفضلية دون لوحات أو إشارات."
+    },
+    {
+      "id": "QUIZ-019",
+      "lesson_id": "LES-019",
+      "week": 7,
+      "question": "تقتربين من دوار لا تنظمه إشارات ضوئية أو رجل مرور، وهناك مركبة تسير داخله. من له الأفضلية؟",
+      "options": [
+        "المركبة الداخلة لأنها على اليمين",
+        "المركبة الموجودة داخل الدوار",
+        "المركبة التي تتحرك بسرعة أقل"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الأفضلية للمركبة الموجودة داخل الدوار ما لم توجد إشارات ضوئية أو رجل مرور ينظمان الحركة خلاف ذلك.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+        "https://www.moi.gov.sa/wps/wcm/connect/c94c6e10-677f-4d7a-8c12-300c38908b52/Traffic%2BSys.pdf?CVID=obeJVVy&MOD=AJPERES"
+      ],
+      "verification_note": "السؤال يستثني صراحة وجود إشارة ضوئية أو رجل مرور."
+    },
+    {
+      "id": "QUIZ-020",
+      "lesson_id": "LES-020",
+      "week": 7,
+      "question": "أنت داخل الدوار وفي مسار لا يسمح بالخروج من المخرج الذي تريدينه. ما التصرف الأكثر أمانًا؟",
+      "options": [
+        "أقطع المسارات بسرعة لألحق بالمخرج",
+        "أواصل ضمن المسارات المسموحة حتى أستطيع تصحيح الاتجاه بأمان",
+        "أتوقف وسط الدوار حتى يفسح الجميع الطريق"
+      ],
+      "correct_option_index": 1,
+      "rationale": "تفويت مخرج أفضل من عبور المسارات بشكل مفاجئ والتسبب بخطر.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-021",
+      "lesson_id": "LES-021",
+      "week": 7,
+      "question": "الأفضل؟",
+      "options": [
+        "زيادة السرعة قبل المعبر",
+        "التوقف الآمن وإفساح المجال",
+        "استخدام البوق فقط"
+      ],
+      "correct_option_index": 1,
+      "rationale": "أولوية المشاة لا تختفي عند مخرج الدوار.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-022",
+      "lesson_id": "LES-022",
+      "week": 8,
+      "question": "هل لك الأولوية؟",
+      "options": [
+        "نعم لأن الإشارة تعمل",
+        "لا، تبقين في مسارك حتى تتوفر مساحة آمنة",
+        "نعم إذا ضغطت البوق"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الأفضلية لمن في المسار المستهدف أصلًا.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-023",
+      "lesson_id": "LES-023",
+      "week": 8,
+      "question": "ماذا تفعلين؟",
+      "options": [
+        "تنتظرين حتى تتوفر مناورة نظامية آمنة",
+        "تتجاوزين بسرعة",
+        "تتجاوزين من اليمين دائمًا"
+      ],
+      "correct_option_index": 0,
+      "rationale": "الرؤية الكافية شرط أساسي.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-024",
+      "lesson_id": "LES-024",
+      "week": 8,
+      "question": "هل تتجاوزين عليها؟",
+      "options": [
+        "نعم إذا أسرعت",
+        "لا، التجاوز عند المعبر غير مقبول",
+        "نعم مع إشارة فقط"
+      ],
+      "correct_option_index": 1,
+      "rationale": "سلامة المشاة تفوق توفير الوقت.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-025",
+      "lesson_id": "LES-025",
+      "week": 9,
+      "question": "تشير لوحة السرعة إلى 80 كم/ساعة، لكن هناك ضبابًا كثيفًا. ماذا يعني ذلك؟",
+      "options": [
+        "ينبغي أن أقود بسرعة 80 تمامًا",
+        "80 حد أعلى، وقد أحتاج لسرعة أقل ملائمة للرؤية",
+        "80 سرعة آمنة مهما كانت الظروف"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الحد الأعلى لا يعفي السائق من تكييف السرعة مع ظروف الرؤية والطريق.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-026",
+      "lesson_id": "LES-026",
+      "week": 9,
+      "question": "في مثال حسابي افتراضي: إذا قطعت المركبة 24 مترًا أثناء استجابة السائق، و64 مترًا أثناء الفرملة، فما مجموع مسافة التوقف؟",
+      "options": [
+        "24 مترًا",
+        "64 مترًا",
+        "88 مترًا"
+      ],
+      "correct_option_index": 2,
+      "rationale": "24 + 64 = 88 مترًا في هذه المسألة الحسابية فقط؛ ليست مسافة توقف ثابتة لكل المركبات أو الظروف.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-027",
+      "lesson_id": "LES-027",
+      "week": 9,
+      "question": "بدأ المطر وأصبحت الطريق زلقة وأنت تتبعين سيارة أخرى. كيف تعدلين قيادتك؟",
+      "options": [
+        "أقلل المسافة الزمنية",
+        "أزيد الفاصل وأخفف السرعة بما يناسب الطريق",
+        "أبقي فاصل ثانيتين ثابتًا مهما تغيرت الظروف"
+      ],
+      "correct_option_index": 1,
+      "rationale": "تدهور التماسك والرؤية يتطلب هامش متابعة أكبر وسرعة مناسبة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "editorial_revised_pending_formal_legal_verification",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "QUIZ-028",
+      "lesson_id": "LES-028",
+      "week": 10,
+      "question": "أي خطر تتوقعينه؟",
+      "options": [
+        "احتمال خروج طفل خلف الكرة",
+        "لا يوجد شيء يستدعي الحذر",
+        "انطفاء إشارة المرور"
+      ],
+      "correct_option_index": 0,
+      "rationale": "مؤشر مرئي يدعم توقع خطر قريب.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-029",
+      "lesson_id": "LES-029",
+      "week": 10,
+      "question": "أي سلوك أكثر أمانًا؟",
+      "options": [
+        "الفرملة المفاجئة لعقابه",
+        "الحفاظ على هدوئك والسماح له بالمرور عندما يكون آمنًا",
+        "السباق معه"
+      ],
+      "correct_option_index": 1,
+      "rationale": "التصرف الهادئ يقلل التصعيد والخطر.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-030",
+      "lesson_id": "LES-030",
+      "week": 10,
+      "question": "ماذا يثبت هذا؟",
+      "options": [
+        "الاستعداد التام للقيادة الفعلية",
+        "التقدم في الانتباه البصري، وليس إتقان التحكم وحده",
+        "الحصول على رخصة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "مهارة الانتباه جزء من مهارات القيادة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-031",
+      "lesson_id": "LES-031",
+      "week": 11,
+      "question": "ما نوع الموقف؟",
+      "options": [
+        "خلفي فقط",
+        "عمودي مع دخول للخلف",
+        "موازي"
+      ],
+      "correct_option_index": 1,
+      "rationale": "اتجاه الدخول مستقل عن هندسة الموقف.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-032",
+      "lesson_id": "LES-032",
+      "week": 11,
+      "question": "هل هذا يكفي؟",
+      "options": [
+        "نعم دائمًا",
+        "لا، افحصي المناطق العمياء والأطراف",
+        "نعم إذا السيارة حديثة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "للكاميرات حدود رؤية ومسافات تقديرية.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-033",
+      "lesson_id": "LES-033",
+      "week": 11,
+      "question": "ما التصرف؟",
+      "options": [
+        "تواصلي الالتفاف",
+        "التوقف وإعادة التقييم",
+        "تسارعين للخروج"
+      ],
+      "correct_option_index": 1,
+      "rationale": "المقدمة قد تتحرك بعكس جانب المؤخرة أثناء الرجوع.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-034",
+      "lesson_id": "LES-034",
+      "week": 12,
+      "question": "كيف تستخدمينه؟",
+      "options": [
+        "تنقلين اللفات حرفيًا",
+        "تأخذين الفكرة وتراجعين الاتجاه ونقاط سيارتك",
+        "ترفضين كل المعلومات فيه"
+      ],
+      "correct_option_index": 1,
+      "rationale": "اتجاه المرور وتصميم السيارة مهمان.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-035",
+      "lesson_id": "LES-035",
+      "week": 12,
+      "question": "أي عبارة أصح؟",
+      "options": [
+        "صحيح في جميع المدارس",
+        "المتطلبات قد تختلف حسب المدرسة",
+        "لا توجد مناورات عملية"
+      ],
+      "correct_option_index": 1,
+      "rationale": "تسمية المناورة ليست مواصفة اختبار موحدة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-036",
+      "lesson_id": "LES-036",
+      "week": 12,
+      "question": "ما المبدأ الصحيح؟",
+      "options": [
+        "الاعتماد على Brake Hold وحده",
+        "تأمينها بالطريقة المحددة بدليل السيارة مع فرامل التوقف",
+        "تثبيتها بالبنزين"
+      ],
+      "correct_option_index": 1,
+      "rationale": "Brake Hold للتوقف المؤقت وليس للركن.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-037",
+      "lesson_id": "LES-037",
+      "week": 13,
+      "question": "كيف تتصرفين؟",
+      "options": [
+        "تدخلينه بسرعة",
+        "تتجنبينه إذا لم يتضح أمان العبور",
+        "تسرعين لتجاوز المشكلة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "لا تخاطري في تجمع غير واضح العمق.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-038",
+      "lesson_id": "LES-038",
+      "week": 13,
+      "question": "ماذا تختارين؟",
+      "options": [
+        "النور المنخفض المناسب",
+        "العالي دائمًا",
+        "إطفاء كل الأنوار"
+      ],
+      "correct_option_index": 0,
+      "rationale": "المنخفض يقلل انعكاس الضوء مقارنة بالعالي في الضباب.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-039",
+      "lesson_id": "LES-039",
+      "week": 13,
+      "question": "كيف تتصرفين تجاه النور العالي؟",
+      "options": [
+        "تخفضينه في الوقت المناسب",
+        "تبقينه لإجبارها على التهدئة",
+        "تطفئين كل المصابيح"
+      ],
+      "correct_option_index": 0,
+      "rationale": "تجنبي إبهار السائق المقابل.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-040",
+      "lesson_id": "LES-040",
+      "week": 14,
+      "question": "ما الأولوية؟",
+      "options": [
+        "النزول فورًا دائمًا",
+        "تقييم موضعك والخطر وطلب المساعدة",
+        "الوقوف وسط الطريق لتصوير العطل"
+      ],
+      "correct_option_index": 1,
+      "rationale": "مكان التعطل يغيّر خطوات السلامة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-041",
+      "lesson_id": "LES-041",
+      "week": 14,
+      "question": "أفضل تصرف؟",
+      "options": [
+        "متابعة الرحلة طويلًا",
+        "التوقف بأمان واتباع دليل السيارة",
+        "إضافة بنزين"
+      ],
+      "correct_option_index": 1,
+      "rationale": "استمرار التشغيل قد يضر المحرك.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-042",
+      "lesson_id": "LES-042",
+      "week": 14,
+      "question": "وقع حادث مروري في مكة وبه مصاب يحتاج مساعدة عاجلة. ما الإجراء الأولى؟",
+      "options": [
+        "الاتصال بالطوارئ المختصة فورًا، مثل 911 في المناطق المشمولة أو 997 للإسعاف",
+        "الاكتفاء بتصوير الحادث",
+        "انتظار وصول نجم دون طلب المساعدة الطبية"
+      ],
+      "correct_option_index": 0,
+      "rationale": "سلامة المصابين وطلب الإسعاف أولوية؛ يستقبل الهلال الأحمر السعودي البلاغات الإسعافية على 997، وتعمل خدمة 911 في المناطق المشمولة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "is_official_exam_question": false,
+      "verification_urls": [
+        "https://srca.org.sa/",
+        "https://www.moi.gov.sa/"
+      ],
+      "verification_note": "الأولوية في السيناريو هي طلب الطوارئ الطبية للمصاب."
+    },
+    {
+      "id": "QUIZ-043",
+      "lesson_id": "LES-043",
+      "week": 15,
+      "question": "ما الشرط الحاسم؟",
+      "options": [
+        "الخط وحده",
+        "السماح بالمناورة وسلامتها",
+        "أن تكون سيارتك أسرع"
+      ],
+      "correct_option_index": 1,
+      "rationale": "تفسير العلامة يحتاج سياقًا وتأكدًا من السلامة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-044",
+      "lesson_id": "LES-044",
+      "week": 15,
+      "question": "ماذا تفعلين؟",
+      "options": [
+        "تمنحين المشاة حقهم وتتوقفين عند الحاجة",
+        "تتجاهلين المعبر لأنك داخل الدوار",
+        "تسرعين"
+      ],
+      "correct_option_index": 0,
+      "rationale": "حق المشاة باقٍ عند المخرج.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-045",
+      "lesson_id": "LES-045",
+      "week": 15,
+      "question": "ما العامل الأكثر خطورة؟",
+      "options": [
+        "أنه لا توجد مشكلة تحت الحد",
+        "التشتت حتى مع سرعة نظامية",
+        "حجم الجوال"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الانتباه أساسي بغض النظر عن السرعة.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    },
+    {
+      "id": "QUIZ-046",
+      "lesson_id": "LES-046",
+      "week": 16,
+      "question": "هل صدرت الرخصة؟",
+      "options": [
+        "نعم فورًا",
+        "لا، ما زالت متطلبات التدريب والاختبارات والإصدار",
+        "نعم بعد يوم تلقائيًا"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الحجز لا يعادل إتمام جميع الشروط.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "official_concept_checked_2026-10-13",
+      "verification_urls": [
+        "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/"
+      ],
+      "verification_note": "الحجز وحده لا يساوي إصدار الرخصة؛ يلزم استكمال المتطلبات المنشورة."
+    },
+    {
+      "id": "QUIZ-047",
+      "lesson_id": "LES-047",
+      "week": 16,
+      "question": "بحسب مثال مدرسة جامعة القصيم المنشور، أي برنامج مخصص لمن لا يجيد القيادة؟",
+      "options": [
+        "برنامج 30 ساعة",
+        "برنامج 6 ساعات حتمًا",
+        "لا يحتاج تدريبًا"
+      ],
+      "correct_option_index": 0,
+      "rationale": "صفحة تكاليف مدرسة جامعة القصيم تعرض برنامج 30 ساعة لمن لا يجيد القيادة، لكن المدارس الأخرى قد تختلف.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة",
+      "review_status": "school_primary_checked_2026-10-13",
+      "verification_urls": [
+        "https://sites.qu.edu.sa/quds/quds-prices/"
+      ],
+      "verification_note": "معلومة خاصة بمثال مدرسة جامعة القصيم، وليست قاعدة وطنية موحدة."
+    },
+    {
+      "id": "QUIZ-048",
+      "lesson_id": "LES-048",
+      "week": 16,
+      "question": "ماذا يعني ذلك؟",
+      "options": [
+        "أن الرخصة صدرت",
+        "أن لديك تقدمًا نظريًا وتحتاجين المتطلبات الرسمية العملية",
+        "أنك لا تحتاجين للمدرسة"
+      ],
+      "correct_option_index": 1,
+      "rationale": "الموقع وسيلة مذاكرة شخصية لا بديلًا للإجراءات النظامية.",
+      "status": "تقييم تعليمي من إعداد جديد — ليس سؤال اختبار رسمي",
+      "provenance": "صياغة تعليمية جديدة"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S001",
+      "name": "نظام المرور السعودي — هيئة الخبراء",
+      "category": "تشريعي",
+      "url": "https://laws.boe.gov.sa/BoeLaws/Laws/LawDetails/85364e57-c01e-41ba-8def-a9a700f183e9/1",
+      "check": "رابط صفحة محددة جرى التحقق منها في هذه الجولة",
+      "scope": "قواعد السير والرخص",
+      "notes": "ينبغي فحص اللائحة والتعديلات السارية لكل حكم قبل نشره"
+    },
+    {
+      "id": "S002",
+      "name": "أبشر — بطاقة خدمة إصدار رخصة القيادة",
+      "category": "خدمة رسمية",
+      "url": "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/",
+      "check": "تحقق من بطاقة الخدمة؛ الرابط هنا مدخل رسمي وقد يحتاج التنقل للبطاقة",
+      "scope": "مواعيد التدريب والمتطلبات",
+      "notes": "الصفحة الأصلية ذات مسار ديناميكي طويل؛ راجعي البطاقة عند النشر"
+    },
+    {
+      "id": "S003",
+      "name": "الهيئة العامة للطرق — مدلولات الخطوط الطولية عبر واس",
+      "category": "جهة رسمية",
+      "url": "https://www.spa.gov.sa/N2145384",
+      "check": "رابط خبر محدد، تاريخ 2024-07-28",
+      "scope": "دلالات الخطوط الأرضية",
+      "notes": "خبر رسمي داعم، وليس بديلًا عن أحدث مواصفة أو تشريع"
+    },
+    {
+      "id": "S004",
+      "name": "هوندا — دليل أكورد 2025 (نسخة الولايات المتحدة)",
+      "category": "دليل الشركة",
+      "url": "https://techinfo.honda.com/rjanisis/pubs/OM/AH/A30A2525IOM/enu/details/menulist.html",
+      "check": "رابط دليل رسمي محدد",
+      "scope": "أمثلة على أنظمة المركبة",
+      "notes": "غير مثبت أنه يطابق سيارة التدريب؛ لا تُعمم خصائص الفئة أو المنطقة"
+    },
+    {
+      "id": "S005",
+      "name": "دلة — مرجع القيادة النظري المشار إليه في التدقيق",
+      "category": "دليل تدريبي",
+      "url": "https://ddc.sa/",
+      "check": "عنوان نطاق فقط؛ لم يسترجع الرابط المباشر للطبعة الأصلية",
+      "scope": "الإشارات والمناورات والسلامة",
+      "notes": "يلزم التحقق من رابط PDF والطبعة وحقوق إعادة الاستخدام"
+    },
+    {
+      "id": "S006",
+      "name": "W3C — WCAG 2.2",
+      "category": "معيار ويب",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+      "check": "صفحة معيار مؤكدة",
+      "scope": "إمكانية الوصول",
+      "notes": "مرجع تصميم تجربة الموقع، لا حكم مرور"
+    },
+    {
+      "id": "S007",
+      "name": "المرور السعودي — أبشر إصدار رخصة القيادة",
+      "url": "https://www.absher.sa/wps/portal/individuals/static/guide/service-contents/",
+      "category": "حكومي"
+    },
+    {
+      "id": "S008",
+      "name": "NHTSA — سلامة كاميرات الرجوع",
+      "url": "https://www.nhtsa.gov/equipment/driver-assistance-technologies",
+      "category": "تعليمي مساعد"
+    },
+    {
+      "id": "S009",
+      "name": "Weather.gov — قيادة الضباب",
+      "url": "https://www.weather.gov/safety/fog-driving",
+      "category": "تعليمي مساعد"
+    }
+  ],
+  "improvement_backlog": [
+    {
+      "id": "IMP-01",
+      "priority": "مرتفع",
+      "scope": "الأسابيع 1–4",
+      "name": "استرجاع النصوص الأصلية للدروس 1–12",
+      "finding": "المتوفر عناوين فقط",
+      "next_action": "جمع نص الدروس الفعلي وعدم تأليفه من عناوين"
+    },
+    {
+      "id": "IMP-02",
+      "priority": "مرتفع",
+      "scope": "الأسابيع 5–16",
+      "name": "استرجاع الصيغ الكاملة للدروس 13–48",
+      "finding": "المرفق يحوي ملاحظات تدقيق لا المحتوى الكامل",
+      "next_action": "فصل محتوى الدرس عن ملاحظات المراجع"
+    },
+    {
+      "id": "IMP-03",
+      "priority": "مرتفع",
+      "scope": "جميع الأسابيع",
+      "name": "بنك الأسئلة القديمة",
+      "finding": "نصوص أغلب الاختبارات الأصلية غير متاحة",
+      "next_action": "استعادة الأسئلة ثم مراجعة كل خيار وشرح"
+    },
+    {
+      "id": "IMP-04",
+      "priority": "مرتفع",
+      "scope": "13،4،5",
+      "name": "أجزاء الطريق متكررة",
+      "finding": "التمييز بين تعريف أولي وتطبيق عملي",
+      "next_action": "دمج أمثلة مكررة وتحويل الثاني إلى محاكاة"
+    },
+    {
+      "id": "IMP-05",
+      "priority": "مرتفع",
+      "scope": "10،17",
+      "name": "الإشارات الضوئية متكررة",
+      "finding": "تحويل التكرار إلى مستويات",
+      "next_action": "الأسبوع 4 تمهيد ثم الأسبوع 6 حالات استثنائية"
+    },
+    {
+      "id": "IMP-06",
+      "priority": "مرتفع",
+      "scope": "11،18،44",
+      "name": "الأولوية والتقاطعات متكررة",
+      "finding": "مراجعة تدرج الصعوبة",
+      "next_action": "مواقف رسومية من البسيط إلى المعقد"
+    },
+    {
+      "id": "IMP-07",
+      "priority": "مرتفع",
+      "scope": "12،21",
+      "name": "المشاة متكررون",
+      "finding": "فصل المفاهيم عن سيناريوهات الانعطاف",
+      "next_action": "زيادة تنوع الأماكن والسيناريوهات"
+    },
+    {
+      "id": "IMP-08",
+      "priority": "مرتفع",
+      "scope": "17،42،46،47،48",
+      "name": "القواعد والأرقام والإجراءات متغيرة",
+      "finding": "نسخة المصدر وتاريخ التحقق",
+      "next_action": "إعادة التحقق قبل اعتماد المحتوى المنشور"
+    },
+    {
+      "id": "IMP-09",
+      "priority": "مرتفع",
+      "scope": "20،32،34،35،36",
+      "name": "الرسومات غير جاهزة",
+      "finding": "بناء SVG أصلي للدوار وحركة الركن",
+      "next_action": "لا تنقل رسومات اتجاه سير أجنبي حرفيًا"
+    },
+    {
+      "id": "IMP-10",
+      "priority": "مرتفع",
+      "scope": "1،3،32،36،41",
+      "name": "مواصفات هوندا أكورد",
+      "finding": "سنة الموديل والفئة غير مثبتتين",
+      "next_action": "عدم نسبة ميزات دليل 2025 الأمريكي للسيارة الفعلية"
+    },
+    {
+      "id": "IMP-11",
+      "priority": "متوسط",
+      "scope": "جميع الأسابيع",
+      "name": "هيكل الدروس",
+      "finding": "غياب أهداف وقياس تعلم موحد",
+      "next_action": "كل درس: هدف، شرح، مثال، قرار، تدريب، اختبار"
+    },
+    {
+      "id": "IMP-12",
+      "priority": "متوسط",
+      "scope": "جميع الأسابيع",
+      "name": "الوصول الشامل",
+      "finding": "الاعتماد البصري وحده لا يكفي",
+      "next_action": "RTL، دعم لوحة المفاتيح، نص بديل، عدم الاعتماد على اللون"
+    },
+    {
+      "id": "IMP-13",
+      "priority": "مرتفع",
+      "scope": "العملي",
+      "name": "تمييز الملاحظة عن التدريب بالسيارة",
+      "finding": "عدم افتراض وجود رخصة أو تدريب عملي",
+      "next_action": "مهام الملاحظة دون قيادة عامة حتى تتوفر الشروط النظامية"
+    },
+    {
+      "id": "IMP-14",
+      "priority": "متوسط",
+      "scope": "جميع الأسابيع",
+      "name": "نسخة مفردة للمحتوى",
+      "finding": "الملفات موزعة بين محادثات",
+      "next_action": "Excel تحرير + JSON نشر + سجل مراجعة"
+    },
+    {
+      "id": "IMP-15",
+      "priority": "متوسط",
+      "scope": "الجداول",
+      "name": "الجدول الأسبوعي غير معتمد",
+      "finding": "السبت/الثلاثاء/الخميس نظري والجمعة مراجعة مبدئيًا",
+      "next_action": "لا تضع حالة التزام حقيقية قبل بدء التعلم"
+    },
+    {
+      "id": "IMP-16",
+      "priority": "مرتفع",
+      "scope": "حقوق النشر",
+      "name": "الصور والفيديو",
+      "finding": "روابط المصادر لا تعني حق نسخها",
+      "next_action": "رسومات أصلية ورابط فيديو خارجي مع فحص حقوق الاستخدام"
+    }
+  ],
+  "disclaimer": "لا يُستخدم المحتوى الحالي لتوجيه قيادة فعلية؛ يجب اعتماد النصوص والرسومات والإجراءات قبل النشر.",
+  "road_traffic_direction": "keep_right_side_of_road",
+  "media_resources": [
+    {
+      "id": "VIDEO-QUDS-X",
+      "title": "مهارة X — الرجوع للخلف في موقف",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة (QUDS)",
+      "url": "https://www.youtube.com/watch?v=J36565XrCk4",
+      "kind": "youtube_video",
+      "youtube_id": "J36565XrCk4",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-035"
+      ],
+      "published": "2020-02-09",
+      "verification_note": "فيديو منشور باسم المدرسة على قناة QUDS؛ تشغيل التضمين داخل موقع آخر لم يُتحقق منه"
+    },
+    {
+      "id": "VIDEO-QUDS-GARAGE",
+      "title": "مهارة الكراج — مثال مصوّر من مدرسة جامعة القصيم",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة (QUDS)",
+      "url": "https://www.youtube.com/watch?v=Peyh1mXONAU",
+      "kind": "youtube_video",
+      "youtube_id": "Peyh1mXONAU",
+      "lesson_ids": [
+        "LES-031",
+        "LES-033",
+        "LES-035"
+      ],
+      "published": "2020-10-12",
+      "verification_note": "نتيجة YouTube باسم المدرسة؛ قد يمنع ناشر الفيديو التضمين في بعض المواقع"
+    },
+    {
+      "id": "MEDIA-QASSIM-MANEUVERS",
+      "title": "فيديوهات مهارات الركن والمناورات X وT وY",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة",
+      "url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "kind": "external_video_collection",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-034",
+        "LES-035",
+        "LES-036"
+      ],
+      "direct_video_url": false,
+      "approved_for_embed": false,
+      "verification_note": "صفحة خارجية؛ لم يتم تشغيل كل فيديو والتحقق منه فرديًا"
+    },
+    {
+      "id": "MEDIA-QYADATI-DEFENSIVE",
+      "title": "دروس القيادة الوقائية والمسافة الفاصلة والتجاوز",
+      "provider": "قيادتي",
+      "url": "https://qyadati.com/Modules/Index?TrackId=13",
+      "kind": "external_training_collection",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023",
+        "LES-024",
+        "LES-027",
+        "LES-028",
+        "LES-029",
+        "LES-030",
+        "LES-040"
+      ],
+      "direct_video_url": false,
+      "approved_for_embed": false,
+      "verification_note": "صفحة خارجية وقد تتطلب تسجيلًا؛ ليست فيديو مضمّنًا"
+    },
+    {
+      "id": "VIDEO-QUDS-Y",
+      "title": "مهارة Y — انعطاف ثلاثي النقاط",
+      "provider": "QUDS — مدرسة جامعة القصيم لتعليم القيادة",
+      "url": "https://www.youtube.com/watch?v=SIay14R3GKY",
+      "kind": "youtube_video",
+      "youtube_id": "SIay14R3GKY",
+      "lesson_ids": [
+        "LES-034",
+        "LES-035"
+      ],
+      "published": "2020-09-12",
+      "verification_note": "فيديو مباشر على قناة المدرسة، موثق بعنوانه وناشره؛ لم يُفحص سماح تضمينه عند كل جهاز."
+    },
+    {
+      "id": "MEDIA-QUDS-OFFICIAL-9",
+      "title": "مكتبة 9 فيديوهات رسمية (X و90 وT والكراج وY ومخاطر القيادة)",
+      "provider": "مدرسة جامعة القصيم لتعليم القيادة — موقع المدرسة",
+      "url": "https://quds.qu.edu.sa/course/videos/",
+      "kind": "external_video_collection",
+      "lesson_ids": [
+        "LES-028",
+        "LES-030",
+        "LES-031",
+        "LES-032",
+        "LES-033",
+        "LES-034",
+        "LES-035",
+        "LES-036"
+      ],
+      "direct_video_url": false,
+      "approved_for_embed": false,
+      "verification_note": "مكتبة فيديوهات رسمية من موقع المدرسة، تحوي 9 فيديوهات؛ هذه الصفحة ليست رابط YouTube مباشر، وتعليماتها تخص ميدان المدرسة."
+    }
+  ],
+  "learning_visuals": [
+    {
+      "id": "VIS-MARKINGS",
+      "type": "markings",
+      "title": "اقرئي شكل الخط قبل تغيير المسار",
+      "lesson_ids": [
+        "LES-013",
+        "LES-014",
+        "LES-015",
+        "LES-043"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "خط متقطع",
+          "body": "عبور الخط المتقطع قد يكون مسموحًا، لكن يلزم التحقق من تنظيم الطريق والمرايا والنقطة العمياء قبل أي حركة."
+        },
+        {
+          "label": "خط متصل",
+          "body": "الخط المتصل الذي يمنع تغيير المسار لا يُعبر. هذا رسم تعليمي؛ انتبهي أيضًا للوحات والموقع الفعلي."
+        }
+      ],
+      "source_ids": [
+        "S001",
+        "S003"
+      ]
+    },
+    {
+      "id": "VIS-INTERSECTION",
+      "type": "intersection",
+      "title": "من له الأولوية عند التقاطع؟",
+      "lesson_ids": [
+        "LES-016",
+        "LES-018",
+        "LES-044"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "اقتربي",
+          "body": "اقرئي اللوحات والإشارات أولًا ولا تفترضي قاعدة واحدة لجميع التقاطعات."
+        },
+        {
+          "label": "أعطي الأفضلية",
+          "body": "في مثال الطريق الرئيسي والفرعي غير المنظم بخلاف ذلك، تتركي الأولوية للمركبات على الطريق الرئيسي."
+        },
+        {
+          "label": "اعبري بأمان",
+          "body": "عندما يسمح التنظيم ويخلو مسارك من تعارض خطِر، تابعي الحركة تدريجيًا."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-ROUNDABOUT",
+      "type": "roundabout",
+      "title": "الدخول الآمن إلى الدوار",
+      "lesson_ids": [
+        "LES-019",
+        "LES-020",
+        "LES-044"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "اقتربي",
+          "body": "خففي السرعة وحددي وجهتك مسبقًا وانظري إلى اللوحات وأسهم المسارات."
+        },
+        {
+          "label": "راقبي الداخل",
+          "body": "في الدوار العادي غير المنظم بخلاف ذلك، الأفضلية للمركبات التي تسير داخله."
+        },
+        {
+          "label": "اختاري الفجوة",
+          "body": "ادخلي فقط عند توفر فرصة آمنة دون إرباك الآخرين؛ مسار الخروج يعتمد على تخطيط الدوار."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-LANES",
+      "type": "lanes",
+      "title": "المرايا والإشارة والنقطة العمياء",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023",
+        "LES-024"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "المرايا",
+          "body": "افحصي المرآة الداخلية والجانبية لتقدير المركبات المحيطة."
+        },
+        {
+          "label": "إشارة الانعطاف",
+          "body": "استخدمي الإشارة المناسبة مبكرًا، لكنها لا تمنحك أولوية."
+        },
+        {
+          "label": "النقطة العمياء",
+          "body": "تحققي من المنطقة غير الظاهرة في المرايا قبل تغيير المسار."
+        },
+        {
+          "label": "تغيير المسار",
+          "body": "انتقلي تدريجيًا فقط إذا كانت المناورة مسموحة وآمنة، مع استمرار مراقبة الحركة."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-FOLLOW",
+      "type": "follow",
+      "title": "كيف نفهم مسافة الأمان؟",
+      "lesson_ids": [
+        "LES-026",
+        "LES-027",
+        "LES-045"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "مسافة قصيرة",
+          "body": "الفاصل القصير جدًا لا يترك وقتًا كافيًا للتصرف عند توقف المركبة الأمامية."
+        },
+        {
+          "label": "تقدير زمني",
+          "body": "يمكن استخدام علامة ثابتة لقياس الفاصل بالثواني؛ الثانيتان حد تعليمي أولي في ظروف مناسبة وليستا ضمانًا للسلامة."
+        },
+        {
+          "label": "ظروف صعبة",
+          "body": "زيدي الفاصل وخففي السرعة عند المطر والغبار وضعف التماسك والرؤية."
+        }
+      ],
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "id": "VIS-PARKING",
+      "type": "parking",
+      "title": "فهم حركة السيارة عند الرجوع للموقف",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-033",
+        "LES-034",
+        "LES-035"
+      ],
+      "status": "original_conceptual_diagram",
+      "steps": [
+        {
+          "label": "اختيار الموقف",
+          "body": "تأكدي من سماح الوقوف واتساع الحيز والأمان للمشاة والمركبات الأخرى."
+        },
+        {
+          "label": "التحقق أثناء الرجوع",
+          "body": "راقبي جميع الاتجاهات وليس شاشة الكاميرا فقط، وانتـبهي لتأرجح مقدمة السيارة."
+        },
+        {
+          "label": "إنهاء الوقوف",
+          "body": "تحققي من وجود السيارة داخل الخطوط وتأمينها بشكل صحيح. نقاط اللف الدقيقة تُتعلّم عمليًا بالسيارة."
+        }
+      ],
+      "source_ids": [
+        "S004",
+        "S008"
+      ]
+    }
+  ],
+  "personal_documents": [
+    {
+      "id": "DOC-TRAINEE",
+      "title": "كتاب المتدربة — التدريب النظري",
+      "pages": 240,
+      "filename": "كتاب متدربة  للنظري.pdf",
+      "category": "school_manual",
+      "edition_date": "2022-04",
+      "publisher": "المرور / دليل متدرب منشور في الملف",
+      "scope": "اللوحات ص52–61؛ التقاطعات ص129–162؛ المسافة ص186؛ التجاوز ص194–223؛ المصابيح ص223–237",
+      "verification": "reference_only",
+      "license_status": "protected_or_unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-007",
+        "LES-008",
+        "LES-009",
+        "LES-010",
+        "LES-011",
+        "LES-014",
+        "LES-019",
+        "LES-026",
+        "LES-027",
+        "LES-039"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    },
+    {
+      "id": "DOC-DARB",
+      "title": "درب السلامة — كتاب التدريب النظري والعملي",
+      "pages": 166,
+      "filename": "درب السلامة- كتاب عربي.pdf",
+      "category": "licensed_textbook",
+      "edition_date": "2020-01",
+      "publisher": "درب السلامة / Heinrich Vogel / Springer",
+      "scope": "الإشارات ابتداءً من ص25؛ الأولوية ص51؛ العلامات الأرضية ص69؛ المناورات ص91؛ المخاطر ص125",
+      "verification": "reference_only",
+      "license_status": "explicitly_copyrighted",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-007",
+        "LES-008",
+        "LES-009",
+        "LES-011",
+        "LES-019",
+        "LES-022",
+        "LES-025",
+        "LES-027",
+        "LES-028",
+        "LES-031",
+        "LES-034",
+        "LES-040"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    },
+    {
+      "id": "DOC-NAZAWI",
+      "title": "النزاوي — عيّنات أسئلة للتدرب",
+      "pages": 81,
+      "filename": "__النزاوي_لتعليم_القيادة_اسئلة__.pdf",
+      "category": "unofficial_question_collection",
+      "edition_date": null,
+      "publisher": "تجميع متداول — المصدر الرسمي للأسئلة غير مؤكد",
+      "scope": "أسئلة وأشكال اختبار تدريبية، لا تعتبر نسخة مضمونة من الاختبار الحالي",
+      "verification": "practice_unverified",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-011",
+        "LES-014",
+        "LES-016",
+        "LES-021",
+        "LES-025",
+        "LES-026"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    },
+    {
+      "id": "DOC-Q49",
+      "title": "تجميع أسئلة القيادة — 49 صفحة",
+      "pages": 49,
+      "filename": "16907764.pdf",
+      "category": "unofficial_question_collection",
+      "edition_date": null,
+      "publisher": "تجميع غير موثق",
+      "scope": "تعاريف الوقوف والأولوية والإشارات؛ له نسخة ثانية مطابقة",
+      "verification": "practice_unverified",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-011",
+        "LES-016",
+        "LES-021",
+        "LES-025",
+        "LES-026",
+        "LES-027"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "duplicate_filenames": [
+        "16907764(1).pdf"
+      ],
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    },
+    {
+      "id": "DOC-SHARD",
+      "title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+      "pages": 39,
+      "filename": "Scan 13 Sep 2018 at 10-03 AM.pdf",
+      "category": "school_practical_manual",
+      "edition_date": "2018",
+      "publisher": "مدرسة شرق لتعليم قيادة المركبات",
+      "scope": "فحص ما قبل القيادة، POM / MSPSL، التجاوز، U Turn، المواقف",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-001",
+        "LES-002",
+        "LES-022",
+        "LES-023",
+        "LES-027",
+        "LES-031",
+        "LES-034",
+        "LES-035"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    },
+    {
+      "id": "DOC-JEDDAH",
+      "title": "منهج التدريب الميداني — جدة المتطورة",
+      "pages": 4,
+      "filename": "__المنهج-العملي-1_.pdf",
+      "category": "school_practical_manual",
+      "edition_date": null,
+      "publisher": "مدرسة جدة المتطورة — منشور تدريبي مصور",
+      "scope": "مهارات U وT وX والكراج والتقاطعات والمرتفعات",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-002",
+        "LES-018",
+        "LES-019",
+        "LES-031",
+        "LES-032",
+        "LES-035",
+        "LES-036"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    },
+    {
+      "id": "DOC-NARIMAN",
+      "title": "ملخص تقييم مهارة القيادة — ناريمان",
+      "pages": 22,
+      "filename": "ملخص تقييم المرور.pdf",
+      "category": "individual_practical_notes",
+      "edition_date": null,
+      "publisher": "تجميع ناريمان سعود شعبان",
+      "scope": "فحص، MSSSM، MSPSL، POM، الوقوف، الدوارات، اللوحات",
+      "verification": "practical_reference",
+      "license_status": "unknown",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false,
+      "lesson_ids": [
+        "LES-002",
+        "LES-022",
+        "LES-023",
+        "LES-027",
+        "LES-031",
+        "LES-034",
+        "LES-035",
+        "LES-047"
+      ],
+      "notes": "استيراد النسخة الشخصية من جهازك فقط؛ لا يُنشر الملف في GitHub.",
+      "study_link_status": "topic_level_index_only_not_transcribed_or_formally_verified",
+      "file_uploaded_to_public_site": false,
+      "display_note": "عنوان المرجع وفهرسة موضوعاته موجودان في مِسار؛ للقراءة داخل الموقع أضيفي نسختك محليًا من صفحة المصادر."
+    }
+  ],
+  "uploaded_image_index": [
+    {
+      "id": "IMG-WARNING",
+      "title": "جدول 24 إشارة تحذيرية",
+      "filename": "image(1).png",
+      "category": "traffic_signs",
+      "status": "user_supplied_reference",
+      "note": "أسماء بعض العلامات تحتاج مراجعة دليل المرور، مثل مثلث قف الذي يعني التحذير من الوقوف أمامك.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-JUNCTION",
+      "title": "تقاطع رئيسي/فرعي بأربعة أشكال",
+      "filename": "image(2).png",
+      "category": "intersections",
+      "status": "user_supplied_reference",
+      "note": "مرجع بصري، لا نعتمد تحديد الأولوية دون النظر إلى التنظيم الفعلي.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-REGULATORY",
+      "title": "جدول إشارات تنظيمية",
+      "filename": "image(3).png",
+      "aliases": [
+        "image(4).png"
+      ],
+      "category": "traffic_signs",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-DASHBOARD",
+      "title": "أيقونات تحذير لوحة القيادة",
+      "filename": "image(5).png",
+      "category": "dashboard_symbols",
+      "status": "user_supplied_reference",
+      "note": "بعض الرموز تختلف حسب موديل هوندا أكورد والفئة.",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-EVAL-SHARD",
+      "title": "نموذج تقييم المهارات العملية — شرق",
+      "filename": "image(6).png",
+      "aliases": [
+        "image(7).png"
+      ],
+      "category": "assessment_sheet",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    },
+    {
+      "id": "IMG-EVAL-SDS",
+      "title": "نموذج فحص الطريق — المدرسة السعودية",
+      "filename": "image(8).png",
+      "category": "assessment_sheet",
+      "status": "user_supplied_reference",
+      "storage": "personal_upload_only",
+      "available_on_public_site": false
+    }
+  ],
+  "external_study_sources": [
+    {
+      "id": "EXT-MOI-SIGNS",
+      "title": "دليل الإشارات المرورية — الإدارة العامة للمرور",
+      "url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "type": "government_portal",
+      "trust": "primary",
+      "note": "مرجع الوزارة للإشارات؛ صفحة التصنيفات في قسم المرور."
+    },
+    {
+      "id": "EXT-ABS",
+      "title": "أبشر — إصدار رخصة قيادة",
+      "url": "https://www.absher.sa/",
+      "type": "government_portal",
+      "trust": "primary",
+      "note": "يُرجع إليه في إجراءات الحجز الحالية."
+    },
+    {
+      "id": "EXT-SAUDIO",
+      "title": "نماذج الاختبار والتجميعات — سعودي رخصة",
+      "url": "https://saudirokhsa.com/",
+      "type": "third_party_quiz",
+      "trust": "unverified",
+      "note": "ليس جهة رسمية؛ لا ضمان لتطابق الأسئلة أو النجاح."
+    },
+    {
+      "id": "EXT-SAUDIO-NAZAWI",
+      "title": "ملف النزاوي على سعودي رخصة",
+      "url": "https://saudirokhsa.com/pdf/",
+      "type": "third_party_collection",
+      "trust": "unverified",
+      "note": "صفحة دعائية تعرض صورًا ووصفًا للتجميع؛ لا تعتبر تصريحًا رسميًا بصحة الأسئلة."
+    },
+    {
+      "id": "EXT-MOI-SIGNS-PDF",
+      "title": "دليل إشارات المرور — ملف وزارة الداخلية",
+      "url": "https://www.moi.gov.sa/wps/wcm/connect/cc3927f7-25af-4ed8-b37c-b9fc2f5f4e98/TrafficSigns.pdf?CVID=ocH-GJ3&MOD=AJPERES",
+      "type": "government_pdf",
+      "trust": "primary",
+      "note": "رابط ملف دليل الإشارات المنشور على موقع وزارة الداخلية؛ راجعي النسخة الفعلية عند اختلاف الرسوم أو التسميات."
+    },
+    {
+      "id": "EXT-QUDS-VIDEOS",
+      "title": "جامعة القصيم — فيديوهات تعليمية رسمية من المدرسة",
+      "url": "https://quds.qu.edu.sa/course/videos/",
+      "type": "school_video_library",
+      "trust": "school_primary",
+      "note": "تحتوي تسعة فيديوهات؛ أمثلة لمناورات المدرسة ولا تفترض مطابقتها لإجراءات جميع مدارس المملكة."
+    },
+    {
+      "id": "EXT-QUDS-PRICES",
+      "title": "مدرسة جامعة القصيم — برامج ورسوم التدريب",
+      "url": "https://sites.qu.edu.sa/quds/quds-prices/",
+      "type": "school_training_policy",
+      "trust": "school_primary",
+      "note": "صفحة المدرسة تعرض برامج 6 و15 و30 ساعة، وهي معلومات تخص المدرسة وقد تتغير."
+    },
+    {
+      "id": "EXT-QUDS-ASSESSMENT",
+      "title": "مدرسة جامعة القصيم — أخطاء اختبار المواقف",
+      "url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "type": "school_practical_assessment",
+      "trust": "school_primary",
+      "note": "تتضمن أمثلة وحدودًا زمنية خاصة باختبار المواقف في المدرسة؛ ليست معايير وطنية شاملة."
+    }
+  ],
+  "practical_checklist": [
+    {
+      "id": "PRA-1",
+      "title": "فحص وتجهيز المركبة",
+      "lesson_ids": [
+        "LES-001",
+        "LES-002"
+      ],
+      "items": [
+        "تفقد حالة المركبة قبل القيادة",
+        "ضبط المقعد ومسند الرأس والمرايا",
+        "ربط حزام الأمان والتأكد من إغلاق الأبواب",
+        "معرفة أنوار التحذير ووظائف الأزرار الأساسية"
+      ]
+    },
+    {
+      "id": "PRA-2",
+      "title": "الملاحظة وتغيير المسار",
+      "lesson_ids": [
+        "LES-022",
+        "LES-023"
+      ],
+      "items": [
+        "فحص المرايا",
+        "الإشارة في الوقت المناسب",
+        "فحص النقطة العمياء",
+        "انتقاء فجوة آمنة",
+        "الانتقال التدريجي دون قطع خط ممنوع"
+      ]
+    },
+    {
+      "id": "PRA-3",
+      "title": "التقاطعات والدوارات",
+      "lesson_ids": [
+        "LES-016",
+        "LES-019"
+      ],
+      "items": [
+        "فهم الأولوية بحسب الإشارة والتنظيم",
+        "الوقوف قبل خط الوقوف إذا وجب",
+        "الانتباه للمشاة",
+        "التقدم فقط عند خلو المسار بشكل آمن"
+      ]
+    },
+    {
+      "id": "PRA-4",
+      "title": "الركن والخروج من الموقف",
+      "lesson_ids": [
+        "LES-031",
+        "LES-032",
+        "LES-035"
+      ],
+      "items": [
+        "اختيار مكان يسمح بالوقوف",
+        "مراقبة المحيط أثناء الرجوع للخلف",
+        "ملاحظة تأرجح مقدمة السيارة",
+        "التأكد من الاصطفاف داخل الخطوط",
+        "إشارة الخروج والتحقق من البقعة العمياء"
+      ]
+    },
+    {
+      "id": "PRA-5",
+      "title": "سلوكيات حرجة يجب فهمها",
+      "lesson_ids": [
+        "LES-010",
+        "LES-040"
+      ],
+      "items": [
+        "عدم دخول طريق أو مسار أو دوار قبل التأكد من خلوه",
+        "عدم تجاوز إشارة حمراء أو قف دون توقف",
+        "عدم القيام بمناورة تؤدي للتصادم أو تستدعي تدخلًا طارئًا",
+        "الالتزام بإشارات وطلبات فاحص القيادة حسب النظام"
+      ]
+    }
+  ],
+  "review_claims": [
+    {
+      "id": "CLAIM-HOURS",
+      "text": "أقل من 8 أخطاء = 6 ساعات، أكثر من 8 = 12 ساعة، الرسوب الفوري أو أكثر من 12 = 30 ساعة",
+      "status": "unverified_school_specific_claim",
+      "note": "وُرد في تجميع المستخدم، ولا يُنشر كقاعدة رسمية وطنية أو معيار موحد لتقييم الساعات. راجعي مدرستك.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-EXAM-GUARANTEE",
+      "text": "أسئلة النزاوي مطابقة 100٪ وتضمن النجاح",
+      "status": "unsubstantiated_marketing_claim",
+      "note": "ادعاء تسويقي من موقع طرف ثالث وليس ضمانًا رسميًا.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-PARKING-MOVES",
+      "text": "لا يزيد الركن على أربع حركات",
+      "status": "unverified_school_specific_claim",
+      "note": "قد يكون معيار نموذج تقييم محدد، لا يُعمّم على جميع مدارس القيادة.",
+      "allowed_in_quiz": false
+    },
+    {
+      "id": "CLAIM-CAR-SPECIFIC",
+      "text": "مواضع أزرار السيارة أو عدد لفات المقود ثابت في كل سيارة",
+      "status": "unsafe_generalization",
+      "note": "قد تختلف بتجهيز السيارة ونوعها وسنة موديلها؛ لا تنقلي خطوات التدريب إلى سيارة فعلية دون إشراف.",
+      "allowed_in_quiz": false
+    }
+  ],
+  "review_questions": [
+    {
+      "id": "SIG-01",
+      "topic": "signals",
+      "question": "ماذا يعني الشكل المثلث ذو الإطار الأحمر في الغالب؟",
+      "options": [
+        "تحذير من خطر أمامك",
+        "طريق سريع حصري",
+        "انتهاء جميع الممنوعات"
+      ],
+      "correct_option_index": 0,
+      "explanation": "إشارة التحذير تنبه إلى وضع يستلزم الانتباه وتكييف السرعة، ولا تعطي أولوية بذاتها.",
+      "visual_key": "warning",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-007",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-02",
+      "topic": "signals",
+      "question": "لوحة قف الثُمانية الحمراء تعني:",
+      "options": [
+        "التباطؤ دون توقف",
+        "الوقوف التام والتحقق من سلامة العبور",
+        "الأولوية لك دائمًا"
+      ],
+      "correct_option_index": 1,
+      "explanation": "قف تعني الوقوف الكامل عند الموضع المناسب ثم التأكد من الطريق قبل التقدم.",
+      "visual_key": "stop",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-016",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-03",
+      "topic": "signals",
+      "question": "ما معنى المثلث المقلوب بإطار أحمر؟",
+      "options": [
+        "أعطِ الأفضلية",
+        "شارع مغلق",
+        "موقف سيارات"
+      ],
+      "correct_option_index": 0,
+      "explanation": "إشارة إعطاء الأفضلية تستلزم إفساح الطريق وفق حركة المرور وقد تستلزم الوقوف.",
+      "visual_key": "yield",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-016",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-04",
+      "topic": "signals",
+      "question": "ماذا تعني دائرة حمراء داخلها شريط أبيض أفقي؟",
+      "options": [
+        "ممنوع الدخول",
+        "قف أمامك بعد 100 متر",
+        "اتجاه إلزامي"
+      ],
+      "correct_option_index": 0,
+      "explanation": "ممنوع الدخول تعني عدم دخول المركبات من الجهة المواجهة للإشارة.",
+      "visual_key": "no-entry",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-05",
+      "topic": "signals",
+      "question": "ماذا تتوقعين عند لوحة تحذيرية بداخلها رسم إشارة ضوئية؟",
+      "options": [
+        "اقتراب إشارة مرور ضوئية",
+        "وجود مواقف فقط",
+        "جميع الإشارات متعطلة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "هي تنبيه مسبق لاحتمال وجود إشارات ضوئية أمامك؛ اتبعي الإشارة الفعلية عند الوصول.",
+      "visual_key": "traffic-light",
+      "source_id": "IMG-WARNING",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-007",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-06",
+      "topic": "signals",
+      "question": "ما التصرف المناسب قبل الدوار؟",
+      "options": [
+        "الدخول مباشرة دون النظر",
+        "قراءة اللوحات ومراقبة المركبات داخل الدوار",
+        "تجاوز الجميع من اليمين"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تُحدد الأولوية حسب تنظيم الدوار؛ وفي الدوار الاعتيادي تكون أفضلية المرور غالبًا للمركبات الموجودة داخله.",
+      "visual_key": "roundabout",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-019",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-07",
+      "topic": "signals",
+      "question": "علامة تحذيرية بشكل تقاطع أسود داخل مثلث أحمر تخبرك:",
+      "options": [
+        "بوجود تقاطع أمامك",
+        "بأن جميع الطرق ممنوعة",
+        "بوجوب الرجوع للخلف"
+      ],
+      "correct_option_index": 0,
+      "explanation": "لوحة التقاطع تحذر من التقاطع ولا تحدد وحدها الأفضلية؛ التزمي بما تنظمه اللوحات والإشارات.",
+      "visual_key": "intersection",
+      "source_id": "IMG-WARNING",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-011",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-08",
+      "topic": "signals",
+      "question": "علامة حد السرعة الأقصى 60 تعني:",
+      "options": [
+        "يجب القيادة 60 دائمًا",
+        "لا يجوز تجاوز 60 عند سريان العلامة وظروف مناسبة",
+        "السرعة الدنيا 60"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الحد الأقصى ليس سرعة مطلوبة في كل الأحوال؛ قد تستوجب الظروف القيادة أبطأ.",
+      "visual_key": "speed60",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-025",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-09",
+      "topic": "signals",
+      "question": "ماذا يعني رمز U داخل دائرة حمراء وعليه خط منع؟",
+      "options": [
+        "ممنوع الدوران للخلف",
+        "الدوران للخلف واجب",
+        "دوار أمامك"
+      ],
+      "correct_option_index": 0,
+      "explanation": "حظر الدوران للخلف يعني عدم تنفيذ هذه المناورة في الموقع المحدد.",
+      "visual_key": "no-uturn",
+      "source_id": "IMG-REGULATORY",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-10",
+      "topic": "signals",
+      "question": "عند وجود إشارة منع الوقوف، هل يمكنك ترك سيارتك والذهاب؟",
+      "options": [
+        "نعم دائمًا",
+        "لا، يجب الالتزام بقيود الإشارة السارية",
+        "فقط مع تشغيل الأنوار"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الإشارة التنظيمية تمنع الوقوف حسب مدلولها ونطاق سريانها.",
+      "visual_key": "no-parking",
+      "source_id": "EXT-MOI-SIGNS",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-11",
+      "topic": "road",
+      "question": "ماذا يحدث إذا اقتربتِ جدًا من المركبة الأمامية؟",
+      "options": [
+        "يزداد وقت رد الفعل",
+        "تقل فرصة الاستجابة والتوقف بأمان",
+        "تتحسن الرؤية"
+      ],
+      "correct_option_index": 1,
+      "explanation": "المسافة غير الكافية تقلل الهامش الزمني وتزيد خطر الاصطدام عند توقف مفاجئ.",
+      "visual_key": "distance",
+      "source_id": "DOC-TRAINEE",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-027",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-12",
+      "topic": "road",
+      "question": "متى تزيدين مسافة الأمان؟",
+      "options": [
+        "عند المطر وضعف الرؤية",
+        "عندما يكون الطريق خاليًا من المخاطر فقط",
+        "لا حاجة لتغييرها"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الظروف الصعبة تقلل التماسك والرؤية، فتتطلب مسافة أكبر وسرعة مناسبة.",
+      "visual_key": "distance",
+      "source_id": "DOC-DARB",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-037",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-13",
+      "topic": "road",
+      "question": "ما المقصود بمسافة التوقف؟",
+      "options": [
+        "فقط المسافة بعد الضغط على الفرامل",
+        "المسافة من رؤية الخطر حتى التوقف الكامل",
+        "المسافة بين مخرجين"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تشمل مسافة الاستجابة قبل الفرملة ومسافة الكبح حتى التوقف النهائي.",
+      "visual_key": "distance",
+      "source_id": "DOC-NAZAWI",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-026",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-14",
+      "topic": "practical",
+      "question": "أول خطوة قبل تغيير المسار هي:",
+      "options": [
+        "النظر للمرايا وتقدير حركة الطريق",
+        "الانتقال فورًا ثم إعطاء إشارة",
+        "التحديق بشاشة السيارة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "يبدأ القرار بالملاحظة، ثم الإشارة وفحص النقطة العمياء والتأكد من السماح والأمان.",
+      "visual_key": "lane",
+      "source_id": "DOC-NARIMAN",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-022",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-15",
+      "topic": "practical",
+      "question": "هل الإشارة الجانبية تمنحك أولوية تلقائيًا؟",
+      "options": [
+        "نعم",
+        "لا، يجب التأكد من سماح الآخرين والفراغ الآمن",
+        "فقط ليلًا"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الغماز يعلم الآخرين بنيتك ولا يعفيك من المسؤولية عن سلامة الانتقال.",
+      "visual_key": "lane",
+      "source_id": "DOC-SHARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-022",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-16",
+      "topic": "practical",
+      "question": "قبل الرجوع من موقف، ما التصرف الصحيح؟",
+      "options": [
+        "الاعتماد على الكاميرا فقط",
+        "مراقبة المرايا والمحيط والنقطة العمياء",
+        "التحرك بسرعة"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الكاميرا أداة مساعدة ولا تغطي جميع الزوايا؛ راقبي المنطقة المحيطة والتزمي بتنظيم الطريق.",
+      "visual_key": "parking",
+      "source_id": "DOC-JEDDAH",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-033",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-17",
+      "topic": "safety",
+      "question": "ماذا تشير لمبة حزام الأمان عند بقائها مضيئة؟",
+      "options": [
+        "التحقق من ربط الحزام",
+        "ارتفاع درجة حرارة المحرك",
+        "إغلاق الأنوار"
+      ],
+      "correct_option_index": 0,
+      "explanation": "قد تكون إشارة إلى أن حزام أحد المقاعد غير مثبت. راجعي دليل سيارتك للمعنى الدقيق.",
+      "visual_key": "seatbelt",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-003",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-18",
+      "topic": "safety",
+      "question": "إذا ظهرت لمبة ضغط الإطارات، ماذا تفعلين؟",
+      "options": [
+        "تجاهلينها دائمًا",
+        "تتفقدين الإطارات والضغط وفق دليل السيارة في مكان آمن",
+        "تزيدين السرعة"
+      ],
+      "correct_option_index": 1,
+      "explanation": "تعني عادةً خللًا في ضغط أحد الإطارات أو نظام المراقبة؛ تحققي بأمان وفق تعليمات الشركة.",
+      "visual_key": "tpms",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-041",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-19",
+      "topic": "safety",
+      "question": "إن بقي مؤشر عطل المحرك مضيئًا، ما الموقف الأنسب؟",
+      "options": [
+        "فحص السبب حسب الدليل وخدمات الصيانة",
+        "إزالة المصباح",
+        "إكمال القيادة دائمًا بلا تقييم"
+      ],
+      "correct_option_index": 0,
+      "explanation": "تنبيه المحرك قد يدل على أسباب متعددة، وتحديد التصرف يعتمد على لون المؤشر وسلوكه وأعراض السيارة.",
+      "visual_key": "check-engine",
+      "source_id": "IMG-DASHBOARD",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-041",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-20",
+      "topic": "test",
+      "question": "إذا وصلتك أسئلة تجميع مكتوب عليها «مضمونة 100٪»...",
+      "options": [
+        "أعدّها مصدرًا رسميًا",
+        "أستخدمها للمراجعة فقط وأقارنها بالمراجع السارية",
+        "أحفظ الأرقام القديمة دون تحقق"
+      ],
+      "correct_option_index": 1,
+      "explanation": "التجميع غير الرسمي قد يساعد على التمرن لكنه لا يُثبت الأسئلة التي ستظهر في الامتحان.",
+      "visual_key": "book",
+      "source_id": "DOC-NAZAWI",
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-048",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-21",
+      "topic": "signals",
+      "question": "لو رأيتِ مثلثًا يحذّر من وجود إشارة ضوئية أمامك، هل تتوقفين فورًا عند المثلث؟",
+      "options": [
+        "نعم دائمًا لأنه يعادل الإشارة الحمراء",
+        "لا؛ أتهيأ للوصول للإشارة الفعلية وأتصرف حسب لونها وتنظيم الطريق",
+        "أتجاهله لأنه ليس لوحة تنظيمية"
+      ],
+      "correct_option_index": 1,
+      "explanation": "المثلث تحذير مبكر، أما أمر التوقف فيحدده الضوء الفعلي أو علامة تنظيمية أخرى.",
+      "visual_key": "traffic-light",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 55,
+      "source_pdf_page": 56,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-007",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-22",
+      "topic": "signals",
+      "question": "لوحة تنظيمية زرقاء فيها سهم يلزم الاتجاه إلى اليمين تعني:",
+      "options": [
+        "اتجاه إلزامي حسب اللوحة",
+        "اليمين مسموح لكنه غير مطلوب",
+        "ممنوع دخول الطريق من اليمين"
+      ],
+      "correct_option_index": 0,
+      "explanation": "العلامات الإلزامية الزرقاء تختلف عن إشارات التحذير؛ يلزم التقيد بالاتجاه المحدد عند سريانها.",
+      "visual_key": "blue-direction",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 56,
+      "source_pdf_page": 57,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-008",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-23",
+      "topic": "signals",
+      "question": "علامات مناطق العمل المؤقتة تُستخدم عادةً:",
+      "options": [
+        "لإرشادك إلى مطعم فقط",
+        "للتنبيه أو التنظيم عند أشغال وتغييرات مؤقتة في الطريق",
+        "بديلًا عن اتباع إشارات المرور الدائمة في كل مكان"
+      ],
+      "correct_option_index": 1,
+      "explanation": "أماكن العمل قد تغيّر المسار وتستوجب سرعة مناسبة واحترام العلامات والحواجز المؤقتة.",
+      "visual_key": "construction",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 60,
+      "source_pdf_page": 61,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-009",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-24",
+      "topic": "signals",
+      "question": "ماذا يعني وجود سهم مرسوم على المسار يتجه إلى اليسار فقط؟",
+      "options": [
+        "الانعطاف حسب اتجاه السهم من المسار المعني",
+        "يمكن السير في كل اتجاه حتى لو منعته اللوحات",
+        "يلزم التوقف التام دائمًا"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الأسهم الأرضية توجه الحركة المسموح بها من المسار، ويجب قراءتها مع الإشارات العلوية.",
+      "visual_key": "road",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 51,
+      "source_pdf_page": 52,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-014",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-25",
+      "topic": "road",
+      "question": "أنتِ عند تقاطع بإشارة خضراء لكن المخرج المقابل مزدحم ومغلق، ما القرار الأنسب؟",
+      "options": [
+        "الدخول للتقاطع والوقوف وسطه",
+        "الانتظار حتى يتوافر مسار خروج آمن",
+        "الضغط على المنبه والعبور"
+      ],
+      "correct_option_index": 1,
+      "explanation": "الضوء الأخضر لا يضمن خلو التقاطع؛ تجنبي إغلاق حركته على الآخرين.",
+      "visual_key": "intersection",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 129,
+      "source_pdf_page": 130,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-017",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-26",
+      "topic": "road",
+      "question": "عند اقترابك من علامة «قف» ومعبر مشاة قبل التقاطع، ما السلوك الصحيح؟",
+      "options": [
+        "الوقوف الكامل في الموضع النظامي وعدم سد معبر المشاة",
+        "التوقف فوق المعبر لرؤية التقاطع",
+        "الاكتفاء بإبطاء السرعة إذا لم تري مركبة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "يتطلب «قف» توقفًا كاملًا، مع احترام منطقة عبور المشاة والالتزام بخط الوقوف إن وجد.",
+      "visual_key": "stop",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 135,
+      "source_pdf_page": 136,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-016",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-27",
+      "topic": "road",
+      "question": "تريدين الانعطاف يمينًا ويمر مشاة في مسار دخولك، ماذا تفعلين؟",
+      "options": [
+        "تتوقفين أو تفسحين المجال للمشاة حسب تنظيم الموقع",
+        "تنعطفين لأن الغماز يمنحك الأفضلية",
+        "تسرعين حتى تعبرين قبلهم"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الانعطاف لا يلغي واجب الانتباه إلى المشاة وإعطاء الأفضلية وفق تنظيم المعبر.",
+      "visual_key": "pedestrians",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 162,
+      "source_pdf_page": 163,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-021",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-28",
+      "topic": "road",
+      "question": "إذا فاتك مخرج الطريق السريع، ما الخيار الآمن؟",
+      "options": [
+        "الرجوع للخلف نحو المخرج",
+        "التوقف المفاجئ ثم تغيير عدة مسارات",
+        "المتابعة إلى مخرج آخر مناسب"
+      ],
+      "correct_option_index": 2,
+      "explanation": "محاولة العودة للمخرج بالرجوع للخلف أو بحركة مفاجئة تعرض الجميع للخطر.",
+      "visual_key": "road",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 114,
+      "source_pdf_page": 115,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-015",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-29",
+      "topic": "practical",
+      "question": "قبل دخولك مسارًا مجاورًا، بعد استخدام الغماز هل تكتفين بالنظر إلى المرآة؟",
+      "options": [
+        "لا؛ أتأكد كذلك من النقطة العمياء والفجوة والأمان",
+        "نعم، الغماز والمرآة كافيان في جميع الحالات",
+        "نعم إذا كان المخرج قريبًا"
+      ],
+      "correct_option_index": 0,
+      "explanation": "بعض المناطق لا تظهر في المرايا؛ يجب التحقق المباشر المناسب قبل تغيير المسار.",
+      "visual_key": "lane",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 109,
+      "source_pdf_page": 110,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-022",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-30",
+      "topic": "practical",
+      "question": "ما الخطأ في البدء بالتجاوز عند تقاطع أو منطقة لا تسمح اللوحات فيها بالتجاوز؟",
+      "options": [
+        "ليس خطأ إذا كانت السيارة الأمامية بطيئة",
+        "قد يكون تجاوزًا ممنوعًا وخطرًا حتى لو بدت الطريق خالية",
+        "يجوز دائمًا عند تشغيل الغماز"
+      ],
+      "correct_option_index": 1,
+      "explanation": "مواضع حظر التجاوز تشمل حالات تؤدي إلى تعارض أو ضعف رؤية؛ لا تُلغى القيود بتشغيل الإشارة.",
+      "visual_key": "overtake",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 204,
+      "source_pdf_page": 205,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-024",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-31",
+      "topic": "road",
+      "question": "ما الفرق بين مسافة رد الفعل ومسافة الفرملة؟",
+      "options": [
+        "الأولى من رؤية الخطر إلى بدء الفرملة، والثانية من بدء الفرملة حتى التوقف",
+        "هما الشيء نفسه دائمًا",
+        "مسافة رد الفعل تبدأ بعد توقف السيارة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "مسافة التوقف الكاملة تتكوّن من المسافتين معًا، وتتأثر بسرعة المركبة وحالة السائق والطريق.",
+      "visual_key": "distance",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 175,
+      "source_pdf_page": 176,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-026",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-32",
+      "topic": "road",
+      "question": "ما الذي يزيد عادةً مسافة الفرملة عند ثبات بقية الظروف؟",
+      "options": [
+        "خفض السرعة",
+        "زيادة سرعة المركبة",
+        "زيادة تركيز السائق وحده"
+      ],
+      "correct_option_index": 1,
+      "explanation": "كلما زادت السرعة ارتفعت الطاقة التي يجب أن تبددها الفرامل، فتزداد مسافة الكبح.",
+      "visual_key": "distance",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 175,
+      "source_pdf_page": 176,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-026",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-33",
+      "topic": "safety",
+      "question": "قبل الحركة من موقف، أي إجراء من التالي يندرج تحت فحص ما قبل القيادة؟",
+      "options": [
+        "ضبط المقعد والمرايا وربط الحزام",
+        "فتح الهاتف للرد على الرسائل",
+        "تشغيل الموسيقى بدل فحص الطريق"
+      ],
+      "correct_option_index": 0,
+      "explanation": "التجهيز المناسب يقلل التشتيت ويجعل التحكم والرؤية أفضل عند بدء القيادة.",
+      "visual_key": "seatbelt",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 89,
+      "source_pdf_page": 90,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-002",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-34",
+      "topic": "safety",
+      "question": "عند ضعف الرؤية في الضباب، ما القرار الأرجح أمانًا؟",
+      "options": [
+        "خفض السرعة وزيادة المسافة وتشغيل الأنوار الملائمة",
+        "استخدام النور العالي دائمًا مهما كانت الرؤية",
+        "إيقاف المركبة فجأة وسط المسار"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الرؤية المحدودة تحتاج سرعة ومسافة مناسبة؛ قواعد الأنوار تعتمد على ظروف الرؤية ومواصفات السيارة.",
+      "visual_key": "fog",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 175,
+      "source_pdf_page": 176,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-038",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-35",
+      "topic": "practical",
+      "question": "في الرجوع للخلف، لماذا لا تكفي كاميرا السيارة وحدها؟",
+      "options": [
+        "لأنها قد لا تعرض كل مناطق الخطر حول السيارة",
+        "لأن استخدامها ممنوع دائمًا",
+        "لأن الرجوع يتطلب سرعة كبيرة"
+      ],
+      "correct_option_index": 0,
+      "explanation": "الكاميرا مساعدة للملاحظة وليست بديلًا عن النظر الشامل والتحقق من المشاة والعوائق.",
+      "visual_key": "parking",
+      "source_id": "DOC-TRAINEE",
+      "source_printed_page": 125,
+      "source_pdf_page": 126,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-032",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    },
+    {
+      "id": "SIG-36",
+      "topic": "test",
+      "question": "وأنتِ تحلين سؤالًا يقول «أي العبارات التالية غير صحيحة؟»، ما أول خطوة؟",
+      "options": [
+        "الانتباه إلى كلمة «غير» قبل مقارنة الخيارات",
+        "اختيار أول خيار يبدو مألوفًا",
+        "حفظ حرف الإجابة من صورة التجميع"
+      ],
+      "correct_option_index": 0,
+      "explanation": "انتبهي لصيغة النفي وحددي المفهوم لا ترتيب الخيارات؛ هذه مهارة اختبار وليست قاعدة مرور.",
+      "visual_key": "book",
+      "source_id": "DOC-NAZAWI",
+      "source_printed_page": null,
+      "source_pdf_page": null,
+      "status": "editorial_practice_original",
+      "last_reviewed": "2026-10-12",
+      "is_official_exam_question": false,
+      "lesson_id": "LES-048",
+      "review_strategy": "راجعي سبب الإجابة ثم أعيدي السؤال دون النظر للخيارات، وبعدها افتحي الدرس المرتبط إن بقيت النقطة غير واضحة."
+    }
+  ],
+  "data_quality": {
+    "pdf_received": 8,
+    "pdf_unique": 7,
+    "pdf_duplicates": [
+      [
+        "16907764.pdf",
+        "16907764(1).pdf"
+      ]
+    ],
+    "image_received": 8,
+    "image_unique": 6,
+    "image_duplicates": [
+      [
+        "image(3).png",
+        "image(4).png"
+      ],
+      [
+        "image(6).png",
+        "image(7).png"
+      ]
+    ],
+    "notes": "كل المراجع محصورة كفهرس لا نسخ ملفات. نصوص الاختبار الجديد أصلية تعليمية وليست أسئلة اختبار مسربة أو رسمية.",
+    "lesson_index_coverage": 48,
+    "reference_link_type": "PDF page references in personal files; NOT 48 line-by-line certified lessons",
+    "activities": "48 unique guided exercises original, self-reflection only; not driving skills certification"
+  },
+  "community_pages": {
+    "id": "EXT-SAUDIO-NAZAWI",
+    "source_id": "EXT-SAUDIO-NAZAWI",
+    "title": "39 صورة لصفحات ملف النزاوي (موقع طرف ثالث)",
+    "page_count": 39,
+    "license": "third_party_unknown_no_republish",
+    "verification": "links_supplied_by_user_not_page_by_page_validated",
+    "image_links": [
+      {
+        "page": 1,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/1-min.png"
+      },
+      {
+        "page": 2,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/2-min.png"
+      },
+      {
+        "page": 3,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/3-min.png"
+      },
+      {
+        "page": 4,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/4-min.png"
+      },
+      {
+        "page": 5,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/5-min.png"
+      },
+      {
+        "page": 6,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/6-min.png"
+      },
+      {
+        "page": 7,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/7-min.png"
+      },
+      {
+        "page": 8,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/8-min.png"
+      },
+      {
+        "page": 9,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/9-min.png"
+      },
+      {
+        "page": 10,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/10-min.png"
+      },
+      {
+        "page": 11,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/11-min.png"
+      },
+      {
+        "page": 12,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/12-min.png"
+      },
+      {
+        "page": 13,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/13-min.png"
+      },
+      {
+        "page": 14,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/14-min.png"
+      },
+      {
+        "page": 15,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/15-min.png"
+      },
+      {
+        "page": 16,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/16-min.png"
+      },
+      {
+        "page": 17,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/17-min.png"
+      },
+      {
+        "page": 18,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/18-min.png"
+      },
+      {
+        "page": 19,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/19-min.png"
+      },
+      {
+        "page": 20,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/20-min.png"
+      },
+      {
+        "page": 21,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/21-min.png"
+      },
+      {
+        "page": 22,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/22-min.png"
+      },
+      {
+        "page": 23,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/23-min.png"
+      },
+      {
+        "page": 24,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/24-min.png"
+      },
+      {
+        "page": 25,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/25-min.png"
+      },
+      {
+        "page": 26,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/26-min.png"
+      },
+      {
+        "page": 27,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/27-min.png"
+      },
+      {
+        "page": 28,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/28-min.png"
+      },
+      {
+        "page": 29,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/29-min.png"
+      },
+      {
+        "page": 30,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/30-min.png"
+      },
+      {
+        "page": 31,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/31-min.png"
+      },
+      {
+        "page": 32,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/32-min.png"
+      },
+      {
+        "page": 33,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/33-min.png"
+      },
+      {
+        "page": 34,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/34-min.png"
+      },
+      {
+        "page": 35,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/35-min.png"
+      },
+      {
+        "page": 36,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/36-min.png"
+      },
+      {
+        "page": 37,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/37-min.png"
+      },
+      {
+        "page": 38,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/38-min.png"
+      },
+      {
+        "page": 39,
+        "url": "https://saudirokhsa.com/wp-content/uploads/2025/12/39-min.png"
+      }
+    ]
+  },
+  "licensing_policy": "المراجع الشخصية محفوظة في المتصفح فقط بعد اختيارها من جهاز المستخدم؛ لا تنشر نسخ الكتب أو الصور في المستودع العام ما لم يُثبت السماح بذلك.",
+  "practical_assessment_reference": {
+    "id": "PRA-ASSESSMENT-USER-2026",
+    "source_documents": [
+      "DOC-SHARD",
+      "DOC-NARIMAN",
+      "DOC-JEDDAH",
+      "IMG-EVAL-SDS",
+      "IMG-EVAL-SHARD"
+    ],
+    "status": "unverified_school_model_examples",
+    "official_unified_standard": false,
+    "immediate_failure_examples": [
+      {
+        "id": "FAIL-01",
+        "text": "الدخول إلى شارع أو مسار أو دوار دون التأكد من خلوه وصلاحية المسار",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-02",
+        "text": "فقدان السيطرة على المركبة بما يعرّض الأشخاص للخطر أو عدم إنجاز المناورة المطلوبة بطريقة آمنة",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-03",
+        "text": "عدم التقيد بإشارات المرور أو تعليمات الفاحص، بما في ذلك السير بعكس الاتجاه",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-04",
+        "text": "عدم التوقف للإشارة الحمراء أو علامة قف أو خط التوقف حيث يلزم",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-05",
+        "text": "الاصطدام بجسم ثابت أو متحرك أو ارتكاب تصرف يستدعي تدخّل الفاحص أو تفادي الآخرين للحادث",
+        "verified_for_all_schools": false
+      },
+      {
+        "id": "FAIL-06",
+        "text": "ضعف المعرفة العامة بالقيادة الآمنة (ورد في التجميع النصي، وليس مثبتًا من نموذج الاختبار المصور)",
+        "verified_for_all_schools": false
+      }
+    ],
+    "fault_categories": [
+      {
+        "id": "FAULT-01",
+        "number": 1,
+        "title": "فحص ما قبل القيادة",
+        "mistakes": [
+          "عدم التحقق من إغلاق الأبواب",
+          "عدم ضبط المقعد والمرايا",
+          "نسيان الحزام",
+          "عدم معرفة تشغيل المساحات أو الأنوار أو أضواء الطوارئ",
+          "عدم معرفة تشغيل المركبة أو التنبيه بصورة صحيحة"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-02",
+        "number": 2,
+        "title": "المرايا والملاحظة",
+        "mistakes": [
+          "عدم فحص المرايا حين الحاجة",
+          "الفحص المتأخر",
+          "عدم فحص المرايا عند تغيير المسار",
+          "عدم مراقبة المرايا قبل الإشارة أو الفرملة"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-03",
+        "number": 3,
+        "title": "إشارات الانعطاف",
+        "mistakes": [
+          "ترك الإشارة حين يلزم",
+          "استخدامها مبكرًا جدًا أو متأخرًا",
+          "عدم الإشارة عند تغيير المسار",
+          "الإشارة في اتجاه غير مطلوب"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-04",
+        "number": 4,
+        "title": "الاقتراب من التقاطع",
+        "mistakes": [
+          "فرملة عنيفة دون سبب",
+          "سرعة اقتراب غير مناسبة",
+          "استخدام غير ملائم للقابض في مركبة بناقل يدوي"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-05",
+        "number": 5,
+        "title": "استخدام ناقل الحركة",
+        "mistakes": [
+          "اختيار وضع أو ترس غير مناسب",
+          "انتقالات غير سلسة",
+          "اختيار الحياد أثناء الحركة على نحو غير آمن",
+          "ترك ناقل الحركة في وضع غير مناسب بعد التوقف",
+          "انطفاء محرك المركبة اليدوية"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-06",
+        "number": 6,
+        "title": "الانعطاف يمينًا",
+        "mistakes": [
+          "بدء الانعطاف من مسار خاطئ",
+          "عدم اتباع علامات الطريق",
+          "ملامسة حافة الطريق",
+          "الخروج إلى أكثر من مسار أو انحراف واسع"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-07",
+        "number": 7,
+        "title": "الانعطاف يسارًا",
+        "mistakes": [
+          "بدء الانعطاف من مسار خاطئ",
+          "عدم اتباع علامات الطريق",
+          "ملامسة الرصيف",
+          "الانحراف الواسع أو الضيق",
+          "عدم الاستقرار في المسار المناسب"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-08",
+        "number": 8,
+        "title": "الموضع داخل الطريق",
+        "mistakes": [
+          "الاقتراب الشديد من طرف الطريق",
+          "عدم الالتزام بوسط المسار",
+          "القيادة بين مسارين",
+          "اختيار مسار غير مناسب"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-09",
+        "number": 9,
+        "title": "تغيير المسار",
+        "mistakes": [
+          "عدم استغلال فجوة مناسبة أو محاولة الدخول في فجوة ضيقة",
+          "تباطؤ غير مبرر أثناء الانتقال",
+          "نسيان فحص النقطة العمياء",
+          "الانحراف أثناء مراقبة الجانب",
+          "الانتقال المفاجئ بين المسارات"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-10",
+        "number": 10,
+        "title": "التجاوز",
+        "mistakes": [
+          "التجاوز دون التحقق من الأمان",
+          "تجاوز غير مناسب لحالة الطريق",
+          "عدم العودة للمسار المناسب بأمان"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-11",
+        "number": 11,
+        "title": "التقدم وسرعة القيادة",
+        "mistakes": [
+          "القيادة أبطأ أو أسرع مما تسمح به ظروف الطريق",
+          "التردد أو الاندفاع غير المناسب بعد التوقف",
+          "التعامل غير السلس مع القابض في المركبة اليدوية"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-12",
+        "number": 12,
+        "title": "طريقة التوقف",
+        "mistakes": [
+          "التوقف مرتين دون داعٍ",
+          "الوقوف فوق خط التوقف أو في مكان غير صحيح",
+          "نسيان تأمين السيارة عند التوقف",
+          "تدحرج السيارة عند الانطلاق على منحدر"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-13",
+        "number": 13,
+        "title": "هامش السلامة",
+        "mistakes": [
+          "الفاصل الطولي غير الكافي",
+          "المرور قرب جسم ثابت أو متحرك دون هامش جانبي كافٍ",
+          "الوقوف قريبًا جدًا أو بعيدًا بصورة تعيق الآخرين"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-14",
+        "number": 14,
+        "title": "التقدير واكتشاف المخاطر",
+        "mistakes": [
+          "التأخر في خفض السرعة عند وجود خطر",
+          "عدم إعطاء الأفضلية للمشاة أو المركبات",
+          "التوقف بلا داعٍ",
+          "تأخر إدراك الخطر أو الاستجابة له"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-15",
+        "number": 15,
+        "title": "الدخول إلى الموقف",
+        "mistakes": [
+          "اختيار مسار دخول غير مناسب",
+          "الوقوف على خطوط المواقف",
+          "عدم التمركز داخل الحيز",
+          "تكرار المناورة بصورة تخالف معايير نموذج مدرسة بعينها",
+          "ملامسة الحافة"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      },
+      {
+        "id": "FAULT-16",
+        "number": 16,
+        "title": "الخروج من الموقف",
+        "mistakes": [
+          "نسيان الإشارة المناسبة",
+          "عدم فحص النقطة العمياء قبل التحرك",
+          "زيادة الحركات عن الحد المذكور في نموذج مدرسة بعينها",
+          "ملامسة الرصيف",
+          "الخروج لمسار غير مناسب أو انحراف واسع"
+        ],
+        "scoring_rule": "غير مثبت لجميع المدارس"
+      }
+    ],
+    "hours_policy": "لا تعتمد قاعدة 6/12/30 ساعة على عدد الأخطاء من دون وثيقة حديثة صادرة من مدرسة التقييم",
+    "note": "الأخطاء مستخلصة ومُعاد صياغتها من أوراق التقييم التي قدمتها المستخدمة. فئة القابض اليدوي لا تنطبق مباشرة على هوندا أكورد الأوتوماتيك."
+  },
+  "lesson_reading_map": [
+    {
+      "id": "READ-001",
+      "lesson_id": "LES-001",
+      "lesson_title": "أدوات السيارة",
+      "resources": [
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 3,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 236,
+          "pdf_page_end": 238,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-002",
+      "lesson_id": "LES-002",
+      "lesson_title": "التهيئة والسلامة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 89,
+          "printed_page_end": 96,
+          "pdf_page_start": 90,
+          "pdf_page_end": 97,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 3,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-003",
+      "lesson_id": "LES-003",
+      "lesson_title": "لوحة القيادة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 236,
+          "pdf_page_end": 238,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-004",
+      "lesson_id": "LES-004",
+      "lesson_title": "أجزاء الطريق",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 45,
+          "printed_page_end": 51,
+          "pdf_page_start": 46,
+          "pdf_page_end": 52,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-005",
+      "lesson_id": "LES-005",
+      "lesson_title": "المسارات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 102,
+          "printed_page_end": 114,
+          "pdf_page_start": 103,
+          "pdf_page_end": 115,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-006",
+      "lesson_id": "LES-006",
+      "lesson_title": "مستخدمو الطريق",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 76,
+          "printed_page_end": 89,
+          "pdf_page_start": 77,
+          "pdf_page_end": 90,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-007",
+      "lesson_id": "LES-007",
+      "lesson_title": "إشارات التحذير",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 55,
+          "printed_page_end": 55,
+          "pdf_page_start": 56,
+          "pdf_page_end": 56,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 61,
+          "printed_page_end": 64,
+          "pdf_page_start": 62,
+          "pdf_page_end": 65,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 24,
+          "pdf_page_end": 28,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الإشارات التحذيرية والتنظيمية: بداية فصل الإشارات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 8,
+          "pdf_page_end": 12,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "تجميع أسئلة الإشارات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-008",
+      "lesson_id": "LES-008",
+      "lesson_title": "الإشارات التنظيمية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 56,
+          "printed_page_end": 57,
+          "pdf_page_start": 57,
+          "pdf_page_end": 58,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 65,
+          "printed_page_end": 69,
+          "pdf_page_start": 66,
+          "pdf_page_end": 70,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-009",
+      "lesson_id": "LES-009",
+      "lesson_title": "الإشارات الإرشادية والمؤقتة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 58,
+          "printed_page_end": 60,
+          "pdf_page_start": 59,
+          "pdf_page_end": 61,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 70,
+          "printed_page_end": 73,
+          "pdf_page_start": 71,
+          "pdf_page_end": 74,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-010",
+      "lesson_id": "LES-010",
+      "lesson_title": "الإشارات الضوئية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 134,
+          "pdf_page_start": 130,
+          "pdf_page_end": 135,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-011",
+      "lesson_id": "LES-011",
+      "lesson_title": "التقاطعات والأولوية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 161,
+          "pdf_page_start": 130,
+          "pdf_page_end": 162,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 50,
+          "pdf_page_end": 56,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قواعد الأفضلية والتقاطعات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-012",
+      "lesson_id": "LES-012",
+      "lesson_title": "معابر المشاة ومراجعة الشهر",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 162,
+          "printed_page_end": 164,
+          "pdf_page_start": 163,
+          "pdf_page_end": 165,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-013",
+      "lesson_id": "LES-013",
+      "lesson_title": "أجزاء الطريق والمسارات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 45,
+          "printed_page_end": 51,
+          "pdf_page_start": 46,
+          "pdf_page_end": 52,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 102,
+          "printed_page_end": 108,
+          "pdf_page_start": 103,
+          "pdf_page_end": 109,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-014",
+      "lesson_id": "LES-014",
+      "lesson_title": "الخطوط المتصلة والمتقطعة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 51,
+          "printed_page_end": 53,
+          "pdf_page_start": 52,
+          "pdf_page_end": 54,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 102,
+          "printed_page_end": 109,
+          "pdf_page_start": 103,
+          "pdf_page_end": 110,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 69,
+          "pdf_page_end": 72,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "العلامات الأرضية وخطوط الطريق؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 7,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "أسئلة الخط المتصل والمزدوج؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-015",
+      "lesson_id": "LES-015",
+      "lesson_title": "اختيار المسار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 109,
+          "printed_page_end": 123,
+          "pdf_page_start": 110,
+          "pdf_page_end": 124,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-016",
+      "lesson_id": "LES-016",
+      "lesson_title": "قف وأعط الأفضلية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 135,
+          "printed_page_end": 137,
+          "pdf_page_start": 136,
+          "pdf_page_end": 138,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 6,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "أسئلة الأولوية والخطوط؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-017",
+      "lesson_id": "LES-017",
+      "lesson_title": "الإشارات الضوئية",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 134,
+          "pdf_page_start": 130,
+          "pdf_page_end": 135,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-018",
+      "lesson_id": "LES-018",
+      "lesson_title": "أولوية التقاطعات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 137,
+          "printed_page_end": 161,
+          "pdf_page_start": 138,
+          "pdf_page_end": 162,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-019",
+      "lesson_id": "LES-019",
+      "lesson_title": "أولوية الدخول إلى الدوار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 154,
+          "printed_page_end": 155,
+          "pdf_page_start": 155,
+          "pdf_page_end": 156,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-020",
+      "lesson_id": "LES-020",
+      "lesson_title": "اختيار مسار الدوار والمخرج الصحيح",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 154,
+          "printed_page_end": 155,
+          "pdf_page_start": 155,
+          "pdf_page_end": 156,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-JEDDAH",
+          "source_title": "منهج التدريب الميداني — جدة المتطورة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 1,
+          "pdf_page_end": 2,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-021",
+      "lesson_id": "LES-021",
+      "lesson_title": "أولوية المشاة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 162,
+          "printed_page_end": 164,
+          "pdf_page_start": 163,
+          "pdf_page_end": 165,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-022",
+      "lesson_id": "LES-022",
+      "lesson_title": "تغيير المسار والنقطة العمياء",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 109,
+          "printed_page_end": 123,
+          "pdf_page_start": 110,
+          "pdf_page_end": 124,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 3,
+          "pdf_page_end": 4,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 90,
+          "pdf_page_end": 95,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الدخول إلى حركة المرور والمناورات؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-023",
+      "lesson_id": "LES-023",
+      "lesson_title": "التجاوز من اليسار أو اليمين",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 202,
+          "printed_page_end": 213,
+          "pdf_page_start": 203,
+          "pdf_page_end": 214,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-024",
+      "lesson_id": "LES-024",
+      "lesson_title": "متى يكون التجاوز محظورًا؟",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 204,
+          "printed_page_end": 210,
+          "pdf_page_start": 205,
+          "pdf_page_end": 211,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-025",
+      "lesson_id": "LES-025",
+      "lesson_title": "السرعة المناسبة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 168,
+          "printed_page_end": 185,
+          "pdf_page_start": 169,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-026",
+      "lesson_id": "LES-026",
+      "lesson_title": "مسافة التوقف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 189,
+          "pdf_page_start": 176,
+          "pdf_page_end": 190,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NAZAWI",
+          "source_title": "النزاوي — عيّنات أسئلة للتدرب",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 1,
+          "pdf_page_end": 6,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-Q49",
+          "source_title": "تجميع أسئلة القيادة — 49 صفحة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 3,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "تعريفات مسافة التوقف والفرملة من تجميع غير رسمي؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-027",
+      "lesson_id": "LES-027",
+      "lesson_title": "مسافة الأمان وقاعدة الثانيتين",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 186,
+          "printed_page_end": 191,
+          "pdf_page_start": 187,
+          "pdf_page_end": 192,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 2,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-028",
+      "lesson_id": "LES-028",
+      "lesson_title": "القيادة الوقائية واكتشاف الأخطار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-DARB",
+          "source_title": "درب السلامة — كتاب التدريب النظري والعملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 125,
+          "pdf_page_end": 132,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_reference_topic_map",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "إدراك المخاطر والانتباه؛ يُستخدم للمقارنة والفهم وليس إثبات أنه اختبار رسمي أو نظام حالي."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-029",
+      "lesson_id": "LES-029",
+      "lesson_title": "عادات القيادة الخطرة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 76,
+          "printed_page_end": 89,
+          "pdf_page_start": 77,
+          "pdf_page_end": 90,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-030",
+      "lesson_id": "LES-030",
+      "lesson_title": "اختبارات اكتشاف الأخطار بالفيديو",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-031",
+      "lesson_id": "LES-031",
+      "lesson_title": "أنواع المواقف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 25,
+          "pdf_page_end": 37,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-032",
+      "lesson_id": "LES-032",
+      "lesson_title": "الرجوع للخلف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 123,
+          "printed_page_end": 125,
+          "pdf_page_start": 124,
+          "pdf_page_end": 126,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 28,
+          "pdf_page_end": 30,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-033",
+      "lesson_id": "LES-033",
+      "lesson_title": "الخروج من الموقف بالرجوع للخلف",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 28,
+          "pdf_page_end": 30,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-034",
+      "lesson_id": "LES-034",
+      "lesson_title": "الركن الموازي",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 5,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-035",
+      "lesson_id": "LES-035",
+      "lesson_title": "مناورات X وT وY",
+      "resources": [
+        {
+          "source_id": "DOC-JEDDAH",
+          "source_title": "منهج التدريب الميداني — جدة المتطورة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 1,
+          "pdf_page_end": 3,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 28,
+          "pdf_page_end": 30,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-036",
+      "lesson_id": "LES-036",
+      "lesson_title": "المرتفعات وفرامل التوقف",
+      "resources": [
+        {
+          "source_id": "DOC-JEDDAH",
+          "source_title": "منهج التدريب الميداني — جدة المتطورة",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 3,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 5,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-037",
+      "lesson_id": "LES-037",
+      "lesson_title": "المطر والتماسك ومسافة الأمان",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-038",
+      "lesson_id": "LES-038",
+      "lesson_title": "الغبار والضباب",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 175,
+          "printed_page_end": 185,
+          "pdf_page_start": 176,
+          "pdf_page_end": 186,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-039",
+      "lesson_id": "LES-039",
+      "lesson_title": "القيادة الليلية وأنواع الأنوار",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 223,
+          "printed_page_end": 234,
+          "pdf_page_start": 224,
+          "pdf_page_end": 235,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-040",
+      "lesson_id": "LES-040",
+      "lesson_title": "تعطل السيارة على الطريق",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 214,
+          "printed_page_end": 223,
+          "pdf_page_start": 215,
+          "pdf_page_end": 224,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-041",
+      "lesson_id": "LES-041",
+      "lesson_title": "لمبات التحذير في هوندا",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 235,
+          "printed_page_end": 237,
+          "pdf_page_start": 236,
+          "pdf_page_end": 238,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-042",
+      "lesson_id": "LES-042",
+      "lesson_title": "الحوادث وأرقام الطوارئ",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 24,
+          "printed_page_end": 31,
+          "pdf_page_start": 25,
+          "pdf_page_end": 32,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-043",
+      "lesson_id": "LES-043",
+      "lesson_title": "مراجعة الإشارات والخطوط",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 51,
+          "printed_page_end": 73,
+          "pdf_page_start": 52,
+          "pdf_page_end": 74,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-044",
+      "lesson_id": "LES-044",
+      "lesson_title": "الأولوية والتقاطعات والدوارات",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 129,
+          "printed_page_end": 164,
+          "pdf_page_start": 130,
+          "pdf_page_end": 165,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-045",
+      "lesson_id": "LES-045",
+      "lesson_title": "السرعة والمخاطر والطوارئ",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 168,
+          "printed_page_end": 191,
+          "pdf_page_start": 169,
+          "pdf_page_end": 192,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    },
+    {
+      "id": "READ-046",
+      "lesson_id": "LES-046",
+      "lesson_title": "إجراءات إصدار الرخصة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 12,
+          "printed_page_end": 15,
+          "pdf_page_start": 13,
+          "pdf_page_end": 16,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-047",
+      "lesson_id": "LES-047",
+      "lesson_title": "برامج التدريب والاختبارات",
+      "resources": [
+        {
+          "source_id": "DOC-SHARD",
+          "source_title": "مدرسة شرق — كتيب مقرر التدريب العملي",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        },
+        {
+          "source_id": "DOC-NARIMAN",
+          "source_title": "ملخص تقييم مهارة القيادة — ناريمان",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 2,
+          "pdf_page_end": 7,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "needs_fresh_primary_or_vehicle_confirmation",
+      "safety_note": "راجعي الأحكام الحالية أو دليل السيارة الفعلي أو إجراءات مدرسة القيادة قبل التطبيق."
+    },
+    {
+      "id": "READ-048",
+      "lesson_id": "LES-048",
+      "lesson_title": "الاستعداد للاختبار النهائي وما بعد الرخصة",
+      "resources": [
+        {
+          "source_id": "DOC-TRAINEE",
+          "source_title": "كتاب المتدربة — التدريب النظري",
+          "printed_page_start": 76,
+          "printed_page_end": 97,
+          "pdf_page_start": 77,
+          "pdf_page_end": 98,
+          "link_kind": "personal_local_pdf",
+          "role": "foundational_topic_section",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "الترقيم الظاهر في صفحات الكتاب أقل بصفحة واحدة من عداد قارئ PDF."
+        },
+        {
+          "source_id": "DOC-NAZAWI",
+          "source_title": "النزاوي — عيّنات أسئلة للتدرب",
+          "printed_page_start": null,
+          "printed_page_end": null,
+          "pdf_page_start": 70,
+          "pdf_page_end": 81,
+          "link_kind": "personal_local_pdf",
+          "role": "supplementary_training_reference",
+          "verification": "topic_and_page_index_checked_not_full_line_by_line",
+          "note": "قد تختلف الإجراءات العملية حسب مدرسة التدريب ومركبة الاختبار."
+        }
+      ],
+      "review_status": "topic_index_mapped_pending_line_verification",
+      "safety_note": ""
+    }
+  ],
+  "sign_library": [
+    {
+      "id": "SG-01",
+      "category": "تنظيمية",
+      "title": "قف",
+      "icon": "stop",
+      "meaning": "توقف كامل قبل مواصلة السير عندما يسمح التنظيم وتكون الحركة آمنة.",
+      "action": "توقفي عند الخط المناسب، ثم انظري للطريق والمشاة.",
+      "memory_tip": "اللوحة الثمانية تختلف عن مثلث التحذير من قف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-016",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-02",
+      "category": "تنظيمية",
+      "title": "أعط الأفضلية",
+      "icon": "yield",
+      "meaning": "افسحي الطريق لمَن له الأفضلية، وتوقفي عند الحاجة.",
+      "action": "خففي السرعة وراقبي المركبات قبل الدخول.",
+      "memory_tip": "لا يكفي مجرد عدم وجود علامة قف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-016",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-03",
+      "category": "تنظيمية",
+      "title": "ممنوع الدخول",
+      "icon": "no-entry",
+      "meaning": "يحظر الدخول من الجهة المواجهة للإشارة.",
+      "action": "استمري إلى مدخل أو طريق بديل مسموح.",
+      "memory_tip": "ممنوع الدخول لا يعني انتهاء منع التجاوز.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-04",
+      "category": "تنظيمية",
+      "title": "السرعة القصوى 60",
+      "icon": "speed60",
+      "meaning": "الرقم هنا مثال لحد السرعة القصوى بالكيلومتر/ساعة.",
+      "action": "لا تتجاوزي الحد حيث يسري وقد تكون السرعة الآمنة أقل.",
+      "memory_tip": "الحد الأقصى ليس سرعة مستهدفة دائمًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-025",
+        "LES-045"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-05",
+      "category": "تنظيمية",
+      "title": "ممنوع الدوران للخلف",
+      "icon": "no-uturn",
+      "meaning": "يحظر الدوران للخلف في نطاق اللوحة.",
+      "action": "واصلي إلى موضع مسموح بالدوران.",
+      "memory_tip": "منع الدوران للخلف لا يعني منع الانعطاف يسارًا بالضرورة.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-024"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-06",
+      "category": "تنظيمية",
+      "title": "ممنوع الانعطاف يسارًا",
+      "icon": "no-left",
+      "meaning": "لا يجوز الانعطاف يسارًا عند الموضع المعني.",
+      "action": "اتبعي الطريق المسموح به.",
+      "memory_tip": "ليس هو نفسه منع الدوران للخلف.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-07",
+      "category": "تنظيمية",
+      "title": "ممنوع الانعطاف يمينًا",
+      "icon": "no-right",
+      "meaning": "لا يجوز الانعطاف يمينًا عند الموضع المعني.",
+      "action": "واصلي حسب تنظيم التقاطع والمسار.",
+      "memory_tip": "الانعطاف الأيمن ليس مسموحًا دائمًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-08",
+      "category": "تنظيمية",
+      "title": "ممنوع التجاوز",
+      "icon": "no-overtake",
+      "meaning": "يُحظر تجاوز المركبات وفق نطاق سريان اللوحة.",
+      "action": "حافظي على مسافة الأمان دون تجاوز.",
+      "memory_tip": "الغماز لا يلغي حظر التجاوز.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-023",
+        "LES-024"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-09",
+      "category": "تنظيمية",
+      "title": "ممنوع الوقوف",
+      "icon": "no-parking",
+      "meaning": "يحظر ركن المركبة في نطاق اللوحة وفق الشروط السارية.",
+      "action": "ابحثي عن موقف مسموح.",
+      "memory_tip": "اقرئي اللوحات المكملة للاستثناءات والأوقات.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-031",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-10",
+      "category": "تنظيمية",
+      "title": "ممنوع الوقوف والانتظار",
+      "icon": "no-stopping",
+      "meaning": "يحظر التوقف الاختياري والانتظار حيث يسري المنع.",
+      "action": "لا تتوقفي لانتظار أحد في الموضع المحظور.",
+      "memory_tip": "تختلف عن منع الوقوف ذي الشطب الواحد.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-031",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-11",
+      "category": "تنظيمية",
+      "title": "اتجاه إلزامي إلى اليمين",
+      "icon": "mandatory-right",
+      "meaning": "يلزم اتباع الاتجاه الأيمن المحدد باللوحة.",
+      "action": "هيئي مسارك مسبقًا ثم التزمي بالاتجاه.",
+      "memory_tip": "لوحة الإلزام ليست اقتراحًا.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-12",
+      "category": "تنظيمية",
+      "title": "اتجاه إلزامي إلى الأمام",
+      "icon": "mandatory-straight",
+      "meaning": "يلزم الاستمرار إلى الأمام حسب تنظيم اللوحة.",
+      "action": "لا تنعطفي إلى اتجاه مخالف للإلزام.",
+      "memory_tip": "قد توجد لوحات وأسهم أرضية مكملة.",
+      "lesson_ids": [
+        "LES-008",
+        "LES-015",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-13",
+      "category": "تحذيرية",
+      "title": "إشارة ضوئية أمامك",
+      "icon": "warn-signal",
+      "meaning": "تحذّر من إشارات ضوئية قريبة.",
+      "action": "تهيّئي لرؤية الضوء الفعلي واتخاذ القرار عنده.",
+      "memory_tip": "المثلث ليس ضوءًا أحمر يوجب الوقوف فور رؤيته.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-010",
+        "LES-017"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-14",
+      "category": "تحذيرية",
+      "title": "دوار أمامك",
+      "icon": "warn-roundabout",
+      "meaning": "تنبيه إلى اقتراب دوار.",
+      "action": "خففي السرعة واقرئي تنظيم الأولوية والمسارات.",
+      "memory_tip": "ليست تصريحًا بالدخول دون النظر.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-019",
+        "LES-020"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-15",
+      "category": "تحذيرية",
+      "title": "تقاطع طرق أمامك",
+      "icon": "warn-cross",
+      "meaning": "تنبيه إلى تقاطع يحتمل دخول مركبات من اتجاهات متعددة.",
+      "action": "راقبي الإشارات والأولوية قبل الوصول.",
+      "memory_tip": "رسم التقاطع لا يحدد وحده الأفضلية.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-16",
+      "category": "تحذيرية",
+      "title": "طريق فرعي من اليمين",
+      "icon": "warn-side-right",
+      "meaning": "تنبيه إلى اتصال طريق من جهة اليمين.",
+      "action": "انتبهي إلى مركبات قد تدخل من هذا الاتجاه.",
+      "memory_tip": "اتصال طريق لا يحدد وحده الأولوية.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-17",
+      "category": "تحذيرية",
+      "title": "طريق فرعي من اليسار",
+      "icon": "warn-side-left",
+      "meaning": "تنبيه إلى اتصال طريق من جهة اليسار.",
+      "action": "انتبهي إلى الحركة القادمة من هذا الاتجاه.",
+      "memory_tip": "لا تخلطي جهة اتصال الطريق باتجاه انعطافك.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-011",
+        "LES-018"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-18",
+      "category": "تحذيرية",
+      "title": "عبور مشاة",
+      "icon": "warn-pedestrians",
+      "meaning": "تنبيه إلى احتمال عبور مشاة أمامك.",
+      "action": "خففي السرعة وتوقفي عند الحاجة مع الالتزام بأولوية المعبر.",
+      "memory_tip": "التحذير لا يلغي مراقبة الجانبين.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-012",
+        "LES-021"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-19",
+      "category": "تحذيرية",
+      "title": "عبور أطفال",
+      "icon": "warn-children",
+      "meaning": "قد يظهر أطفال يعبرون الطريق، خاصة قرب المدارس.",
+      "action": "خففي السرعة وتوقعي حركة مفاجئة.",
+      "memory_tip": "توقع الخطر مهم حتى لو بدا المكان خاليًا.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-012",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-20",
+      "category": "تحذيرية",
+      "title": "عبور حيوانات",
+      "icon": "warn-animals",
+      "meaning": "احتمال دخول حيوانات إلى الطريق.",
+      "action": "راقبي جانبي الطريق وخففي السرعة عند الحاجة.",
+      "memory_tip": "انتبهي لوجود أكثر من حيوان محتمل.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-028",
+        "LES-037"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-21",
+      "category": "تحذيرية",
+      "title": "مطب أو مطبات",
+      "icon": "warn-bump",
+      "meaning": "تنبيه إلى ارتفاع أو تغير مفاجئ بسطح الطريق.",
+      "action": "خففي تدريجيًا قبل موضع المطب.",
+      "memory_tip": "الفرملة العنيفة المتأخرة قد تخلق خطرًا.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-025",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-22",
+      "category": "تحذيرية",
+      "title": "طريق زلق",
+      "icon": "warn-slippery",
+      "meaning": "تحذير من نقص تماسك الإطارات بالسطح.",
+      "action": "خففي وزيدي مسافة الأمان وتجنبي التوجيه الحاد.",
+      "memory_tip": "ليست لمبة عطل السيارة.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-037",
+        "LES-038"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-23",
+      "category": "تحذيرية",
+      "title": "طريق يضيق من الجانبين",
+      "icon": "warn-narrow",
+      "meaning": "قد يقل عرض الطريق أمامك.",
+      "action": "راقبي المسار والسرعة والمرور المقابل.",
+      "memory_tip": "لا تستخدمي كتف الطريق كمسار بديل.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-013",
+        "LES-015"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-24",
+      "category": "تحذيرية",
+      "title": "طيران منخفض",
+      "icon": "warn-airplane",
+      "meaning": "تحذير من مرور طائرات منخفضة قرب الطريق.",
+      "action": "حافظي على التركيز والانتباه لحركة الطريق.",
+      "memory_tip": "اللوحة لا تعني إغلاق الطريق.",
+      "lesson_ids": [
+        "LES-007",
+        "LES-028",
+        "LES-039"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "تستند التصنيفات والمفاهيم إلى مراجع المرور؛ الرسوم التعليمية أصلية ومبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-25",
+      "category": "إرشادية",
+      "title": "مستشفى",
+      "icon": "guide-hospital",
+      "meaning": "تدل على وجود مستشفى في الاتجاه أو الموقع المشار إليه.",
+      "action": "اتبعي اتجاه اللوحة إذا كنتِ تقصدين المستشفى، ولا تنعطفي فجأة.",
+      "memory_tip": "لوحة إرشاد لمرفق خدمة، وليست تصريحًا بالوقوف.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-26",
+      "category": "إرشادية",
+      "title": "محطة وقود",
+      "icon": "guide-fuel",
+      "meaning": "ترشد إلى موقع محطة وقود.",
+      "action": "تحققي من الاتجاه وخططي للخروج أو تغيير المسار مبكرًا وبشكل آمن.",
+      "memory_tip": "وجود المحطة لا يغيّر أولوية السير.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-025"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-27",
+      "category": "إرشادية",
+      "title": "مطار",
+      "icon": "guide-airport",
+      "meaning": "ترشد إلى اتجاه المطار أو موقعه.",
+      "action": "اتبعي اتجاه اللوحة مع الالتزام بمسارك والإشارات الأخرى.",
+      "memory_tip": "لا تخلطيها مع لوحة التحذير من الطيران المنخفض.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-28",
+      "category": "إرشادية",
+      "title": "موقف سيارات",
+      "icon": "guide-parking",
+      "meaning": "ترشد إلى مكان مخصص لوقوف السيارات.",
+      "action": "اتبعي إرشادات الدخول وتحققي من شروط الوقوف الظاهرة في الموقع.",
+      "memory_tip": "لا تعني جواز الوقوف في أي مكان قريب.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-031"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "الاسم والغرض العام مستندان إلى دليل الإشارات الإرشادية للمرور السعودي؛ الرسم مبسط لا يمثل شكل اللوحة الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-29",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "أعمال على الطريق",
+      "icon": "temp-workers",
+      "meaning": "تنبيه إلى وجود أعمال صيانة أو إنشاء بالقرب من مسار الحركة.",
+      "action": "خففي السرعة حسب اللوحات القائمة، وزيدي مسافة الأمان وانتبهي للعمال.",
+      "memory_tip": "هذه بطاقة موقف تعليمية ولا تمثل نسخة مطابقة للوحة رسمية.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-30",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "تضييق مؤقت للمسار",
+      "icon": "temp-narrow",
+      "meaning": "تنبيه إلى أن مساحة المرور المتاحة قد تضيق قرب منطقة عمل.",
+      "action": "راقبي اللوحات والحواجز، ولا تغيّري المسار إلا بعد التأكد من الأمان.",
+      "memory_tip": "لا تفترضي أن المسار المجاور متاح قبل التحقق.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-022"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-31",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "تحويلة مرورية مؤقتة",
+      "icon": "temp-detour",
+      "meaning": "قد يُوجّه المرور إلى مسار بديل بسبب أعمال قائمة.",
+      "action": "اتبعي اتجاه التحويلة الفعلي ولا تتجاوزي الحواجز.",
+      "memory_tip": "الاتجاه في الرسم توضيحي فقط؛ اتبعي الأسهم الميدانية.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-028"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-32",
+      "category": "مناطق عمل ومؤقتة",
+      "title": "حواجز منطقة عمل",
+      "icon": "temp-barrier",
+      "meaning": "توضح وجود منطقة عمل أو جزء غير متاح من الطريق.",
+      "action": "حافظي على مسافة كافية والتزمي بالمسار المفتوح الذي تحدده الإشارات.",
+      "memory_tip": "الحاجز وسيلة تنظيم ميدانية وليس لوحة أولوية.",
+      "lesson_ids": [
+        "LES-009",
+        "LES-040"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم توعوي مستنبط من تصنيف إشارات وعلامات مناطق العمل والمؤقتة لدى المرور؛ لا تدعي البطاقة تطابق اسم لوحة محددة أو رسمها الرسمي.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-33",
+      "category": "علامات أرضية",
+      "title": "خط مسار متصل",
+      "icon": "mark-solid",
+      "meaning": "خط مرسوم بشكل متواصل يفصل أجزاء من الطريق أو يحدد حافتها؛ يختلف حكم عبوره حسب موضعه ووظيفته.",
+      "action": "لا تعبري الخط الذي يمنع الانتقال بين المسارات؛ راقبي التخطيط والإشارات المصاحبة.",
+      "memory_tip": "ليست كل الخطوط المتصلة ذات وظيفة واحدة؛ اللون والموقع مهمان.",
+      "lesson_ids": [
+        "LES-014",
+        "LES-043"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-34",
+      "category": "علامات أرضية",
+      "title": "خط فصل متقطع",
+      "icon": "mark-dashed",
+      "meaning": "يُستخدم في تحديد بعض حدود المسارات ويختلف عن الخط المتصل.",
+      "action": "لا تغيّري المسار إلا حيث يسمح التنظيم وبعد فحص المرايا والنقطة العمياء وإعطاء الإشارة.",
+      "memory_tip": "الخط المتقطع لا يمنح أولوية أو ضمانًا بأن الانتقال آمن.",
+      "lesson_ids": [
+        "LES-014",
+        "LES-022"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-35",
+      "category": "علامات أرضية",
+      "title": "خط التوقف",
+      "icon": "mark-stop",
+      "meaning": "علامة عرضية توضح موضع الوقوف عند وجود تنظيم يتطلب ذلك.",
+      "action": "توقفي قبل خط الوقوف حين تتطلب الإشارة أو اللوحة التوقف، ولا تحجبي معبر المشاة.",
+      "memory_tip": "وجود الخط وحده لا يعني التوقف في كل الأوقات؛ انتبهي إلى إشارة التحكم.",
+      "lesson_ids": [
+        "LES-016",
+        "LES-017"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    },
+    {
+      "id": "SG-36",
+      "category": "علامات أرضية",
+      "title": "معبر مشاة مخطط",
+      "icon": "mark-crosswalk",
+      "meaning": "علامات أرضية تبين موضع عبور المشاة.",
+      "action": "خففي السرعة وراقبي المشاة واتّبعي إشارات تنظيم عبورهم وأولوية مرورهم.",
+      "memory_tip": "الخطوط ليست مساحة وقوف للمركبة.",
+      "lesson_ids": [
+        "LES-012",
+        "LES-021"
+      ],
+      "source_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+      "reference_scope": "مفهوم تعليمي عن التخطيط الأرضي وفق تصنيفات المرور السعودي؛ التمثيل الهندسي غير معتمد ومراعاة موقع ولون الخط وتنظيم الطريق ضرورية.",
+      "pictogram_status": "educational_illustration_not_official",
+      "review_status": "requires_official_pictogram_comparison",
+      "is_official_exam_question": false
+    }
+  ],
+  "sign_learning": {
+    "title": "مكتبة الإشارات",
+    "categories": [
+      "تحذيرية",
+      "تنظيمية"
+    ],
+    "status": "مسودة تعليمية — ليست قاعدة شاملة أو معرضًا حكوميًا معتمدًا",
+    "category_source": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/",
+    "coverage_notes": "24 بطاقة أولية، ولا تشمل جميع الإرشادية ومناطق العمل والمؤقتة. مطابقة الرموز الرسومية للرسومات الرسمية لم تكتمل."
+  },
+  "lesson_activities": [
+    {
+      "id": "ACT-001",
+      "lesson_id": "LES-001",
+      "title": "أدوات السيارة",
+      "observation": "على سيارة مطفأة، عدّدي أدوات التحكم في الحركة وأدوات الراحة دون لمس دواسات أو تشغيل المحرك.",
+      "reasoning": "ليش لازم نعرف سنة وفئة الأكورد قبل حفظ أماكن بعض الأزرار؟",
+      "verification": "ارجعي لدليل السيارة الحقيقي وحددي مكان الفرامل وناقل الحركة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-SHARD"
+    },
+    {
+      "id": "ACT-002",
+      "lesson_id": "LES-002",
+      "title": "التهيئة والسلامة",
+      "observation": "رتّبي فحص المقعد والمرايا والحزام والأبواب قبل التحرك.",
+      "reasoning": "لو كنتِ بعيدة عن دواسة الفرامل، وش التعديل الأول؟",
+      "verification": "اشرحي لنفسك كيف يؤثر الجلوس على الرؤية والتحكم.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-003",
+      "lesson_id": "LES-003",
+      "title": "لوحة القيادة",
+      "observation": "قارني بين رمز يضيء عند بدء التشغيل ثم يختفي، ورمز تحذير يبقى أثناء القيادة.",
+      "reasoning": "وش أول تصرف عند بقاء رمز الفرامل أو الزيت مضيئًا؟",
+      "verification": "لا تعتمدي صورة رمز من موديل مختلف؛ راجعي دليل سيارتك.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-004",
+      "lesson_id": "LES-004",
+      "title": "أجزاء الطريق",
+      "observation": "حددي في رسم طريق: الممشى، الكتف، المسار، وحافة الطريق.",
+      "reasoning": "هل يصبح الكتف مسار تجاوز بسبب الازدحام؟ ولماذا؟",
+      "verification": "اذكري الفرق بين وجود مساحة واسعة وبين السماح النظامي باستخدامها.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-005",
+      "lesson_id": "LES-005",
+      "title": "المسارات",
+      "observation": "في طريق بثلاث حارات بالاتجاه نفسه، ميّزي عدد المسارات وعدد الاتجاهات.",
+      "reasoning": "وش تفحصين قبل انتقالك من حارة إلى مجاورتها؟",
+      "verification": "اعملي رسم سهم الأرضية الذي يجيز حركة معينة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-006",
+      "lesson_id": "LES-006",
+      "title": "مستخدمو الطريق",
+      "observation": "سيارة متوقفة قرب معبر، وطفل غير ظاهر بالكامل خلفها: ما الخطر المخفي؟",
+      "reasoning": "كيف تغيّرين انتباهك وسرعتك بصورة آمنة قبل المعبر؟",
+      "verification": "اذكري مشاة ودراجات ومركبات كبيرة وكيف تختلف المخاطر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-007",
+      "lesson_id": "LES-007",
+      "title": "إشارات التحذير",
+      "observation": "اختاري ثلاث لوحات تحذير واكتبي ماذا تتوقعين بعدها على الطريق.",
+      "reasoning": "كيف يختلف التحذير عن الأمر بالتوقف؟",
+      "verification": "افتحي مكتبة الإشارات وميزي نوع اللوحة قبل اسمها.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-008",
+      "lesson_id": "LES-008",
+      "title": "الإشارات التنظيمية",
+      "observation": "قارني قف مع ممنوع الدخول مع حد السرعة.",
+      "reasoning": "لماذا لا يجوز تجاوز قف حتى لو تقاطع الطريق فارغ؟",
+      "verification": "حددي التصرف المطلوب عند كل لوحة بدل حفظ اسمها فقط.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-009",
+      "lesson_id": "LES-009",
+      "title": "الإشارات الإرشادية والمؤقتة",
+      "observation": "هناك أعمال طريق ولوحة تحويلة مؤقتة على مسارك المعتاد: ما الذي يتغيّر؟",
+      "reasoning": "كيف تستجيبين دون قطع مسارات فجأة؟",
+      "verification": "اكتبي مثالًا للفرق بين إرشاد الوجهة وتنظيم حركة المرور.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-010",
+      "lesson_id": "LES-010",
+      "title": "الإشارات الضوئية",
+      "observation": "إشارتك خضراء لكن المخرج المقابل مزدحم: هل تعبرين؟",
+      "reasoning": "ما الخطر لو توقفتي في منتصف التقاطع؟",
+      "verification": "اربطِي الضوء بإتاحة مسار خروج آمن.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-011",
+      "lesson_id": "LES-011",
+      "title": "التقاطعات والأولوية",
+      "observation": "طريق فرعي يصل لطريق رئيسي مشغول: من ترقبين قبل الدخول؟",
+      "reasoning": "كيف يغيّر وجود رجل مرور أو إشارة ضوئية قرارك؟",
+      "verification": "لا تطبقي قاعدة القادم من اليمين على كل تقاطع.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-012",
+      "lesson_id": "LES-012",
+      "title": "معابر المشاة ومراجعة الشهر",
+      "observation": "أنتِ تنعطفين ومشاة يعبرون عند اتجاه الدخول: حددي نقطة الخطر.",
+      "reasoning": "كيف تتصرفين إذا كان المعبر مشغولًا؟",
+      "verification": "راجعي معنى الأولوية وسلوك الطريق دون افتراض سرعة ثابتة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-013",
+      "lesson_id": "LES-013",
+      "title": "أجزاء الطريق والمسارات",
+      "observation": "ارسمي شارعًا بمسارين ورصيف وكتف طريق.",
+      "reasoning": "أين يمنع تعاملك مع الطريق كمساحة تجاوز؟",
+      "verification": "قارني هذا الدرس بالدرس الرابع واكتبي ما اختلف.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-014",
+      "lesson_id": "LES-014",
+      "title": "الخطوط المتصلة والمتقطعة",
+      "observation": "خط متقطع يفصل مسارين ومركبة قريبة في المجاور: هل تكفي إباحة عبور الخط؟",
+      "reasoning": "اذكري ما الذي تفحصينه قبل الانتقال.",
+      "verification": "قارني المتصل والمتقطع والمزدوج وفق موقعه وتنظيم الطريق.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-015",
+      "lesson_id": "LES-015",
+      "title": "اختيار المسار",
+      "observation": "مسارك للأمام فقط وتريدين اليمين بعد أمتار: ما الخيار الآمن؟",
+      "reasoning": "ما خطأ التحويل المتأخر من مسار غير مخصص؟",
+      "verification": "اعملي خطة بديلة لو فاتك المخرج.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-016",
+      "lesson_id": "LES-016",
+      "title": "قف وأعط الأفضلية",
+      "observation": "عرّفي الفرق بين قف وأعط الأفضلية في موقفين.",
+      "reasoning": "هل تتطلب علامة أعط الأفضلية الوقوف الكامل دائمًا؟",
+      "verification": "عللي الإجابة بإشارات الطريق وحركة الآخرين.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-017",
+      "lesson_id": "LES-017",
+      "title": "الإشارات الضوئية",
+      "observation": "عندك سهم منع الانعطاف يمينًا مع الضوء الأحمر: ما الذي يحكم قرارك؟",
+      "reasoning": "كيف تتصرفين عند الضوء الأخضر مع تقاطع مسدود؟",
+      "verification": "لا تحوّلي استثناء الانعطاف عند الأحمر إلى إذن عام.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": true,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-018",
+      "lesson_id": "LES-018",
+      "title": "أولوية التقاطعات",
+      "observation": "تقاطع طرق متساوية غير منظم، ومركبتان تصلان تقريبًا معًا: وش تحتاجين تعرفين؟",
+      "reasoning": "متى تنفع قاعدة القادم من اليمين، ومتى لا تكفي؟",
+      "verification": "دوّني أي غموض بدل التخمين.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-019",
+      "lesson_id": "LES-019",
+      "title": "أولوية الدخول إلى الدوار",
+      "observation": "سيارة تتحرك داخل الدوار باتجاه مدخلك: حددي لحظة انتظارك.",
+      "reasoning": "متى يمكن دخول الدوار دون توقف كامل؟",
+      "verification": "اقرئي تنظيم الأولوية الفعلي قبل تطبيق القاعدة العامة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-020",
+      "lesson_id": "LES-020",
+      "title": "اختيار مسار الدوار والمخرج الصحيح",
+      "observation": "أنتِ داخل دوار لكن المسار الحالي لا يخدم مخرجك: ماذا تتجنبين؟",
+      "reasoning": "ما البديل عن قطع عدة مسارات فجأة؟",
+      "verification": "راقبي المشاة عند المخرج.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-021",
+      "lesson_id": "LES-021",
+      "title": "أولوية المشاة",
+      "observation": "سيارة تخرج من دوار ومعبر مشاة قريب: ما الذي يجب مراقبته؟",
+      "reasoning": "كيف تُعطي المشاة حقهم دون توقف خطِر مفاجئ؟",
+      "verification": "ارسمي نقطة توقف آمنة قبل المعبر حسب التخطيط.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-022",
+      "lesson_id": "LES-022",
+      "title": "تغيير المسار والنقطة العمياء",
+      "observation": "تريدين تغيير المسار وهناك سيارة بمحاذاتك: ماذا تظهر المرايا وما الذي لا تظهره؟",
+      "reasoning": "هل الغماز يمنحك الأولوية؟",
+      "verification": "اكتبي تسلسل فحص المرايا والنقطة العمياء والفجوة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-023",
+      "lesson_id": "LES-023",
+      "title": "التجاوز من اليسار أو اليمين",
+      "observation": "منحنى يحجب الرؤية أمام سيارة بطيئة: هل تبادرين بالتجاوز؟",
+      "reasoning": "كيف تختلف الرغبة في التجاوز عن السماح والأمان؟",
+      "verification": "اختاري بديلًا آمنًا إن تعذّر التجاوز.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-024",
+      "lesson_id": "LES-024",
+      "title": "متى يكون التجاوز محظورًا؟",
+      "observation": "أمامك معبر مشاة وخط منع تجاوز: حددي سبب عدم تنفيذ المناورة.",
+      "reasoning": "وش تتوقعين لو سيارتك الخلفية بدأت التجاوز أيضًا؟",
+      "verification": "راجعي اللوحات والخطوط ومواقع منع التجاوز.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-025",
+      "lesson_id": "LES-025",
+      "title": "السرعة المناسبة",
+      "observation": "لوحة 80 مع ضباب كثيف: هل يلزم السير بسرعة 80؟",
+      "reasoning": "كيف تختارين سرعة تناسب الرؤية؟",
+      "verification": "اكتبي الفرق بين الحد الأقصى والسرعة الآمنة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-026",
+      "lesson_id": "LES-026",
+      "title": "مسافة التوقف",
+      "observation": "فرّقي بين مسافة رد الفعل ومسافة الفرملة والتوقف الكلي.",
+      "reasoning": "ليش قد تتضاعف مسافة الكبح مع زيادة السرعة؟",
+      "verification": "لا تعتمدي رقمًا محسوبًا كناتج دقيق لسيارة حقيقية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-027",
+      "lesson_id": "LES-027",
+      "title": "مسافة الأمان وقاعدة الثانيتين",
+      "observation": "السيارة الأمامية تعبر علامة ثابتة ثم تمرين بعدها: كيف تقيسين الفاصل الزمني؟",
+      "reasoning": "ما الذي تغيّرينه عند بداية المطر؟",
+      "verification": "اشرحِي الفرق بين مسافة التتابع ومسافة التوقف.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-028",
+      "lesson_id": "LES-028",
+      "title": "القيادة الوقائية واكتشاف الأخطار",
+      "observation": "كرة تظهر من خلف سيارة متوقفة قرب حديقة: ما الخطر المحتمل؟",
+      "reasoning": "كيف تتحولين من ملاحظة الخطر إلى خطة تصرف آمنة؟",
+      "verification": "دوّني علامتين تشيران إلى خطر غير ظاهر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-029",
+      "lesson_id": "LES-029",
+      "title": "عادات القيادة الخطرة",
+      "observation": "سائق خلفك ملتصق جدًا: كيف تتجنبين رد فعل عدائي؟",
+      "reasoning": "ما أثر النعاس والهاتف على إدراك الخطر؟",
+      "verification": "اقترحي تصرفًا وقائيًا لا يعرّض الآخرين للخطر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-030",
+      "lesson_id": "LES-030",
+      "title": "اختبارات اكتشاف الأخطار بالفيديو",
+      "observation": "شاهدي مشهدًا تعليميًا وتوقفي قبل ظهور الخطر: وش تتوقعين؟",
+      "reasoning": "ليش نجاح اختبار إدراك خطر لا يساوي إتقان القيادة؟",
+      "verification": "دوّني ثلاثة مؤشرات تنبأتِ منها بالخطر.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-031",
+      "lesson_id": "LES-031",
+      "title": "أنواع المواقف",
+      "observation": "قارني موقفًا عموديًا ومائلًا وموازيًا مع خطوط التحديد.",
+      "reasoning": "أي موقف تختارين للتدرب الأول ولماذا؟",
+      "verification": "انتبهي لأن السماح بالوقوف يسبق تعلم المناورة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-032",
+      "lesson_id": "LES-032",
+      "title": "الرجوع للخلف",
+      "observation": "الكاميرا الخلفية تظهر أرضًا خالية: ما المناطق التي لا تضمن تغطيتها؟",
+      "reasoning": "متى يجب إيقاف الرجوع فورًا؟",
+      "verification": "اشرحي دور المرايا والنظر المباشر جنبًا إلى جنب.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-033",
+      "lesson_id": "LES-033",
+      "title": "الخروج من الموقف بالرجوع للخلف",
+      "observation": "عند الرجوع للخلف، مقدمة السيارة تقترب من سيارة مجاورة: ما المشكلة؟",
+      "reasoning": "كيف تتصرفين قبل أن تتقلص المسافة أكثر؟",
+      "verification": "افصلي بين اتجاه المؤخرة وتأرجح المقدمة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-034",
+      "lesson_id": "LES-034",
+      "title": "الركن الموازي",
+      "observation": "فيديو أجنبي للركن الموازي على يسار الشارع: ما الذي لا تنقلينه حرفيًا؟",
+      "reasoning": "كيف تختلف المرجعيات باختلاف اتجاه السير وأبعاد السيارة؟",
+      "verification": "اكتبي الخطوات المفاهيمية فقط لا عدد لفات المقود.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-035",
+      "lesson_id": "LES-035",
+      "title": "مناورات X وT وY",
+      "observation": "صديقتك تقول إن كل مدارس المملكة تختبر X وT وY بالطريقة نفسها: كيف تتحققين؟",
+      "reasoning": "ما المشترك الآمن بين هذه المناورات؟",
+      "verification": "حددي تعليمات المدرسة ومركبة التدريب كمرجع للتطبيق.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-JEDDAH"
+    },
+    {
+      "id": "ACT-036",
+      "lesson_id": "LES-036",
+      "title": "المرتفعات وفرامل التوقف",
+      "observation": "سيارة أوتوماتيكية ستتركينها على منحدر: ما الذي يعنيه وضع P وما دور فرامل التوقف؟",
+      "reasoning": "هل Brake Hold يحل محل تأمين السيارة عند تركها؟",
+      "verification": "راجعي دليل سيارتك قبل تطبيق خطوات الركن.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-JEDDAH"
+    },
+    {
+      "id": "ACT-037",
+      "lesson_id": "LES-037",
+      "title": "المطر والتماسك ومسافة الأمان",
+      "observation": "أمامك ماء متجمع لا تعرفين عمقه: لماذا لا تفترضين إمكانية العبور؟",
+      "reasoning": "كيف تضبطين السرعة ومسافة الأمان قبل الخطر؟",
+      "verification": "فرّقي بين فقد التماسك العادي والانزلاق المائي.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-038",
+      "lesson_id": "LES-038",
+      "title": "الغبار والضباب",
+      "observation": "ضباب كثيف والنور العالي ينعكس في وجهك: ماذا تلاحظين؟",
+      "reasoning": "متى يصبح تأجيل الرحلة أفضل من الاستمرار؟",
+      "verification": "اكتبي لماذا الفلشر ليس بديلًا عن الأنوار الصحيحة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-039",
+      "lesson_id": "LES-039",
+      "title": "القيادة الليلية وأنواع الأنوار",
+      "observation": "قابَلَتك مركبة ليلًا بطريق غير مضاء: ماذا تفعلين بالنور العالي؟",
+      "reasoning": "ما الفرق بين أنوار الموضع وأنوار السير؟",
+      "verification": "ارجعي لدليل سيارتك لمعرفة مفاتيح الإضاءة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-040",
+      "lesson_id": "LES-040",
+      "title": "تعطل السيارة على الطريق",
+      "observation": "تعطلت سيارة قرب طريق سريع والخروج غير آمن: حددي أول خطر.",
+      "reasoning": "هل يجب النزول لوضع مثلث تحذيري مهما كانت الظروف؟",
+      "verification": "رتبي خيارات السلامة وطلب المساعدة حسب الموقف.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-041",
+      "lesson_id": "LES-041",
+      "title": "لمبات التحذير في هوندا",
+      "observation": "ظهر تحذير ضغط الزيت أثناء القيادة: لماذا لا يكفي تجاهله؟",
+      "reasoning": "ما الخطأ في فتح غطاء مبرد ساخن عند ارتفاع الحرارة؟",
+      "verification": "راجعي رموز الزيت والحرارة والفرامل في دليل السيارة الفعلي.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-042",
+      "lesson_id": "LES-042",
+      "title": "الحوادث وأرقام الطوارئ",
+      "observation": "حادث فيه مصاب: وش المعلومات الأساسية التي تحتاجين تقديمها للجهة المختصة؟",
+      "reasoning": "لماذا تختلف إجراءات الحادث المصحوب بإصابات عن حادث أضرار مادية؟",
+      "verification": "تأكدي من الأرقام والجهات الرسمية حسب منطقتك الحالية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": true,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-043",
+      "lesson_id": "LES-043",
+      "title": "مراجعة الإشارات والخطوط",
+      "observation": "صنّفي أربع علامات بين تحذيرية وتنظيمية وخط أرضي.",
+      "reasoning": "ما الفرق بين السماح بعبور خط متقطع وبين سلامة الحركة؟",
+      "verification": "راجعي لوحة قف وسهم المسار بدقة.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-044",
+      "lesson_id": "LES-044",
+      "title": "الأولوية والتقاطعات والدوارات",
+      "observation": "عند مخرج دوار مشاة يعبرون: من يجب الانتباه له؟",
+      "reasoning": "كيف تعالجين أولوية الدوار وأولوية المشاة ضمن موقف واحد؟",
+      "verification": "قارني هذا الموقف بدخول تقاطع من طريق فرعي.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-045",
+      "lesson_id": "LES-045",
+      "title": "السرعة والمخاطر والطوارئ",
+      "observation": "سرعة 60 ومسافة قصيرة مع انشغال بالهاتف: كم خطر موجود؟",
+      "reasoning": "كيف تختلف مسافة الاستجابة عند التشتت؟",
+      "verification": "دوّني أول ثلاثة تعديلات تجعل الموقف أكثر أمانًا.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-046",
+      "lesson_id": "LES-046",
+      "title": "إجراءات إصدار الرخصة",
+      "observation": "لديك موعد تدريب على أبشر: وش المستندات والمتطلبات التي يجب التأكد منها؟",
+      "reasoning": "ليش ما يصح الاعتماد على رسم أو رسوم تدريب قديمة؟",
+      "verification": "افتحي خدمة أبشر ومدرستك للتأكد من المتطلبات الحالية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": true,
+      "source_id": "DOC-TRAINEE"
+    },
+    {
+      "id": "ACT-047",
+      "lesson_id": "LES-047",
+      "title": "برامج التدريب والاختبارات",
+      "observation": "متدربة تبدأ من الصفر وأخرى لديها خبرة: هل يُفترض أنهما تتلقيان البرنامج نفسه؟",
+      "reasoning": "من أين تحصلين على عدد الساعات والرسوم الصحيح؟",
+      "verification": "لا تعتمدي أرقام التجميعات غير المثبتة كسياسة رسمية.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-SHARD"
+    },
+    {
+      "id": "ACT-048",
+      "lesson_id": "LES-048",
+      "title": "الاستعداد للاختبار النهائي وما بعد الرخصة",
+      "observation": "أنهيتِ كل الأسئلة بنجاح: هل يعني هذا جاهزيتك للقيادة العملية؟",
+      "reasoning": "أي ثلاثة موضوعات تحتاجين مراجعتها حتى لو أجبتِ عن أسئلتها؟",
+      "verification": "جهزي أسئلة للمدربة وخطة مراجعة لأخطائك.",
+      "format": "guided_observation_and_explanation",
+      "status": "original_practice_not_formal_assessment",
+      "completion_mode": "self_reflection",
+      "review_required": false,
+      "source_id": "DOC-TRAINEE"
+    }
+  ],
+  "school_specific_evidence": [
+    {
+      "id": "SCHOOL-QUDS-HOURS",
+      "publisher": "مدرسة جامعة القصيم لتعليم القيادة",
+      "claim": "تعرض صفحة الأسعار ثلاث فئات تدريبية: 6 و15 و30 ساعة.",
+      "applies_to": "مدرسة جامعة القصيم وفق الصفحة المنشورة",
+      "not_universal": true,
+      "source_url": "https://sites.qu.edu.sa/quds/quds-prices/",
+      "verified_at": "2026-10-12"
+    },
+    {
+      "id": "SCHOOL-QUDS-PRACTICAL",
+      "publisher": "مدرسة جامعة القصيم لتعليم القيادة",
+      "claim": "تتضمن صفحة مقالات المدرسة معايير رسوب فوري مرتبطة بمناورات المواقف ومددها؛ تختلف عن نصوص التجميعات غير الموثقة.",
+      "applies_to": "اختبارات المدرسة المنشورة على موقعها",
+      "not_universal": true,
+      "source_url": "https://sites.qu.edu.sa/quds/articles-and-tips/",
+      "verified_at": "2026-10-12"
+    }
+  ],
+  "source_library_audit": {
+    "checked_on": "2026-10-13",
+    "personal_pdf_records": 7,
+    "reference_images": 6,
+    "external_study_sources": 8,
+    "official_and_context_sources": 9,
+    "lesson_reading_index_count": 48,
+    "linking_policy": "topic index does not establish accuracy or current legal validity",
+    "distribution_policy": "Do not publish user-provided PDFs, copyrighted signs/photographs, or proprietary font files to public GitHub without a license."
+  },
+  "content_verification": {
+    "last_reviewed": "2026-10-13",
+    "note": "حالة الثقة تصف الادعاء المحدد الذي تمت مراجعته ولا تعني اعتماد الدرس كاملًا أو أن أسئلته أسئلة اختبار رسمية.",
+    "levels": {
+      "official_current_support": "المفهوم المحدد مدعوم بمصدر رسمي سعودي حالي تمت مراجعته في التاريخ المبين.",
+      "school_primary_support": "المعلومة منشورة من مدرسة قيادة سعودية محددة وقد لا تنطبق على جميع المدارس.",
+      "training_reference_support": "المعلومة مدعومة بمرجع تدريبي مرفوع؛ يلزم تحديث الأحكام المتغيرة من المصدر الرسمي.",
+      "pending": "قيد التدقيق."
+    }
+  },
+  "sign_library_metadata": {
+    "reviewed_on": "2026-10-13",
+    "official_guide_url": "https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy83V0CTQ0cA71d_T1djI0MXA30gxOL9L24FMCAC07oR-HXFQHVAVUOp_QjM7MKC6Mc9aOS8_NKUitK9CNKihLT0jKTVQ2gDIXEIlWD3MTMPIRIcWY60K3F-gXZ7uEA0o5r2w!!/",
+    "official_categories": [
+      "تحذيرية",
+      "تنظيمية",
+      "إرشادية",
+      "مناطق عمل ومؤقتة"
+    ],
+    "scope": "مكتبة مِسار الحالية مجموعة تعليمية منتقاة وليست كتالوجًا حكوميًا كاملًا. المفاهيم مرتبطة بمرجع المرور، بينما الرسومات SVG أصلية مبسطة وغير معتمدة كمطابقة هندسية للوحات الرسمية.",
+    "mastery_rule": "تُعد اللوحة مثبّتة داخل مِسار بعد إجابة صحيحة واحدة على معناها وإجابة صحيحة واحدة على التصرف المرتبط بها؛ هذا معيار تعلم داخلي وليس معيار اختبار رسمي."
+  },
+  "learning_design": {
+    "reviewed_on": "2026-10-13",
+    "retrieval_practice": {
+      "label": "الاسترجاع النشط والتكرار المتباعد",
+      "source_url": "https://www.nature.com/articles/s44159-022-00089-1",
+      "note": "يستخدم مِسار أسئلة الاسترجاع والمراجعة المتباعدة كاستراتيجية تعلم؛ مؤشرات الإتقان داخل الموقع تنظيمية وليست درجات جاهزية أو اختبار رسمي."
+    }
+  }
+}
+;

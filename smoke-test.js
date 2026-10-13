@@ -68,8 +68,9 @@ context.location.hash='#/study-guide';windowHandlers.hashchange();if(!element('a
 context.location.hash='#/paper-practice';windowHandlers.hashchange();if(!element('app').innerHTML.includes('اختبار ورقي تجريبي')||!element('app').innerHTML.includes('طباعة نموذج الأسئلة'))throw Error('Printable practice missing');if(!element('app').innerHTML.includes('36 سؤالًا'))throw Error('Printed paper count stale');console.log('PASS study guide and 36-question paper assessment');if(!element('app').innerHTML.includes('paper-visual'))throw Error('Paper practice visuals missing');
 
 context.location.hash='#/lesson/19';windowHandlers.hashchange();
-if(!element('app').innerHTML.includes('اقرئي من الكتب هنا')||!element('app').innerHTML.includes('data-action="hub-inline-open"'))throw Error('Indexed PDF lesson reading missing');
-console.log('PASS per-lesson private PDF reading references');
+if(!element('app').innerHTML.includes('المرجع داخل مسار — بدون رفع يدوي')||!element('app').innerHTML.includes('data-action="hub-source-summary"'))throw Error('Self-contained lesson source reading missing');
+if(element('app').innerHTML.includes('data-action="hub-pick"'))throw Error('Lesson still asks for manual PDF upload');
+console.log('PASS per-lesson source summaries without manual upload');
 context.location.hash='#/practice-quiz';windowHandlers.hashchange();
 if(!element('app').innerHTML.includes('أخطائي')||!element('app').innerHTML.includes('غير المحلول')||!element('app').innerHTML.includes('راجعي الدرس المرتبط'))throw Error('Mistakes filters and lesson links absent');
 console.log('PASS targeted mistakes review, per-question notes, chapter back-links');

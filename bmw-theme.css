@@ -232,94 +232,7 @@ html[data-theme="light"] .hub-explain{background:#eaf7f1!important;border-right:
 html[data-theme="dark"] .paper-visual{background:#f7fafc!important}
 
 
-/* UI/UX Pro Max audit / HERO VISIBILITY PASS
-   Hero media is a real content focal point; don't hide it behind body copy.
-   Desktop: 100% photo opacity, brighter car, controlled falloff at text edge.
-   Mobile: its own visual panel below text, full opacity, no image-as-watermark. */
-.hero.hero-premium{position:relative;overflow:hidden}
-.hero-premium .hero-copy{position:relative;z-index:4}
-.hero-bmw-scene{
- left:0;right:auto;top:0;bottom:0;width:54%;opacity:1!important;
- border-radius:0;overflow:hidden;
- background:radial-gradient(ellipse at 52% 78%,rgba(0,116,205,.24),transparent 65%),#0a1420;
-}
-.bmw-scene-glow{opacity:.42;filter:blur(13px)}
-.bmw-hero-photo{
- display:block;opacity:1!important;
- object-fit:cover;object-position:50% 56%;
- filter:brightness(1.32) saturate(.83) contrast(1.04);
- -webkit-mask-image:linear-gradient(to right,#000 0%,#000 68%,rgba(0,0,0,.85) 79%,transparent 99%);
- mask-image:linear-gradient(to right,#000 0%,#000 68%,rgba(0,0,0,.85) 79%,transparent 99%);
-}
-.bmw-hero-photo[hidden]{display:none!important}
-.bmw-silhouette{opacity:.96;bottom:6%;width:116%}
-.bmw-scene-caption{
- display:block;left:6%;bottom:7%;z-index:2;
- background:rgba(8,23,39,.72);border:1px solid rgba(128,196,245,.24);
- border-radius:7px;padding:5px 10px;color:#d8efff;
- backdrop-filter:blur(8px);letter-spacing:.12em
-}
-html[data-theme="light"] .bmw-hero-photo{
- filter:brightness(1.18) saturate(.85) contrast(1.05);
-}
-html[data-theme="light"] .hero-bmw-scene{background:#d8e8f3}
-html[data-theme="light"] .bmw-scene-caption{background:rgba(10,38,65,.77);color:white}
-
-/* tablet: keep car readable without obscuring the title */
-@media(min-width:901px) and (max-width:1199px){
- .hero-bmw-scene{width:48%;left:0;opacity:1!important}
- .bmw-hero-photo{object-position:50% 50%;filter:brightness(1.35) saturate(.87) contrast(1.03)}
- .hero-premium .hero-copy{max-width:57%;flex:0 1 57%}
-}
-
-/* mobile/tablet: dedicate a high-contrast image stage instead of 20% watermark */
-@media(max-width:900px){
- .hero.hero-premium{
-   display:flex;flex-direction:column;align-items:stretch;gap:15px;
-   height:auto;min-height:unset;padding:26px 24px 20px;
- }
- .hero-premium .hero-copy{order:0;flex:none;width:100%;max-width:100%;z-index:4}
- .hero-premium .hero-status-strip{position:relative;z-index:4}
- .hero-bmw-scene{
-   position:relative;order:1;flex:none;align-self:stretch;
-   left:auto;right:auto;top:auto;bottom:auto;
-   width:100%;height:clamp(186px,32vw,290px);margin-top:2px;
-   opacity:1!important;border-radius:16px;
-   border:1px solid rgba(93,173,231,.25);
-   box-shadow:inset 0 1px 0 rgba(205,231,251,.12);
- }
- .bmw-hero-photo{
-   inset:0;width:100%;height:100%;opacity:1!important;
-   object-position:50% 54%;
-   filter:brightness(1.33) saturate(.86) contrast(1.04)!important;
-   -webkit-mask-image:none!important;mask-image:none!important;
- }
- .bmw-silhouette{bottom:2%;left:0;width:100%;max-height:95%}
- .bmw-scene-caption{display:block;left:12px;bottom:12px}
- .hero-bmw-scene:after{
-   content:"";position:absolute;inset:0;border-radius:inherit;
-   pointer-events:none;
-   box-shadow:inset 0 -30px 50px rgba(6,16,29,.16),inset 0 1px 0 rgba(255,255,255,.07)
- }
- .hero-premium .hero-gauge{display:none}
- .hero-premium .hero-serial{display:none}
-}
-@media(max-width:610px){
- .hero.hero-premium{padding:24px 18px 18px;gap:12px}
- .hero-bmw-scene{
-   width:100%;left:auto;right:auto;top:auto;bottom:auto;
-   height:clamp(180px,52vw,250px);opacity:1!important;
- }
- .bmw-hero-photo{
-   object-position:50% 52%;
-   filter:brightness(1.34) saturate(.9) contrast(1.03)!important
- }
- .hero-premium .hero-copy{max-width:100%}
-}
-@media(prefers-reduced-motion:reduce){
- .hero-bmw-scene,.bmw-hero-photo{transition:none!important;animation:none!important}
-}
-
+/* Consolidated hero staging lives in FINAL VISUAL RULES below. */
 
 /* MASAR UI coherence pass — Oct 2026: accessible, calm BMW-inspired learning */
 html[data-theme="dark"]{--bmw-bg:#090e14;--bmw-panel:#141c27;--bmw-panel-2:#1b2634;--bmw-border:#304050;--bmw-muted:#b9c8d8;--bmw-accent:#53aff5;--bmw-pill:#19344b;--bmw-text:#f3f7fb;--crimson:#53aff5;--wine:#0066b1;--sky:#53aff5}
@@ -516,3 +429,58 @@ html[data-theme="light"] .topbar .theme-toggle:hover{background:#e9f4fb!importan
  .sidebar .sidebar-group-title{min-height:44px!important}
  .lesson-body :is(p,li),.source-chapter :is(p,li){font-size:14px!important}
 }
+
+
+/* FINAL VISUAL RULES — BMW light/dark and lesson UI, 2026-10-14 */
+html[data-theme]{--ui-surface:var(--bmw-panel);--ui-soft:var(--bmw-panel-2);--ui-text:var(--bmw-text);--ui-muted:var(--bmw-muted);--ui-border:var(--bmw-border);--ui-accent:var(--bmw-accent)}
+html,body{max-width:100%;overflow-x:clip}
+.app-main,.page,.lesson-main,.lesson-layout,.study-command-grid{min-width:0}
+:where(.page,.card,.lesson-body,.studio-session){overflow-wrap:break-word}
+html[data-theme] :is(.studio-session,.studio-settings,.studio-lesson-tools,.studio-checkpoint,.studio-explain,.studio-focus-panel,.studio-search-window,.studio-timer-controls,.video-time-jumps,.studio-session-summary){
+ background:var(--ui-surface)!important;border-color:var(--ui-border)!important;color:var(--ui-text)!important}
+html[data-theme] :is(.studio-clock span,.studio-lesson-tool-head strong,.studio-settings h2,.studio-heading h2,.studio-checkpoint strong){color:var(--ui-text)!important}
+html[data-theme] :is(.studio-clock small,.studio-heading p,.studio-session-history,.studio-settings p,.studio-focus-panel>p,.studio-checkpoint p,.studio-explain p,.video-time-jumps small){color:var(--ui-muted)!important}
+html[data-theme] :is(.studio-timer-buttons button,.studio-duration button,.studio-diagnostic-answers button,.studio-timer-opener,.video-time-list button,.studio-result,.studio-step-links a){
+ background:var(--ui-soft)!important;border:1px solid var(--ui-border)!important;color:var(--ui-text)!important}
+html[data-theme] :is(.studio-duration button,.studio-diagnostic-answers button,.studio-result):hover{border-color:var(--ui-accent)!important}
+html[data-theme] :is(.studio-duration button.selected,.studio-timer-buttons button:first-child,.studio-timer-opener){
+ background:var(--bmw-pill)!important;color:var(--ui-accent)!important;border-color:var(--ui-accent)!important}
+html[data-theme] .studio-diagnostic-answers button.is-correct{background:var(--good-soft)!important;color:var(--good)!important;border-color:var(--good)!important}
+html[data-theme] .studio-diagnostic-answers button.is-wrong{background:var(--blush)!important;color:var(--danger)!important;border-color:var(--danger)!important}
+html[data-theme] .studio-clock:before{background:linear-gradient(to top,var(--ui-accent) var(--studio-progress),var(--ui-border) var(--studio-progress))}
+html[data-theme] .studio-return,html[data-theme] .studio-session-summary{color:var(--ui-text)!important;border:1px solid var(--ui-border)}
+html[data-theme="light"] :is(.study-stars p,.adaptive-plan p,.studio-session-summary p,.lesson-quick-recap p){color:#52687d!important}
+html[data-theme="dark"] :is(.study-stars p,.adaptive-plan p,.studio-session-summary p,.lesson-quick-recap p){color:var(--ui-muted)!important}
+.hero.hero-premium{position:relative;overflow:hidden;isolation:isolate}
+.hero.hero-premium .hero-copy{position:relative;z-index:3}
+.hero.hero-premium .hero-bmw-scene{position:absolute;left:0;right:auto;top:0;bottom:0;width:51%;height:auto;opacity:1!important;z-index:1;overflow:hidden;pointer-events:none;background:var(--ui-soft)}
+.hero.hero-premium .hero-bmw-scene .bmw-hero-photo{display:block;position:absolute;inset:0;width:100%;height:100%;opacity:1!important;object-fit:cover;object-position:50% 50%;filter:brightness(1.15) saturate(.88) contrast(1.04)!important;-webkit-mask-image:linear-gradient(to right,#000 0%,#000 72%,transparent 100%)!important;mask-image:linear-gradient(to right,#000 0%,#000 72%,transparent 100%)!important}
+.hero.hero-premium .hero-bmw-scene .bmw-hero-photo[hidden]{display:none!important}
+html[data-theme="light"] .hero.hero-premium .hero-bmw-scene{background:#dcebf6;border-color:#afc8de}
+html[data-theme="light"] .hero.hero-premium .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.07) saturate(.92) contrast(1.05)!important}
+html[data-theme="light"] .hero.hero-premium .hero-copy :is(h1,.eyebrow,.hero-kicker){color:#163247!important}
+html[data-theme="light"] .hero.hero-premium .hero-copy p{color:#2d4b60!important}
+html[data-theme="light"] .hero.hero-premium .hero-copy h1 span{color:#0066b1!important;-webkit-text-fill-color:#0066b1!important;background:none!important}
+#main:focus{outline:none}
+#main:focus-visible{outline:3px solid var(--ui-accent);outline-offset:-3px}
+:where(#reading,#lesson-videos,#practice,#notes,#scenario,#source-reading,#active-recall){scroll-margin-top:90px}
+@media(min-width:901px){.hero.hero-premium .hero-copy{max-width:51%;flex:0 1 51%}}
+@media(max-width:900px){
+ .hero.hero-premium{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:16px!important;height:auto;min-height:0!important}
+ .hero.hero-premium .hero-copy{order:0;width:100%;max-width:100%;flex:none;padding:0}
+ .hero.hero-premium .hero-bmw-scene{position:relative;inset:auto;order:1;width:100%!important;height:clamp(190px,34vw,300px)!important;min-height:190px;flex:none;opacity:1!important;border:1px solid var(--ui-border);border-radius:14px;overflow:hidden;margin:0}
+ .hero.hero-premium .hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.13) saturate(.90)!important;-webkit-mask-image:none!important;mask-image:none!important}
+ html[data-theme="light"] .hero.hero-premium .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.06) saturate(.92)!important}
+ .hero.hero-premium .hero-actions{width:100%;display:flex;flex-wrap:wrap}
+ .hero.hero-premium .hero-actions .btn{white-space:normal;text-align:center}
+}
+@media(max-width:610px){
+ .hero.hero-premium .hero-bmw-scene{height:clamp(182px,52vw,255px)!important;min-height:182px}
+ .topbar-tools{gap:6px;min-width:0}
+ .topbar-tools .studio-search-trigger span,.topbar-tools .focus-toggle span{display:none}
+ .topbar .crumb{min-width:0;max-width:32vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .topbar .chip,.topbar .theme-toggle{min-width:40px;min-height:42px;justify-content:center;padding-inline:9px}
+ .page{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+}
+@media(prefers-reduced-motion:reduce){.hero.hero-premium .hero-bmw-scene,.hero.hero-premium .bmw-hero-photo{animation:none!important;transition:none!important}}
+

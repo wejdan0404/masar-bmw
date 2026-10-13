@@ -1765,94 +1765,7 @@ html[data-theme="light"] .hub-explain{background:#eaf7f1!important;border-right:
 html[data-theme="dark"] .paper-visual{background:#f7fafc!important}
 
 
-/* UI/UX Pro Max audit / HERO VISIBILITY PASS
-   Hero media is a real content focal point; don't hide it behind body copy.
-   Desktop: 100% photo opacity, brighter car, controlled falloff at text edge.
-   Mobile: its own visual panel below text, full opacity, no image-as-watermark. */
-.hero.hero-premium{position:relative;overflow:hidden}
-.hero-premium .hero-copy{position:relative;z-index:4}
-.hero-bmw-scene{
- left:0;right:auto;top:0;bottom:0;width:54%;opacity:1!important;
- border-radius:0;overflow:hidden;
- background:radial-gradient(ellipse at 52% 78%,rgba(0,116,205,.24),transparent 65%),#0a1420;
-}
-.bmw-scene-glow{opacity:.42;filter:blur(13px)}
-.bmw-hero-photo{
- display:block;opacity:1!important;
- object-fit:cover;object-position:50% 56%;
- filter:brightness(1.32) saturate(.83) contrast(1.04);
- -webkit-mask-image:linear-gradient(to right,#000 0%,#000 68%,rgba(0,0,0,.85) 79%,transparent 99%);
- mask-image:linear-gradient(to right,#000 0%,#000 68%,rgba(0,0,0,.85) 79%,transparent 99%);
-}
-.bmw-hero-photo[hidden]{display:none!important}
-.bmw-silhouette{opacity:.96;bottom:6%;width:116%}
-.bmw-scene-caption{
- display:block;left:6%;bottom:7%;z-index:2;
- background:rgba(8,23,39,.72);border:1px solid rgba(128,196,245,.24);
- border-radius:7px;padding:5px 10px;color:#d8efff;
- backdrop-filter:blur(8px);letter-spacing:.12em
-}
-html[data-theme="light"] .bmw-hero-photo{
- filter:brightness(1.18) saturate(.85) contrast(1.05);
-}
-html[data-theme="light"] .hero-bmw-scene{background:#d8e8f3}
-html[data-theme="light"] .bmw-scene-caption{background:rgba(10,38,65,.77);color:white}
-
-/* tablet: keep car readable without obscuring the title */
-@media(min-width:901px) and (max-width:1199px){
- .hero-bmw-scene{width:48%;left:0;opacity:1!important}
- .bmw-hero-photo{object-position:50% 50%;filter:brightness(1.35) saturate(.87) contrast(1.03)}
- .hero-premium .hero-copy{max-width:57%;flex:0 1 57%}
-}
-
-/* mobile/tablet: dedicate a high-contrast image stage instead of 20% watermark */
-@media(max-width:900px){
- .hero.hero-premium{
-   display:flex;flex-direction:column;align-items:stretch;gap:15px;
-   height:auto;min-height:unset;padding:26px 24px 20px;
- }
- .hero-premium .hero-copy{order:0;flex:none;width:100%;max-width:100%;z-index:4}
- .hero-premium .hero-status-strip{position:relative;z-index:4}
- .hero-bmw-scene{
-   position:relative;order:1;flex:none;align-self:stretch;
-   left:auto;right:auto;top:auto;bottom:auto;
-   width:100%;height:clamp(186px,32vw,290px);margin-top:2px;
-   opacity:1!important;border-radius:16px;
-   border:1px solid rgba(93,173,231,.25);
-   box-shadow:inset 0 1px 0 rgba(205,231,251,.12);
- }
- .bmw-hero-photo{
-   inset:0;width:100%;height:100%;opacity:1!important;
-   object-position:50% 54%;
-   filter:brightness(1.33) saturate(.86) contrast(1.04)!important;
-   -webkit-mask-image:none!important;mask-image:none!important;
- }
- .bmw-silhouette{bottom:2%;left:0;width:100%;max-height:95%}
- .bmw-scene-caption{display:block;left:12px;bottom:12px}
- .hero-bmw-scene:after{
-   content:"";position:absolute;inset:0;border-radius:inherit;
-   pointer-events:none;
-   box-shadow:inset 0 -30px 50px rgba(6,16,29,.16),inset 0 1px 0 rgba(255,255,255,.07)
- }
- .hero-premium .hero-gauge{display:none}
- .hero-premium .hero-serial{display:none}
-}
-@media(max-width:610px){
- .hero.hero-premium{padding:24px 18px 18px;gap:12px}
- .hero-bmw-scene{
-   width:100%;left:auto;right:auto;top:auto;bottom:auto;
-   height:clamp(180px,52vw,250px);opacity:1!important;
- }
- .bmw-hero-photo{
-   object-position:50% 52%;
-   filter:brightness(1.34) saturate(.9) contrast(1.03)!important
- }
- .hero-premium .hero-copy{max-width:100%}
-}
-@media(prefers-reduced-motion:reduce){
- .hero-bmw-scene,.bmw-hero-photo{transition:none!important;animation:none!important}
-}
-
+/* Consolidated hero staging lives in FINAL VISUAL RULES below. */
 
 /* MASAR UI coherence pass — Oct 2026: accessible, calm BMW-inspired learning */
 html[data-theme="dark"]{--bmw-bg:#090e14;--bmw-panel:#141c27;--bmw-panel-2:#1b2634;--bmw-border:#304050;--bmw-muted:#b9c8d8;--bmw-accent:#53aff5;--bmw-pill:#19344b;--bmw-text:#f3f7fb;--crimson:#53aff5;--wine:#0066b1;--sky:#53aff5}
@@ -2049,6 +1962,61 @@ html[data-theme="light"] .topbar .theme-toggle:hover{background:#e9f4fb!importan
  .sidebar .sidebar-group-title{min-height:44px!important}
  .lesson-body :is(p,li),.source-chapter :is(p,li){font-size:14px!important}
 }
+
+
+/* FINAL VISUAL RULES — BMW light/dark and lesson UI, 2026-10-14 */
+html[data-theme]{--ui-surface:var(--bmw-panel);--ui-soft:var(--bmw-panel-2);--ui-text:var(--bmw-text);--ui-muted:var(--bmw-muted);--ui-border:var(--bmw-border);--ui-accent:var(--bmw-accent)}
+html,body{max-width:100%;overflow-x:clip}
+.app-main,.page,.lesson-main,.lesson-layout,.study-command-grid{min-width:0}
+:where(.page,.card,.lesson-body,.studio-session){overflow-wrap:break-word}
+html[data-theme] :is(.studio-session,.studio-settings,.studio-lesson-tools,.studio-checkpoint,.studio-explain,.studio-focus-panel,.studio-search-window,.studio-timer-controls,.video-time-jumps,.studio-session-summary){
+ background:var(--ui-surface)!important;border-color:var(--ui-border)!important;color:var(--ui-text)!important}
+html[data-theme] :is(.studio-clock span,.studio-lesson-tool-head strong,.studio-settings h2,.studio-heading h2,.studio-checkpoint strong){color:var(--ui-text)!important}
+html[data-theme] :is(.studio-clock small,.studio-heading p,.studio-session-history,.studio-settings p,.studio-focus-panel>p,.studio-checkpoint p,.studio-explain p,.video-time-jumps small){color:var(--ui-muted)!important}
+html[data-theme] :is(.studio-timer-buttons button,.studio-duration button,.studio-diagnostic-answers button,.studio-timer-opener,.video-time-list button,.studio-result,.studio-step-links a){
+ background:var(--ui-soft)!important;border:1px solid var(--ui-border)!important;color:var(--ui-text)!important}
+html[data-theme] :is(.studio-duration button,.studio-diagnostic-answers button,.studio-result):hover{border-color:var(--ui-accent)!important}
+html[data-theme] :is(.studio-duration button.selected,.studio-timer-buttons button:first-child,.studio-timer-opener){
+ background:var(--bmw-pill)!important;color:var(--ui-accent)!important;border-color:var(--ui-accent)!important}
+html[data-theme] .studio-diagnostic-answers button.is-correct{background:var(--good-soft)!important;color:var(--good)!important;border-color:var(--good)!important}
+html[data-theme] .studio-diagnostic-answers button.is-wrong{background:var(--blush)!important;color:var(--danger)!important;border-color:var(--danger)!important}
+html[data-theme] .studio-clock:before{background:linear-gradient(to top,var(--ui-accent) var(--studio-progress),var(--ui-border) var(--studio-progress))}
+html[data-theme] .studio-return,html[data-theme] .studio-session-summary{color:var(--ui-text)!important;border:1px solid var(--ui-border)}
+html[data-theme="light"] :is(.study-stars p,.adaptive-plan p,.studio-session-summary p,.lesson-quick-recap p){color:#52687d!important}
+html[data-theme="dark"] :is(.study-stars p,.adaptive-plan p,.studio-session-summary p,.lesson-quick-recap p){color:var(--ui-muted)!important}
+.hero.hero-premium{position:relative;overflow:hidden;isolation:isolate}
+.hero.hero-premium .hero-copy{position:relative;z-index:3}
+.hero.hero-premium .hero-bmw-scene{position:absolute;left:0;right:auto;top:0;bottom:0;width:51%;height:auto;opacity:1!important;z-index:1;overflow:hidden;pointer-events:none;background:var(--ui-soft)}
+.hero.hero-premium .hero-bmw-scene .bmw-hero-photo{display:block;position:absolute;inset:0;width:100%;height:100%;opacity:1!important;object-fit:cover;object-position:50% 50%;filter:brightness(1.15) saturate(.88) contrast(1.04)!important;-webkit-mask-image:linear-gradient(to right,#000 0%,#000 72%,transparent 100%)!important;mask-image:linear-gradient(to right,#000 0%,#000 72%,transparent 100%)!important}
+.hero.hero-premium .hero-bmw-scene .bmw-hero-photo[hidden]{display:none!important}
+html[data-theme="light"] .hero.hero-premium .hero-bmw-scene{background:#dcebf6;border-color:#afc8de}
+html[data-theme="light"] .hero.hero-premium .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.07) saturate(.92) contrast(1.05)!important}
+html[data-theme="light"] .hero.hero-premium .hero-copy :is(h1,.eyebrow,.hero-kicker){color:#163247!important}
+html[data-theme="light"] .hero.hero-premium .hero-copy p{color:#2d4b60!important}
+html[data-theme="light"] .hero.hero-premium .hero-copy h1 span{color:#0066b1!important;-webkit-text-fill-color:#0066b1!important;background:none!important}
+#main:focus{outline:none}
+#main:focus-visible{outline:3px solid var(--ui-accent);outline-offset:-3px}
+:where(#reading,#lesson-videos,#practice,#notes,#scenario,#source-reading,#active-recall){scroll-margin-top:90px}
+@media(min-width:901px){.hero.hero-premium .hero-copy{max-width:51%;flex:0 1 51%}}
+@media(max-width:900px){
+ .hero.hero-premium{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:16px!important;height:auto;min-height:0!important}
+ .hero.hero-premium .hero-copy{order:0;width:100%;max-width:100%;flex:none;padding:0}
+ .hero.hero-premium .hero-bmw-scene{position:relative;inset:auto;order:1;width:100%!important;height:clamp(190px,34vw,300px)!important;min-height:190px;flex:none;opacity:1!important;border:1px solid var(--ui-border);border-radius:14px;overflow:hidden;margin:0}
+ .hero.hero-premium .hero-bmw-scene .bmw-hero-photo{object-position:50% 49%;filter:brightness(1.13) saturate(.90)!important;-webkit-mask-image:none!important;mask-image:none!important}
+ html[data-theme="light"] .hero.hero-premium .hero-bmw-scene .bmw-hero-photo{filter:brightness(1.06) saturate(.92)!important}
+ .hero.hero-premium .hero-actions{width:100%;display:flex;flex-wrap:wrap}
+ .hero.hero-premium .hero-actions .btn{white-space:normal;text-align:center}
+}
+@media(max-width:610px){
+ .hero.hero-premium .hero-bmw-scene{height:clamp(182px,52vw,255px)!important;min-height:182px}
+ .topbar-tools{gap:6px;min-width:0}
+ .topbar-tools .studio-search-trigger span,.topbar-tools .focus-toggle span{display:none}
+ .topbar .crumb{min-width:0;max-width:32vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .topbar .chip,.topbar .theme-toggle{min-width:40px;min-height:42px;justify-content:center;padding-inline:9px}
+ .page{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+}
+@media(prefers-reduced-motion:reduce){.hero.hero-premium .hero-bmw-scene,.hero.hero-premium .bmw-hero-photo{animation:none!important;transition:none!important}}
+
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -11611,7 +11579,7 @@ applyTheme();
 let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
 let databaseReady=false, dirtyBeforeReady=false, databaseStatus='جارٍ تجهيز قاعدة البيانات';
-let displayedRoute='', scrollWriteTimer=null, restoringScroll=false;
+let displayedRoute='', scrollWriteTimer=null, restoringScroll=false, pendingLessonTarget=null;
 const APP=document.getElementById('app');
 const ESC=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const p2=x=>String(x).padStart(2,'0');
@@ -11722,7 +11690,7 @@ function studyRoute(lesson){
   ['03','اكتبي ملخصك','ثلاث نقاط وسؤال تحتاجين جوابه','notes',note],
   ['04','اختبري فهمك','جاوبي السؤال وتعلمي من التفسير','practice',answered]
  ];
- return '<section class="card study-route"><div class="study-route-header"><div><span class="bento-overline">YOUR LEARNING STUDIO / جلسة اليوم</span><h2>ابدئي من هنا، خطوة بخطوة</h2><p>الدرس '+String(lesson.order).padStart(2,'0')+' · <strong>'+ESC(lesson.title)+'</strong></p></div><div class="study-route-progress" aria-label="أُنجز '+done+' من ثلاثة مؤشرات"><strong>'+done+'<small>/3</small></strong><span>فهم · ملاحظات · اختبار</span></div></div><div class="study-today-list">'+steps.map(([number,title,description,target,complete])=>'<a class="study-today-item '+(complete?'is-complete':'')+'" href="#/lesson/'+lesson.order+'"><span class="study-today-number">'+(complete?'✓':number)+'</span><span><strong>'+title+'</strong><small>'+ESC(description)+'</small></span><span class="study-today-arrow">↖</span></a>').join('')+'</div><div class="study-route-actions"><a href="#/lesson/'+lesson.order+'" class="btn btn-primary">افتحي مساحة الدرس ←</a><a href="#/study-guide" class="btn btn-outline">كيف أذاكر؟</a></div></section>';
+ return '<section class="card study-route"><div class="study-route-header"><div><span class="bento-overline">YOUR LEARNING STUDIO / جلسة اليوم</span><h2>ابدئي من هنا، خطوة بخطوة</h2><p>الدرس '+String(lesson.order).padStart(2,'0')+' · <strong>'+ESC(lesson.title)+'</strong></p></div><div class="study-route-progress" aria-label="أُنجز '+done+' من ثلاثة مؤشرات"><strong>'+done+'<small>/3</small></strong><span>فهم · ملاحظات · اختبار</span></div></div><div class="study-today-list">'+steps.map(([number,title,description,target,complete])=>'<a class="study-today-item '+(complete?'is-complete':'')+'" href="#/lesson/'+lesson.order+'" data-lesson-target="'+target+'"><span class="study-today-number">'+(complete?'✓':number)+'</span><span><strong>'+title+'</strong><small>'+ESC(description)+'</small></span><span class="study-today-arrow">↖</span></a>').join('')+'</div><div class="study-route-actions"><a href="#/lesson/'+lesson.order+'" class="btn btn-primary">افتحي مساحة الدرس ←</a><a href="#/study-guide" class="btn btn-outline">كيف أذاكر؟</a></div></section>';
 }
 function adaptiveStudyPlan(lesson){
  const now=Date.now(),history=Object.values(state.reviewHistory||{});
@@ -11764,7 +11732,7 @@ function home(){
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  ${adaptiveStudyPlan(n)}
- <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('بنك الأسئلة',questions.length+(COURSE.review_questions||[]).length,'سؤالًا تدريبيًا بتفسير','quiz','questions')}</div>
+ <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتِ',done,'من أصل 48 درسًا','check','completed')}${stat('بنك الأسئلة',questions.length+(COURSE.review_questions||[]).length,'سؤالًا تدريبيًا بتفسير','quiz','questions')}</div>
  <div class="section-head home-section-head"><div><div class="eyebrow">متابعة التعلّم</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
  <div class="route-line">${lessons.filter(l=>l.week===week).map((l,i)=>`<a href="#/lesson/${l.order}" class="route-stop ${isDone(l.order)?'complete':''} ${n.order===l.order?'current':''}"><span class="route-indicator"><i>${isDone(l.order)?icon('check'):p2(l.order)}</i></span><span class="route-text"><b>${ESC(l.title)}</b><small>الدرس ${p2(l.order)} · ${l.estimated_minutes} دقيقة تقريبًا</small></span><span class="route-go">${icon('arrow')}</span></a>`).join('')}</div>
@@ -11946,7 +11914,7 @@ const q=questions.find(x=>x.id===session.ids[session.index]), ans=session.answer
 function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="page-title">إعدادات المذاكرة</h1><p class="sub">قاعدة البيانات المستخدمة IndexedDB محلية داخل هذا المتصفح، دون حساب أو قاعدة بيانات سحابية؛ لا توجد مزامنة بين الأجهزة.</p><section class="theme-setting" aria-label="تفضيل مظهر الموقع"><h3>مظهر مِسار · BMW</h3><p>الوضع الداكن هو الافتراضي. اختاري الوضع الذي يريحك، ويُحفظ اختيارك على هذا الجهاز.</p><div class="theme-setting-actions"><button type="button" data-action="theme-set" data-theme="dark" aria-pressed="${activeTheme()==='dark'}">☾ الوضع الداكن</button><button type="button" data-action="theme-set" data-theme="light" aria-pressed="${activeTheme()==='light'}">☀ الوضع الفاتح</button></div></section><section class="card settings-card"><h3>خط ثمانية في مِسار</h3><p>ضبطنا تصميم الموقع لاستخدام «ثمانية سانس» عند تثبيته على جهازك. ترخيص ثمانية لا يسمح برفع ملفات الخط إلى GitHub أو توزيعه للتنزيل من الموقع؛ إذا لم يكن الخط مثبتًا، سيظهر خط احتياطي واضح. ولا تُرسل ملفات الخط أو ملاحظاتك إلى خادم خارجي.</p><p><a class="source-link" href="https://font.thmanyah.com/" target="_blank" rel="noopener noreferrer">تحميل الخط من المصدر الرسمي وتثبيته على جهازك ↗</a> <a class="source-link" href="https://font.thmanyah.com/licenses" target="_blank" rel="noopener noreferrer">قراءة الترخيص ↗</a></p></section><section class="card settings-card"><h3>حفظ المذاكرة على هذا الكمبيوتر</h3><p>يُحفظ تقدمك وآخر درس قرأتِه ومكان وصولك في الصفحة تلقائيًا داخل المتصفح نفسه. عند العودة اضغطي «ارجعي لآخر درس» من الرئيسية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="persist-storage">طلب حماية بيانات الموقع من الحذف التلقائي</button></div><p class="note-preview">التخزين قد يُحذف يدويًا أو بسياسات المتصفح؛ احتفظي بنسخة احتياطية. لا يتزامن Chrome وEdge.</p><h3>تثبيت مِسار على جهازك والعمل دون إنترنت</h3><p>افتحي الموقع المنشور على Chrome أو Edge، ثم اختاري «تثبيت التطبيق» من قائمة المتصفح إذا ظهرت لك. بعد الزيارة الأولى والتحميل الناجح يمكن فتح الدروس الأساسية دون اتصال. الفيديوهات وملفات PDF الخارجية تحتاج إنترنت، أما الملفات التي أضفتِها للمتصفح فتظل محلية.</p><div class="settings-actions"><button type="button" class="btn btn-outline" data-action="storage-health">فحص حالة الحفظ والمساحة</button></div><h3>النسخ الاحتياطي</h3><p class="note-preview" id="db-status">${ESC(databaseStatus)}</p><p>حملي ملف بياناتك لحفظ علامات إنجاز الدروس والإجابات والملاحظات، أو أعيدي استيراده على نفس الجهاز أو جهاز آخر.</p><div class="settings-actions"><button type="button" class="btn btn-primary" data-action="export">${icon('download')} تصدير تقدمي (JSON)</button><button type="button" class="btn btn-outline" data-action="import">استيراد نسخة احتياطية</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></section><section class="card settings-card"><h3>ماذا يتضمن هذا الإصدار؟</h3><div class="point"><i>1</i>48 درسًا مع 48 تدريب تفكير مستقلًا؛ النصوص ما زالت تحتاج مراجعة المصدر المعتمد.</div><div class="point"><i>2</i>48 سؤال درس، و36 سؤال مراجعة إضافيًا، ومحاكاة اختبار تدريبي غير رسمي، و12 بطاقة مراجعة.</div><div class="point"><i>3</i>المذاكرة والملاحظات ومحاولات المراجعة تُحفظ في IndexedDB على هذا المتصفح؛ PDF والملفات الخاصة لا تدخل ضمن النسخة الاحتياطية JSON ولا توجد مزامنة سحابية.</div><div class="point"><i>4</i>ليس فيه خطوات أزرار دقيقة لأكورد دون معرفة سنة الموديل والفئة.</div></section><section class="card settings-card"><h3>البدء من جديد</h3><p>حذف البيانات المحلية سيزيل العلامات والإجابات والملاحظات الموجودة على هذا المتصفح. حملي نسخة احتياطية أولًا إذا احتجتيها.</p><button type="button" class="btn btn-outline" data-action="clear" style="color:var(--crimson)">حذف تقدم هذا المتصفح</button></section>${footerNote()}`}
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
 function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/review')return ['مراجعتي',window.MasarCoach.reviewPage(COURSE,state)];if(r==='/mock-exam')return ['محاكاة الاختبار',window.MasarCoach.pageMock(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['الرسوم التفاعلية',visualLibraryPage()];if(r==='/videos')return ['مقاطع القيادة',videoGalleryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
-function render(keepScroll=false){applyTheme();const [title,content]=resolvePage();const focus=!!state.uiPrefs?.focus;if(focus)APP.classList.add('focus-mode');else APP.classList.remove('focus-mode');APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${window.MasarStudio.widgets(COURSE,state,route())}${content}</div></main>${window.MasarStudio.searchUI()}${mobileDock()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
+function render(keepScroll=false){applyTheme();const [title,content]=resolvePage();const focus=!!state.uiPrefs?.focus;if(focus)APP.classList.add('focus-mode');else APP.classList.remove('focus-mode');APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main" tabindex="-1">${topbar(title)}<div class="page">${window.MasarStudio.widgets(COURSE,state,route())}${content}</div></main>${window.MasarStudio.searchUI()}${mobileDock()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
 let toastTimer;function toast(s){const el=document.getElementById('toast');el.textContent=s;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),3100)}
 function updateTimer(){}
@@ -12024,7 +11992,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='import'){document.getElementById('import-file')?.click();return}
  if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[],uiPrefs:{focus:false}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
 }
-document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
+document.addEventListener('click',e=>{const shortcut=e.target.closest('a[data-lesson-target]');if(shortcut)pendingLessonTarget=shortcut.dataset.lessonTarget;if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
 document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive,.week-card,.action-tile,.adaptive-task,.ts-card,.study-video,.coach-review-item,.hub-guide-step');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
 document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save();const jumps=e.target.closest?.('.study-video')?.querySelector('.video-time-jumps');if(jumps)jumps.outerHTML=window.MasarHub.videoTimeLinks(e.target.dataset.videoNote,e.target.value)}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}if(e.target.dataset.activityNote){state.activityNotes=state.activityNotes||{};state.activityNotes[e.target.dataset.activityNote]=e.target.value;save()}});
 document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if((e.target.id==='hub-file'||e.target.id==='hub-batch')&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast,course:COURSE});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.dataset.activityCheck){state.activityChecks=state.activityChecks||{};state.activityChecks[e.target.dataset.activityCheck]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(e.target.files[0].size>5*1024*1024||obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done)||!obj.state.done.every(n=>Number.isInteger(n)&&n>=1&&n<=48)||!obj.state.answers||typeof obj.state.answers!=='object'||Array.isArray(obj.state.answers))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
@@ -12032,7 +12000,7 @@ function lessonNumberFromRoute(path){const m=/^\/lesson\/(\d+)$/.exec(path||'');
 function captureReadingPosition(path=displayedRoute){const n=lessonNumberFromRoute(path);if(!n||restoringScroll)return;const y=Math.max(0,Math.round(window.scrollY||document.documentElement?.scrollTop||0));state.readingPositions=state.readingPositions||{};if(state.readingPositions[n]!==y){state.readingPositions[n]=y;save()}}
 function restoreReadingPosition(){const n=lessonNumberFromRoute(route());if(!n)return;const y=Number(state.readingPositions?.[n])||0;if(y<=0)return;restoringScroll=true;requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>{restoringScroll=false})})}
 window.addEventListener('scroll',()=>{if(!lessonNumberFromRoute(displayedRoute)||restoringScroll)return;clearTimeout(scrollWriteTimer);scrollWriteTimer=setTimeout(()=>captureReadingPosition(),600)},{passive:true});
-window.addEventListener('hashchange',()=>{clearTimeout(scrollWriteTimer);captureReadingPosition(displayedRoute);mobileOpen=false;render();restoreReadingPosition();if(location.hash==='#main'){document.getElementById('main')?.focus()}});
+window.addEventListener('hashchange',()=>{clearTimeout(scrollWriteTimer);captureReadingPosition(displayedRoute);mobileOpen=false;render();if(pendingLessonTarget&&lessonNumberFromRoute(route())){const target=pendingLessonTarget;pendingLessonTarget=null;requestAnimationFrame(()=>document.getElementById(target)?.scrollIntoView({behavior:'auto',block:'start'}));}else{pendingLessonTarget=null;restoreReadingPosition();}if(location.hash==='#main'){document.getElementById('main')?.focus()}});
 window.addEventListener('pagehide',()=>{clearTimeout(scrollWriteTimer);captureReadingPosition();state.studyStudio=state.studyStudio||{};state.studyStudio.lastVisitAt=new Date().toISOString();save()});
 window.addEventListener('storage',e=>{if(e.key===baseKey){try{state={...state,...JSON.parse(e.newValue||'{}')};render(true)}catch(_){}}});
 tickInterval=setInterval(()=>{window.MasarCoach?.tick(COURSE,state,save,render);window.MasarStudio.tick(state,save,render,toast)},1000);

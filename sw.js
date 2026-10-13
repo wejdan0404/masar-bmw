@@ -1,5 +1,5 @@
 /* Cache only application files, never personal notes, PDFs or external media. */
-const CACHE_NAME='masar-static-v17-fast-start';
+const CACHE_NAME='masar-static-v18-image-free-hero';
 const SCOPE=self.registration.scope;
 const CORE=['./','./index.html','./assets/site.css','./assets/course-data.js','./assets/site.js','./icon.svg','./manifest.webmanifest'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));

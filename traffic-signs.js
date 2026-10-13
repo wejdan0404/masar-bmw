@@ -66,7 +66,29 @@ function draw(sign,quiz=false){
  const title=quiz?'رسم مبسط للوحة — اختاري معناها':sign.title+' — رسم مبسط للتدريب وليس نسخة رسمية';
  return '<svg viewBox="0 0 150 150" class="ts-sign-svg" role="img" aria-label="'+esc(title)+'" xmlns="http://www.w3.org/2000/svg">'+frame+pictogram(k)+cross+'</svg>';
 }
-const stat=(state,id)=>state.signPractice?.[id]||{attempts:0,correct:0,wrong:0,lastResult:null};
+const stat=(state,id)=>state.signPractice?.[id]||{attempts:0,correct:0,wrong:0,lastResult:null,streak:0};
+function mastery(state,id){
+ const s=stat(state,id);
+ if((s.streak||0)>=2&&(s.correct||0)>=2)return 'mastered';
+ if((s.attempts||0)>0)return 'learning';
+ return 'new';
+}
+function masteryLabel(state,id){
+ const m=mastery(state,id);
+ return m==='mastered'?'مثبّتة ✓':m==='learning'?'قيد التثبيت':'جديدة';
+}
+function compareSection(signs){
+ const pairs=[
+  ['SG-01','SG-02','قف أم أعطِ الأفضلية؟','قف = توقف كامل. أعطِ الأفضلية = أفسحي المجال وقد تحتاجين للتوقف.'],
+  ['SG-09','SG-10','ممنوع الوقوف أم ممنوع التوقف؟','قارني الخطوط داخل الدائرة واحفظي معنى كل واحدة بدل الاعتماد على اللون فقط.'],
+  ['SG-05','SG-06','ممنوع الدوران أم ممنوع اليسار؟','الدوران للخلف U-turn مختلف عن الانعطاف يسارًا؛ راقبي شكل السهم.']
+ ];
+ const rows=pairs.map(([a,b,title,note])=>{
+  const x=signs.find(s=>s.id===a),y=signs.find(s=>s.id===b);if(!x||!y)return '';
+  return '<article class="ts-compare-card"><div class="ts-compare-art"><span>'+draw(x)+'</span><span>'+draw(y)+'</span></div><h3>'+esc(title)+'</h3><p>'+esc(note)+'</p><div><button type="button" data-action="sign-open" data-id="'+x.id+'">'+esc(x.title)+'</button><button type="button" data-action="sign-open" data-id="'+y.id+'">'+esc(y.title)+'</button></div></article>';
+ }).join('');
+ return '<section class="ts-compare-section"><div class="section-head"><div><span class="ts-overline">DON’T MIX THEM UP</span><h2>لوحات كثير تنلخبط على المبتدئة</h2><p>قارني الشكلين جنب بعض، ثم افتحي كل لوحة واقرئي التصرف المطلوب.</p></div></div><div class="ts-compare-grid">'+rows+'</div></section>';
+}
 function choices(sign,signs){
  const sameCategory=signs.filter(x=>x.category===sign.category&&x.id!==sign.id);
  const others=signs.filter(x=>x.category!==sign.category&&x.id!==sign.id);
@@ -78,17 +100,23 @@ function choices(sign,signs){
 }
 function filtered(course,state){
  let signs=course.sign_library||[];
- if(filter!=='all'&&filter!=='mistakes'&&filter!=='new')signs=signs.filter(x=>x.category===filter);
+ if(filter!=='all'&&filter!=='mistakes'&&filter!=='new'&&filter!=='mastered'&&filter!=='learning'&&filter!=='focus')signs=signs.filter(x=>x.category===filter);
  else if(filter==='mistakes')signs=signs.filter(x=>(stat(state,x.id).wrong||0)>0&&(stat(state,x.id).lastResult===false));
- else if(filter==='new')signs=signs.filter(x=>stat(state,x.id).attempts===0);
+ else if(filter==='new')signs=signs.filter(x=>mastery(state,x.id)==='new');
+ else if(filter==='mastered')signs=signs.filter(x=>mastery(state,x.id)==='mastered');
+ else if(filter==='learning')signs=signs.filter(x=>mastery(state,x.id)==='learning');
+ else if(filter==='focus')signs=signs.filter(x=>mastery(state,x.id)!=='mastered').sort((a,b)=>{
+   const sa=stat(state,a.id),sb=stat(state,b.id);
+   return Number(sb.lastResult===false)-Number(sa.lastResult===false)||(sa.attempts||0)-(sb.attempts||0);
+ });
  return signs;
 }
 function page(course,state){
- const signs=course.sign_library||[],items=filtered(course,state);const attempts=signs.reduce((n,x)=>n+stat(state,x.id).attempts,0),wrong=signs.filter(x=>stat(state,x.id).lastResult===false).length,studied=signs.filter(x=>stat(state,x.id).attempts>0).length;
+ const signs=course.sign_library||[],items=filtered(course,state);const attempts=signs.reduce((n,x)=>n+stat(state,x.id).attempts,0),wrong=signs.filter(x=>stat(state,x.id).lastResult===false).length,studied=signs.filter(x=>stat(state,x.id).attempts>0).length,mastered=signs.filter(x=>mastery(state,x.id)==='mastered').length,learning=signs.filter(x=>mastery(state,x.id)==='learning').length;
  let body='';
  if(mode==='study'){
-  if(selected){const a=signs.find(x=>x.id===selected);body=a?'<section class="ts-detail"><button class="ts-return" type="button" data-action="sign-back">← جميع اللوحات</button><div class="ts-detail-grid"><div class="ts-icon-panel">'+draw(a)+'</div><div><span class="ts-overline">'+esc(a.category)+' / بطاقة '+a.id+'</span><h2>'+esc(a.title)+'</h2><h3>وش تعني؟</h3><p>'+esc(a.meaning)+'</p><h3>وش أسوي إذا شفتها؟</h3><p>'+esc(a.action)+'</p><h3>لا تخلطين بينها وبين…</h3><p>'+esc(a.memory_tip)+'</p><a class="ts-link" href="#/lesson/'+Number(a.lesson_ids[0].slice(-3))+'">راجعي درسها في المنهج ←</a></div></div></section>':'';
-  }else body='<div class="ts-grid">'+items.map(a=>'<button type="button" class="ts-card" data-action="sign-open" data-id="'+a.id+'"><span class="ts-art">'+draw(a)+'</span><span class="ts-category">'+esc(a.category)+' · '+(stat(state,a.id).attempts?'تمت مراجعتها':'جديدة')+'</span><strong>'+esc(a.title)+'</strong><span class="ts-card-arrow">المعنى والتصرف ←</span></button>').join('')+'</div>';
+  if(selected){const a=signs.find(x=>x.id===selected);body=a?'<section class="ts-detail"><button class="ts-return" type="button" data-action="sign-back">← جميع اللوحات</button><div class="ts-detail-grid"><div class="ts-icon-panel">'+draw(a)+'<span class="ts-mastery-pill '+mastery(state,a.id)+'">'+masteryLabel(state,a.id)+'</span></div><div><span class="ts-overline">'+esc(a.category)+' / بطاقة '+a.id+'</span><h2>'+esc(a.title)+'</h2><h3>وش تعني؟</h3><p>'+esc(a.meaning)+'</p><h3>وش أسوي إذا شفتها؟</h3><p>'+esc(a.action)+'</p><h3>لا تخلطين بينها وبين…</h3><p>'+esc(a.memory_tip)+'</p><div class="ts-detail-actions"><a class="ts-link" href="#/lesson/'+Number(a.lesson_ids[0].slice(-3))+'">راجعي درسها في المنهج ←</a><a class="ts-link muted" href="'+esc(a.source_url||'https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/')+'" target="_blank" rel="noopener noreferrer">مرجع المرور ↗</a></div><p class="ts-source-scope">'+esc(a.reference_scope||'المعنى للتعلم، والرسم توضيحي مبسط غير مطابق هندسيًا للوحة الرسمية.')+'</p></div></div></section>':'';
+  }else body='<div class="ts-grid">'+items.map(a=>'<button type="button" class="ts-card '+mastery(state,a.id)+'" data-action="sign-open" data-id="'+a.id+'"><span class="ts-art">'+draw(a)+'</span><span class="ts-category">'+esc(a.category)+' · '+masteryLabel(state,a.id)+'</span><strong>'+esc(a.title)+'</strong><span class="ts-card-arrow">المعنى والتصرف ←</span></button>').join('')+'</div>'+compareSection(signs);
  }else {
   if(quizIndex>=items.length)quizIndex=0;
   const q=answered!==null&&answeredSignId?signs.find(x=>x.id===answeredSignId):items[quizIndex];if(!q)body='<div class="ts-empty">ما عندك لوحات بهذه الحالة حاليًا. اختاري «الكل» وكمّلي المراجعة.</div>';
@@ -96,7 +124,7 @@ function page(course,state){
    body='<section class="ts-exam"><div class="ts-exam-top"><span>لوحة '+(quizIndex+1)+' / '+items.length+'</span><span>الإجابة لا تُظهر الاسم قبل اختيارك</span></div><div class="ts-exam-art">'+draw(q,true)+'</div><h2>وش معنى هذه اللوحة؟</h2><div class="ts-choices">'+opts.map(x=>'<button type="button" data-action="sign-answer" data-choice="'+x.id+'" class="ts-choice '+(wasAnswered?(x.id===q.id?'is-correct':x.id===answered?'is-wrong':''):'')+'" '+(wasAnswered?'disabled':'')+'>'+esc(x.title)+'</button>').join('')+'</div>'+(wasAnswered?'<div role="status" class="ts-explanation"><strong>'+(answered===q.id?'صح!':'الإجابة المناسبة: '+esc(q.title))+'</strong><p>'+esc(q.meaning)+'</p><p><b>التصرف:</b> '+esc(q.action)+'</p><a href="#/lesson/'+Number(q.lesson_ids[0].slice(-3))+'">ارجعي للدرس المرتبط ←</a></div>':'')+'<div class="ts-controls"><button data-action="sign-next" class="ts-next" type="button">'+(quizIndex===items.length-1?'إعادة الجولة':'اللوحة التالية ←')+'</button></div></section>';
   }
  }
- return '<div class="ts-page"><section class="ts-header"><div><span class="ts-overline">TRAFFIC SIGNS / تَعَلُّم بِالصُّورَة</span><h1>إشارات المرور</h1><p>تعرّفي على اللوحة، افهمي معناها، ثم اختبري نفسك بصورتها وحدها. الرسومات مبسّطة للتدريب، <strong>وليست صورًا رسمية مطابقة</strong>.</p></div><div class="ts-header-counter"><b>'+studied+'<small> / '+signs.length+'</small></b><span>لوحة دخلت مراجعتك</span></div></section><div class="ts-facts"><span>'+signs.length+' لوحة تعليمية · '+esc([...new Set(signs.map(x=>x.category))].join('، '))+'</span><span>الإجابات المسجلة: '+attempts+'</span><span>تحتاج مراجعة: '+wrong+'</span></div><div class="ts-toolbar"><div role="group" aria-label="طريقة المذاكرة"><button type="button" data-action="sign-mode" data-mode="study" aria-pressed="'+(mode==='study')+'" class="'+(mode==='study'?'active':'')+'">مكتبة اللوحات</button><button type="button" data-action="sign-mode" data-mode="quiz" aria-pressed="'+(mode==='quiz')+'" class="'+(mode==='quiz'?'active':'')+'">اختبري نفسك</button></div><div class="ts-filters" role="group" aria-label="تصفية الإشارات">'+[['all','الكل'],...[...new Set(signs.map(x=>x.category))].map(c=>[c,c]),['mistakes','أخطائي'],['new','الجديدة']].map(([id,txt])=>'<button type="button" data-action="sign-filter" data-filter="'+id+'" aria-pressed="'+(filter===id)+'" class="'+(filter===id?'active':'')+'">'+txt+'</button>').join('')+'</div></div>'+body+'<section class="ts-note"><strong>مهم قبل الاختبار</strong><p>المرور السعودي يضم أيضًا الإرشادية والمؤقتة؛ هذه مكتبة بداية ولا تغطي كل اللوحات. لم ننتهِ من مطابقة تفاصيل رسوماتها مع الرسم الحكومي الرسمي. عند اختلاف الشكل أو الاسم، اعتمدي مرجع المرور.</p><a href="https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/" target="_blank" rel="noopener noreferrer">دليل الإشارات المرورية — المرور السعودي ↗</a></section></div>';
+ return '<div class="ts-page"><section class="ts-header"><div><span class="ts-overline">TRAFFIC SIGNS / تَعَلُّم بِالصُّورَة</span><h1>إشارات المرور</h1><p>تعرّفي على اللوحة، افهمي معناها، ثم اختبري نفسك بصورتها وحدها. الرسومات مبسّطة للتدريب، <strong>وليست صورًا رسمية مطابقة</strong>.</p></div><div class="ts-header-counter"><b>'+mastered+'<small> / '+signs.length+'</small></b><span>لوحة وصلت لمرحلة التثبيت</span></div></section><div class="ts-mastery-summary"><div><strong>'+studied+'</strong><span>بدأتِ مراجعتها</span></div><div><strong>'+learning+'</strong><span>قيد التثبيت</span></div><div><strong>'+mastered+'</strong><span>مثبّتة</span></div><div><strong>'+wrong+'</strong><span>آخر إجابة خطأ</span></div></div><div class="ts-facts"><span>'+signs.length+' لوحة تعليمية · '+esc([...new Set(signs.map(x=>x.category))].join('، '))+'</span><span>الإجابات المسجلة: '+attempts+'</span><span>التثبيت = إجابتان صحيحتان متتاليتان على الأقل</span></div><div class="ts-toolbar"><div role="group" aria-label="طريقة المذاكرة"><button type="button" data-action="sign-mode" data-mode="study" aria-pressed="'+(mode==='study')+'" class="'+(mode==='study'?'active':'')+'">مكتبة اللوحات</button><button type="button" data-action="sign-mode" data-mode="quiz" aria-pressed="'+(mode==='quiz')+'" class="'+(mode==='quiz'?'active':'')+'">اختبري نفسك</button></div><div class="ts-filters" role="group" aria-label="تصفية الإشارات">'+[['all','الكل'],...[...new Set(signs.map(x=>x.category))].map(c=>[c,c]),['focus','تحتاج تثبيت'],['mistakes','أخطائي'],['learning','قيد التثبيت'],['mastered','مثبّتة'],['new','الجديدة']].map(([id,txt])=>'<button type="button" data-action="sign-filter" data-filter="'+id+'" aria-pressed="'+(filter===id)+'" class="'+(filter===id?'active':'')+'">'+txt+'</button>').join('')+'</div></div>'+body+'<section class="ts-note"><strong>مهم قبل الاختبار</strong><p>وزارة الداخلية تنشر دليلًا للإشارات التحذيرية والتنظيمية والإرشادية وإشارات مناطق العمل. مكتبة مِسار الحالية للتدريب وليست كتالوجًا حكوميًا كاملًا، والرسومات فيها مبسطة. عند اختلاف الشكل أو الاسم، اعتمدي دليل المرور.</p><a href="https://www.moi.gov.sa/wps/portal/Home/sectors/publicsecurity/traffic/contents/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy83V0CTQ0cA71d_T1djI0MXA30gxOL9L24FMCAC07oR-HXFQHVAVUOp_QjM7MKC6Mc9aOS8_NKUitK9CNKihLT0jKTVQ2gDIXEIlWD3MTMPIRIcWY60K3F-gXZ7uEA0o5r2w!!/" target="_blank" rel="noopener noreferrer">دليل الإشارات المرورية — المرور السعودي ↗</a></section></div>';
 }
 function click(action,el,ctx){
  const c=ctx.course,s=ctx.state;
@@ -106,7 +134,7 @@ function click(action,el,ctx){
  if(action==='sign-back'){selected=null;ctx.render(true);return true}
  if(action==='sign-answer'){const items=filtered(c,s),q=items[quizIndex],choice=el.dataset.choice;if(!q||answered!==null||!choices(q,c.sign_library).some(x=>x.id===choice))return true;
   s.signPractice=s.signPractice||{};const prior=stat(s,q.id);
-  s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,lastReviewed:new Date().toISOString()};
+  s.signPractice[q.id]={attempts:(prior.attempts||0)+1,correct:(prior.correct||0)+(choice===q.id?1:0),wrong:(prior.wrong||0)+(choice===q.id?0:1),lastResult:choice===q.id,streak:choice===q.id?(prior.streak||0)+1:0,lastReviewed:new Date().toISOString()};
   answered=choice;answeredSignId=q.id;window.MasarCoach?.record(s,'sign',q.id,choice===q.id);ctx.save();ctx.render(true);return true}
  if(action==='sign-next'){quizIndex++;answered=null;answeredSignId=null;ctx.render(true);return true}
  return false;

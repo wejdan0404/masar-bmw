@@ -624,3 +624,28 @@ body{font-size:15px}
 .deep-guide-missing{margin:15px 0;border:1px dashed #cf8e9b;border-radius:10px;padding:14px;color:#812a3d}
 @media(max-width:610px){.deep-guide-head{padding:20px 18px}.deep-guide-content{padding:20px 18px}.deep-example,.deep-guide-homework,.deep-guide-recall{padding:15px 14px}.deep-guide-content p{font-size:14px}.deep-guide-content li{font-size:14px}}
 @media print{.deep-guide-recall details{display:block}.deep-guide-content{break-inside:avoid}}
+
+/* On-site reading studio: source accordions and embedded personal book pages */
+.source-chapter-list{display:grid;gap:10px;margin-top:18px}
+.source-chapter{border:1px solid #dce5ea;border-radius:13px;overflow:hidden;background:#fbfcfd}
+.source-chapter[open]{border-color:#95b2c5;background:#fff;box-shadow:0 7px 22px #192d3a0a}
+.source-chapter summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:15px 17px;min-height:58px}
+.source-chapter summary::-webkit-details-marker{display:none}
+.source-chapter summary:focus-visible{outline:3px solid #7598b9;outline-offset:-3px}
+.source-chapter .chapter-title{flex:1;color:#243c4d;font-weight:800;font-size:14px}
+.source-chapter .chapter-page{color:#597183;font-size:12px;white-space:nowrap}
+.source-chapter .chapter-toggle{font-size:22px;color:#597183;transform:rotate(90deg)}
+.source-chapter[open] .chapter-toggle{transform:rotate(0)}
+.source-chapter-inner{border-top:1px solid #e5edf2;padding:15px 19px 20px}
+.source-chapter-inner h3{font-size:15px;margin:6px 0 9px}
+.source-chapter-inner p,.source-chapter-inner li{color:#435a68;font-size:13px;line-height:1.9}
+.source-chapter-inner ul{padding-right:25px}
+.source-honesty{font-size:12px!important;background:#f2f6f9;border-radius:9px;padding:12px}
+.source-chapter-actions{display:flex;flex-wrap:wrap;gap:9px;margin:13px 0}
+.source-inline-preview:empty{display:none}
+.source-inline-preview{margin-top:12px;min-width:0}
+.source-embedded-file{display:block;width:100%;height:min(70vh,740px);min-height:450px;border:1px solid #cbd9e2;border-radius:11px;background:#fff}
+.source-inline-info,.source-inline-loading{font-size:12px;color:#4d677b;line-height:1.85}
+.source-inline-preview .btn{margin:6px 0}
+.source-page-hint{font-size:11px!important;color:#768c97!important}
+@media(max-width:610px){.source-chapter summary{padding:13px 11px;flex-wrap:wrap}.source-chapter-inner{padding:13px}.source-embedded-file{height:55vh;min-height:320px}.source-chapter .chapter-page{font-size:11px}}

@@ -16,10 +16,11 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   console.log('E2E debug initial page',JSON.stringify({url:page.url(),title:await page.title(),body:(await page.locator('body').innerText()).slice(0,450),errors}));
   await page.locator('#app h1').first().waitFor({timeout:10000});assert((await page.locator('#app h1').first().innerText()).includes('خلف المقود'),'Home hero heading is missing');
   assert.match(await page.title(),/مِسار/);
-  assert.equal(await page.locator('.hero-brooch-art .brooch-svg').count(),1,'Burgundy brooch is the main visual on home');
-  assert.equal(await page.locator('.hero-car,.hero-road').count(),0,'Old illustration should be removed from hero');
-  assert((await page.locator('.brooch-svg [id="masar-ruby"]').count())===1,'Gemstone vector gradient must render');
-  console.log('PASS Chromium: new source-owned burgundy jewel hero');
+  assert.equal(await page.locator('.hero-brooch-art,.brooch-svg').count(),0,'Jewelry illustration must be removed');
+  assert.equal(await page.locator('.hero-porsche-scene .porsche-hero-photo').count(),1,'Burgundy sports car photo must appear');
+  assert.match(await page.locator('.porsche-hero-photo').getAttribute('src'),/images\.unsplash\.com\/photo-1747891616275/);
+  assert.equal(await page.locator('.porsche-fallback-car').count(),1,'Offline fallback vehicle illustration must be provided');
+  console.log('PASS Chromium: Porsche car hero replaces jewel brooch');
 
   assert.equal(await page.locator('.studio-session').count(),0,'Home must not show a timer card');
   assert.equal(await page.locator('.studio-timer-dock,.floating-timer').count(),0,'No timer overlay on initial home visit');

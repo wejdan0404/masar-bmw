@@ -29,7 +29,7 @@ function quizPage(course,state){
  var answered=all.filter(function(q){return Number.isInteger(state.reviewAnswers&&state.reviewAnswers[q.id])}).length;
  var correct=all.filter(function(q){return Number(state.reviewAnswers&&state.reviewAnswers[q.id])===q.correct_option_index && Number.isInteger(state.reviewAnswers&&state.reviewAnswers[q.id])}).length;
  var q=pinnedQuestionId?all.find(function(x){return x.id===pinnedQuestionId}):bank[quizIndex],a=q?state.reviewAnswers&&state.reviewAnswers[q.id]:null,done=Number.isInteger(a);
- return '<div class="eyebrow">PRACTICE BANK / EXAM TRAINING</div><h1 class="page-title">تجميعات وأسئلة المراجعة</h1><p class="sub">بنك أصلي من '+all.length+' سؤالًا تعليميًا مستوحى من موضوعات المصادر، وليس نسخة من أسئلة الامتحان الرسمي. بعد الإجابة يظهر تفسير السبب، وتُحفظ النتيجة على جهازك.</p><div class="hub-metrics"><div><strong>'+answered+' / '+all.length+'</strong><small>أجبتي عنها</small></div><div><strong>'+correct+'</strong><small>إجابات صحيحة</small></div></div><div class="hub-filters">'+topics.map(function(t){return '<button class="hub-filter '+(quizFilter===t[0]?'on':'')+'" data-action="hub-filter" data-topic="'+t[0]+'" aria-pressed="'+(quizFilter===t[0])+'">'+t[1]+'</button>'}).join('')+'</div>'+(q?'<section class="hub-question card"><div class="hub-q-top"><span>سؤال '+(quizIndex+1)+' / '+bank.length+'</span><span>مرجع الفكرة: '+E(q.source_id==='DOC-TRAINEE'?'كتاب المتدربة':q.source_id==='DOC-NAZAWI'?'مجموعة النزاوي (غير رسمية)':q.source_id)+(q.source_pdf_page?' · PDF ص'+q.source_pdf_page:'')+'</span></div><div class="hub-sign-scene">'+sign(q.visual_key)+'</div><h2>'+E(q.question)+'</h2><div class="hub-options">'+q.options.map(function(o,i){return '<button type="button" class="hub-choice '+(done?(i===q.correct_option_index?'right':i===a?'wrong':''):'')+'" data-action="hub-answer" data-qid="'+E(q.id)+'" data-answer="'+i+'" '+(done?'disabled':'')+' aria-label="الخيار '+(i+1)+'">'+E(o)+'</button>'}).join('')+'</div>'+(done?'<div class="hub-explain" role="status"><strong>'+(a===q.correct_option_index?'إجابتك صحيحة':'راجعي المعلومة')+'</strong><p>'+E(q.explanation)+'</p></div>':'')+'<div class="hub-q-links"><a class="inline-link" href="#/lesson/'+Number(q.lesson_id.slice(-3))+'">راجعي الدرس المرتبط ←</a>'+(done?'<button type="button" class="btn btn-outline" data-action="hub-retry" data-qid="'+E(q.id)+'">إعادة محاولة السؤال</button>':'')+'</div><label class="hub-source-note">ملاحظتي على السؤال<textarea data-source-note="QUESTION-'+E(q.id)+'" placeholder="ليش اخترت الإجابة؟ وش القاعدة اللي أبي أتذكرها؟">'+E((state.sourceNotes||{})['QUESTION-'+q.id]||'')+'</textarea></label><div class="hub-q-nav"><button type="button" class="btn btn-outline" data-action="hub-prev">السابق</button><button type="button" class="btn btn-primary" data-action="hub-next">التالي ←</button></div><p class="hub-legal">الرسم والأمثلة مبسّطة للمذاكرة، وقد تختلف اللوحات بتفاصيلها. للمراجعة النظامية راجعي دليل الإشارات الصادر عن المرور.</p></section>':'<p>لا توجد أسئلة هنا حاليًا. إذا اخترتِ «أخطائي» فمعناه أنكِ ما عندك إجابات خاطئة محفوظة في بنك المراجعة.</p>')+'<section class="hub-supplement"><h3>تجميع النزاوي والصور الـ39</h3><p>يمكنك ربط ملف النزاوي الشخصي من قسم المصادر. أضفنا كذلك فهرس روابط الصور الـ39 التي أرسلتِها، دون إعادة نشر الصور في المستودع العام.</p><a class="btn btn-outline" href="#/sources">مكتبة المصادر والصور</a></section>';
+ return '<div class="eyebrow">PRACTICE BANK / EXAM TRAINING</div><h1 class="page-title">تجميعات وأسئلة المراجعة</h1><p class="sub">بنك أصلي من '+all.length+' سؤالًا تعليميًا مستوحى من موضوعات المصادر، وليس نسخة من أسئلة الامتحان الرسمي. بعد الإجابة يظهر تفسير السبب، وتُحفظ النتيجة على جهازك.</p><div class="hub-metrics"><div><strong>'+answered+' / '+all.length+'</strong><small>أجبتي عنها</small></div><div><strong>'+correct+'</strong><small>إجابات صحيحة</small></div></div><div class="hub-filters">'+topics.map(function(t){return '<button class="hub-filter '+(quizFilter===t[0]?'on':'')+'" data-action="hub-filter" data-topic="'+t[0]+'" aria-pressed="'+(quizFilter===t[0])+'">'+t[1]+'</button>'}).join('')+'</div>'+(q?'<section class="hub-question card"><div class="hub-q-top"><span>سؤال '+(quizIndex+1)+' / '+bank.length+'</span><span>مرجع الفكرة: '+E(q.source_id==='DOC-TRAINEE'?'كتاب المتدربة':q.source_id==='DOC-NAZAWI'?'مجموعة النزاوي (غير رسمية)':q.source_id)+(q.source_pdf_page?' · PDF ص'+q.source_pdf_page:'')+'</span></div><div class="hub-sign-scene">'+sign(q.visual_key)+'</div><h2>'+E(q.question)+'</h2><div class="hub-options">'+q.options.map(function(o,i){return '<button type="button" class="hub-choice '+(done?(i===q.correct_option_index?'right':i===a?'wrong':''):'')+'" data-action="hub-answer" data-qid="'+E(q.id)+'" data-answer="'+i+'" '+(done?'disabled':'')+' aria-label="الخيار '+(i+1)+'">'+E(o)+'</button>'}).join('')+'</div>'+(done?'<div class="hub-explain" role="status"><strong>'+(a===q.correct_option_index?'إجابتك صحيحة':'راجعي المعلومة')+'</strong><p>'+E(q.explanation)+'</p></div>':'')+'<div class="hub-q-links"><a class="inline-link" href="#/lesson/'+Number(q.lesson_id.slice(-3))+'">راجعي الدرس المرتبط ←</a>'+(done?'<button type="button" class="btn btn-outline" data-action="hub-retry" data-qid="'+E(q.id)+'">إعادة محاولة السؤال</button>':'')+'</div><div class="source-inline-preview" data-source-preview="'+E(item.id)+'" aria-live="polite"></div><label class="hub-source-note">ملاحظتي على السؤال<textarea data-source-note="QUESTION-'+E(q.id)+'" placeholder="ليش اخترت الإجابة؟ وش القاعدة اللي أبي أتذكرها؟">'+E((state.sourceNotes||{})['QUESTION-'+q.id]||'')+'</textarea></label><div class="hub-q-nav"><button type="button" class="btn btn-outline" data-action="hub-prev">السابق</button><button type="button" class="btn btn-primary" data-action="hub-next">التالي ←</button></div><p class="hub-legal">الرسم والأمثلة مبسّطة للمذاكرة، وقد تختلف اللوحات بتفاصيلها. للمراجعة النظامية راجعي دليل الإشارات الصادر عن المرور.</p></section>':'<p>لا توجد أسئلة هنا حاليًا. إذا اخترتِ «أخطائي» فمعناه أنكِ ما عندك إجابات خاطئة محفوظة في بنك المراجعة.</p>')+'<section class="hub-supplement"><h3>تجميع النزاوي والصور الـ39</h3><p>يمكنك ربط ملف النزاوي الشخصي من قسم المصادر. أضفنا كذلك فهرس روابط الصور الـ39 التي أرسلتِها، دون إعادة نشر الصور في المستودع العام.</p><a class="btn btn-outline" href="#/sources">مكتبة المصادر والصور</a></section>';
 }
 function faultDetails(course){
  var ref=course.practical_assessment_reference;if(!ref)return '';
@@ -38,8 +38,24 @@ function faultDetails(course){
 function lessonReadings(course,lesson){
  var row=(course.lesson_reading_map||[]).find(function(x){return x.lesson_id===lesson.id});
  if(!row)return '';
- var list=row.resources||[];
- return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">READING MAP / مراجع الدرس</div><h2>وين أقرأ هذا الموضوع في الكتب؟</h2><p>هذا فهرس قراءة للموضوع، <strong>وليس تصديقًا نهائيًا لكل جملة في الدرس</strong>. ترقيم PDF يختلف عن رقم الصفحة المطبوع في بعض الكتب.</p>'+list.map(function(a){var item=(course.personal_documents||[]).find(function(x){return x.id===a.source_id});var page=a.pdf_page_start,pg=page===a.pdf_page_end?'صفحة PDF '+page:'صفحات PDF '+page+'–'+a.pdf_page_end;return '<div class="lesson-source-row"><div><strong>'+E(a.source_title)+'</strong><small>'+pg+(a.printed_page_start?' · مطبوع '+a.printed_page_start+(a.printed_page_end!==a.printed_page_start?'–'+a.printed_page_end:''):'')+'</small></div><button type="button" class="btn btn-outline" data-action="hub-open-page" data-source="'+E(a.source_id)+'" data-page="'+page+'">افتحي المرجع</button></div>'}).join('')+'<p class="hub-legal">'+(row.review_status==='needs_fresh_primary_or_vehicle_confirmation'?'هذا الموضوع يحتاج كذلك تأكيدًا بمصدر حديث أو دليل السيارة أو تعليمات المدرسة.':'تم تحديد الفصل والصفحات المناسبة؛ المراجعة التفصيلية للنصوص مستمرة.')+'</p><a href="#/sources" class="inline-link">إذا ما أضفتِ الكتاب بعد، افتحي مكتبة المصادر ←</a></section>';
+ var list=row.resources||[],overview=lesson.study_content||{},intro=E(overview.introduction||overview.goal||'');
+ var keypoints=(overview.key_points||[]).map(function(x){return '<li>'+E(x)+'</li>'}).join('');
+ var cards=list.map(function(a){
+  var item=(course.personal_documents||[]).find(function(x){return x.id===a.source_id});
+  var page=a.pdf_page_start,pg=page===a.pdf_page_end?'PDF صفحة '+page:'PDF صفحات '+page+'–'+a.pdf_page_end;
+  var loaded=!!cachedFiles[a.source_id];
+  return '<details class="source-chapter"><summary><span class="chapter-title">'+E(a.source_title)+'</span><span class="chapter-page">'+pg+'</span><span class="chapter-toggle" aria-hidden="true">⌄</span></summary>'
+   +'<div class="source-chapter-inner"><h3>محتوى الدرس المرتبط بهذا الفصل</h3><p>'+intro+'</p><ul>'+keypoints+'</ul>'
+   +'<p class="source-honesty">هذا شرح أصلي من مِسار للموضوع المرتبط بالكتاب، وليس نسخًا حرفيًا لجميع صفحاته. يمكنك استعراض صفحات ملفك الأصلي أسفله من داخل الموقع.</p>'
+   +'<div class="source-chapter-actions"><button type="button" class="btn btn-primary" data-action="hub-inline-open" data-source="'+E(a.source_id)+'" data-page="'+page+'">اعرضي صفحات الكتاب هنا</button>'
+   +(!loaded?'<button type="button" class="btn btn-outline" data-action="hub-pick" data-source="'+E(a.source_id)+'">أضيفي ملفك مرة واحدة</button>':'<span class="chip tiny success">ملفك محفوظ على هذا المتصفح</span>')
+   +'</div><div class="source-inline-preview" data-source-preview="'+E(a.source_id)+'" aria-live="polite"></div>'
+   +'<p class="source-page-hint">'+E(a.note||'')+'</p></div></details>';
+ }).join('');
+ return '<section class="lesson-sources card" id="source-reading"><div class="eyebrow">THE BOOKS / مصادر الدرس</div><h2>اقرئي من الكتب هنا، بدون الخروج من مِسار</h2>'
+ +'<p>افتحي اسم أي كتاب لتشاهدي خلاصة الموضوع، ثم صفحات المرجع الأصلي داخل الدرس عند إضافته إلى مكتبتك الخاصة.</p>'
+ +'<input type="file" hidden id="hub-file" accept="application/pdf,.pdf,image/png,image/jpeg,image/webp" data-source=""/>'
+ +'<div class="source-chapter-list">'+cards+'</div><p class="hub-legal">تختلف طبعات بعض المراجع وأرقام صفحاتها، وقد تحتاج المعلومات النظامية إلى تحديث. يحتفظ المتصفح بملفاتك محليًا، ولا نرفعها إلى GitHub.</p></section>';
 }
 function schoolPolicies(course){
  var rows=course.school_specific_evidence||[];if(!rows.length)return '';
@@ -92,19 +108,37 @@ function click(action,el,ctx){
  if(action==='hub-answer'){var q=(c.review_questions||[]).find(function(x){return x.id===el.dataset.qid});var a=Number(el.dataset.answer);if(q&&Number.isInteger(a)&&a>=0&&a<q.options.length){st.reviewAnswers=st.reviewAnswers||{};st.reviewAnswers[q.id]=a;pinnedQuestionId=q.id;window.MasarCoach?.record(st,'bank',q.id,a===q.correct_option_index);ctx.save();ctx.render(true)}return true}
  if(action==='hub-retry'){st.reviewAnswers=st.reviewAnswers||{};delete st.reviewAnswers[el.dataset.qid];pinnedQuestionId=null;var idx=filteredQuestions(c,st).findIndex(function(q){return q.id===el.dataset.qid});if(idx>=0)quizIndex=idx;ctx.save();ctx.render(true);return true}
  if(action==='hub-pick'){var input=document.getElementById('hub-file');if(input){input.dataset.source=el.dataset.source;input.value='';input.click()}return true}
- if(action==='hub-open-page'){
- var page=Number(el.dataset.page),id=el.dataset.source;
- if(!Number.isInteger(page)||page<1||page>500)return true;
- var popup=window.open('about:blank','_blank');
- if(!popup){ctx.toast('اسمحي بالنوافذ المنبثقة لفتح مرجع PDF');return true}
- ctx.db.getPersonalFile(id).then(function(f){
-  if(!f||f.mime!=='application/pdf')throw Error('PDF not in personal library');
-  var url=URL.createObjectURL(f.blob);popup.location.href=url+'#page='+page;
-  setTimeout(function(){URL.revokeObjectURL(url)},300000);
- }).catch(function(){popup.close();ctx.toast('أضيفي ملف PDF من «المصادر» أولًا، ثم عودي لهذا الدرس')});
- return true
-}
- if(action==='hub-open'){var popup=window.open('about:blank','_blank');ctx.db.getPersonalFile(el.dataset.source).then(function(f){if(!f||!popup)throw Error('Missing file or popup blocked');var url=URL.createObjectURL(f.blob);popup.location.href=url;setTimeout(function(){URL.revokeObjectURL(url)},180000)}).catch(function(){if(popup)popup.close();ctx.toast('لم نتمكن من فتح الملف؛ جربي السماح بالنوافذ المنبثقة')});return true}
+ if(action==='hub-inline-open'||action==='hub-open-page'||action==='hub-open'){
+  var id=el.dataset.source,pg=Number(el.dataset.page)||1;
+  if(!Number.isInteger(pg)||pg<1||pg>500)return true;
+  var area=el.closest('.source-chapter,.hub-source,.source-topic-index')?.querySelector('.source-inline-preview');
+  if(!area){
+   var doc=el.closest('.hub-source');
+   area=doc&&doc.querySelector('.source-inline-preview');
+  }
+  if(!area){ctx.toast('افتحي قسم المرجع لعرض صفحات الكتاب هنا');return true}
+  area.replaceChildren();
+  var status=document.createElement('p');status.className='source-inline-loading';status.textContent='جارٍ تجهيز صفحات المرجع داخل الموقع…';area.appendChild(status);
+  if(!ctx.db){status.textContent='التخزين المحلي غير متاح على هذا المتصفح حاليًا';return true}
+  ctx.db.getPersonalFile(id).then(function(f){
+   area.replaceChildren();
+   if(!f||!f.blob){
+    var message=document.createElement('p');message.className='source-inline-info';
+    message.textContent='الكتاب مفهرس في المنهج، لكن ملفه غير موجود بعد على هذا المتصفح. أضيفي نسختك هنا مرة واحدة، وبعدها افتحي الصفحات من داخل مِسار.';
+    var pick=document.createElement('button');pick.type='button';pick.className='btn btn-outline';pick.dataset.action='hub-pick';pick.dataset.source=id;pick.textContent='إضافة ملف الكتاب';
+    area.append(message,pick);return;
+   }
+   var url=URL.createObjectURL(f.blob);
+   var viewer=document.createElement('iframe');viewer.className='source-embedded-file';viewer.title='عرض المرجع داخل مِسار، صفحة '+pg;
+   viewer.loading='lazy';viewer.src=url+(f.mime==='application/pdf'?'#page='+pg:'');
+   area.appendChild(viewer);
+   var caption=document.createElement('p');caption.className='source-inline-info';
+   caption.textContent='المصدر مفتوح داخل مِسار من نسختك الشخصية. إذا لم يعرض متصفحك PDF داخل الإطار، جربي متصفح كمبيوتر حديثًا.';
+   area.appendChild(caption);
+   setTimeout(function(){URL.revokeObjectURL(url)},1800000);
+  }).catch(function(){status.textContent='تعذر قراءة المرجع من التخزين المحلي. أعيدي إضافة الملف من المكتبة.'});
+  return true;
+ }
  if(action==='hub-delete'){if(confirm('حذف نسختك المحلية من هذا المرجع؟ الملف الأصلي على الكمبيوتر لن يتأثر.'))ctx.db.deletePersonalFile(el.dataset.source).then(function(){delete cachedFiles[el.dataset.source];ctx.render(true);ctx.toast('أزلنا الملف من المتصفح فقط')}).catch(function(){ctx.toast('تعذّر حذف الملف')});return true}
  return false;
 }

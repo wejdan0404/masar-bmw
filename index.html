@@ -1902,6 +1902,30 @@ body{font-size:15px;line-height:1.75;letter-spacing:0}
 @media(max-width:610px){.page{padding:20px 16px 65px}.hero.hero-premium{padding:20px;border-radius:16px}.hero-premium h1{font-size:clamp(28px,8vw,36px)}.hero-premium p{font-size:14px}.hero-bmw-scene{height:clamp(195px,55vw,265px)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:15px}.topbar{padding-inline:16px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
+
+/* MASAR editorial refinement v2 — simplify the actual study-first homepage */
+.hero-premium .hero-topline{display:flex;align-items:center;margin-bottom:15px;gap:12px}
+.hero-premium .hero-kicker{font-size:12px;color:#b9dfff;letter-spacing:0;font-weight:700}
+.hero-premium .hero-edition{display:none!important}
+.hero-premium .hero-status-strip{display:none!important}
+.hero-premium .hero-copy{padding-block:9px}
+.hero-premium .resume-location{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:7px 12px;font-size:12px;color:#e8f2fb}
+.hero-premium .hero-actions{margin-top:19px;gap:10px}
+.hero-premium .btn-ghost{border:1px solid rgba(220,236,252,.45);background:rgba(255,255,255,.06);color:#f3f7fc;min-height:43px}
+.hero-premium .btn-ghost:hover{background:rgba(255,255,255,.13)}
+.hero-premium .hero-glow{opacity:.23;pointer-events:none}
+.hero-premium .hero-copy h1 span{color:#c7e7ff}
+.stats.stats-bento{margin-top:18px;margin-bottom:22px}
+.stats.stats-bento .stat{min-height:110px}
+.home-section-head .eyebrow{font-size:11px;letter-spacing:0}
+.study-command-grid{gap:14px}
+html[data-theme="light"] .sidebar{background:#fff!important}
+html[data-theme="light"] .sidebar .nav a{color:#526375}
+html[data-theme="light"] .sidebar .nav a:hover,html[data-theme="light"] .sidebar .nav a.active{color:#142a42!important}
+html[data-theme="light"] .sidebar .side-label{color:#526375}
+@media(max-width:900px){.hero-premium .hero-copy{padding:0}.hero-premium .hero-actions{justify-content:flex-start}}
+@media(max-width:610px){.hero-premium .hero-actions .btn{white-space:normal;text-align:center;min-height:44px}.hero-premium .hero-topline{margin-bottom:6px}}
+
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -11608,8 +11632,8 @@ function home(){
  const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),watchedVideos=directVideos.filter(x=>state.videoWatched?.[x.id]).length;
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
   <div class="hero-glow" aria-hidden="true"></div>${carArt()}
-  <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> MASAR / THE DRIVING JOURNEY</span><span class="hero-edition">EDITION 2026 — 01</span></div>
-   <div class="eyebrow">رحلتك تبدأ من هنا / START HERE</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
+  <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> مِسار · تعلّم القيادة</span></div>
+   <div class="eyebrow">ابدئي من هنا</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
    <div class="hero-status-strip" aria-label="ملخص سريع للتعلم"><span><b>W${p2(week)}</b><small>الأسبوع الحالي</small></span><span class="${due?'needs-attention':''}"><b>${due}</b><small>مراجعة مستحقة</small></span><span><b>${masteredSigns}</b><small>إشارة مثبّتة</small></span><span><b>${watchedVideos}/${directVideos.length}</b><small>مقاطع شوهدت</small></span></div>
@@ -11618,7 +11642,7 @@ function home(){
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  ${adaptiveStudyPlan(n)}
  <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('بنك الأسئلة',questions.length+(COURSE.review_questions||[]).length,'سؤالًا تدريبيًا بتفسير','quiz','questions')}</div>
- <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
+ <div class="section-head home-section-head"><div><div class="eyebrow">متابعة التعلّم</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
  <div class="route-line">${lessons.filter(l=>l.week===week).map((l,i)=>`<a href="#/lesson/${l.order}" class="route-stop ${isDone(l.order)?'complete':''} ${n.order===l.order?'current':''}"><span class="route-indicator"><i>${isDone(l.order)?icon('check'):p2(l.order)}</i></span><span class="route-text"><b>${ESC(l.title)}</b><small>الدرس ${p2(l.order)} · ${l.estimated_minutes} دقيقة تقريبًا</small></span><span class="route-go">${icon('arrow')}</span></a>`).join('')}</div>
  <div class="journey-footer"><a href="#/week/${week}" class="btn btn-muted">تفاصيل الأسبوع</a><a href="#/quiz" class="btn btn-outline">اختبريني ${icon('arrow')}</a></div></section>

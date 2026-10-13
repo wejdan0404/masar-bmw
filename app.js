@@ -105,6 +105,31 @@ function studyRoute(lesson){
  ];
  return '<section class="card study-route"><div class="study-route-header"><div><span class="bento-overline">YOUR LEARNING STUDIO / جلسة اليوم</span><h2>ابدئي من هنا، خطوة بخطوة</h2><p>الدرس '+String(lesson.order).padStart(2,'0')+' · <strong>'+ESC(lesson.title)+'</strong></p></div><div class="study-route-progress" aria-label="أُنجز '+done+' من ثلاثة مؤشرات"><strong>'+done+'<small>/3</small></strong><span>فهم · ملاحظات · اختبار</span></div></div><div class="study-today-list">'+steps.map(([number,title,description,target,complete])=>'<a class="study-today-item '+(complete?'is-complete':'')+'" href="#/lesson/'+lesson.order+'"><span class="study-today-number">'+(complete?'✓':number)+'</span><span><strong>'+title+'</strong><small>'+ESC(description)+'</small></span><span class="study-today-arrow">↖</span></a>').join('')+'</div><div class="study-route-actions"><a href="#/lesson/'+lesson.order+'" class="btn btn-primary">افتحي مساحة الدرس ←</a><a href="#/study-guide" class="btn btn-outline">كيف أذاكر؟</a></div></section>';
 }
+function adaptiveStudyPlan(lesson){
+ const now=Date.now(),history=Object.values(state.reviewHistory||{});
+ const due=history.filter(x=>!x.lastCorrect||new Date(x.nextDueAt||0).getTime()<=now);
+ const wrongLessonQs=questions.filter(q=>Number.isInteger(state.answers[q.id])&&state.answers[q.id]!==q.correct_option_index);
+ const signs=COURSE.sign_library||[];
+ const signFocus=signs.filter(s=>{const x=state.signPractice?.[s.id]||{};return !((x.meaningCorrect||0)>=1&&(x.actionCorrect||0)>=1)});
+ const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||''));
+ const unwatched=directVideos.filter(x=>!state.videoWatched?.[x.id]);
+ const tasks=[];
+ if(due.length){
+   tasks.push({tone:'review',time:'8–10 د',title:'راجعي المستحق الآن',desc:due.length+' عنصرًا ظهر وقت مراجعته أو كانت آخر إجابته خطأ.',href:'#/review',cta:'افتحي المراجعة'});
+ }else{
+   tasks.push({tone:'signs',time:'6–8 د',title:'ثبتي إشارات الطريق',desc:signFocus.length?signFocus.length+' لوحة ما زالت تحتاج معنى + تصرف.':'الإشارات التي تدربتِ عليها وصلت لمرحلة التثبيت.',href:'#/traffic-signs',cta:'تدريب الإشارات'});
+ }
+ tasks.push({tone:'lesson',time:(lesson.estimated_minutes||15)+' د',title:'كمّلي الدرس '+p2(lesson.order),desc:lesson.title+' — اقرئي، لخّصي، ثم جاوبي بدون الرجوع للنص.',href:'#/lesson/'+lesson.order,cta:'افتحي الدرس'});
+ if(wrongLessonQs.length){
+   tasks.push({tone:'quiz',time:'5–7 د',title:'صححي خطأ قديم',desc:wrongLessonQs.length+' أسئلة دروس ما زالت آخر إجابة مسجلة فيها غير صحيحة.',href:'#/quiz',cta:'اختبار الأخطاء'});
+ }else if(unwatched.length){
+   tasks.push({tone:'video',time:'5–8 د',title:'شاهدي ثم اكتبي ملاحظة',desc:'عندك '+unwatched.length+' مقطع مباشر لم تسجلي مشاهدته بعد. اكتبي الدقيقة + الخطوة + السبب.',href:'#/videos',cta:'مقاطع القيادة'});
+ }else{
+   tasks.push({tone:'cards',time:'5 د',title:'استرجاع سريع بدون قراءة',desc:'اختاري عدة بطاقات وحاولي الإجابة قبل قلبها.',href:'#/cards',cta:'بطاقات التذكّر'});
+ }
+ const score=due.length+wrongLessonQs.length+(signFocus.length?1:0);
+ return '<section class="adaptive-plan card" aria-label="جلسة مذاكرة ذكية مقترحة"><div class="adaptive-plan-head"><div><span class="bento-overline">SMART SESSION / مبنية على نشاطك</span><h2>وش تذاكرين الآن؟</h2><p>رتبتها لك من بيانات إجاباتك ومراجعاتك داخل مِسار، بدل ما تختارين عشوائيًا.</p></div><span class="adaptive-priority '+(score?'has-priority':'clear')+'">'+(score?'فيه نقاط تحتاج مراجعة':'الجلسة مفتوحة للتقدم')+'</span></div><div class="adaptive-task-grid">'+tasks.map((t,i)=>'<a href="'+t.href+'" class="adaptive-task '+t.tone+'"><span class="adaptive-task-no">0'+(i+1)+'</span><div><span class="adaptive-task-time">'+t.time+'</span><strong>'+ESC(t.title)+'</strong><p>'+ESC(t.desc)+'</p><small>'+ESC(t.cta)+' ←</small></div></a>').join('')+'</div><div class="adaptive-plan-foot"><span>الخطة تتغير تلقائيًا مع إجاباتك.</span><a href="#/review">ليش ظهر لي هذا؟ راجعي سجل التكرار ←</a></div></section>';
+}
 function home(){
  const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress();
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
@@ -116,6 +141,7 @@ function home(){
   </div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
+ ${adaptiveStudyPlan(n)}
  <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('الأسئلة','48','تدريبًا بتفسير','quiz','questions')}</div>
  <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>

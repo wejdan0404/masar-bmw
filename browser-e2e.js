@@ -81,9 +81,9 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
       for(const el of picks){
         const rect=el.getBoundingClientRect();
         if(rect.width<50||rect.height<25||rect.top>innerHeight||rect.bottom<0||rect.left>innerWidth||rect.right<0)continue;
-        const cs=getComputedStyle(el),bg=cs.backgroundColor,m=bg.match(/^rgb\\((\\d+), (\\d+), (\\d+)\\)$/);
+        const cs=getComputedStyle(el),bg=cs.backgroundColor,m=bg.startsWith('rgb(')?bg.slice(4,-1).split(',').map(x=>Number(x.trim())):null;
         if(!m)continue;
-        const rgb=m.slice(1).map(Number),light=.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];
+        const rgb=m,light=.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];
         if(light>94)continue;
         const tag=(el.tagName.toLowerCase()+'.'+[...el.classList].slice(0,3).join('.')),key=tag+bg;
         if(seen.has(key))continue;seen.add(key);

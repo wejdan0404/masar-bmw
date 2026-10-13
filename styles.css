@@ -1451,3 +1451,25 @@ body{
 @media(max-width:900px){.hero.hero-premium{min-height:355px}.hero-brooch-art{width:47%;left:-8%;opacity:.40;filter:saturate(.9)}.hero-premium .hero-copy{max-width:100%}.brooch-caption{display:none}}
 @media(max-width:610px){.hero.hero-premium{padding:28px 22px 23px;min-height:370px;isolation:isolate}.hero-brooch-art{top:8%;bottom:auto;left:-94px;width:300px;height:300px;opacity:.23}.hero-premium .hero-copy{position:relative;z-index:4}.hero-premium .hero-status-strip{position:relative;z-index:4}.hero-premium h1{font-size:clamp(34px,9vw,46px)}}
 @media print{.hero-brooch-art{display:none!important}}
+
+
+/* Illustrated reference-library covers: intentionally not reproductions of original PDFs. */
+.masar-library-cover{
+ position:relative;isolation:isolate;max-width:340px;min-height:212px;margin:14px 0 20px;padding:22px 25px 18px;
+ display:flex;flex-direction:column;justify-content:space-between;gap:18px;
+ border-radius:6px 17px 17px 6px;border:1px solid #d4ac8d;border-inline-start:9px solid #8d4452;
+ background:radial-gradient(ellipse at 70% 18%,rgba(239,183,177,.20),transparent 46%),linear-gradient(135deg,#331624,#641b38 66%,#381524);
+ box-shadow:0 13px 25px rgba(57,19,37,.17),inset 0 0 0 5px rgba(229,185,143,.11);
+ color:#fff6ef;
+}
+.masar-library-cover:before{content:"";position:absolute;inset:11px;border:1px solid rgba(236,204,159,.35);border-radius:3px 10px 10px 3px;pointer-events:none}
+.masar-library-cover:after{content:"✦";position:absolute;left:24px;top:45px;font-size:45px;color:rgba(248,212,153,.65)}
+.masar-library-cover>span{font:700 9px/1.6 Arial,sans-serif;letter-spacing:.12em;color:#edcda5;position:relative;z-index:1}
+.masar-library-cover>strong{max-width:270px;font-size:19px;font-weight:850;line-height:1.55;position:relative;z-index:1}
+.masar-library-cover>small{color:#f0d4c4;font-size:10px;position:relative;z-index:1}
+.hub-sign-scene{display:grid;gap:10px;margin:14px 0 18px}
+.hub-sign-scene figcaption{max-width:340px;text-align:center;font-size:10px;color:#587080;line-height:1.6}
+.source-summary-lesson p{font-size:11.5px;line-height:1.85;color:#4b6576;margin:9px 0}
+.source-topic-row button{min-height:38px}
+@media(max-width:700px){.masar-library-cover{max-width:none;min-height:185px}}
+@media print{.masar-library-cover{display:none!important}.hub-sign-scene figcaption{font-size:8pt}}

@@ -154,6 +154,8 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   await localSource.locator('[data-action="hub-open"]').click();
   await localSource.locator('.source-embedded-file').waitFor({timeout:10000});
   assert.match(await localSource.locator('.source-embedded-file').getAttribute('src'),/^blob:/,'Local PDF must stay inside the Masar page');
+  await localSource.locator('[data-action="hub-mobile-reader"]').waitFor();
+  assert((await localSource.locator('[data-action="hub-mobile-reader"]').innerText()).includes('الجوال'),'PDF view should expose the mobile/iPhone-compatible in-page reader');
   const [batchPicker]=await Promise.all([page.waitForEvent('filechooser'),page.locator('[data-action="hub-batch-pick"]').click()]);
   await batchPicker.setFiles([{name:'16907764(3).pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF-1.4\n%%EOF')},{name:'ملخص تقييم المرور(2).pdf',mimeType:'application/pdf',buffer:Buffer.from('%PDF-1.4\n%%EOF')}]);
   await page.waitForTimeout(950);

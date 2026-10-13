@@ -518,3 +518,61 @@ html[data-theme="light"] .hero-premium .hero-glow{
  .hero-premium h1{font-size:clamp(29px,8vw,38px)!important;max-width:100%!important}
  .hero-premium .hero-actions{flex-wrap:wrap!important}
 }
+
+
+/* User-selected transparent BMW cutout: split headline + car on desktop, stacked on mobile. */
+.hero.hero-premium{
+ display:grid!important;
+ grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)!important;
+ align-items:center!important;
+ column-gap:clamp(15px,3vw,52px)!important;
+ min-height:clamp(340px,30vw,435px)!important;
+ padding:clamp(24px,3.4vw,45px)!important;
+}
+.hero-premium .hero-copy{
+ grid-column:1!important;grid-row:1!important;
+ position:relative!important;z-index:2!important;
+ width:100%!important;max-width:100%!important;
+ min-width:0;padding:0!important;
+}
+.hero-premium h1{
+ max-width:100%!important;
+ font-size:clamp(28px,3vw,45px)!important;
+ line-height:1.4!important;
+ text-wrap:balance;
+}
+.hero-premium h1 span{display:block}
+.hero-premium .hero-copy p{max-width:52ch!important}
+.hero-car-wrap{
+ grid-column:2;grid-row:1;
+ position:relative;z-index:1;
+ width:100%;height:100%;min-height:260px;
+ display:flex;align-items:flex-end;justify-content:center;
+ overflow:visible;pointer-events:none;
+ background:radial-gradient(ellipse at 50% 62%,rgba(85,159,220,.16),transparent 65%);
+}
+.hero-car-image{
+ display:block;width:100%;max-width:480px;
+ height:clamp(270px,27vw,420px);
+ object-fit:contain;object-position:center bottom;
+ filter:drop-shadow(0 22px 28px rgba(0,0,0,.27));
+ user-select:none;
+}
+html[data-theme="light"] .hero-car-wrap{background:radial-gradient(ellipse at 50% 65%,rgba(35,123,191,.1),transparent 66%)}
+html[data-theme="light"] .hero-car-image{filter:drop-shadow(0 20px 20px rgba(15,36,53,.13))}
+@media(max-width:900px){
+ .hero.hero-premium{
+  display:flex!important;flex-direction:column!important;
+  align-items:stretch!important;gap:12px!important;
+  min-height:0!important;
+ }
+ .hero-premium .hero-copy{width:100%!important;max-width:none!important}
+ .hero-car-wrap{width:100%;min-height:0;height:auto;align-self:center}
+ .hero-car-image{max-width:390px;height:clamp(220px,52vw,360px)}
+}
+@media(max-width:610px){
+ .hero.hero-premium{padding:23px 19px 12px!important}
+ .hero-premium h1{font-size:clamp(28px,7.4vw,36px)!important}
+ .hero-car-image{height:clamp(210px,63vw,315px);max-width:330px}
+}
+@media(prefers-reduced-motion:reduce){.hero-car-image{animation:none!important;transition:none!important}}

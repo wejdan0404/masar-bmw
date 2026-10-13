@@ -26,6 +26,16 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert.notEqual(darkCard,'rgb(255, 255, 255)','Dark theme cards should not be white');
   await page.locator('[data-action="theme-toggle"]').click();
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'light','Theme switch activates light mode');
+  const lightPalette=await page.evaluate(()=>{
+    const sidebar=document.querySelector('.sidebar'),link=sidebar?.querySelector('.sidebar-group-links a'),hero=document.querySelector('.hero-premium .hero-copy h1');
+    return {sidebar:sidebar&&getComputedStyle(sidebar).backgroundColor,link:link&&getComputedStyle(link).color,
+      hero:hero&&getComputedStyle(hero).color,kicker:document.querySelector('.hero-kicker')?.textContent||''};
+  });
+  assert.equal(lightPalette.sidebar,'rgb(255, 255, 255)','Light sidebar must use a readable white surface');
+  assert.notEqual(lightPalette.link,'rgb(255, 255, 255)','Light sidebar links cannot remain white on white');
+  assert.match(lightPalette.hero||'',/^rgb\\(/,'Light hero heading should have an explicit computed color');
+  assert(!lightPalette.kicker.includes('THE DRIVING JOURNEY'),'Legacy marketing copy must not return after compilation');
+  console.log('PASS Chromium: light sidebar text contrast and simplified hero copy');
   const lightCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.notEqual(darkCard,lightCard,'Card surfaces must change with theme');
   await page.reload({waitUntil:'domcontentloaded'});

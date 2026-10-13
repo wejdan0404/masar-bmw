@@ -75,29 +75,20 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
     });
     contrastSnapshots.push({route,audit});
 
-    if(['home','lesson/1','sources'].includes(route)){
-      await page.waitForTimeout(180);
-      const jpg=await page.screenshot({type:'jpeg',quality:38,fullPage:false});
-      const base64=jpg.toString('base64'),part=4096,total=Math.ceil(base64.length/part);
-      for(let i=0;i<total;i++)console.log('MASAR_QA_IMAGE '+route+' '+i+'/'+total+' '+base64.slice(i*part,(i+1)*part));
+
+    const requiredSelectors=['.sidebar .logo strong','.sidebar .sidebar-group-title',
+      '.sidebar .sidebar-group-links a','.topbar .crumb','.page-title',
+      '.hero-premium h1','.hero-premium p','.stat-label','.card h3',
+      '.lesson-body p','.source-chapter summary','.week-card h3','.theme-setting p'];
+    const toRGB=v=>v?.startsWith('rgb(')?v.slice(4,-1).split(',').map(n=>Number(n.trim())):null;
+    const luminance=rgb=>rgb.map(c=>{const n=c/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4;})
+      .reduce((sum,x,i)=>sum+x*[.2126,.7152,.0722][i],0);
+    for(const item of audit.filter(x=>requiredSelectors.includes(x.selector))){
+      const fg=toRGB(item.fg),bg=toRGB(item.bg);
+      if(!fg||!bg)continue;
+      const l1=luminance(fg),l2=luminance(bg),ratio=(Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05);
+      assert(ratio>=4.5,'Light mode text fails WCAG AA contrast on '+route+' '+item.selector+': '+ratio.toFixed(2));
     }
-    const darkSurfaces=await page.evaluate(()=>{
-      const out=[],seen=new Set();
-      const picks=document.querySelectorAll('#app section,#app article,#app aside,#app details,#app header,#app nav,#app .card,#app .callout,#app button,#app a');
-      for(const el of picks){
-        const rect=el.getBoundingClientRect();
-        if(rect.width<50||rect.height<25||rect.top>innerHeight||rect.bottom<0||rect.left>innerWidth||rect.right<0)continue;
-        const cs=getComputedStyle(el),bg=cs.backgroundColor,m=bg.startsWith('rgb(')?bg.slice(4,-1).split(',').map(x=>Number(x.trim())):null;
-        if(!m)continue;
-        const rgb=m,light=.2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];
-        if(light>94)continue;
-        const tag=(el.tagName.toLowerCase()+'.'+[...el.classList].slice(0,3).join('.')),key=tag+bg;
-        if(seen.has(key))continue;seen.add(key);
-        out.push({tag,bg,color:cs.color,text:(el.innerText||'').slice(0,65)});
-      }
-      return out.slice(0,38);
-    });
-    console.log('LIGHT_DARK_SURFACES '+route+' '+JSON.stringify(darkSurfaces));
 
   }
 
@@ -110,8 +101,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert(sourceCover.font>=17,'Book title must be legible at desktop size');
   console.log('PASS Chromium: dark blue book covers keep readable light titles');
   await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
-  console.log('LIGHT_THEME_AUDIT '+JSON.stringify(contrastSnapshots));
-  await page.goto(base+'#/home',{waitUntil:'domcontentloaded'});
+  console.log('PASS Chromium: Light Mode WCAG AA sampled text contrast across '+contrastSnapshots.length+' pages');
   await page.reload({waitUntil:'domcontentloaded'});
   assert.equal(await page.evaluate(()=>document.documentElement.dataset.theme),'light','Theme preference persists across reload');
   await page.goto(base+'#/settings',{waitUntil:'domcontentloaded'});

@@ -1074,13 +1074,13 @@ body{
 .topbar-review-pill b{font:900 12px/1 Arial,sans-serif}
 
 /* Full-screen reading mode */
-.focus-mode .sidebar{transform:translateX(110%);pointer-events:none;opacity:0}
+.focus-mode .sidebar{transform:translateX(110%);pointer-events:none;opacity:0;visibility:hidden}
 .focus-mode .app-main{margin-right:0}
 .focus-mode .page{max-width:1320px}
 .focus-mode .lesson-layout{grid-template-columns:minmax(0,var(--reading));justify-content:center}
 .focus-mode .lesson-aside{display:none}
 .focus-mode .topbar{padding-inline:clamp(20px,5vw,72px)}
-.sidebar{transition:transform .28s ease,opacity .22s ease}
+.sidebar{transition:transform .28s ease,opacity .22s ease,visibility 0s linear .28s}.app:not(.focus-mode) .sidebar{visibility:visible;transition-delay:0s}
 
 /* Home — Magic UI inspired bento + automotive HUD */
 .hero-premium{
@@ -10730,7 +10730,7 @@ function sidebar(){
   const current=section.links.some(([href])=>path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/'))));
   return '<details class="sidebar-nav-group"'+(current?' open':'')+'><summary class="sidebar-group-title">'+icon(section.icon)+'<span>'+ESC(section.title)+'</span><span class="nav-section-chevron" aria-hidden="true">⌄</span></summary><div class="sidebar-group-links">'+section.links.map(([href,ic,title])=>'<a href="#'+href+'" class="'+(path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':'')+'" '+(path===href?'aria-current="page"':'')+'>'+icon(ic)+'<span>'+ESC(title)+'</span>'+(href==='/weeks'?'<span class="tag">16</span>':'')+'</a>').join('')+'</div></details>';
  }).join('');
- return '<aside class="sidebar '+(mobileOpen?'open':'')+'" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">اختاري القسم، ثم افتحي الدرس أو التدريب</div><nav class="nav sidebar-section-nav" aria-label="أقسام مِسار">'+sections+'</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>مشوارك إلى الثقة</small><br><strong>'+progress()+'%</strong></div><div style="font-size:30px;color:#9eb5c8">'+icon('road')+'</div></div><div class="line"><i style="width:'+progress()+'%"></i></div><small>'+completed().size+' من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>';
+ return '<aside class="sidebar '+(mobileOpen?'open':'')+'" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">اختاري القسم، ثم افتحي الدرس أو التدريب</div><nav class="nav sidebar-section-nav" aria-label="أقسام مِسار">'+sections+'</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>تقدّم المنهج</small><br><strong>'+progress()+'%</strong></div><div style="font-size:30px;color:#9eb5c8">'+icon('road')+'</div></div><div class="line"><i style="width:'+progress()+'%"></i></div><small>'+completed().size+' من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>';
 }
 function reviewDueCount(){
  const now=Date.now();
@@ -10810,7 +10810,7 @@ function home(){
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
  ${adaptiveStudyPlan(n)}
- <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('الأسئلة','48','تدريبًا بتفسير','quiz','questions')}</div>
+ <div class="stats stats-bento">${stat('المنهج','16','أسبوعًا منظمًا','layers','weeks')}${stat('الدروس','48','درسًا نظريًا','book','lessons')}${stat('أكملتي',done,'من أصل 48 درسًا','check','completed')}${stat('بنك الأسئلة',questions.length+(COURSE.review_questions||[]).length,'سؤالًا تدريبيًا بتفسير','quiz','questions')}</div>
  <div class="section-head home-section-head"><div><div class="eyebrow">YOUR CURRENT ROUTE</div><h2>مشوارك الحالي</h2><p>لا تحتاجين تكمّلين كل شيء اليوم؛ خطوة واحدة كفاية.</p></div><a href="#/weeks">كل الأسابيع ${icon('arrow')}</a></div>
  <div class="dashboard-grid bento-stage"><section class="card journey-panel"><div class="card-top"><div><div class="bento-overline">NEXT STOP / المحطة التالية</div><h3>الأسبوع ${p2(week)} <span class="muted-separator">/</span> ${ESC(weeks[week-1]?.title||'المرحلة الحالية')}</h3></div><span class="chip blue tiny">${weeklyDone(week)} / 3 مكتمل</span></div>
  <div class="route-line">${lessons.filter(l=>l.week===week).map((l,i)=>`<a href="#/lesson/${l.order}" class="route-stop ${isDone(l.order)?'complete':''} ${n.order===l.order?'current':''}"><span class="route-indicator"><i>${isDone(l.order)?icon('check'):p2(l.order)}</i></span><span class="route-text"><b>${ESC(l.title)}</b><small>الدرس ${p2(l.order)} · ${l.estimated_minutes} دقيقة تقريبًا</small></span><span class="route-go">${icon('arrow')}</span></a>`).join('')}</div>

@@ -102,6 +102,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   assert((await page.locator('.ts-card').count())>=1,'A sign should be mastered only after correct meaning and action retrieval');
   console.log('PASS Chromium: traffic signs test both recognition and the correct driving action');
   await page.goto(base+'#/practice-quiz',{waitUntil:'domcontentloaded'});
+  await page.locator('[data-action="hub-filter"][data-topic="all"]').click();
   const reviewVisualKeys=[];
   for(let i=0;i<course.review_questions.length;i++){
     const visual=page.locator('.hub-question .masar-review-visual');

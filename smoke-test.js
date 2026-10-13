@@ -68,7 +68,7 @@ context.location.hash='#/study-guide';windowHandlers.hashchange();if(!element('a
 context.location.hash='#/paper-practice';windowHandlers.hashchange();if(!element('app').innerHTML.includes('اختبار ورقي تجريبي')||!element('app').innerHTML.includes('طباعة نموذج الأسئلة'))throw Error('Printable practice missing');if(!element('app').innerHTML.includes('36 سؤالًا'))throw Error('Printed paper count stale');console.log('PASS study guide and 36-question paper assessment');
 
 context.location.hash='#/lesson/19';windowHandlers.hashchange();
-if(!element('app').innerHTML.includes('مراجع الدرس')||!element('app').innerHTML.includes('data-action="hub-open-page"'))throw Error('Indexed PDF lesson reading missing');
+if(!element('app').innerHTML.includes('اقرئي من الكتب هنا')||!element('app').innerHTML.includes('data-action="hub-inline-open"'))throw Error('Indexed PDF lesson reading missing');
 console.log('PASS per-lesson private PDF reading references');
 context.location.hash='#/practice-quiz';windowHandlers.hashchange();
 if(!element('app').innerHTML.includes('أخطائي')||!element('app').innerHTML.includes('غير المحلول')||!element('app').innerHTML.includes('راجعي الدرس المرتبط'))throw Error('Mistakes filters and lesson links absent');
@@ -179,13 +179,13 @@ console.log('PASS Learning Studio, guided lesson steps, star tracker and local p
 // Menu information architecture and privately indexed study sources.
 context.location.hash='#/home';windowHandlers.hashchange();
 const navHtml=element('app').innerHTML;
-if((navHtml.match(/class="sidebar-nav-group"/g)||[]).length!==5)throw Error('Sidebar must display five learning navigation groups');
-for(const label of ['ابدئي هنا','منهجي ودروسي','أتدرّب وأختبر','أراجع وأثبّت','مكتبتي وإعداداتي']){
+if((navHtml.match(/class="sidebar-nav-group"/g)||[]).length!==6)throw Error('Sidebar must display six learning navigation groups');
+for(const label of ['ابدئي من هنا','تعلمي النظري','شاهدي وتدرّبي','الاختبارات والتطبيق','راجعي وثبّتي','مكتبتي وإعداداتي']){
  if(!navHtml.includes(label))throw Error('Missing grouped navigation label '+label);
 }
 context.location.hash='#/sources';windowHandlers.hashchange();
 const libraryHtml=element('app').innerHTML;
-if(!libraryHtml.includes('٧ كتب ومراجع PDF')||!libraryHtml.includes('source-topic-index'))throw Error('Seven source references and reading-map topics not accessible');
+if(!libraryHtml.includes('7 كتب ومراجع PDF')||!libraryHtml.includes('source-topic-index'))throw Error('Seven source references and reading-map topics not accessible');
 for(const name of ['درب السلامة','النزاوي','كتاب المتدربة','جدة المتطورة','تقييم مهارة القيادة']){
  if(!libraryHtml.includes(name))throw Error('Personal reference absent from source library: '+name);
 }

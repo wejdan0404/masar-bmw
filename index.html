@@ -10758,7 +10758,7 @@ function lessonCheck(course,state,l){
  const q=(course.questions||[]).find(x=>x.lesson_id===l.id);if(!q)return '';
  const s=ensure(state);const answer=s.diagnostics?.[q.id];
  const has=Number.isInteger(answer?.choice),correct=answer?.choice===q.correct_option_index;
- return `<details class="studio-checkpoint"><summary>اختبار قبلي خفيف · هل أعرف هذه الفكرة؟</summary>
+ return `<details class="studio-checkpoint" ${has?'open':''}><summary>اختبار قبلي خفيف · هل أعرف هذه الفكرة؟</summary>
  <div class="studio-checkpoint-body"><p>سؤال للتشخيص الشخصي فقط، ما يغيّر نتيجة اختباراتك الأساسية.</p>
  <strong>${escapeHTML(q.question)}</strong>
  <div class="studio-diagnostic-answers">${q.options.map((o,i)=>`<button type="button" data-action="studio-diagnostic" data-question="${escapeHTML(q.id)}" data-choice="${i}" ${has?'disabled':''} class="${has?(i===q.correct_option_index?'is-correct':i===answer.choice?'is-wrong':''):''}">${escapeHTML(o)}</button>`).join('')}</div>

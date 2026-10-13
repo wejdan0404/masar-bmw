@@ -1,5 +1,5 @@
 /* MASAR offline navigation cache: no user notes, credentials or external content cached. */
-const CACHE_NAME = 'masar-static-v8-no-home-timer';
+const CACHE_NAME = 'masar-static-v9-burgundy-archive';
 const SCOPE = self.registration.scope;
 const CORE = ['./','./index.html','./icon.svg','./manifest.webmanifest'];
 self.addEventListener('install', event => {

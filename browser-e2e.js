@@ -33,7 +33,7 @@ const course=JSON.parse(fs.readFileSync(__dirname+'/data/course.json','utf8'));
   });
   assert.equal(lightPalette.sidebar,'rgb(255, 255, 255)','Light sidebar must use a readable white surface');
   assert.notEqual(lightPalette.link,'rgb(255, 255, 255)','Light sidebar links cannot remain white on white');
-  assert.match(lightPalette.hero||'',/^rgb\\(/,'Light hero heading should have an explicit computed color');
+  assert((lightPalette.hero||'').startsWith('rgb('),'Light hero heading should have an explicit computed color');
   assert(!lightPalette.kicker.includes('THE DRIVING JOURNEY'),'Legacy marketing copy must not return after compilation');
   console.log('PASS Chromium: light sidebar text contrast and simplified hero copy');
   const lightCard=await page.locator('.stats-bento .stat').first().evaluate(el=>getComputedStyle(el).backgroundColor);

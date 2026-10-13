@@ -1,55 +1,55 @@
 
 /* MASAR Learning Studio v3 — RTL-first, native and intentionally dependency-free. */
-.studio-session{position:relative;isolation:isolate;margin:0 0 22px;padding:24px;background:linear-gradient(126deg,#ffffff 10%,#f1f6f9 100%);border:1px solid #d9e4ea;border-radius:23px;box-shadow:0 8px 27px rgba(32,45,54,.06)}
+.studio-session{position:relative;isolation:isolate;margin:0 0 22px;padding:24px;background:linear-gradient(126deg,#ffffff 10%,#f5f5f5 100%);border:1px solid #e2e2e2;border-radius:23px;box-shadow:0 8px 27px rgba(43,43,43,.06)}
 .studio-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
 .studio-heading h2{font-size:clamp(19px,2vw,25px);line-height:1.55;margin:5px 0}
-.studio-heading p{color:#536d7c;font-size:13px;margin:0 0 16px}
-.studio-session-icon{font-size:35px;color:#800c1f;opacity:.65}
-.studio-timer-controls{display:flex;align-items:center;flex-wrap:wrap;gap:13px;border:1px solid #e2e8ec;border-radius:15px;padding:13px 15px;background:#fff}
+.studio-heading p{color:#696969;font-size:13px;margin:0 0 16px}
+.studio-session-icon{font-size:35px;color:#262626;opacity:.65}
+.studio-timer-controls{display:flex;align-items:center;flex-wrap:wrap;gap:13px;border:1px solid #e7e7e7;border-radius:15px;padding:13px 15px;background:#ffffff}
 .studio-timer-large{padding:19px;gap:18px}
 .studio-clock{display:flex;flex-direction:column;position:relative;min-width:100px;padding-right:15px}
-.studio-clock:before{content:"";position:absolute;right:0;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(to top,#800c1f var(--studio-progress),#e4e9ed var(--studio-progress))}
-.studio-clock span{font:700 25px/1.3 system-ui,Arial,sans-serif;font-variant-numeric:tabular-nums;text-align:right;color:#202d36}
-.studio-clock small{font-size:11px;color:#557082;margin-top:3px}
+.studio-clock:before{content:"";position:absolute;right:0;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(to top,#262626 var(--studio-progress),#e8e8e8 var(--studio-progress))}
+.studio-clock span{font:700 25px/1.3 system-ui,Arial,sans-serif;font-variant-numeric:tabular-nums;text-align:right;color:#2b2b2b}
+.studio-clock small{font-size:11px;color:#6c6c6c;margin-top:3px}
 .studio-timer-buttons{display:flex;flex-wrap:wrap;gap:8px}
-.studio-timer-buttons button,.studio-duration button{background:#f1f5f7;border:1px solid #d8e1e6;color:#202d36;border-radius:10px;padding:9px 13px;font:inherit;font-size:12px;cursor:pointer;min-height:40px}
-.studio-timer-buttons button:first-child{background:#800c1f;color:#fff;border-color:#800c1f;font-weight:700}
-.studio-timer-buttons button:hover,.studio-duration button:hover{border-color:#800c1f}
+.studio-timer-buttons button,.studio-duration button{background:#f4f4f4;border:1px solid #dfdfdf;color:#2b2b2b;border-radius:10px;padding:9px 13px;font:inherit;font-size:12px;cursor:pointer;min-height:40px}
+.studio-timer-buttons button:first-child{background:#262626;color:#ffffff;border-color:#262626;font-weight:700}
+.studio-timer-buttons button:hover,.studio-duration button:hover{border-color:#262626}
 .studio-duration{display:flex;flex-wrap:wrap;gap:6px;margin-inline-start:auto}
 .studio-duration button{min-width:46px}
-.studio-duration .selected{background:#202d36;color:white;border-color:#202d36}
+.studio-duration .selected{background:#2b2b2b;color:white;border-color:#2b2b2b}
 .studio-step-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
-.studio-step-links a,.studio-go-lesson{display:inline-flex;align-items:center;min-height:38px;border-radius:9px;padding:7px 13px;background:#e9f1f5;color:#2c475d;text-decoration:none;font-size:12px;font-weight:700}
+.studio-step-links a,.studio-go-lesson{display:inline-flex;align-items:center;min-height:38px;border-radius:9px;padding:7px 13px;background:#f0f0f0;color:#434343;text-decoration:none;font-size:12px;font-weight:700}
 .studio-go-lesson{margin-top:15px}
-.studio-return,.studio-session-summary{padding:12px 14px;border-radius:12px;background:#f9f3e5;color:#624e23;font-size:13px;line-height:1.8}
-.studio-session-summary{margin-top:12px;background:#edf5f2;color:#235544}
+.studio-return,.studio-session-summary{padding:12px 14px;border-radius:12px;background:#f3f3f3;color:#4f4f4f;font-size:13px;line-height:1.8}
+.studio-session-summary{margin-top:12px;background:#f3f3f3;color:#494949}
 .studio-session-summary p{margin:4px 0}
-.studio-session-history{font-size:11px;color:#607583;margin-top:12px}
+.studio-session-history{font-size:11px;color:#727272;margin-top:12px}
 .studio-settings{margin-bottom:18px;padding:19px}
 .studio-settings h2{margin:0 0 8px}
-.studio-settings p{font-size:13px;color:#607583}
-.studio-settings kbd{background:#e8eef1;border-radius:5px;padding:3px 5px}
-.studio-timer-dock{position:fixed;z-index:31;left:20px;bottom:20px;max-width:min(510px,calc(100vw - 40px));box-shadow:0 9px 27px #202d3622;border-radius:16px;background:white}
+.studio-settings p{font-size:13px;color:#727272}
+.studio-settings kbd{background:#ededed;border-radius:5px;padding:3px 5px}
+.studio-timer-dock{position:fixed;z-index:31;left:20px;bottom:20px;max-width:min(510px,calc(100vw - 40px));box-shadow:0 9px 27px #2b2b2b22;border-radius:16px;background:white}
 .studio-timer-dock .studio-timer-controls{gap:8px;padding:10px 13px}
 .studio-timer-dock .studio-clock span{font-size:18px}
 .studio-timer-dock .studio-timer-buttons button{min-height:34px;padding:7px 9px}
 .studio-search-trigger{display:inline-flex;align-items:center;gap:7px;min-height:39px;cursor:pointer}
 .studio-search-overlay[hidden]{display:none!important}
-.studio-search-overlay{position:fixed;z-index:1000;inset:0;background:#142633a8;display:grid;place-items:start center;padding:12vh 15px 20px;overflow-y:auto}
-.studio-search-window{direction:rtl;width:min(650px,100%);max-height:78vh;background:#fff;border:1px solid #e2e9ef;box-shadow:0 22px 75px #172a3980;border-radius:22px;padding:22px;display:flex;flex-direction:column}
+.studio-search-overlay{position:fixed;z-index:1000;inset:0;background:#232323a8;display:grid;place-items:start center;padding:12vh 15px 20px;overflow-y:auto}
+.studio-search-window{direction:rtl;width:min(650px,100%);max-height:78vh;background:#ffffff;border:1px solid #e8e8e8;box-shadow:0 22px 75px #27272780;border-radius:22px;padding:22px;display:flex;flex-direction:column}
 .studio-search-window header{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .studio-search-window h2{font-size:21px;margin:0 0 12px}
-.studio-search-window header button{border:0;background:#f1f5f7;border-radius:8px;padding:10px;cursor:pointer}
-.studio-search-window label{font-size:12px;color:#526775;margin:0 0 8px}
-#studio-search-input{width:100%;min-height:49px;border-radius:12px;border:1px solid #b5c6d0;padding:12px 15px;font:inherit;color:#202d36}
-#studio-search-input:focus-visible{outline:3px solid #7598b9;outline-offset:2px}
+.studio-search-window header button{border:0;background:#f4f4f4;border-radius:8px;padding:10px;cursor:pointer}
+.studio-search-window label{font-size:12px;color:#646464;margin:0 0 8px}
+#studio-search-input{width:100%;min-height:49px;border-radius:12px;border:1px solid #c3c3c3;padding:12px 15px;font:inherit;color:#2b2b2b}
+#studio-search-input:focus-visible{outline:3px solid #939393;outline-offset:2px}
 #studio-search-results{margin-top:13px;overflow:auto;min-height:70px}
-.studio-result{display:flex;flex-direction:column;gap:4px;padding:13px 10px;color:#202d36;border-bottom:1px solid #e8eff2;text-decoration:none;border-radius:9px}
-.studio-result:hover,.studio-result:focus-visible{background:#eff5f8}
-.studio-result-type{font-size:10px;color:#800c1f;font-weight:800}
+.studio-result{display:flex;flex-direction:column;gap:4px;padding:13px 10px;color:#2b2b2b;border-bottom:1px solid #eeeeee;text-decoration:none;border-radius:9px}
+.studio-result:hover,.studio-result:focus-visible{background:#f4f4f4}
+.studio-result-type{font-size:10px;color:#262626;font-weight:800}
 .studio-result strong{font-size:14px}
-.studio-result small{color:#557082;font-size:12px;line-height:1.6}
-.studio-search-window footer,.studio-no-results{color:#607584;font-size:11px;padding:12px 0}
+.studio-result small{color:#6c6c6c;font-size:12px;line-height:1.6}
+.studio-search-window footer,.studio-no-results{color:#727272;font-size:11px;padding:12px 0}
 body.studio-search-open{overflow:hidden}
 @media(max-width:900px){.studio-timer-dock{bottom:86px;left:12px;right:12px;max-width:none}.studio-search-trigger span{display:none}}
 @media(max-width:610px){.studio-session{padding:15px}.studio-timer-large{align-items:flex-start}.studio-duration{margin-inline-start:0}.studio-timer-dock .studio-clock small{display:none}.studio-timer-dock .studio-timer-buttons button{font-size:11px}.studio-timer-dock .studio-clock span{font-size:16px}.studio-search-overlay{padding-top:6vh}.studio-search-window{max-height:90vh;padding:16px}}
@@ -57,40 +57,40 @@ body.studio-search-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.studio-search-overlay *, .studio-session *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
 /* Second-pass study comprehension and contextual dock */
-.studio-checkpoint,.studio-explain{margin-top:12px;border:1px solid #dee7eb;border-radius:13px;background:#fff;overflow:hidden}
-.studio-checkpoint summary,.studio-explain summary{cursor:pointer;padding:14px 16px;font-weight:800;color:#283f50;list-style-position:inside}
-.studio-checkpoint-body{padding:14px 16px;border-top:1px solid #edf1f4;line-height:1.9}
-.studio-checkpoint-body p{font-size:12px;color:#506a7a}
+.studio-checkpoint,.studio-explain{margin-top:12px;border:1px solid #e5e5e5;border-radius:13px;background:#ffffff;overflow:hidden}
+.studio-checkpoint summary,.studio-explain summary{cursor:pointer;padding:14px 16px;font-weight:800;color:#3b3b3b;list-style-position:inside}
+.studio-checkpoint-body{padding:14px 16px;border-top:1px solid #f0f0f0;line-height:1.9}
+.studio-checkpoint-body p{font-size:12px;color:#666666}
 .studio-diagnostic-answers{display:grid;gap:8px;margin-top:10px}
-.studio-diagnostic-answers button{padding:11px 13px;border-radius:10px;border:1px solid #d3e0e6;background:#f7fafb;text-align:start;cursor:pointer;font:inherit;color:#263d4e}
-.studio-diagnostic-answers button:hover:not(:disabled){border-color:#800c1f;background:#fff8fa}
+.studio-diagnostic-answers button{padding:11px 13px;border-radius:10px;border:1px solid #dedede;background:#f9f9f9;text-align:start;cursor:pointer;font:inherit;color:#393939}
+.studio-diagnostic-answers button:hover:not(:disabled){border-color:#262626;background:#fafafa}
 .studio-diagnostic-answers button:disabled{cursor:default}
-.studio-diagnostic-answers button.is-correct{background:#e8f5eb;border-color:#519567}
-.studio-diagnostic-answers button.is-wrong{background:#fff0f0;border-color:#c57979}
-.studio-diagnostic-feedback{padding:12px;border-radius:9px;background:#f0f5f7;margin-top:12px}
+.studio-diagnostic-answers button.is-correct{background:#f2f2f2;border-color:#838383}
+.studio-diagnostic-answers button.is-wrong{background:#f3f3f3;border-color:#898989}
+.studio-diagnostic-feedback{padding:12px;border-radius:9px;background:#f4f4f4;margin-top:12px}
 .studio-diagnostic-feedback p{margin:4px 0}
-.studio-diagnostic-feedback a{font-weight:800;color:#800c1f}
+.studio-diagnostic-feedback a{font-weight:800;color:#262626}
 .studio-explain li{margin:4px 0;font-size:13px}
 body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
 .studio-timer-dock{transition:opacity .18s ease,transform .18s ease}
 @media(prefers-reduced-motion:reduce){.studio-timer-dock{transition:none}}
 
-.video-time-jumps{padding:11px 13px;margin-top:7px;border-radius:12px;background:#f2f7f9;border:1px solid #dbe6eb}
-.video-time-jumps small{font-size:11px;color:#536b7b;line-height:1.7}
+.video-time-jumps{padding:11px 13px;margin-top:7px;border-radius:12px;background:#f6f6f6;border:1px solid #e4e4e4}
+.video-time-jumps small{font-size:11px;color:#676767;line-height:1.7}
 .video-time-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.video-time-list button{font:inherit;font-size:12px;font-variant-numeric:tabular-nums;font-weight:800;background:white;border:1px solid #cbdce5;color:#7e122a;padding:8px 11px;min-height:38px;border-radius:9px;cursor:pointer}
-.video-time-list button:hover,.video-time-list button:focus-visible{outline:2px solid #7598b9;outline-offset:1px}
+.video-time-list button{font:inherit;font-size:12px;font-variant-numeric:tabular-nums;font-weight:800;background:white;border:1px solid #d9d9d9;color:#2b2b2b;padding:8px 11px;min-height:38px;border-radius:9px;cursor:pointer}
+.video-time-list button:hover,.video-time-list button:focus-visible{outline:2px solid #939393;outline-offset:1px}
 
 /* Opt-in timer: prioritize the lesson, never a timer on the home screen. */
-.studio-lesson-tools{border:1px solid #e2e9ee;border-radius:15px;padding:12px 16px;margin:0 0 14px;background:#f8fafb}
+.studio-lesson-tools{border:1px solid #e8e8e8;border-radius:15px;padding:12px 16px;margin:0 0 14px;background:#fafafa}
 .studio-lesson-tool-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.studio-lesson-tool-head strong{font-size:13px;color:#344c5d}
-.studio-timer-opener{font:inherit;font-size:12px;font-weight:700;color:#516c7e;background:#fff;border:1px solid #dae3e9;border-radius:10px;padding:9px 12px;min-height:40px;cursor:pointer}
-.studio-timer-opener:hover,.studio-timer-opener:focus-visible{border-color:#800c1f;color:#800c1f}
+.studio-lesson-tool-head strong{font-size:13px;color:#484848}
+.studio-timer-opener{font:inherit;font-size:12px;font-weight:700;color:#686868;background:#ffffff;border:1px solid #e2e2e2;border-radius:10px;padding:9px 12px;min-height:40px;cursor:pointer}
+.studio-timer-opener:hover,.studio-timer-opener:focus-visible{border-color:#262626;color:#262626}
 .studio-lesson-tools .studio-step-links{margin-top:9px;gap:6px}
-.studio-lesson-tools .studio-step-links a{font-size:11px;padding:6px 11px;min-height:34px;background:#edf2f5}
-.studio-focus-panel{padding:14px 0 0;margin-top:10px;border-top:1px solid #e1e8ed}
-.studio-focus-panel>p{font-size:12px;color:#5a7180;margin:0 0 11px}
+.studio-lesson-tools .studio-step-links a{font-size:11px;padding:6px 11px;min-height:34px;background:#f1f1f1}
+.studio-focus-panel{padding:14px 0 0;margin-top:10px;border-top:1px solid #e7e7e7}
+.studio-focus-panel>p{font-size:12px;color:#6d6d6d;margin:0 0 11px}
 body.studio-context-page:not(.studio-scrolled) .studio-timer-dock{opacity:1;pointer-events:auto;transform:none}
 body.studio-context-page:not(.studio-scrolled):has(.studio-focus-panel) .studio-timer-dock{opacity:0;pointer-events:none;transform:translateY(14px)}
 @media(max-width:610px){.studio-lesson-tools{padding:12px}.studio-lesson-tools .studio-step-links{flex-wrap:wrap}}

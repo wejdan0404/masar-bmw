@@ -815,3 +815,47 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
  .lesson-extra-question .flexline{display:grid}
  .lesson-extra-question .chip{justify-self:start}
 }
+
+
+/* MASAR v1.6 — mastery learning, sign comparison, and video progress */
+.ts-mastery-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}
+.ts-mastery-summary>div{background:#fff;border:1px solid #dce5ea;border-radius:14px;padding:13px 14px;display:grid;gap:3px;box-shadow:0 8px 24px rgba(24,45,58,.04)}
+.ts-mastery-summary strong{font-size:22px;color:#243b48;line-height:1}
+.ts-mastery-summary span{font-size:10.5px;color:#71838e}
+.ts-card.mastered{border-color:#bdd8cb;background:linear-gradient(180deg,#fff,#f3faf6)}
+.ts-card.learning{border-color:#cadce8}
+.ts-card.mastered .ts-category{color:#276b55;font-weight:800}
+.ts-card.learning .ts-category{color:#4f7390;font-weight:800}
+.ts-mastery-pill{display:inline-flex;margin-top:10px;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:850;background:#eef3f6;color:#617683}
+.ts-mastery-pill.mastered{background:#e6f4ed;color:#276b55}
+.ts-mastery-pill.learning{background:#eaf1f7;color:#466d88}
+.ts-compare-section{margin-top:30px}
+.ts-compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ts-compare-card{border:1px solid #dce5ea;background:#fff;border-radius:18px;padding:16px;box-shadow:0 10px 28px rgba(24,45,58,.045)}
+.ts-compare-art{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}
+.ts-compare-art span{background:#f5f7f8;border-radius:14px;padding:8px}
+.ts-compare-art svg{width:100%;height:auto;display:block}
+.ts-compare-card h3{font-size:15px;margin:12px 0 5px;color:#243b48}
+.ts-compare-card p{font-size:11px;line-height:1.75;color:#6c7d87;margin:0 0 10px}
+.ts-compare-card>div:last-child{display:flex;gap:6px;flex-wrap:wrap}
+.ts-compare-card button{border:1px solid #ccd9e1;background:#f8fafb;border-radius:999px;padding:7px 10px;font:inherit;font-size:10px;font-weight:800;color:#476579;cursor:pointer}
+.ts-compare-card button:hover{background:#edf3f6}
+.ts-detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.ts-link.muted{color:#6f818d}
+.ts-source-scope{font-size:10px!important;color:#7a8a94!important;line-height:1.75!important;border-top:1px solid #e0e7eb;padding-top:10px;margin-top:12px!important}
+.video-gallery-item.is-watched{border-color:#bdd8cb;background:linear-gradient(180deg,#fff,#f7fbf9)}
+.video-watch-status{display:inline-flex;width:max-content;margin-top:7px;padding:5px 8px;border-radius:999px;background:#eef2f4;color:#788892;font-size:9.5px;font-weight:800}
+.video-watch-status.done{background:#e5f3ec;color:#276b55}
+.video-learning-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.video-learning-actions .btn{min-height:40px}
+@media(max-width:900px){
+ .ts-mastery-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .ts-compare-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ .ts-mastery-summary{grid-template-columns:1fr 1fr}
+ .ts-mastery-summary strong{font-size:19px}
+ .ts-compare-art span{padding:4px}
+ .video-learning-actions{display:grid}
+ .video-learning-actions .btn{width:100%}
+}

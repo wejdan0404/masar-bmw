@@ -699,3 +699,9 @@ body{font-size:15px}
 .source-filter-tab{font-family:inherit;padding:10px 17px;border:1px solid #cbd8df;border-radius:999px;background:#fff;color:#4a6477;min-height:43px;font-weight:750;cursor:pointer}
 .source-filter-tab.selected{background:#334f62;border-color:#334f62;color:white}
 .source-filter-tab:focus-visible{outline:3px solid #7598b9;outline-offset:2px}
+
+/* Explicit personal book availability */
+.source-coverage{margin:9px 0 4px;width:100%;max-width:460px}
+.source-coverage span{display:block;font-size:12px;color:#3b566a;margin-bottom:7px}
+.source-coverage-track{width:100%;height:8px;border-radius:999px;overflow:hidden;background:#d8e5ec}
+.source-coverage-track i{display:block;height:100%;background:#34755e;border-radius:inherit;transition:width .3s ease}

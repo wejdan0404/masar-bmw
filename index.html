@@ -929,6 +929,359 @@ h1,h2,h3,h4,.page-title,.sidebar .logo strong{font-family:'Masar Thmanyah','Masa
 .learning-science-note a{flex:0 0 auto;color:#4d7086;font-size:10.5px;font-weight:850;text-decoration:none;border:1px solid #cedbe2;border-radius:999px;padding:9px 12px;background:#fff}
 .learning-science-note a:hover{text-decoration:underline}
 @media(max-width:760px){.learning-science-note{display:grid;align-items:start}.learning-science-note a{justify-self:start}}
+
+
+/* MASAR v2.0 — automotive learning design system
+   Native HTML/CSS/JS adaptation of patterns from Magic UI, Aceternity,
+   React Bits and shadcn/ui. No React runtime is bundled in this build. */
+:root{
+ --surface:#fff;
+ --surface-2:#f7f9fa;
+ --surface-3:#eef3f6;
+ --surface-dark:#17242c;
+ --surface-dark-2:#21343f;
+ --text:#1f2d36;
+ --text-soft:#647783;
+ --line:#dbe4e9;
+ --line-strong:#cbd8df;
+ --accent:#86152d;
+ --accent-deep:#4a0711;
+ --accent-soft:#f7ecef;
+ --blue:#587995;
+ --blue-2:#7aa3c0;
+ --blue-soft:#eaf1f6;
+ --good:#276b55;
+ --good-soft:#eaf5f0;
+ --warn:#9a6728;
+ --danger:#a5364a;
+ --radius-xs:9px;
+ --radius-sm:12px;
+ --radius-md:16px;
+ --radius-lg:22px;
+ --radius-xl:28px;
+ --elev-1:0 1px 2px rgba(26,43,53,.035),0 8px 24px rgba(26,43,53,.045);
+ --elev-2:0 16px 42px rgba(26,43,53,.08);
+ --elev-3:0 26px 70px rgba(17,30,39,.13);
+ --ring:0 0 0 3px rgba(122,163,192,.28);
+ --reading:850px;
+ --shell:1540px;
+}
+html{background:#edf2f4}
+body{
+ background:
+ radial-gradient(900px 380px at 72% -80px,rgba(122,163,192,.13),transparent 70%),
+ linear-gradient(180deg,#f9fafb 0,#f4f7f8 38rem,#f2f5f6 100%);
+ color:var(--text);
+ font-feature-settings:"kern" 1,"liga" 1;
+ text-rendering:optimizeLegibility;
+}
+.app-main{transition:margin-right .28s ease}
+.page{max-width:var(--shell);padding-top:28px}
+.page-title{font-weight:900;letter-spacing:-.7px;text-wrap:balance}
+.sub{color:var(--text-soft);max-width:800px}
+.card,.week-card,.lesson-body,.qbox,.test-card,.ref-card,.aside-card,.hub-question,.study-video,.coach-summary article,.coach-review-item{
+ border-color:var(--line);
+ box-shadow:var(--elev-1);
+}
+.card,.week-card,.lesson-body,.qbox,.test-card,.ref-card,.aside-card,.hub-question,.coach-summary article{border-radius:var(--radius-md)}
+.btn{min-height:44px;border-radius:12px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+.btn-primary{background:linear-gradient(135deg,#98203a 0%,var(--accent) 52%,var(--accent-deep) 100%);box-shadow:0 7px 18px rgba(134,21,45,.17)}
+.btn-primary:hover{background:linear-gradient(135deg,#a42542,var(--accent));box-shadow:0 10px 24px rgba(134,21,45,.22)}
+.btn-outline{background:#fff;border:1px solid var(--line-strong)}
+.btn-outline:hover{border-color:#aebfca;background:#f9fbfc}
+.btn-muted{background:#edf2f5;border:1px solid #e0e7eb}
+.chip{min-height:36px;border-color:var(--line);box-shadow:0 2px 8px rgba(31,45,54,.025)}
+
+/* Automotive side rail */
+.sidebar{
+ width:288px;
+ padding:21px 14px 18px;
+ background:
+ radial-gradient(260px 180px at 100% 0,rgba(122,163,192,.11),transparent 72%),
+ linear-gradient(180deg,#18252d 0%,#1f2d36 47%,#172229 100%);
+ border-left:1px solid rgba(255,255,255,.08);
+ box-shadow:-16px 0 50px rgba(16,29,37,.07);
+}
+.app-main{margin-right:288px}
+.sidebar .logo{margin-bottom:17px;padding:3px 9px}
+.logo-icon{
+ width:44px;height:44px;border-radius:14px;
+ background:linear-gradient(145deg,#a32842,#6e0d20 60%,#4a0711);
+ box-shadow:0 9px 24px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.12);
+ transform:none;
+}
+.logo strong{font-size:25px;letter-spacing:-1.2px}
+.logo small{letter-spacing:2.4px;font-size:8.5px}
+.sidebar .side-label{margin:0 12px 10px;color:#8197a5;font-size:9px}
+.sidebar-section-nav{gap:9px}
+.sidebar-nav-group{border-color:rgba(255,255,255,.075);padding-bottom:8px}
+.sidebar-group-title{min-height:31px;margin:0 7px 4px;color:#a9bdc9;font-size:10.5px}
+.sidebar-group-title svg{color:#c08d9b}
+.sidebar-group-links a{
+ min-height:42px;border-radius:11px;padding:8px 11px;
+ color:#b8c7d0;font-size:12.2px;
+ border:1px solid transparent;
+}
+.sidebar-group-links a:hover{
+ transform:translateX(-2px);
+ background:rgba(255,255,255,.055);
+ border-color:rgba(255,255,255,.055);
+}
+.sidebar-group-links a.active{
+ background:linear-gradient(105deg,rgba(122,163,192,.20),rgba(255,255,255,.065));
+ border-color:rgba(158,191,211,.15);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+}
+.sidebar-group-links a.active:before{
+ width:3px;right:0;top:9px;bottom:9px;
+ background:#d1536a;box-shadow:0 0 14px rgba(209,83,106,.42);
+}
+.sidebar .sidebar-bottom{padding-top:16px}
+.sidebar .mini-progress{
+ padding:14px 15px;border-radius:15px;
+ background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+ border-color:rgba(255,255,255,.1);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.mini-progress .line{height:5px;background:#0f1d24}
+.mini-progress .line>i{background:linear-gradient(90deg,#7aa3c0,#d0e3ef)}
+.foot-note{font-size:9px;color:#738792}
+
+/* shadcn-inspired app bar */
+.automotive-topbar{
+ min-height:74px;height:74px;
+ padding-inline:clamp(18px,3.4vw,50px);
+ background:rgba(249,251,252,.88);
+ border-bottom:1px solid rgba(203,216,223,.85);
+ backdrop-filter:blur(20px) saturate(135%);
+ box-shadow:0 4px 24px rgba(31,45,54,.035);
+}
+.crumb{display:flex;align-items:center;gap:8px;font-size:11px}
+.crumb-home{color:#7d8f99;font-weight:800}
+.crumb-slash{color:#b3c0c7}
+.crumb strong{font-size:11.5px}
+.topbar-tools{gap:8px}
+.session-chip{background:rgba(255,255,255,.72)}
+.focus-toggle{transition:background .18s ease,color .18s ease,border-color .18s ease}
+.focus-toggle.is-active{background:#1f2d36;color:#fff;border-color:#1f2d36}
+.topbar-review-pill{
+ min-height:36px;display:inline-flex;align-items:center;gap:7px;
+ padding:7px 11px;border-radius:999px;text-decoration:none;
+ background:var(--accent-soft);color:#7d2034;border:1px solid #ebd3d9;
+ font-size:10px;font-weight:800;
+}
+.topbar-review-pill .signal-dot{width:7px;height:7px;background:#b43b53;box-shadow:0 0 0 4px rgba(180,59,83,.1)}
+.topbar-review-pill b{font:900 12px/1 Arial,sans-serif}
+
+/* Full-screen reading mode */
+.focus-mode .sidebar{transform:translateX(110%);pointer-events:none;opacity:0}
+.focus-mode .app-main{margin-right:0}
+.focus-mode .page{max-width:1320px}
+.focus-mode .lesson-layout{grid-template-columns:minmax(0,var(--reading));justify-content:center}
+.focus-mode .lesson-aside{display:none}
+.focus-mode .topbar{padding-inline:clamp(20px,5vw,72px)}
+.sidebar{transition:transform .28s ease,opacity .22s ease}
+
+/* Home — Magic UI inspired bento + automotive HUD */
+.hero-premium{
+ min-height:390px;
+ border-radius:var(--radius-xl);
+ padding:43px 46px;
+ background:
+ radial-gradient(520px 310px at 88% 8%,rgba(122,163,192,.20),transparent 65%),
+ radial-gradient(420px 280px at 18% 105%,rgba(134,21,45,.16),transparent 72%),
+ linear-gradient(118deg,#142129 0%,#1e2e38 54%,#294553 100%);
+ box-shadow:var(--elev-3);
+ border:1px solid rgba(255,255,255,.055);
+}
+.hero-premium .hero-copy{max-width:580px}
+.hero-premium h1{font-weight:900;letter-spacing:-1.4px;text-wrap:balance}
+.hero-premium p{color:#c6d2d9}
+.hero-premium .btn-primary{box-shadow:0 11px 26px rgba(0,0,0,.17)}
+.hero-status-strip{
+ margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:1px;max-width:620px;
+ background:rgba(255,255,255,.09);
+ border:1px solid rgba(255,255,255,.10);
+ border-radius:14px;overflow:hidden;
+ backdrop-filter:blur(7px);
+}
+.hero-status-strip>span{
+ display:grid;gap:2px;padding:9px 11px;
+ background:rgba(6,18,25,.22);
+}
+.hero-status-strip b{font:900 14px/1.2 Arial,'Masar Thmanyah',sans-serif;color:#f2f7fa}
+.hero-status-strip small{font-size:8.5px;color:#9fb2bf;line-height:1.45}
+.hero-status-strip .needs-attention b{color:#ef9daf}
+.hero-gauge .gauge-outline{filter:drop-shadow(0 12px 24px rgba(0,0,0,.12))}
+.stats-bento{gap:11px}
+.stat{
+ border-radius:15px;padding:18px 19px;
+ background:linear-gradient(160deg,#fff,#f9fbfc);
+}
+.stat .val{font-size:29px;font-variant-numeric:tabular-nums}
+.stat-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#edf3f6}
+.adaptive-plan{border-radius:20px;box-shadow:var(--elev-1)}
+.adaptive-task{border-radius:14px}
+.action-tile{border-radius:22px}
+.dashboard-grid,.bento-stage{gap:13px}
+.journey-panel{border-radius:20px}
+.schedule-card,.callout{border-radius:20px}
+
+/* Aceternity-style restrained interactive lift */
+.week-card,.adaptive-task,.ts-card,.study-video,.coach-review-item,.hub-guide-step{
+ transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;
+}
+.week-card:hover,.adaptive-task:hover,.ts-card:hover,.study-video:hover,.coach-review-item:hover,.hub-guide-step:hover{
+ transform:translateY(-3px);
+ box-shadow:0 17px 38px rgba(31,45,54,.085);
+ border-color:#b9cbd5;
+}
+.week-card{position:relative}
+.week-card:before{opacity:0;transition:opacity .2s ease}
+.week-card:hover:before{opacity:1}
+.route-stop{
+ border-radius:12px;
+ transition:background .18s ease,transform .18s ease;
+}
+.route-stop:hover{background:#f7f9fa;transform:translateX(-2px)}
+.route-stop.current{background:linear-gradient(90deg,#faf1f3,#fff 72%)}
+
+/* Catalog + segmented controls */
+.catalog-filter,.hub-filters,.ts-toolbar>div:first-child,.ts-quiz-kind{
+ background:#e9eef1;border:1px solid #dde5e9;border-radius:13px;padding:4px;
+}
+.filter-pill,.hub-filter,.ts-toolbar button,.ts-quiz-kind button{
+ border-radius:9px;
+}
+.filter-pill.selected,.hub-filter.on,.ts-toolbar button.active,.ts-quiz-kind button.active{
+ box-shadow:0 2px 8px rgba(31,45,54,.07);
+}
+
+/* Lesson workspace */
+.lesson-layout{grid-template-columns:minmax(0,1fr) 278px;gap:18px}
+.lesson-main{max-width:980px}
+.lesson-aside{top:94px}
+.lesson-journey{
+ border-radius:20px;
+ background:linear-gradient(145deg,#fff,#f6f9fa);
+ border-color:#d9e3e8;
+ box-shadow:var(--elev-1);
+}
+.lesson-journey-step{border-radius:12px}
+.lesson-hero{
+ border-radius:22px;
+ background:
+ radial-gradient(250px 170px at 0 0,rgba(122,163,192,.13),transparent 70%),
+ linear-gradient(135deg,#edf3f6,#fbfcfd);
+ box-shadow:var(--elev-1);
+}
+.lesson-hero h1{font-weight:900;letter-spacing:-.7px}
+.lesson-body,.lesson-deep-dive,.lesson-sources,.lesson-quick-recap,.coach-activity,.scenario,.qbox,.lesson-extra-question,.note-box{
+ scroll-margin-top:94px;
+}
+.lesson-body{padding:30px 33px}
+.lesson-body p{max-width:var(--reading);color:#425965}
+.point{padding:13px 0}
+.point i{border-radius:9px}
+.aside-card{
+ border:1px solid var(--line);
+ box-shadow:var(--elev-1);
+ overflow:hidden;
+}
+.toc-item{
+ min-height:40px;border-radius:9px;padding:8px 10px!important;
+ transition:background .16s ease,color .16s ease,transform .16s ease;
+}
+.toc-item:hover{background:#eef4f7;color:#375b70!important;transform:translateX(-2px)}
+.qbox{border-radius:20px;padding:27px}
+.option,.hub-choice,.ts-choice,.coach-mock-options button{
+ border-radius:12px!important;
+ min-height:50px;
+ transition:transform .16s ease,border-color .16s ease,background .16s ease,box-shadow .16s ease;
+}
+.option:hover:not(:disabled),.hub-choice:hover:not(:disabled),.ts-choice:hover:not(:disabled),.coach-mock-options button:hover:not(:disabled){
+ transform:translateX(-2px);
+ box-shadow:0 7px 18px rgba(31,45,54,.05);
+}
+.feedback,.coach-live-feedback,.hub-explain,.ts-explanation{border-radius:12px}
+
+/* Video + source workspaces */
+.video-gallery-grid{gap:14px}
+.video-gallery-item{
+ padding:16px;border:1px solid var(--line);border-radius:18px!important;background:#fff;
+}
+.video-player{border-radius:14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.video-play-symbol{box-shadow:0 8px 26px rgba(0,0,0,.25)}
+.hub-source,.video-collection-card{border-radius:16px!important}
+.source-inline-info,.source-text-preview{border-radius:14px}
+
+/* Mobile dock */
+.mobile-dock{display:none}
+@media(max-width:1050px){
+ .sidebar{width:288px}
+ .app-main,.focus-mode .app-main{margin-right:0}
+ .focus-mode .sidebar{transform:translateX(110%)}
+ .menu-btn{display:inline-flex}
+ .topbar{padding-inline:16px}
+ .session-chip{display:none}
+ .page{padding-inline:clamp(16px,4vw,28px);padding-bottom:116px}
+ .mobile-dock{
+  position:fixed;display:grid;grid-template-columns:repeat(5,1fr);
+  left:12px;right:12px;bottom:12px;z-index:45;
+  min-height:64px;padding:6px;
+  border:1px solid rgba(208,220,226,.92);
+  background:rgba(250,252,253,.92);
+  backdrop-filter:blur(20px) saturate(145%);
+  border-radius:19px;
+  box-shadow:0 18px 55px rgba(20,37,47,.20);
+ }
+ .mobile-dock a{
+  display:grid;place-items:center;gap:2px;
+  min-width:0;padding:6px 3px;border-radius:13px;
+  text-decoration:none;color:#74858f;font-size:8.5px;font-weight:800;
+ }
+ .mobile-dock a svg{width:18px;height:18px}
+ .mobile-dock a.active{background:#1f2d36;color:#fff}
+ .floating-timer{bottom:88px}
+}
+@media(max-width:760px){
+ .topbar{height:66px;min-height:66px}
+ .crumb-home,.crumb-slash{display:none}
+ .topbar-review-pill span:last-child,.focus-toggle span{display:none}
+ .topbar-review-pill,.focus-toggle{padding-inline:10px}
+ .hero-premium{min-height:420px;padding:26px 22px 27px}
+ .hero-status-strip{grid-template-columns:1fr 1fr;max-width:100%}
+ .hero-status-strip>span{padding:8px 9px}
+ .study-command-grid{grid-template-columns:1fr}
+ .stats-bento{grid-template-columns:1fr 1fr}
+ .dashboard-grid,.bento-stage,.bento-side,.action-bento{grid-template-columns:1fr}
+ .lesson-layout{display:block}
+ .lesson-main{max-width:none}
+ .lesson-aside{position:static;margin-top:16px}
+ .lesson-body,.qbox{padding:21px 18px}
+}
+@media(max-width:430px){
+ .page{padding-inline:13px}
+ .stats-bento{gap:8px}
+ .stat{padding:15px}
+ .stat .val{font-size:24px}
+ .hero-premium h1{font-size:35px}
+ .hero-status-strip small{font-size:8px}
+ .mobile-dock{left:8px;right:8px;bottom:8px}
+}
+@media(hover:none){
+ .week-card:hover,.adaptive-task:hover,.ts-card:hover,.study-video:hover,.coach-review-item:hover,.hub-guide-step:hover,.btn:hover,.route-stop:hover{
+  transform:none;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .app-main,.sidebar,.week-card,.adaptive-task,.ts-card,.study-video,.coach-review-item,.hub-guide-step,.btn,.route-stop,.toc-item,.focus-toggle{
+  transition:none!important;
+ }
+ .week-card:hover,.adaptive-task:hover,.ts-card:hover,.study-video:hover,.coach-review-item:hover,.hub-guide-step:hover,.route-stop:hover,.btn:hover{transform:none!important}
+}
+@media print{.mobile-dock{display:none!important}}
 </style></head><body>
 <a href="#main" class="skip">تخطي إلى المحتوى</a>
 <div class="app" id="app"><noscript>هذا الموقع يحتاج تفعيل JavaScript لعرض الدروس والاختبارات.</noscript></div>
@@ -10230,7 +10583,7 @@ window.MasarGuides.register([
 const COURSE=JSON.parse(document.getElementById('course-data').textContent);
 const lessons=COURSE.lessons, weeks=COURSE.weeks, questions=COURSE.questions, sourceById=Object.fromEntries(COURSE.sources.map(s=>[s.id,s]));
 const baseKey='masar-driving-v1';
-let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};
+let state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[],uiPrefs:{focus:false}};
 try { const saved=JSON.parse(localStorage.getItem(baseKey)||'null'); if(saved && typeof saved==='object') state={...state,...saved}; } catch(e){console.warn('Local data unavailable',e)}
 let session=null, filterText='', catalogFilter='all', flashFlips=new Set(), visualStages={}, timer={seconds:30*60,active:false}, tickInterval=null, mobileOpen=false;
 let savedMirrorPresent=false;try{savedMirrorPresent=localStorage.getItem(baseKey)!==null}catch(e){console.warn('Storage unavailable',e)}
@@ -10306,7 +10659,19 @@ function sidebar(){
  }).join('');
  return '<aside class="sidebar '+(mobileOpen?'open':'')+'" id="sidebar" aria-label="التنقل الرئيسي"><a href="#/home" class="logo" aria-label="مِسار الرئيسية"><span class="logo-icon">م</span><span><strong>مِسار<span style="color:#d5a1b0">.</span></strong><small>M A S A R &nbsp; / &nbsp; DRIVE</small></span></a><div class="side-label">اختاري القسم، ثم افتحي الدرس أو التدريب</div><nav class="nav sidebar-section-nav" aria-label="أقسام مِسار">'+sections+'</nav><div class="sidebar-bottom"><div class="mini-progress"><div class="mini-progress-top"><div><small>مشوارك إلى الثقة</small><br><strong>'+progress()+'%</strong></div><div style="font-size:30px;color:#9eb5c8">'+icon('road')+'</div></div><div class="line"><i style="width:'+progress()+'%"></i></div><small>'+completed().size+' من 48 درسًا مكتملًا</small></div><div class="foot-note">تعلّم نظري سعودي · نسخة شخصية تجريبية</div></div></aside>';
 }
-function topbar(title){return `<header class="topbar"><div class="top-actions"><button type="button" class="chip menu-btn" data-action="menu" aria-label="فتح القائمة">${icon('menu')}</button><div class="crumb">لوحة التعلم <span style="padding:0 6px;color:#a8b5bd">/</span> <strong>${ESC(title)}</strong></div></div><div class="top-actions"><span class="chip">${icon('clock')} <span>30–45 دقيقة للجلسة</span></span></div></header>`}
+function reviewDueCount(){
+ const now=Date.now();
+ return Object.values(state.reviewHistory||{}).filter(x=>!x.lastCorrect||new Date(x.nextDueAt||0).getTime()<=now).length;
+}
+function topbar(title){
+ const focus=!!state.uiPrefs?.focus,due=reviewDueCount();
+ return `<header class="topbar automotive-topbar"><div class="top-actions"><button type="button" class="chip menu-btn" data-action="menu" aria-label="فتح القائمة">${icon('menu')}</button><div class="crumb"><span class="crumb-home">مِسار</span><span class="crumb-slash">/</span><strong>${ESC(title)}</strong></div></div><div class="top-actions topbar-tools">${due?`<a class="topbar-review-pill" href="#/review" aria-label="${due} عناصر مراجعة مستحقة"><span class="signal-dot"></span><b>${due}</b><span>مراجعة</span></a>`:''}<button type="button" class="chip focus-toggle ${focus?'is-active':''}" data-action="focus-mode" aria-pressed="${focus}" aria-label="${focus?'إنهاء وضع التركيز':'تفعيل وضع التركيز'}">${icon(focus?'close':'book')}<span>${focus?'إنهاء التركيز':'وضع التركيز'}</span></button><span class="chip session-chip">${icon('clock')} <span>30–45 دقيقة</span></span></div></header>`
+}
+function mobileDock(){
+ const path=route();
+ const items=[['/home','home','الرئيسية'],['/weeks','layers','الخطة'],['/review','reset','مراجعتي'],['/traffic-signs','road','الإشارات'],['/quiz','quiz','اختبار']];
+ return '<nav class="mobile-dock" aria-label="تنقل سريع">'+items.map(([href,ic,label])=>'<a href="#'+href+'" class="'+(path===href||(href==='/weeks'&&(path.startsWith('/week/')||path.startsWith('/lesson/')))?'active':'')+'" '+(path===href?'aria-current="page"':'')+'>'+icon(ic)+'<span>'+ESC(label)+'</span></a>').join('')+'</nav>';
+}
 function footerNote(){return `<div class="warning" role="note">${icon('alert')} <strong>ملاحظة تعليمية:</strong> هذا محتوى مذاكرة شخصي أولي، وليس مرجعًا نظاميًا معتمدًا أو بديلًا عن مدرسة قيادة مرخصة. التعليمات المتغيرة تُراجع لدى المرور والمدرسة، وأزرار هوندا حسب سنة وفئة السيارة.</div>`}
 function carArt(){return `<div class="hero-art" aria-hidden="true"><div class="hero-road"></div><svg class="hero-car" viewBox="0 0 85 163"><rect x="3" y="5" width="79" height="153" rx="28" fill="#800C1F"/><rect x="10" y="20" width="65" height="123" rx="22" fill="#a51832"/><path d="M16 33Q42 14 69 33L65 67H20Z" fill="#7994a6"/><path d="M18 109L23 91H62L67 109 59 130H25Z" fill="#4e6678"/><path d="M18 75H67M26 136H59" stroke="#e6edf2" stroke-width="3"/><rect x="-1" y="36" width="8" height="24" rx="3" fill="#111b22"/><rect x="78" y="36" width="8" height="24" rx="3" fill="#111b22"/><rect x="-1" y="107" width="8" height="24" rx="3" fill="#111b22"/><rect x="78" y="107" width="8" height="24" rx="3" fill="#111b22"/><path d="M17 9h16M52 9h16" stroke="#fbe8cd" stroke-width="4" stroke-linecap="round"/><path d="M17 152h15M53 152h15" stroke="#ec8893" stroke-width="4" stroke-linecap="round"/></svg><span class="hero-no">16</span></div>`}
 function stat(text,value,extra,ic,variant='') {return `<div class="stat stat-${variant} card-premium-interactive"><div class="stat-top"><span class="stat-label">${text}</span><span class="stat-icon">${icon(ic)}</span></div><div class="stat-content"><div class="val" data-count-value="${Number(value)}">${value}</div><div class="stat-caption">${extra}</div></div><span class="stat-decoration" aria-hidden="true"></span></div>`}
@@ -10358,13 +10723,16 @@ function adaptiveStudyPlan(lesson){
  return '<section class="adaptive-plan card" aria-label="جلسة مذاكرة ذكية مقترحة"><div class="adaptive-plan-head"><div><span class="bento-overline">SMART SESSION / مبنية على نشاطك</span><h2>وش تذاكرين الآن؟</h2><p>رتبتها لك من بيانات إجاباتك ومراجعاتك داخل مِسار، بدل ما تختارين عشوائيًا.</p></div><span class="adaptive-priority '+(score?'has-priority':'clear')+'">'+(score?'فيه نقاط تحتاج مراجعة':'الجلسة مفتوحة للتقدم')+'</span></div><div class="adaptive-task-grid">'+tasks.map((t,i)=>'<a href="'+t.href+'" class="adaptive-task '+t.tone+'"><span class="adaptive-task-no">0'+(i+1)+'</span><div><span class="adaptive-task-time">'+t.time+'</span><strong>'+ESC(t.title)+'</strong><p>'+ESC(t.desc)+'</p><small>'+ESC(t.cta)+' ←</small></div></a>').join('')+'</div><div class="adaptive-plan-foot"><span>الخطة تتغير تلقائيًا مع إجاباتك.</span><a href="#/review">ليش ظهر لي هذا؟ راجعي سجل التكرار ←</a></div></section>';
 }
 function home(){
- const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress();
+ const resume=resumeLesson(), n=resume||nextLesson(), next=nextLesson(), week=n.week, done=completed().size, pct=progress(),due=reviewDueCount();
+ const masteredSigns=(COURSE.sign_library||[]).filter(s=>{const x=state.signPractice?.[s.id]||{};return (x.meaningCorrect||0)>=1&&(x.actionCorrect||0)>=1}).length;
+ const directVideos=(COURSE.media_resources||[]).filter(x=>x.kind==='youtube_video'&&/^[\w-]{11}$/.test(x.youtube_id||'')),watchedVideos=directVideos.filter(x=>state.videoWatched?.[x.id]).length;
  return `<section class="hero hero-premium" aria-labelledby="hero-title">
   <div class="hero-glow" aria-hidden="true"></div>${carArt()}
   <div class="hero-copy"><div class="hero-topline"><span class="hero-kicker"><span class="signal-dot"></span> MASAR / THE DRIVING JOURNEY</span><span class="hero-edition">EDITION 2026 — 01</span></div>
    <div class="eyebrow">رحلتك تبدأ من هنا / START HERE</div><h1 id="hero-title">خلف المقود،<br><span>يبدأ الفهم أولًا.</span></h1>
    <p>مساحتك الخاصة لتعلّم القيادة النظرية خطوة بخطوة؛ من معرفة السيارة إلى قراءة الطريق واتخاذ القرار.</p>${resume?`<p class="resume-location" aria-live="polite">آخر مكان حفظتيه: الدرس ${p2(resume.order)} · ${ESC(resume.title)}</p>`:''}
    <div class="hero-actions"><a class="btn btn-primary" href="#/lesson/${n.order}">${icon('play')} ${resume?'ارجعي لآخر درس':done?'واصلي التعلم':'ابدئي أول درس'}</a>${resume&&next.order!==resume.order?`<a class="btn btn-ghost" href="#/lesson/${next.order}">الدرس التالي غير المكتمل ${icon('arrow')}</a>`:`<a class="btn btn-ghost" href="#/weeks">استكشفي الخطة ${icon('arrow')}</a>`}</div>
+   <div class="hero-status-strip" aria-label="ملخص سريع للتعلم"><span><b>W${p2(week)}</b><small>الأسبوع الحالي</small></span><span class="${due?'needs-attention':''}"><b>${due}</b><small>مراجعة مستحقة</small></span><span><b>${masteredSigns}</b><small>إشارة مثبّتة</small></span><span><b>${watchedVideos}/${directVideos.length}</b><small>مقاطع شوهدت</small></span></div>
   </div><div class="hero-gauge" aria-label="أنجزتِ ${pct} بالمئة من الدروس"><div class="gauge-outline" style="--gauge:${pct}"><div class="gauge-inner"><span>إنجازك</span><strong>${pct}<small>%</small></strong></div></div><span class="gauge-note">${done} / 48 درسًا</span></div><span class="hero-serial" aria-hidden="true">MASAR / 001</span>
  </section>
  <div class="study-command-grid">${studyRoute(n)}${studyStars()}</div>
@@ -10552,7 +10920,7 @@ function settingsPage(){return `<div class="eyebrow">YOUR SPACE</div><h1 class="
 function notFound(){return `<div class="empty"><h3>الصفحة غير موجودة</h3><p>ممكن ترجعين للرئيسية وتتابعين من هناك.</p><a href="#/home" class="btn btn-primary">العودة للرئيسية</a></div>`}
 function resolvePage(){const r=route();if(r==='/home')return ['الرئيسية',home()];if(r==='/weeks')return ['الخطة الدراسية',weeksPage()];if(r.startsWith('/week/')){const n=Number(r.split('/')[2]);return ['الأسبوع '+n,weekPage(n)]}if(r.startsWith('/lesson/')){const n=Number(r.split('/')[2]);return ['الدرس '+n,lessonPage(n)]}if(r==='/quiz')return ['الاختبارات',quizPage()];if(r==='/practice-quiz')return ['أسئلة التجميعات',window.MasarHub.quizPage(COURSE,state)];if(r==='/traffic-signs')return ['إشارات المرور',window.MasarSigns.page(COURSE,state)];if(r==='/review')return ['مراجعتي',window.MasarCoach.reviewPage(COURSE,state)];if(r==='/mock-exam')return ['محاكاة الاختبار',window.MasarCoach.pageMock(COURSE,state)];if(r==='/practice-checklist')return ['مهارات التقييم',window.MasarHub.practicePage(COURSE,state)];if(r==='/paper-practice')return ['اختبار ورقي',window.MasarHub.paperPage(COURSE)];if(r==='/study-guide')return ['كيف أذاكر؟',studyGuidePage()];if(r==='/cards')return ['بطاقات المراجعة',flashcardsPage()];if(r==='/notes')return ['ملاحظاتي',notesPage()];if(r==='/visuals')return ['الرسوم التفاعلية',visualLibraryPage()];if(r==='/videos')return ['مقاطع القيادة',videoGalleryPage()];if(r==='/sources')return ['المصادر',sourcesPage()];if(r==='/settings')return ['الإعدادات',settingsPage()];return ['غير موجودة',notFound()]}
 function timerHTML(){return `<div class="floating-timer" aria-label="مؤقت مذاكرة"><span style="font-size:11px;color:var(--steel);font-weight:850">${icon('clock')}</span><b id="timer-text">${p2(Math.floor(timer.seconds/60))}:${p2(timer.seconds%60)}</b><button type="button" data-action="timer-toggle" aria-label="${timer.active?'إيقاف المؤقت':'بدء المؤقت'}">${icon(timer.active?'pause':'play')}</button><button type="button" data-action="timer-reset" aria-label="إعادة ضبط المؤقت">${icon('reset')}</button></div>`}
-function render(keepScroll=false){const [title,content]=resolvePage();APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${content}</div></main>${timerHTML()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
+function render(keepScroll=false){const [title,content]=resolvePage();const focus=!!state.uiPrefs?.focus;APP.classList.toggle('focus-mode',focus);APP.innerHTML=`${sidebar()}<div class="mobile-backdrop ${mobileOpen?'open':''}" data-action="menu"></div><main class="app-main" id="main">${topbar(title)}<div class="page">${content}</div></main>${timerHTML()}${mobileDock()}`;if(!keepScroll)window.scrollTo(0,0);document.title=`${title} | مِسار`;displayedRoute=route();updateTimer();if(!keepScroll&&route()==='/home')animateStats()}
 function animateStats(){if(!window.matchMedia||!document.querySelectorAll||typeof performance==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.stat .val[data-count-value]').forEach(el=>{const to=Number(el.dataset.countValue);if(!to||to>100)return;const begin=performance.now(),duration=650;function frame(t){if(!el.isConnected)return;const k=Math.min((t-begin)/duration,1);el.textContent=Math.round(to*(1-(1-k)**3));if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)})}
 let toastTimer;function toast(s){const el=document.getElementById('toast');el.textContent=s;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),3100)}
 function updateTimer(){const el=document.getElementById('timer-text');if(el)el.textContent=p2(Math.floor(timer.seconds/60))+':'+p2(timer.seconds%60)}
@@ -10591,6 +10959,7 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='video-load'){const id=el.dataset.video;if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;const holder=el.closest('.video-player');if(!holder)return;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+id;iframe.title=el.dataset.title||'فيديو تعليمي في القيادة';iframe.loading='lazy';iframe.setAttribute('allow','encrypted-media; picture-in-picture; fullscreen');iframe.setAttribute('allowfullscreen','');iframe.referrerPolicy='strict-origin-when-cross-origin';holder.replaceChildren(iframe);return}
  if(action==='visual-step'){const id=el.dataset.visual;const v=(COURSE.learning_visuals||[]).find(x=>x.id===id);if(v){visualStages[id]=Math.max(0,Math.min(v.steps.length-1,Number(el.dataset.step)||0));render(true);document.querySelector?.('[data-action="visual-step"][data-visual="'+id+'"][data-step="'+visualStages[id]+'"]')?.focus?.({preventScroll:true});document.getElementById('visual-learning')?.scrollIntoView({block:'nearest'});}return}
  if(action==='filter-weeks'){catalogFilter=el.dataset.filter||'all';render(true);return}
+ if(action==='focus-mode'){state.uiPrefs=state.uiPrefs||{};state.uiPrefs.focus=!state.uiPrefs.focus;save();render(true);toast(state.uiPrefs.focus?'تم تفعيل وضع التركيز':'رجعنا العرض الكامل');return}
  if(action==='menu'){mobileOpen=!mobileOpen;render(true);return}
  if(action==='scroll'){document.getElementById(el.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});return}
  if(action==='study-read'||action==='study-seen'){
@@ -10615,10 +10984,10 @@ function eventClick(e){let el=e.target.closest('[data-action]');if(!el)return;co
  if(action==='timer-reset'){timer.active=false;timer.seconds=1800;render(true);return}
  if(action==='export'){const data=JSON.stringify({format:'masar-progress-v1',exportedAt:new Date().toISOString(),state},null,2);const blob=new Blob([data],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='masar-my-progress.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('تم تجهيز نسخة بياناتك الاحتياطية');return}
  if(action==='import'){document.getElementById('import-file')?.click();return}
- if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[]};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
+ if(action==='clear'){if(confirm('سيتم حذف تقدم الدروس والإجابات وملاحظاتك في هذا المتصفح فقط. هل أنت متأكدة؟')){state={done:[],answers:{},notes:{},bookmarks:[],history:[],lastOpened:1,visited:[],readingPositions:{},videoNotes:{},videoWatched:{},sourceNotes:{},reviewAnswers:{},practiceChecks:{},signPractice:{},activityNotes:{},activityChecks:{},reviewHistory:{},mockSession:null,mockHistory:[],uiPrefs:{focus:false}};save();render(true);toast('تمت إعادة التقدم للبداية')}return}
 }
 document.addEventListener('click',e=>{if(e.target.closest('.skip')){e.preventDefault();document.getElementById('main')?.focus();return}if(e.target.closest('[data-action]'))eventClick(e);else if(e.target.closest('.sidebar a'))mobileOpen=false});
-document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
+document.addEventListener('pointermove',e=>{if(e.pointerType==='touch'||!window.matchMedia||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const card=e.target.closest('.card-premium-interactive,.week-card,.action-tile,.adaptive-task,.ts-card,.study-video,.coach-review-item,.hub-guide-step');if(!card)return;const rect=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-rect.left)/rect.width*100).toFixed(1)+'%');card.style.setProperty('--my',((e.clientY-rect.top)/rect.height*100).toFixed(1)+'%')},{passive:true});
 document.addEventListener('input',e=>{if(e.target.id==='catalog-search'){filterText=e.target.value;const el=document.getElementById('week-catalog');if(el)el.innerHTML=weeksGrid();}if(e.target.dataset.note){state.notes[e.target.dataset.note]=e.target.value;save()}if(e.target.dataset.videoNote){state.videoNotes=state.videoNotes||{};state.videoNotes[e.target.dataset.videoNote]=e.target.value;save()}if(e.target.dataset.sourceNote){state.sourceNotes=state.sourceNotes||{};state.sourceNotes[e.target.dataset.sourceNote]=e.target.value;save()}if(e.target.dataset.activityNote){state.activityNotes=state.activityNotes||{};state.activityNotes[e.target.dataset.activityNote]=e.target.value;save()}});
 document.addEventListener('change',async e=>{if(e.target.id==='choose-week'&&e.target.value){startTest(e.target.value)}if((e.target.id==='hub-file'||e.target.id==='hub-batch')&&e.target.files?.[0]){await window.MasarHub.upload(e.target,{db:window.MasarDB,render,toast,course:COURSE});return}if(e.target.dataset.practiceId){state.practiceChecks=state.practiceChecks||{};state.practiceChecks[e.target.dataset.practiceId]=e.target.checked;save();render(true)}if(e.target.dataset.activityCheck){state.activityChecks=state.activityChecks||{};state.activityChecks[e.target.dataset.activityCheck]=e.target.checked;save();render(true)}if(e.target.id==='import-file'&&e.target.files?.[0]){try{const obj=JSON.parse(await e.target.files[0].text());if(e.target.files[0].size>5*1024*1024||obj.format!=='masar-progress-v1'||!obj.state||!Array.isArray(obj.state.done)||!obj.state.done.every(n=>Number.isInteger(n)&&n>=1&&n<=48)||!obj.state.answers||typeof obj.state.answers!=='object'||Array.isArray(obj.state.answers))throw Error('Invalid');if(confirm('هل تريدين استبدال تقدم هذا المتصفح بالنسخة المستوردة؟')){state={...state,...obj.state};save();render(true);toast('تم استيراد البيانات')}}catch(err){toast('ملف غير صالح لاستيراد تقدم مِسار')}}});
 function lessonNumberFromRoute(path){const m=/^\/lesson\/(\d+)$/.exec(path||'');const n=Number(m?.[1]);return n>=1&&n<=48?n:null}

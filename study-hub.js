@@ -298,12 +298,7 @@ function click(action,el,ctx){
   if(!ctx.db){status.textContent='التخزين المحلي غير متاح على هذا المتصفح حاليًا';return true}
   ctx.db.getPersonalFile(id).then(function(f){
    area.replaceChildren();
-   if(!f||!f.blob){
-    var message=document.createElement('p');message.className='source-inline-info';
-    message.textContent='الكتاب مفهرس في المنهج، لكن ملفه غير موجود بعد على هذا المتصفح. أضيفي نسختك هنا مرة واحدة، وبعدها افتحي الصفحات من داخل مِسار.';
-    var pick=document.createElement('button');pick.type='button';pick.className='btn btn-outline';pick.dataset.action='hub-pick';pick.dataset.source=id;pick.textContent='إضافة ملف الكتاب';
-    area.append(message,pick);return;
-   }
+   if(!f||!f.blob){area.innerHTML=sourceSummaryHTML(ctx.course,id,pg,pg);return;}
    if(f.mime==='application/pdf'&&appleMobilePdf()){
     renderPdfCanvas(area,f,id,pg);return;
    }

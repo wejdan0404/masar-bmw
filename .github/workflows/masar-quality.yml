@@ -9,7 +9,7 @@ permissions:
   contents: read
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - name: Checkout
@@ -39,17 +39,17 @@ jobs:
           node --check lesson-guides-02.js
           node --check lesson-guides-03.js
           node --check lesson-guides-04.js
+      - name: Rebuild standalone site
+        run: python compile.py
       - name: Validate content and compiled site
         run: node validate-dataset.js
       - name: Run smoke tests
         run: node smoke-test.js
-      - name: Rebuild standalone site
-        run: python compile.py
       - name: Ensure published HTML is reproducible
         run: git diff --exit-code -- index.html
 
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - name: Checkout
